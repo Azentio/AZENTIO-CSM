@@ -8,9 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/BugetAndPlanningDefinition_UATFEATURE.feature",
-		"src/test/java/features/BudgetAndPlanning_UATBudgetCreation.feature","src/test/java/features/BudgetAndPlanning_UATBudgetSupplementary.feature"
-		,"src/test/java/features/BudgetTransferExcel.feature"},
+@CucumberOptions(features = {"src/test/java/features/CSMApplicationLoginTest.feature"},
                 glue = "stepdefinitions",
                 //monochrome=false, //to make steps in color
                 plugin = { "pretty",

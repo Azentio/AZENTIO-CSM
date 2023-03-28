@@ -24,10 +24,7 @@ public class BaseClass {
 	String browserName =configFileReader.getBrowser();
 	
 	if(browserName.equalsIgnoreCase("chrome")) {
-		driver = new ChromeDriver();
 		ChromeOptions options = new ChromeOptions();
-		//options.addArguments("--headless=new");
-		options.addArguments("--incognito");
 		options.addArguments("--remote-allow-origins=*");
 		driver = new ChromeDriver(options);
 		
