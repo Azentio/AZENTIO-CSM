@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,7 +29,7 @@ public class CSMLogin {
 		this.driver = driver;
 	}
 
-	public void loginIntoCSMParamApplication() {
+	public void loginIntoCSMParamApplication() throws IOException {
 		csmLoginTestData = csmParamLoginTestData.getTestdata("CSMParamUser1");
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
@@ -66,37 +67,29 @@ public class CSMLogin {
 			}
 
 		}
-
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
-		for (int i = 0; i <= 500; i++) {
+		
+		for (int i = 0; i <= 70; i++) {
 			try {
 				clicksAndActionHelper.moveToElement(csmCommonWebElements.csmForceLogoutYesButton());
 				clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmForceLogoutYesButton());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
-					System.out.print("No Force Log");
+				if (i == 70) {
+					System.out.print("No Force Log out");
 				}
 			}
 		}
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
-
+		csmCommonWebElements.csmContinueButton().click();
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmLoginValidation());
 		Assert.assertTrue(csmCommonWebElements.csmLoginValidation().isDisplayed());
-		/*
-		 * waitHelper.waitForElementwithFluentwait(driver,
-		 * csmCommonWebElements.csmLogoutButton());
-		 * clicksAndActionHelper.moveToElement(csmCommonWebElements.csmLogoutButton());
-		 * clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmLogoutButton());
-		 * waitHelper.waitForElementwithFluentwait(driver,
-		 * csmCommonWebElements.csmUserName());
-		 * Assert.assertTrue(csmCommonWebElements.csmUserName().isDisplayed());
-		 * driver.quit();
-		 */
+		System.out.println("Login validated");
+	
 	}
 
-	public void loginIntoCSMApplication() {
+	public void loginIntoCSMApplication() throws IOException {
 		csmLoginTestData = csmLoginExceldata.getTestdata("CSMUser1");
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
@@ -164,7 +157,7 @@ public class CSMLogin {
 		 */
 	}
 
-	public void loginIntoSadsApplication() {
+	public void loginIntoSadsApplication() throws IOException {
 		csmLoginTestData = sadsLoginExceldata.getTestdata("Sadsuser1");
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);

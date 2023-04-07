@@ -98,5 +98,23 @@ public class CSMCommonWebElements {
 	{
 		return csm_MaintenanceButton;
 	}
+	@FindBy(xpath="//label[text()='Approve ']//ancestor::button")
+	private WebElement csm_ApproveButton;
+	public WebElement csmApproveButton()
+	{
+		return csm_ApproveButton;
+	}
+	@FindBy(xpath="//div[text()='Confirm Approve Process']//ancestor::div//center//input[1]")
+	private WebElement csm_ConfirmApprovOkButton;
+	public WebElement csmConfirmApprovOkButton()
+	{
+		return csm_ConfirmApprovOkButton;
+	}
+	@FindBy(xpath="//div[text()='Record was Approved Successfully']//ancestor::div//center//input[1]")
+	private WebElement csm_ApproveSuccessOkButton;
+	public WebElement csmApproveSuccessOkButton()
+	{
+		return csm_ApproveSuccessOkButton;
+	}
 
 }

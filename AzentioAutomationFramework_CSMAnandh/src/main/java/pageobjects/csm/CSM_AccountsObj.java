@@ -154,5 +154,41 @@ public class CSM_AccountsObj {
 	public WebElement ClosedDormantAccountCIFNo() {
 		return ClosedDormantAccount_CIFNo;
 	}
+	@FindBy(xpath="//input[@id='lookuptxt_currencyCode_A001MT']")
+	private WebElement fma_CurrecyCode;
+
+	public WebElement fmaCurrecyCode() {
+		return fma_CurrecyCode;
+	}
+	@FindBy(xpath="//input[@name='accountsManagementCO.currencyDesc']")
+	private WebElement fma_CurrecyCodeDescription;
+
+	public WebElement fmaCurrecyCodeDescription() {
+		return fma_CurrecyCodeDescription;
+	}
+	@FindBy(xpath="//input[@id='lookuptxt_glType_A001MT']")
+	private WebElement fma_GlType;
+
+	public WebElement fmaGlType() {
+		return fma_GlType;
+	}
+	@FindBy(xpath="//input[@name='accountsManagementCO.glDesc']")
+	private WebElement fma_GlTypeDescription;
+
+	public WebElement fmaGlTypeDescription() {
+		return fma_GlTypeDescription;
+	}
+	@FindBy(xpath="//input[@id='lookuptxt_cifNo_A001MT']")
+	private WebElement fma_CIFNo;
+
+	public WebElement fmaCIFNo() {
+		return fma_CIFNo;
+	}
+	@FindBy(xpath="//input[@name='accountsManagementCO.cifName']")
+	private WebElement fma_CIFNoDescription;
+
+	public WebElement fmaCIFNoDescription() {
+		return fma_CIFNoDescription;
+	}
 
 }
