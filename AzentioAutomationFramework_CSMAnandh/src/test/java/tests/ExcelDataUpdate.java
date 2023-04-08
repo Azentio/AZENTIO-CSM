@@ -7,7 +7,7 @@ public class ExcelDataUpdate {
 	{
 		String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
 		ExcelData exelDataForGeneralLedger = new ExcelData(testDataPath, "CSMParam_GeneralLedgerTestData", "DataSet ID");
-		exelDataForGeneralLedger.updateTestData("DS01_Pre_req_GL_01", "Code", "9637");
+		exelDataForGeneralLedger.updateTestData("DS01_Pre_req_GL_01", "Code", "9641");
 	}
 
 }

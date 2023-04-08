@@ -1,84 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-07T18:09:54 IST" name="Default suite" finished-at="2023-04-07T18:15:34 IST" duration-ms="339698">
+  <suite started-at="2023-04-08T15:33:46 IST" name="Default suite" finished-at="2023-04-08T15:35:48 IST" duration-ms="121911">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-04-07T18:09:54 IST" name="Default test" finished-at="2023-04-07T18:15:34 IST" duration-ms="339698">
+    <test started-at="2023-04-08T15:33:46 IST" name="Default test" finished-at="2023-04-08T15:35:48 IST" duration-ms="121911">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-07T18:09:54 IST" name="setUpClass" finished-at="2023-04-07T18:09:55 IST" duration-ms="1288" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-08T15:33:46 IST" name="setUpClass" finished-at="2023-04-08T15:33:47 IST" duration-ms="1165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-07T18:09:55 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-07T18:10:56 IST" duration-ms="60959" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-08T15:33:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-08T15:35:25 IST" duration-ms="98082" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA["To verify user can able to create the GL Number"]]>
+                <![CDATA["To create individual CIF"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To test the Account type creation]"]]>
+                <![CDATA["Optional[To create the CIF type]"]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-07T18:10:56 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-07T18:12:05 IST" duration-ms="69121" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify user can able to create the account typee"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To test the Account type creation]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-07T18:12:05 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-07T18:13:29 IST" duration-ms="83728" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To verify user can able to give access to account type"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To test the Account type creation]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-07T18:13:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-07T18:14:29 IST" duration-ms="60235" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["approve the user access updated record"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To test the Account type creation]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-07T18:14:29 IST" name="tearDownClass" finished-at="2023-04-07T18:15:34 IST" duration-ms="64289" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-08T15:35:25 IST" name="tearDownClass" finished-at="2023-04-08T15:35:48 IST" duration-ms="22602" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

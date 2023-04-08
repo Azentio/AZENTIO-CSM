@@ -48,6 +48,25 @@ public class CSMParam_UserAccessObj {
 	{
 		return user_AccountTypeAccess;
 	}
+	@FindBy(xpath="//span[text()=' CIF Types ']")
+	private WebElement user_CIFTypeAccess;
+	public WebElement userCIFTypeAccess()
+	{
+		return user_CIFTypeAccess;
+	}
+	@FindBy(xpath="//input[@name='lookupTxt_ctstellerciftypedetVO.CIF_TYPE']")
+	private WebElement user_CIFTypeAccessInputBox;
+	public WebElement userCIFTypeAccessInputBox()
+	{
+		return user_CIFTypeAccessInputBox;
+	}
+	@FindBy(xpath="//input[@name='lookupTxt_ctstellerciftypedetVO.TRX_TYPE']")
+	private WebElement user_CIFTypeTransactionInputBox;
+	public WebElement userCIFTypeTransactionInputBox()
+	{
+		return user_CIFTypeTransactionInputBox;
+	}
+	
 	@FindBy(xpath="//td[@id='add_tab4_GridTbl_Id_E000MA']")
 	private WebElement userAccess_PlusIcon;
 	public WebElement userAccessPlusIcon()

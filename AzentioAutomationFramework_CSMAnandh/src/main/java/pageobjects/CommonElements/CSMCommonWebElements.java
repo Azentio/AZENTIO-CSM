@@ -116,5 +116,23 @@ public class CSMCommonWebElements {
 	{
 		return csm_ApproveSuccessOkButton;
 	}
+	@FindBy(xpath="//button[@value='Submit']")
+	private WebElement csm_SaveButton;
+	public WebElement csmSaveButton()
+	{
+		return csm_SaveButton;
+	}
+	@FindBy(xpath="//div[text()='Confirm Save Process']//ancestor::div//center//input[1]")
+	private WebElement csm_SaveConfirmOkButton;
+	public WebElement csmSaveConfirmOkButton()
+	{
+		return csm_SaveConfirmOkButton;
+	}
+	@FindBy(xpath="//div[text()='Record Saved Successfully']//ancestor::div//center//input[1]")
+	private WebElement csm_SaveSuccessOkButton;
+	public WebElement csmSaveSuccessOkButton()
+	{
+		return csm_SaveSuccessOkButton;
+	}
 
 }

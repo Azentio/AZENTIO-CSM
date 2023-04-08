@@ -26,6 +26,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 	JavascriptHelper javascriptHelper= new JavascriptHelper(driver); 
 	String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
 	ExcelData exelDataForUserAccess = new ExcelData(testDataPath, "CSMParam_userAccessTestData", "DataSet ID");
+	ExcelData excelDataforCIFType = new ExcelData(testDataPath, "CSMParam_CIFTypeTestData", "DataSet ID");
 	Map<String,String> userAccessTestData= new HashMap<>();
 	
 
@@ -57,6 +58,10 @@ public class CSM_UserAccessSteps extends BaseClass {
 	    public void get_the_test_data_for_the_user_access_record_which_is_done_on_account_type_access() throws Throwable {
 		 userAccessTestData=exelDataForUserAccess.getTestdata("DS01_ActType_Acces_04");
 	    }
+	 @And("^get the test data for give access to CIF Type$")
+	    public void get_the_test_data_for_give_access_to_cif_type() throws Throwable {
+		 userAccessTestData=exelDataForUserAccess.getTestdata("DS01_ActType_Acces_04");
+	    }
 	@And("^search the user ID in user module$")
 	public void search_the_user_id_in_user_module() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userSearchUserID());
@@ -83,7 +88,47 @@ public class CSM_UserAccessSteps extends BaseClass {
 			}
 		}
 	}
+	 @And("^click on CIf type access option$")
+	    public void click_on_cif_type_access_option() throws Throwable {
+		 waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
+			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
+	    }
 
+	    @And("^click on add button in CIF type access page$")
+	    public void click_on_add_button_in_cif_type_access_page() throws Throwable {
+	    
+			
+	    }
+
+	    @And("^enter the CIF type in access screen$")
+	    public void enter_the_cif_type_in_access_screen() throws Throwable {
+	    	
+	    	waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
+			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
+			userAccessObj.userCIFTypeAccessInputBox().sendKeys(userAccessTestData.get("CIFType"));
+			
+	    	
+	    }
+
+	    @And("^enter the Transaction number in CIF type access screen$")
+	    public void enter_the_transaction_number_in_cif_type_access_screen() throws Throwable {
+	    	waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeTransactionInputBox());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeTransactionInputBox());
+			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeTransactionInputBox());
+			userAccessObj.userCIFTypeTransactionInputBox().sendKeys(userAccessTestData.get("CIF Transaction No"));
+			waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessSearchWdLimit());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessSearchWdLimit());
+			clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessSearchWdLimit());
+	    }
+
+	    @And("^click on ok button in CIF type access screen$")
+	    public void click_on_ok_button_in_cif_type_access_screen() throws Throwable {
+	    	waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
+			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
+	    }
 	@And("^click on account type access option$")
 	public void click_on_account_type_access_option() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccountTypeAccess());
@@ -188,5 +233,6 @@ public class CSM_UserAccessSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonElements.csmApproveSuccessOkButton());
 		clicksAndActionsHelper.moveToElement(csmCommonElements.csmApproveSuccessOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonElements.csmApproveSuccessOkButton());
+		excelDataforCIFType.updateTestData("DS_01_CIFType_01", "Allow Gl Code", userAccessTestData.get("AccountType"));
 	}
 }
