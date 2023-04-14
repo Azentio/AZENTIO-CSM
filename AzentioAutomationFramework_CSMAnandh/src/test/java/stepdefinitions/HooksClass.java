@@ -53,9 +53,16 @@ public class HooksClass extends BaseClass {
 	public void addScreenshot(Scenario scenario) throws IOException {
 		driver = BaseClass.driver;
 		System.out.println("Screen shot got added");
+		try
+		{
 		java.io.File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		byte[] fileContent = FileUtils.readFileToByteArray(screenshot);
 		scenario.attach(fileContent, "image/png", "screenshot");
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getCause());
+		}
 	}
 
 	@SuppressWarnings("unlikely-arg-type")
