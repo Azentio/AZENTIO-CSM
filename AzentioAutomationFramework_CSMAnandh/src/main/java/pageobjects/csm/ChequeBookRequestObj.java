@@ -168,5 +168,66 @@ public class ChequeBookRequestObj {
 	{
 		return destroyed_BranchCodeValidation;
 	}
+	@FindBy(xpath="//input[@id='num_of_chqbooks_Q000MT']")
+   private WebElement chequeBookRequest_NumberOfChequeBook;
+	public WebElement chequeBookRequestNumberOfChequeBook()
+	{
+		return chequeBookRequest_NumberOfChequeBook;
+	}
+	@FindBy(xpath="//input[@id='lookuptxt_CHEQUE_CODE_Q000MT']")
+	private WebElement chequeBookRequest_ChequeCode;
+	public WebElement chequeBookRequestChequeCode()
+	{
+		return chequeBookRequest_ChequeCode;
+	}
+	@FindBy(xpath="//input[@id='CHEQUE_BRIEF_NAME']")
+	private WebElement chequeBookRequest_ChequeCodeDescription;
+	public WebElement chequeBookRequestChequeCodeDescription()
+	{
+		return chequeBookRequest_ChequeCodeDescription;
+	}
+	@FindBy(xpath="//input[@id='acc_br_Q000MT']")
+	private WebElement chequeBookRequest_AccountBranchName;
+	public WebElement chequeBookRequestAccountBranchName()
+	{
+		return chequeBookRequest_AccountBranchName;
+	}
+	@FindBy(xpath="//input[@id='acc_cy_Q000MT']")
+	private WebElement chequeBookRequest_AccountCurrencyCode;
+	public WebElement chequeBookRequestAccountCurrencyCode()
+	{
+		return chequeBookRequest_AccountCurrencyCode;
+	}
+	@FindBy(xpath="//input[@id='acc_gl_Q000MT']")
+	private WebElement chequeBookRequest_AccountGlCode;
+	public WebElement chequeBookRequestAccountGlCode()
+	{
+		return chequeBookRequest_AccountGlCode;
+	}
+	@FindBy(xpath="//input[@id='acc_cif_Q000MT']")
+	private WebElement chequeBookRequest_AccountCIFCode;
+	public WebElement chequeBookRequestAccountCIFCode()
+	{
+		return chequeBookRequest_AccountCIFCode;
+	}
+	@FindBy(xpath="//input[@id='lookuptxt_acc_sl_Q000MT']")
+	private WebElement chequeBookRequest_AccountSerialNumber;
+	public WebElement chequeBookRequestAccountSerialNumber()
+	{
+		return chequeBookRequest_AccountSerialNumber;
+	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / Maintenance')]")
+	private WebElement chequeBookRequest_Label;
+	public WebElement chequeBookRequestLabel()
+	{
+		return chequeBookRequest_Label;
+	}
+	@FindBy(xpath="//span[text()='Charges']//parent::div")
+	private WebElement chequeBookRequest_ChargesSection;
+	public WebElement chequeBookRequestChargesSection()
+	{
+		return chequeBookRequest_ChargesSection;
+	}
+	
 	
 }

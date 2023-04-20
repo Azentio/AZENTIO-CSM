@@ -13,26 +13,22 @@ import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
 public class NewExcelTestRunner {
-	String path = System.getProperty("user.dir") + "\\Test-data\\KUBSTestData.xlsx";
-	ExcelData testExecution = new ExcelData(path, "TestExecution", "TestCaseID");
+	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+	ExcelData testExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "TestExecution", "TestCaseID");
+	ExcelTest excelTest = new ExcelTest(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	static String currentExecutionTag;
 
 	public void excelTestArea(String tags, int listSize, int tagIndex) {
 
 		String[] parameter = {
-
-				"src/test/java/features/BugetAndPlanningDefinition_UATFEATURE.feature",
-				"src\\test\\java\\features\\BudgetAndPlanning_UATBudgetCreation.feature",
-				"src\\test\\java\\features\\BudgetAndPlanning_UATBudgetSupplementary.feature",
-				"src\\test\\java\\features\\BudgetTransferExcel.feature", "--glue", "stepdefinitions", "--plugin",
+				"src\\test\\java\\features\\CSM_ChargeWaiverFEATURE.feature", "--glue", "stepdefinitions", "--plugin",
 				"pretty", "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"--plugin", "rerun:ReRunScenarios/FailedReRun.txt", "--tags", "@" + tags };
 
 		CucumberRunner.run(parameter, listSize, tagIndex);
-
+ 
 	}
 
 	@BeforeTest
@@ -45,17 +41,17 @@ public class NewExcelTestRunner {
 
 	@Test()
 	public void test() {
-		String path = System.getProperty("user.dir") + "\\Test-data\\KUBSTestData.xlsx";
-		ExcelTest excelTest = new ExcelTest(path, "TestExecution", "TestCaseID");
+		String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+		ExcelTest excelTest = new ExcelTest(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 		testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 		NewExcelTestRunner newExcelTestRunner = new NewExcelTestRunner();
 
 		for (String string : testCaseTagsFromExcel) {
-			ExcelTest excelTest2 = new ExcelTest(path, "TestExecution", "TestCaseID");
+			ExcelTest excelTest2 = new ExcelTest(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 			testCaseTagsFromExcel = excelTest2.getTestCaseTagsfromExcel();
 			System.out.println(string);
 			currentExecutionTag = string;
-			ExcelData testExecution = new ExcelData(path, "TestExecution", "TestCaseID");
+			ExcelData testExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 			testExecutionData = testExecution.getTestdata(string);
 			// run the scenarios based on tags from excel
 			newExcelTestRunner.excelTestArea(string, testCaseTagsFromExcel.size(),

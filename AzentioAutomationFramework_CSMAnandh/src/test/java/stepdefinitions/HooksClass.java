@@ -28,19 +28,19 @@ import utilities.ExtentTestManager;
 
 public class HooksClass extends BaseClass {
 	WebDriver driver;
-//	String path = System.getProperty("user.dir")+"\\Test-data\\KUBSTestData.xlsx";
-//	ExcelData testExecution = new ExcelData(path,"TestExecution","TestCaseID");
-//	Map<String, String> testExecutionData;
-//	ExcelTest excelTest = new ExcelTest(path, "TestExecution", "TestCaseID");
-//	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
+	String path = System.getProperty("user.dir")+"\\TestData\\CSMTestData.xlsx";
+	ExcelData testExecution = new ExcelData(path,"ChargeWaiverExecutionTracker","TestCaseID");
+	Map<String, String> testExecutionData;
+	ExcelTest excelTest = new ExcelTest(path, "ChargeWaiverExecutionTracker", "TestCaseID");
+	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
 	@Before
 	public void browserSetup(Scenario scenario) throws IOException {
 		// get flag status from excel and skip the test cases
-	/*	if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No").equalsIgnoreCase("No")) {
+		if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No").equalsIgnoreCase("No")) {
 			Assume.assumeTrue(false);
-		}*/
+		}
 		
 		driver = initializeDriver();
 		System.out.println("Driver Initiated");
@@ -81,7 +81,7 @@ public class HooksClass extends BaseClass {
 		if (currentExecutionStatus.equalsIgnoreCase("FAILED")) {
 			
 			// change flag to "No" for dependent scenarios in excel when main Scenario got failed
-		/*		for (int i = 1; i <testCaseTagsFromExcel.size(); i++) {
+				for (int i = 1; i <testCaseTagsFromExcel.size(); i++) {
 					 testExecutionData = testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
 					 Collection<String> values = testExecutionData.values();
 					 values.remove(NewExcelTestRunner.getCurrentExecutionTag());
@@ -89,7 +89,7 @@ public class HooksClass extends BaseClass {
 						 testExecution.updateTestData(testCaseTagsFromExcel.get(i),"ExecuteYes/No", "No");
 					}
 					 
-				}*/
+				}
 			
 		}
 	}

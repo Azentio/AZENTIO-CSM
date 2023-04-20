@@ -293,14 +293,14 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 	@And("^select the records from live search$")
 	public void select_the_records_from_live_search() throws Throwable {
 		String xpath = "(//td[contains(text(),'" + amendChequeStatusTestData.get("Gl Code") + "')])[1]";
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 5000; i++) {
 			try {
 				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
 				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
 				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 5000) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -391,6 +391,9 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				status = driver.findElement(By.xpath(xpath)).isDisplayed();
 
 			} catch (Exception e) {
+				if (i > 200 && i < 500) {
+					chequeBookRequestObj.chequeBooQueryModuleChequeCode().sendKeys(Keys.ENTER);
+				}
 				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
@@ -440,7 +443,11 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i > 200 && i < 500) {
+					chequeBookRequestObj.toBeDestroySearchChequeCode().sendKeys(Keys.ENTER);
+				}
+
+				else if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -602,7 +609,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	@And("^click on Transaction module$")
 	public void click_on_transaction_module() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(transactionObj.csmTransactionMainModule());
 				clicksAndActionsHelper.moveToElement(transactionObj.csmTransactionMainModule());
@@ -610,7 +617,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				break;
 
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}

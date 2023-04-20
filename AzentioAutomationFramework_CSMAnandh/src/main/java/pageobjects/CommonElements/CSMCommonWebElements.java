@@ -116,7 +116,7 @@ public class CSMCommonWebElements {
 	{
 		return csm_ApproveSuccessOkButton;
 	}
-	@FindBy(xpath="//button[@value='Submit']")
+	@FindBy(xpath="//span[contains(text(),'Save')]//parent::button")
 	private WebElement csm_SaveButton;
 	public WebElement csmSaveButton()
 	{
@@ -158,5 +158,52 @@ public class CSMCommonWebElements {
 	{
 		return csm_AlertCloseButton;
 	}
-
+	@FindBy(xpath="//span[@id='hdr_runn_date']")
+	private WebElement csm_SystemDate;
+	public WebElement csmSystemDate()
+	{
+		return csm_SystemDate;
+	}
+	@FindBy(xpath="//input[@id='global_user_run_date']")
+	private WebElement csm_InputSystemDate;
+	public WebElement csmInputSystemDate()
+	{
+		return csm_InputSystemDate;
+	}
+	@FindBy(xpath="(//span[contains(text(),'Use')]//parent::button)[1]")
+	private WebElement csm_InputSystemDateUseButton;
+	public WebElement csmInputSystemDateUseButton()
+	{
+		return csm_InputSystemDateUseButton;
+	}
+	@FindBy(xpath="//div[text()='Record was Updated Successfully']//ancestor::div//center//input[1]")
+	private WebElement update_OkButton;
+	public WebElement updateOkButton()
+	{
+		return update_OkButton;
+	}
+	@FindBy(xpath="//span[contains(text(),'Close')]//parent::button")
+	private WebElement close_OkButton;
+	public WebElement closeOkButton()
+	{
+		return close_OkButton;
+	}
+	@FindBy(xpath="//span[contains(text(),'close')]//parent::a[@role='button']")
+	private WebElement memoAlert_CloseButton;
+	public WebElement memoAlertCloseButton()
+	{
+		return memoAlert_CloseButton;
+	}
+	@FindBy(xpath="//div[contains(text(),'CIF has dormant accounts')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement dormantAccountPopup_OkButton;
+	public WebElement dormantAccountPopupOkButton()
+	{
+		return dormantAccountPopup_OkButton;
+	}
+	@FindBy(xpath="//span[contains(text(),'Approve ')]//ancestor::button")
+	private WebElement csm_ApproveBtn;
+	public WebElement csmApproveBtn()
+	{
+		return csm_ApproveBtn;
+	}
 }

@@ -1,128 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="3" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-14T15:35:21 IST" name="Default suite" finished-at="2023-04-14T15:39:38 IST" duration-ms="256867">
+  <suite started-at="2023-04-20T18:48:24 IST" name="Default suite" finished-at="2023-04-20T18:48:31 IST" duration-ms="6544">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-04-14T15:35:21 IST" name="Default test" finished-at="2023-04-14T15:39:38 IST" duration-ms="256867">
+    <test started-at="2023-04-20T18:48:24 IST" name="Default test" finished-at="2023-04-20T18:48:31 IST" duration-ms="6544">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-14T15:35:21 IST" name="setUpClass" finished-at="2023-04-14T15:35:23 IST" duration-ms="1243" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-20T18:48:24 IST" name="setUpClass" finished-at="2023-04-20T18:48:25 IST" duration-ms="1154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-14T15:35:23 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-14T15:36:04 IST" duration-ms="41566" status="PASS">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-20T18:48:25 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-20T18:48:28 IST" duration-ms="2568" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["checking if the system is changing the chequebook status from SUBMITTED to APPLY TO SUBMIT"]]>
+                <![CDATA["Checking on the waiver when using a transaction type within the defined transaction types"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To Test the amend cheque card status module]"]]>
+                <![CDATA["Optional[To Test the charge waiver feature]"]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-14T15:36:04 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-14T15:37:01 IST" duration-ms="56864" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["checking if the system is changing the chequebook status from DESTROYED to APPROVED"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To Test the amend cheque card status module]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-14T15:37:01 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-14T15:37:48 IST" duration-ms="47111" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["checking if the system is reversing the charges transaction if charges were applied at the destroy"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To Test the amend cheque card status module]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[element click intercepted: Element <input type="button" id="_popup_path_sol_ok" class="ui-button-text fg-button ui-button ui-corner-all ui-widget ui-state-default ui-button-text-only" value="Ok"> is not clickable at point (959, 537). Other element would receive the click: <div class="ui-widget-shadow progBarBackGound" style=""></div>
-  (Session info: chrome=111.0.5563.147)
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bbf8195fdf6d7b95b4eee564f9b2f63a, clickElement {id=d019eb08-a19f-4853-be78-c2fdde0f6f05}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49598}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49598/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (bbf8195fdf6d7b95b4eee564f9b2f63a)] -> xpath: //center//input[@value='Ok']]
-Session ID: bbf8195fdf6d7b95b4eee564f9b2f63a]]>
+              <![CDATA[Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "java.util.Map.get(Object)" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="button" id="_popup_path_sol_ok" class="ui-button-text fg-button ui-button ui-corner-all ui-widget ui-state-default ui-button-text-only" value="Ok"> is not clickable at point (959, 537). Other element would receive the click: <div class="ui-widget-shadow progBarBackGound" style=""></div>
-  (Session info: chrome=111.0.5563.147)
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [bbf8195fdf6d7b95b4eee564f9b2f63a, clickElement {id=d019eb08-a19f-4853-be78-c2fdde0f6f05}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:49598}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:49598/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (bbf8195fdf6d7b95b4eee564f9b2f63a)] -> xpath: //center//input[@value='Ok']]
-Session ID: bbf8195fdf6d7b95b4eee564f9b2f63a
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-at stepdefinitions.CSM_AmendChequeCardStatusSteps.get_the_transaction_number_and_click_on_alert_ok_button(CSM_AmendChequeCardStatusSteps.java:412)
-at ✽.get the transaction number and click on alert ok button(file:///C:/Users/ININDC00076/git/CSMAnandh/AzentioAutomationFramework_CSMAnandh/src/test/java/features/CSM_AmendChequeCardStatusFEATURE.feature:64)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "String.equalsIgnoreCase(String)" because the return value of "java.util.Map.get(Object)" is null
+at stepdefinitions.HooksClass.browserSetup(HooksClass.java:41)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-14T15:37:48 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-04-14T15:38:37 IST" duration-ms="49227" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["checking if the system is reversing the charges transaction if charges were applied at the destroy"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To Test the amend cheque card status module]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-14T15:38:37 IST" name="tearDownClass" finished-at="2023-04-14T15:39:38 IST" duration-ms="60781" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-04-20T18:48:28 IST" name="tearDownClass" finished-at="2023-04-20T18:48:31 IST" duration-ms="2758" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

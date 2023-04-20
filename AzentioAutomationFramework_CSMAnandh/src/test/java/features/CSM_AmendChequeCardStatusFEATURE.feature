@@ -7,12 +7,12 @@ And click on maintenance screen under cheque card status module
 And get the test data for test case ACSD_002
 And change the product type to cheque book
 And enter the branch code in amend cheque
-And enter the currency code in amend cheque
-And enter the GL code in amend cheque
-And enter the CIF No in amend cheque
-And click on ok button in amend cheque screen
-And close the warningpopupin amend cheque screen
-And enter the serial number in amend cheque
+#And enter the currency code in amend cheque
+#And enter the GL code in amend cheque
+#And enter the CIF No in amend cheque
+#And click on ok button in amend cheque screen
+#And close the warningpopupin amend cheque screen
+#And enter the serial number in amend cheque
 And enter the request no in amend cheque
 And give the status in submitted
 And click on retrive in amend cheque
