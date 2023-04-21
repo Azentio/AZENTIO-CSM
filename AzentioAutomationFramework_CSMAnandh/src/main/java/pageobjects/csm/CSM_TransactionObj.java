@@ -219,4 +219,10 @@ public class CSM_TransactionObj {
 	public WebElement transactionChargeValidation() {
 		return transaction_ChargeValidation;
 	}
+	@FindBy(xpath="//div[contains(text(),'Approved')]//parent::div//following-sibling::center//input")
+	private WebElement transaction_ApproveOkButton;
+
+	public WebElement transactionApproveOkButton() {
+		return transaction_ApproveOkButton;
+	}
 }

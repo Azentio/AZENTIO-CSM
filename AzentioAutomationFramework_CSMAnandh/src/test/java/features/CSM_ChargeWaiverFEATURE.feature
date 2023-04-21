@@ -68,6 +68,7 @@ And close the transaction tab
 And click on maintenance scree under transaction module
 And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
@@ -109,6 +110,7 @@ And close the transaction tab
 And click on maintenance scree under transaction module
 And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
@@ -148,15 +150,15 @@ And close the transaction tab
 And click on maintenance scree under transaction module
 And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
 Then verify system should not deduct the charges for the transaction
 @CW_006
-Scenario: Checking on the waiver when doing a transaction less than From date  
+Scenario: Checking on the waiver when doing a transaction greater than To date  
 Given navigate to CSM application and login with valid credentials
 And get the test data for test case CW_006
-And change the system date to less waiver date which is configured
 And change the system date to high waiver date which is configured
 And click on Transaction module
 And click on maintenance scree under transaction module
@@ -188,6 +190,7 @@ And close the transaction tab
 And click on maintenance scree under transaction module
 And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
@@ -226,6 +229,7 @@ And close the transaction tab
 And click on maintenance scree under transaction module
 And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button

@@ -64,11 +64,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 
 	}
+
 	@And("^get the test data for test case CW_007$")
-    public void get_the_test_data_for_test_case_cw007() throws Throwable {
+	public void get_the_test_data_for_test_case_cw007() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_007");
 		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
-    }
+	}
 
 	@And("^change the system date to less waiver date which is configured$")
 	public void change_the_system_date_to_less_waiver_date_which_is_configured() throws Throwable {
@@ -496,8 +497,9 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveTransactionNoSearch());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveTransactionNoSearch());
 		transactionObj.transactionApproveTransactionNoSearch().sendKeys(transactionTestData.get("Transaction Number"));
+		transactionObj.transactionApproveTransactionNoSearch().sendKeys(Keys.ENTER);
 		robot = new Robot();
-		for (int i = 0; i <= 10; i++) {
+		for (int i = 0; i <= 100; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 		}
@@ -540,9 +542,9 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@And("^click on ok button after approve the transaction record$")
 	public void click_on_ok_button_after_approve_the_transaction_record() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
-		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
-		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionApproveOkButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveOkButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveOkButton());
 	}
 
 	@And("^close the transaction tab$")
@@ -557,9 +559,30 @@ public class CSM_TransactionSteps extends BaseClass {
 		robot = new Robot();
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNumber());
 		transactionObj.transactionSearchTransactionNumber().sendKeys(transactionTestData.get("Transaction Number"));
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		transactionObj.transactionSearchTransactionNumber().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
 
+	@Then("^verify transaction status should show as approved$")
+	public void verify_transaction_status_should_show_as_approved() throws Throwable {
+		robot = new Robot();
+		for (int i = 0; i <= 100; i++) {
+			try {
+				Assert.assertEquals(transactionObj.transactionTransactionStatus().getText(), "Approved");
+				break;
+			} catch (Exception e) {
+				if (i != 100) {
+					robot.keyPress(KeyEvent.VK_ENTER);
+					robot.keyRelease(KeyEvent.VK_ENTER);
+				} else if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
 	}
 
 	@And("^open the approved transaction record$")
