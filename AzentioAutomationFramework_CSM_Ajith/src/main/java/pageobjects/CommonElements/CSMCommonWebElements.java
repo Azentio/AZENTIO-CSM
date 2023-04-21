@@ -80,19 +80,97 @@ public class CSMCommonWebElements {
 	{
 		return csm_logoutButton;
 	}
+	@FindBy(xpath="//span[contains(text(),' Yes')]//parent::a")
+	private WebElement csm_ForceLogoutYesButton;
+	public WebElement csmForceLogoutYesButton()
+	{
+		return csm_ForceLogoutYesButton;
+	}
+	@FindBy(xpath="//div[@id='div__popup_path_sol_ok']//div[2]//div")
+	private WebElement csm_AlertPopup;
+	public WebElement csmAlertPopup()
+	{
+		return csm_AlertPopup;
+	}
+	@FindBy(xpath="//span[contains(text(),'Maintenance')]")
+	private WebElement csm_MaintenanceButton;
+	public WebElement csmMaintenanceButton()
+	{
+		return csm_MaintenanceButton;
+	}
+	@FindBy(xpath="//label[text()='Approve ']//ancestor::button")
+	private WebElement csm_ApproveButton;
+	public WebElement csmApproveButton()
+	{
+		return csm_ApproveButton;
+	}
+	@FindBy(xpath="//div[text()='Confirm Approve Process']//ancestor::div//center//input[1]")
+	private WebElement csm_ConfirmApprovOkButton;
+	public WebElement csmConfirmApprovOkButton()
+	{
+		return csm_ConfirmApprovOkButton;
+	}
+	@FindBy(xpath="//div[text()='Record was Approved Successfully']//ancestor::div//center//input[1]")
+	private WebElement csm_ApproveSuccessOkButton;
+	public WebElement csmApproveSuccessOkButton()
+	{
+		return csm_ApproveSuccessOkButton;
+	}
+	@FindBy(xpath="//button[@value='Submit']")
+	private WebElement csm_SaveButton;
+	public WebElement csmSaveButton()
+	{
+		return csm_SaveButton;
+	}
+	@FindBy(xpath="//div[text()='Confirm Save Process']//ancestor::div//center//input[1]")
+	private WebElement csm_SaveConfirmOkButton;
+	public WebElement csmSaveConfirmOkButton()
+	{
+		return csm_SaveConfirmOkButton;
+	}
+	@FindBy(xpath="//div[text()='Confirm Save Record']//ancestor::div//center//input[1]")
+	private WebElement csm_SaveRecordConfirmOkButton;
+	public WebElement csmSaveRecordConfirmOkButton()
+	{
+		return csm_SaveRecordConfirmOkButton;
+	}
+	@FindBy(xpath="//span[@class='displayProgIcon']//img")
+	private WebElement csm_LoadingImage;
+	public WebElement csmLoadingImage()
+	{
+		return csm_LoadingImage;
+	}
+	@FindBy(xpath="//div[text()='Record Saved Successfully']//ancestor::div//center//input[1]")
+	private WebElement csm_SaveSuccessOkButton;
+	public WebElement csmSaveSuccessOkButton()
+	{
+		return csm_SaveSuccessOkButton;
+	}
+	@FindBy(xpath="//center//input[@value='Ok']")
+	private WebElement csm_OkButton;
+	public WebElement csmOkButton()
+	{
+		return csm_OkButton;
+	}
+	@FindBy(xpath="//span[text()='close']")
+	private WebElement csm_AlertCloseButton;
+	public WebElement csmAlertCloseButton()
+	{
+		return csm_AlertCloseButton;
+	}
 	// user already login
-	@FindBy(xpath="//td[text()='User already logged in with different session, force other session logout?']")
-	private WebElement csm_UserAlreadyLoginPopUp;
-	public WebElement csm_UserAlreadyLoginPopUp()
-	{
-		return csm_UserAlreadyLoginPopUp;
-	}
-	
-	@FindBy(xpath="//a[@id='continueBtn']")
-	private WebElement csm_UserAlreadyLoginYes;
-	public WebElement csm_UserAlreadyLoginYes()
-	{
-		return csm_UserAlreadyLoginYes;
-	}
+		@FindBy(xpath="//td[text()='User already logged in with different session, force other session logout?']")
+		private WebElement csm_UserAlreadyLoginPopUp;
+		public WebElement csm_UserAlreadyLoginPopUp()
+		{
+			return csm_UserAlreadyLoginPopUp;
+		}
+		
+		@FindBy(xpath="//a[@id='continueBtn']")
+		private WebElement csm_UserAlreadyLoginYes;
+		public WebElement csm_UserAlreadyLoginYes()
+		{
+			return csm_UserAlreadyLoginYes;
+		}
 
 }

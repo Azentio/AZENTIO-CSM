@@ -32,7 +32,7 @@ public class ExcelTest {
 
 	public static void main(String[] args) {
 		
-		String path = System.getProperty("user.dir") + "\\Test-data\\KUBSTestData.xlsx";
+		String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
 		ExcelTest excelTest = new ExcelTest(path, "TestExecution", "TestCaseID");
 		List<String> testCaseTagsfromExcel = excelTest.getTestCaseTagsfromExcel();
 		for (String string : testCaseTagsfromExcel) {

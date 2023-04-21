@@ -28,7 +28,6 @@ public class NewExcelTestRunner {
 				"--glue", "stepdefinitions", "--plugin",
 				"pretty", "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"--plugin", "rerun:ReRunScenarios/FailedReRun.txt", "--tags", "@" + tags };
-
 		CucumberRunner.run(parameter, listSize, tagIndex);
 
 	}
@@ -51,7 +50,7 @@ public class NewExcelTestRunner {
 		for (String string : testCaseTagsFromExcel) {
 			ExcelTest excelTest2 = new ExcelTest(path, "TestExecution", "TestCaseID");
 			testCaseTagsFromExcel = excelTest2.getTestCaseTagsfromExcel();
-			System.out.println(string);
+			//System.out.println(string);
 			currentExecutionTag = string;
 			ExcelData testExecution = new ExcelData(path, "TestExecution", "TestCaseID");
 			testExecutionData = testExecution.getTestdata(string);
