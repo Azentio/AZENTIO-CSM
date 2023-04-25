@@ -234,3 +234,117 @@ And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
 Then verify system should not deduct the charges for the transaction
+@CW_019
+Scenario: Checking the waiver for SO suspend charges
+Given navigate to CSM application and login with valid credentials
+And click on Transaction module
+And click on maintenance scree under transaction module
+And get the test data for test case CW_19
+And enter the transaction type code in transaction
+And enter the debit branch code in tranaction
+And enter the debit currency code in tranaction
+And enter the debit GL code in transaction
+And enter the debit CIF code in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the debit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the currency code
+And enter the credit branch code in transaction
+And enter the credit gl code in transaction
+And enter the credit CIF number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the credit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the amount for deposite in transaction
+And give the ending date in transaction of SO
+And click on save button in transaction
+And click on server response ok button if exist
+And get the transaction number which is created now
+And close the transaction maintenance tab
+And get the test data for test case CW_19
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And close the memo alert in transaction screen
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction approve button
+And click on to be stopped screen under transaction module
+And search for the approved record in to be stopped search
+And select the approved record in to be stopped screen
+And close the memo alert in transaction screen
+And give the to be stopped reason
+And click on to Stop SO button
+And close the to be stopped tab
+And click on to stop so feature
+And search for the transation which was to be stopped
+And select the to be stopped transaction SO
+And close the memo alert in transaction screen
+And click on stop SO button
+And update the transaction number in test case CW_020
+Then verify system should through the validation for Charge waive for stopped record of SO
+@CW_020
+Scenario: Checking the waiver for SO reinstate charges
+Given navigate to CSM application and login with valid credentials
+And click on Transaction module
+And click on reactive standing order in transaction feature
+And get the test data for test case CW_020
+And search for the suspended record under reactive standing order
+And select the suspended standing order in reactive standing order
+And close the memo alert in transaction screen
+And click on reactive SO in reactive standing order feature
+And close the reactive SO feature
+And click on approve reactive standing order feature
+And search for reactivated SO in search view
+And select the reactvated record for approval
+And close the memo alert in transaction screen
+And click on apply reactive SO button in approve reactive SO
+Then verify system should show the validation for charge waiver for reactive SO
+@CW_021
+Scenario: Checking the waiver for SO amend charges
+Given navigate to CSM application and login with valid credentials
+And click on Transaction module
+And click on maintenance scree under transaction module
+And get the test data for test case CW_21
+And enter the transaction type code in transaction
+And enter the debit branch code in tranaction
+And enter the debit currency code in tranaction
+And enter the debit GL code in transaction
+And enter the debit CIF code in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the debit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the currency code
+And enter the credit branch code in transaction
+And enter the credit gl code in transaction
+And enter the credit CIF number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the credit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the amount for deposite in transaction
+And give the ending date in transaction of SO
+And click on save button in transaction
+And click on server response ok button if exist
+And get the transaction number which is created now
+And close the transaction maintenance tab
+And get the test data for test case CW_21
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And close the memo alert in transaction screen
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction approve tab
+And click on amend standing order feature
+And search for approved standing order in amend standing order
+And select the approved standing order in amend standing order
+And amend the amount in standing order record
+And 
