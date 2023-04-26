@@ -346,5 +346,67 @@ And close the transaction approve tab
 And click on amend standing order feature
 And search for approved standing order in amend standing order
 And select the approved standing order in amend standing order
+And close the memo alert in transaction screen
 And amend the amount in standing order record
-And 
+And click on amend SO button in amend standing order
+And click on ok button for updation in amend standng order
+And close the amend staning order tab
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And close the memo alert in transaction screen
+And click on approve button
+Then verify system should show the validatio for charge waiver under approve for amend standing order
+And click on ok button after approve the transaction record
+@CW_022
+Scenario: Checking the waiver for SO close charges
+Given navigate to CSM application and login with valid credentials
+And click on Transaction module
+And click on maintenance scree under transaction module
+And get the test data for test case CW_22
+And enter the transaction type code in transaction
+And enter the debit branch code in tranaction
+And enter the debit currency code in tranaction
+And enter the debit GL code in transaction
+And enter the debit CIF code in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the debit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the currency code
+And enter the credit branch code in transaction
+And enter the credit gl code in transaction
+And enter the credit CIF number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the credit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the amount for deposite in transaction
+And give the ending date in transaction of SO
+And click on save button in transaction
+And click on server response ok button if exist
+And get the transaction number which is created now
+And close the transaction maintenance tab
+And get the test data for test case CW_22
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And close the memo alert in transaction screen
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction approve tab
+And click on to be closed standing order feature
+And search for approved transaction in to be closed standing order
+And select the transaction in to be closed standing order
+And close the memo alert in transaction screen
+And enter the reason for close the standing order
+And click on to close SO button
+And close the to be close SO label
+And click on close SO feature
+And search for To be closed SO Records in close SO
+And select the to be closed SO in close SO
+And close the memo alert in transaction screen
+And click on close SO button
+Then verify system should show the validation for charge waiver for clos standing order

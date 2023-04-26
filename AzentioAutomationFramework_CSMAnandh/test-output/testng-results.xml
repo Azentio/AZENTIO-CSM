@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-25T16:27:53 IST" name="Default suite" finished-at="2023-04-25T16:32:44 IST" duration-ms="291106">
+  <suite started-at="2023-04-26T18:07:28 IST" name="Default suite" finished-at="2023-04-26T18:12:25 IST" duration-ms="296387">
     <groups>
     </groups>
-    <test started-at="2023-04-25T16:27:53 IST" name="Default test" finished-at="2023-04-25T16:32:44 IST" duration-ms="291106">
+    <test started-at="2023-04-26T18:07:28 IST" name="Default test" finished-at="2023-04-26T18:12:25 IST" duration-ms="296387">
       <class name="Runner.NewExcelTestRunner">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@4d18aa28]" started-at="2023-04-25T16:27:53 IST" name="beforeTest" finished-at="2023-04-25T16:27:54 IST" duration-ms="1056" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@4d18aa28]" started-at="2023-04-26T18:07:28 IST" name="beforeTest" finished-at="2023-04-26T18:07:29 IST" duration-ms="968" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@4d18aa28]" started-at="2023-04-25T16:27:55 IST" name="test" finished-at="2023-04-25T16:32:44 IST" duration-ms="289897" status="PASS">
+        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@4d18aa28]" started-at="2023-04-26T18:07:29 IST" name="test" finished-at="2023-04-26T18:12:25 IST" duration-ms="295266" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@4d18aa28]" started-at="2023-04-25T16:32:44 IST" name="afterTest" finished-at="2023-04-25T16:32:44 IST" duration-ms="62" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@4d18aa28]" started-at="2023-04-26T18:12:25 IST" name="afterTest" finished-at="2023-04-26T18:12:25 IST" duration-ms="85" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

@@ -83,6 +83,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
+	@And("^get the test data for test case CW_22$")
+	public void get_the_test_data_for_test_case_cw22() throws Throwable {
+		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_022");
+		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
 	@And("^change the system date to less waiver date which is configured$")
 	public void change_the_system_date_to_less_waiver_date_which_is_configured() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
@@ -639,6 +645,15 @@ public class CSM_TransactionSteps extends BaseClass {
 		}
 	}
 
+	@Then("^verify system should show the validatio for charge waiver under approve for amend standing order$")
+	public void verify_system_should_show_the_validatio_for_charge_waiver_under_approve_for_amend_standing_order()
+			throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionChargeValidation());
+		Assert.assertTrue(transactionObj.transactionChargeValidation().isDisplayed());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionChargeValidation());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionChargeValidation());
+	}
+
 	@And("^click on ok button after approve the transaction record$")
 	public void click_on_ok_button_after_approve_the_transaction_record() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionApproveOkButton());
@@ -1156,5 +1171,208 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.doubleClick(transactionObj.transactionDepositeAmountInputBox());
 		transactionObj.transactionDepositeAmountInputBox().sendKeys(transactionTestData.get("Amend Amount"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.amendStandingOrderLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.amendStandingOrderLabel());
+		clicksAndActionsHelper.doubleClick(transactionObj.amendStandingOrderLabel());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
 	}
+
+	@And("^click on amend SO button in amend standing order$")
+	public void click_on_amend_so_button_in_amend_standing_order() throws Throwable {
+		javascriptHelper.scrollIntoView(transactionObj.amendStandingOrderAmendStandingOrderButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.amendStandingOrderAmendStandingOrderButton());
+		clicksAndActionsHelper.doubleClick(transactionObj.amendStandingOrderAmendStandingOrderButton());
+	}
+
+	@And("^click on ok button for updation in amend standng order$")
+	public void click_on_ok_button_for_updation_in_amend_standng_order() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmConfirmUpdateOkButon());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmConfirmUpdateOkButon());
+		clicksAndActionsHelper.doubleClick(csmCommonWebElements.csmConfirmUpdateOkButon());
+	}
+
+	@And("^close the amend staning order tab$")
+	public void close_the_amend_staning_order_tab() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionTypeInputDescription());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (transactionObj.transactionTransactionTypeInputDescription().getAttribute("prevvalue").isBlank()) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+
+		}
+		for (int i = 0; i <= 100; i++) {
+			try {
+				clicksAndActionsHelper.clickOnElement(transactionObj.amendStandingOrderTabCloseButton());
+				clicksAndActionsHelper.doubleClick(transactionObj.amendStandingOrderTabCloseButton());
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("^click on to be closed standing order feature$")
+	public void click_on_to_be_closed_standing_order_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionToBeClosedStandingOrderFeature());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionToBeClosedStandingOrderFeature());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionToBeClosedStandingOrderFeature());
+	}
+
+	@And("^search for approved transaction in to be closed standing order$")
+	public void search_for_approved_transaction_in_to_be_closed_standing_order() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo().sendKeys(transactionTestData.get("Transaction Number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^select the transaction in to be closed standing order$")
+	public void select_the_transaction_in_to_be_closed_standing_order() throws Throwable {
+		String xpath = "//td[contains(text(),'" + transactionTestData.get("Transaction Number") + "')]";
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^enter the reason for close the standing order$")
+	public void enter_the_reason_for_close_the_standing_order() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.toBeClosedStandingOrderReason());
+				clicksAndActionsHelper.moveToElement(transactionObj.toBeClosedStandingOrderReason());
+				clicksAndActionsHelper.clickOnElement(transactionObj.toBeClosedStandingOrderReason());
+				transactionObj.toBeClosedStandingOrderReason().sendKeys(transactionTestData.get("Close Reason"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("^click on to close SO button$")
+	public void click_on_to_close_so_button() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.toBeClosedStandingOrderToCloseSOButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.toBeClosedStandingOrderToCloseSOButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.toBeClosedStandingOrderToCloseSOButton());
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionTypeInputDescription());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (transactionObj.transactionTransactionTypeInputDescription().getAttribute("prevvalue").isBlank()) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+
+		}
+	}
+
+	@And("^close the to be close SO label$")
+	public void close_the_to_be_close_so_label() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.toBeClosedStandingOrderLabelCloseButton());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.toBeClosedStandingOrderLabelCloseButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.toBeClosedStandingOrderLabelCloseButton());
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("^click on close SO feature$")
+	public void click_on_close_so_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionCloseStandingOrderFeature());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionCloseStandingOrderFeature());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionCloseStandingOrderFeature());
+	}
+
+	@And("^search for To be closed SO Records in close SO$")
+	public void search_for_to_be_closed_so_records_in_close_so() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo().sendKeys(transactionTestData.get("Transaction Number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^select the to be closed SO in close SO$")
+	public void select_the_to_be_closed_so_in_close_so() throws Throwable {
+		String xpath = "//td[contains(text(),'" + transactionTestData.get("Transaction Number") + "')]";
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^click on close SO button$")
+	public void click_on_close_so_button() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.closeStandingOrderCloseSOButton());
+				clicksAndActionsHelper.moveToElement(transactionObj.closeStandingOrderCloseSOButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.closeStandingOrderCloseSOButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("^verify system should show the validation for charge waiver for clos standing order$")
+	public void verify_system_should_show_the_validation_for_charge_waiver_for_clos_standing_order() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionChargeValidation());
+		Assert.assertTrue(transactionObj.transactionChargeValidation().isDisplayed());
+	}
+
 }

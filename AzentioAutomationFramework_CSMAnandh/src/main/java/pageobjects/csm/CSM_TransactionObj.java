@@ -186,7 +186,7 @@ public class CSM_TransactionObj {
 		return transaction_ServerResponsePopupOkButton;
 	}
 
-	@FindBy(xpath = "//input[@id='amount_D001MT']")
+	@FindBy(xpath = "//input[@name='trxMgntCO.ctstrsVO.AMOUNT']")
 	private WebElement transaction_DepositeAmountInputBox;
 
 	public WebElement transactionDepositeAmountInputBox() {
@@ -345,6 +345,53 @@ public class CSM_TransactionObj {
 	{
 		return transactionApprove_CloseButton;
 	}
-	
+	@FindBy(xpath="//a[contains(text(),'Transactions / Amend Standing Order')]//parent::td//following-sibling::td//span")
+	private WebElement amendStandingOrderTab_CloseButton;
+	public WebElement amendStandingOrderTabCloseButton()
+	{
+		return amendStandingOrderTab_CloseButton;
+	}
+	@FindBy(xpath="//a[contains(text(),'Transactions / Amend Standing Order')]")
+	private WebElement amendStandingOrder_Label;
+	public WebElement amendStandingOrderLabel()
+	{
+		return amendStandingOrder_Label;
+	}
+	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Close Standing Order']")
+	private WebElement transaction_CloseStandingOrderFeature;
+	public WebElement transactionCloseStandingOrderFeature()
+	{
+		return transaction_CloseStandingOrderFeature;
+	}
+	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='To Be Closed Standing Order']")
+	private WebElement transaction_ToBeClosedStandingOrderFeature;
+	public WebElement transactionToBeClosedStandingOrderFeature()
+	{
+		return transaction_ToBeClosedStandingOrderFeature;
+	}
+	@FindBy(xpath="//a[contains(text(),'Transactions / To Be Closed Standing Order')]//parent::td//following-sibling::td//span")
+	private WebElement toBeClosedStandingOrderLabel_CloseButton;
+	public WebElement toBeClosedStandingOrderLabelCloseButton()
+	{
+		return toBeClosedStandingOrderLabel_CloseButton;
+	}
+	@FindBy(xpath="//textarea[@name='trxMgntCO.statusReason']")
+	private WebElement toBeClosedStandingOrder_Reason;
+	public WebElement toBeClosedStandingOrderReason()
+	{
+		return toBeClosedStandingOrder_Reason;
+	}
+	@FindBy(xpath="//span[contains(text(),' To Close SO ')]//parent::button")
+	private WebElement toBeClosedStandingOrder_ToCloseSOButton;
+	public WebElement toBeClosedStandingOrderToCloseSOButton()
+	{
+		return toBeClosedStandingOrder_ToCloseSOButton;
+	}
+	@FindBy(xpath="//span[contains(text(),'Close SO')]//parent::button")
+	private WebElement closeStandingOrder_CloseSOButton;
+	public WebElement closeStandingOrderCloseSOButton()
+	{
+		return closeStandingOrder_CloseSOButton;
+	}
 	
 }

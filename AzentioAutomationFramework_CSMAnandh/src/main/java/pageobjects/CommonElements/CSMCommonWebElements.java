@@ -182,6 +182,12 @@ public class CSMCommonWebElements {
 	{
 		return update_OkButton;
 	}
+	@FindBy(xpath="//div[contains(text(),'Confirm update process')]//parent::div//following-sibling::center//input[1]")
+	private WebElement csm_ConfirmUpdateOkButon;
+	public WebElement csmConfirmUpdateOkButon()
+	{
+		return csm_ConfirmUpdateOkButon;
+	}
 	@FindBy(xpath="//span[contains(text(),'Close')]//parent::button")
 	private WebElement close_OkButton;
 	public WebElement closeOkButton()

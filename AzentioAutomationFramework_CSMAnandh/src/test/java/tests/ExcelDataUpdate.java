@@ -7,8 +7,9 @@ public class ExcelDataUpdate {
 	{
 		String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 		ExcelData exelDataForGeneralLedger = new ExcelData(testDataPath, "ChargeWaiverExecutionTracker", "TestCaseID");
-		exelDataForGeneralLedger.updateTestData("CW_019", "ExecuteYes/No", "Yes");
-		exelDataForGeneralLedger.updateTestData("CW_020", "ExecuteYes/No", "Yes");
+		exelDataForGeneralLedger.updateTestData("CW_019", "ExecuteYes/No", "No");
+		exelDataForGeneralLedger.updateTestData("CW_020", "ExecuteYes/No", "No");
+		exelDataForGeneralLedger.updateTestData("CW_021", "ExecuteYes/No", "Yes");
 		/*exelDataForGeneralLedger.updateTestData("CW_002", "ExecuteYes/No", "Yes");
 		exelDataForGeneralLedger.updateTestData("CW_003", "ExecuteYes/No", "Yes");
 		exelDataForGeneralLedger.updateTestData("CW_004", "ExecuteYes/No", "Yes");
