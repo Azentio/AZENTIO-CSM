@@ -393,5 +393,22 @@ public class CSM_TransactionObj {
 	{
 		return closeStandingOrder_CloseSOButton;
 	}
-	
+	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Cancel']")
+	private WebElement transaction_cancelFeature;
+	public WebElement transactinCancelFeature()
+	{
+		return transaction_cancelFeature;
+	}
+	@FindBy(xpath="//select[@name='trxMgntCO.ctstrsVO.VOID_REASON']")
+	private WebElement cancel_CancelReasonDropdown;
+	public WebElement cancelCancelReasonDropdown()
+	{
+		return cancel_CancelReasonDropdown;
+	}
+    @FindBy(xpath="//span[contains(text(),'Cancel')]//parent::button")
+	private WebElement cancel_CancelButton;
+	public WebElement cancelCancelButton()
+	{
+		return cancel_CancelButton;
+	}
 }

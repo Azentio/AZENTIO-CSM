@@ -12,6 +12,7 @@ import org.testng.Assert;
 
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
+import helper.DropDownHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
@@ -27,6 +28,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	CSM_TransactionObj transactionObj = new CSM_TransactionObj(driver);
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
+	DropDownHelper dropdownHelper = new DropDownHelper(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData excelDataForChargeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 	ExcelData excelDataForTransWaiver = new ExcelData(path, "CSM_Transaction", "DataSet ID");
@@ -86,6 +88,12 @@ public class CSM_TransactionSteps extends BaseClass {
 	@And("^get the test data for test case CW_22$")
 	public void get_the_test_data_for_test_case_cw22() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_022");
+		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case CW_23$")
+	public void get_the_test_data_for_test_case_cw23() throws Throwable {
+		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_023");
 		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
@@ -1373,6 +1381,78 @@ public class CSM_TransactionSteps extends BaseClass {
 	public void verify_system_should_show_the_validation_for_charge_waiver_for_clos_standing_order() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionChargeValidation());
 		Assert.assertTrue(transactionObj.transactionChargeValidation().isDisplayed());
+	}
+
+	@And("^click on cancel feature under transaction$")
+	public void click_on_cancel_feature_under_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactinCancelFeature());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactinCancelFeature());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactinCancelFeature());
+
+	}
+
+	@And("^search for approved record under cancel$")
+	public void search_for_approved_record_under_cancel() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo().sendKeys(transactionTestData.get("Transaction Number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^select the approved record in cancel feature$")
+	public void select_the_approved_record_in_cancel_feature() throws Throwable {
+		String xpath = "//td[contains(text(),'" + transactionTestData.get("Transaction Number") + "')]";
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^select the cancel reason$")
+	public void select_the_cancel_reason() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.cancelCancelReasonDropdown());
+		dropdownHelper.SelectUsingVisibleText(transactionObj.cancelCancelReasonDropdown(),
+				transactionTestData.get("Cancel Reason"));
+	}
+
+	@And("^click on cancel button under cancel feature$")
+	public void click_on_cancel_button_under_cancel_feature() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.cancelCancelButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.cancelCancelButton());
+				clicksAndActionsHelper.doubleClick(transactionObj.cancelCancelButton());
+				break;
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Then("^verify system should show the validation for charge waiver in transaction cance$")
+	public void verify_system_should_show_the_validation_for_charge_waiver_in_transaction_cance() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionChargeValidation());
+		Assert.assertTrue(transactionObj.transactionChargeValidation().isDisplayed());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionChargeValidation());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionChargeValidation());
 	}
 
 }

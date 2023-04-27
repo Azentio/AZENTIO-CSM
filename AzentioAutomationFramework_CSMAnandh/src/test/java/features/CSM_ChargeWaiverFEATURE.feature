@@ -410,3 +410,48 @@ And select the to be closed SO in close SO
 And close the memo alert in transaction screen
 And click on close SO button
 Then verify system should show the validation for charge waiver for clos standing order
+@CW_023
+Scenario: Checking on the waiver for Cancellation of a transaction charges
+Given navigate to CSM application and login with valid credentials
+And click on Transaction module
+And click on maintenance scree under transaction module
+And get the test data for test case CW_23
+And enter the transaction type code in transaction
+And enter the debit branch code in tranaction
+And enter the debit currency code in tranaction
+And enter the debit GL code in transaction
+And enter the debit CIF code in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the debit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the currency code
+And enter the credit branch code in transaction
+And enter the credit gl code in transaction
+And enter the credit CIF number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the credit serial number in transaction
+And click on ok button of dormant account error in transaction screen
+And close the memo alert in transaction screen
+And enter the amount for deposite in transaction
+And give the ending date in transaction of SO
+And click on save button in transaction
+And click on server response ok button if exist
+And get the transaction number which is created now
+And close the transaction maintenance tab
+And get the test data for test case CW_23
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And close the memo alert in transaction screen
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction approve tab
+And click on cancel feature under transaction
+And search for approved record under cancel
+And select the approved record in cancel feature
+And select the cancel reason
+And click on cancel button under cancel feature
+Then verify system should show the validation for charge waiver in transaction cance
