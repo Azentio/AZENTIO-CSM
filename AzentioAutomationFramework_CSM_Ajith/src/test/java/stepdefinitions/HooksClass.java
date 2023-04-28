@@ -1,16 +1,19 @@
 package stepdefinitions;
 
 import java.io.IOException;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
+import org.junit.Assume;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import com.aventstack.extentreports.Status;
 
+import Runner.NewExcelTestRunner;
 import dataProvider.ExcelData;
 import helper.ScreenshotHelper;
 import io.cucumber.java.After;
@@ -35,14 +38,14 @@ public class HooksClass extends BaseClass {
 	@Before
 	public void browserSetup(Scenario scenario) throws IOException {
 		status=true;
-//		// get flag status from excel and skip the test cases
-//		if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No").equalsIgnoreCase("No")) {
-//			String currentExecutionTag = NewExcelTestRunner.getCurrentExecutionTag();
-//			System.out.println(currentExecutionTag);
-//			status=false;
-//			Assume.assumeTrue(false);
-//			
-//		}
+		// get flag status from excel and skip the test cases
+		if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No").equalsIgnoreCase("No")) {
+			String currentExecutionTag = NewExcelTestRunner.getCurrentExecutionTag();
+			System.out.println(currentExecutionTag);
+			status=false;
+			Assume.assumeTrue(false);
+			
+		}
 		
 		driver = initializeDriver();
 		System.out.println("Driver Initiated");
@@ -76,20 +79,24 @@ public class HooksClass extends BaseClass {
 
 				// change flag to "No" for dependent scenarios in excel when main Scenario got
 				// failed
-//				  for (int i = 1; i <testCaseTagsFromExcel.size(); i++) { testExecutionData =
-//				  testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
-//				  Collection<String> values = testExecutionData.values();
-//				  values.remove(NewExcelTestRunner.getCurrentExecutionTag()); if
-//				  (values.contains(testCaseTagsFromExcel.get(i))) {
-//				  testExecution.updateTestData(testCaseTagsFromExcel.get(i),"ExecuteYes/No",
-//				  "No");
+				  for (int i = 1; i <testCaseTagsFromExcel.size(); i++) { testExecutionData =
+				  testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag());
+				  Collection<String> values = testExecutionData.values();
+				  values.remove(NewExcelTestRunner.getCurrentExecutionTag()); if
+				  (values.contains(testCaseTagsFromExcel.get(i))) {
+				  testExecution.updateTestData(testCaseTagsFromExcel.get(i),"ExecuteYes/No",
+				  "No");
 				}
 				  
 				  }
 				 
 
 			}
-		
-		
+		}
 	}
+}
+	
+		
+		
+	
 			

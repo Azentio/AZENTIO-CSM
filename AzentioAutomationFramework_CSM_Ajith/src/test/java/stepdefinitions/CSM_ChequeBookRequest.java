@@ -52,6 +52,31 @@ public class CSM_ChequeBookRequest extends BaseClass{
     	testExecutionData = testExecution.getTestdata("CHB_002");
     	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
     }
+    @And("^User update Test data id for checking if the user is able approve cancellation reversal throught alert$")
+    public void user_update_test_data_id_for_checking_if_the_user_is_able_approve_cancellation_reversal_throught_alert() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_036");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
+
+    @And("^User update Test data id for checking if the user is able reject cancellation reversal throught alert$")
+    public void user_update_test_data_id_for_checking_if_the_user_is_able_reject_cancellation_reversal_throught_alert() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_037");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
+    
+    @And("^User update Test data id for checking if the user is able to reverse cancellation with batch record$")
+    public void user_update_test_data_id_for_checking_if_the_user_is_able_to_reverse_cancellation_with_batch_record() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_038");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
+    
+    @And("^User update Test data id for checking if the user is able to approve reverse cancellation with batch record$")
+    public void user_update_test_data_id_for_checking_if_the_user_is_able_to_approve_reverse_cancellation_with_batch_record() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_039");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
+
+    
 	@Then("^User Validate the suspended chequebook record in Cheque book Request Maintenance Screen$")
     public void user_validate_the_suspended_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.suspendRecordValidationInCBMaintenance());
@@ -569,6 +594,298 @@ public class CSM_ChequeBookRequest extends BaseClass{
 		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.submitButton());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.submitButton());
     }
+ //************************************Reversal Cancellation **************************************************************//
+    @And("^User Click To Reverse Cancellation Sub Menu$")
+    public void user_click_to_reverse_cancellation_sub_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.toReverseCancellationSubMenu());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.toReverseCancellationSubMenu());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.toReverseCancellationSubMenu());  
+    }
+    @And("^User Search the chequebook code in To Reverse Cancellation Screen$")
+    public void user_search_the_chequebook_code_in_to_reverse_cancellation_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.searchChequeBookCodeInToReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInToReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInToReverseCancellationScreen());
+		chequeBookRequestObj.searchChequeBookCodeInToReverseCancellationScreen().sendKeys(testData.get("ChequeBookCode"));
+		chequeBookRequestObj.searchChequeBookCodeInToReverseCancellationScreen().sendKeys(Keys.ENTER);
+    }
+
+    @And("^User Select the chequebook code in To Reverse Cancellation Screen$")
+    public void user_select_the_chequebook_code_in_to_reverse_cancellation_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.selectChequeBookCodeInToReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.selectChequeBookCodeInToReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().doubleClick(chequeBookRequestObj.selectChequeBookCodeInToReverseCancellationScreen());
+		
+    }
+
+    @And("^User Click Reverse button in To Reverse Cancellation Screen$")
+    public void user_click_reverse_button_in_to_reverse_cancellation_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.reverseButtonInToReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.reverseButtonInToReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.reverseButtonInToReverseCancellationScreen());
+    }
+
+    @And("^User Click Approve Cancellation Reversal Sub Menu$")
+    public void user_click_approve_cancellation_reversal_sub_menu() throws Throwable {
+    	for (int i = 0; i <200; i++) {
+			try {
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.reverseButtonInToReverseCancellationScreen());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.reverseButtonInToReverseCancellationScreen());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+    }
+
+    @And("^User Search the chequebook code in Approve Cancellation Reversal Screen$")
+    public void user_search_the_chequebook_code_in_approve_cancellation_reversal_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.searchChequeBookCodeInApproveCancellationReversalScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInApproveCancellationReversalScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInApproveCancellationReversalScreen());
+		chequeBookRequestObj.searchChequeBookCodeInApproveCancellationReversalScreen().sendKeys(testData.get("ChequeBookCode"));
+		chequeBookRequestObj.searchChequeBookCodeInApproveCancellationReversalScreen().sendKeys(Keys.ENTER);
+    }
+
+    @And("^User Select the chequebook code in Approve Cancellation Reversal Screen$")
+    public void user_select_the_chequebook_code_in_approve_cancellation_reversal_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.selectChequeBookCodeInApproveCancellationReversalScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.selectChequeBookCodeInApproveCancellationReversalScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.selectChequeBookCodeInApproveCancellationReversalScreen());
+    }
+
+    @And("^User Click Reverse button in Approve Cancellation Reversal Screen$")
+    public void user_click_reverse_button_in_approve_cancellation_reversal_screen() throws Throwable {
+    	for (int i = 0; i <200; i++) {
+			try {
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.reverseButtonInApproveCancellationReversalScreen());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.reverseButtonInApproveCancellationReversalScreen());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+    }
+    @Then("^User Validate the Reversed Cancellation chequebook record in Cheque book Request Maintenance Screen$")
+    public void user_validate_the_reversed_cancellation_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		chequeBookRequestObj.searchChequeBookCodeInCBMaintenance().sendKeys(testData.get("ChequeBookCode"));
+		String xpath ="//td[text()='"+testData.get("ChequeBookCode")+"']";
+		for (int i = 0; i <200; i++) {
+			try {
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+				
+			} catch (Exception e) {
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.findButtonInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.findButtonInCBMaintenance());
+			}
+			
+		}
+		
+    }
+    
+
+    @And("^User Search the Reversed Cancellation chequebook code in Cheque book Request Maintenance Screen$")
+    public void user_search_the_reversed_cancellation_chequebook_code_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.toReverseCancellationRecordValidationInCBMaintenance());
+		Assert.assertTrue(chequeBookRequestObj.toReverseCancellationRecordValidationInCBMaintenance().isDisplayed());
+    }
+    
+    @Then("^User Validate the To be Cancelled chequebook record in Cheque book Request Maintenance Screen$")
+    public void user_validate_the_to_be_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		chequeBookRequestObj.searchChequeBookCodeInCBMaintenance().sendKeys(testData.get("ChequeBookCode"));
+		String xpath ="//td[text()='"+testData.get("ChequeBookCode")+"']";
+		for (int i = 0; i <200; i++) {
+			try {
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+				
+			} catch (Exception e) {
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.findButtonInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.findButtonInCBMaintenance());
+			}
+			
+		}
+    }
+
+    @And("^User Search the To be Cancelled  chequebook code in Cheque book Request Maintenance Screen$")
+    public void user_search_the_to_be_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.toBeCancelledRecordValidationInCBMaintenance());
+		Assert.assertTrue(chequeBookRequestObj.toBeCancelledRecordValidationInCBMaintenance().isDisplayed());
+    }
+
+    @And("^User Click Approve button in Send Alert To Reverse Cancellation Screen$")
+    public void user_click_approve_button_in_send_alert_to_reverse_cancellation_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.approveButtonInSendAlertReverseCancellationScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.approveButtonInSendAlertReverseCancellationScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.approveButtonInSendAlertReverseCancellationScreen());
+    }
+
+    @And("^User Enter BM User Name in User Information pop up$")
+    public void user_enter_bm_user_name_in_user_information_pop_up() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.userNameInUserInformatioPopUp());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.userNameInUserInformatioPopUp());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.userNameInUserInformatioPopUp());
+		chequeBookRequestObj.userNameInUserInformatioPopUp().sendKeys(testData.get("ChequeBookCode"));
+		
+    }
+
+    @And("^User Enter BM Password in User Information pop up$")
+    public void user_enter_bm_password_in_user_information_pop_up() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.passwordInUserInformatioPopUp());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.passwordInUserInformatioPopUp());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.passwordInUserInformatioPopUp());
+		chequeBookRequestObj.passwordInUserInformatioPopUp().sendKeys(testData.get("ChequeBookCode"));
+		
+    }
+
+    @And("^User Click Submit button in User Information pop up$")
+    public void user_click_submit_button_in_user_information_pop_up() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.submitButtonInUserInformatioPopUp());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.submitButtonInUserInformatioPopUp());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.submitButtonInUserInformatioPopUp());
+    }
+
+    @And("^User Click Approve button in approve item pop up$")
+    public void user_click_approve_button_in_approve_item_pop_up() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.approveButtonInApproveItemPopUp());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.approveButtonInApproveItemPopUp());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.approveButtonInApproveItemPopUp());
+    }
+    @And("^User Click Reject button in approve item pop up$")
+    public void user_click_reject_button_in_approve_item_pop_up() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectButtonInApproveItemPopUp());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectButtonInApproveItemPopUp());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectButtonInApproveItemPopUp());
+    }
+    
+    @And("^User Click To Reverse Cancellation Batch Sub Menu$")
+    public void user_click_to_reverse_cancellation_batch_sub_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.toReverseCancellationBatchSubMenu());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.toReverseCancellationBatchSubMenu());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.toReverseCancellationBatchSubMenu());
+    }
+
+    @And("^User Click the Retrieve button in To Reverse Cancellation Batch Screen$")
+    public void user_click_the_retrieve_button_in_to_reverse_cancellation_batch_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.retrievebuttonInToReverseCancellationBatchScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.retrievebuttonInToReverseCancellationBatchScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.retrievebuttonInToReverseCancellationBatchScreen());
+    }
+
+    @And("^User Select the Chequebook code in To Reverse Cancellation Batch Screen$")
+    public void user_select_the_chequebook_code_in_to_reverse_cancellation_batch_screen() throws Throwable {
+        String xpath = "//td[text()='"+testData.get("ChequeBookCode")+"']/preceding-sibling::td[@id='td_chequeBookBulkCancelGridTbl_Id_Q000BTQ_0_cb']/input";
+        for (int i = 0; i < 200; i++) {
+        	try {
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+    }
+
+    @And("^User Click Reverse button in To Reverse Cancellation Batch Screen$")
+    public void user_click_reverse_button_in_to_reverse_cancellation_batch_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.reversebuttonInToReverseCancellationBatchScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.reversebuttonInToReverseCancellationBatchScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.reversebuttonInToReverseCancellationBatchScreen());  
+    }
+    
+    @Then("^User Validate the To Reverse Cancellation chequebook record in Cheque book Request Maintenance Screen$")
+    public void user_validate_the_to_reverse_cancellation_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		chequeBookRequestObj.searchChequeBookCodeInCBMaintenance().sendKeys(testData.get("ChequeBookCode"));
+		String xpath ="//td[text()='"+testData.get("ChequeBookCode")+"']";
+		for (int i = 0; i <200; i++) {
+			try {
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+				
+			} catch (Exception e) {
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.findButtonInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.findButtonInCBMaintenance());
+			}
+			
+		}
+    }
+
+    @And("^User Search To Reverse Cancellation chequebook code in Cheque book Request Maintenance Screen$")
+    public void user_search_to_reverse_cancellation_chequebook_code_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.toReverseCancellationRecordValidationInCBMaintenance());
+		Assert.assertTrue(chequeBookRequestObj.toReverseCancellationRecordValidationInCBMaintenance().isDisplayed());
+    }
+    
+    @And("^User Click Approve Reversal of Cancellation Batch Sub Menu$")
+    public void user_click_approve_reversal_of_cancellation_batch_sub_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.approveReversalOfCancellationBatchSubMenu());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.approveReversalOfCancellationBatchSubMenu());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.approveReversalOfCancellationBatchSubMenu());
+    }
+
+    @And("^User Click the Retrieve button in Approve Reversal of Cancellation Batch Screen$")
+    public void user_click_the_retrieve_button_in_approve_reversal_of_cancellation_batch_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.retrieveButtonInApproveReversalOfCancellationBatchScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.retrieveButtonInApproveReversalOfCancellationBatchScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.retrieveButtonInApproveReversalOfCancellationBatchScreen());
+    }
+
+    @And("^User Select the Chequebook code in Approve Reversal of Cancellation Batch Screen$")
+    public void user_select_the_chequebook_code_in_approve_reversal_of_cancellation_batch_screen() throws Throwable {
+    	String xpath = "//td[text()='"+testData.get("ChequeBookCode")+"']/preceding-sibling::td[@id='td_chequeBookBulkCancelGridTbl_Id_Q000BAQ_0_cb']/input";
+        for (int i = 0; i < 200; i++) {
+        	try {
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+    }
+
+    @And("^User Click Approve Reverse button in Approve Reversal of Cancellation Batch Screen$")
+    public void user_click_approve_reverse_button_in_approve_reversal_of_cancellation_batch_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.approveReverseButtonInApproveReversalOfCancellationBatch());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.approveReverseButtonInApproveReversalOfCancellationBatch());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.approveReverseButtonInApproveReversalOfCancellationBatch());
+    }
+
 }
     
     

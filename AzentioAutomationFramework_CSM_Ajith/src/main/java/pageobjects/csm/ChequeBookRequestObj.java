@@ -213,6 +213,113 @@ public class ChequeBookRequestObj {
 		return submitButton;
 	}
 //************************************************************************************************************//
+//***************************************Reverse Cancellation*************************************************//
+	
+	@FindBy(id = "Q000TQ")
+	private WebElement toReverseCancellationSubMenu;
+
+	public WebElement toReverseCancellationSubMenu() {
+		return toReverseCancellationSubMenu;
+	}
+	
+	@FindBy(id = "chequeBookGridTbl_Id_Q000TQ_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInToReverseCancellationScreen;
+
+	public WebElement searchChequeBookCodeInToReverseCancellationScreen() {
+		return searchChequeBookCodeInToReverseCancellationScreen;
+	}
+	
+	@FindBy(id = "td_chequeBookGridTbl_Id_Q000TQ_1_ctschqbookVO.CODE")
+	private WebElement selectChequeBookCodeInToReverseCancellationScreen;
+
+	public WebElement selectChequeBookCodeInToReverseCancellationScreen() {
+		return selectChequeBookCodeInToReverseCancellationScreen;
+	}
+	
+	@FindBy(id = "chequeBookDefFormId_Q000TQ_reverse_key.CODE")
+	private WebElement reverseButtonInToReverseCancellationScreen;
+
+	public WebElement reverseButtonInToReverseCancellationScreen() {
+		return reverseButtonInToReverseCancellationScreen;
+	}
+	
+	@FindBy(id="Q000AQ")
+	private WebElement approveCancellationReversal;
+	public WebElement approveCancellationReversal() {
+		return approveCancellationReversal;
+	}
+	
+	@FindBy(id="chequeBookGridTbl_Id_Q000AQ_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInApproveCancellationReversalScreen;
+	public WebElement searchChequeBookCodeInApproveCancellationReversalScreen() {
+		return searchChequeBookCodeInApproveCancellationReversalScreen;
+	}
+	
+	@FindBy(id="chequeBookGridTbl_Id_Q000AQ_gs_ctschqbookVO.CODE")
+	private WebElement selectChequeBookCodeInApproveCancellationReversalScreen;
+	public WebElement selectChequeBookCodeInApproveCancellationReversalScreen() {
+		return selectChequeBookCodeInApproveCancellationReversalScreen;
+	}
+	
+	@FindBy(id="chequeBookDefFormId_Q000AQ_reverse_key")
+	private WebElement reverseButtonInApproveCancellationReversalScreen;
+	public WebElement reverseButtonInApproveCancellationReversalScreen() {
+		return reverseButtonInApproveCancellationReversalScreen;
+	}
+	@FindBy(id="approveBut_Q000TQ")
+	private WebElement approveButtonInSendAlertReverseCancellationScreen;
+	public WebElement approveButtonInSendAlertReverseCancellationScreen() {
+		return approveButtonInSendAlertReverseCancellationScreen;
+	}
+	
+	@FindBy(id="usr_name_alert_Q000TQ")
+	private WebElement userNameInUserInformatioPopUp;
+	public WebElement userNameInUserInformatioPopUp() {
+		return userNameInUserInformatioPopUp;
+	}
+	@FindBy(xpath="//label[@id='ApproveAlertsForm_Q000TQ_password_key']/parent::td/following-sibling::td//input")
+	private WebElement passwordInUserInformatioPopUp;
+	public WebElement passwordInUserInformatioPopUp() {
+		return passwordInUserInformatioPopUp;
+	}
+	
+	@FindBy(id="sendButtonForApprove_Q000TQ")
+	private WebElement submitButtonInUserInformatioPopUp;
+	public WebElement submitButtonInUserInformatioPopUp() {
+		return submitButtonInUserInformatioPopUp;
+	}
+	
+	@FindBy(id="alertsOpenItemApprove_Q000TQ")
+	private WebElement approveButtonInApproveItemPopUp;
+	public WebElement approveButtonInApproveItemPopUp() {
+		return approveButtonInApproveItemPopUp;
+	}
+	
+	@FindBy(id="alertsOpenItemReject_Q000TQ")
+	private WebElement rejectButtonInApproveItemPopUp;
+	public WebElement rejectButtonInApproveItemPopUp() {
+		return rejectButtonInApproveItemPopUp;
+	}
+	
+	@FindBy(id="Q000BTQ")
+	private WebElement toReverseCancellationBatchSubMenu;
+	public WebElement toReverseCancellationBatchSubMenu() {
+		return toReverseCancellationBatchSubMenu;
+	}
+	
+	@FindBy(id="anchor_1440806148")
+	private WebElement retrievebuttonInToReverseCancellationBatchScreen;
+	public WebElement retrievebuttonInToReverseCancellationBatchScreen() {
+		return retrievebuttonInToReverseCancellationBatchScreen;
+	}
+	
+	
+	@FindBy(id="chequebookBulkCancel_to_reverse_cancel_Q000BTQ")
+	private WebElement reversebuttonInToReverseCancellationBatchScreen;
+	public WebElement reversebuttonInToReverseCancellationBatchScreen() {
+		return reversebuttonInToReverseCancellationBatchScreen;
+	}
+	
 	@FindBy(id="Q000SP")
 	private WebElement suspendScreen;
 	public WebElement suspendScreen() {
@@ -281,6 +388,12 @@ public class ChequeBookRequestObj {
 		return suspendRecordValidationInCBMaintenance;
 	}
 	
+	@FindBy(xpath="//td[text()='To be Cancelled']")
+	private WebElement toBeCancelledRecordValidationInCBMaintenance;
+	public WebElement toBeCancelledRecordValidationInCBMaintenance() {
+		return toBeCancelledRecordValidationInCBMaintenance;
+	}
+	
 	@FindBy(xpath="//td[text()='Cancelled']")
 	private WebElement cancelledRecordValidationInCBMaintenance;
 	public WebElement cancelledRecordValidationInCBMaintenance() {
@@ -295,6 +408,12 @@ public class ChequeBookRequestObj {
 	private WebElement destroyedRecordValidationInCBMaintenance;
 	public WebElement destroyedRecordValidationInCBMaintenance() {
 		return destroyedRecordValidationInCBMaintenance;
+	}
+	
+	@FindBy(xpath="//td[text()='To Reverse Cancellation']")
+	private WebElement toReverseCancellationRecordValidationInCBMaintenance;
+	public WebElement toReverseCancellationRecordValidationInCBMaintenance() {
+		return toReverseCancellationRecordValidationInCBMaintenance;
 	}
 	
 	@FindBy(id="Q000MT")
@@ -472,5 +591,25 @@ public class ChequeBookRequestObj {
 	{
 		return toBeDestroyed_Reason;
 	}
-
+		
+	@FindBy(id="Q000BAQ")
+	private WebElement approveReversalOfCancellationBatchSubMenu;
+	public WebElement approveReversalOfCancellationBatchSubMenu()
+	{
+		return approveReversalOfCancellationBatchSubMenu;
+	}
+		
+	@FindBy(id="anchor_463075865")
+	private WebElement retrieveButtonInApproveReversalOfCancellationBatchScreen;
+	public WebElement retrieveButtonInApproveReversalOfCancellationBatchScreen()
+	{
+		return retrieveButtonInApproveReversalOfCancellationBatchScreen;
+	}
+	
+	@FindBy(id="chequebookBulkCancel_approve_reverse_cancel_Q000BAQ")
+	private WebElement approveReverseButtonInApproveReversalOfCancellationBatch;
+	public WebElement approveReverseButtonInApproveReversalOfCancellationBatch()
+	{
+		return approveReverseButtonInApproveReversalOfCancellationBatch;
+	}
 }
