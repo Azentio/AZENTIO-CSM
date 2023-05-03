@@ -1,6 +1,7 @@
 package helper;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +16,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import pageobjects.Transaction_CAM;
 
 public class WaitHelper {
 	private WebDriver driver;
@@ -94,13 +97,13 @@ public class WaitHelper {
 		return element1;
 	}
 
-	public  WebElement waitForElementToVisibleWithFluentWait(WebDriver driver, WebElement element,int timeOut,int pollingTime) 
+	public  Boolean waitForElementToVisibleWithFluentWait(WebDriver driver, WebElement webElement,int timeOut,int pollingTime) 
 	 { 
 	 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
 	 .withTimeout(Duration.ofSeconds(timeOut)) 
 	 .pollingEvery(Duration.ofMillis(pollingTime))
 	 .ignoring(Exception.class);
-	 WebElement element1 = wait.until(ExpectedConditions.visibilityOf(element));
+	 Boolean element1 = wait.until(ExpectedConditions.invisibilityOf(webElement));
 	 return element1;
 	 }
 

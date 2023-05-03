@@ -80,5 +80,19 @@ public class CSMCommonWebElements {
 	{
 		return csm_logoutButton;
 	}
+	// user already login
+	@FindBy(xpath="//td[text()='User already logged in with different session, force other session logout?']")
+	private WebElement csm_UserAlreadyLoginPopUp;
+	public WebElement csm_UserAlreadyLoginPopUp()
+	{
+		return csm_UserAlreadyLoginPopUp;
+	}
+	
+	@FindBy(xpath="//a[@id='continueBtn']")
+	private WebElement csm_UserAlreadyLoginYes;
+	public WebElement csm_UserAlreadyLoginYes()
+	{
+		return csm_UserAlreadyLoginYes;
+	}
 
 }

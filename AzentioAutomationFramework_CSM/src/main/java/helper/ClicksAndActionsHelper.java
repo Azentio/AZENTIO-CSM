@@ -30,10 +30,10 @@ public class ClicksAndActionsHelper {
 		((JavascriptExecutor) driver).executeScript("arguments[0].click();", Element);
 		}
 	//Moving to element
-public void moveToElement(WebElement element) {
+public void moveToElement(WebElement string) {
 	Actions action = new Actions(driver);
 
-	action.moveToElement(element).perform();
+	action.scrollToElement(string).perform();
 	//ExtentTestManager.getTest().info("Moved to the element" +element);
 }
 	
