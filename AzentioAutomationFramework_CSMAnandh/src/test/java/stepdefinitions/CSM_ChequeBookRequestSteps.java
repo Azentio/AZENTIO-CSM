@@ -3,6 +3,7 @@ package stepdefinitions;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -27,11 +28,22 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	Map<String, String> chequeBookRequestTestData = new HashMap<>();
 	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
-	ExcelData excelDataForChargeWaiverExecution= new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
+	ExcelData excelDataForChargeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
+	ExcelData excelDataForCheuqeBookRequestExecution = new ExcelData(path, "CheuqeBookRequestExecutionTrack",
+			"TestCaseID");
+
 	@And("^get the test data for CW_002$")
 	public void get_the_test_data_for_cw002() throws Throwable {
-		chargeWaiverExecutionData=excelDataForChargeWaiverExecution.getTestdata("CW_002");
-		chequeBookRequestTestData = excelDataForChequeBookRequest.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_002");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_081$")
+	public void get_the_test_data_for_test_case_id_chb081() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_081");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^enter the number of cheque book in cheque book request$")
@@ -61,6 +73,52 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 			}
 		}
 
+	}
+
+	@And("^get the cheque from number and store it in excel data base$")
+	public void get_the_cheque_from_number_and_store_it_in_excel_data_base() throws Throwable {
+		String fromNumber = "";
+		for (int i = 0; i <= 500; i++) {
+			try {
+				fromNumber = javascriptHelper
+						.executeScript(
+								"return document.getElementsByName('chequeBookCO.ctschqbookVO.FROM_NUMBER')[0].value")
+						.toString();
+				if (!(fromNumber.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+		excelDataForChequeBookRequest.updateTestData(chequeBookRequestTestData.get("DataSet ID"), "Chequebook Number",
+				fromNumber);
+	}
+
+	@And("^get the cheque to number and store it in excel data base$")
+	public void get_the_cheque_to_number_and_store_it_in_excel_data_base() throws Throwable {
+		String toNumber = "";
+		for (int i = 0; i <= 500; i++) {
+			try {
+				toNumber = javascriptHelper
+						.executeScript(
+								"return document.getElementsByName('chequeBookCO.ctschqbookVO.NUMBER_TO')[0].value")
+						.toString();
+				if (!(toNumber.isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+		excelDataForChequeBookRequest.updateTestData(chequeBookRequestTestData.get("DataSet ID"),
+				"Chequebook To Number", toNumber);
 	}
 
 	@And("^enter the account branch code in cheque book request$")
@@ -146,9 +204,159 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 
 		}
 	}
-	@Then("^validate system should show the validation for charges have waiveds$")
-    public void validate_system_should_show_the_validation_for_charges_have_waiveds() throws Throwable {
-        Assert.fail("System not showing the validation due to issue");
-    }
 
+	@Then("^validate system should show the validation for charges have waiveds$")
+	public void validate_system_should_show_the_validation_for_charges_have_waiveds() throws Throwable {
+		Assert.fail("System not showing the validation due to issue");
+	}
+
+	@And("^click on ok button in signature warning pop up$")
+	public void click_on_ok_button_in_signature_warning_pop_up() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
+	}
+
+	@And("^close the cheuqebook request maintenance screen$")
+	public void close_the_cheuqebook_request_maintenance_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestMaintenanceTabClose());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestMaintenanceTabClose());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestMaintenanceTabClose());
+	}
+
+	@And("^click on to cancel feature under cheuqe book request feture$")
+	public void click_on_to_cancel_feature_under_cheuqe_book_request_feture() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestToCancelFeatrue());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestToCancelFeatrue());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestToCancelFeatrue());
+	}
+
+	@And("^search for currency code in to cancel feature$")
+	public void search_for_currency_code_in_to_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookrequestSearchAccountCurrency());
+		chequeBookRequestObj.chequeBookrequestSearchAccountCurrency().click();
+		chequeBookRequestObj.chequeBookrequestSearchAccountCurrency()
+				.sendKeys(chequeBookRequestTestData.get("Account Currency Code"));
+	}
+
+	@And("^search for gl in to cancel feature$")
+	public void search_for_gl_in_to_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequesstSearchGLCode());
+		chequeBookRequestObj.chequeBookRequesstSearchGLCode().click();
+		chequeBookRequestObj.chequeBookRequesstSearchGLCode()
+				.sendKeys(chequeBookRequestTestData.get("Account Gl code"));
+	}
+
+	@And("^search for CIF number in to cancel feature$")
+	public void search_for_cif_number_in_to_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchCIFNumber());
+		chequeBookRequestObj.chequebookRequestSearchCIFNumber().click();
+		chequeBookRequestObj.chequebookRequestSearchCIFNumber()
+				.sendKeys(chequeBookRequestTestData.get("Account CIF Code"));
+	}
+
+	@And("^search for serial number in to cancel feature$")
+	public void search_for_serial_number_in_to_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchSerialNumber());
+		chequeBookRequestObj.chequebookRequestSearchSerialNumber().click();
+		chequeBookRequestObj.chequebookRequestSearchSerialNumber()
+				.sendKeys(chequeBookRequestTestData.get("Account Serial Number"));
+	}
+
+	@And("^store the request number in excel database$")
+	public void store_the_request_number_in_excel_database() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestGridRequestNumber());
+		String requestNumber = chequeBookRequestObj.chequebookRequestGridRequestNumber().getText();
+		excelDataForChequeBookRequest.updateTestData(chequeBookRequestTestData.get("DataSet ID"),
+				"ChequeBook Request Number", requestNumber);
+
+	}
+
+	@And("^select the record from suggestion of cheque book to cancel$")
+	public void select_the_record_from_suggestion_of_cheque_book_to_cancel() throws Throwable {
+		String xpath = "(//td[contains(text(),'" + chequeBookRequestTestData.get("Account Currency Code")
+				+ "')]//following-sibling::td[contains(text(),'" + chequeBookRequestTestData.get("Account Gl code")
+				+ "')]//following-sibling::td[contains(text(),'" + chequeBookRequestTestData.get("Account CIF Code")
+				+ "')]//following-sibling::td[contains(text(),'"
+				+ chequeBookRequestTestData.get("Account Serial Number") + "')])[1]";
+
+		for (int i = 0; i <= 500; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^click on to cancel button$")
+	public void click_on_to_cancel_button() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoViewAndClick(chequeBookRequestObj.chequebookRequestToCancelButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("^click on approve cancel feature$")
+	public void click_on_approve_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestApproveCancelFeature());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestApproveCancelFeature());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestApproveCancelFeature());
+	}
+
+	@And("^search for request number under approve cancel feature$")
+	public void search_for_request_number_under_approve_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		chequeBookRequestObj.chequebookRequestSearchRequetCode()
+				.sendKeys(chequeBookRequestTestData.get("ChequeBook Request Number"));
+	}
+
+	@And("^select the record in approve cancel feature$")
+	public void select_the_record_in_approve_cancel_feature() throws Throwable {
+		String xpath = "(//td[contains(text(),'" + chequeBookRequestTestData.get("ChequeBook Request Number")
+				+ "')])[1]";
+		for (int i = 0; i <= 500; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^click on cancel button under approve cancel$")
+	public void click_on_cancel_button_under_approve_cancel() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoViewAndClick(chequeBookRequestObj.chequebookRequestCancelButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+	@Then("^verify system should generate new sequence in from number and to number$")
+    public void verify_system_should_generate_new_sequence_in_from_number_and_to_number() throws Throwable {
+       Assert.fail("Step need to complete");
+    }
 }

@@ -455,3 +455,67 @@ And select the approved record in cancel feature
 And select the cancel reason
 And click on cancel button under cancel feature
 Then verify system should show the validation for charge waiver in transaction cance
+@CW_038
+Scenario: Functional Testing - User Has no access to waive charges – Certificate– Approve
+Given navigate to CSM application and login with valid credentials
+And click on certificate feature
+And click on maintenance under certifiate
+And enter the certificate type in certificate feature
+And enter the CIF number in certificate feature
+And enter the number of bills in certificate feature
+And enter the total number of bills in certificate feature
+And select the active credit account
+And select the active debit account
+And click on charges button
+
+@CW_040
+Scenario: Functional Testing - User has access to waive charges – Passbook– Approve
+Given navigate to CSM application and login with valid credentials
+And click on passbook feature
+And click on mainteance under passbook feature
+And get the test data for test case CW_040
+And enter the passbook code
+And enter the passbook type
+And enter the currency code in passbook
+And enter the gl code in passbook
+And enter the cif number in passbook
+And click on ok button in dormant
+And click on close in memo screen 
+And enter the serial number in passbook
+And click on ok button in dormant 
+And click on ok button in signature
+And click on close in memo screen
+Then verify system should deduct the charges by clicking waive charges button
+And click on save button in passbook feature
+And close the passbooks screen
+And click on pass book issue feature
+And search for passbook code in passbook issue feature
+And select the record from passbook issue suggestion
+And click on issue button under passbook issue feature
+And close the passbook issue feature
+@CW_041
+Scenario: Functional Testing - User has no access to waive charges – Passbook– Approve
+Given navigate to CSM application and login with valid credentials
+And click on passbook feature
+And click on mainteance under passbook feature
+And get the test data for test case CW_040
+And enter the passbook code
+And enter the passbook type
+And enter the currency code in passbook
+And enter the gl code in passbook
+And enter the cif number in passbook
+And click on ok button in dormant
+And click on close in memo screen 
+And enter the serial number in passbook
+And click on ok button in dormant 
+And click on ok button in signature
+And click on close in memo screen
+Then verify system should deduct the charges by clicking waive charges button
+And click on save button in passbook feature
+And close the passbooks screen
+And click on pass book issue feature
+And search for passbook code in passbook issue feature
+And select the record from passbook issue suggestion
+And click on issue button under passbook issue feature
+And close the passbook issue feature
+

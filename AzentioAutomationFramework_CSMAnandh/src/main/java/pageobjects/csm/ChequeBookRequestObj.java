@@ -228,6 +228,177 @@ public class ChequeBookRequestObj {
 	{
 		return chequeBookRequest_ChargesSection;
 	}
+	@FindBy(xpath="//td[contains(text(),'Chequebook Request')]")
+	private WebElement csm_ChequeBookRequest;
+	public WebElement csmChequeBookRequest()
+	{
+		return csm_ChequeBookRequest;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.NUM_OF_CHQBOOKS']")
+	private WebElement chequeBookRequest_NumberOfChequeBooks;
+	public WebElement chequeBookRequestNumberOfChequeBooks()
+	{
+		return chequeBookRequest_NumberOfChequeBooks;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.CHEQUE_CODE']")
+	private WebElement chequeBookRequest_ChequeCodeInput;
+	public WebElement chequeBookRequestChequeCodeInput()
+	{
+		return chequeBookRequest_ChequeCodeInput;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctscheques.BRIEF_NAME_ENG']")
+	private WebElement chequeBookRequest_ChequeCodeDesc;
+	public WebElement chequeBookRequestChequeCodeDesc()
+	{
+		return chequeBookRequest_ChequeCodeDesc;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.ACC_BR']")
+	private WebElement chequeBookRequest_BranchCode;
+	public WebElement chequeBookRequestBranchCode()
+	{
+		return chequeBookRequest_BranchCode;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.ACC_CY']")
+	private WebElement chequeBookRequest_CurencyCode;
+	public WebElement chequeBookRequestCurencyCode()
+	{
+		return chequeBookRequest_CurencyCode;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.ACC_GL']")
+	private WebElement chequeBookRequest_GLCode;
+	public WebElement chequeBookRequestGLCode()
+	{
+		return chequeBookRequest_GLCode;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.ACC_CIF']")
+	private WebElement chequeBookRequest_CIFNumber;
+	public WebElement chequeBookRequestCIFNumber()
+	{
+		return chequeBookRequest_CIFNumber;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.ACC_SL']")
+	private WebElement chequeBookRequest_SerialNumber;
+	public WebElement chequeBookRequestSerialNumber()
+	{
+		return chequeBookRequest_SerialNumber;
+	}
+	@FindBy(xpath="//td[text()='Chequebook Request']//ancestor::div//span[text()='To Cancel']")
+	private WebElement chequeBookRequest_ToCancelFeature;
+	public WebElement chequeBookRequestToCancelFeatrue()
+	{
+		return chequeBookRequest_ToCancelFeature;
+	}
+	@FindBy(xpath="//td[text()='Chequebook Request']//ancestor::div//span[text()='Approve Cancel']")
+	private WebElement chequeBookRequest_ApproveCancelFeature;
+	public WebElement chequeBookRequestApproveCancelFeature()
+	{
+		return chequeBookRequest_ApproveCancelFeature;
+	}
+	@FindBy(xpath="//input[@name='CHEQUE_CODE']")
+	private WebElement chequeBookrequest_SearchChequeCode;
+	public WebElement chequeBookrequestSearchChequeCode()
+	{
+		return chequeBookrequest_SearchChequeCode;
+	}
+	@FindBy(xpath="//input[@name='ACC_BR']")
+	private WebElement chequeBookrequest_SearchAccountBranch;
+	public WebElement chequeBookrequestSearchAccountBranch()
+	{
+		return chequeBookrequest_SearchAccountBranch;
+	}
+	@FindBy(xpath="//input[@name='ACC_CY']")
+	private WebElement chequeBookrequest_SearchAccountCurrency;
+	public WebElement chequeBookrequestSearchAccountCurrency()
+	{
+		return chequeBookrequest_SearchAccountCurrency;
+	}
+	@FindBy(xpath="//input[@name='ACC_GL']")
+	private WebElement chequebookRequest_SearchGLCode;
+	public WebElement chequeBookRequesstSearchGLCode()
+	{
+		return chequebookRequest_SearchGLCode;
+	}
+	@FindBy(xpath="//input[@name='ACC_CIF']")
+	private WebElement chequebookRequest_SearchCIFNumber;
+	public WebElement chequebookRequestSearchCIFNumber()
+	{
+		return chequebookRequest_SearchCIFNumber;
+	}
+	@FindBy(xpath="//input[@name='ACC_SL']")
+	private WebElement chequebookRequest_SearchSerialNumber;
+	public WebElement chequebookRequestSearchSerialNumber()
+	{
+		return chequebookRequest_SearchSerialNumber;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.CANCEL_REASON']")
+	private WebElement chequebookRequestCancel_CancelReason;
+	public WebElement chequebookRequestCancelCancelReason()
+	{
+		return chequebookRequestCancel_CancelReason;
+	}
+	
+	@FindBy(xpath="//input[@name='chequeBookCO.reasonCodeDesc']")
+	private WebElement chequebookRequestCancel_CancelReasonDesc;
+	public WebElement chequebookRequestCancelCancelReasonDesc()
+	{
+		return chequebookRequestCancel_CancelReasonDesc;
+	}
+	
+	@FindBy(xpath="//input[@name='chequeBookCO.ctscheques.BRIEF_NAME_ENG']")
+	private WebElement chequebookRequestCancel_ChequeCodeDescription;
+	public WebElement chequebookRequestCancelChequeCodeDescription()
+	{
+		return chequebookRequestCancel_ChequeCodeDescription;
+	}
+	@FindBy(xpath="//table[@id='chequeBookGridTbl_Id_Q000TC']//tbody//tr[2]//td[2]")
+	private WebElement chequebookRequest_GridRequestNumber;
+	public WebElement chequebookRequestGridRequestNumber()
+	{
+		return chequebookRequest_GridRequestNumber;
+	}
+	@FindBy(xpath="//label[contains(text(),'To Cancel ')]//ancestor::button")
+	private WebElement chequebookRequest_ToCancelButton;
+	public WebElement chequebookRequestToCancelButton()
+	{
+		return chequebookRequest_ToCancelButton;
+	}
+	@FindBy(xpath="//label[contains(text(),'Cancel ')]//ancestor::button")
+	private WebElement chequebookRequest_CancelButton;
+	public WebElement chequebookRequestCancelButton()
+	{
+		return chequebookRequest_CancelButton;
+	}
+	@FindBy(xpath="//input[@name='chequeBookCO.ctschqbookVO.CODE']")
+	private WebElement chequebookRequest_RequestNumber;
+	public WebElement chequebookRequestRequestNumber()
+	{
+		return chequebookRequest_RequestNumber;
+	}
+	@FindBy(xpath="//input[@name='CODE']")
+	private WebElement chequebookRequest_SearchRequetCode;
+	public WebElement chequebookRequestSearchRequetCode()
+	{
+		return chequebookRequest_SearchRequetCode;
+	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / To Cancel')]//parent::td//following-sibling::td//span")
+	private WebElement chequebookRequestToCancel_TabClose;
+	public WebElement chequebookRequestToCancelTabClose()
+	{
+		return chequebookRequestToCancel_TabClose;
+	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / Approve Cancel')]//parent::td//following-sibling::td//span")
+	private WebElement chequebookRequestApproveCancel_TabClose;
+	public WebElement chequebookRequestApproveCancelTabClose()
+	{
+		return chequebookRequestApproveCancel_TabClose;
+	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / Maintenance')]//parent::td//following-sibling::td//span")
+	private WebElement chequebookRequestMaintenance_TabClose;
+	public WebElement chequebookRequestMaintenanceTabClose()
+	{
+		return chequebookRequestMaintenance_TabClose;
+	}
+	
 	
 	
 }
