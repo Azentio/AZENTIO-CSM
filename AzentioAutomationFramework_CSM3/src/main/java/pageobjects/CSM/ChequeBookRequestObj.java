@@ -612,4 +612,40 @@ public class ChequeBookRequestObj {
 	{
 		return approveReverseButtonInApproveReversalOfCancellationBatch;
 	}
+	@FindBy(id="chequeBook_reject_Q000SB")
+	private WebElement csm_Submit_RejectButton;
+	public WebElement csm_Submit_RejectButton()
+	{
+		return csm_Submit_RejectButton;
+	}
+	@FindBy(id="chequeBook_reject_Q000AD")
+	private WebElement csm_ApproveDestroyed_RejectButton;
+	public WebElement csm_ApproveDestroyed_RejectButton()
+	{
+		return csm_ApproveDestroyed_RejectButton;
+	}
+	@FindBy(id="Q000AP")
+	private WebElement csm_ChequebookRequest_ApproveSection;
+	public WebElement csm_ChequebookRequest_ApproveSection()
+	{
+		return csm_ChequebookRequest_ApproveSection;
+	}
+	@FindBy(id="chequeBookGridTbl_Id_Q000AP_gs_ctschqbookVO.CODE")
+	private WebElement csm_ChequebookRequest_ApproveCodeSearchField;
+	public WebElement csm_ChequebookRequest_ApproveCodeSearchField()
+	{
+		return csm_ChequebookRequest_ApproveCodeSearchField;
+	}
+	@FindBy(id="td_chequeBookGridTbl_Id_Q000AP_1_ctschqbookVO.CODE")
+	private WebElement csm_ChequebookRequest_Approve_FirstRecord;
+	public WebElement csm_ChequebookRequest_Approve_FirstRecord()
+	{
+		return csm_ChequebookRequest_Approve_FirstRecord;
+	}
+	@FindBy(id="chequeBook_reject_Q000AP")
+	private WebElement csm_ChequebookRequest_Approve_RejectButton;
+	public WebElement csm_ChequebookRequest_Approve_RejectButton()
+	{
+		return csm_ChequebookRequest_Approve_RejectButton;
+	}
 }

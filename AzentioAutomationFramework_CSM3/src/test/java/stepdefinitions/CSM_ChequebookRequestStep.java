@@ -1244,5 +1244,46 @@ public class CSM_ChequebookRequestStep extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_Submit_MissingReasonCodeText());
     	Assert.assertTrue(csmChequebookReqestObject.csm_Submit_MissingReasonCodeText().isDisplayed());
     }
+    @And("^user update test data set id for CHB_105$")
+    public void user_update_test_data_set_id_for_chb105() throws Throwable {
+    	testData = csmTransactionsExcelData.getTestdata("DS01_TC_CHB_105");
+    }
+
+    @And("^Click on Reject button in Approve Destroyed$")
+    public void click_on_reject_button_in_approve_destroyed() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_ApproveDestroyed_RejectButton());
+    	csmChequebookReqestObject.csm_ApproveDestroyed_RejectButton().click();
+    }
+    @And("^user update test data set id for CHB_122$")
+    public void user_update_test_data_set_id_for_chb122() throws Throwable {
+    	testData = csmTransactionsExcelData.getTestdata("DS01_TC_CHB_122");
+    }
+
+    @And("^Navigate to Approve section$")
+    public void navigate_to_approve_section() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_ChequebookRequest_ApproveSection());
+    	csmChequebookReqestObject.csm_ChequebookRequest_ApproveSection().click();
+    }
+
+    @And("^Search the particular code in Approve$")
+    public void search_the_particular_code_in_approve() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_ChequebookRequest_Approve_FirstRecord());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_ChequebookRequest_ApproveCodeSearchField());
+    	csmChequebookReqestObject.csm_ChequebookRequest_ApproveCodeSearchField().click();
+    	csmChequebookReqestObject.csm_ChequebookRequest_ApproveCodeSearchField().sendKeys(testData.get("ApproveCode"));
+    	csmChequebookReqestObject.csm_ChequebookRequest_ApproveCodeSearchField().sendKeys(Keys.ENTER);
+    }
+
+    @And("^Click on the particular record in Approve$")
+    public void click_on_the_particular_record_in_approve() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_ChequebookRequest_Approve_FirstRecord());
+    	clickandactionhelper.doubleClick(csmChequebookReqestObject.csm_ChequebookRequest_Approve_FirstRecord());
+    }
+
+    @And("^Click on the Reject button in Approve$")
+    public void click_on_the_reject_button_in_approve() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmChequebookReqestObject.csm_ChequebookRequest_Approve_RejectButton());
+    	csmChequebookReqestObject.csm_ChequebookRequest_Approve_RejectButton().click();
+    }
 }
 

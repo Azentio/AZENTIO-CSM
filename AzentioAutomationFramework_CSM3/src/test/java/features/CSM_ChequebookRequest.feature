@@ -304,7 +304,27 @@ And Click on the particular code in submit
 And Click on the Reject button in Submit
 And Validate the Missing reason code popup
 
+@CHB_105
+Scenario: checking if the user is able to define the chequebook reject reason under "Approve destroy" screen
+Given user login as csm core application
+And Navigate to Chequebook request section
+And user update test data set id for CHB_105
+And Navigate to Approve Destroyed section
+And Search the particular code in Approve Destroyed
+And Click on the particular record in Approve Destroyed
+And Click on Reject button in Approve Destroyed
+And Validate the Missing reason code popup
 
+@CHB_122
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon rejecting a chequebook underr Approve  screen
+Given user login as csm core application
+And Navigate to Chequebook request section
+And user update test data set id for CHB_122
+And Navigate to Approve section
+And Search the particular code in Approve
+And Click on the particular record in Approve
+And Click on the Reject button in Approve
+And Validate the Missing reason code popup
 
 
 
