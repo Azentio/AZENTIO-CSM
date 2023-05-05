@@ -1,12 +1,21 @@
 package stepdefinitions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.util.HashMap;
+import java.util.Map;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
+import pageobjects.CommonElements.CSMCommonWebElements;
 import pageobjects.csm.CSM_CertificateObj;
 import resources.BaseClass;
 
@@ -15,7 +24,17 @@ public class CSM_CertificateSteps extends BaseClass {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	CSM_CertificateObj certificateObj = new CSM_CertificateObj(driver);
+	CSMCommonWebElements csCommonWebElements = new CSMCommonWebElements(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
+	String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+	Robot robot;
+	// ChargeWaiverExecutionTracker
+	ExcelData excelDataForChargeWaiverExecutionTracker = new ExcelData(testDataPath, "ChargeWaiverExecutionTracker",
+			"TestCaseID");
+	ExcelData certificateChargeWaierTestData = new ExcelData(testDataPath, "CSM_ChargeWaiverTestData", "DataSet ID");
+
+	Map<String, String> chargeWaiverExecutionTracker = new HashMap<>();
+	Map<String, String> cwCertificateTestData = new HashMap<>();
 
 	@And("^click on certificate feature$")
 	public void click_on_certificate_feature() throws Throwable {
@@ -41,18 +60,36 @@ public class CSM_CertificateSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenance());
 	}
 
+	@And("^get the test data for test case CW_038$")
+	public void get_the_test_data_for_test_case_cw038() throws Throwable {
+		chargeWaiverExecutionTracker = excelDataForChargeWaiverExecutionTracker.getTestdata("CW_038");
+		System.out.println("Data Set ID " + chargeWaiverExecutionTracker.get("Data Set ID"));
+		cwCertificateTestData = certificateChargeWaierTestData
+				.getTestdata(chargeWaiverExecutionTracker.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case CW_039$")
+	public void get_the_test_data_for_test_case_cw039() throws Throwable {
+		chargeWaiverExecutionTracker = excelDataForChargeWaiverExecutionTracker.getTestdata("CW_039");
+		System.out.println("Data Set ID " + chargeWaiverExecutionTracker.get("Data Set ID"));
+		cwCertificateTestData = certificateChargeWaierTestData
+				.getTestdata(chargeWaiverExecutionTracker.get("Data Set ID"));
+	}
+
 	@And("^enter the certificate type in certificate feature$")
 	public void enter_the_certificate_type_in_certificate_feature() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceCertificateTypeInput());
 		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceCertificateTypeInput());
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceCertificateTypeInput());
-		certificateObj.certificateMaintenanceCertificateTypeInput().sendKeys("7878237");
+		certificateObj.certificateMaintenanceCertificateTypeInput()
+				.sendKeys(cwCertificateTestData.get("Certificate Type"));
 		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceLabel());
 		for (int i = 0; i <= 500; i++) {
 			try {
-				if (!(certificateObj.certificateMaintenanceCertificateTypeDescription().getAttribute("prevvalue").isBlank())) {
+				if (!(certificateObj.certificateMaintenanceCertificateTypeDescription().getAttribute("prevvalue")
+						.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -67,13 +104,14 @@ public class CSM_CertificateSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceCIFNumberInput());
 		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceCIFNumberInput());
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceCIFNumberInput());
-		certificateObj.certificateMaintenanceCIFNumberInput().sendKeys("78");
+		certificateObj.certificateMaintenanceCIFNumberInput().sendKeys(cwCertificateTestData.get("CIF Number"));
 		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceLabel());
 		for (int i = 0; i <= 500; i++) {
 			try {
-				if (!(certificateObj.certificateMaintenanceCIFNumberDescription().getAttribute("prevvalue").isBlank())) {
+				if (!(certificateObj.certificateMaintenanceCIFNumberDescription().getAttribute("prevvalue")
+						.isBlank())) {
 					break;
 				}
 			} catch (Exception e) {
@@ -88,7 +126,8 @@ public class CSM_CertificateSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceNumberOfBillsInput());
 		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceNumberOfBillsInput());
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceNumberOfBillsInput());
-		certificateObj.certificateMaintenanceNumberOfBillsInput().sendKeys("78");
+		certificateObj.certificateMaintenanceNumberOfBillsInput()
+				.sendKeys(cwCertificateTestData.get("Number Of Bills"));
 	}
 
 	@And("^enter the total number of bills in certificate feature$")
@@ -96,14 +135,15 @@ public class CSM_CertificateSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceTotalAmountOfBillsInput());
 		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceTotalAmountOfBillsInput());
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceTotalAmountOfBillsInput());
-		certificateObj.certificateMaintenanceTotalAmountOfBillsInput().sendKeys("78");
+		certificateObj.certificateMaintenanceTotalAmountOfBillsInput()
+				.sendKeys(cwCertificateTestData.get("Total Amount Of Bills"));
 	}
 
 	@And("^select the active credit account$")
 	public void select_the_active_credit_account() throws Throwable {
-waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateCreditAccount());
-clicksAndActionsHelper.moveToElement(certificateObj.certificateCreditAccount());
-clicksAndActionsHelper.clickOnElement(certificateObj.certificateCreditAccount());
+		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateCreditAccount());
+		clicksAndActionsHelper.moveToElement(certificateObj.certificateCreditAccount());
+		clicksAndActionsHelper.clickOnElement(certificateObj.certificateCreditAccount());
 	}
 
 	@And("^select the active debit account$")
@@ -113,9 +153,81 @@ clicksAndActionsHelper.clickOnElement(certificateObj.certificateCreditAccount())
 		clicksAndActionsHelper.clickOnElement(certificateObj.certificateDeductFromAccount());
 	}
 
-	@And("^click on charges button$")
-	public void click_on_charges_button() throws Throwable {
+	@And("^click on save button in certificate feature$")
+	public void click_on_save_button_in_certificate_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csCommonWebElements.csmSaveBtn());
+		clicksAndActionsHelper.moveToElement(csCommonWebElements.csmSaveBtn());
+		clicksAndActionsHelper.clickOnElement(csCommonWebElements.csmSaveBtn());
+	}
 
+	@And("^close the certificate maintenance screen$")
+	public void close_the_certificate_maintenance_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceLabelClose());
+		clicksAndActionsHelper.moveToElement(certificateObj.certificateMaintenanceLabelClose());
+		clicksAndActionsHelper.clickOnElement(certificateObj.certificateMaintenanceLabelClose());
+	}
+
+	@And("^click on approve feature under certificate$")
+	public void click_on_approve_feature_under_certificate() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateApproveFeature());
+		clicksAndActionsHelper.moveToElement(certificateObj.certificateApproveFeature());
+		clicksAndActionsHelper.clickOnElement(certificateObj.certificateApproveFeature());
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^search for CIF number to retrive the certificate record in approve stage$")
+	public void search_for_cif_number_to_retrive_the_certificate_record_in_approve_stage() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateApproveCIFNumberInput());
+		clicksAndActionsHelper.moveToElement(certificateObj.certificateApproveCIFNumberInput());
+		clicksAndActionsHelper.clickOnElement(certificateObj.certificateApproveCIFNumberInput());
+
+	}
+
+	@And("^select the suggested record from certificate approve screen$")
+	public void select_the_suggested_record_from_certificate_approve_screen() throws Throwable {
+		String xpath = "(//td[contains(text(),'" + cwCertificateTestData.get("CIF Number") + "')])[1]";
+
+		for (int i = 0; i <= 500; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^click on charges section in certificate approve$")
+	public void click_on_charges_section_in_certificate_approve() throws Throwable {
+	}
+
+	@Then("^verify waive charge button should be disabled status$")
+	public void verify_waive_charge_button_should_be_disabled_status() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceWaiveChargesButton());
+		String waiveChargesStatus = certificateObj.certificateMaintenanceWaiveChargesButton()
+				.getAttribute("aria-disabled");
+		Assert.assertEquals(waiveChargesStatus, "True");
+
+	}
+
+	@Then("^verify user can able to waive the charges for the certificate$")
+	public void verify_user_can_able_to_waive_the_charges_for_the_certificate() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, certificateObj.certificateMaintenanceWaiveChargesButton());
+
+	}
+
+	@And("^click on approve button in certificate approve stage$")
+	public void click_on_approve_button_in_certificate_approve_stage() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csCommonWebElements.csmApproveBtn());
+		clicksAndActionsHelper.moveToElement(csCommonWebElements.csmApproveBtn());
+		clicksAndActionsHelper.clickOnElement(csCommonWebElements.csmApproveBtn());
 	}
 
 }

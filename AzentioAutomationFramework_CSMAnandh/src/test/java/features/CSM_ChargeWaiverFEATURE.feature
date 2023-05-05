@@ -1,10 +1,11 @@
 Feature: To Test the charge waiver feature
 @CW_001
 Scenario: Checking on “Original charges amount” new field under Transaction level in CSM
+And get the test data for test case CW_001
 Given navigate to CSM application and login with valid credentials
+And change the system date within excemption date
 And click on Transaction module
 And click on maintenance scree under transaction module
-And get the test data for test case CW_001
 And enter the transaction type code in transaction
 And enter the branch code for cash deposite
 And enter the currency code for cash deposite
@@ -36,10 +37,11 @@ And click on save button in cheque book request
 Then validate system should show the validation for charges have waiveds
 @CW_003
 Scenario: Checking on the waiver when using a transaction type within the defined transaction types
+And get the test data for test case CW_003
 Given navigate to CSM application and login with valid credentials
+And change the system date within excemption date
 And click on Transaction module
 And click on maintenance scree under transaction module
-And get the test data for test case CW_003
 And enter the transaction type code in transaction
 And enter the branch code for cash deposite
 And enter the currency code for cash deposite
@@ -75,10 +77,10 @@ And click on charge button
 Then verify system should not deduct the charges for the transaction
 @CW_004
 Scenario: Checking on the waiver when using a transaction type not included in the defined transaction types
+And get the test data for test case CW_04
 Given navigate to CSM application and login with valid credentials
 And click on Transaction module
 And click on maintenance scree under transaction module
-And get the test data for test case CW_04
 And enter the transaction type code in transaction
 And enter the debit branch code in tranaction
 And enter the debit currency code in tranaction
@@ -154,7 +156,7 @@ Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
-Then verify system should not deduct the charges for the transaction
+And check system should deduct the charges for the transaction
 @CW_006
 Scenario: Checking on the waiver when doing a transaction greater than To date  
 Given navigate to CSM application and login with valid credentials
@@ -194,13 +196,14 @@ Then verify transaction status should show as approved
 And open the approved transaction record
 And close the memo alert in transaction screen
 And click on charge button
-Then verify system should not deduct the charges for the transaction
+And check system should deduct the charges for the transaction
 @CW_007
 Scenario: Checking on the waiver when doing a transaction in between 'From' and 'To' date
+And get the test data for test case CW_007
 Given navigate to CSM application and login with valid credentials
+And change the system date within excemption date
 And click on Transaction module
 And click on maintenance scree under transaction module
-And get the test data for test case CW_007
 And enter the transaction type code in transaction
 And enter the branch code for cash deposite
 And enter the currency code for cash deposite
@@ -460,13 +463,42 @@ Scenario: Functional Testing - User Has no access to waive charges – Certifica
 Given navigate to CSM application and login with valid credentials
 And click on certificate feature
 And click on maintenance under certifiate
+And get the test data for test case CW_038
 And enter the certificate type in certificate feature
 And enter the CIF number in certificate feature
 And enter the number of bills in certificate feature
 And enter the total number of bills in certificate feature
 And select the active credit account
 And select the active debit account
-And click on charges button
+And click on save button in certificate feature
+And close the certificate maintenance screen
+And click on approve feature under certificate
+And search for CIF number to retrive the certificate record in approve stage
+And select the suggested record from certificate approve screen
+And click on charges section in certificate approve
+Then verify waive charge button should be disabled status
+And click on approve button in certificate approve stage
+
+@CW_039
+Scenario: Functional Testing - User has access to waive charges – Certificate– Approve
+Given navigate to CSM application and login with valid credentials
+And click on certificate feature
+And click on maintenance under certifiate
+And get the test data for test case CW_039
+And enter the certificate type in certificate feature
+And enter the CIF number in certificate feature
+And enter the number of bills in certificate feature
+And enter the total number of bills in certificate feature
+And select the active credit account
+And select the active debit account
+And click on save button in certificate feature
+And close the certificate maintenance screen
+And click on approve feature under certificate
+And search for CIF number to retrive the certificate record in approve stage
+And select the suggested record from certificate approve screen
+And click on charges section in certificate approve
+Then verify user can able to waive the charges for the certificate
+And click on approve button in certificate approve stage
 
 @CW_040
 Scenario: Functional Testing - User has access to waive charges – Passbook– Approve

@@ -627,7 +627,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	@And("^click on maintenance scree under transaction module$")
 	public void click_on_maintenance_scree_under_transaction_module() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				javascriptHelper.scrollIntoView(transactionObj.transactionMaintenance());
 				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenance());
@@ -635,7 +635,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				break;
 
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}

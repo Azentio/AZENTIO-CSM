@@ -123,6 +123,32 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
 		Thread.sleep(1000);
 	}
+	@And("^change the system date within excemption date$")
+    public void change_the_system_date_within_excemption_date() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSystemDate());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		for (int i = 0; i <= 15; i++) {
+			csmCommonWebElements.csmInputSystemDate().sendKeys(Keys.BACK_SPACE);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		csmCommonWebElements.csmInputSystemDate().sendKeys(transactionTestData.get("ExcemptionDate"));
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
+		Thread.sleep(1000);
+    }
 
 	@And("^change the system date to high waiver date which is configured$")
 	public void change_the_system_date_to_high_waiver_date_which_is_configured() throws Throwable {
@@ -401,6 +427,18 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 500; i++) {
+			try {
+				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed())) {
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 500) {
+					System.out.println("Still Loading");
+				}
+
+			}
+		}
 	}
 
 	@And("^click on charge button$")
@@ -691,15 +729,15 @@ public class CSM_TransactionSteps extends BaseClass {
 	@Then("^verify transaction status should show as approved$")
 	public void verify_transaction_status_should_show_as_approved() throws Throwable {
 		robot = new Robot();
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
 				Assert.assertEquals(transactionObj.transactionTransactionStatus().getText(), "Approved");
 				break;
 			} catch (Exception e) {
-				if (i != 100) {
+				if (i != 500) {
 					robot.keyPress(KeyEvent.VK_ENTER);
 					robot.keyRelease(KeyEvent.VK_ENTER);
-				} else if (i == 100) {
+				} else if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}

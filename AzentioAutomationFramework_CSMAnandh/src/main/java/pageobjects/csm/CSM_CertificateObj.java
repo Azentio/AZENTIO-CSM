@@ -36,6 +36,18 @@ public class CSM_CertificateObj {
 	{
 		return certificate_Maintenance;
 	}
+	@FindBy(xpath="//td[contains(text(),'Certificates')]//ancestor::h3//following-sibling::ul//span[text()='Approve']")
+	private WebElement certificate_ApproveFeature;
+	public WebElement certificateApproveFeature()
+	{
+		return certificate_ApproveFeature;
+	}
+	@FindBy(xpath="//input[@name='CIF_NO']")
+	private WebElement certificateApprove_CIFNumberInput;
+	public WebElement certificateApproveCIFNumberInput()
+	{
+		return certificateApprove_CIFNumberInput;
+	}
 	@FindBy(xpath="//input[@name='certificateCO.ctscertificateVO.CERTIFICATE_TYPE']")
 	private WebElement certificateMaintenance_CertificateTypeInput;
 	public WebElement certificateMaintenanceCertificateTypeInput()
@@ -90,6 +102,13 @@ public class CSM_CertificateObj {
 	{
 		return certificateMaintenance_ChargesSection;
 	}
+	@FindBy(xpath="//span[contains(text(),' Waive Charges ')]//ancestor::button")
+	private WebElement certificateMaintenance_WaiveChargesButton;
+	public WebElement certificateMaintenanceWaiveChargesButton()
+	{
+		return certificateMaintenance_WaiveChargesButton;
+	}
+	
 	
 
 }
