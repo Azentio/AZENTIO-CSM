@@ -144,6 +144,12 @@ public class ChequeBookRequestObj {
 	{
 		return chequeBook_MaintenenaceScreen;
 	}
+	@FindBy(xpath="//td[text()='Chequebook Request']//ancestor::h3//following-sibling::ul//span[text()='Approve']")
+	private WebElement chequeBook_ApproveFeature;
+	public WebElement chequeBookApproveFeature()
+	{
+		return chequeBook_ApproveFeature;
+	}
 	@FindBy(xpath="//a[@id='infoBarSearchButton_Q000MT']")
 	private WebElement chequeBookMaintenance_Search;
 	public WebElement chequeBookMaintenaceSearch()
@@ -398,6 +404,43 @@ public class ChequeBookRequestObj {
 	{
 		return chequebookRequestMaintenance_TabClose;
 	}
+	@FindBy(xpath="//tr[@id='1']//td[2]")
+	private WebElement chequeBookRequest_FirstRecord;
+	public WebElement chequeBookRequestFirstRecord()
+	{
+		return chequeBookRequest_FirstRecord;
+	}
+	@FindBy(xpath="//div[contains(text(),'Invalid/Missing Reason Code')]")
+	private WebElement chequeBookRequest_MissingReasonCode;
+	public WebElement chequeBookRequestMissingReasonCode()
+	{
+		return chequeBookRequest_MissingReasonCode;
+	}
+	@FindBy(xpath="//div[contains(text(),'Invalid/Missing Reason Code')]//ancestor::div//following-sibling::center//input[@value='Ok']")
+	private WebElement chequeBookRequest_MissingReasonCodeOkButton;
+	public WebElement chequeBookRequestMissingReasonCodeOkButton()
+	{
+		return chequeBookRequest_MissingReasonCodeOkButton;
+	}
+	@FindBy(xpath="//textarea[@name='chequeBookCO.ctschqbookVO.STATUS_REMARKS']")
+	private WebElement chequeBookRequest_RejectReasonremark;
+	public WebElement chequeBookRequestRejectReasonremark()
+	{
+		return chequeBookRequest_RejectReasonremark;
+	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / Approve')]//parent::td//following-sibling::td//span")
+	private WebElement chequeBookRequest_ApproveScreenClose;
+	public WebElement chequeBookRequestApproveScreenClose()
+	{
+		return chequeBookRequest_ApproveScreenClose;
+	}
+	@FindBy(xpath="//tr[@id='1']//td[13]")
+	private WebElement chequeBookRequestMaintenance_RecordStatus;
+	public WebElement chequeBookRequestMaintenanceRecordStatus()
+	{
+		return chequeBookRequestMaintenance_RecordStatus;
+	}
+	
 	
 	
 	

@@ -243,4 +243,46 @@ public class CSMCommonWebElements {
 	public WebElement csmApproveBtn() {
 		return csm_ApproveBtn;
 	}
+	@FindBy(xpath="//label[contains(text(),'Approve ')]//ancestor::button")
+	private WebElement csm_ApproveBtnWithLabel;
+
+	public WebElement csmApproveBtnWithLabel() {
+		return csm_ApproveBtnWithLabel;
+	}
+	@FindBy(xpath="//label[contains(text(),'Update After Approve ')]//ancestor::button")
+	private WebElement csmParam_UpdateAfterApproveBtn;
+
+	public WebElement csmParamUpdateAfterApproveBtn() {
+		return csmParam_UpdateAfterApproveBtn;
+	}
+	@FindBy(xpath="//a[contains(text(),' Search ')]")
+	private WebElement csm_SearchButton;
+	public WebElement csmSearchButton()
+	{
+		return csm_SearchButton;
+	}
+	@FindBy(xpath="//label[contains(text(),'Reject ')]//ancestor::button")
+	private WebElement csm_rejectButton;
+	public WebElement csmRejectButton()
+	{
+		return csm_rejectButton;
+	}
+	@FindBy(xpath="//span[@id='tech_details_icon']")
+	private WebElement csm_TechDetailsMenu;
+	public WebElement csmTechDetailsMenu()
+	{
+		return csm_TechDetailsMenu;
+	}
+	@FindBy(xpath="//label[contains(text(),'Clear Cache ')]")
+	private WebElement csm_ClearCacheOption;
+	public WebElement csmClearCacheOption()
+	{
+		return csm_ClearCacheOption;
+	}
+	@FindBy(xpath="//div[contains(text(),'Cache Cleared Successfully')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement ClearCacheSuccess_OkButton;
+	public WebElement ClearCacheSuccessOkButton()
+	{
+		return ClearCacheSuccess_OkButton;
+	}
 }

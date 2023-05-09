@@ -240,6 +240,27 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	}
 
+	@And("^click on tech option$")
+	public void click_on_tech_option() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmTechDetailsMenu());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmTechDetailsMenu());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmTechDetailsMenu());
+	}
+
+	@And("^click on clear cache option$")
+	public void click_on_clear_cache_option() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmClearCacheOption());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmClearCacheOption());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmClearCacheOption());
+	}
+
+	@Then("^verify system shows success pop up for clearing the cache$")
+	public void verify_system_shows_success_pop_up_for_clearing_the_cache() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.ClearCacheSuccessOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.ClearCacheSuccessOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.ClearCacheSuccessOkButton());
+	}
+
 	@And("^click on cheque request module$")
 	public void click_on_cheque_request_module() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csmChequeBookRequestModule());
@@ -562,7 +583,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	@And("^click on cheque book request maintenance screen$")
 	public void click_on_cheque_book_request_maintenance_screen() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(chequeBookRequestObj.chequeBookMaintenenaceScreen());
 				clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookMaintenenaceScreen());
@@ -571,7 +592,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 			}
 
 			catch (Exception e) {
-				if (i == 100) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -689,4 +710,5 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionReversedStatus());
 		Assert.assertTrue(transactionObj.transactionTransactionReversedStatus().isDisplayed());
 	}
+
 }
