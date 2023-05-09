@@ -75,8 +75,22 @@ public class CSM_ChequeBookRequest extends BaseClass{
     	testExecutionData = testExecution.getTestdata("CHB_039");
     	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
     }
-
+    @And("^User Update the test data id for CHB_102$")
+    public void user_update_the_test_data_id_for_chb102() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_102");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
     
+    @And("^User Update the test data id for CHB_103$")
+    public void user_update_the_test_data_id_for_chb103() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_103");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
+    @And("^User Update the test data id for CHB_114$")
+    public void user_update_the_test_data_id_for_chb114() throws Throwable {
+    	testExecutionData = testExecution.getTestdata("CHB_114");
+    	testData = excelData.getTestdata(testExecutionData.get("Data Set ID"));
+    }
 	@Then("^User Validate the suspended chequebook record in Cheque book Request Maintenance Screen$")
     public void user_validate_the_suspended_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.suspendRecordValidationInCBMaintenance());
@@ -145,8 +159,18 @@ public class CSM_ChequeBookRequest extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookCodeInApproveScreen());
     	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInApproveScreen());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInApproveScreen());
-		chequeBookRequestObj.searchChequeBookCodeInApproveScreen().sendKeys(testData.get("ChequeBookCode"));
-		chequeBookRequestObj.searchChequeBookCodeInApproveScreen().sendKeys(Keys.ENTER);
+		chequeBookRequestObj.searchChequeBookCodeInApproveScreen().sendKeys(testData.get("ChequeBookCode"),Keys.ENTER);
+		//chequeBookRequestObj.searchChequeBookCodeInApproveScreen().sendKeys(Keys.ENTER);
+			for (int i = 0; i <200; i++) {
+				try {
+					chequeBookRequestObj.selectChequeBookCodeInApproveScreen().getText().equalsIgnoreCase(testData.get("ChequeBookCode"));
+					break;
+				} catch (Exception e) {
+					if (i==199) {
+						Assert.fail("Cheque book code not found ");
+					}
+				}
+			}
     }
 
     @And("^User Select Cheque Book Code in Approve Screen$")
@@ -414,6 +438,18 @@ public class CSM_ChequeBookRequest extends BaseClass{
 
     @And("^User Select Cheque Book Code in Approve Cancel Screen$")
     public void user_select_cheque_book_code_in_approve_cancel_screen() throws Throwable {
+    	for (int i = 0; i <200; i++) {
+    		
+			try {
+				System.out.println(chequeBookRequestObj.selectChequeBookCodeInApproveCancelScreen().getText());
+				chequeBookRequestObj.selectChequeBookCodeInApproveCancelScreen().getText().equalsIgnoreCase(testData.get("ChequeBookCode"));
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail("Cheque book code not found ");
+				}
+			}
+		}
     	for (int i = 0; i <200; i++) {
     		try {
     			seleniumActions.getClickAndActionsHelper().doubleClick(chequeBookRequestObj.selectChequeBookCodeInApproveCancelScreen());;
@@ -707,6 +743,12 @@ public class CSM_ChequeBookRequest extends BaseClass{
     
     @Then("^User Validate the To be Cancelled chequebook record in Cheque book Request Maintenance Screen$")
     public void user_validate_the_to_be_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.toBeCancelledRecordValidationInCBMaintenance());
+		Assert.assertTrue(chequeBookRequestObj.toBeCancelledRecordValidationInCBMaintenance().isDisplayed());
+    }
+
+    @And("^User Search the To be Cancelled  chequebook code in Cheque book Request Maintenance Screen$")
+    public void user_search_the_to_be_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
     	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
@@ -728,12 +770,7 @@ public class CSM_ChequeBookRequest extends BaseClass{
 			}
 			
 		}
-    }
-
-    @And("^User Search the To be Cancelled  chequebook code in Cheque book Request Maintenance Screen$")
-    public void user_search_the_to_be_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.toBeCancelledRecordValidationInCBMaintenance());
-		Assert.assertTrue(chequeBookRequestObj.toBeCancelledRecordValidationInCBMaintenance().isDisplayed());
+    	
     }
 
     @And("^User Click Approve button in Send Alert To Reverse Cancellation Screen$")
@@ -885,7 +922,154 @@ public class CSM_ChequeBookRequest extends BaseClass{
     	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.approveReverseButtonInApproveReversalOfCancellationBatch());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.approveReverseButtonInApproveReversalOfCancellationBatch());
     }
+ 
+//****************************************************CHB_102****************************************************//
+    @And("^User Click Reverse Chequebook Sub Menu$")
+    public void user_click_reverse_chequebook_sub_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.reverseChequeBookSubMenu());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.reverseChequeBookSubMenu());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.reverseChequeBookSubMenu());
+    }
 
+    @And("^User Search ChequeBook Code in Reverse Chequebook Screen$")
+    public void user_search_chequebook_code_in_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen());
+		chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen().sendKeys(testData.get("ChequeBookCode"));
+		chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen().sendKeys(Keys.ENTER);
+		for (int i = 0; i <200; i++) {
+			try {
+				chequeBookRequestObj.selectChequeBookCodeInApproveScreen().getText().equalsIgnoreCase(testData.get("ChequeBookCode"));
+				System.out.println(chequeBookRequestObj.selectChequeBookCodeInApproveScreen().getText());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail("Cheque book code not found ");
+				}
+			}
+		}
+    }
+
+    @And("^User Select the Chequebook code in Reverse Chequebook Screen$")
+    public void user_select_the_chequebook_code_in_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.selectChequeBookCodeInReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.selectChequeBookCodeInReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().doubleClick(chequeBookRequestObj.selectChequeBookCodeInReverseChequeBookScreen());
+    }
+
+    @And("^User Click Reject button in Reverse Chequebook Screen$")
+    public void user_click_reject_button_in_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectButtonReverseChequeBookScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectButtonReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectButtonReverseChequeBookScreen());
+    }
+
+    @And("^User Validate Reject Reason Missing Pop up in Reverse Chequebook Screen$")
+    public void user_validate_reject_reason_missing_pop_up_in_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectReasonPopupValidationReverseChequeBookScreen());
+    	Assert.assertTrue(chequeBookRequestObj.rejectReasonPopupValidationReverseChequeBookScreen().isDisplayed());
+    }
+
+    @And("^User Click Ok button in Cannot Proceed Pop up in Reverse Chequebook Screen$")
+    public void user_click_ok_button_in_cannot_proceed_pop_up_in_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.okButtonInCannotProceedPopupReverseChequeBookScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.okButtonInCannotProceedPopupReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.okButtonInCannotProceedPopupReverseChequeBookScreen());
+    }
+
+    @And("^User Enter Reason for rejecting reverse chequebook record in Reverse Chequebook Screen$")
+    public void user_enter_reason_for_rejecting_reverse_chequebook_record_in_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.rejectReasonFieldInReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectReasonFieldInReverseChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectReasonFieldInReverseChequeBookScreen());
+		chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen().sendKeys(testData.get("Reason"));
+    }
+    @Then("^User Validate the Rejected chequebook record in Cheque book Request Maintenance Screen$")
+    public void user_validate_the_rejected_chequebook_record_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectedRecordValidationInCBMaintenance());
+    	Assert.assertTrue(chequeBookRequestObj.rejectedRecordValidationInCBMaintenance().isDisplayed());
+    }
+
+    @And("^User Search Rejected chequebook code in Cheque book Request Maintenance Screen$")
+    public void user_search_rejected_chequebook_code_in_cheque_book_request_maintenance_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookCodeInCBMaintenance());
+		chequeBookRequestObj.searchChequeBookCodeInCBMaintenance().sendKeys(testData.get("ChequeBookCode"));
+		String xpath ="//td[text()='"+testData.get("ChequeBookCode")+"']";
+		for (int i = 0; i <200; i++) {
+			try {
+				driver.findElement(By.xpath(xpath)).click();
+				break;
+				
+			} catch (Exception e) {
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.searchChequeBookGridInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.findButtonInCBMaintenance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.findButtonInCBMaintenance());
+			}
+			
+		}
+    }
+  //************************************************************CHB_103************************************************
+    @And("^User Click Reject button in Approve Screen$")
+    public void user_click_reject_button_in_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.rejectButtonInApproveScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectButtonInApproveScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectButtonInApproveScreen());
+    }
+
+    @And("^User Validate Reject Reason Missing Pop up in Approve Screen$")
+    public void user_validate_reject_reason_missing_pop_up_in_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectReasonPopupValidationInApproveChequeBookScreen());
+    	Assert.assertTrue(chequeBookRequestObj.rejectReasonPopupValidationInApproveChequeBookScreen().isDisplayed());
+    }
+
+    @And("^User Click Ok button in Cannot Proceed Pop up in Approve Screen$")
+    public void user_click_ok_button_in_cannot_proceed_pop_up_in_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.okButtonInCannotProceedPopupInApproveChequeBookScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.okButtonInCannotProceedPopupInApproveChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.okButtonInCannotProceedPopupInApproveChequeBookScreen());
+    }
+
+    @And("^User Enter Reason for rejecting reverse chequebook record in Approve Screen$")
+    public void user_enter_reason_for_rejecting_reverse_chequebook_record_in_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.rejectReasonFieldInApproveScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectReasonFieldInApproveScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectReasonFieldInApproveScreen());
+		chequeBookRequestObj.rejectReasonFieldInApproveScreen().sendKeys(testData.get("Reason"));
+    }
+    //********************************************************CHB_114****************************************************//
+    @And("^User Click Reject Button in Approve Cancel Screen$")
+    public void user_click_reject_button_in_approve_cancel_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectButtonInApproveCancelScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectButtonInApproveCancelScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectButtonInApproveCancelScreen());
+    }
+
+    @And("^User Validate Reject Reason Missing Pop up in Approve Cancel Screen$")
+    public void user_validate_reject_reason_missing_pop_up_in_approve_cancel_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.rejectReasonPopupValidationInApproveCancelChequeBookScreen());
+    	Assert.assertTrue(chequeBookRequestObj.rejectReasonPopupValidationInApproveCancelChequeBookScreen().isDisplayed());
+    }
+    @And("^User Click Ok button in Cannot Proceed Pop up in Approve Cancel Screen$")
+    public void user_click_ok_button_in_cannot_proceed_pop_up_in_approve_cancel_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, chequeBookRequestObj.okButtonInCannotProceedPopupInApproveCancelChequeBookScreen());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.okButtonInCannotProceedPopupInApproveCancelChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.okButtonInCannotProceedPopupInApproveCancelChequeBookScreen());
+    }
+
+    @And("^User Enter Reason for rejecting reverse chequebook record in Approve Cancel Screen$")
+    public void user_enter_reason_for_rejecting_reverse_chequebook_record_in_approve_cancel_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,chequeBookRequestObj.rejectReasonFieldInApproveCancelChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().moveToElement(chequeBookRequestObj.rejectReasonFieldInApproveCancelChequeBookScreen());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(chequeBookRequestObj.rejectReasonFieldInApproveCancelChequeBookScreen());
+		chequeBookRequestObj.searchChequeBookCodeInReverseChequeBookScreen().sendKeys(testData.get("Reason"));
+    }
 }
     
     

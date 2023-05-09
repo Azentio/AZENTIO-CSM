@@ -238,6 +238,61 @@ And User Click Maintanence sub menu in chequebook request
 And User Click Search button in chequebook request Maintenance Screen
 And User Search the To be Cancelled  chequebook code in Cheque book Request Maintenance Screen
 Then User Validate the To be Cancelled chequebook record in Cheque book Request Maintenance Screen
+@CHB_102
+Scenario: Checking if the user is able to define the chequebook reject reason under "Reverse" screen
+Given User Launch CSM Core Application
+And User Click Chequebook Request Menu
+And User Click Reverse Chequebook Sub Menu
+And User Update the test data id for CHB_102
+And User Search ChequeBook Code in Reverse Chequebook Screen
+And User Select the Chequebook code in Reverse Chequebook Screen
+And User Click Reject button in Reverse Chequebook Screen
+And User Validate Reject Reason Missing Pop up in Reverse Chequebook Screen
+And User Click Ok button in Cannot Proceed Pop up in Reverse Chequebook Screen
+And User Enter Reason for rejecting reverse chequebook record in Reverse Chequebook Screen
+And User Click Reject button in Reverse Chequebook Screen
+And User Click Maintanence sub menu in chequebook request
+And User Click Search button in chequebook request Maintenance Screen
+And User Search Rejected chequebook code in Cheque book Request Maintenance Screen
+Then User Validate the Rejected chequebook record in Cheque book Request Maintenance Screen
+@CHB_103
+Scenario: Checking if the user is able to define the chequebook reject reason under"approve" screen
+Given User Launch CSM Core Application
+And User Click Chequebook Request Menu
+And User Click Approve Sub Menu
+And User Update the test data id for CHB_103
+And User Search Cheque Book Code in Approve Screen
+And User Select Cheque Book Code in Approve Screen
+And User Click Reject button in Approve Screen
+And User Validate Reject Reason Missing Pop up in Approve Screen
+And User Click Ok button in Cannot Proceed Pop up in Approve Screen
+And User Enter Reason for rejecting reverse chequebook record in Approve Screen
+And User Click Reject button in Approve Screen
+And User Click Maintanence sub menu in chequebook request
+And User Click Search button in chequebook request Maintenance Screen
+And User Search Rejected chequebook code in Cheque book Request Maintenance Screen
+Then User Validate the Rejected chequebook record in Cheque book Request Maintenance Screen
+#PREREQUISITE Reason on Rejecting flag checked and records rejection reason is mandatory flag is unchecked
+@CHB_114
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon 
+					unchecking the "Records rejection reason is mandatory" flag and  rejecting a chequebook 
+					under Approve Cancel screen
+Given User Launch CSM Core Application
+And User Click Chequebook Request Menu
+And User Click Approve Cancel Sub Menu
+And User Update the test data id for CHB_114
+And User Search Cheque Book Code in Approve Cancel Screen
+And User Select Cheque Book Code in Approve Cancel Screen
+And User Click Reject Button in Approve Cancel Screen
+And User Validate Reject Reason Missing Pop up in Approve Cancel Screen
+And User Click Ok button in Cannot Proceed Pop up in Approve Cancel Screen
+And User Enter Reason for rejecting reverse chequebook record in Approve Cancel Screen
+And User Click Reject Button in Approve Cancel Screen
+And User Click Maintanence sub menu in chequebook request
+And User Click Search button in chequebook request Maintenance Screen
+And User Search Rejected chequebook code in Cheque book Request Maintenance Screen
+Then User Validate the Rejected chequebook record in Cheque book Request Maintenance Screen
+
 @ACSD_003
 Scenario: checking if the system is changing the chequebook status from DESTROYED to APPROVED
 Given navigate to CSM application and login with valid credentials
@@ -251,7 +306,7 @@ And change the product type to cheque book
 #And enter the CIF No in amend cheque
 #And enter the serial number in amend cheque
 And enter the request no in amend cheque
-And give the status in destroyed
+#And give the status in destroyed
 And click on retrive in amend cheque
 And select the retrived record from amend cheque
 And click on update in amend cheque

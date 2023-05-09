@@ -19,7 +19,7 @@ public class ExcelTest {
 	public  List<String> getTestCaseTagsfromExcel() {
 		ExcelReader excelReader = new ExcelReader(path);
 		List<String> li = new ArrayList<String>();
-		int columnCount = excelReader.getColumnCount(sheetName);
+		int columnCount = excelReader.getRowCount(sheetName);
 		for (int i = 2; i <=columnCount; i++) {
 			String cellData = excelReader.getCellData(sheetName, columnName, i);
 			if (!(cellData.isBlank())) {

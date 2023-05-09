@@ -104,7 +104,7 @@ public class ChequeBookRequestObj {
 	public WebElement cancelButton() {
 		return cancelButton;
 	}
-	@FindBy(id = "td_chequeBookGridTbl_Id_Q000AC_1_ctschqbookVO.CODE")
+	@FindBy(xpath="//td[@id='td_chequeBookGridTbl_Id_Q000AC_1_ctschqbookVO.CODE']")
 	private WebElement selectChequeBookCodeInApproveCancelScreen;
 	public WebElement selectChequeBookCodeInApproveCancelScreen() {
 		return selectChequeBookCodeInApproveCancelScreen;
@@ -149,7 +149,7 @@ public class ChequeBookRequestObj {
 	public WebElement searchChequeBookCodeInApproveScreen() {
 		return searchChequeBookCodeInApproveScreen;
 	}
-	@FindBy(id = "td_chequeBookGridTbl_Id_Q000AP_1_ctschqbookVO.CODE")
+	@FindBy(xpath ="//td[@id='td_chequeBookGridTbl_Id_Q000RV_1_ctschqbookVO.CODE']")
 	private WebElement selectChequeBookCodeInApproveScreen;
 	public WebElement selectChequeBookCodeInApproveScreen() {
 		return selectChequeBookCodeInApproveScreen;
@@ -159,6 +159,29 @@ public class ChequeBookRequestObj {
 	private WebElement approveButton;
 	public WebElement approveButton() {
 		return approveButton;
+	}
+	
+	@FindBy(id="chequeBook_reject_Q000AP")
+	private WebElement rejectButtonInApproveScreen;
+	public WebElement rejectButtonInApproveScreen() {
+		return rejectButtonInApproveScreen;
+	}
+	@FindBy(xpath="//div[text()='[890] Invalid/Missing Reason Code']")
+	private WebElement rejectReasonPopupValidationInApproveChequeBookScreen;
+	public WebElement rejectReasonPopupValidationInApproveChequeBookScreen() {
+		return rejectReasonPopupValidationInApproveChequeBookScreen;
+	}
+	
+	@FindBy(xpath="//div[text()='[890] Invalid/Missing Reason Code']/parent::div/following-sibling::center/input[@id='_popup_path_sol_ok']")
+	private WebElement okButtonInCannotProceedPopupInApproveChequeBookScreen;
+	public WebElement okButtonInCannotProceedPopupInApproveChequeBookScreen() {
+		return okButtonInCannotProceedPopupInApproveChequeBookScreen;
+	}
+	
+	@FindBy(xpath="//label[text()='Reason']/parent::td/following-sibling::td//textarea")
+	private WebElement rejectReasonFieldInApproveScreen;
+	public WebElement rejectReasonFieldInApproveScreen() {
+		return rejectReasonFieldInApproveScreen;
 	}
 	
 	
@@ -242,7 +265,50 @@ public class ChequeBookRequestObj {
 	public WebElement reverseButtonInToReverseCancellationScreen() {
 		return reverseButtonInToReverseCancellationScreen;
 	}
+	//*****************************************************Reverse Chequebook **************************************//
 	
+	@FindBy(id="Q000RV")
+	private WebElement reverseChequeBookSubMenu;
+	public WebElement reverseChequeBookSubMenu() {
+		return reverseChequeBookSubMenu;
+	}
+	
+	@FindBy(id="chequeBookGridTbl_Id_Q000RV_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInReverseChequeBookScreen;
+	public WebElement searchChequeBookCodeInReverseChequeBookScreen() {
+		return searchChequeBookCodeInReverseChequeBookScreen;
+	}
+	
+	@FindBy(id="td_chequeBookGridTbl_Id_Q000RV_1_ctschqbookVO.CODE")
+	private WebElement selectChequeBookCodeInReverseChequeBookScreen;
+	public WebElement selectChequeBookCodeInReverseChequeBookScreen() {
+		return selectChequeBookCodeInReverseChequeBookScreen;
+	}
+	
+	@FindBy(id="chequeBookDefFormId_Q000RV_reject_key")
+	private WebElement rejectButtonReverseChequeBookScreen;
+	public WebElement rejectButtonReverseChequeBookScreen() {
+		return rejectButtonReverseChequeBookScreen;
+	}
+	
+	@FindBy(xpath="//div[text()='[890] Invalid/Missing Reason Code']")
+	private WebElement rejectReasonPopupValidationReverseChequeBookScreen;
+	public WebElement rejectReasonPopupValidationReverseChequeBookScreen() {
+		return rejectReasonPopupValidationReverseChequeBookScreen;
+	}
+	
+	@FindBy(xpath="//div[text()='[890] Invalid/Missing Reason Code']/parent::div/following-sibling::center/input[@id='_popup_path_sol_ok']")
+	private WebElement okButtonInCannotProceedPopupReverseChequeBookScreen;
+	public WebElement okButtonInCannotProceedPopupReverseChequeBookScreen() {
+		return okButtonInCannotProceedPopupReverseChequeBookScreen;
+	}
+	
+	@FindBy(id="//label[text()='Reason']/parent::td/following-sibling::td//textarea")
+	private WebElement rejectReasonFieldInReverseChequeBookScreen;
+	public WebElement rejectReasonFieldInReverseChequeBookScreen() {
+		return rejectReasonFieldInReverseChequeBookScreen;
+	}
+	//****************************************************Approve Cancellation Reversal *************************************//
 	@FindBy(id="Q000AQ")
 	private WebElement approveCancellationReversal;
 	public WebElement approveCancellationReversal() {
@@ -300,6 +366,30 @@ public class ChequeBookRequestObj {
 	public WebElement rejectButtonInApproveItemPopUp() {
 		return rejectButtonInApproveItemPopUp;
 	}
+	//***************************************************** Appprove Cancel**********************************************//
+	@FindBy(id="chequeBook_reject_Q000AC")
+	private WebElement rejectButtonInApproveCancelScreen;
+	public WebElement rejectButtonInApproveCancelScreen() {
+		return rejectButtonInApproveCancelScreen;
+	}
+	@FindBy(xpath="//div[text()='[890] Invalid/Missing Reason Code']")
+	private WebElement rejectReasonPopupValidationInApproveCancelChequeBookScreen;
+	public WebElement rejectReasonPopupValidationInApproveCancelChequeBookScreen() {
+		return rejectReasonPopupValidationInApproveCancelChequeBookScreen;
+	}
+	
+	@FindBy(xpath="//div[text()='[890] Invalid/Missing Reason Code']/parent::div/following-sibling::center/input[@id='_popup_path_sol_ok']")
+	private WebElement okButtonInCannotProceedPopupInApproveCancelChequeBookScreen;
+	public WebElement okButtonInCannotProceedPopupInApproveCancelChequeBookScreen() {
+		return okButtonInCannotProceedPopupInApproveCancelChequeBookScreen;
+	}
+	@FindBy(id="//label[text()='Reason']/parent::td/following-sibling::td//textarea")
+	private WebElement rejectReasonFieldInApproveCancelChequeBookScreen;
+	public WebElement rejectReasonFieldInApproveCancelChequeBookScreen() {
+		return rejectReasonFieldInApproveCancelChequeBookScreen;
+	}
+	
+	//*****************************************************to reverse cancellation Batch*******************************//
 	
 	@FindBy(id="Q000BTQ")
 	private WebElement toReverseCancellationBatchSubMenu;
@@ -319,6 +409,7 @@ public class ChequeBookRequestObj {
 	public WebElement reversebuttonInToReverseCancellationBatchScreen() {
 		return reversebuttonInToReverseCancellationBatchScreen;
 	}
+	
 	
 	@FindBy(id="Q000SP")
 	private WebElement suspendScreen;
@@ -392,6 +483,12 @@ public class ChequeBookRequestObj {
 	private WebElement toBeCancelledRecordValidationInCBMaintenance;
 	public WebElement toBeCancelledRecordValidationInCBMaintenance() {
 		return toBeCancelledRecordValidationInCBMaintenance;
+	}
+	
+	@FindBy(xpath="//td[text()='Deleted']")
+	private WebElement rejectedRecordValidationInCBMaintenance;
+	public WebElement rejectedRecordValidationInCBMaintenance() {
+		return rejectedRecordValidationInCBMaintenance;
 	}
 	
 	@FindBy(xpath="//td[text()='Cancelled']")
