@@ -90,7 +90,7 @@ public class CSM_AmendChequeCard_Retrieve {
     public void user_click_the_retrieve_button() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmAmendChequeCard.RetrieveButton);
         csmAmendChequeCard.RetrieveButton.click();
-        csmAmendChequeCard.RetrieveButton.sendKeys(testData.get("Application ID"));
+        //csmAmendChequeCard.RetrieveButton.sendKeys(testData.get("Application ID"));
         //csmAmendChequeCard.RetrieveButton.sendKeys("80");
     }
 

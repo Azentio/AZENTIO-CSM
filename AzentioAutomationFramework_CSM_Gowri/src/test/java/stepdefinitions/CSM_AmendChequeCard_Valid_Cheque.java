@@ -25,10 +25,7 @@ public class CSM_AmendChequeCard_Valid_Cheque {
 	Map<String, String> testData;
 	
 	
-	@Given("^user login as csm core application$")
-    public void user_login_as_csm_core_application() throws Throwable {
-        
-    }
+	
 
     @Then("^user verify the save popup$")
     public void user_verify_the_save_popup() throws Throwable {
@@ -82,12 +79,7 @@ public class CSM_AmendChequeCard_Valid_Cheque {
         validChequeObj.ChequeNo.sendKeys("645");
     }
 
-    @And("^user click the retrieve button$")
-    public void user_click_the_retrieve_button() throws Throwable {
-        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, validChequeObj.RetrieveButton);
-        validChequeObj.RetrieveButton.click();
-        
-    }
+    
 
     @And("^user click the check box$")
     public void user_click_the_check_box() throws Throwable {
@@ -99,8 +91,5 @@ public class CSM_AmendChequeCard_Valid_Cheque {
         
     }
 
-    @And("^user click the ok button$")
-    public void user_click_the_ok_button() throws Throwable {
-        
-    }
+    
 }
