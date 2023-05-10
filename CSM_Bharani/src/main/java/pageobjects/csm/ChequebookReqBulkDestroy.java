@@ -53,5 +53,15 @@ public class ChequebookReqBulkDestroy {
 	public WebElement ApproveReject_ToDestroy() {
 		return ApproveRejectToDestroy;
 	}
+	@FindBy(xpath="//td[@id='search_chequeBookBulkDestroyGridTbl_Id_Q000BAD']")
+	private WebElement ApproveRejectSearchIcon;
+	public WebElement ApproveReject_SearchIcon() {
+	return ApproveRejectSearchIcon;
+    }
+	@FindBy(xpath="//input[@id='jqg5']")
+	private WebElement ApproveRejectSearchBox;
+	public WebElement ApproveReject_SearchBox() {
+		return ApproveRejectSearchBox;
+	}
 }
 
