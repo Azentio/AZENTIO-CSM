@@ -434,13 +434,48 @@ public class ChequeBookRequestObj {
 	{
 		return chequeBookRequest_ApproveScreenClose;
 	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / Apply to Submit')]//parent::td//following-sibling::td//span")
+	private WebElement chequeBookRequest_ApplyToSubmitClose;
+	public WebElement chequeBookRequestApplyToSubmitClose()
+	{
+		return chequeBookRequest_ApplyToSubmitClose;
+	}
+	@FindBy(xpath="//a[contains(text(),'Chequebook Request / Submit')]//parent::td//following-sibling::td//span")
+	private WebElement chequeBookRequest_SubmitClose;
+	public WebElement chequeBookRequestSubmitClose()
+	{
+		return chequeBookRequest_SubmitClose;
+	}
 	@FindBy(xpath="//tr[@id='1']//td[13]")
 	private WebElement chequeBookRequestMaintenance_RecordStatus;
 	public WebElement chequeBookRequestMaintenanceRecordStatus()
 	{
 		return chequeBookRequestMaintenance_RecordStatus;
 	}
-	
+	@FindBy(xpath="//td[text()='Chequebook Request']//ancestor::h3//following-sibling::ul//span[text()='Apply to Submit']")
+	private WebElement chequeBookRequest_ApplyToSubmitFeature;
+	public WebElement chequeBookRequestApplyToSubmitFeature()
+	{
+		return chequeBookRequest_ApplyToSubmitFeature;
+	}
+	@FindBy(xpath="//label[contains(text(),'Apply Submit ')]//ancestor::button")
+	private WebElement applyToSubmit_ApplyToSubmitButton;
+	public WebElement applyToSubmitApplyToSubmitButton()
+	{
+		return applyToSubmit_ApplyToSubmitButton;
+	}
+	@FindBy(xpath="//td[text()='Chequebook Request']//ancestor::h3//following-sibling::ul//span[text()='Submit']")
+	private WebElement chequeBookRequest_SubmitFeature;
+	public WebElement chequeBookRequestSubmitFeature()
+	{
+		return chequeBookRequest_SubmitFeature;
+	}
+	@FindBy(xpath="//label[contains(text(),'Submit ')]//ancestor::button")
+	private WebElement SubmitFeature_SubmitButton;
+	public WebElement SubmitFeatureSubmitButton()
+	{
+		return SubmitFeature_SubmitButton;
+	}
 	
 	
 	

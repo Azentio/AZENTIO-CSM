@@ -710,5 +710,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionReversedStatus());
 		Assert.assertTrue(transactionObj.transactionTransactionReversedStatus().isDisplayed());
 	}
+	
+    
 
 }

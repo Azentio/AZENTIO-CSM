@@ -36,6 +36,132 @@ And enter the number of cheque book in cheque book request
 And enter the chque code in cheque book request
 Then verify system should generate new sequence in from number and to number
 
+@CHB_119_120_121_Prereq_01
+Scenario: To create the cheque book for approv screen
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID CHB_119_120_121_Prereq_01
+And click on cheque request module
+And click on cheque book request maintenance screen
+And enter the number of cheque book in cheque book request
+And enter the chque code in cheque book request
+And enter the account branch code in cheque book request
+And enter the acount currency code in cheque book request
+And enter the gl code in cheque book request
+And enter the CIF code in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And enter the serial number in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And click on save button in cheque book request
+And click on ok button in signature warning pop up
+And close the chequebook request label
+And click on approve feature under chequebook request
+And select the record under approval feature
+And close the memo alertpop up
+And click on approve button in cheque book request approval
+And close the approve screen of chequebook request
+And click on apply to submit screen under chequebook request screen
+And search for request number under apply to submit screen
+And select the record under apply to submit screen
+And close the memo alertpop up
+And click on apply to submit button under apply to submit screen
+And close the apply to submit label
+And click on submit feature under chequebook request
+And search the request number under submit screen
+And select the record in submit screen of chequebook request
+And close the memo alertpop up
+And click on submit button in submit screen
+And close the submit screen in chequebook request
+@CHB_121_1
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon rejecting a chequebook underr Approve  screen
+Given navigate to CSM application and login with valid teller credentials
+And get the test data for test case id CHB_121_1
+And click on to cancel feature under cheque book request
+And search the submitted record under to cancel screen
+And click on to cancel button
+Then verify alert will open for the BM user to sent approval
+Then verify reason remark field should not show
+Then verify system should sent the alert to BM user for chequebook to cancel approval
+@CHB_121_2
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon rejecting a chequebook underr Approve  screen
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID CHB_121_2
+@CHB_119_120_121_Prereq_02
+Scenario: To create the cheque book for approv screen
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID CHB_119_120_121_Prereq_02
+And click on cheque request module
+And click on cheque book request maintenance screen
+And enter the number of cheque book in cheque book request
+And enter the chque code in cheque book request
+And enter the account branch code in cheque book request
+And enter the acount currency code in cheque book request
+And enter the gl code in cheque book request
+And enter the CIF code in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And enter the serial number in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And click on save button in cheque book request
+And click on ok button in signature warning pop up
+And close the chequebook request label
+And click on approve feature under chequebook request
+And select the record under approval feature
+And close the memo alertpop up
+And click on approve button in cheque book request approval
+And close the approve screen of chequebook request
+And click on apply to submit screen under chequebook request screen
+And search for request number under apply to submit screen
+And select the record under apply to submit screen
+And close the memo alertpop up
+And click on apply to submit button under apply to submit screen
+And close the apply to submit label
+And click on submit feature under chequebook request
+And search the request number under submit screen
+And select the record in submit screen of chequebook request
+And close the memo alertpop up
+And click on submit button in submit screen
+And close the submit screen in chequebook request
+@CHB_119_120_121_Prereq_03
+Scenario: To create the cheque book for approv screen
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID CHB_119_120_121_Prereq_03
+And click on cheque request module
+And click on cheque book request maintenance screen
+And enter the number of cheque book in cheque book request
+And enter the chque code in cheque book request
+And enter the account branch code in cheque book request
+And enter the acount currency code in cheque book request
+And enter the gl code in cheque book request
+And enter the CIF code in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And enter the serial number in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And click on save button in cheque book request
+And click on ok button in signature warning pop up
+And close the chequebook request label
+And click on approve feature under chequebook request
+And select the record under approval feature
+And close the memo alertpop up
+And click on approve button in cheque book request approval
+And close the approve screen of chequebook request
+And click on apply to submit screen under chequebook request screen
+And search for request number under apply to submit screen
+And select the record under apply to submit screen
+And close the memo alertpop up
+And click on apply to submit button under apply to submit screen
+And close the apply to submit label
+And click on submit feature under chequebook request
+And search the request number under submit screen
+And select the record in submit screen of chequebook request
+And close the memo alertpop up
+And click on submit button in submit screen
+And close the submit screen in chequebook request
+
 @CHB_123_124_Prereq_01
 Scenario: To create the cheque book for approv screen
 Given navigate to CSM application and login with valid credentials
@@ -55,6 +181,58 @@ And close the dormant acount pop up
 And close the memo alertpop up
 And click on save button in cheque book request
 And click on ok button in signature warning pop up
+And close the chequebook request label
+And click on approve feature under chequebook request
+And select the record under approval feature
+And click on approve button in cheque book request approval
+And close the approve screen of chequebook request
+And click on apply to submit screen under chequebook request screen
+And search for request number under apply to submit screen
+And select the record under apply to submit screen
+And click on apply to submit button under apply to submit screen
+And close the apply to submit label
+And click on submit feature under chequebook request
+And search the request number under submit screen
+And select the record in submit screen of chequebook request
+And click on submit button in submit screen
+And close the submit screen in chequebook request
+
+
+@CHB_123_124_Prereq_02
+Scenario: To create the cheque book for approv screen
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID CHB_123_124_Prereq_01
+And click on cheque request module
+And click on cheque book request maintenance screen
+And enter the number of cheque book in cheque book request
+And enter the chque code in cheque book request
+And enter the account branch code in cheque book request
+And enter the acount currency code in cheque book request
+And enter the gl code in cheque book request
+And enter the CIF code in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And enter the serial number in cheque book request
+And close the dormant acount pop up
+And close the memo alertpop up
+And click on save button in cheque book request
+And click on ok button in signature warning pop up
+And close the chequebook request label
+And click on approve feature under chequebook request
+And select the record under approval feature
+And click on approve button in cheque book request approval
+And close the approve screen of chequebook request
+And click on apply to submit screen under chequebook request screen
+And search for request number under apply to submit screen
+And select the record under apply to submit screen
+And click on apply to submit button under apply to submit screen
+And close the apply to submit label
+And click on submit feature under chequebook request
+And search the request number under submit screen
+And select the record in submit screen of chequebook request
+And click on submit button in submit screen
+And close the submit screen in chequebook request
+
 @CHB_123_124_Prereq_02
 Scenario: To create the cheque book for approv screen
 Given navigate to CSM application and login with valid credentials
@@ -92,6 +270,8 @@ And click on approve feature under control records
 And approve the control records feature
 And click on ok in approve confirmation in control records
 And click on ok button in approve successful pop up in control records
+
+
 @CHB_122
 Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon rejecting a chequebook underr Approve  screen
 Given navigate to CSM application and login with valid credentials

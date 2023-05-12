@@ -19,12 +19,18 @@ public class LoginTest extends BaseClass {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	ClicksAndActionsHelper clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
-	AlertHelper alertHelper= new AlertHelper(driver);
+	AlertHelper alertHelper = new AlertHelper(driver);
 	ConfigFileReader configFileReader = new ConfigFileReader();
 
 	@Given("^navigate to CSM application and login with valid credentials$")
 	public void navigate_to_csm_application_and_login_with_valid_credentials() throws Throwable {
-		
+
+		driver.get(configFileReader.getCSMApplicationUrl());
+		csmLogin.loginIntoCSMApplication();
+	}
+
+	@Given("^navigate to CSM application and login with valid teller credentials$")
+	public void navigate_to_csm_application_and_login_with_valid_teller_credentials() throws Throwable {
 		driver.get(configFileReader.getCSMApplicationUrl());
 		csmLogin.loginIntoCSMApplication();
 	}

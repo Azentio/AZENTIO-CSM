@@ -58,18 +58,80 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 		chequeBookRequestTestData = excelDataForChequeBookRequest
 				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
-	   @And("^get the test data for test case ID CHB_123_124_Prereq_02$")
-	    public void get_the_test_data_for_test_case_id_chb123124prereq02() throws Throwable {
-		   chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_123_124_Prereq_02");
-			chequeBookRequestTestData = excelDataForChequeBookRequest
-					.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
-	    }
-	 @And("^get the test data for test case ID CHB_123_124_Prereq_01$")
-	    public void get_the_test_data_for_test_case_id_chb123124prereq01() throws Throwable {
-		 chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_123_124_Prereq_01");
-			chequeBookRequestTestData = excelDataForChequeBookRequest
-					.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
-	    }
+
+	@And("^get the test data for test case ID CHB_112_113_Prereq_01$")
+	public void get_the_test_data_for_test_case_id_chb112113prereq01() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_112_113_Prereq_01");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_112_01$")
+	public void get_the_test_data_for_test_case_id_chb11201() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_112_01");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+	@And("^get the test data for test case ID CHB_113_01$")
+    public void get_the_test_data_for_test_case_id_chb11301() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_113_01");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+    }
+
+	@And("^get the test data for test case ID CHB_112_02$")
+	public void get_the_test_data_for_test_case_id_chb11202() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_112_02");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+	@And("^get the test data for test case ID CHB_113_02$")
+    public void get_the_test_data_for_test_case_id_chb11302() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_113_02");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+    }
+	@And("^get the test data for test case ID CHB_123_124_Prereq_02$")
+	public void get_the_test_data_for_test_case_id_chb123124prereq02() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_123_124_Prereq_02");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_119_120_121_Prereq_03$")
+	public void get_the_test_data_for_test_case_id_chb119120121prereq03() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_123_124_Prereq_02");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_123_124_Prereq_01$")
+	public void get_the_test_data_for_test_case_id_chb123124prereq01() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_119_120_Prereq_01");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_119_120_121_Prereq_01$")
+	public void get_the_test_data_for_test_case_id_chb119120prereq01() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_119_120_121_Prereq_01");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_119_120_121_Prereq_02$")
+	public void get_the_test_data_for_test_case_id_chb119120121prereq02() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_119_120_121_Prereq_02");
+		chequeBookRequestTestData = excelDataForCheuqeBookRequestExecution
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_119_120_Prereq_02$")
+	public void get_the_test_data_for_test_case_id_chb119120prereq02() throws Throwable {
+		chargeWaiverExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_123_124_Prereq_02");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
 
 	@And("^enter the number of cheque book in cheque book request$")
 	public void enter_the_number_of_cheque_book_in_cheque_book_request() throws Throwable {
@@ -255,17 +317,34 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 
 	@And("^close the dormant acount pop up$")
 	public void close_the_dormant_acount_pop_up() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.dormantAccountPopupOkButton());
-		clicksAndActionsHelper.moveToElement(csmCommonWebElements.dormantAccountPopupOkButton());
-		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.dormantAccountPopupOkButton());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.dormantAccountPopupOkButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.dormantAccountPopupOkButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 
 	}
 
 	@And("^close the memo alertpop up$")
 	public void close_the_memo_alertpop_up() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.memoAlertCloseButton());
-		clicksAndActionsHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
-		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 	}
 
 	@And("^click on charges in chque book request$")
@@ -403,6 +482,86 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 			}
 
 		}
+	}
+
+	@And("^get the test data for test case id CHB_121_1$")
+	public void get_the_test_data_for_test_case_id_CHB_121_1() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_121_1");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case id CHB_120_1$")
+	public void get_the_test_data_for_test_case_id_chb1201() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_120_1");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_120_2$")
+	public void get_the_test_data_for_test_case_id_chb1202() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_120_2");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case id CHB_119_1$")
+	public void get_the_test_data_for_test_case_id_chb1191() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_119_1");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case id CHB_119_2$")
+	public void get_the_test_data_for_test_case_id_chb1192() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_119_2");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ID CHB_121_2$")
+	public void get_the_test_data_for_test_case_id_chb1212() throws Throwable {
+		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_121_1");
+		chequeBookRequestTestData = excelDataForChequeBookRequest
+				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
+	}
+
+	@And("^click on to cancel feature under cheque book request$")
+	public void click_on_to_cancel_feature_under_cheque_book_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestToCancelFeatrue());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestToCancelFeatrue());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestToCancelFeatrue());
+
+	}
+
+	@And("^search the submitted record under to cancel screen$")
+	public void search_the_submitted_record_under_to_cancel_screen() throws Throwable {
+		robot = new Robot();
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		chequeBookRequestObj.chequebookRequestSearchRequetCode()
+				.sendKeys(chequeBookRequestTestData.get("Request Number"));
+		chequeBookRequestObj.chequebookRequestSearchRequetCode().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@Then("^verify alert will open for the BM user to sent approval$")
+	public void verify_alert_will_open_for_the_bm_user_to_sent_approval() throws Throwable {
+		Assert.fail("Step need to write");
+	}
+
+	@Then("^verify reason remark field should not show$")
+	public void verify_reason_remark_field_should_not_show() throws Throwable {
+		Assert.fail("Step need to write");
+	}
+
+	@Then("^verify system should sent the alert to BM user for chequebook to cancel approval$")
+	public void verify_system_should_sent_the_alert_to_bm_user_for_chequebook_to_cancel_approval() throws Throwable {
+		Assert.fail("Step need to write");
 	}
 
 	@And("^click on approve cancel feature$")
@@ -554,8 +713,7 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 				clicksAndActionsHelper.doubleClick(csmCommonWebElements.memoAlertCloseButton());
 				break;
 			} catch (Exception e) {
-				if(i==300)
-				{
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 
@@ -648,5 +806,284 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 		Assert.assertEquals(status, "Deleted");
 		System.out.println("Status " + chequeBookRequestObj.chequeBookRequestMaintenanceRecordStatus().getText());
 
+	}
+
+	@And("^close the chequebook request label$")
+	public void close_the_chequebook_request_label() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestMaintenanceTabClose());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestMaintenanceTabClose());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestMaintenanceTabClose());
+
+	}
+
+	@And("^click on approve feature under chequebook request$")
+	public void click_on_approve_feature_under_chequebook_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookApproveFeature());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookApproveFeature());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookApproveFeature());
+	}
+
+	@And("^select the record under approval feature$")
+	public void select_the_record_under_approval_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestFirstRecord());
+		String requestNumber = chequeBookRequestObj.chequeBookRequestFirstRecord().getText();
+		excelDataForChequeBookRequest.updateTestData(chequeBookRequestTestData.get("DataSet ID"), "Request Number",
+				requestNumber);
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestFirstRecord());
+		clicksAndActionsHelper.doubleClick(chequeBookRequestObj.chequeBookRequestFirstRecord());
+
+	}
+
+	@And("^click on approve button in cheque book request approval$")
+	public void click_on_approve_button_in_cheque_book_request_approval() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(csmCommonWebElements.csmApproveBtnWithLabel());
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmApproveBtnWithLabel());
+				clicksAndActionsHelper.doubleClick(csmCommonWebElements.csmApproveBtnWithLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^close the approve screen of chequebook request$")
+	public void close_the_approve_screen_of_chequebook_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestApproveScreenClose());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestApproveScreenClose());
+				clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestApproveScreenClose());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+
+	}
+
+	@And("^click on apply to submit screen under chequebook request screen$")
+	public void click_on_apply_to_submit_screen_under_chequebook_request_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestApplyToSubmitFeature());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestApplyToSubmitFeature());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestApplyToSubmitFeature());
+	}
+
+	@And("^search for request number under apply to submit screen$")
+	public void search_for_request_number_under_apply_to_submit_screen() throws Throwable {
+		robot = new Robot();
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		chequeBookRequestObj.chequebookRequestSearchRequetCode()
+				.sendKeys(chequeBookRequestTestData.get("Request Number"));
+		chequeBookRequestObj.chequebookRequestSearchRequetCode().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^select the record under apply to submit screen$")
+	public void select_the_record_under_apply_to_submit_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestFirstRecord());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestFirstRecord());
+		clicksAndActionsHelper.doubleClick(chequeBookRequestObj.chequeBookRequestFirstRecord());
+
+	}
+
+	@And("^click on apply to submit button under apply to submit screen$")
+	public void click_on_apply_to_submit_button_under_apply_to_submit_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(chequeBookRequestObj.applyToSubmitApplyToSubmitButton());
+				clicksAndActionsHelper.moveToElement(chequeBookRequestObj.applyToSubmitApplyToSubmitButton());
+				clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.applyToSubmitApplyToSubmitButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestApplyToSubmitFeature());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestApplyToSubmitFeature());
+	}
+
+	@And("^close the apply to submit label$")
+	public void close_the_apply_to_submit_label() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestApplyToSubmitClose());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestApplyToSubmitClose());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestApplyToSubmitClose());
+	}
+
+	@And("^click on submit feature under chequebook request$")
+	public void click_on_submit_feature_under_chequebook_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestSubmitFeature());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestSubmitFeature());
+		clicksAndActionsHelper.doubleClick(chequeBookRequestObj.chequeBookRequestSubmitFeature());
+	}
+
+	@And("^search the request number under submit screen$")
+	public void search_the_request_number_under_submit_screen() throws Throwable {
+		robot = new Robot();
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		chequeBookRequestObj.chequebookRequestSearchRequetCode()
+				.sendKeys(chequeBookRequestTestData.get("Request Number"));
+		chequeBookRequestObj.chequebookRequestSearchRequetCode().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^select the record in submit screen of chequebook request$")
+	public void select_the_record_in_submit_screen_of_chequebook_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestFirstRecord());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestFirstRecord());
+		clicksAndActionsHelper.doubleClick(chequeBookRequestObj.chequeBookRequestFirstRecord());
+	}
+
+	@And("^click on submit button in submit screen$")
+	public void click_on_submit_button_in_submit_screen() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(chequeBookRequestObj.applyToSubmitApplyToSubmitButton());
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^close the submit screen in chequebook request$")
+	public void close_the_submit_screen_in_chequebook_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookRequestSubmitClose());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestSubmitClose());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestSubmitClose());
+	}
+
+	@Then("^verify BM user can able to get Alert for chequebook to cancel record$")
+	public void verify_bm_user_can_able_to_get_alert_for_chequebook_to_cancel_record() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@Then("^verify teller user record should available in BM user$")
+	public void verify_teller_user_record_should_available_in_bm_user() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@And("^check reject reason field should not be visible in BM user alert$")
+	public void check_reject_reason_field_should_not_be_visible_in_bm_user_alert() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@And("^BM user can able to reject the record without entering reject reason$")
+	public void bm_user_can_able_to_reject_the_record_without_entering_reject_reason() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@Then("^verify reject reason field should be editable under BM user$")
+	public void verify_reject_reason_field_should_be_editable_under_bm_user() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@Then("^verify system should show the validation for reject reason mandatoryy in BM user$")
+	public void verify_system_should_show_the_validation_for_reject_reason_mandatoryy_in_bm_user() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@Then("^verify record got rejected in BM user$")
+	public void verify_record_got_rejected_in_bm_user() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@And("^enter reject button without entering the reject reason in BM user$")
+	public void enter_reject_button_without_entering_the_reject_reason_in_bm_user() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@And("^enter the rejecct reason in BM user alert$")
+	public void enter_the_rejecct_reason_in_bm_user_alert() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@And("^click in reject button in BM user alert$")
+	public void click_in_reject_button_in_bm_user_alert() throws Throwable {
+		Assert.fail("Steps need to enter");
+	}
+
+	@And("^click on to be destroyed screen under chequebook request$")
+	public void click_on_to_be_destroyed_screen_under_chequebook_request() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.toBeDestroyMainModule());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.toBeDestroyMainModule());
+		clicksAndActionsHelper.clickUsingActionClass(chequeBookRequestObj.toBeDestroyMainModule(),
+				chequeBookRequestObj.toBeDestroyMainModule());
+	}
+
+	@And("^search the cheque code in to be destroyed screen$")
+	public void search_the_cheque_code_in_to_be_destroyed_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBookMaintenanceSearchChequeCode());
+		clicksAndActionsHelper.clickUsingActionClass(chequeBookRequestObj.chequeBookMaintenanceSearchChequeCode(),
+				chequeBookRequestObj.chequeBookMaintenanceSearchChequeCode());
+		chequeBookRequestObj.chequeBookMaintenanceSearchChequeCode()
+				.sendKeys(chequeBookRequestTestData.get("Request Number"));
+	}
+
+	@And("^select the record from to be destroyed suggestion$")
+	public void select_the_record_from_to_be_destroyed_suggestion() throws Throwable {
+		robot = new Robot();
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestSearchRequetCode());
+		chequeBookRequestObj.chequebookRequestSearchRequetCode()
+				.sendKeys(chequeBookRequestTestData.get("Request Number"));
+		chequeBookRequestObj.chequebookRequestSearchRequetCode().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("^click on to be destroy button$")
+	public void click_on_to_be_destroy_button() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(chequeBookRequestObj.toBeDestroyToDestroyButton());
+				clicksAndActionsHelper.clickUsingActionClass(chequeBookRequestObj.toBeDestroyToDestroyButton(),
+						chequeBookRequestObj.toBeDestroyToDestroyButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("^verify alert will open for teller account for to be destroy$")
+	public void verify_alert_will_open_for_teller_account_for_to_be_destroy() throws Throwable {
+		Assert.fail("Steps need to write");
+	}
+
+	@Then("^verify reject reason remark field should not show for under to be destroy screen under teller account$")
+	public void verify_reject_reason_remark_field_should_not_show_for_under_to_be_destroy_screen_under_teller_account()
+			throws Throwable {
+		Assert.fail("Steps need to write");
+	}
+
+	@And("^sent the to be destroy alert to user branch manager$")
+	public void sent_the_to_be_destroy_alert_to_user_branch_manager() throws Throwable {
+		Assert.fail("Steps need to write");
 	}
 }
