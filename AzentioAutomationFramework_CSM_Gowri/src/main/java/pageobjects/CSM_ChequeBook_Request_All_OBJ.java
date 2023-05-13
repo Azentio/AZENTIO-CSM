@@ -725,5 +725,46 @@ public WebElement rejectButton()
 	return rejectButton;
 }
 
+//CHB_142
+//toBeReversedChequeBook
+//doubleClickTheRecord
+//clickTheToBeReversedButton
+//okButtonInReverseChequeBookSubMenu
+//reverseChequeBookScreen
+//reverseChequeBookCode
+//chequeBookCreation_OkbuttonWarningPopUp
+
+@FindBy(id = "td_chequeBookGridTbl_Id_Q000RV_1_statusDesc")
+private WebElement retrieveRecordInReverseChequeBookSubMenu;
+public WebElement retrieveRecordInReverseChequeBookSubMenu()
+{
+	return retrieveRecordInReverseChequeBookSubMenu;
+}
+@FindBy(xpath = "//label[text()='Reject ']")
+private WebElement rejectButtonInReverseChequeBookSubMenu;
+public WebElement rejectButtonInReverseChequeBookSubMenu()
+{
+	return rejectButtonInReverseChequeBookSubMenu;
+}
+@FindBy(xpath = "//div[text()='[890] Invalid/Missing Reason Code']")
+private WebElement validatePopupInReverseChequeBookSubMenu;
+public WebElement validatePopupInReverseChequeBookSubMenu()
+{
+	return validatePopupInReverseChequeBookSubMenu;
+}
+@FindBy(id = "status_remarks_Q000RV")
+private WebElement reasonBox;
+public WebElement reasonBox()
+{
+	return reasonBox;
+}
+
+
+
+
+
+
+
+
 
 }

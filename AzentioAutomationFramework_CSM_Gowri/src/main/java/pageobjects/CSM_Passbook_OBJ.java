@@ -14,7 +14,7 @@ public class CSM_Passbook_OBJ {
 		PageFactory.initElements(driver, this);
 }
 	
-@FindBy(xpath="passbook - //td[text()='PassBooks']")
+@FindBy(xpath="//td[text()='PassBooks']")
 private WebElement PassBookIcon;
 public WebElement PassBookIcon()
 {

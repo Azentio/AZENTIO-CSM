@@ -27,7 +27,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
 	CSM_ChequeBook_Request_All_OBJ ChequeBookRequestObject = new CSM_ChequeBook_Request_All_OBJ(driver);
 	
 	String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
-	ExcelData csmChequeBookRequestExcelData = new ExcelData(path,"CSM_Passbooks","Data Set ID");
+	ExcelData csmChequeBookRequestExcelData = new ExcelData(path,"CSM_Chequebook","Data Set ID");
 	Map<String, String> testData;
 	
 	
@@ -64,8 +64,8 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
         ChequeBookRequestObject.ChequeBookRequest().click();
     }
 
-    @And("^user click the send to/receive from provider button$")
-    public void user_click_the_send_toreceive_from_provider_button() throws Throwable {
+    @And("^user click the send to/receive from provider screen$")
+    public void user_click_the_send_toreceive_from_provider_screen() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.ReceiveFromProviderSelect());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.ReceiveFromProviderSelect());
         ChequeBookRequestObject.ReceiveFromProviderSelect().click();
@@ -76,7 +76,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.searchChequeBookCodeInSendToProviderScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.searchChequeBookCodeInSendToProviderScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.searchChequeBookCodeInSendToProviderScreen());
-        ChequeBookRequestObject.searchChequeBookCodeInSendToProviderScreen().sendKeys("594");
+        ChequeBookRequestObject.searchChequeBookCodeInSendToProviderScreen().sendKeys(testData.get("Sent to provider Cheque Code"));
         ChequeBookRequestObject.searchChequeBookCodeInSendToProviderScreen().sendKeys(Keys.ENTER);
     }
    
@@ -163,7 +163,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.ChequeBookCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.ChequeBookCode());
         seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.ChequeBookCode());        
-        ChequeBookRequestObject.ChequeBookCode().sendKeys("594");
+        ChequeBookRequestObject.ChequeBookCode().sendKeys(testData.get("Maintenance Cheque Code"));
         ChequeBookRequestObject.ChequeBookCode().sendKeys(Keys.ENTER);
     }
     
@@ -190,7 +190,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCode());
         ChequeBookRequestObject.chequeBookCode().click();
-        ChequeBookRequestObject.chequeBookCode().sendKeys("470");
+        ChequeBookRequestObject.chequeBookCode().sendKeys(testData.get("Reactivate Cheque Code"));
         ChequeBookRequestObject.chequeBookCode().sendKeys(Keys.ENTER);
         seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.chequeBookCode());
     }
@@ -230,14 +230,14 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeCode());
         ChequeBookRequestObject.chequeCode().click();
-        ChequeBookRequestObject.chequeCode().sendKeys("470");
+        ChequeBookRequestObject.chequeCode().sendKeys(testData.get("Maintenance Cheque Code"));
         seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.chequeCode());
     }
     
     
     //reverse chequebook
-    @Then("^user click the ok button to validate the confiem message popup$")
-    public void user_click_the_ok_button_to_validate_the_confiem_message_popup() throws Throwable {
+    @Then("^user click the ok button to validate the confirm message popup$")
+    public void user_click_the_ok_button_to_validate_the_confirm_message_popup() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.confirmMessagePopup());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.confirmMessagePopup());
         Assert.assertTrue(ChequeBookRequestObject.confirmMessagePopup().isDisplayed());
@@ -265,7 +265,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_chequebook_code() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCodeToBeReversed());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCodeToBeReversed());
-        ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys("482");
+        ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(testData.get("To Be Reversed ChequeBook Code"));
         ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(Keys.ENTER);
         seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
         //ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(Keys.ENTER);
@@ -311,7 +311,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_chequebook_code_under_reverse_chequebook_screen() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookCode());
-        ChequeBookRequestObject.reverseChequeBookCode().sendKeys("482");
+        ChequeBookRequestObject.reverseChequeBookCode().sendKeys(testData.get("Reverse ChequeBook Code"));
         ChequeBookRequestObject.reverseChequeBookCode().sendKeys(Keys.ENTER);
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
         seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
@@ -334,7 +334,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_cheque_code_for_reverse_chequebook() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.maintenanceChequeBookCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.maintenanceChequeBookCode());
-        ChequeBookRequestObject.maintenanceChequeBookCode().sendKeys("482");
+        ChequeBookRequestObject.maintenanceChequeBookCode().sendKeys(testData.get("Maintenance Cheque Code"));
         ChequeBookRequestObject.maintenanceChequeBookCode().sendKeys(Keys.ENTER);
         seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
     }
@@ -348,7 +348,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.noOfChequeBooks());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.noOfChequeBooks());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.noOfChequeBooks());
-		//ChequeBookRequestObject.noOfChequeBooks().sendKeys(testData.get("No of Cheque boooks"));
+		ChequeBookRequestObject.noOfChequeBooks().sendKeys(testData.get("No of Cheque boooks"));
     }
     
     @And("^User Cheque Code in Cheque book Maintenance Screen$")
@@ -356,7 +356,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_chequeCode());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_chequeCode());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_chequeCode());
-		//ChequeBookRequestObject.chequeBookCreation_chequeCode().sendKeys(testData.get("Cheque Code"));
+		ChequeBookRequestObject.chequeBookCreation_chequeCode().sendKeys(testData.get("Cheque Code"));
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookMaintenance());
@@ -368,7 +368,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_BranchCode());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_BranchCode());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_BranchCode());
-		//ChequeBookRequestObject.chequeBookCreation_BranchCode().sendKeys(testData.get("Branch code"));
+		ChequeBookRequestObject.chequeBookCreation_BranchCode().sendKeys(testData.get("Branch code"));
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookMaintenance());
@@ -379,7 +379,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_CurrencyCode());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_CurrencyCode());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_CurrencyCode());
-		//ChequeBookRequestObject.chequeBookCreation_CurrencyCode().sendKeys(testData.get("Currency code"));
+		ChequeBookRequestObject.chequeBookCreation_CurrencyCode().sendKeys(testData.get("Currency code"));
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookMaintenance());
@@ -390,7 +390,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_GlCode());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_GlCode());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_GlCode());
-		//ChequeBookRequestObject.chequeBookCreation_GlCode().sendKeys(testData.get("GL code"));
+		ChequeBookRequestObject.chequeBookCreation_GlCode().sendKeys(testData.get("GL code"));
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookMaintenance());
@@ -401,7 +401,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_CifCode());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_CifCode());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_CifCode());
-		//ChequeBookRequestObject.chequeBookCreation_CifCode().sendKeys(testData.get("CIF code"));
+		ChequeBookRequestObject.chequeBookCreation_CifCode().sendKeys(testData.get("CIF code"));
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookMaintenance());
@@ -412,7 +412,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_SerialNo());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_SerialNo());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_SerialNo());
-		//ChequeBookRequestObject.chequeBookCreation_SerialNo().sendKeys(testData.get("Serial No"));
+		ChequeBookRequestObject.chequeBookCreation_SerialNo().sendKeys(testData.get("Serial No"));
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookMaintenance());
@@ -489,7 +489,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
     	seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
-		ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(testData.get("ChequeBookCode"));
+		ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(testData.get("Approve ChequeBookCode"));
 		ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(Keys.ENTER);
     }
     
@@ -546,8 +546,8 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.searchChequeBookCodeInCBMaintenance());
 		seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.searchChequeBookCodeInCBMaintenance());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.searchChequeBookCodeInCBMaintenance());
-		ChequeBookRequestObject.searchChequeBookCodeInCBMaintenance().sendKeys(testData.get("ChequeBookCode"));
-		String xpath ="//td[text()='"+testData.get("ChequeBookCode")+"']";
+		ChequeBookRequestObject.searchChequeBookCodeInCBMaintenance().sendKeys(testData.get("Maintenance Cheque Code"));
+		String xpath ="//td[text()='"+testData.get("Maintenance Cheque Code")+"']";
 		
 		for (int i = 0; i <200; i++) {
 			try {
@@ -599,7 +599,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_cheque_code_under_submit_screen() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeCodeInSubmitScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeCodeInSubmitScreen());
-        ChequeBookRequestObject.chequeCodeInSubmitScreen().sendKeys("900");
+        ChequeBookRequestObject.chequeCodeInSubmitScreen().sendKeys(testData.get("Cheque Code"));
         ChequeBookRequestObject.chequeCodeInSubmitScreen().sendKeys(Keys.ENTER);
         
        
@@ -654,7 +654,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_number_of_chequebooks() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.numberOfChequeBooksInMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.numberOfChequeBooksInMaintenance());
-        ChequeBookRequestObject.numberOfChequeBooksInMaintenance().sendKeys("50");
+        ChequeBookRequestObject.numberOfChequeBooksInMaintenance().sendKeys(testData.get("No of Cheque boooks"));
     }
 
     @And("^user click the cheque code$")
@@ -668,7 +668,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_cheque_code_under_chequebook_request_screen() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeCodeInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeCodeInMaintenanceScreen());
-        ChequeBookRequestObject.chequeCodeInMaintenanceScreen().sendKeys("150");
+        ChequeBookRequestObject.chequeCodeInMaintenanceScreen().sendKeys(testData.get("Cheque Code"));
     }
 
     @And("^user click the branch code$")
@@ -682,7 +682,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_branch_code() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.branchCodeInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.branchCodeInMaintenanceScreen());
-        ChequeBookRequestObject.branchCodeInMaintenanceScreen().sendKeys("001");
+        ChequeBookRequestObject.branchCodeInMaintenanceScreen().sendKeys(testData.get("Branch code"));
     }
 
     @And("^user click the currency code$")
@@ -696,7 +696,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_currency_code() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
-        ChequeBookRequestObject.currencyCodeInMaintenanceScreen().sendKeys("840");
+        ChequeBookRequestObject.currencyCodeInMaintenanceScreen().sendKeys(testData.get("Currency code"));
     }
     
     @And("^user click the chequebook request/maintenance icon$")
@@ -717,7 +717,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_gl_code() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.glCodeInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.glCodeInMaintenanceScreen());
-        ChequeBookRequestObject.glCodeInMaintenanceScreen().sendKeys("435123");
+        ChequeBookRequestObject.glCodeInMaintenanceScreen().sendKeys(testData.get("GL code"));
     }
 
     @And("^user click the cif code$")
@@ -731,7 +731,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_cif_code() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.cifCodeInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.cifCodeInMaintenanceScreen());
-        ChequeBookRequestObject.cifCodeInMaintenanceScreen().sendKeys("0000000");
+        ChequeBookRequestObject.cifCodeInMaintenanceScreen().sendKeys(testData.get("CIF code"));
     }
 
     @And("^user click the serial number$")
@@ -745,7 +745,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_serial_number() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.serialNoInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.serialNoInMaintenanceScreen());
-        ChequeBookRequestObject.serialNoInMaintenanceScreen().sendKeys("034");
+        ChequeBookRequestObject.serialNoInMaintenanceScreen().sendKeys(testData.get("Serial No"));
     }
 
     @And("^user click the 	save button under chequebook request$")
@@ -779,7 +779,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_cheque_code_in_maintenance_screen() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.maintenanceChequeBookCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.maintenanceChequeBookCode());
-        ChequeBookRequestObject.maintenanceChequeBookCode().sendKeys("");
+        ChequeBookRequestObject.maintenanceChequeBookCode().sendKeys(testData.get("Maintenance Cheque Code"));
     }
     
     
@@ -812,7 +812,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_status() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.statusButtonInMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.statusButtonInMaintenanceScreen());
-        ChequeBookRequestObject.statusButtonInMaintenanceScreen().sendKeys("DRAFT");
+        ChequeBookRequestObject.statusButtonInMaintenanceScreen().sendKeys(testData.get("Status"));
         ChequeBookRequestObject.statusButtonInMaintenanceScreen().sendKeys(Keys.ENTER);
         seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.statusButtonInMaintenanceScreen());
     }
@@ -835,7 +835,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_account_brief_name() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.accountBriefName());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.accountBriefName());
-        ChequeBookRequestObject.accountBriefName().sendKeys("abcdef");
+        ChequeBookRequestObject.accountBriefName().sendKeys(testData.get("Account Brief Name"));
     }
 
     @And("^user click the checkbox chequebook$")
@@ -879,7 +879,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     public void user_enter_the_value_in_check_code() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.checkCodeInApplyToSubmit());
         seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.checkCodeInApplyToSubmit());
-        ChequeBookRequestObject.checkCodeInApplyToSubmit().sendKeys("100");
+        ChequeBookRequestObject.checkCodeInApplyToSubmit().sendKeys(testData.get("Cheque Code"));
         ChequeBookRequestObject.checkCodeInApplyToSubmit().sendKeys(Keys.ENTER);
     }
 
@@ -930,37 +930,50 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
 
     @And("^system generate the alert message$")
     public void system_generate_the_alert_message() throws Throwable {
-        
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.bmApproval());
+    	Assert.assertTrue(ChequeBookRequestObject.bmApproval().isDisplayed());
     }
 
     @And("^user click the approve button in apply to submit screen$")
     public void user_click_the_approve_button_in_apply_to_submit_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.approveButtonInBmApproval());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.approveButtonInBmApproval());
+        ChequeBookRequestObject.approveButtonInBmApproval().click();
     }
 
     @And("^user click the username$")
     public void user_click_the_username() throws Throwable {
-        
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.usernameInBmApproval());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.usernameInBmApproval());
+        ChequeBookRequestObject.usernameInBmApproval().click();
     }
 
     @And("^user enter the value in username$")
     public void user_enter_the_value_in_username() throws Throwable {
-        
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.usernameInBmApproval());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.usernameInBmApproval());
+        ChequeBookRequestObject.usernameInBmApproval().sendKeys(testData.get("User Name"));
     }
 
     @And("^user click the password$")
     public void user_click_the_password() throws Throwable {
-        
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.passwordInBmApproval());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.passwordInBmApproval());
+        ChequeBookRequestObject.passwordInBmApproval().click();
     }
 
     @And("^user enter the value in password$")
     public void user_enter_the_value_in_password() throws Throwable {
-        
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.usernameInBmApproval());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.usernameInBmApproval());
+        ChequeBookRequestObject.usernameInBmApproval().sendKeys(testData.get("Password"));
     }
 
     @And("^user click the submit button in user information$")
     public void user_click_the_submit_button_in_user_information() throws Throwable {
-        
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.submitButtonINBmApproval());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.submitButtonINBmApproval());
+        ChequeBookRequestObject.submitButtonINBmApproval().click();
     }
     
     
@@ -1121,43 +1134,160 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     
     
     //@CHB_141
+    
+    @And("^user update test data set id for CHB_141$")
+    public void user_update_test_data_set_id_for_chb141() throws Throwable {
+        
+    }
     @Then("^user click to destroy button$")
     public void user_click_to_destroy_button() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.toDestroyButton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.toDestroyButton());
+        ChequeBookRequestObject.toDestroyButton().click();
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_OkbuttonWarningPopUp());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_OkbuttonWarningPopUp());
+        ChequeBookRequestObject.chequeBookCreation_OkbuttonWarningPopUp().click();
     }
 
     @Then("^user click the reject button in approve destroyed screen$")
     public void user_click_the_reject_button_in_approve_destroyed_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.rejectButton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.rejectButton());
+        ChequeBookRequestObject.rejectButton().click();
     }
 
     @And("^user click to be destroyed screen$")
     public void user_click_to_be_destroyed_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.toBeDestroyedScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.toBeDestroyedScreen());
+        ChequeBookRequestObject.toBeDestroyedScreen().click();
     }
 
     @And("^user retrieve the approved chequebook record in to be destroyed screen$")
     public void user_retrieve_the_approved_chequebook_record_in_to_be_destroyed_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.retrieveApprovedRecordInToBeDestroyedScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.retrieveApprovedRecordInToBeDestroyedScreen());
+        seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.retrieveApprovedRecordInToBeDestroyedScreen());
     }
 
     @And("^system force to user to fill the reason in to be destroyed screen$")
     public void system_force_to_user_to_fill_the_reason_in_to_be_destroyed_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reasonMessage());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reasonMessage());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.reasonMessage());
+        ChequeBookRequestObject.reasonMessage().sendKeys(testData.get("Reason Field"));
+
+    }
+    
+    @Then("^user click to destroy button to destroy the approved record$")
+    public void user_click_to_destroy_button_to_destroy_the_approved_record() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.toDestroyButton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.toDestroyButton());
+        ChequeBookRequestObject.toDestroyButton().click();
     }
 
     @And("^user navigate to click the approve destroyed screen$")
     public void user_navigate_to_click_the_approve_destroyed_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.approveDestroyedScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.approveDestroyedScreen());
+        ChequeBookRequestObject.approveDestroyedScreen().click();
     }
 
     @And("^user click the cheque code in approve destroyed screen$")
     public void user_click_the_cheque_code_in_approve_destroyed_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeCodeInApproveDestroyedScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeCodeInApproveDestroyedScreen());
+        ChequeBookRequestObject.chequeCodeInApproveDestroyedScreen().click();
     }
 
     @And("^user retrieve the to be destroyed record in approve destroyed screen$")
     public void user_retrieve_the_to_be_destroyed_record_in_approve_destroyed_screen() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.retrieveRecordInApproveDestroyedScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.retrieveRecordInApproveDestroyedScreen());
+        ChequeBookRequestObject.retrieveRecordInApproveDestroyedScreen().sendKeys(testData.get("Approve Destroyed"));
+        ChequeBookRequestObject.retrieveRecordInApproveDestroyedScreen().sendKeys(Keys.ENTER);
+        seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.retrieveRecordInApproveDestroyedScreen());
+    }
+    
+    //@CHB_142
+    @Then("^user validate the cannot proceed popup message under reverse chequebook screen$")
+    public void user_validate_the_cannot_proceed_popup_message_under_reverse_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.validatePopupInReverseChequeBookSubMenu());
+    	Assert.assertTrue(ChequeBookRequestObject.validatePopupInReverseChequeBookSubMenu().isDisplayed());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.okButtonInReverseChequeBookSubMenu());
+    	seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.okButtonInReverseChequeBookSubMenu());
+    	ChequeBookRequestObject.okButtonInReverseChequeBookSubMenu().click();
+    }
+    
+    @And("^user fill the reason field in reverse chequebook screen$")
+    public void user_fill_the_reason_field_in_reverse_chequebook_screen() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reasonBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reasonBox());
+        ChequeBookRequestObject.reasonBox().click();
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reasonBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reasonBox());
+        ChequeBookRequestObject.reasonBox().sendKeys(testData.get("Reason Field"));
+    }
+
+    @And("^user click the reject button under reverse chequebook screen$")
+    public void user_click_the_reject_button_under_reverse_chequebook_screen() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu());
+        ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu().click();
+    }
+    
+    @And("^user update test data set id for CHB_142$")
+    public void user_update_test_data_set_id_for_chb142() throws Throwable {
+    	//testData = csmChequeBookRequestExcelData.getTestdata("CHB_082_D1");
+    }
+    
+    //CHB_143
+    
+    @And("^user update test data set id for CHB_143$")
+    public void user_update_test_data_set_id_for_chb143() throws Throwable {
+    	//testData = csmChequeBookRequestExcelData.getTestdata("CHB_082_D1");
+    }
+    
+    //CHB_144
+    
+    @And("^user update test data set id for CHB_144$")
+    public void user_update_test_data_set_id_for_chb144() throws Throwable {
+    	//testData = csmChequeBookRequestExcelData.getTestdata("CHB_082_D1");
+    }
+    
+    @And("^user click and fill the value in reason field in to be reversed chequebook screen$")
+    public void user_click_and_fill_the_value_in_reason_field_in_to_be_reversed_chequebook_screen() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reasonBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reasonBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.reasonBox());
+        ChequeBookRequestObject.reasonBox().sendKeys(testData.get("Reason Field"));
+        
+    }
+    
+    //@CHB_145
+    
+    @And("^user update test data set id for CHB_145$")
+    public void user_update_test_data_set_id_for_chb145() throws Throwable {
+    	//testData = csmChequeBookRequestExcelData.getTestdata("CHB_082_D1");
+    }
+    
+    @And("^user check on the reason field and fill the reason in to be reversed chequebook screen$")
+    public void user_check_on_the_reason_field_and_fill_the_reason_in_to_be_reversed_chequebook_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reasonBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reasonBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.reasonBox());
+        ChequeBookRequestObject.reasonBox().sendKeys(testData.get("Reason Field"));
+    }
+    
+    //@CHB_146
+    
+    @And("^user update test data set id for CHB_146$")
+    public void user_update_test_data_set_id_for_chb146() throws Throwable {
+        
+    }
+    
+    @And("^user check on the reason field and fill the reason in reverse chequebook screen$")
+    public void user_check_on_the_reason_field_and_fill_the_reason_in_reverse_chequebook_screen() throws Throwable {
         
     }
 }

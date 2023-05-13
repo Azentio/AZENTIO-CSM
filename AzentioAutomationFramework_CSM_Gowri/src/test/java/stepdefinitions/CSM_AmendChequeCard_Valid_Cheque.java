@@ -41,42 +41,42 @@ public class CSM_AmendChequeCard_Valid_Cheque {
     public void user_enter_the_branch_code_value_under_product_type() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, validChequeObj.BranchCode);
     	validChequeObj.BranchCode.click();
-        validChequeObj.BranchCode.sendKeys("0001");
+        validChequeObj.BranchCode.sendKeys(testData.get("Branch Code"));
     }
 
     @And("^user enter the currency code value under product type$")
     public void user_enter_the_currency_code_value_under_product_type() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, validChequeObj.CurrencyCode);
     	validChequeObj.CurrencyCode.click();
-        validChequeObj.CurrencyCode.sendKeys("840");
+        validChequeObj.CurrencyCode.sendKeys(testData.get("Currency Code"));
     }
 
     @And("^user enter the GL code value under product type$")
     public void user_enter_the_gl_code_value_under_product_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,validChequeObj.GlCode);
         validChequeObj.GlCode.click();
-        validChequeObj.GlCode.sendKeys("210209");
+        validChequeObj.GlCode.sendKeys(testData.get("GL Code"));
     }
 
     @And("^user enter the CIF code value under product type$")
     public void user_enter_the_cif_code_value_under_product_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, validChequeObj.CifCode);
         validChequeObj.CifCode.click();
-        validChequeObj.CifCode.sendKeys("1793");
+        validChequeObj.CifCode.sendKeys(testData.get("CIF Code"));
     }
 
     @And("^user enter the serial no under product type$")
     public void user_enter_the_serial_no_under_product_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, validChequeObj.SerialNo);
         validChequeObj.SerialNo.click();
-        validChequeObj.SerialNo.sendKeys("000");
+        validChequeObj.SerialNo.sendKeys(testData.get("Serial No"));
     }
 
     @And("^user enter the cheque no under product type$")
     public void user_enter_the_cheque_no_under_product_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, validChequeObj.ChequeNo);
         validChequeObj.ChequeNo.click();
-        validChequeObj.ChequeNo.sendKeys("645");
+        validChequeObj.ChequeNo.sendKeys(testData.get("Cheque No"));
     }
 
     

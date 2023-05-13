@@ -20,7 +20,7 @@ public class CSM_Passbooks_Restriction extends BaseClass{
 	CSMLogin login = new CSMLogin(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSM_Passbook_OBJ csmPassbookObject = new CSM_Passbook_OBJ(driver);
-	String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
+	String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
 	ExcelData csmTransactionsExcelData = new ExcelData(path,"CSM_Passbooks","Data Set ID");
 	Map<String, String> testData;
 	
@@ -54,6 +54,7 @@ public class CSM_Passbooks_Restriction extends BaseClass{
     @And("^user click the passbooks in menu options$")
     public void user_click_the_passbooks_in_menu_options() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmPassbookObject.PassBookIcon());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmPassbookObject.PassBookIcon());
         csmPassbookObject.PassBookIcon().click();
     }
 
@@ -67,35 +68,35 @@ public class CSM_Passbooks_Restriction extends BaseClass{
     public void user_enter_the_branch_code_value_under_passbook_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmPassbookObject.BranchCode());
         csmPassbookObject.BranchCode().click();
-        csmPassbookObject.BranchCode().sendKeys(testData.get("Transaction Branchcode"));
+        csmPassbookObject.BranchCode().sendKeys(testData.get("Passbook Branchcode"));
     }
 
     @And("^user enter the currency code value under passbook type$")
     public void user_enter_the_currency_code_value_under_passbook_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmPassbookObject.CurrencyCode());
         csmPassbookObject.CurrencyCode().click();
-        csmPassbookObject.CurrencyCode().sendKeys(testData.get("Currency code"));
+        csmPassbookObject.CurrencyCode().sendKeys(testData.get("Passbook Currency code"));
     }
 
     @And("^user enter the GL code value under passbook type$")
     public void user_enter_the_gl_code_value_under_passbook_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmPassbookObject.Glcode());
         csmPassbookObject.Glcode().click();
-        csmPassbookObject.Glcode().sendKeys(testData.get("Glcode"));
+        csmPassbookObject.Glcode().sendKeys(testData.get("Passbook GL code"));
     }
 
     @And("^user enter the CIF code value under passbook type$")
     public void user_enter_the_cif_code_value_under_passbook_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmPassbookObject.CifCode());
         csmPassbookObject.CifCode().click();
-        csmPassbookObject.CifCode().sendKeys(testData.get("CifCode"));
+        csmPassbookObject.CifCode().sendKeys(testData.get("Passbook CIF code"));
     }
 
     @And("^user enter the serial no value under passbook type$")
     public void user_enter_the_serial_no_value_under_passbook_type() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmPassbookObject.SerialNo());
         csmPassbookObject.SerialNo().click();
-        csmPassbookObject.SerialNo().sendKeys(testData.get("SerialNo"));
+        csmPassbookObject.SerialNo().sendKeys(testData.get("Passbook Serial No"));
     }
     
     @Then("^user verify the popup message$")

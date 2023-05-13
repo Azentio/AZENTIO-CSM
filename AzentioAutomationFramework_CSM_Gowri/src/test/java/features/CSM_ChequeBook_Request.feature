@@ -3,7 +3,7 @@ Feature: To verify the functionality of chequebook under receive from provider
 Scenario: checking if the created chequebook is reflected under send to provider screen
 Given user login as csm application
 And user click the chequebook request screen
-And user click the send to/receive from provider button
+And user click the send to/receive from provider screen
 And user click the send to provider
 And user search chequebook code in send to provider screen
 And user click the check box under send to provider
@@ -16,7 +16,7 @@ Then user validate the send to provider status record present in the maintenance
 Scenario: checking if the created chequebook is reflected under receive from provider screen 
 Given user login as csm core application
 And user click the chequebook request screen
-And user click the send to/receive from provider button
+And user click the send to/receive from provider screen
 And user click the receive from provider
 And user select the batch no under receive from provider
 And user click the check box under receive from provider
@@ -46,7 +46,7 @@ And user click the to be reversed chequebook screen
 And user click the checkbook code in to be reversed chequebook screen
 And user enter the value in chequebook code
 And user click the to be reversed button
-Then user click the ok button to validate the confiem message popup 
+Then user click the ok button to validate the confirm message popup 
 And user click the reverse chequebook screen
 And user click the chequebook code in reverse chequebook screen
 And user enter the value in chequebook code under reverse chequebook screen
@@ -250,7 +250,7 @@ And user click the to be reversed chequebook screen
 And user click the checkbook code in to be reversed chequebook screen
 And user enter the value in chequebook code
 And user click the to be reversed button
-Then user click the ok button to validate the confiem message popup 
+Then user click the ok button to validate the confirm message popup 
 And user click the reverse chequebook screen
 And user click the chequebook code in reverse chequebook screen
 And user enter the value in chequebook code under reverse chequebook screen
@@ -298,7 +298,7 @@ And user click the to be reversed chequebook screen
 And user click the checkbook code in to be reversed chequebook screen
 And user enter the value in chequebook code
 And user click the to be reversed button
-Then user click the ok button to validate the confiem message popup 
+Then user click the ok button to validate the confirm message popup 
 And user click the reverse chequebook screen
 And user click the chequebook code in reverse chequebook screen
 And user enter the value in chequebook code under reverse chequebook screen
@@ -346,7 +346,7 @@ And user click the to be reversed chequebook screen
 And user click the checkbook code in to be reversed chequebook screen
 And user enter the value in chequebook code
 And user click the to be reversed button
-Then user click the ok button to validate the confiem message popup 
+Then user click the ok button to validate the confirm message popup 
 And user click the reverse chequebook screen
 And user click the chequebook code in reverse chequebook screen
 And user enter the value in chequebook code under reverse chequebook screen
@@ -410,6 +410,33 @@ Scenario: Checking if the user is able to modify From Number and To Number field
 Given user login as csm core application
 And user update test data set id for CHB_086
 And user click the chequebook request screen
+And user click the maintenance screen under chequebook request
+And user click the number of chequebooks button
+And user enter the value in number of chequebooks
+And user click the cheque code 
+And user enter the value in cheque code under chequebook request screen
+And user click the chequebook request/maintenance icon
+And user click the branch code 
+And user enter the value in branch code
+And user click the chequebook request/maintenance icon 
+And user click the currency code
+And user enter the value in currency code
+And user click the chequebook request/maintenance icon
+And user click the gl code
+And user enter the value in gl code
+And user click the chequebook request/maintenance icon
+And user click the cif code 
+And user enter the value in cif code
+And user click the chequebook request/maintenance icon
+And user click the serial number
+And user enter the value in serial number
+And user click the chequebook request/maintenance icon
+And user click the 	save button under chequebook request
+And User Click Approve Sub Menu
+And User Search Cheque Book Code in Approve Screen
+And User Select Cheque Book Code in Approve Screen
+And User Click Approve button in Approve Screen
+And User Click Ok button in Warning pop up Message in Approve Screen
 
 @CHB_141
 Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag as unchecked upon unchecking the "Records rejection reason is mandatory" flag and  rejecting a chequebook underr Reject Destroy screen
@@ -420,11 +447,118 @@ And user click to be destroyed screen
 And user retrieve the approved chequebook record in to be destroyed screen
 Then user click to destroy button
 And system force to user to fill the reason in to be destroyed screen
-Then user click to destroy button
+Then user click to destroy button to destroy the approved record
 And user navigate to click the approve destroyed screen
 And user click the cheque code in approve destroyed screen
 And user retrieve the to be destroyed record in approve destroyed screen
 Then user click the reject button in approve destroyed screen
+
+@CHB_142
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon rejecting a chequebook underr Reverse Cheuqbook screen
+Given user login as csm core application
+And user update test data set id for CHB_142
+And user click the chequebook request screen
+And user click the to be reversed chequebook screen
+And user click the checkbook code in to be reversed chequebook screen
+And user enter the value in chequebook code
+And user click the to be reversed button
+Then user click the ok button to validate the confirm message popup 
+And user click the reverse chequebook screen
+And user click the chequebook code in reverse chequebook screen
+And user enter the value in chequebook code under reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+Then user validate the cannot proceed popup message under reverse chequebook screen
+And user fill the reason field in reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+
+@CHB_143
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon unchecking the "Records rejection reason is mandatory" flag and  rejecting a chequebook underr Reject Destroy screen
+Given user login as csm core application
+And user update test data set id for CHB_143
+And user click the chequebook request screen
+And user click the to be reversed chequebook screen
+And user click the checkbook code in to be reversed chequebook screen
+And user enter the value in chequebook code
+And user click the to be reversed button
+Then user click the ok button to validate the confirm message popup 
+And user click the reverse chequebook screen
+And user click the chequebook code in reverse chequebook screen
+And user enter the value in chequebook code under reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+Then user validate the cannot proceed popup message under reverse chequebook screen
+And user fill the reason field in reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+
+@CHB_144
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag as unchecked upon checking the "Records rejection reason is mandatory" flag and  rejecting a chequebook underr Reject Destroy screen
+Given user login as csm core application
+And user update test data set id for CHB_144
+And user click the chequebook request screen
+And user click the to be reversed chequebook screen
+And user click the checkbook code in to be reversed chequebook screen
+And user enter the value in chequebook code
+And user click the to be reversed button
+#And user click the ok button
+And user click and fill the value in reason field in to be reversed chequebook screen
+And user click the to be reversed button
+And user click the reverse chequebook screen
+And user click the chequebook code in reverse chequebook screen
+And user enter the value in chequebook code under reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+
+@CHB_145
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag as unchecked upon unchecking the "Records rejection reason is mandatory" flag and  rejecting a chequebook underr Reject Destroy screen
+Given user login as csm core application
+And user update test data set id for CHB_145
+And user click the chequebook request screen
+And user click the to be reversed chequebook screen
+And user click the checkbook code in to be reversed chequebook screen
+And user enter the value in chequebook code
+And user check on the reason field and fill the reason in to be reversed chequebook screen
+And user click the to be reversed button
+And user click the reverse chequebook screen
+And user click the chequebook code in reverse chequebook screen
+And user enter the value in chequebook code under reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+
+@CHB_146
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag upon rejecting a chequebook underr Reverse Cheuqbook screen
+Given user login as csm core application
+And user update test data set id for CHB_146
+And user click the chequebook request screen
+And user click the to be reversed chequebook screen
+And user click the checkbook code in to be reversed chequebook screen
+And user enter the value in chequebook code
+And user check on the reason field and fill the reason in to be reversed chequebook screen
+#And user click the to be reversed button
+#Then verify the alert send to the BM user and click the approve button
+#And user click and enter the username in BM approval 
+#And user click and enter the password in BM approval
+And user click the reverse chequebook screen
+And user click the chequebook code in reverse chequebook screen
+And user enter the value in chequebook code under reverse chequebook screen
+And user check on the reason field and fill the reason in reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+
+@CHB_148
+Scenario: Check if the system is  validating the value of the "Reason on Rejecting" flag as unchecked upon checking the "Records rejection reason is mandatory" flag and  rejecting a chequebook underr Reject Destroy screen
+Given user login as csm core application
+And user update test data set id for CHB_146
+And user click the chequebook request screen
+And user click the to be reversed chequebook screen
+And user click the checkbook code in to be reversed chequebook screen
+And user enter the value in chequebook code
+#And user check on the reason field and fill the reason in to be reversed chequebook screen
+And user click the to be reversed button
+#Then verify the alert send to the BM user and click the approve button
+#And user click and enter the username in BM approval 
+#And user click and enter the password in BM approval
+And user click the reverse chequebook screen
+And user click the chequebook code in reverse chequebook screen
+And user enter the value in chequebook code under reverse chequebook screen
+And user click the reject button under reverse chequebook screen
+
+
 
 
 
