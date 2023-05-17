@@ -1,10 +1,12 @@
 package stepdefinitions;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
@@ -79,8 +81,9 @@ public class CSM_Chequebookrequest_step {
     	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
     	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-        csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
-//        csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+       // csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+     csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys("karthik");
+        
         csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(Keys.ENTER);
         
     }
@@ -111,7 +114,10 @@ public class CSM_Chequebookrequest_step {
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
     	
         //dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(),"Logged-in branch"  );
-    	dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(), testData.get("Send to receive from chequebooks dropdown") );
+//    	dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(), testData.get("Send to receive from chequebooks dropdown") );
+        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(),"All branches " );
+        waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
+        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(), "Logged-in branch" );
     }
     
     @And("^user click the update after approve button$")
@@ -144,13 +150,27 @@ public class CSM_Chequebookrequest_step {
 
     @And("^user click and send the values in user id under Approve screen$")
     public void user_click_the_user_id_in_approve_screen() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-        csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
-        //csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
-        csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(Keys.ENTER);
+    	
+				waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Approve_UserID());
+		    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Approve_UserID());
+		        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Approve_UserID());
+		        //csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+		        csmChequebookObject.csmParam_User_Approve_UserID().sendKeys("karthik");
+		        csmChequebookObject.csmParam_User_Approve_UserID().sendKeys(Keys.ENTER);
+				
     }
+			
+    @And("^user double click the user id in approve screen$")
+    public void user_double_click_the_user_id_in_approve_screen() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Approve_Username_doubleclick());
+    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Approve_Username_doubleclick());
+        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Approve_Username_doubleclick());
+        clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_User_Approve_Username_doubleclick());
+        
+    }
+
+
+    
 
     @And("^user click the approve box$")
     public void user_click_the_approve_box() throws Throwable {
@@ -188,34 +208,40 @@ public class CSM_Chequebookrequest_step {
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_retrivebutton());
     }
     
-    @And("^user update test data set id for CHB_186_D3$")
+    @And("^user update test data set id for CHB_186_D3 in send to provider screen$")
     public void user_update_test_data_set_id_for_chb186d3() throws Throwable {
-    	testData = excelDataForChequeBookRequest.getTestdata("CHB_180_D3");
-    }
-
-    
-//    @And("^user Enter the  branch code in send to provider$")
-//    public void user_enter_the_branch_code_in_send_to_provider() throws Throwable {
-//        
-//    }
-
-    @And("^user click the receive from provider screen$")
-    public void user_click_the_receive_from_provider_screen() throws Throwable {
+    	//testData = excelDataForChequeBookRequest.getTestdata("CHB_180_D3");
     	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield());
     	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield());
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield());
+        //csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+        csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield().sendKeys("1");
     }
 
-//    @And("^user Enter the  branch code in receive from provider$")
-//    public void user_enter_the_branch_code_in_receive_from_provider() throws Throwable {
-//        
-//    }
+    
+
+
+    @And("^user click the receive from provider screen$")
+    public void user_click_the_receive_from_provider_screen() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider());
+    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider());
+        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider());
+    }
+
+    @And("^user update test data set id for CHB_186_D3 in receive from provider screen$")
+    public void user_update_test_data_set_id_for_chb186d3_in_receive_from_provider_screen() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield());
+    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield());
+        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield());
+        //csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+        csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield().sendKeys("1");
+    }
     
     
     //CHB_187
     @And("^user update test data set id for CHB_187$")
     public void user_update_test_data_set_id_for_chb187() throws Throwable {
-    	testData = excelDataForChequeBookRequest.getTestdata("CHB_187_D2");
+    	//testData = excelDataForChequeBookRequest.getTestdata("CHB_187_D2");
     }
     
     @And("^user select the all branches$")
@@ -224,7 +250,12 @@ public class CSM_Chequebookrequest_step {
     	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
     	javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
-        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(), testData.get("Send to receive from chequebooks dropdown") );
+       // dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(), testData.get("Send to receive from chequebooks dropdown") );
+        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(), "Logged-in");
+        waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
+
+        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch(),"All branches " );
+
     }
     //CHB_180
     
@@ -250,9 +281,16 @@ public class CSM_Chequebookrequest_step {
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_Updateafterapprove()); 
     }
 
-    @And("^user update test data set id for CHB_180$")
-    public void user_update_test_data_set_id_for_chb180() throws Throwable {
-    	 testData = excelDataForChequeBookRequest.getTestdata("CHB_180 _D3");
+    
+    @And("^user update test data set id for CHB_180 in update after screen$")
+    public void user_update_test_data_set_id_for_chb180_in_update_after_screen() throws Throwable {
+    	// testData = excelDataForChequeBookRequest.getTestdata("CHB_180 _D3");
+   	 waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_code());
+    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_code());
+        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_code());
+        csmChequebookObject.csmParam_General_ledger_code().sendKeys("400402");
+        csmChequebookObject.csmParam_General_ledger_code().sendKeys(Keys.ENTER);
+
     }
 
 
@@ -266,17 +304,27 @@ public class CSM_Chequebookrequest_step {
 
     @And("^user click Additional Details$")
     public void user_click_additional_details() throws Throwable {
-        javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_General_ledger_code_additionaloptions());
-        waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_code_additionaloptions());
-    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_code_additionaloptions());
-        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_code_additionaloptions());
+        for (int i = 0; i <200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_code_additionaloptions());
+		        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_code_additionaloptions());
+		        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+    	
     }
 
     @And("^user change the value as Notify and dont proceed in drop down$")
     public void user_change_the_value_as_notify_and_dont_proceed_in_drop_down() throws Throwable {
     	javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown());
-        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown(), testData.get("Allow_Overdraw") );
+       // dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown(), testData.get("Allow_Overdraw") );
+    	dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown(),"Notify and Proceed" );
         waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown());
+        dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown(),"Notify and Don't Proceed" );
     	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown());
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown());
     }
@@ -297,14 +345,23 @@ public class CSM_Chequebookrequest_step {
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_Approve());
     }
 
-    @And("^user enter the code in Approve screen$")
-    public void user_enter_the_code_in_approve_screen() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
-    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
-        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_Approve_inputfield()); 
-        csmChequebookObject.csmParam_General_ledger_Approve_inputfield().sendKeys(testData.get("Code"));
-    }
+//    @And("^user enter the code in Approve screen$")
+//    public void user_enter_the_code_in_approve_screen() throws Throwable {
+//    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
+//    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
+//        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_Approve_inputfield()); 
+//        csmChequebookObject.csmParam_General_ledger_Approve_inputfield().sendKeys(testData.get("Code"));
+//    }
+    @And("^user update test data set id for CHB_180 in approve screen$")
+    public void user_update_test_data_set_id_for_chb180_in_approve() throws Throwable {
+    	// testData = excelDataForChequeBookRequest.getTestdata("CHB_180 _D3");
+      	 waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
+       	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
+           clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_General_ledger_Approve_inputfield());
+           csmChequebookObject.csmParam_General_ledger_Approve_inputfield().sendKeys("400402");  
+           csmChequebookObject.csmParam_General_ledger_Approve_inputfield().sendKeys(Keys.ENTER);
 
+    }
     @And("^user double click the record in Approve screen$")
     public void user_double_click_the_record_in_approve_screen() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_General_ledger_Approve_inputfield_doubleclick());
