@@ -47,4 +47,9 @@ public class Cheque_ReveresBook {
 	    public WebElement Reversed_submit() {
 	    	return Reversed_submit;
 	    }
+	    @FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+	    private WebElement okBUTTON2;
+	    public WebElement okBUTTON2() {
+	  	  return okBUTTON2;
+	    }
 }

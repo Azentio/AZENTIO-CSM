@@ -26,13 +26,13 @@ public class Waive_LostAndFound {
 	Map<String, String> loginTestData = new HashMap<>();
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
 	
-	@Given("^User login in CSM Lost&Found in waive charge$")
+	@Given("^User login in CSM Lost&Found in waive chargessss$")
     public void user_login_in_csm_lostfound_in_waive_charge() throws Throwable {
 		driver.get(configFileReader.getCSMApplicationUrl());
         login.loginIntoCSMApplication();
     }
 
-    @Given("^User login in CSM Param in waive charge$")
+    @Given("^User login in CSM Param in waive chargessss$")
     public void user_login_in_csm_param_in_waive_charge() throws Throwable {
     	driver.get(configFileReader.getCSMApplicationUrl());
         login.loginIntoCSMParamApplication();

@@ -1,7 +1,7 @@
 Feature: Functional Testing - User Has accessto waive charges -Cards Management
 @CW_037
 Scenario: Functional Testing - User Has accessto waive charges -Cards Management – Card Request – Approve
-Given User login Cards Management – Card Request
+Given User login Cards Management Card Request111
 And User click  the Cards Management tab
 And User clicks  the Card Request tab
 And click the Approve tab button

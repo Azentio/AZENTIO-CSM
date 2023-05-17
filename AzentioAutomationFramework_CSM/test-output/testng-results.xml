@@ -1,68 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-28T14:31:28 IST" name="Default suite" finished-at="2023-03-28T14:32:33 IST" duration-ms="65732">
+  <suite started-at="2023-05-11T15:19:16 IST" name="Default suite" finished-at="2023-05-11T15:19:21 IST" duration-ms="4745">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@663c9e7a]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-03-28T14:31:28 IST" name="Default test" finished-at="2023-03-28T14:32:33 IST" duration-ms="65732">
+    <test started-at="2023-05-11T15:19:16 IST" name="Default test" finished-at="2023-05-11T15:19:21 IST" duration-ms="4745">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-03-28T14:31:28 IST" name="setUpClass" finished-at="2023-03-28T14:31:29 IST" duration-ms="1137" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@663c9e7a]" started-at="2023-05-11T15:19:16 IST" name="setUpClass" finished-at="2023-05-11T15:19:18 IST" duration-ms="1568" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-03-28T14:31:29 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-28T14:31:53 IST" duration-ms="24074" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To Test the login functionality of CSM application"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To Test the CSM application login]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-03-28T14:31:53 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-28T14:32:12 IST" duration-ms="19617" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To Test the login functionality of CSM param application"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To Test the CSM application login]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-03-28T14:32:12 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-03-28T14:32:26 IST" duration-ms="13097" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["To Test the login functionality of CSM sads application"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To Test the CSM application login]"]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-03-28T14:32:26 IST" name="tearDownClass" finished-at="2023-03-28T14:32:33 IST" duration-ms="7743" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@663c9e7a]" started-at="2023-05-11T15:19:18 IST" name="tearDownClass" finished-at="2023-05-11T15:19:21 IST" duration-ms="3126" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

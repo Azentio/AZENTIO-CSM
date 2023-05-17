@@ -25,7 +25,7 @@ public class CardRequest_Management {
 	Map<String, String> loginTestData = new HashMap<>();
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
 	
-	 @Given("^User login Cards Management – Card Request$")
+	 @Given("^User login Cards Management Card Request111$")
 	    public void user_login_cards_management_card_request() throws Throwable {
 		 driver.get(configFileReader.getCSMApplicationUrl());
 	        login.loginIntoCSMApplication();

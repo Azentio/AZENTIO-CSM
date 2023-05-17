@@ -42,4 +42,9 @@ public class ChequeBook_Cancel {
     public WebElement Tocancelbutton() {
     	return Tocancelbutton;
     }
+    @FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+    private WebElement okBUTTON1;
+    public WebElement okBUTTON1() {
+  	  return okBUTTON1;
+    }
 }
