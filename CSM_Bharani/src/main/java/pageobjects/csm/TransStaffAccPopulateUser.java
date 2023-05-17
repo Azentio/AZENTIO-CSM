@@ -33,7 +33,7 @@ public class TransStaffAccPopulateUser {
 	public WebElement User_PopulateUser() {
 		return UserPopulateUser;
 	}
-	@FindBy(xpath="Maintenance")
+	@FindBy(xpath="(//span[text()='Maintenance'])[2]")
 	private WebElement PopulateUserMaintenance;
 	public WebElement PopulateUser_Maintenance() {
 		return PopulateUserMaintenance;
@@ -78,12 +78,12 @@ public class TransStaffAccPopulateUser {
 	public WebElement DestinationBranches_AddIcon() {
 		return DestinationBranchesAddIcon;
 	}
-	@FindBy(xpath="//input[@id='new_1684237107797_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT']")
+	@FindBy(xpath="//input[@name='lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE']")
 	private WebElement AddIconBranchCode;
 	public WebElement AddIcon_BranchCode() {
 		return AddIconBranchCode;
 	}
-	@FindBy(xpath="//input[@id='new_1684237387879_ctstellerPopulateBranchesVO.TMPL_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT']")
+	@FindBy(xpath="//input[@name='lookupTxt_ctstellerPopulateBranchesVO.TMPL_CODE']")
 	private WebElement AddIconNewUserTemp;
 	public WebElement AddIcon_NewUserTemp() {
 		return AddIconNewUserTemp;
@@ -98,9 +98,24 @@ public class TransStaffAccPopulateUser {
 	public WebElement PopulateUser_PopulateFlag() {
 		return PopulateUserPopulateFlag;
 	}
+	@FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement OkPopupMaintenance;
+	public WebElement OkPopup_Maitenance() {
+		return OkPopupMaintenance;
+	}
+	@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+	private WebElement OkPopupSuccessScreenMaintenance;
+	public WebElement OkPopup_SuccessScreenMaintenance() {
+		return OkPopupSuccessScreenMaintenance;
+	}
+	@FindBy(xpath="//span[text()='Populate']")
+	private WebElement PopulateFlagPopulateUser;
+	public WebElement PopulateFlag_PopulateUser() {
+		return PopulateFlagPopulateUser;
+	}
     @FindBy(xpath="//input[@id='populateTellerList_GridTbl_Id_E000POPO_gs_ctstellerPopulateVO.TELLER_POPULATION_CODE']")
     private WebElement PopulateFlagCode;
-    public WebElement PopulateUser_Flag() {
+    public WebElement Populate_FlagCode() {
     	return PopulateFlagCode;
     }
 	@FindBy(xpath="(//span[text()='Approve'])[2]")
@@ -127,6 +142,16 @@ public class TransStaffAccPopulateUser {
 	private WebElement ApproveOkPopup;
 	public WebElement Approve_OkPopup() {
 		return ApproveOkPopup;
+	}
+	@FindBy(xpath="//td[text()='Approved']")
+	private WebElement ApprovedText;
+	public WebElement Approved_Text() {
+		return ApprovedText;
+	}
+	@FindBy(xpath="//label[text()='Populate ']")
+	private WebElement ApproveIconPopulate;
+	public WebElement ApproveIcon_Populate() {
+		return ApproveIconPopulate;
 	}
 	
 	

@@ -2,53 +2,53 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-10T16:29:08 IST" name="Default suite" finished-at="2023-05-10T16:29:33 IST" duration-ms="24441">
+  <suite started-at="2023-05-17T18:07:58 IST" name="Default suite" finished-at="2023-05-17T18:09:05 IST" duration-ms="67069">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@909217e]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-10T16:29:08 IST" name="Default test" finished-at="2023-05-10T16:29:33 IST" duration-ms="24441">
+    <test started-at="2023-05-17T18:07:58 IST" name="Default test" finished-at="2023-05-17T18:09:05 IST" duration-ms="67069">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@909217e]" started-at="2023-05-10T16:29:08 IST" name="setUpClass" finished-at="2023-05-10T16:29:10 IST" duration-ms="1996" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@909217e]" started-at="2023-05-17T18:07:58 IST" name="setUpClass" finished-at="2023-05-17T18:08:00 IST" duration-ms="2032" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@909217e]" started-at="2023-05-10T16:29:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-10T16:29:28 IST" duration-ms="17410" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@909217e]" started-at="2023-05-17T18:08:00 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T18:08:50 IST" duration-ms="50281" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking if the user is able to select any row and click "Destroy" under Approve/Reject Destroy"]]>
+                <![CDATA["Checking if only the “Approved” population tasks appear at the level of populate screen"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To check the functionality of chequebook Request]"]]>
+                <![CDATA["Optional[To check the functionality of Populate User Flag]"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.WebDriverException">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[disconnected: received Inspector.detached event
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=113.0.5672.92)
+              <![CDATA[element click intercepted: Element <input type="text" autocomplete="off" name="populatetellerCO.ctstellerPopulateVO.LONG_NAME_ENG" class="path-theme-cust-input textCompSize ui-state-focus ui-corner-all" maxlength="40" value="" id="long_name_eng_E000POMT" required="true" initialvalue="" prevvalue="" onchange="allLetterEnglish(this);"> is not clickable at point (580, 219). Other element would receive the click: <div class="jMsgbox-background" style="position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;"></div>
+  (Session info: chrome=113.0.5672.93)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7e19bb05287fc92517916d231a803bb5, get {url=http://192.168.19.39:8041/imal_core_portal_imal145_qc_o18}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50214}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50214/devtoo..., se:cdpVersion: 113.0.5672.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7e19bb05287fc92517916d231a803bb5]]>
+Command: [caf212eb0afd0bd2aa6965311d8b82e0, clickElement {id=755BC160D6E7A7C0E0C0D3D566749617_element_304}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51116/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (caf212eb0afd0bd2aa6965311d8b82e0)] -> xpath: //input[@id='long_name_eng_E000POMT']]
+Session ID: caf212eb0afd0bd2aa6965311d8b82e0]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: received Inspector.detached event
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=113.0.5672.92)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="text" autocomplete="off" name="populatetellerCO.ctstellerPopulateVO.LONG_NAME_ENG" class="path-theme-cust-input textCompSize ui-state-focus ui-corner-all" maxlength="40" value="" id="long_name_eng_E000POMT" required="true" initialvalue="" prevvalue="" onchange="allLetterEnglish(this);"> is not clickable at point (580, 219). Other element would receive the click: <div class="jMsgbox-background" style="position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;"></div>
+  (Session info: chrome=113.0.5672.93)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '16.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7e19bb05287fc92517916d231a803bb5, get {url=http://192.168.19.39:8041/imal_core_portal_imal145_qc_o18}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50214}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50214/devtoo..., se:cdpVersion: 113.0.5672.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7e19bb05287fc92517916d231a803bb5
+Command: [caf212eb0afd0bd2aa6965311d8b82e0, clickElement {id=755BC160D6E7A7C0E0C0D3D566749617_element_304}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51116/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (caf212eb0afd0bd2aa6965311d8b82e0)] -> xpath: //input[@id='long_name_eng_E000POMT']]
+Session ID: caf212eb0afd0bd2aa6965311d8b82e0
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -61,16 +61,22 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
-at stepdefinitions.LoginTest.navigate_to_csm_application_and_login_with_valid_credentials(LoginTest.java:28)
-at ✽.navigate to CSM application and login with valid credentials(file:///C:/Users/inindc00604/git/BharaniCSM/CSM_Bharani/src/test/java/features/CSM_ChequebookReqBulDes.feature:4)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
+at stepdefinitions.CSM_ParamTransStaffAccPopulateUser.enter_the_long_description_valuse_under_populate_user_maintenance_screen(CSM_ParamTransStaffAccPopulateUser.java:81)
+at ✽.Enter the long description valuse under populate user maintenance screen(file:///C:/Users/inindc00604/git/BharaniCSM/CSM_Bharani/src/test/java/features/CSMParam_PopulateUser.feature:12)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@909217e]" started-at="2023-05-10T16:29:28 IST" name="tearDownClass" finished-at="2023-05-10T16:29:33 IST" duration-ms="4935" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@909217e]" started-at="2023-05-17T18:08:50 IST" name="tearDownClass" finished-at="2023-05-17T18:09:05 IST" duration-ms="14644" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

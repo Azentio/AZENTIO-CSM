@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 10 16:29:08 IST 2023</td>
+<td>Started on:</td><td>Wed May 17 18:07:58 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>24 seconds (24441 ms)</td>
+<tr><td>Total time:</td><td>67 seconds (67069 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,16 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking if the user is able to select any row and click "Destroy" under Approve/Reject Destroy", "Optional[To check the functionality of chequebook Request]"</td>
-<td><div><pre>org.openqa.selenium.WebDriverException: disconnected: received Inspector.detached event
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=113.0.5672.92)
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking if only the “Approved” population tasks appear at the level of populate screen", "Optional[To check the functionality of Populate User Flag]"</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;text&quot; autocomplete=&quot;off&quot; name=&quot;populatetellerCO.ctstellerPopulateVO.LONG_NAME_ENG&quot; class=&quot;path-theme-cust-input textCompSize ui-state-focus ui-corner-all&quot; maxlength=&quot;40&quot; value=&quot;&quot; id=&quot;long_name_eng_E000POMT&quot; required=&quot;true&quot; initialvalue=&quot;&quot; prevvalue=&quot;&quot; onchange=&quot;allLetterEnglish(this);&quot;&gt; is not clickable at point (580, 219). Other element would receive the click: &lt;div class=&quot;jMsgbox-background&quot; style=&quot;position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=113.0.5672.93)
 Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7e19bb05287fc92517916d231a803bb5, get {url=http://192.168.19.39:8041/imal_core_portal_imal145_qc_o18}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50214}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50214/devtoo..., se:cdpVersion: 113.0.5672.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7e19bb05287fc92517916d231a803bb5
+Command: [caf212eb0afd0bd2aa6965311d8b82e0, clickElement {id=755BC160D6E7A7C0E0C0D3D566749617_element_304}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51116/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (caf212eb0afd0bd2aa6965311d8b82e0)] -&gt; xpath: //input[@id=&apos;long_name_eng_E000POMT&apos;]]
+Session ID: caf212eb0afd0bd2aa6965311d8b82e0
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -97,19 +97,25 @@ Session ID: 7e19bb05287fc92517916d231a803bb5
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
-	at stepdefinitions.LoginTest.navigate_to_csm_application_and_login_with_valid_credentials(LoginTest.java:28)
-	at ✽.navigate to CSM application and login with valid credentials(file:///C:/Users/inindc00604/git/BharaniCSM/CSM_Bharani/src/test/java/features/CSM_ChequebookReqBulDes.feature:4)
-</pre></div><a href='#' onClick='toggleBox("stack-trace441672036", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace441672036'><pre>org.openqa.selenium.WebDriverException: disconnected: received Inspector.detached event
-  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
-  (Session info: chrome=113.0.5672.92)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
+	at stepdefinitions.CSM_ParamTransStaffAccPopulateUser.enter_the_long_description_valuse_under_populate_user_maintenance_screen(CSM_ParamTransStaffAccPopulateUser.java:81)
+	at ✽.Enter the long description valuse under populate user maintenance screen(file:///C:/Users/inindc00604/git/BharaniCSM/CSM_Bharani/src/test/java/features/CSMParam_PopulateUser.feature:12)
+</pre></div><a href='#' onClick='toggleBox("stack-trace873447850", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace873447850'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;text&quot; autocomplete=&quot;off&quot; name=&quot;populatetellerCO.ctstellerPopulateVO.LONG_NAME_ENG&quot; class=&quot;path-theme-cust-input textCompSize ui-state-focus ui-corner-all&quot; maxlength=&quot;40&quot; value=&quot;&quot; id=&quot;long_name_eng_E000POMT&quot; required=&quot;true&quot; initialvalue=&quot;&quot; prevvalue=&quot;&quot; onchange=&quot;allLetterEnglish(this);&quot;&gt; is not clickable at point (580, 219). Other element would receive the click: &lt;div class=&quot;jMsgbox-background&quot; style=&quot;position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=113.0.5672.93)
 Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [7e19bb05287fc92517916d231a803bb5, get {url=http://192.168.19.39:8041/imal_core_portal_imal145_qc_o18}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.92, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50214}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50214/devtoo..., se:cdpVersion: 113.0.5672.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 7e19bb05287fc92517916d231a803bb5
+Command: [caf212eb0afd0bd2aa6965311d8b82e0, clickElement {id=755BC160D6E7A7C0E0C0D3D566749617_element_304}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:51116/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (caf212eb0afd0bd2aa6965311d8b82e0)] -&gt; xpath: //input[@id=&apos;long_name_eng_E000POMT&apos;]]
+Session ID: caf212eb0afd0bd2aa6965311d8b82e0
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -122,11 +128,17 @@ Session ID: 7e19bb05287fc92517916d231a803bb5
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:297)
-	at stepdefinitions.LoginTest.navigate_to_csm_application_and_login_with_valid_credentials(LoginTest.java:28)
-	at ✽.navigate to CSM application and login with valid credentials(file:///C:/Users/inindc00604/git/BharaniCSM/CSM_Bharani/src/test/java/features/CSM_ChequebookReqBulDes.feature:4)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
+	at stepdefinitions.CSM_ParamTransStaffAccPopulateUser.enter_the_long_description_valuse_under_populate_user_maintenance_screen(CSM_ParamTransStaffAccPopulateUser.java:81)
+	at ✽.Enter the long description valuse under populate user maintenance screen(file:///C:/Users/inindc00604/git/BharaniCSM/CSM_Bharani/src/test/java/features/CSMParam_PopulateUser.feature:12)
 </pre></div></td>
-<td>17</td>
+<td>50</td>
 <td>Runner.TestApplication@909217e</td></tr>
 </table><p>
 </body>
