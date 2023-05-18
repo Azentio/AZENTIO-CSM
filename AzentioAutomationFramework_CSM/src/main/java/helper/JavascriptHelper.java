@@ -11,7 +11,7 @@ public class JavascriptHelper {
 	Logger Log = LogManager.getLogger(JavascriptHelper.class.getName());
 
 
-	public void JavaScriptHelper(WebDriver driver) {
+	public  JavascriptHelper() {
 		this.driver = driver;
 			}
 
