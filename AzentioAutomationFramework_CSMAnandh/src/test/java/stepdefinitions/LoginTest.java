@@ -38,9 +38,13 @@ public class LoginTest extends BaseClass {
 	@Given("^navigate to CSM param application and login with valid credentials$")
 	public void navigate_to_csm_param_application_and_login_with_valid_credentials() throws Throwable {
 		driver.get(configFileReader.getCSMparamsUrl());
-		csmLogin.loginIntoCSMParamApplication();
+		csmLogin.loginIntoCSMParamApplication("CSMParamUser1");
 	}
-
+	@Given("^navigate to CSM Param with populated user ID$")
+    public void navigate_to_csm_param_with_populated_user_id() throws Throwable {
+		driver.get(configFileReader.getCSMparamsUrl());
+		csmLogin.loginIntoCSMParamApplication("CSMParamUser2");
+    }
 	@Given("^navigate to CSM sads application and login with valid credentials$")
 	public void navigate_to_csm_sads_application_and_login_with_valid_credentials() throws Throwable {
 		driver.get(configFileReader.getSADSApplicationUrl());

@@ -29,8 +29,8 @@ public class CSMLogin {
 		this.driver = driver;
 	}
 
-	public void loginIntoCSMParamApplication() throws IOException {
-		csmLoginTestData = csmParamLoginTestData.getTestdata("CSMParamUser1");
+	public void loginIntoCSMParamApplication(String userType) throws IOException {
+		csmLoginTestData = csmParamLoginTestData.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
