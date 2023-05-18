@@ -2,53 +2,53 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-13T12:06:17 IST" name="Default suite" finished-at="2023-05-13T12:07:09 IST" duration-ms="52053">
+  <suite started-at="2023-05-17T12:55:33 IST" name="Default suite" finished-at="2023-05-17T12:56:28 IST" duration-ms="55398">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-13T12:06:17 IST" name="Default test" finished-at="2023-05-13T12:07:09 IST" duration-ms="52053">
+    <test started-at="2023-05-17T12:55:33 IST" name="Default test" finished-at="2023-05-17T12:56:28 IST" duration-ms="55398">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-13T12:06:17 IST" name="setUpClass" finished-at="2023-05-13T12:06:19 IST" duration-ms="1093" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-17T12:55:33 IST" name="setUpClass" finished-at="2023-05-17T12:55:34 IST" duration-ms="1139" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-13T12:06:19 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-13T12:06:57 IST" duration-ms="38525" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-17T12:55:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T12:56:14 IST" duration-ms="40025" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking on the "OR" restriction for CIF Type “X” and GL “Y”  under Passbooks"]]>
+                <![CDATA["Checking if all the new profiles are created as “Active” in the branches set in the “Destination Branch” after populating"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To verify the functionality of CSM passbooks]"]]>
+                <![CDATA["Optional[To verify the functionality of transaction on staff account]"]]>
               </value>
             </param>
           </params>
           <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[element click intercepted: Element <input type="text" autocomplete="off" name="passBookCO.passBookVO.ACC_CIF" class="path-theme-cust-input textCompSize ui-state-focus ui-corner-all path-dummy-cls" maxlength="8" value="" id="accCif_S000MT" style="width:100%;N" title="CIF code" mode="number" nbformat="####" leadzeros="8" required="true" afterdepevent="" inputorder="cif" initialvalue="" prevvalue="" onblur="" dependency="accCif_S000MT:passBookCO.passBookVO.ACC_CIF,lookuptxt_accSl_S000MT:passBookCO.passBookVO.ACC_SL,accDesc_S000MT:passBookCO.acc_desc,passbookCifDesc_S000MT:passBookCO.cif_desc,Deliverydate_S000MT:passBookCO.id_no,Address_S000MT:passBookCO.cif_address,lookuptxt_accAddRef_S000MT:passBookCO.passBookVO.ACC_ADD_REF,chr_ac_cif_S000MT:passBookCO.passBookVO.CHR_AC_CIF" dependencysrc="/imal_core_portal_imal145_qc_o18/path/passBook/PassBookMgntDependencyAction_dependencyByAccCIF" parameters="passBookVO.ACC_BR:accBr_S000MT,passBookVO.ACC_CY:accCy_S000MT,passBookVO.ACC_GL:accGl_S000MT,passBookVO.ACC_CIF:accCif_S000MT" overridelabeltext="A/C Cif" overridelabelkey="A/C Cif" dynexpressionsargs="~~~~~~~~~"> is not clickable at point (848, 292). Other element would receive the click: <div class="jMsgbox-background" style="position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;"></div>
-  (Session info: chrome=113.0.5672.93)
+              <![CDATA[element click intercepted: Element <input role="livesearch" type="text" id="new_1684308372027_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT" class="liveSearchText liveSearchCompSize ui-widget-content liveSearchInputCorner" name="lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE" prevvalue="" value=" " dependency="branchesvo.BRANCH_CODE:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,branchesvo.BRIEF_DESC_ENG:hiddenBranch,BRANCH_STATUS:B_STATUS" dependencysrc="/imal_csm_params_imal145_qc_o18/path/param/populateTeller/PopulateTellerDependencyAction_dependencyForCtstellerPopulate4" params="USER_ID:hiddenUserId,destinationBranchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,criteria.branchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt" afterdepevent="" leadzeros="" mode="number" nbformat="#" colmodel="[object Object]" maxlength="4" gridid="tab2_GridTbl_Id_E000POMT" editrowid="new_1684308372027" required="required"> is not clickable at point (368, 433). Other element would receive the click: <div class="progBarContent" style="left: 0px;">...</div>
+  (Session info: chrome=113.0.5672.126)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d4c46077289461fa3ca184682d234ea8, clickElement {id=57DC8BBA7CD3B00ED3F39C50F2AB87E8_element_302}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58331/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (d4c46077289461fa3ca184682d234ea8)] -> xpath: (//input[@title='CIF code'])[1]]
-Session ID: d4c46077289461fa3ca184682d234ea8]]>
+Command: [b637a62622d1904014326bf315f9191d, clickElement {id=02487EB35D135DA6FA8959282856FF22_element_255}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50841}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50841/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b637a62622d1904014326bf315f9191d)] -> xpath: //input[@name='lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE']]
+Session ID: b637a62622d1904014326bf315f9191d]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="text" autocomplete="off" name="passBookCO.passBookVO.ACC_CIF" class="path-theme-cust-input textCompSize ui-state-focus ui-corner-all path-dummy-cls" maxlength="8" value="" id="accCif_S000MT" style="width:100%;N" title="CIF code" mode="number" nbformat="####" leadzeros="8" required="true" afterdepevent="" inputorder="cif" initialvalue="" prevvalue="" onblur="" dependency="accCif_S000MT:passBookCO.passBookVO.ACC_CIF,lookuptxt_accSl_S000MT:passBookCO.passBookVO.ACC_SL,accDesc_S000MT:passBookCO.acc_desc,passbookCifDesc_S000MT:passBookCO.cif_desc,Deliverydate_S000MT:passBookCO.id_no,Address_S000MT:passBookCO.cif_address,lookuptxt_accAddRef_S000MT:passBookCO.passBookVO.ACC_ADD_REF,chr_ac_cif_S000MT:passBookCO.passBookVO.CHR_AC_CIF" dependencysrc="/imal_core_portal_imal145_qc_o18/path/passBook/PassBookMgntDependencyAction_dependencyByAccCIF" parameters="passBookVO.ACC_BR:accBr_S000MT,passBookVO.ACC_CY:accCy_S000MT,passBookVO.ACC_GL:accGl_S000MT,passBookVO.ACC_CIF:accCif_S000MT" overridelabeltext="A/C Cif" overridelabelkey="A/C Cif" dynexpressionsargs="~~~~~~~~~"> is not clickable at point (848, 292). Other element would receive the click: <div class="jMsgbox-background" style="position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;"></div>
-  (Session info: chrome=113.0.5672.93)
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input role="livesearch" type="text" id="new_1684308372027_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT" class="liveSearchText liveSearchCompSize ui-widget-content liveSearchInputCorner" name="lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE" prevvalue="" value=" " dependency="branchesvo.BRANCH_CODE:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,branchesvo.BRIEF_DESC_ENG:hiddenBranch,BRANCH_STATUS:B_STATUS" dependencysrc="/imal_csm_params_imal145_qc_o18/path/param/populateTeller/PopulateTellerDependencyAction_dependencyForCtstellerPopulate4" params="USER_ID:hiddenUserId,destinationBranchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,criteria.branchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt" afterdepevent="" leadzeros="" mode="number" nbformat="#" colmodel="[object Object]" maxlength="4" gridid="tab2_GridTbl_Id_E000POMT" editrowid="new_1684308372027" required="required"> is not clickable at point (368, 433). Other element would receive the click: <div class="progBarContent" style="left: 0px;">...</div>
+  (Session info: chrome=113.0.5672.126)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [d4c46077289461fa3ca184682d234ea8, clickElement {id=57DC8BBA7CD3B00ED3F39C50F2AB87E8_element_302}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.93, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:58331}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58331/devtoo..., se:cdpVersion: 113.0.5672.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (d4c46077289461fa3ca184682d234ea8)] -> xpath: (//input[@title='CIF code'])[1]]
-Session ID: d4c46077289461fa3ca184682d234ea8
+Command: [b637a62622d1904014326bf315f9191d, clickElement {id=02487EB35D135DA6FA8959282856FF22_element_255}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50841}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50841/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b637a62622d1904014326bf315f9191d)] -> xpath: //input[@name='lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE']]
+Session ID: b637a62622d1904014326bf315f9191d
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
@@ -65,15 +65,16 @@ at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethod
 at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
 at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-at stepdefinitions.CSM_Passbooks_Restriction.user_enter_the_cif_code_value_under_passbook_type(CSM_Passbooks_Restriction.java:91)
-at ✽.user enter the CIF code value under passbook type(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_Passbooks.feature:16)
+at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
+at stepdefinitions.CSM_TransactionOnStaffAccount_Steps.user_click_and_enter_the_value_in_branch_code_field(CSM_TransactionOnStaffAccount_Steps.java:137)
+at ✽.user click and enter the value in branch code field(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_Transaction_On_Staff_Account.feature:18)
 ]]>
             </full-stacktrace>
           </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-13T12:06:57 IST" name="tearDownClass" finished-at="2023-05-13T12:07:09 IST" duration-ms="12373" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-17T12:56:14 IST" name="tearDownClass" finished-at="2023-05-17T12:56:28 IST" duration-ms="14168" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

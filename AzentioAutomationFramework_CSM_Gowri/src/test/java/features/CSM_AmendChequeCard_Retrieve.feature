@@ -30,4 +30,29 @@ Scenario: checking if the system will allow the user to amend the cheque by a va
     Then user verify the save popup
     And user click the ok button
     
+
+@ACSD_013 
+Scenario: checking if the system will allow the user to amend the cheque by a paid cheque   
+    Given user login as csm core application
+    And user update test data set id for ACSD_013
+    And user click the amend cheque card status icon 
+    And user click the maintenance under amend cheque card status
+    And user select the product type under maintenance
+    And user enter the branch code value under product type
+    And user enter the currency code value under product type 
+    And user enter the GL code value under product type
+    And user enter the CIF code value under product type
+    And user enter the serial no under product type
+    And user enter the cheque no under product type
+    And user click the retrieve button
+    And user click the check box
+    And user click the update button
+    Then user verify the save popup
+    And user click the ok button
+    
+    
+    
+    
+    
+    
        

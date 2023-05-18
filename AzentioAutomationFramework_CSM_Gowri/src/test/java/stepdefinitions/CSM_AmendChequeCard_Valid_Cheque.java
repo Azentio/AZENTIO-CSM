@@ -14,14 +14,14 @@ import pageobjects.CSM_AmendChequeCard_Valid_Cheque_OBJ;
 import pageobjects.CSM_Transactions_OBJ;
 import resources.BaseClass;
 
-public class CSM_AmendChequeCard_Valid_Cheque {
+public class CSM_AmendChequeCard_Valid_Cheque extends BaseClass{
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileRead = new ConfigFileReader();
 	CSMLogin login = new CSMLogin(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSM_AmendChequeCard_Valid_Cheque_OBJ validChequeObj = new CSM_AmendChequeCard_Valid_Cheque_OBJ(driver);
-	//String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
-	//ExcelData csmTransactionsExcelData = new ExcelData(path,"CSM_Transactions","DataSet ID");
+	String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
+	ExcelData csmTransactionsExcelData = new ExcelData(path,"CSM_Transactions","DataSet ID");
 	Map<String, String> testData;
 	
 	
