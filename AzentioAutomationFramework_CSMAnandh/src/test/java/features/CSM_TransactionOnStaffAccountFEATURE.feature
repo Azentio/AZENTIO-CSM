@@ -159,3 +159,13 @@ And click on search in user feature
 And search for suspended user in user feature
 And select the user in user feature
 Then verify new status suspended got added along with new sub status
+@TSA_023
+Scenario: Checking if the new  alert “Staff Accounts Transaction” will be added under “Transactions” in Alert activation tab
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on control records sub feature
+And click on update after approve in control records
+And click on alert activation tab under control records
+And open the account balance over drawn section
+Then verify transaction on staff account field got added in control records
