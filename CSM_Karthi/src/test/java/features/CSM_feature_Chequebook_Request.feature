@@ -5,12 +5,12 @@ Feature: To verify the functionality of Chequebook request module
   @CHB_186
   Scenario: Functional testing -Testing "Chequebook Request - Send To/Receive From Provider" Screen If the DDL is set to logged-in branch
     Given navigate to CSM param application and login with valid credentials
-    
+    And user update test data set id for CHB_186
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the User screen in system parameters
     And user click the update after approve screen
-    And user update test data set id for CHB_186
+    #And user update test data set id for CHB_186
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     #And user retrive the existing data in update after approve screen
@@ -76,7 +76,6 @@ Feature: To verify the functionality of Chequebook request module
     And user click the Account parameters submenu
     And user click the General Ledger submenu
     And user click the update after approve screen under general ledger
-    
     And user update test data set id for CHB_180 in update after screen
     And user double click the record in Update after approve screen
     And user click Additional Details
@@ -85,7 +84,6 @@ Feature: To verify the functionality of Chequebook request module
     And user click the ok
     And user click approve sub menu under General Ledger
     And user update test data set id for CHB_180 in approve screen
-
     And user double click the record in Approve screen
     And user click Additional Details
     And user click the Approve button under drop down menu
@@ -96,14 +94,32 @@ Feature: To verify the functionality of Chequebook request module
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype
     And User double click the record under updateafterapprove screen
     And User deal with the ProceedOnInsufficientFund chequebox
+    And User click UpdateAfterApprove button on updateafterapprove field
     And user click the save ok button
     And user click the ok
-    And user click the Approve button under the transactiontype
+    And user click the Approve field under the transactiontype
     And user Enter the code in inputfield on Approve screen under transactiontype
-     And User double click the record Approve screen
- And user click the save ok button
+    And User double click the record Approve screen
+	  And user click the save ok button
     And user click the ok
-    Given navigate to CSM application and login with valid credentials
+    And user click the Approve button on Approve field
+  Given navigate to CSM application and login with valid credentials
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
+    And user Enter the code on chequebookrequest maintanance screen
+    And user click on some thing in visible screen
+    And user Enter the Branchcode on chequebookrequest maintenance screen
+    And user Enter the Currencycode on chequebookrequest maintenance screen
+    And user Enter the GLCode on chequebookrequest maintenance screen
+    And user Enter the CIFCode on chequebookrequest maintenance screen
+    And user Enter the SerialNo on chequebookrequest maintance screen
+    And user click the ok
+    #that warning popup
+    And user click the Save button on maintance screen
+    And user click the Approve button under chequebookrequest field
+    And user enter the GL code on approve screen
+    And user double click the Gl code on approve screen
+    And user click the ok
+    #that warning popup
+    And user Approve the Gl record on Approve field
   

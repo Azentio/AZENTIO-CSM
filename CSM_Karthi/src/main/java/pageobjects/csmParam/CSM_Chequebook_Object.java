@@ -237,12 +237,7 @@ public class CSM_Chequebook_Object {
 		public WebElement csmParam_General_ledger_Approve_inputfield_doubleclick() {
 			return csmParam_General_ledger_Approve_inputfield_doubleclick;
 		}
-//		@FindBy(id=")
-//		private WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_additionaldetails;
-//
-//		public WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_additionaldetails() {
-//			return csmParam_General_ledger_Approve_inputfield_doubleclick_additionaldetails;
-//		}
+
 		@FindBy(xpath = "//label[@id='genLedgerParamFormId_P014P_approve_key']")
 		private WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_Approve;
 
@@ -325,10 +320,10 @@ public class CSM_Chequebook_Object {
 	}
 	
 	@FindBy(xpath = "//a[@id='P024MA']")
-	private WebElement csmParam_Transactiontype_Updateafterapprove ;
+	private WebElement csmParam_Transactiontype_Updateafterapprovefield ;
 
-public WebElement csmParam_Transactiontype_Updateafterapprove() {
-	return csmParam_Transactiontype_Updateafterapprove;
+public WebElement csmParam_Transactiontype_Updateafterapprovefield() {
+	return csmParam_Transactiontype_Updateafterapprovefield;
 }
 @FindBy(xpath = "//input[@id='transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE']")
 private WebElement csmParam_Transactiontype_inputfield ;
@@ -361,10 +356,10 @@ return csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton;
 //return csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton_Ok;
 //}
 @FindBy(xpath = "//span[text()='Approve']")
-private WebElement csmParam_Transactiontype_Approve ;
+private WebElement csmParam_Transactiontype_Approvefield ;
 
-public WebElement csmParam_Transactiontype_Approve() {
-return csmParam_Transactiontype_Approve;
+public WebElement csmParam_Transactiontype_Approvefield() {
+return csmParam_Transactiontype_Approvefield;
 }
 
 @FindBy(xpath = "//input[@id='transactionTypesList_GridTbl_Id_P024P_gs_ctstrxtypeVO.CODE']")
@@ -397,5 +392,79 @@ private WebElement csmcore_Chequebookrequest_maintanace ;
 
 public WebElement csmcore_Chequebookrequest_maintanace() {
 return csmcore_Chequebookrequest_maintanace;
+}
+@FindBy(xpath = "//input[@id='lookuptxt_CHEQUE_CODE_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_Code ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_Code() {
+return csmcore_Chequebookrequest_maintanace_Code;
+}
+
+@FindBy(xpath = "//a[@id='Chequebook Request / Maintenance']")
+private WebElement csmcore_Chequebookrequest_maintanace_Code_clickonsomething ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_Code_clickonsomething() {
+return csmcore_Chequebookrequest_maintanace_Code_clickonsomething;
+}
+@FindBy(xpath = "//input[@id='acc_br_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_Code_branchcode ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_Code_branchcode() {
+return csmcore_Chequebookrequest_maintanace_Code_branchcode;
+}
+
+@FindBy(xpath = "//input[@id='acc_cy_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_currencyCode ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_currencyCode() {
+return csmcore_Chequebookrequest_maintanace_currencyCode;
+}
+@FindBy(xpath = "//input[@id='acc_gl_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_GLcode ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_GLcode() {
+return csmcore_Chequebookrequest_maintanace_GLcode;
+}
+@FindBy(xpath = "//input[@id='acc_cif_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_CIFCode ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_CIFCode() {
+return csmcore_Chequebookrequest_maintanace_CIFCode;
+}
+@FindBy(xpath = "//input[@id='lookuptxt_acc_sl_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_SerialNo ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_SerialNo() {
+return csmcore_Chequebookrequest_maintanace_SerialNo;
+}
+@FindBy(xpath = "//label[@id='chequeBookDefFormId_Q000MT_btn_save']")
+private WebElement csmcore_Chequebookrequest_maintanace_SaveButton ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_SaveButton() {
+return csmcore_Chequebookrequest_maintanace_SaveButton;
+}
+@FindBy(xpath = "//a[@id='Q000AP']")
+private WebElement csmcore_Chequebookrequest_Approve ;
+
+public WebElement csmcore_Chequebookrequest_Approve() {
+return csmcore_Chequebookrequest_Approve;
+}
+@FindBy(xpath = "//input[@id='chequeBookGridTbl_Id_Q000AP_gs_ctschqbookVO.ACC_GL']")
+private WebElement csmcore_Chequebookrequest_Approve_InputField ;
+
+public WebElement csmcore_Chequebookrequest_Approve_InputField() {
+return csmcore_Chequebookrequest_Approve_InputField;
+}
+@FindBy(xpath = "//td[@id='td_chequeBookGridTbl_Id_Q000AP_1_ctschqbookVO.ACC_GL']")
+private WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick ;
+
+public WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick() {
+return csmcore_Chequebookrequest_Approve_InputField_doubleclick;
+}
+@FindBy(xpath = "//button[@id='chequeBook_approve_Q000AP']")
+private WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick_Approvebutton ;
+
+public WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick_Approvebutton() {
+return csmcore_Chequebookrequest_Approve_InputField_doubleclick_Approvebutton;
 }
 }
