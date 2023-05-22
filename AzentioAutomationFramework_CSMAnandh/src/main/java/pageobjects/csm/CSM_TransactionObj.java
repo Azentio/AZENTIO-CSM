@@ -411,4 +411,10 @@ public class CSM_TransactionObj {
 	{
 		return cancel_CancelButton;
 	}
+	@FindBy(xpath="(//td[@tdlabel='Transaction No'])[1]")
+	private WebElement isTransactionData_AvailableInCSM;
+	public WebElement isTransactionDataAvailableInCSM()
+	{
+		return isTransactionData_AvailableInCSM;
+	}
 }

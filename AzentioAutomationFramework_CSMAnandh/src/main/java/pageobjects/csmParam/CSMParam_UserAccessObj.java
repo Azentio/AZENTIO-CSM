@@ -125,6 +125,20 @@ public class CSMParam_UserAccessObj {
 		return userAccess_UpdateAfterApproveButton;
 	}
 
+	@FindBy(xpath = "//label[contains(text(),'Show All Trx')]//parent::td//preceding-sibling::td//input[1]")
+	private WebElement userAccess_ShowAllTrxFlag;
+
+	public WebElement userAccessShowAllTrxFlag() {
+		return userAccess_ShowAllTrxFlag;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Parameters / System Parameters / User / Update after Approve')]//parent::td//following-sibling::td//span")
+	private WebElement userUpdateAfterApprove_closeLabel;
+
+	public WebElement userUpdateAfterApproveCloseLabel() {
+		return userUpdateAfterApprove_closeLabel;
+	}
+
 	@FindBy(xpath = "//div[text()='Confirm Save Process']//ancestor::div//center//input[1]")
 	private WebElement userAccess_SaveConfirmOkButton;
 

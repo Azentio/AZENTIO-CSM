@@ -164,7 +164,7 @@ Scenario: Checking if the new  alert “Staff Accounts Transaction” will be ad
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter
-And click on control records sub feature
+And click on control records sub feature 
 And click on update after approve in control records
 And click on alert activation tab under control records
 And open the account balance over drawn section

@@ -29,9 +29,9 @@ import utilities.ExtentTestManager;
 public class HooksClass extends BaseClass {
 	WebDriver driver;
 	String path = System.getProperty("user.dir")+"\\TestData\\CSMTestData.xlsx";
-	ExcelData testExecution = new ExcelData(path,"TransactionOnStaffAccount_Execu","TestCaseID");
+	ExcelData testExecution = new ExcelData(path,"Transaction_ExecutionTracker","Test Case ID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "TransactionOnStaffAccount_Execu", "TestCaseID");
+	ExcelTest excelTest = new ExcelTest(path, "Transaction_ExecutionTracker", "Test Case ID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);

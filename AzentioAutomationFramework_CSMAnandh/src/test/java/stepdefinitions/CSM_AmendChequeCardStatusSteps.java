@@ -645,7 +645,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		}
 
 	}
-
+	
 	@And("^click on maintenance scree under transaction module$")
 	public void click_on_maintenance_scree_under_transaction_module() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
@@ -710,6 +710,8 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionReversedStatus());
 		Assert.assertTrue(transactionObj.transactionTransactionReversedStatus().isDisplayed());
 	}
+	
+	
 	
     
 

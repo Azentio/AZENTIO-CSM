@@ -23,12 +23,15 @@ public class CSM_UserAccessSteps extends BaseClass {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	CSMCommonWebElements csmCommonElements = new CSMCommonWebElements(driver);
 	CSMParam_UserAccessObj userAccessObj = new CSMParam_UserAccessObj(driver);
-	JavascriptHelper javascriptHelper= new JavascriptHelper(driver); 
+	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
+	String csmTestDataPath = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData exelDataForUserAccess = new ExcelData(testDataPath, "CSMParam_userAccessTestData", "DataSet ID");
 	ExcelData excelDataforCIFType = new ExcelData(testDataPath, "CSMParam_CIFTypeTestData", "DataSet ID");
-	Map<String,String> userAccessTestData= new HashMap<>();
-	
+	ExcelData excelDataForTransactionExecution = new ExcelData(csmTestDataPath, "Transaction_ExecutionTracker",
+			"Test Case ID");
+	Map<String, String> transactionExecutionData = new HashMap<>();
+	Map<String, String> userAccessTestData = new HashMap<>();
 
 	@And("^click on system parameter$")
 	public void click_on_system_parameter() throws Throwable {
@@ -43,10 +46,11 @@ public class CSM_UserAccessSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(userAccessObj.systemParameterUserMainModule());
 		clicksAndActionsHelper.clickOnElement(userAccessObj.systemParameterUserMainModule());
 	}
+
 	@And("^get the test data for give acess to account type$")
-    public void get_the_test_data_for_give_acess_to_account_type() throws Throwable {
-		userAccessTestData=exelDataForUserAccess.getTestdata("DS01_ActType_Acces_03");
-    }
+	public void get_the_test_data_for_give_acess_to_account_type() throws Throwable {
+		userAccessTestData = exelDataForUserAccess.getTestdata("DS01_ActType_Acces_03");
+	}
 
 	@And("^click on update after approve screen under user module$")
 	public void click_on_update_after_approve_screen_under_user_module() throws Throwable {
@@ -54,14 +58,24 @@ public class CSM_UserAccessSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(userAccessObj.userUpdateAfterApprove());
 		clicksAndActionsHelper.clickOnElement(userAccessObj.userUpdateAfterApprove());
 	}
-	 @And("^get the test data for the user access record which is done on account type access$")
-	    public void get_the_test_data_for_the_user_access_record_which_is_done_on_account_type_access() throws Throwable {
-		 userAccessTestData=exelDataForUserAccess.getTestdata("DS01_ActType_Acces_04");
-	    }
-	 @And("^get the test data for give access to CIF Type$")
-	    public void get_the_test_data_for_give_access_to_cif_type() throws Throwable {
-		 userAccessTestData=exelDataForUserAccess.getTestdata("DS01_ActType_Acces_04");
-	    }
+
+	@And("^get the test data for the user access record which is done on account type access$")
+	public void get_the_test_data_for_the_user_access_record_which_is_done_on_account_type_access() throws Throwable {
+		userAccessTestData = exelDataForUserAccess.getTestdata("DS01_ActType_Acces_04");
+	}
+
+	@And("^get the test data for give access to CIF Type$")
+	public void get_the_test_data_for_give_access_to_cif_type() throws Throwable {
+		userAccessTestData = exelDataForUserAccess.getTestdata("DS01_ActType_Acces_04");
+	}
+
+	@And("^close the update after approve screen of user$")
+	public void close_the_update_after_approve_screen_of_user() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userUpdateAfterApproveCloseLabel());
+		clicksAndActionsHelper.moveToElement(userAccessObj.userUpdateAfterApproveCloseLabel());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.userUpdateAfterApproveCloseLabel());
+	}
+
 	@And("^search the user ID in user module$")
 	public void search_the_user_id_in_user_module() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userSearchUserID());
@@ -88,47 +102,54 @@ public class CSM_UserAccessSteps extends BaseClass {
 			}
 		}
 	}
-	 @And("^click on CIf type access option$")
-	    public void click_on_cif_type_access_option() throws Throwable {
-		 waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
-			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
-			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
-	    }
 
-	    @And("^click on add button in CIF type access page$")
-	    public void click_on_add_button_in_cif_type_access_page() throws Throwable {
-	    
-			
-	    }
+	@And("^click on ok button$")
+	public void click_on_ok_button() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonElements.csmQuitOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonElements.csmQuitOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonElements.csmQuitOkButton());
+	}
 
-	    @And("^enter the CIF type in access screen$")
-	    public void enter_the_cif_type_in_access_screen() throws Throwable {
-	    	
-	    	waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
-			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
-			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
-			userAccessObj.userCIFTypeAccessInputBox().sendKeys(userAccessTestData.get("CIFType"));
-			
-	    	
-	    }
+	@And("^click on CIf type access option$")
+	public void click_on_cif_type_access_option() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
+		clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
+	}
 
-	    @And("^enter the Transaction number in CIF type access screen$")
-	    public void enter_the_transaction_number_in_cif_type_access_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeTransactionInputBox());
-			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeTransactionInputBox());
-			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeTransactionInputBox());
-			userAccessObj.userCIFTypeTransactionInputBox().sendKeys(userAccessTestData.get("CIF Transaction No"));
-			waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessSearchWdLimit());
-			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessSearchWdLimit());
-			clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessSearchWdLimit());
-	    }
+	@And("^click on add button in CIF type access page$")
+	public void click_on_add_button_in_cif_type_access_page() throws Throwable {
 
-	    @And("^click on ok button in CIF type access screen$")
-	    public void click_on_ok_button_in_cif_type_access_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
-			clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
-			clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
-	    }
+	}
+
+	@And("^enter the CIF type in access screen$")
+	public void enter_the_cif_type_in_access_screen() throws Throwable {
+
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
+		clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
+		userAccessObj.userCIFTypeAccessInputBox().sendKeys(userAccessTestData.get("CIFType"));
+
+	}
+
+	@And("^enter the Transaction number in CIF type access screen$")
+	public void enter_the_transaction_number_in_cif_type_access_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeTransactionInputBox());
+		clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeTransactionInputBox());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeTransactionInputBox());
+		userAccessObj.userCIFTypeTransactionInputBox().sendKeys(userAccessTestData.get("CIF Transaction No"));
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessSearchWdLimit());
+		clicksAndActionsHelper.moveToElement(userAccessObj.userAccessSearchWdLimit());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessSearchWdLimit());
+	}
+
+	@And("^click on ok button in CIF type access screen$")
+	public void click_on_ok_button_in_cif_type_access_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
+		clicksAndActionsHelper.moveToElement(userAccessObj.userCIFTypeAccessInputBox());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.userCIFTypeAccessInputBox());
+	}
+
 	@And("^click on account type access option$")
 	public void click_on_account_type_access_option() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccountTypeAccess());
@@ -149,8 +170,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(userAccessObj.userAccessSearchAccountType());
 		clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessSearchAccountType());
 		userAccessObj.userAccessSearchAccountType().sendKeys(userAccessTestData.get("AccountType"));
-		
-		
+
 	}
 
 	@And("^enter the transaction number for access$")
@@ -162,7 +182,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessSearchWdLimit());
 		clicksAndActionsHelper.moveToElement(userAccessObj.userAccessSearchWdLimit());
 		clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessSearchWdLimit());
-		
+
 	}
 
 	@And("^click on ok button in access screen$")
@@ -172,21 +192,62 @@ public class CSM_UserAccessSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessOkButton());
 	}
 
+	@And("^get the test data for test case ID TRS_001_01$")
+	public void get_the_test_data_for_test_case_id_trs00101() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_001_01");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_002_01$")
+	public void get_the_test_data_for_test_case_id_trs00201() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_002_01");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^check the show all trx flag in CSM Param$")
+	public void check_the_show_all_trx_flag_in_csm_param() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessShowAllTrxFlag());
+		if (userAccessObj.userAccessShowAllTrxFlag().getAttribute("initialvalue").isBlank()) {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+		} else {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+		}
+	}
+
+	@And("^uncheck the show all trx flag in CSM Param$")
+	public void uncheck_the_show_all_trx_flag_in_csm_param() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessShowAllTrxFlag());
+		if (userAccessObj.userAccessShowAllTrxFlag().getAttribute("initialvalue").isBlank()) {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+		} else {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+		}
+	}
+
 	@And("^click on update after approve button$")
 	public void click_on_update_after_approve_button() throws Throwable {
-		for(int i=0;i<=300;i++)
-		{
-			try
-			{
+		for (int i = 0; i <= 300; i++) {
+			try {
 				javascriptHelper.scrollIntoView(userAccessObj.userAccessUpdateAfterApproveButton());
 				clicksAndActionsHelper.moveToElement(userAccessObj.userAccessUpdateAfterApproveButton());
 				clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessUpdateAfterApproveButton());
 				break;
-			}
-			catch(Exception e)
-			{
-				if(i==300)
-				{
+			} catch (Exception e) {
+				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
 			}

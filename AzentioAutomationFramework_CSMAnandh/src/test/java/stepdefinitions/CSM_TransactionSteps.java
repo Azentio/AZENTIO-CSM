@@ -32,7 +32,11 @@ public class CSM_TransactionSteps extends BaseClass {
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData excelDataForChargeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 	ExcelData excelDataForTransWaiver = new ExcelData(path, "CSM_Transaction", "DataSet ID");
+	ExcelData excelDataForTransactionTestData = new ExcelData(path, "CSM_Transaction", "DataSet ID");
+	ExcelData excelDataFortransactionTestData = new ExcelData(path, "TransactionTestData", "DataSet ID");
+	ExcelData excelDataForTransactionExecution = new ExcelData(path, "Transaction_ExecutionTracker", "Test Case ID");
 	Map<String, String> transactionTestData = new HashMap<>();
+	Map<String, String> transactionExecutionData = new HashMap<>();
 	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
 	Robot robot;
 
@@ -123,8 +127,9 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
 		Thread.sleep(1000);
 	}
+
 	@And("^change the system date within excemption date$")
-    public void change_the_system_date_within_excemption_date() throws Throwable {
+	public void change_the_system_date_within_excemption_date() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSystemDate());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSystemDate());
@@ -148,7 +153,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
 		Thread.sleep(1000);
-    }
+	}
 
 	@And("^change the system date to high waiver date which is configured$")
 	public void change_the_system_date_to_high_waiver_date_which_is_configured() throws Throwable {
@@ -1491,6 +1496,160 @@ public class CSM_TransactionSteps extends BaseClass {
 		Assert.assertTrue(transactionObj.transactionChargeValidation().isDisplayed());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionChargeValidation());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionChargeValidation());
+	}
+
+	@Then("^verify transaction maintenance gridgot cleared$")
+	public void verify_transaction_maintenance_gridgot_cleared() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.isTransactionDataAvailableInCSM());
+		Assert.assertTrue(transactionObj.isTransactionDataAvailableInCSM().isDisplayed());
+	}
+
+	@Then("^verify system should show the transaction details for the perticular transaction in search grid$")
+	public void verify_system_should_show_the_transaction_details_for_the_perticular_transaction_in_search_grid()
+			throws Throwable {
+		String xpath = "//td[text()='" + transactionTestData.get("Other Teller Transaction Number") + "']";
+		boolean status = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(status);
+	}
+	 @Then("^verify system should not show the transaction which was created by other teller$")
+	    public void verify_system_should_not_show_the_transaction_which_was_created_by_other_teller() throws Throwable {
+		 String xpath = "//td[text()='" + transactionTestData.get("Other Teller Transaction Number") + "']";
+			boolean status = false;
+			for (int i = 0; i <= 300; i++) {
+				try {
+					status = driver.findElement(By.xpath(xpath)).isDisplayed();
+					break;
+				} catch (Exception e) {
+					
+				}
+			}
+			Assert.assertFalse(status);
+	    }
+
+	@And("^get the test data for test case ID TRS_001$")
+	public void get_the_test_data_for_test_case_id_trs001() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_001");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+	 @And("^get the test data for test case ID TRS_002$")
+	    public void get_the_test_data_for_test_case_id_trs002() throws Throwable {
+		 transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_002");
+			System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+			transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	    }
+
+
+	@And("^change the system date to current date$")
+	public void change_the_system_date_to_current_date() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSystemDate());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		for (int i = 0; i <= 15; i++) {
+			csmCommonWebElements.csmInputSystemDate().sendKeys(Keys.BACK_SPACE);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		System.out.println("Transaction date " + transactionTestData.get("System Date"));
+		System.out.println("Transaction Type " + transactionTestData.get("Transaction Type"));
+		System.out.println("Transa Own "+transactionTestData.get("Own Teller Transaction number"));
+		System.out.println("Other Trans num "+transactionTestData.get("Other Teller Transaction Number"));
+		csmCommonWebElements.csmInputSystemDate().sendKeys(transactionTestData.get("System Date"));
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
+		Thread.sleep(1000);
+	}
+
+	@And("^click on search in transaction maintenance screen$")
+	public void click_on_search_in_transaction_maintenance_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSearchButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSearchButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSearchButton());
+	}
+
+	@And("^clear the transaction maintenenace grid$")
+	public void clear_the_transaction_maintenenace_grid() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmGridClearButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmGridClearButton());
+		clicksAndActionsHelper.clickUsingActionClass(csmCommonWebElements.csmGridClearButton(),
+				csmCommonWebElements.csmGridClearButton());
+	}
+
+	@And("^enter the transaction number in transaction maintenance search grid which was done by other teller$")
+	public void enter_the_transaction_number_in_transaction_maintenance_search_grid_which_was_done_by_other_teller()
+			throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo().clear();
+		transactionObj.transactionSearchTransactionNo()
+				.sendKeys(transactionTestData.get("Other Teller Transaction Number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		robot = new Robot();
+		for (int i = 0; i <= 5; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@Then("^system should display the transaction details which was created by himself$")
+	public void system_should_display_the_transaction_details_which_was_created_by_himself() throws Throwable {
+		String xpath = "//td[text()='" + transactionTestData.get("Own Teller Transaction number") + "']";
+		boolean status = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(status);
+	}
+
+	@And("^enter the transaction number in transaction maintenance search grid which was done by him self$")
+	public void enter_the_transaction_number_in_transaction_maintenance_search_grid_which_was_done_by_him_self()
+			throws Throwable {
+
+		transactionObj.transactionSearchTransactionNo().clear();
+		robot = new Robot();
+		for (int i = 0; i <= 5; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo()
+				.sendKeys(transactionTestData.get("Own Teller Transaction number"));
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
 	}
 
 }
