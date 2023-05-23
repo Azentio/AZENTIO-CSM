@@ -349,4 +349,10 @@ public class CSMParam_UserAccessObj {
 	public WebElement userMaintenanceUserStatus() {
 		return userMaintenance_UserStatus;
 	}
+	@FindBy(name="tellerparamCO.ctstellerVO.SHOW_TODAY_TRX")
+	private WebElement user_ShowTodayTrxFlg;
+	public WebElement userShowTodayTrxFlag()
+	{
+		return user_ShowTodayTrxFlg;
+	}
 }

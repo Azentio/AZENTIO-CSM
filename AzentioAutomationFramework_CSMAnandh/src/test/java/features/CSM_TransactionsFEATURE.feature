@@ -79,3 +79,27 @@ And enter the transaction number in transaction maintenance search grid which wa
 Then system should display the transaction details which was created by himself
 And enter the transaction number in transaction maintenance search grid which was done by other teller 
 Then verify system should not show the transaction which was created by other teller
+@TRS_003_01
+Scenario: To check the show all TRX falg under user in CSM Param
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_003_01
+And search the user ID in user module
+And select the user from suggestion
+And check the show today trx flag in CSM Param
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_003_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And logout from the application

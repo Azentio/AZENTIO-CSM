@@ -204,6 +204,12 @@ public class CSM_UserAccessSteps extends BaseClass {
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("^get the test data for test case ID TRS_003_01$")
+	public void get_the_test_data_for_test_case_id_trs00301() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_003_01");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("^check the show all trx flag in CSM Param$")
 	public void check_the_show_all_trx_flag_in_csm_param() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessShowAllTrxFlag());
@@ -232,6 +238,24 @@ public class CSM_UserAccessSteps extends BaseClass {
 			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
 					userAccessObj.userAccessShowAllTrxFlag());
 		} else {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+		}
+	}
+
+	@And("^check the show today trx flag in CSM Param$")
+	public void check_the_show_today_trx_flag_in_csm_param() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessShowAllTrxFlag());
+		if (userAccessObj.userAccessShowAllTrxFlag().getAttribute("initialvalue").isBlank()) {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
+
+		} else {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
+					userAccessObj.userAccessShowAllTrxFlag());
 			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
 			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
 					userAccessObj.userAccessShowAllTrxFlag());

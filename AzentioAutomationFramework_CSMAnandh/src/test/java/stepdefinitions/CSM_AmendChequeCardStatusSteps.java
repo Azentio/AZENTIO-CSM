@@ -33,7 +33,9 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 	CSM_TransactionObj transactionObj = new CSM_TransactionObj(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData excelDataForAmendChequeStatus = new ExcelData(path, "AmendChequeCardStatusTestData", "DataSet ID");
+	ExcelData excelDataForAmendChequeExecution = new ExcelData(path, "AmendChequeCard_ExeTrack", "TestCaseID");
 	Map<String, String> amendChequeStatusTestData = new HashMap<>();
+	Map<String, String> amendChequeStatusExecutionData = new HashMap<>();
 
 	@And("^click on amend cheque card status module$")
 	public void click_on_amend_cheque_card_status_module() throws Throwable {
@@ -51,12 +53,23 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	@And("^get the test data for test case ACSD_002$")
 	public void get_the_test_data_for_test_case_acsd002() throws Throwable {
-		amendChequeStatusTestData = excelDataForAmendChequeStatus.getTestdata("DS01_ACSD_002");
+		amendChequeStatusExecutionData = excelDataForAmendChequeExecution.getTestdata("ACSD_002");
+		amendChequeStatusTestData = excelDataForAmendChequeStatus
+				.getTestdata(amendChequeStatusExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case ACSD_003$")
 	public void get_the_test_data_for_test_case_acsd003() throws Throwable {
-		amendChequeStatusTestData = excelDataForAmendChequeStatus.getTestdata("DS01_ACSD_003");
+		amendChequeStatusExecutionData = excelDataForAmendChequeExecution.getTestdata("ACSD_003");
+		amendChequeStatusTestData = excelDataForAmendChequeStatus
+				.getTestdata(amendChequeStatusExecutionData.get("Data Set ID"));
+	}
+
+	@And("^get the test data for test case ACSD_003_Prereq$")
+	public void get_the_test_data_for_test_case_acsd003prereq() throws Throwable {
+		amendChequeStatusExecutionData = excelDataForAmendChequeExecution.getTestdata("ACSD_003_Prereq");
+		amendChequeStatusTestData = excelDataForAmendChequeStatus
+				.getTestdata(amendChequeStatusExecutionData.get("Data Set ID"));
 	}
 
 	@And("^change the product type to cheque book$")
@@ -82,6 +95,16 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				}
 			}
 		}
+		waitHelper.waitForElementwithFluentwait(driver, amendChequeStatusObj.amendChequeCardCurrencyCodeInput());
+
+		amendChequeStatusObj.amendChequeCardCurrencyCodeInput().click();
+		for (int i = 0; i <= 500; i++) {
+			if (!(amendChequeStatusObj.amendChequeCardBranchCodeInput().getAttribute("prevvalue").isBlank())) {
+				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
+			}
+		}
 
 	}
 
@@ -94,9 +117,11 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				.sendKeys(amendChequeStatusTestData.get("Currency Code"));
 		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardGLCodeInput());
 
-		for (int i = 0; i <= 50; i++) {
+		for (int i = 0; i <= 500; i++) {
 			if (!(amendChequeStatusObj.amendChequeCardCurrencyCodeInput().getAttribute("prevvalue").isBlank())) {
 				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
 			}
 		}
 
@@ -110,12 +135,13 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardGLCodeInput());
 		amendChequeStatusObj.amendChequeCardGLCodeInput().sendKeys(amendChequeStatusTestData.get("Gl Code"));
 		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardCIFNoInput());
-		for (int i = 0; i <= 50; i++) {
+		for (int i = 0; i <= 500; i++) {
 			if (!(amendChequeStatusObj.amendChequeCardGLCodeInput().getAttribute("prevvalue").isBlank())) {
 				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
 			}
 		}
-
 	}
 
 	@And("^enter the CIF No in amend cheque$")
@@ -125,12 +151,13 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardCIFNoInput());
 		amendChequeStatusObj.amendChequeCardCIFNoInput().sendKeys(amendChequeStatusTestData.get("CIF No"));
 		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardSerialNoInput());
-		for (int i = 0; i <= 50; i++) {
+		for (int i = 0; i <= 500; i++) {
 			if (!(amendChequeStatusObj.amendChequeCardCIFNoInput().getAttribute("prevvalue").isBlank())) {
 				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
 			}
 		}
-
 	}
 
 	@And("^enter the serial number in amend cheque$")
@@ -139,9 +166,14 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(amendChequeStatusObj.amendChequeCardSerialNoInput());
 		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardSerialNoInput());
 		amendChequeStatusObj.amendChequeCardSerialNoInput().sendKeys(amendChequeStatusTestData.get("Serial Number"));
-		for (int i = 0; i <= 50; i++) {
+		waitHelper.waitForElementwithFluentwait(driver, amendChequeStatusObj.amendChequeCardRequestNoInput());
+		clicksAndActionsHelper.moveToElement(amendChequeStatusObj.amendChequeCardRequestNoInput());
+		clicksAndActionsHelper.clickOnElement(amendChequeStatusObj.amendChequeCardRequestNoInput());
+		for (int i = 0; i <= 500; i++) {
 			if (!(amendChequeStatusObj.amendChequeCardSerialNoInput().getAttribute("prevvalue").isBlank())) {
 				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
 			}
 		}
 
@@ -261,6 +293,34 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.ClearCacheSuccessOkButton());
 	}
 
+	@And("^change the system date in CSM$")
+	public void change_the_system_date_in_csm() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSystemDate());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		for (int i = 0; i <= 15; i++) {
+			csmCommonWebElements.csmInputSystemDate().sendKeys(Keys.BACK_SPACE);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+
+		csmCommonWebElements.csmInputSystemDate().sendKeys(amendChequeStatusTestData.get("System Date"));
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
+		Thread.sleep(1000);
+	}
+
 	@And("^click on cheque request module$")
 	public void click_on_cheque_request_module() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csmChequeBookRequestModule());
@@ -286,6 +346,98 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	}
 
+	@And("^enter the branch code in chequebook query$")
+	public void enter_the_branch_code_in_chequebook_query() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleBranchCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleBranchCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleBranchCode());
+		chequeBookRequestObj.chequeBooQueryModuleBranchCode().sendKeys(amendChequeStatusTestData.get("Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleCurrencyCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleCurrencyCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleCurrencyCode());
+		for (int i = 0; i <= 500; i++) {
+			if (!(chequeBookRequestObj.chequeBooQueryModuleBranchCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
+			}
+		}
+
+	}
+
+	@And("^enter the currency code in chequebook query$")
+	public void enter_the_currency_code_in_chequebook_query() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleCurrencyCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleCurrencyCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleCurrencyCode());
+		chequeBookRequestObj.chequeBooQueryModuleCurrencyCode()
+				.sendKeys(amendChequeStatusTestData.get("Currency Code"));
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleAccGlCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleAccGlCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleAccGlCode());
+		for (int i = 0; i <= 500; i++) {
+			if (!(chequeBookRequestObj.chequeBooQueryModuleCurrencyCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
+			}
+		}
+	}
+
+	@And("^enter the GL code in chequebook query$")
+	public void enter_the_gl_code_in_chequebook_query() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleAccGlCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleAccGlCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleAccGlCode());
+		chequeBookRequestObj.chequeBooQueryModuleAccGlCode().sendKeys(amendChequeStatusTestData.get("Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleCIFNumber());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleCIFNumber());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleCIFNumber());
+		for (int i = 0; i <= 500; i++) {
+			if (!(chequeBookRequestObj.chequeBooQueryModuleAccGlCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
+			}
+		}
+	}
+
+	@And("^enter the CIF code in chequebook query$")
+	public void enter_the_cif_code_in_chequebook_query() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleCIFNumber());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleCIFNumber());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleCIFNumber());
+		chequeBookRequestObj.chequeBooQueryModuleCIFNumber().sendKeys(amendChequeStatusTestData.get("CIF No"));
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleSLNumber());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleSLNumber());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleSLNumber());
+		for (int i = 0; i <= 500; i++) {
+			if (!(chequeBookRequestObj.chequeBooQueryModuleCIFNumber().getAttribute("prevvalue").isBlank())) {
+				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
+			}
+		}
+	}
+
+	@And("^enter the serial number in chequebook query$")
+	public void enter_the_serial_number_in_chequebook_query() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleSLNumber());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleSLNumber());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleSLNumber());
+		chequeBookRequestObj.chequeBooQueryModuleSLNumber().sendKeys(amendChequeStatusTestData.get("Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleChequeCode());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBooQueryModuleChequeCode());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleChequeCode());
+		for (int i = 0; i <= 500; i++) {
+			if (!(chequeBookRequestObj.chequeBooQueryModuleSLNumber().getAttribute("prevvalue").isBlank())) {
+				break;
+			} else if (i == 500) {
+				Assert.fail("Data Not populated");
+			}
+		}
+	}
+
 	@And("^click on live search in cheque query$")
 	public void click_on_live_search_in_cheque_query() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeBooQueryModuleLiveSearch());
@@ -309,6 +461,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBooQueryModuleLiveSearchCIFNo());
 		chequeBookRequestObj.chequeBooQueryModuleLiveSearchCIFNo().sendKeys(amendChequeStatusTestData.get("CIF No"));
 		chequeBookRequestObj.chequeBooQueryModuleLiveSearchCIFNo().sendKeys(Keys.ENTER);
+
 	}
 
 	@And("^select the records from live search$")
@@ -431,9 +584,19 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		System.out.println(finalTransactionNum);
 		excelDataForAmendChequeStatus.updateTestData(amendChequeStatusTestData.get("DataSet ID"), "TransactionNumber",
 				finalTransactionNum);
-		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.destroyDestroyAlertOkButton());
-		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.destroyDestroyAlertOkButton());
-		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.destroyDestroyAlertOkButton());
+		for (int i = 0; i <= 500; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(chequeBookRequestObj.destroyDestroyAlertOkButton());
+				clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.destroyDestroyAlertOkButton());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+
+			}
+		}
+
 	}
 
 	@And("^click on to be destroyed module$")
@@ -445,7 +608,9 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	@And("^get the test data for ACSD_004 test case$")
 	public void get_the_test_data_for_acsd004_test_case() throws Throwable {
-		amendChequeStatusTestData = excelDataForAmendChequeStatus.getTestdata("DS01_ACSD_004");
+		amendChequeStatusExecutionData = excelDataForAmendChequeExecution.getTestdata("ACSD_004");
+		amendChequeStatusTestData = excelDataForAmendChequeStatus
+				.getTestdata(amendChequeStatusExecutionData.get("Data Set ID"));
 	}
 
 	@And("^search the cheque code for to be destroyed cheque code$")
@@ -479,12 +644,23 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 	public void click_on_to_destroy_button() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
 			try {
+				clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeBookRequestRejectReasonremark());
+				clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequeBookRequestRejectReasonremark());
+				chequeBookRequestObj.chequeBookRequestRejectReasonremark()
+						.sendKeys(amendChequeStatusTestData.get("Status"));
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 600; i++) {
+			try {
 				javascriptHelper.scrollIntoView(chequeBookRequestObj.toBeDestroyToDestroyButton());
 				clicksAndActionsHelper.moveToElement(chequeBookRequestObj.toBeDestroyToDestroyButton());
 				clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.toBeDestroyToDestroyButton());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 600) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -645,7 +821,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		}
 
 	}
-	
+
 	@And("^click on maintenance scree under transaction module$")
 	public void click_on_maintenance_scree_under_transaction_module() throws Throwable {
 		for (int i = 0; i <= 500; i++) {
@@ -710,9 +886,5 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionReversedStatus());
 		Assert.assertTrue(transactionObj.transactionTransactionReversedStatus().isDisplayed());
 	}
-	
-	
-	
-    
 
 }

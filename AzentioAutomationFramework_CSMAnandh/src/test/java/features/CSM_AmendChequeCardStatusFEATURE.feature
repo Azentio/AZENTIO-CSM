@@ -41,19 +41,20 @@ And click on ok button in amend cheque update confirmation
 And click on ok button after saving the amend cheque status record
 And click on cheque request module
 And click on cheque query module
-And click on live search in cheque query
-And enter the Gl number in cheque query live search
-And enter the CIF number in cheque query live search
-And select the records from live search
+And enter the branch code in chequebook query
+And enter the currency code in chequebook query
+And enter the GL code in chequebook query
+And enter the CIF code in chequebook query
+And enter the serial number in chequebook query
 And enter the cheque request number in search grid
 Then verify status of the cheque should changed destroyed to approved
-
 @ACSD_004
 Scenario: checking if the system is reversing the charges transaction if charges were applied at the destroy
+And get the test data for ACSD_004 test case
 Given navigate to CSM application and login with valid credentials
+And change the system date in CSM
 And click on cheque request module
 And click on to be destroyed module
-And get the test data for ACSD_004 test case
 And search the cheque code for to be destroyed cheque code
 And click on to destroy button
 Then verify server got loaded for to be destroyed record
@@ -96,7 +97,7 @@ Scenario: checking if the system is reversing the charges transaction if charges
 Given navigate to CSM application and login with valid credentials
 And click on cheque request module
 And click on to be destroyed module
-And get the test data for test case ACSD_003
+And get the test data for test case ACSD_003_Prereq
 And search the cheque code for to be destroyed cheque code
 And click on to destroy button
 Then verify server got loaded for to be destroyed record
