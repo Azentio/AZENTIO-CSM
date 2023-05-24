@@ -51,8 +51,8 @@ public class UserTemple_Populate {
     @And("^Click the Parameter button in Template user$")
     public void click_the_parameter_button_in_template_user() throws Throwable {
     	waitHelper.waitForElementToVisibleWithFluentWait(driver, NewTempleUserobj.Parameters12(), 60, 2);
-    	//ClicksAndActionsHelperobj.moveToElement(NewTempleUserobj.Parameters12());
-    	//ClicksAndActionsHelperobj.clickOnElement(NewTempleUserobj.Parameters12());
+    	ClicksAndActionsHelperobj.moveToElement(NewTempleUserobj.Parameters12());
+    	ClicksAndActionsHelperobj.clickOnElement(NewTempleUserobj.Parameters12());
     	NewTempleUserobj.Parameters12().click();
     }
 
@@ -121,7 +121,7 @@ public class UserTemple_Populate {
     	ClicksAndActionsHelperobj.moveToElement(NewTempleUserobj.LongNamearab_tem());
     	ClicksAndActionsHelperobj.clickOnElement(NewTempleUserobj.LongNamearab_tem());
     	NewTempleUserobj.LongNamearab_tem().click();
-    	NewTempleUserobj.LongNamearab_tem().sendKeys(testData.get("Namearab"));
+    	NewTempleUserobj.LongNamearab_tem().sendKeys(testData.get("Longarab"));
     }
 
     @And("^Enter the Value User Teller code$")
@@ -157,6 +157,7 @@ public class UserTemple_Populate {
     	ClicksAndActionsHelperobj.moveToElement(NewTempleUserobj.code_template());
     	ClicksAndActionsHelperobj.clickOnElement(NewTempleUserobj.code_template());
     	NewTempleUserobj.code_template().click();
+    	NewTempleUserobj.code_template().sendKeys(testData.get("BranchCode"));
     }
 
     @And("^Click Saerch box$")
@@ -173,6 +174,7 @@ public class UserTemple_Populate {
     	ClicksAndActionsHelperobj.moveToElement(NewTempleUserobj.code_template());
     	ClicksAndActionsHelperobj.clickOnElement(NewTempleUserobj.code_template());
     	NewTempleUserobj.code_template().click();
+    	NewTempleUserobj.code_template().sendKeys(testData.get("Code2"));
     }
 
     @And("^Click the Save$")
@@ -212,6 +214,6 @@ public class UserTemple_Populate {
     	ClicksAndActionsHelperobj.moveToElement(NewTempleUserobj.Tellercode_populate());
     	ClicksAndActionsHelperobj.clickOnElement(NewTempleUserobj.Tellercode_populate());
     	NewTempleUserobj.Tellercode_populate().click();     
-    	NewTempleUserobj.Tellercode_populate().sendKeys(); 
+    	NewTempleUserobj.Tellercode_populate().sendKeys(testData.get("CodeApprove")); 
     }
 }

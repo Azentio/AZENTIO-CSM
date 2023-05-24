@@ -54,3 +54,34 @@ And Enter the code Value Under Approve populate user
 And Click the Approve submit button
 Then Click confirm ok button
 Then Click the Ok submit button
+
+@TSA_012
+Scenario: Checking if the default value of the field will be the same as the one defined for the user in the logged in branch
+Given User login to CSM Param Application
+And Click the Parameter button in Template user
+And Click the System parameter button in Temple user
+And Click the Populate Uesr Under New Template User
+And Click the Maintenance Under Populate User Screen
+And Enter the Teller Population User Code under populate User
+And Enter the Brife Name for under Populate User Screen
+And Enter the Long Name for Under Populate User
+And Enter the BriefNamearab under Populate User
+And Enter the LongNamearab for under Populate User
+And Click the search in user code
+And Enter the Value User Teller code
+And Click the Add button
+And Enter the Value Branch Code under
+And Click Saerch box
+And Enter the code value in under New user Template
+And Click the Save
+And Click the Add button
+And Enter the Value Branch Code under
+And Click Saerch box
+And Enter the code value in under New user Template
+And Click the Save
+And Click the Approve button
+And Click the Search button
+And Enter the code Value Under Approve populate user
+And Click the Approve submit button
+Then Click confirm ok button
+Then Click the Ok submit button

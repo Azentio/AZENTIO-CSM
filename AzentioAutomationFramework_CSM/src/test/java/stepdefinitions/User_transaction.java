@@ -38,11 +38,12 @@ public class User_transaction {
     @And("^click the parameter under transaction$")
     public void click_the_parameter_under_transaction() throws Throwable {
     	waitHelper.waitForElementToVisibleWithFluentWait(driver, Transaction_Suspendobj.Parameters12(), 60, 2);
-    	//ClicksAndActionsHelperobj.moveToElement(Transaction_Suspendobj.Parameters12());
-    	//ClicksAndActionsHelperobj.clickOnElement(Transaction_Suspendobj.Parameters12());
+    	
     	for (int i = 0; i < 50; i++) {
 			try {
-				Assert.assertTrue(Transaction_Suspendobj.Parameters12().isDisplayed());		
+				Assert.assertTrue(Transaction_Suspendobj.Parameters12().isDisplayed());	
+				ClicksAndActionsHelperobj.moveToElement(Transaction_Suspendobj.Parameters12());
+		    	ClicksAndActionsHelperobj.clickOnElement(Transaction_Suspendobj.Parameters12());
 				Transaction_Suspendobj.Parameters12().click();
 				break;
 			} catch (Exception e) {
@@ -83,10 +84,20 @@ public class User_transaction {
     @And("^enter the value user Id in under transaction$")
     public void enter_the_value_user_id_in_under_transaction() throws Throwable {
     	waitHelper.waitForElementToVisibleWithFluentWait(driver, Transaction_Suspendobj.UserId_transaction(), 60, 2);
-    	ClicksAndActionsHelperobj.moveToElement(Transaction_Suspendobj.UserId_transaction());
-    	ClicksAndActionsHelperobj.clickOnElement(Transaction_Suspendobj.UserId_transaction());
-    	Transaction_Suspendobj.UserId_transaction().click();
-    	Transaction_Suspendobj.UserId_transaction().sendKeys(testData.get("UserId"));
+    	for (int i = 0; i < 50; i++) {
+    		try {
+        		ClicksAndActionsHelperobj.moveToElement(Transaction_Suspendobj.UserId_transaction());
+            	ClicksAndActionsHelperobj.clickOnElement(Transaction_Suspendobj.UserId_transaction());
+            	Transaction_Suspendobj.UserId_transaction().click();
+            	Transaction_Suspendobj.UserId_transaction().sendKeys(testData.get("UserId"));
+            	break;
+    		} catch (Exception e) {
+    			if (i==50) {
+    				Assert.fail();
+    		}
+        	
+		}
+    	}
     }
 
     @And("^click the Populate user under transaction$")
