@@ -131,6 +131,12 @@ public class CSM_TransactionObj {
 	public WebElement transactionMaintenanceLabel() {
 		return transactionMaintenance_label;
 	}
+	@FindBy(xpath="//div[contains(text(),'is a Staff Member')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement transactions_StaffMemberOkButton;
+	public WebElement transactionsStaffMemberOkButton()
+	{
+		return transactions_StaffMemberOkButton;
+	}
 
 	@FindBy(xpath = "//input[@id='lookuptxt_trs_cy_D001MT']")
 	private WebElement transactionMaintenance_CurrencyCodeInput;
@@ -166,20 +172,22 @@ public class CSM_TransactionObj {
 	public WebElement transactionTypeCreditSerialNumCode() {
 		return transactionType_CreditSerialNumCode;
 	}
-    @FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.RELEASE_DATE']")
-    private WebElement transactionTypeSO_EndingDateInput;
+
+	@FindBy(xpath = "//input[@name='trxMgntCO.ctstrsVO.RELEASE_DATE']")
+	private WebElement transactionTypeSO_EndingDateInput;
 
 	public WebElement transactionTypeSOEndingDateInput() {
 		return transactionTypeSO_EndingDateInput;
 	}
+
 	@FindBy(xpath = "//div[contains(text(),'Charges amount is waived by the system')]//parent::div//following-sibling::center//input[@value='Ok']")
 	private WebElement transaction_WaivedAlertPopup_WithOk;
 
 	public WebElement transaction_WaivedAlertPopupWithOkBtn() {
 		return transaction_WaivedAlertPopup_WithOk;
 	}
-	
-	@FindBy(xpath="//div[contains(text(),'Please wait while server request completes')]//parent::div//following-sibling::center//input[@value='Ok']")
+
+	@FindBy(xpath = "//div[contains(text(),'Please wait while server request completes')]//parent::div//following-sibling::center//input[@value='Ok']")
 	private WebElement transaction_ServerResponsePopupOkButton;
 
 	public WebElement transactionServerResponsePopupOkButton() {
@@ -206,12 +214,14 @@ public class CSM_TransactionObj {
 	public WebElement transactionApproveTransactionNoSearch() {
 		return transactionApprove_TransactionNoSearch;
 	}
+
 	@FindBy(xpath = "//div[@class='jMsgbox-contentWrap']")
 	private WebElement transaction_TransactionNumber;
 
 	public WebElement transaction_TransactionNumber() {
 		return transaction_TransactionNumber;
 	}
+
 	@FindBy(xpath = "//div[contains(text(),'Transaction No')]//parent::div//following-sibling::center//input")
 	private WebElement transaction_TransactionNumberOkButton;
 
@@ -225,196 +235,250 @@ public class CSM_TransactionObj {
 	public WebElement transactionCloseTransactionTab() {
 		return transaction_closeTransactionTab;
 	}
-	@FindBy(xpath="(//table[@class='ui-jqgrid-ftable']//td[@tdlabel='in Charged CY'])[1]")
+
+	@FindBy(xpath = "(//table[@class='ui-jqgrid-ftable']//td[@tdlabel='in Charged CY'])[1]")
 	private WebElement transaction_ChargeValidation;
 
 	public WebElement transactionChargeValidation() {
 		return transaction_ChargeValidation;
 	}
-	@FindBy(xpath="//div[contains(text(),'Approved')]//parent::div//following-sibling::center//input")
+
+	@FindBy(xpath = "//div[contains(text(),'Approved')]//parent::div//following-sibling::center//input")
 	private WebElement transaction_ApproveOkButton;
 
 	public WebElement transactionApproveOkButton() {
 		return transaction_ApproveOkButton;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='To Be Stopped  Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='To Be Stopped  Standing Order']")
 	private WebElement transaction_ToBeStoppedStandingOrder;
 
 	public WebElement transaction_ToBeStoppedStandingOrder() {
 		return transaction_ToBeStoppedStandingOrder;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Stop Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Stop Standing Order']")
 	private WebElement transaction_StopStandingOrder;
 
 	public WebElement transactionStopStandingOrder() {
 		return transaction_StopStandingOrder;
 	}
-	@FindBy(xpath="//span[contains(text(),'to Stop SO')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),'to Stop SO')]//parent::button")
 	private WebElement toBeStoppedStandingOrder_toStopSOButton;
 
 	public WebElement toBeStoppedStandingOrderToStopSOButton() {
 		return toBeStoppedStandingOrder_toStopSOButton;
 	}
-	@FindBy(xpath="//textarea[@name='trxMgntCO.statusReason']")
+
+	@FindBy(xpath = "//textarea[@name='trxMgntCO.statusReason']")
 	private WebElement toBeStoppedStandingOrder_ToDoStoppedReason;
 
 	public WebElement toBeStoppedStandingOrderToDoStoppedReason() {
 		return toBeStoppedStandingOrder_ToDoStoppedReason;
 	}
-	@FindBy(xpath="//span[contains(text(),' Stop SO ')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),' Stop SO ')]//parent::button")
 	private WebElement toBeStoppedStandingOrder_StopSOButton;
 
 	public WebElement toBeStoppedStandingOrderStopSOButton() {
 		return toBeStoppedStandingOrder_StopSOButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / To Be Stopped  Standing Order')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / To Be Stopped  Standing Order')]//parent::td//following-sibling::td//span")
 	private WebElement toBeStoppedStandingOrderTab_CloseButton;
 
 	public WebElement toBeStoppedStandingOrderTabCloseButton() {
 		return toBeStoppedStandingOrderTab_CloseButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Stop Standing Order')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Stop Standing Order')]//parent::td//following-sibling::td//span")
 	private WebElement stopStandingOrderTab_CloseButton;
 
 	public WebElement stopStandingOrderTabCloseButton() {
 		return stopStandingOrderTab_CloseButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Approve')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Approve')]//parent::td//following-sibling::td//span")
 	private WebElement transaction_ApproveCloseButton;
 
 	public WebElement transactionApproveCloseButton() {
 		return transaction_ApproveCloseButton;
 	}
-	@FindBy(xpath="//input[@name='TRS_NO']")
+
+	@FindBy(xpath = "//input[@name='TRS_NO']")
 	private WebElement transaction_SearchTransactionNo;
 
 	public WebElement transactionSearchTransactionNo() {
 		return transaction_SearchTransactionNo;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Reactivate Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Reactivate Standing Order']")
 	private WebElement transaction_ReactiveStandingOrderFeature;
 
 	public WebElement transactionReactiveStandingOrderFeature() {
 		return transaction_ReactiveStandingOrderFeature;
 	}
-	@FindBy(xpath="//span[contains(text(),' Reactivate SO ')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),' Reactivate SO ')]//parent::button")
 	private WebElement reactiveStandingOrderFeature_ReactivateSOButton;
 
 	public WebElement reactiveStandingOrderFeatureReactivateSOButton() {
 		return reactiveStandingOrderFeature_ReactivateSOButton;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Approve Reactivate Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Approve Reactivate Standing Order']")
 	private WebElement transaction_ApproveReactiveStandingOrderFeature;
 
 	public WebElement transactionApproveReactiveStandingOrderFeature() {
 		return transaction_ApproveReactiveStandingOrderFeature;
 	}
-	@FindBy(xpath="//span[contains(text(),' Apply Reactivate SO ')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),' Apply Reactivate SO ')]//parent::button")
 	private WebElement approveReactivateStandingOrder_ApplyReactivateSOButton;
 
 	public WebElement approveReactivateStandingOrderApplyReactivateSOButton() {
 		return approveReactivateStandingOrder_ApplyReactivateSOButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Reactivate Standing Order')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Reactivate Standing Order')]//parent::td//following-sibling::td//span")
 	private WebElement transaction_ReactiveStandingOrderlabelCloseButton;
 
 	public WebElement transactionReactiveStandingOrderlabelCloseButton() {
 		return transaction_ReactiveStandingOrderlabelCloseButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Approve Reactivate Standing Order')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Approve Reactivate Standing Order')]//parent::td//following-sibling::td//span")
 	private WebElement transaction_ApproveReactiveStandingOrderlabelCloseButton;
 
 	public WebElement transactionApproveReactiveStandingOrderlabelCloseButton() {
 		return transaction_ApproveReactiveStandingOrderlabelCloseButton;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Amend Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Amend Standing Order']")
 	private WebElement transaction_AmendStnadingOrderFeature;
 
 	public WebElement transactionAmendStnadingOrderFeature() {
 		return transaction_AmendStnadingOrderFeature;
 	}
-	@FindBy(xpath="//span[contains(text(),' Amend Standing Order ')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),' Amend Standing Order ')]//parent::button")
 	private WebElement amendStandingOrder_AmendStandingOrderButton;
 
 	public WebElement amendStandingOrderAmendStandingOrderButton() {
 		return amendStandingOrder_AmendStandingOrderButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Approve')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Approve')]//parent::td//following-sibling::td//span")
 	private WebElement transactionApprove_CloseButton;
-	public WebElement transationApproveTabCloseButton()
-	{
+
+	public WebElement transationApproveTabCloseButton() {
 		return transactionApprove_CloseButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Amend Standing Order')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Amend Standing Order')]//parent::td//following-sibling::td//span")
 	private WebElement amendStandingOrderTab_CloseButton;
-	public WebElement amendStandingOrderTabCloseButton()
-	{
+
+	public WebElement amendStandingOrderTabCloseButton() {
 		return amendStandingOrderTab_CloseButton;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / Amend Standing Order')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Amend Standing Order')]")
 	private WebElement amendStandingOrder_Label;
-	public WebElement amendStandingOrderLabel()
-	{
+
+	public WebElement amendStandingOrderLabel() {
 		return amendStandingOrder_Label;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Close Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Close Standing Order']")
 	private WebElement transaction_CloseStandingOrderFeature;
-	public WebElement transactionCloseStandingOrderFeature()
-	{
+
+	public WebElement transactionCloseStandingOrderFeature() {
 		return transaction_CloseStandingOrderFeature;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='To Be Closed Standing Order']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='To Be Closed Standing Order']")
 	private WebElement transaction_ToBeClosedStandingOrderFeature;
-	public WebElement transactionToBeClosedStandingOrderFeature()
-	{
+
+	public WebElement transactionToBeClosedStandingOrderFeature() {
 		return transaction_ToBeClosedStandingOrderFeature;
 	}
-	@FindBy(xpath="//a[contains(text(),'Transactions / To Be Closed Standing Order')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / To Be Closed Standing Order')]//parent::td//following-sibling::td//span")
 	private WebElement toBeClosedStandingOrderLabel_CloseButton;
-	public WebElement toBeClosedStandingOrderLabelCloseButton()
-	{
+
+	public WebElement toBeClosedStandingOrderLabelCloseButton() {
 		return toBeClosedStandingOrderLabel_CloseButton;
 	}
-	@FindBy(xpath="//textarea[@name='trxMgntCO.statusReason']")
+
+	@FindBy(xpath = "//textarea[@name='trxMgntCO.statusReason']")
 	private WebElement toBeClosedStandingOrder_Reason;
-	public WebElement toBeClosedStandingOrderReason()
-	{
+
+	public WebElement toBeClosedStandingOrderReason() {
 		return toBeClosedStandingOrder_Reason;
 	}
-	@FindBy(xpath="//span[contains(text(),' To Close SO ')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),' To Close SO ')]//parent::button")
 	private WebElement toBeClosedStandingOrder_ToCloseSOButton;
-	public WebElement toBeClosedStandingOrderToCloseSOButton()
-	{
+
+	public WebElement toBeClosedStandingOrderToCloseSOButton() {
 		return toBeClosedStandingOrder_ToCloseSOButton;
 	}
-	@FindBy(xpath="//span[contains(text(),'Close SO')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),'Close SO')]//parent::button")
 	private WebElement closeStandingOrder_CloseSOButton;
-	public WebElement closeStandingOrderCloseSOButton()
-	{
+
+	public WebElement closeStandingOrderCloseSOButton() {
 		return closeStandingOrder_CloseSOButton;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Cancel']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Cancel']")
 	private WebElement transaction_cancelFeature;
-	public WebElement transactinCancelFeature()
-	{
+
+	public WebElement transactinCancelFeature() {
 		return transaction_cancelFeature;
 	}
-	@FindBy(xpath="//select[@name='trxMgntCO.ctstrsVO.VOID_REASON']")
+
+	@FindBy(xpath = "//select[@name='trxMgntCO.ctstrsVO.VOID_REASON']")
 	private WebElement cancel_CancelReasonDropdown;
-	public WebElement cancelCancelReasonDropdown()
-	{
+
+	public WebElement cancelCancelReasonDropdown() {
 		return cancel_CancelReasonDropdown;
 	}
-    @FindBy(xpath="//span[contains(text(),'Cancel')]//parent::button")
+
+	@FindBy(xpath = "//span[contains(text(),'Cancel')]//parent::button")
 	private WebElement cancel_CancelButton;
-	public WebElement cancelCancelButton()
-	{
+
+	public WebElement cancelCancelButton() {
 		return cancel_CancelButton;
 	}
-	@FindBy(xpath="(//td[@tdlabel='Transaction No'])[1]")
+
+	@FindBy(xpath = "(//td[@tdlabel='Transaction No'])[1]")
 	private WebElement isTransactionData_AvailableInCSM;
-	public WebElement isTransactionDataAvailableInCSM()
-	{
+
+	public WebElement isTransactionDataAvailableInCSM() {
 		return isTransactionData_AvailableInCSM;
 	}
+
+	@FindBy(xpath = "//div[contains(text(),'User Does Not have Access On this TRX type For the Priority Of This CIF')]")
+	private WebElement transactions_NoPriorityAccessValidation;
+
+	public WebElement transactionsNoPriorityAccessValidation() {
+		return transactions_NoPriorityAccessValidation;
+	}
+
+	@FindBy(xpath = "//div[@class='jMsgbox-contentWrap']")
+	private WebElement transactions_NoAccountTypeAccessValidation;
+
+	public WebElement transactionsNoAccountTypeAccessValidation() {
+		return transactions_NoAccountTypeAccessValidation;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'User Does Not have Access On this TRX type For this CIF Type')]")
+	private WebElement transactions_NoCIFTypeAccessValidation;
+
+	public WebElement transactionsNoCIFTypeAccessValidation() {
+		return transactions_NoCIFTypeAccessValidation;
+	}
+
 }

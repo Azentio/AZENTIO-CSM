@@ -29,7 +29,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 	ExcelData exelDataForUserAccess = new ExcelData(testDataPath, "CSMParam_userAccessTestData", "DataSet ID");
 	ExcelData excelDataforCIFType = new ExcelData(testDataPath, "CSMParam_CIFTypeTestData", "DataSet ID");
 	ExcelData excelDataForTransactionExecution = new ExcelData(csmTestDataPath, "Transaction_ExecutionTracker",
-			"Test Case ID");
+			"TestCaseID");
 	Map<String, String> transactionExecutionData = new HashMap<>();
 	Map<String, String> userAccessTestData = new HashMap<>();
 
@@ -209,6 +209,11 @@ public class CSM_UserAccessSteps extends BaseClass {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_003_01");
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+	@And("^get the test data for test case ID TRS_004_01$")
+    public void get_the_test_data_for_test_case_id_trs00401() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_004_01");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+    }
 
 	@And("^check the show all trx flag in CSM Param$")
 	public void check_the_show_all_trx_flag_in_csm_param() throws Throwable {
@@ -246,21 +251,39 @@ public class CSM_UserAccessSteps extends BaseClass {
 
 	@And("^check the show today trx flag in CSM Param$")
 	public void check_the_show_today_trx_flag_in_csm_param() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userAccessShowAllTrxFlag());
-		if (userAccessObj.userAccessShowAllTrxFlag().getAttribute("initialvalue").isBlank()) {
-			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
-			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
-					userAccessObj.userAccessShowAllTrxFlag());
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userShowTodayTrxFlag());
+		if (userAccessObj.userShowTodayTrxFlag().getAttribute("initialvalue").isBlank()) {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userShowTodayTrxFlag(),
+					userAccessObj.userShowTodayTrxFlag());
 
 		} else {
-			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
-			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
-					userAccessObj.userAccessShowAllTrxFlag());
-			clicksAndActionsHelper.moveToElement(userAccessObj.userAccessShowAllTrxFlag());
-			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userAccessShowAllTrxFlag(),
-					userAccessObj.userAccessShowAllTrxFlag());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userShowTodayTrxFlag(),
+					userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userShowTodayTrxFlag(),
+					userAccessObj.userShowTodayTrxFlag());
 		}
 	}
+	@And("^uncheck the show today trx flag in CSM Param$")
+    public void uncheck_the_show_today_trx_flag_in_csm_param() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userShowTodayTrxFlag());
+		if (userAccessObj.userShowTodayTrxFlag().getAttribute("initialvalue").isBlank()) {
+			clicksAndActionsHelper.moveToElement(userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userShowTodayTrxFlag(),
+					userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.moveToElement(userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userShowTodayTrxFlag(),
+					userAccessObj.userShowTodayTrxFlag());
+
+		} else {
+			
+			clicksAndActionsHelper.moveToElement(userAccessObj.userShowTodayTrxFlag());
+			clicksAndActionsHelper.clickUsingActionClass(userAccessObj.userShowTodayTrxFlag(),
+					userAccessObj.userShowTodayTrxFlag());
+		}
+    }
 
 	@And("^click on update after approve button$")
 	public void click_on_update_after_approve_button() throws Throwable {

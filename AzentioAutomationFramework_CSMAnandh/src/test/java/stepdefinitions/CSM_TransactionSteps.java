@@ -34,7 +34,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	ExcelData excelDataForTransWaiver = new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	ExcelData excelDataForTransactionTestData = new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	ExcelData excelDataFortransactionTestData = new ExcelData(path, "TransactionTestData", "DataSet ID");
-	ExcelData excelDataForTransactionExecution = new ExcelData(path, "Transaction_ExecutionTracker", "Test Case ID");
+	ExcelData excelDataForTransactionExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
 	Map<String, String> transactionTestData = new HashMap<>();
 	Map<String, String> transactionExecutionData = new HashMap<>();
 	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
@@ -181,6 +181,26 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
 		Thread.sleep(1000);
 	}
+
+	@And("^get the test data for test case ID TRS_005$")
+	public void get_the_test_data_for_test_case_id_trs005() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_005");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_006$")
+	public void get_the_test_data_for_test_case_id_trs006() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_006");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+	 @And("^get the test data for test case ID TRS_007$")
+	    public void get_the_test_data_for_test_case_id_trs007() throws Throwable {
+			transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_007");
+			System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+			transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	    }
 
 	@And("^enter the transaction type code in transaction$")
 	public void enter_the_transaction_type_code_in_transaction() throws Throwable {
@@ -365,6 +385,44 @@ public class CSM_TransactionSteps extends BaseClass {
 			}
 		}
 	}
+
+	@And("^click on ok buton in staff member ok button$")
+	public void click_on_ok_buton_in_staff_member_ok_button() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionsStaffMemberOkButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionsStaffMemberOkButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Then("^verify system should show the validation message for no access for account type$")
+	public void verify_system_should_show_the_validation_message_for_no_access_for_account_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionsNoAccountTypeAccessValidation());
+		String accountTypeValidation = transactionObj.transactionsNoAccountTypeAccessValidation().getText();
+		System.out.println(accountTypeValidation);
+		boolean accTypeAccess = accountTypeValidation.contains(transactionTestData.get("Credit Gl Code"));
+		System.out.println(accTypeAccess);
+		Assert.assertTrue(accTypeAccess);
+
+	}
+
+	@Then("^verify system should show the validation message for no access for CIF type$")
+	public void verify_system_should_show_the_validation_message_for_no_access_for_cif_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionsNoCIFTypeAccessValidation());
+		Assert.assertTrue(transactionObj.transactionsNoCIFTypeAccessValidation().isDisplayed());
+	}
+	@Then("^verify system should show the validation message for no access for Priority$")
+    public void verify_system_should_show_the_validation_message_for_no_access_for_priority() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionsNoPriorityAccessValidation());
+		Assert.assertTrue(transactionObj.transactionsNoPriorityAccessValidation().isDisplayed());
+    }
 
 	@And("^enter the currency code$")
 	public void enter_the_currency_code() throws Throwable {
@@ -1521,20 +1579,21 @@ public class CSM_TransactionSteps extends BaseClass {
 		}
 		Assert.assertTrue(status);
 	}
-	 @Then("^verify system should not show the transaction which was created by other teller$")
-	    public void verify_system_should_not_show_the_transaction_which_was_created_by_other_teller() throws Throwable {
-		 String xpath = "//td[text()='" + transactionTestData.get("Other Teller Transaction Number") + "']";
-			boolean status = false;
-			for (int i = 0; i <= 300; i++) {
-				try {
-					status = driver.findElement(By.xpath(xpath)).isDisplayed();
-					break;
-				} catch (Exception e) {
-					
-				}
+
+	@Then("^verify system should not show the transaction which was created by other teller$")
+	public void verify_system_should_not_show_the_transaction_which_was_created_by_other_teller() throws Throwable {
+		String xpath = "//td[text()='" + transactionTestData.get("Other Teller Transaction Number") + "']";
+		boolean status = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+
 			}
-			Assert.assertFalse(status);
-	    }
+		}
+		Assert.assertFalse(status);
+	}
 
 	@And("^get the test data for test case ID TRS_001$")
 	public void get_the_test_data_for_test_case_id_trs001() throws Throwable {
@@ -1542,13 +1601,27 @@ public class CSM_TransactionSteps extends BaseClass {
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
-	 @And("^get the test data for test case ID TRS_002$")
-	    public void get_the_test_data_for_test_case_id_trs002() throws Throwable {
-		 transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_002");
-			System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
-			transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
-	    }
 
+	@And("^get the test data for test case ID TRS_002$")
+	public void get_the_test_data_for_test_case_id_trs002() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_002");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_003$")
+	public void get_the_test_data_for_test_case_id_trs003() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_003");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_004$")
+	public void get_the_test_data_for_test_case_id_trs004() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_004");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
 
 	@And("^change the system date to current date$")
 	public void change_the_system_date_to_current_date() throws Throwable {
@@ -1566,8 +1639,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
 		System.out.println("Transaction date " + transactionTestData.get("System Date"));
 		System.out.println("Transaction Type " + transactionTestData.get("Transaction Type"));
-		System.out.println("Transa Own "+transactionTestData.get("Own Teller Transaction number"));
-		System.out.println("Other Trans num "+transactionTestData.get("Other Teller Transaction Number"));
+		System.out.println("Transa Own " + transactionTestData.get("Own Teller Transaction number"));
+		System.out.println("Other Trans num " + transactionTestData.get("Other Teller Transaction Number"));
 		csmCommonWebElements.csmInputSystemDate().sendKeys(transactionTestData.get("System Date"));
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
@@ -1615,6 +1688,11 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@Then("^system should display the transaction details which was created by himself$")
 	public void system_should_display_the_transaction_details_which_was_created_by_himself() throws Throwable {
+		robot = new Robot();
+		for (int i = 0; i <= 5; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
 		String xpath = "//td[text()='" + transactionTestData.get("Own Teller Transaction number") + "']";
 		boolean status = false;
 		for (int i = 0; i <= 300; i++) {
@@ -1645,6 +1723,93 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
 		transactionObj.transactionSearchTransactionNo()
 				.sendKeys(transactionTestData.get("Own Teller Transaction number"));
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@Then("^verify system should show the transaction number in maintenance grid$")
+	public void verify_system_should_show_the_transaction_number_in_maintenance_grid() throws Throwable {
+		String xpath = "//td[text()='" + transactionTestData.get("Current Date Transaction number") + "']";
+		boolean status = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(status);
+	}
+
+	@And("^enter the transaction number which is created at the meentioned date$")
+	public void enter_the_transaction_number_which_is_created_at_the_meentioned_date() throws Throwable {
+		transactionObj.transactionSearchTransactionNo().clear();
+		robot = new Robot();
+		for (int i = 0; i <= 5; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo()
+				.sendKeys(transactionTestData.get("Current Date Transaction number"));
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@Then("^verify system should show the transaction details of the past date$")
+	public void verify_system_should_show_the_transaction_details_of_the_past_date() throws Throwable {
+		String xpath = "//td[text()='" + transactionTestData.get("Past transaction number") + "']";
+		boolean status = false;
+		for (int i = 0; i <= 500; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(status);
+	}
+
+	@Then("^verify system should not show the transaction details of the past date$")
+	public void verify_system_should_not_show_the_transaction_details_of_the_past_date() throws Throwable {
+		String xpath = "//td[text()='" + transactionTestData.get("Past transaction number") + "']";
+		boolean status = false;
+		for (int i = 0; i <= 500; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+			}
+		}
+		Assert.assertFalse(status);
+	}
+
+	@And("^enter the transaction number which was created at past date$")
+	public void enter_the_transaction_number_which_was_created_at_past_date() throws Throwable {
+		transactionObj.transactionSearchTransactionNo().clear();
+		robot = new Robot();
+		for (int i = 0; i <= 5; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo().sendKeys(transactionTestData.get("Past transaction number"));
 		robot = new Robot();
 		for (int i = 0; i <= 10; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);

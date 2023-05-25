@@ -6,16 +6,16 @@ public class ExcelDataUpdate {
 	public static void main(String args[])
 	{
 		String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-		ExcelData exelDataForGeneralLedger = new ExcelData(testDataPath, "TransactionOnStaffAccount_Execu", "TestCaseID");
-		ExcelData exelDataForGeneralLedger2 = new ExcelData(testDataPath, "TrasactionOnStaffAccountTestDat", "DataSet ID");
+		ExcelData exelDataForGeneralLedger = new ExcelData(testDataPath, "Transaction_ExecutionTracker", "TestCaseID");
+		//ExcelData exelDataForGeneralLedger2 = new ExcelData(testDataPath, "TrasactionOnStaffAccountTestDat", "DataSet ID");
 //		exelDataForGeneralLedger.updateTestData("CW_019", "ExecuteYes/No", "No");
 //		exelDataForGeneralLedger.updateTestData("CW_020", "ExecuteYes/No", "No");
-		exelDataForGeneralLedger.updateTestData("TSA_001_01", "ExecuteYes/No", "No");
-		exelDataForGeneralLedger.updateTestData("TSA_001_02", "ExecuteYes/No", "No");
-		exelDataForGeneralLedger.updateTestData("TSA_002_01", "ExecuteYes/No", "Yes");
-		exelDataForGeneralLedger.updateTestData("TSA_002_02", "ExecuteYes/No", "Yes");
+//		exelDataForGeneralLedger.updateTestData("TSA_001_01", "ExecuteYes/No", "No");
+//		exelDataForGeneralLedger.updateTestData("TSA_001_02", "ExecuteYes/No", "No");
+//		exelDataForGeneralLedger.updateTestData("TSA_002_01", "ExecuteYes/No", "Yes");
+		exelDataForGeneralLedger.updateTestData("TRS_003", "ExecuteYes/No", "Yes");
 		
-		exelDataForGeneralLedger2.updateTestData("DS01_TSA_002_01", "populateCode", "22");
+		//exelDataForGeneralLedger2.updateTestData("DS01_TSA_002_01", "populateCode", "22");
 //		exelDataForGeneralLedger.updateTestData("CHB_123", "ExecuteYes/No", "Yes");
 //		exelDataForGeneralLedger.updateTestData("ChequeBookPrerequisites_03", "ExecuteYes/No", "Yes");
 //		exelDataForGeneralLedger.updateTestData("CHB_123_124_Prereq", "ExecuteYes/No", "Yes");

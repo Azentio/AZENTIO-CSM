@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,6 +38,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 	ExcelData excelDataForAmendChequeExecution = new ExcelData(path, "AmendChequeCard_ExeTrack", "TestCaseID");
 	Map<String, String> amendChequeStatusTestData = new HashMap<>();
 	Map<String, String> amendChequeStatusExecutionData = new HashMap<>();
+	Robot robot;
 
 	@And("^click on amend cheque card status module$")
 	public void click_on_amend_cheque_card_status_module() throws Throwable {
@@ -281,9 +284,18 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 
 	@And("^click on clear cache option$")
 	public void click_on_clear_cache_option() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmClearCacheOption());
-		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmClearCacheOption());
-		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmClearCacheOption());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmClearCacheOption());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmClearCacheOption());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 	}
 
 	@Then("^verify system shows success pop up for clearing the cache$")
@@ -621,6 +633,11 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		chequeBookRequestObj.toBeDestroySearchChequeCode().sendKeys(amendChequeStatusTestData.get("Request No"));
 		chequeBookRequestObj.toBeDestroySearchChequeCode().sendKeys(Keys.ENTER);
 		String xpath = "//td[text()='" + amendChequeStatusTestData.get("Request No") + "']";
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
 
 		for (int i = 0; i <= 500; i++) {
 			try {
@@ -629,11 +646,7 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
 				break;
 			} catch (Exception e) {
-				if (i > 200 && i < 500) {
-					chequeBookRequestObj.toBeDestroySearchChequeCode().sendKeys(Keys.ENTER);
-				}
-
-				else if (i == 500) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
