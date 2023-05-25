@@ -25,9 +25,9 @@ Then Enter the Population code under populate screen
 And Click the Approve Flag under Populate user
 Then Enter the approve code under approve Flag
 And Select the entered value code under approve flag
+And click on approve button in populate user
 And Click Okpopup under Approve Screen
-Then Click the success okpopup under approve screen
-And Again click the populate flag under Populate user
+And Click the populate flag under Populate user
 Then Again Enter the Population code under populate screen
 And Double Click the Entered code under populate screen
 Then Approve the selected code under populate screen

@@ -123,7 +123,7 @@ public class TransStaffAccPopulateUser {
 	public WebElement PopulateFlag_Approve() {
 		return PopulateFlagApprove;
 	}
-	@FindBy(xpath="id=\"populateTellerList_GridTbl_Id_E000POP_gs_ctstellerPopulateVO.TELLER_POPULATION_CODE\"")
+	@FindBy(xpath="//input[@id='populateTellerList_GridTbl_Id_E000POP_gs_ctstellerPopulateVO.TELLER_POPULATION_CODE']")
 	private WebElement ApproveCode;
 	public WebElement Approve_Code() {
 		return ApproveCode;
@@ -133,12 +133,12 @@ public class TransStaffAccPopulateUser {
 	public WebElement ApproveCode_Created() {
 		return ApproveCodeCreated;
 	}
-	@FindBy(xpath="//label[@id='populateTellerMaint_FormId_E000POP_Approve_key']")
+	@FindBy(xpath="//label[contains(text(),'Approve ')]//ancestor::button")
 	private WebElement ApproveCodeApprove;
 	public WebElement ApproveCode_Approve() {
 		return ApproveCodeApprove;
 	}
-	@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+	@FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
 	private WebElement ApproveOkPopup;
 	public WebElement Approve_OkPopup() {
 		return ApproveOkPopup;
@@ -152,6 +152,11 @@ public class TransStaffAccPopulateUser {
 	private WebElement ApproveIconPopulate;
 	public WebElement ApproveIcon_Populate() {
 		return ApproveIconPopulate;
+	}
+	@FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement okpopupForPopulateScreen;
+	public WebElement okpopup_ForPopulateScreen() {
+		return okpopupForPopulateScreen;
 	}
 	
 	

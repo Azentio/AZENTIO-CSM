@@ -10,7 +10,7 @@ import utilities.ExtentTestManager;
 
 @CucumberOptions(features = {"src/test/java/features/CSMParam_PopulateUser.feature"},
                 glue = "stepdefinitions",
-                monochrome=false, //to make steps in color
+                monochrome=true, //to make steps in color
                 plugin = { "pretty",
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"}
