@@ -54,6 +54,79 @@ public class CSM_CheckingMultiTransfer {
 	 public WebElement TRXType_CifCode() {
 		 return TRXTypeCifCode;
 	 }
+	 @FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+	 private WebElement OkPopup;
+	 public WebElement Ok_Popup() {
+		 return OkPopup;
+	 }
+	 @FindBy(xpath="//span[text()='close']")
+	 private WebElement ClosePopup;
+	 public WebElement Close_Popup() {
+		 return ClosePopup;
+	 }
+	 
+	 @FindBy(xpath="//input[@id='lookuptxt_trs_ac_sl_D001MT']")
+	 private WebElement TRXTypeSerialNo;
+	 public WebElement TRXTypeSerial_No() {
+		 return TRXTypeSerialNo;
+	 }
+	 @FindBy(xpath="//input[@id='lookuptxt_trs_cy_D001MT']")
+	 private WebElement CurrencyCodeFlag;
+	 public WebElement CurrencyCode_Flag() {
+		 return CurrencyCodeFlag;
+	 }
+	 @FindBy(xpath="//input[@id='amount_D001MT']")
+	 private WebElement DebitAmount;
+	 public WebElement Debit_Amount() {
+		 return DebitAmount;
+	 }
+	 @FindBy(xpath="//label[text()='Account Details ']")
+	 private WebElement AccountDetailsIcon;
+	 public WebElement Account_DetailsIcon() {
+		 return AccountDetailsIcon; 
+	 }
+	 @FindBy(xpath="//td[@id='add_trxMgntAccountDtlGridTbl_Id_D001MT']//span")
+	 private WebElement AddIconAccountDetails;
+	 public WebElement AddIcon_AccountDetails() {
+		 return AddIconAccountDetails;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_BR']")
+	 private WebElement BrachCodeAccountDetails;
+	 public WebElement BranchCode_AccountDetails() {
+		 return BrachCodeAccountDetails;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_GL']")
+	 private WebElement GLCodeAccountDetails;
+	 public WebElement GLCode_AccountDetails() {
+		 return GLCodeAccountDetails;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_CIF']")
+	 private WebElement CIFCodeAccountDetails;
+	 public WebElement CIFCode_AccountDetails() {
+		 return CIFCodeAccountDetails;
+	 }
+	 @FindBy(xpath="//input[@id='new_1685017638623_ctstrsACCDETVO.AC_SL_lookuptxt_trxMgntAccountDtlGridTbl_Id_D001MT']")
+	 private WebElement SerialNumberAccountDetails;
+	 public WebElement SerialNumber_AccountDetails() {
+		 return SerialNumberAccountDetails;
+	 }
+	 @FindBy(xpath="//input[@id='new_1685017638623_ctstrsACCDETVO.FC_AMOUNT']")
+	 private WebElement FirstAmountAccountDetails;
+	 public WebElement FirstAmount_AccountDetails() {
+		 return FirstAmountAccountDetails;
+	 }
+	 @FindBy(xpath="//span[text()='ok']")
+	 private WebElement OkButtonAccountDetails;
+	 public WebElement OkButton_AccountDetails() {
+		 return OkButtonAccountDetails;
+	 }
+	 @FindBy(xpath="//span[contains(text(),' Save ')]")
+	 private WebElement SaveButton;
+	 public WebElement Save_Button() {
+		 return SaveButton;
+	 }
+	 
+	 
 }
  
  
