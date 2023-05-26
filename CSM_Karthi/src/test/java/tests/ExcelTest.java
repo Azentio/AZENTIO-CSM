@@ -2,7 +2,9 @@ package tests;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import dataProvider.ExcelData;
 import dataProvider.ExcelReader;
 
 public class ExcelTest {
@@ -31,12 +33,10 @@ public class ExcelTest {
 	}
 
 	public static void main(String[] args) {
-		String path = System.getProperty("user.dir") + "\\Test-data\\KUBSTestData.xlsx";
-		ExcelTest excelTest = new ExcelTest(path, "TestExecution", "TestCaseID");
-		List<String> testCaseTagsfromExcel = excelTest.getTestCaseTagsfromExcel();
-		for (String string : testCaseTagsfromExcel) {
-			System.out.println(string);
-		}
+		String path = System.getProperty("user.dir") +"\\TestData\\CSMparamTestData.xlsx";
+		ExcelData data = new ExcelData(path, "CSM_Accountparameters", "DataSet ID");
+		Map<String, String> testdata = data.getTestdata("CHB_180 _D3");
+		System.out.println(testdata.get("Code"));
 	}
 
 }

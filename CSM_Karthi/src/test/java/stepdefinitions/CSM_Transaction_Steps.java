@@ -13,6 +13,7 @@ import helper.DropDownHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import pageobjects.CommonElements.CSMCommonWebElements;
 import pageobjects.csmParam.CSM_Transaction_Object;
 import resources.BaseClass;
@@ -230,5 +231,189 @@ public class CSM_Transaction_Steps {
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMparam_transactionType_UPAA_Arabicword_No2());
        // CSMTransactionObject.CSMparam_transactionType_UPAA_Arabicword_No2().sendKeys(testData.get("User_Id"));
         CSMTransactionObject.CSMparam_transactionType_UPAA_Arabicword_No2().sendKeys("trs debit");
+    }
+    
+    
+    //TRS_027
+    
+    
+    @And("^User click the Transactions$")
+    public void User_click_the_Transactions() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Transactions());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Transactions());  
+    }
+
+    @Then("^Click the Maintenance Below the Transactions$")
+    public void click_the_maintenance_below_the_transactions() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_MaintenanceScrn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_MaintenanceScrn());  
+    }
+    
+    @And("^enter the value in trx type$")
+    public void enter_the_value_in_trx_type() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Trxtypevalue());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Trxtypevalue());
+   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys("377");
+   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys(Keys.TAB);
+    }
+
+//    @And("^enter the single transfer in trx type$")
+//    public void enter_the_single_transfer_in_trx_type() throws Throwable {  
+//   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Trxtypevalue());
+//   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Trxtypevalue());
+//   	//single transfer(debit account)
+//   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys("685");
+//   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys(Keys.TAB);
+//    }
+
+    @Then("^enter values of Branch code$")
+    public void enter_values_of_branch_code() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_depositAcc_Branchcode());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_depositAcc_Branchcode());  
+   	 CSMTransactionObject.Transactions_depositAcc_Branchcode().sendKeys("0001");
+    }
+
+    @And("^enter values of Currency code$")
+    public void enter_values_of_Currency_code() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_Currencycode());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_Currencycode());  
+   	// CSMTransactionObject.Transactions_debitAcc_Currencycode().sendKeys("840");
+   	 CSMTransactionObject.Transactions_debitAcc_Currencycode().sendKeys("586");
+    }
+
+    @And("^enter values of Gl code$")
+    public void enter_values_of_Gl_code() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_Glcode());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_Glcode());  
+   	 CSMTransactionObject.Transactions_debitAcc_Glcode().sendKeys("8456");
+   	 //CSMTransactionObject.Transactions_debitAcc_Glcode().sendKeys("5916");
+
+    }
+
+    @And("^enter values of Cif code$")
+    public void enter_values_of_Cif_code() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_Cifcode());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_Cifcode());
+   	 CSMTransactionObject.Transactions_debitAcc_Cifcode().sendKeys("993602");
+   	 //CSMTransactionObject.Transactions_debitAcc_Cifcode().sendKeys("993567");
+
+    }
+
+    @Then("^enter values of serial$")
+    public void enter_values_of_serial() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_serialcode());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_serialcode());  
+   	 CSMTransactionObject.Transactions_debitAcc_serialcode().sendKeys("0");
+    }
+    
+    @Then("^System show the warning popup clikc ok button$")
+    public void system_show_the_warning_popup_clikc_ok_button() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Warning_okbtn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Warning_okbtn()); 
+    }
+    
+    @And("^user enter the currency$")
+    public void user_enter_the_currency() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_currency());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_currency());  
+   	 CSMTransactionObject.Transactions_debitAcc_currency().sendKeys("840");
+    }
+    
+    @And("^Enter the Amount in this Checkbox$")
+    public void Enter_the_Amount_in_this_Checkbox() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_EnterAmount());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_EnterAmount());  
+   	 CSMTransactionObject.Transactions_EnterAmount().sendKeys("1000");
+    }
+    
+  
+    
+    @And("^click the save button$")
+    public void click_the_save_button() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_savebtn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_savebtn());  
+    }
+    
+    @And("^system show the popup success user click the ok button$")
+    public void system_show_the_popup_success_user_click_the_ok_button() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_successokbtn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_successokbtn());  
+   	 Thread.sleep(2000);
+    }
+
+    @Then("^user Enter the Transaction number$")
+    public void user_enter_the_transaction_number() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+   	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys("7521");
+    }
+
+    @And("^User click the Approve screen$")
+    public void user_click_the_approve_screen() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Approvescrn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Approvescrn());  
+    }         
+
+    @And("^double click the Value$")
+    public void double_click_the_value() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_Doubleclk());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_Doubleclk());  
+    }
+    
+    @Then("^click the Approve button$")
+    public void click_the_approve_button() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Approvebtn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Approvebtn());  
+    }
+    
+    @And("^User click the Maintenance screen$")
+    public void user_click_the_maintenance_screen() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_MaintenanceScrn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_MaintenanceScrn());  
+    }
+    
+    @Then("^click the search button$")
+    public void click_the_search_button() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_searchbtn());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_searchbtn());  
+    }
+    
+    @And("^enter the trx number$")
+    public void enter_the_trx_number() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_trxno_code());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_trxno_code());  
+    }
+    
+    @And("^double click the data$")
+    public void double_click_the_data() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_doubleclk_codevalue());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_doubleclk_codevalue());  
+    }
+
+
+    @Then("^click the Booked Entries$")
+    public void click_the_booked_entries() throws Throwable {
+   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_BookedEntries());
+   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_BookedEntries());  
+    }
+    
+    //TRS_025
+    @And("^user deal with the Currency Denomination chequebox$")
+    public void user_deal_with_the_currency_denomination_chequebox() throws Throwable {
+//    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+//    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+//        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        if (CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox().getAttribute("initialvalue").isBlank()) {
+        clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox(),
+        		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        } else {
+        clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox(),
+        		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+        		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox();
+        }
     }
 }

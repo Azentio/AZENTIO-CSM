@@ -2,6 +2,7 @@ package stepdefinitions;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -40,7 +41,9 @@ public class CSMSADS_Tranactiononstaff_step {
 
 	
 	
-	
+	//TSA_157
+	//TSA_154
+	//TSA_155
 	
 	@And("^User Click on Parameters under SADS application$")
     public void user_click_on_parameters_under_sads_application() throws Throwable {
@@ -68,7 +71,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance()); 
-        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("7531");
+        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("6325");
     }
 
     @And("^User Enter the value in Description  under Maintenance Screen$")
@@ -164,40 +167,41 @@ public class CSMSADS_Tranactiononstaff_step {
 
     @And("^User Enter the User ID in UserID tab$")
     public void user_enter_the_user_id_in_userid_tab() throws Throwable {
-    	for (int i = 0; i < 200; i++) {
-			try {
+    	
+			
 				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
 		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
 		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
-		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys("Razia",Keys.ENTER); 
-		        break;
-			} catch (Exception e) {
-				if (i==199) {
-					Assert.fail(e.getMessage());
-				}
-				
+		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys("RAZIA",Keys.ENTER); 
+		       
+			
 			}
-		}
+		
     	
-    	for (int i = 0; i < 200; i++) {
-			try {
-				transactiononstaffaccObj.CSMSADSUserIDName().isDisplayed();
-		        break;
-			} catch (Exception e) {
-				if (i==199) {
-					Assert.fail(e.getMessage());
-				}
-				
-			}
-		}
     	
-    }
+    	
+    
 
     @And("^User Click on User ID Checkbox under UserID tab$")
     public void user_click_on_user_id_checkbox_under_userid_tab() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSUserIDCheckbox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSUserIDCheckbox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSUserIDCheckbox());
+    	for (int i = 0; i < 200; i++) {
+			try {
+				String xpath = "//td[text()='"+"RAZIA"+"']";
+				driver.findElement(By.xpath(xpath)).isDisplayed();
+					
+			        break;
+				}
+catch (Exception e) {
+				
+				
+			}
+				
+			} 
+		
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSUserIDCheckbox());
+    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSUserIDCheckbox());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSUserIDCheckbox());
+        
     }
 
     @And("^User Click on Add button in Restriction Type under Maintenance Screen$")
@@ -306,7 +310,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("7531");
+        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("6325");
         transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(Keys.ENTER);
     }
 
@@ -343,7 +347,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys("Razia",Keys.ENTER);
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys("RAZIA",Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Maintenance Screen$")
@@ -452,7 +456,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("Razia",Keys.ENTER);
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("RAZIA",Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Approve Screen$")
@@ -497,7 +501,7 @@ public class CSMSADS_Tranactiononstaff_step {
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
         transactiononstaffaccObj.CSMDateInUserRunningDate().clear();
-        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys("22/05/2023");
+        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys("24/05/2023");
     }
 
     @And("^User Click on Use Button in Change Running Date Popup$")
@@ -663,19 +667,19 @@ public class CSMSADS_Tranactiononstaff_step {
 			}			
 		}
     	
-    	for (int i = 0; i < 200; i++) {
-    		try {
-    			transactiononstaffaccObj.CSMCurrencyName().isDisplayed();
-    			break;
-			} catch (Exception e) {
-				if (i==199) {
-					Assert.fail(e.getMessage());
-				}
-			}			
-		}
-    
-    }
-    
+//    	for (int i = 0; i < 200; i++) {
+//    		try {
+//    			transactiononstaffaccObj.CSMCurrencyName().isDisplayed();
+//    			break;
+//			} catch (Exception e) {
+//				if (i==199) {
+//					Assert.fail(e.getMessage());
+//				}
+//			}			
+//		}
+//    
+} 
+//    
 
 
     

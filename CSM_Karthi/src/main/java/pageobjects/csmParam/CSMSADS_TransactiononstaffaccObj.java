@@ -11,6 +11,7 @@ public class CSMSADS_TransactiononstaffaccObj {
 		this.driver= driver;
 		PageFactory.initElements(driver, this);
 	}
+	//TSA_157
 		@FindBy(xpath = "//div[@id='_selenuim_CATEG_1']//child::td[text()='Parameters']")
 		private WebElement CSMSADS_ParametersMainMenu;
 
@@ -116,7 +117,7 @@ public class CSMSADS_TransactiononstaffaccObj {
 			return CSMSADS_EnterTheUserIDInUserIDTab;
 		}
 		
-		@FindBy(id="td_userGridId_UR00M_1_usrVO.USER_ID")
+		@FindBy(id="td_userGridId_UR00M_1_usrVO.USER_ID")//id="td_userGridId_UR00M_1_usrVO.USER_ID"
 		private WebElement CSMSADS_UserIDName;
 
 		public WebElement CSMSADSUserIDName() {

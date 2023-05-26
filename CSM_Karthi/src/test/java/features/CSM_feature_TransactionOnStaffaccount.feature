@@ -100,3 +100,4 @@ And User Enter To Date in Periodicity Of Statement under By Trade Date Screen
 And User Click Retrieve Button under By Trade Date Screen
 Then User Validate If the Statement of Account Displayed as Access Denied
 And User Click on Ok Button in Access Denied PopUp Menu
+
