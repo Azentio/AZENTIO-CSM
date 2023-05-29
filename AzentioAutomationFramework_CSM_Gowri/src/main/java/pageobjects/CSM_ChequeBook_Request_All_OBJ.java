@@ -759,6 +759,160 @@ public WebElement reasonBox()
 	return reasonBox;
 }
 
+//prerequesties for this test case CHB_179
+//CHB_179
+
+@FindBy(xpath = "//td[text()='Accounts Parameters']")
+private WebElement csmParamsAccountsParameters;
+public WebElement csmParams_AccountsParameters()
+{
+	return csmParamsAccountsParameters;
+}
+@FindBy(xpath = "//td[text()='General Ledger']")
+private WebElement genralLedgerInParams;
+public WebElement genralLedgerInParams()
+{
+	return genralLedgerInParams;
+}
+@FindBy(id="P014UP")
+private WebElement csmParam_General_ledger_Updateafterapprove;
+public WebElement csmParam_General_ledger_Updateafterapprove()
+{
+	return csmParam_General_ledger_Updateafterapprove;
+}
+@FindBy(id="genLedgerParamListGridTbl_Id_P014UP_gs_GL_CODE")
+private WebElement csmParam_General_ledger_code;
+public WebElement csmParam_General_ledger_code()
+{
+	return csmParam_General_ledger_code;
+}
+@FindBy(xpath="(//td[text()='400402'])[1]")
+private WebElement csmParam_General_ledger_code_doubleclick;
+public WebElement csmParam_General_ledger_code_doubleclick()
+{
+	return csmParam_General_ledger_code_doubleclick;
+}
+@FindBy(xpath="//span[text()='Additional Details']")
+private WebElement csmParam_General_ledger_code_additionaloptions;
+public WebElement csmParam_General_ledger_code_additionaloptions()
+{
+	return csmParam_General_ledger_code_additionaloptions;
+}
+@FindBy(xpath="//select[@id='allow_internal_overdraw_P014UP']")
+private WebElement csmParam_General_ledger_code_additionaloptions_dropdown;
+public WebElement csmParam_General_ledger_code_additionaloptions_dropdown()
+{
+	return csmParam_General_ledger_code_additionaloptions_dropdown;
+}
+@FindBy(xpath="//label[@id='genLedgerParamFormId_P014UP_update_key']")
+private WebElement csmParam_General_ledger_upadatebutton;
+public WebElement csmParam_General_ledger_upadatebutton()
+{
+	return csmParam_General_ledger_upadatebutton;
+}
+@FindBy(xpath="//td[text()='General Ledger']//ancestor::a//following-sibling::ul//span[text()='Approve']")
+private WebElement csmParam_General_ledger_Approve;
+public WebElement csmParam_General_ledger_Approve()
+{
+	return csmParam_General_ledger_Approve;
+}
+@FindBy(id="genLedgerParamListGridTbl_Id_P014P_gs_GL_CODE")
+private WebElement csmParam_General_ledger_Approve_inputField;
+public WebElement csmParam_General_ledger_Approve_inputField()
+{
+	return csmParam_General_ledger_Approve_inputField;
+}
+@FindBy(id="td_genLedgerParamListGridTbl_Id_P014P_1_ADDITIONAL_REFERENCE")
+private WebElement csmParam_General_ledger_Approve_inputfield_doubleclick;
+public WebElement csmParam_General_ledger_Approve_inputfield_doubleclick()
+{
+	return csmParam_General_ledger_Approve_inputfield_doubleclick;
+}
+@FindBy(xpath="//label[@id='genLedgerParamFormId_P014P_approve_key']")
+private WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_Approve;
+public WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_Approve()
+{
+	return csmParam_General_ledger_Approve_inputfield_doubleclick_Approve;
+}
+@FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+private WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_Approve_OK;
+public WebElement csmParam_General_ledger_Approve_inputfield_doubleclick_Approve_OK()
+{
+	return csmParam_General_ledger_Approve_inputfield_doubleclick_Approve_OK;
+}
+@FindBy(xpath="//td[text()='Transaction Type']")
+private WebElement csmParam_Transactiontype;
+public WebElement csmParam_Transactiontype()
+{
+	return csmParam_Transactiontype;
+}
+@FindBy(xpath="//a[@id='P024MA']")
+private WebElement csmParam_Transactiontype_Updateafterapprovefield;
+public WebElement csmParam_Transactiontype_Updateafterapprovefield()
+{
+	return csmParam_Transactiontype_Updateafterapprovefield;
+}
+@FindBy(xpath="//input[@id='transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE']")
+private WebElement csmParam_Transactiontype_inputfield;
+public WebElement csmParam_Transactiontype_inputfield()
+{
+	return csmParam_Transactiontype_inputfield;
+}
+@FindBy(xpath="//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.SHORT_DESC_ENG']")
+private WebElement csmParam_Transactiontype_inputfield_doubleclick;
+public WebElement csmParam_Transactiontype_inputfield_doubleclick()
+{
+	return csmParam_Transactiontype_inputfield_doubleclick;
+}
+@FindBy(xpath="//input[@id='proceed_on_insuff_fund_P024MA']")
+private WebElement csmParam_Transactiontype_proceedoninsufficentfunds;
+public WebElement csmParam_Transactiontype_proceedoninsufficentfunds()
+{
+	return csmParam_Transactiontype_proceedoninsufficentfunds;
+}
+@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024MA_Update_After_Approve_key']")
+private WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton;
+public WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton()
+{
+	return csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton;
+}
+@FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+private WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveAbutton_Ok;
+public WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveAbutton_Ok()
+{
+	return csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveAbutton_Ok;
+}
+@FindBy(xpath="//span[text()='Approve']")
+private WebElement csmParam_Transactiontype_Approvefield;
+public WebElement csmParam_Transactiontype_Approvefield()
+{
+	return csmParam_Transactiontype_Approvefield;
+}
+@FindBy(xpath="//input[@id='transactionTypesList_GridTbl_Id_P024P_gs_ctstrxtypeVO.CODE']")
+private WebElement csmParam_Transactiontype_Approve_Inputfield;
+public WebElement csmParam_Transactiontype_Approve_Inputfield()
+{
+	return csmParam_Transactiontype_Approve_Inputfield;
+}
+@FindBy(xpath="//td[@id='td_transactionTypesList_GridTbl_Id_P024P_1_ctstrxtypeVO.CODE']")
+private WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick;
+public WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick()
+{
+	return csmParam_Transactiontype_Approve_Inputfield_doubleclick;
+}
+@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
+private WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve;
+public WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve()
+{
+	return csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve;
+}
+
+
+
+
+
+
+
 
 
 

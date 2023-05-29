@@ -69,7 +69,7 @@ public class CSMLogin {
 
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
+	    waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmLoginValidation());
 		Assert.assertTrue(csmCommonWebElements.csmLoginValidation().isDisplayed());

@@ -170,14 +170,36 @@ public WebElement populateButton()
 {
 	return populateButton;
 }
-
 @FindBy(xpath = "//label[text()='Log Out ']")
 private WebElement logoutButtonInCsmParamsApplication;
 public WebElement logoutButtonInCsmParamsApplication()
 {
 	return logoutButtonInCsmParamsApplication;
 }
-
+@FindBy(xpath = "(//span[@role='button'])[2]")
+private WebElement searchIconForBranchField;
+public WebElement searchIconForBranchField()
+{
+	return searchIconForBranchField;
+}
+@FindBy(id = "//input[@name='BRANCH_CODE']")
+private WebElement branchCodeIcon;
+public WebElement branchCodeIcon()
+{
+	return branchCodeIcon;
+}
+@FindBy(xpath = "(//td[@tdlabel='Branch Code'])[2]")
+private WebElement doubleClkTheRecord;
+public WebElement doubleClkTheRecord()
+{
+	return doubleClkTheRecord;
+}
+@FindBy(id="populateTeller_tab_1_E000POMT")
+private WebElement randomClickInDestinationBranches;
+public WebElement randomClickInDestinationBranches()
+{
+	return randomClickInDestinationBranches;
+}
 //TSA_017
 @FindBy(xpath = "susp_usr_log_br_yn_E000POMT")
 private WebElement suspendCheckBoxInPopulateUser;
@@ -201,7 +223,172 @@ public WebElement searchIconInUserSubMenu()
 	return searchIconInUserSubMenu;
 }
 
+//TSA_019
+@FindBy(xpath = "//span[text()=' Accounts ']")
+private WebElement accountsDetailsInUserTemplate;
+public WebElement accountsDetailsInUserTemplate()
+{
+	return accountsDetailsInUserTemplate;
+}
+@FindBy(xpath = "//td[@id='td_tab2_GridTbl_Id_E000MA_1_ctstelleraccdetVO.ACC_BR']")
+private WebElement accountBranchInAccountDetails;
+public WebElement accountBranchInAccountDetails()
+{
+	return accountBranchInAccountDetails;
+}
 
+//TRS_041
+@FindBy(xpath = "//td[text()='Transactions']")
+private WebElement csmTransactionsMenu;
+public WebElement csmTransactionsMenu()
+{
+	return csmTransactionsMenu;
+}
+@FindBy(xpath = "//span[text()='Maintenance']")
+private WebElement csmTransactionsMaintenanceSubMenu;
+public WebElement csmTransactionsMaintenanceSubMenu()
+{
+	return csmTransactionsMaintenanceSubMenu;
+}
+@FindBy(xpath = "//input[@id='lookuptxt_trs_cy_D001MT']")
+private WebElement csmTransactionsCurrencyField;
+public WebElement csmTransactionsCurrencyField()
+{
+	return csmTransactionsCurrencyField;
+}
+@FindBy(xpath = "//input[@id='amount_D001MT']")
+private WebElement csmTransactionsAmountField;
+public WebElement csmTransactionsAmountField()
+{
+	return csmTransactionsAmountField;
+}
+@FindBy(xpath = "//input[@id='value_date_D001MT']")
+private WebElement csmTransactionsValueDateField;
+public WebElement csmTransactionsValueDateField()
+{
+	return csmTransactionsValueDateField;
+}
+@FindBy(xpath = "//span[contains(text(),'Save')]")
+private WebElement csmTransactionsSaveField;
+public WebElement csmTransactionsSaveField()
+{
+	return csmTransactionsSaveField;
+}
+@FindBy(xpath = "//span[text()='Approve']")
+private WebElement csmTransactionsApproveScreen;
+public WebElement csmTransactionsApproveScreen()
+{
+	return csmTransactionsApproveScreen;
+}
+@FindBy(xpath = "//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
+private WebElement csmTransactionsApproveScreenTransactionNumber;
+public WebElement csmTransactionsApproveScreenTransactionNumber()
+{
+	return csmTransactionsApproveScreenTransactionNumber;
+}
+@FindBy(xpath = "//td[@id='td_trxMgntGridTbl_Id_D001AU_1_ctstrsVO.TRS_NO']")
+private WebElement csmTransactionsApproveScreenTransactionNumberDoubleClick;
+public WebElement csmTransactionsApproveScreenTransactionNumberDoubleClick()
+{
+	return csmTransactionsApproveScreenTransactionNumberDoubleClick;
+}
+@FindBy(xpath = "//span[contains(text(),' Approve ')]")
+private WebElement csmTransactionsApproveScreenApproveButton;
+public WebElement csmTransactionsApproveScreenApproveButton()
+{
+	return csmTransactionsApproveScreenApproveButton;
+}
+@FindBy(id = "infoBarSearchButton_D001MT")
+private WebElement csmTransactionsMaintenanceScreenSearchIcon;
+public WebElement csmTransactionsMaintenanceScreenSearchIcon()
+{
+	return csmTransactionsMaintenanceScreenSearchIcon;
+}
+@FindBy(id = "trxMgntGridTbl_Id_D001MT_gs_ctstrsVO.TRS_NO")
+private WebElement csmTransactionsMaintenanceScreenTransactionNumber;
+public WebElement csmTransactionsMaintenanceScreenTransactionNumber()
+{
+	return csmTransactionsMaintenanceScreenTransactionNumber;
+}
+@FindBy(id = "td_trxMgntGridTbl_Id_D001MT_1_ctstrsVO.TRS_NO")
+private WebElement csmTransactionsMaintenanceScreenTransactionNumberDoubleClick;
+public WebElement csmTransactionsMaintenanceScreenTransactionNumberDoubleClick()
+{
+	return csmTransactionsMaintenanceScreenTransactionNumberDoubleClick;
+}
+@FindBy(id = "trxMgntDefFormId_D001MT_Booked_Entries_key")
+private WebElement csmTransactionsMaintenanceScreenBookedEntries;
+public WebElement csmTransactionsMaintenanceScreenBookedEntries()
+{
+	return csmTransactionsMaintenanceScreenBookedEntries;
+}
+//TRS_042
+@FindBy(xpath = "//input[@id='trs_ac_br_D001MT']")
+private WebElement debitAccountBranchCode;
+public WebElement debitAccountBranchCode()
+{
+	return debitAccountBranchCode;
+}
+@FindBy(xpath = "//input[@id='trs_ac_cy_D001MT']")
+private WebElement debitAccountCurrency;
+public WebElement debitAccountCurrency()
+{
+	return debitAccountCurrency;
+}
+@FindBy(xpath = "//input[@id='trs_ac_gl_D001MT']")
+private WebElement debitAccountGlCode;
+public WebElement debitAccountGlCode()
+{
+	return debitAccountGlCode;
+}
+@FindBy(xpath = "//input[@id='trs_ac_cif_D001MT']")
+private WebElement debitAccountCifCode;
+public WebElement debitAccountCifCode()
+{
+	return debitAccountCifCode;
+}
+@FindBy(xpath = "//input[@id='lookuptxt_trs_ac_sl_D001MT']")
+private WebElement debitAccountSerialNo;
+public WebElement debitAccountSerialNo()
+{
+	return debitAccountSerialNo;
+}
+@FindBy(xpath = "//a[text()='Transactions / Maintenance']")
+private WebElement randomClickInTransactions;
+public WebElement randomClickInTransactions()
+{
+	return randomClickInTransactions;
+}
+@FindBy(xpath = "//input[@id='to_trs_ac_br_D001MT']")
+private WebElement creditAccountBranchCode;
+public WebElement creditAccountBranchCode()
+{
+    return creditAccountBranchCode;
+}
+@FindBy(xpath = "//input[@id='to_trs_ac_cy_D001MT']")
+private WebElement creditAccountCurrency;
+public WebElement creditAccountCurrency()
+{
+    return creditAccountCurrency;
+}
+@FindBy(xpath = "//input[@id='to_trs_ac_gl_D001MT']")
+private WebElement creditAccountGlCode;
+public WebElement creditAccountGlCode()
+{
+    return creditAccountGlCode;
+}
+@FindBy(xpath = "//input[@id='to_trs_ac_cif_D001MT']")
+private WebElement creditAccountCifCode;
+public WebElement creditAccountCifCode()
+{
+    return creditAccountCifCode;
+}
+@FindBy(xpath = "//input[@id='lookuptxt_to_trs_ac_sl_D001MT']")
+private WebElement creditAccountSerialNo;
+public WebElement creditAccountSerialNo()
+{
+    return creditAccountSerialNo;
+}
 
 
 

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -23,7 +24,7 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
       Selenium_Actions seleniumActions = new Selenium_Actions(driver);
       CSM_TransactionOnStaffAccount_Obj csmTransactionOnStaffAccount = new CSM_TransactionOnStaffAccount_Obj(driver);
       String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
-  	  ExcelData csmTransactionsExcelData = new ExcelData(path,"CSM_Transactions","DataSet ID");
+  	  //ExcelData csmTransactionsExcelData = new ExcelData(path,"CSM_Transactions","DataSet ID");
   	  Map<String, String> testData;
   	  
   	@Given("^user login as csm params application$")
@@ -129,14 +130,81 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.addIconInMaintenanceSubMenu());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.addIconInMaintenanceSubMenu());
     }
+    
+    @And("^user randomly click in destination branches$")
+    public void user_randomly_click_in_destination_branches() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.randomClickInDestinationBranches());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.randomClickInDestinationBranches());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.randomClickInDestinationBranches());
+    }
+    
+    @And("^user click and enter the value in branch field$")
+    public void user_click_and_enter_the_value_in_branch_field() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.branchCodeField());
+        csmTransactionOnStaffAccount.branchCodeField().sendKeys("2");
+//        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.randomClickInDestinationBranches());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.randomClickInDestinationBranches());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.randomClickInDestinationBranches());
+    }
+
+    
+    @And("^user click search icon$")
+    public void user_click_search_icon() throws Throwable {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.searchIconForBranchField());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.searchIconForBranchField());
+			} catch (Exception e) {
+				if (i==199) {
+		              Assert.fail(e.getMessage());
+		           }	
+			}
+			
+		}
+//        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.searchIconForBranchField());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.searchIconForBranchField());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.searchIconForBranchField());
+    }
+
+    @And("^user click branch code under destination branches$")
+    public void user_click_branch_code_under_destination_branches() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.branchCodeIcon());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.branchCodeIcon());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.branchCodeIcon());
+    }
+
+    @And("^user enter the value in branch code and doubleclick the branch code$")
+    public void user_enter_the_value_in_branch_code_and_doubleclick_the_branch_code() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.branchCodeIcon());
+    	csmTransactionOnStaffAccount.branchCodeIcon().sendKeys("2");
+    	csmTransactionOnStaffAccount.branchCodeIcon().sendKeys(Keys.ENTER);
+    	seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.doubleClkTheRecord());
+    	seleniumActions.getClickAndActionsHelper().doubleClick(csmTransactionOnStaffAccount.doubleClkTheRecord());
+    }
 
     @And("^user click and enter the value in branch code field$")
     public void user_click_and_enter_the_value_in_branch_code_field() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.branchCodeField());
-        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.branchCodeField());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.branchCodeField());
-        csmTransactionOnStaffAccount.branchCodeField().sendKeys("2");
-    }
+    	for (int i = 0; i < 200; i++) {
+    	try {
+          seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.branchCodeField());
+          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.branchCodeField());
+          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.branchCodeField());
+          csmTransactionOnStaffAccount.branchCodeField().sendKeys("2");
+          break;
+    	} catch (Exception e) {
+    	if (i==199) {
+              Assert.fail(e.getMessage());
+           }
+
+        }
+     }
+
+   }
+//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.branchCodeField());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.branchCodeField());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.branchCodeField());
+//        csmTransactionOnStaffAccount.branchCodeField().sendKeys("2");
+    
 
     @And("^user click and enter the value in new user template field$")
     public void user_click_and_enter_the_value_in_new_user_template_field() throws Throwable {
@@ -224,18 +292,95 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
     }
     
     
+    //TRS_041
     
+    @And("^user update test data set id for TRS_041$")
+    public void user_update_test_data_set_id_for_trs041() throws Throwable {
+        
+    }
     
+    @Then("^user click save button$")
+    public void user_click_save_button() throws Throwable {
+        
+    }
+
+    @And("^user click currency field and enter the value$")
+    public void user_click_currency_field_and_enter_the_value() throws Throwable {
+        
+    }
+
+    @And("^user click amount field and enter the value$")
+    public void user_click_amount_field_and_enter_the_value() throws Throwable {
+        
+    }
+
+    @And("^user click value date field and enter the value$")
+    public void user_click_value_date_field_and_enter_the_value() throws Throwable {
+        
+    }
+    @And("^user click approve screen$")
+    public void user_click_approve_screen() throws Throwable {
+        
+    }
+
+    @And("^user click search icon in approve screen$")
+    public void user_click_search_icon_in_approve_screen() throws Throwable {
+        
+    }
+
+    @And("^user click transaction number and enter the value$")
+    public void user_click_transaction_number_and_enter_the_value() throws Throwable {
+        
+    }
+
+    @And("^user retrieve the record under approve screen$")
+    public void user_retrieve_the_record_under_approve_screen() throws Throwable {
+        
+    }
+    @And("^user click search icon in maintenance screen$")
+    public void user_click_search_icon_in_maintenance_screen() throws Throwable {
+        
+    }
+    @Then("^user click the booked entries$")
+    public void user_click_the_booked_entries() throws Throwable {
+        
+    }
+
+    @And("^user retrieve the record in maintenance screen under transactions$")
+    public void user_retrieve_the_record_in_maintenance_screen_under_transactions() throws Throwable {
+        
+    }
     
+    //TRS_042
     
+    @And("^user update test data set id for TRS_042$")
+    public void user_update_test_data_set_id_for_trs042() throws Throwable {
+        
+    }
     
+    @And("^user click and enter the value in debit account branch code under maintenance$")
+    public void user_click_and_enter_the_value_in_debit_account_branch_code_under_maintenance() throws Throwable {
+        
+    }
+
+    @And("^user click and enter the value in debit account currency under maintenance$")
+    public void user_click_and_enter_the_value_in_debit_account_currency_under_maintenance() throws Throwable {
+        
+    }
+
+    @And("^user click and enter the value in debit account gl code under maintenance$")
+    public void user_click_and_enter_the_value_in_debit_account_gl_code_under_maintenance() throws Throwable {
+        
+    }
+
+    @And("^user click and enter the value in debit account cif code under maintenance$")
+    public void user_click_and_enter_the_value_in_debit_account_cif_code_under_maintenance() throws Throwable {
+        
+    }
     
-    
-    
-    
-    
-    
-    
-    
+    @And("^user click and enter the value in debit account serial number under maintenance$")
+    public void user_click_and_enter_the_value_in_debit_account_serial_number_under_maintenance() throws Throwable {
+        
+    }
     
 }

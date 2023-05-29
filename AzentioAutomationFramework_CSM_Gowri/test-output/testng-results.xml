@@ -2,79 +2,46 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-17T12:55:33 IST" name="Default suite" finished-at="2023-05-17T12:56:28 IST" duration-ms="55398">
+  <suite started-at="2023-05-29T12:35:30 IST" name="Default suite" finished-at="2023-05-29T12:36:11 IST" duration-ms="41551">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-17T12:55:33 IST" name="Default test" finished-at="2023-05-17T12:56:28 IST" duration-ms="55398">
+    <test started-at="2023-05-29T12:35:30 IST" name="Default test" finished-at="2023-05-29T12:36:11 IST" duration-ms="41551">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-17T12:55:33 IST" name="setUpClass" finished-at="2023-05-17T12:55:34 IST" duration-ms="1139" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-29T12:35:30 IST" name="setUpClass" finished-at="2023-05-29T12:35:31 IST" duration-ms="1206" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-17T12:55:34 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-17T12:56:14 IST" duration-ms="40025" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-29T12:35:31 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-29T12:36:05 IST" duration-ms="33914" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking if all the new profiles are created as “Active” in the branches set in the “Destination Branch” after populating"]]>
+                <![CDATA["Check if the Collected By ID field is not amendable at the level of “Chequebook Request – Submit screen"]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA["Optional[To verify the functionality of transaction on staff account]"]]>
+                <![CDATA["Optional[To verify the functionality of chequebook under receive from provider]"]]>
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[element click intercepted: Element <input role="livesearch" type="text" id="new_1684308372027_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT" class="liveSearchText liveSearchCompSize ui-widget-content liveSearchInputCorner" name="lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE" prevvalue="" value=" " dependency="branchesvo.BRANCH_CODE:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,branchesvo.BRIEF_DESC_ENG:hiddenBranch,BRANCH_STATUS:B_STATUS" dependencysrc="/imal_csm_params_imal145_qc_o18/path/param/populateTeller/PopulateTellerDependencyAction_dependencyForCtstellerPopulate4" params="USER_ID:hiddenUserId,destinationBranchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,criteria.branchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt" afterdepevent="" leadzeros="" mode="number" nbformat="#" colmodel="[object Object]" maxlength="4" gridid="tab2_GridTbl_Id_E000POMT" editrowid="new_1684308372027" required="required"> is not clickable at point (368, 433). Other element would receive the click: <div class="progBarContent" style="left: 0px;">...</div>
-  (Session info: chrome=113.0.5672.126)
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b637a62622d1904014326bf315f9191d, clickElement {id=02487EB35D135DA6FA8959282856FF22_element_255}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50841}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50841/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (b637a62622d1904014326bf315f9191d)] -> xpath: //input[@name='lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE']]
-Session ID: b637a62622d1904014326bf315f9191d]]>
+              <![CDATA[Cannot invoke "java.util.Map.get(Object)" because "this.testData" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input role="livesearch" type="text" id="new_1684308372027_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT" class="liveSearchText liveSearchCompSize ui-widget-content liveSearchInputCorner" name="lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE" prevvalue="" value=" " dependency="branchesvo.BRANCH_CODE:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,branchesvo.BRIEF_DESC_ENG:hiddenBranch,BRANCH_STATUS:B_STATUS" dependencysrc="/imal_csm_params_imal145_qc_o18/path/param/populateTeller/PopulateTellerDependencyAction_dependencyForCtstellerPopulate4" params="USER_ID:hiddenUserId,destinationBranchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,criteria.branchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt" afterdepevent="" leadzeros="" mode="number" nbformat="#" colmodel="[object Object]" maxlength="4" gridid="tab2_GridTbl_Id_E000POMT" editrowid="new_1684308372027" required="required"> is not clickable at point (368, 433). Other element would receive the click: <div class="progBarContent" style="left: 0px;">...</div>
-  (Session info: chrome=113.0.5672.126)
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b637a62622d1904014326bf315f9191d, clickElement {id=02487EB35D135DA6FA8959282856FF22_element_255}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50841}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50841/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (b637a62622d1904014326bf315f9191d)] -> xpath: //input[@name='lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE']]
-Session ID: b637a62622d1904014326bf315f9191d
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-at stepdefinitions.CSM_TransactionOnStaffAccount_Steps.user_click_and_enter_the_value_in_branch_code_field(CSM_TransactionOnStaffAccount_Steps.java:137)
-at ✽.user click and enter the value in branch code field(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_Transaction_On_Staff_Account.feature:18)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "this.testData" is null
+at stepdefinitions.CSM_ChequeBookRequest_Screen.user_enter_the_value_in_cheque_code_under_submit_screen(CSM_ChequeBookRequest_Screen.java:601)
+at ✽.user enter the value in cheque code under submit screen(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_ChequeBook_Request.feature:96)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-17T12:56:14 IST" name="tearDownClass" finished-at="2023-05-17T12:56:28 IST" duration-ms="14168" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-05-29T12:36:05 IST" name="tearDownClass" finished-at="2023-05-29T12:36:11 IST" duration-ms="6361" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

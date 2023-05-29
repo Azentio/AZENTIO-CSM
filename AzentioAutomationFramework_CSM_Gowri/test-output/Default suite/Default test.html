@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed May 17 12:55:33 IST 2023</td>
+<td>Started on:</td><td>Mon May 29 12:35:30 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>55 seconds (55398 ms)</td>
+<tr><td>Total time:</td><td>41 seconds (41551 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,66 +75,16 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking if all the new profiles are created as “Active” in the branches set in the “Destination Branch” after populating", "Optional[To verify the functionality of transaction on staff account]"</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input role=&quot;livesearch&quot; type=&quot;text&quot; id=&quot;new_1684308372027_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT&quot; class=&quot;liveSearchText liveSearchCompSize ui-widget-content liveSearchInputCorner&quot; name=&quot;lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE&quot; prevvalue=&quot;&quot; value=&quot; &quot; dependency=&quot;branchesvo.BRANCH_CODE:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,branchesvo.BRIEF_DESC_ENG:hiddenBranch,BRANCH_STATUS:B_STATUS&quot; dependencysrc=&quot;/imal_csm_params_imal145_qc_o18/path/param/populateTeller/PopulateTellerDependencyAction_dependencyForCtstellerPopulate4&quot; params=&quot;USER_ID:hiddenUserId,destinationBranchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,criteria.branchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt&quot; afterdepevent=&quot;&quot; leadzeros=&quot;&quot; mode=&quot;number&quot; nbformat=&quot;#&quot; colmodel=&quot;[object Object]&quot; maxlength=&quot;4&quot; gridid=&quot;tab2_GridTbl_Id_E000POMT&quot; editrowid=&quot;new_1684308372027&quot; required=&quot;required&quot;&gt; is not clickable at point (368, 433). Other element would receive the click: &lt;div class=&quot;progBarContent&quot; style=&quot;left: 0px;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.126)
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b637a62622d1904014326bf315f9191d, clickElement {id=02487EB35D135DA6FA8959282856FF22_element_255}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50841}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50841/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (b637a62622d1904014326bf315f9191d)] -&gt; xpath: //input[@name=&apos;lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE&apos;]]
-Session ID: b637a62622d1904014326bf315f9191d
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-	at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-	at stepdefinitions.CSM_TransactionOnStaffAccount_Steps.user_click_and_enter_the_value_in_branch_code_field(CSM_TransactionOnStaffAccount_Steps.java:137)
-	at ✽.user click and enter the value in branch code field(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_Transaction_On_Staff_Account.feature:18)
-</pre></div><a href='#' onClick='toggleBox("stack-trace332527768", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace332527768'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input role=&quot;livesearch&quot; type=&quot;text&quot; id=&quot;new_1684308372027_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt_tab2_GridTbl_Id_E000POMT&quot; class=&quot;liveSearchText liveSearchCompSize ui-widget-content liveSearchInputCorner&quot; name=&quot;lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE&quot; prevvalue=&quot;&quot; value=&quot; &quot; dependency=&quot;branchesvo.BRANCH_CODE:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,branchesvo.BRIEF_DESC_ENG:hiddenBranch,BRANCH_STATUS:B_STATUS&quot; dependencysrc=&quot;/imal_csm_params_imal145_qc_o18/path/param/populateTeller/PopulateTellerDependencyAction_dependencyForCtstellerPopulate4&quot; params=&quot;USER_ID:hiddenUserId,destinationBranchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt,criteria.branchCode:ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE_lookuptxt&quot; afterdepevent=&quot;&quot; leadzeros=&quot;&quot; mode=&quot;number&quot; nbformat=&quot;#&quot; colmodel=&quot;[object Object]&quot; maxlength=&quot;4&quot; gridid=&quot;tab2_GridTbl_Id_E000POMT&quot; editrowid=&quot;new_1684308372027&quot; required=&quot;required&quot;&gt; is not clickable at point (368, 433). Other element would receive the click: &lt;div class=&quot;progBarContent&quot; style=&quot;left: 0px;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=113.0.5672.126)
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;19.0.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b637a62622d1904014326bf315f9191d, clickElement {id=02487EB35D135DA6FA8959282856FF22_element_255}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.126, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50841}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50841/devtoo..., se:cdpVersion: 113.0.5672.126, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (b637a62622d1904014326bf315f9191d)] -&gt; xpath: //input[@name=&apos;lookupTxt_ctstellerPopulateBranchesVO.DESTINATION_BRANCH_CODE&apos;]]
-Session ID: b637a62622d1904014326bf315f9191d
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-	at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-	at stepdefinitions.CSM_TransactionOnStaffAccount_Steps.user_click_and_enter_the_value_in_branch_code_field(CSM_TransactionOnStaffAccount_Steps.java:137)
-	at ✽.user click and enter the value in branch code field(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_Transaction_On_Staff_Account.feature:18)
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Check if the Collected By ID field is not amendable at the level of “Chequebook Request – Submit screen", "Optional[To verify the functionality of chequebook under receive from provider]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;this.testData&quot; is null
+	at stepdefinitions.CSM_ChequeBookRequest_Screen.user_enter_the_value_in_cheque_code_under_submit_screen(CSM_ChequeBookRequest_Screen.java:601)
+	at ✽.user enter the value in cheque code under submit screen(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_ChequeBook_Request.feature:96)
+</pre></div><a href='#' onClick='toggleBox("stack-trace103898036", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace103898036'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;this.testData&quot; is null
+	at stepdefinitions.CSM_ChequeBookRequest_Screen.user_enter_the_value_in_cheque_code_under_submit_screen(CSM_ChequeBookRequest_Screen.java:601)
+	at ✽.user enter the value in cheque code under submit screen(file:///C:/Users/ININDC00071/git/CSM_Application_Gowri/AzentioAutomationFramework_CSM_Gowri/src/test/java/features/CSM_ChequeBook_Request.feature:96)
 </pre></div></td>
-<td>40</td>
+<td>33</td>
 <td>Runner.TestApplication@5d0bf09b</td></tr>
 </table><p>
 </body>

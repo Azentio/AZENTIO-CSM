@@ -558,6 +558,39 @@ And user click the chequebook code in reverse chequebook screen
 And user enter the value in chequebook code under reverse chequebook screen
 And user click the reject button under reverse chequebook screen
 
+@CHB_179
+Scenario: Cheque book - GL type field is 'Notify and Don’t Proceed', 'Proceed on insufficient funds' flag unchecked at Transaction type
+#prerequesties for Notify and Don’t Proceed Proceed on insufficient funds flag unchecked
+Given user login as csm params application 
+And user update test data set id for CHB_179
+And user click parameters menu 
+And user click the Account parameters submenu
+And user click the General Ledger submenu
+And user click the update after approve screen under general ledger
+And user click code under update after approve screen
+And user enter the value in code 
+And user retrieve the record under update approve screen
+And user click on additional details 
+Then user select the required dropdown field under additonal details
+And user click on update button
+And user click on ok button
+And user click on approve screen
+And user click and enter the value in code under approve screen
+And user retrieve the internal account record in approve screen
+And user click on additional details 
+Then user click on approve button 
+And user click on ok button
+And user click system parameters submenu
+And user click on transaction type submenu
+And user click on update after approve
+And user click and enter the value in code under transaction type
+And user retrieve the record under transaction type
+Then user verify required flag is checked or not
+And user click on update after approve button 
+And user click on approve screen under transaction type
+And user click and enter the value in code in approve screen under transaction type
+And user retrieve the internal account record in approve screen under transaction type
+Then user click on approve button under transaction type
 
 
 

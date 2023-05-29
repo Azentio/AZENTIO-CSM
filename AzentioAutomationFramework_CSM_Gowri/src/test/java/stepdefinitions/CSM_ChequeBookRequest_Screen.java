@@ -25,8 +25,7 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
 	CSMLogin login = new CSMLogin(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSM_ChequeBook_Request_All_OBJ ChequeBookRequestObject = new CSM_ChequeBook_Request_All_OBJ(driver);
-	
-	String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
+    String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
 	ExcelData csmChequeBookRequestExcelData = new ExcelData(path,"CSM_Chequebook","Data Set ID");
 	Map<String, String> testData;
 	
@@ -1289,6 +1288,248 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
     @And("^user check on the reason field and fill the reason in reverse chequebook screen$")
     public void user_check_on_the_reason_field_and_fill_the_reason_in_reverse_chequebook_screen() throws Throwable {
         
+    }
+    
+    //@CHB_179
+    
+    @And("^user update test data set id for CHB_179$")
+    public void user_update_test_data_set_id_for_chb179() throws Throwable {
+    	testData = csmChequeBookRequestExcelData.getTestdata("CHB_179_01");
+    }
+    
+    @Then("^user select the required dropdown field under additonal details$")
+    public void user_select_the_required_dropdown_field_under_additonal_details() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions_dropdown());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions_dropdown());
+        seleniumActions.getDropDownHelper().SelectUsingVisibleText(ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions_dropdown(), "Don't Notify and Proceed");
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions_dropdown());
+        seleniumActions.getDropDownHelper().SelectUsingVisibleText(ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions_dropdown(), "Notify and Don't Proceed");
+    }
+
+    @Then("^user click on approve button$")
+    public void user_click_on_approve_button() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick_Approve());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick_Approve());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick_Approve());
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick_Approve_OK());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick_Approve_OK());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick_Approve_OK());
+    }
+
+    @Then("^user verify required flag is checked or not$")
+    public void user_verify_required_flag_is_checked_or_not() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    	seleniumActions.getJavascriptHelper().scrollIntoView(ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			if (ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds().getAttribute("checked").equalsIgnoreCase("checked")) {
+    				ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds().click();
+    				break;
+    			} 
+    		} catch (Exception e) {
+//    			if (i == 199) {
+//    				Assert.fail(e.getMessage());
+//				}
+    			
+    		}
+		}
+    	
+    }
+    @And("^user click the Account parameters submenu$")
+    public void user_click_the_account_parameters_submenu() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParams_AccountsParameters());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParams_AccountsParameters());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParams_AccountsParameters());
+    }
+
+    @And("^user click the General Ledger submenu$")
+    public void user_click_the_general_ledger_submenu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.genralLedgerInParams());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.genralLedgerInParams());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.genralLedgerInParams());
+    }
+
+    @And("^user click the update after approve screen under general ledger$")
+    public void user_click_the_update_after_approve_screen_under_general_ledger() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_Updateafterapprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_Updateafterapprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_Updateafterapprove());
+    }
+
+    @And("^user click code under update after approve screen$")
+    public void user_click_code_under_update_after_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_code());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_code());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_code());
+    }
+
+    @And("^user enter the value in code$")
+    public void user_enter_the_value_in_code() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_code());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_code());
+        ChequeBookRequestObject.csmParam_General_ledger_code().sendKeys(testData.get("User Code"));
+        ChequeBookRequestObject.csmParam_General_ledger_code().sendKeys(Keys.ENTER);
+    }
+
+    @And("^user retrieve the record under update approve screen$")
+    public void user_retrieve_the_record_under_update_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_code_doubleclick());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_code_doubleclick());
+        seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.csmParam_General_ledger_code_doubleclick());
+    }
+
+    @And("^user click on additional details$")
+    public void user_click_on_additional_details() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_code_additionaloptions());
+    }
+
+    @And("^user click on update button$")
+    public void user_click_on_update_button() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_upadatebutton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_upadatebutton());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_upadatebutton());
+    }
+    
+    @And("^user click on ok button$")
+    public void user_click_on_ok_button() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCreation_OkbuttonWarningPopUp());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCreation_OkbuttonWarningPopUp());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.chequeBookCreation_OkbuttonWarningPopUp());
+    }
+
+    @And("^user click on approve screen$")
+    public void user_click_on_approve_screen() throws Throwable {
+//    	for (int i = 0; i < 200; i++) {
+//    		try {
+//    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+//    	        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+//    	        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+//			} catch (Exception e) {
+//				if(i==199) {
+//	        		Assert.fail(e.getMessage());
+//			}
+//		  }
+//		}
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+    }     
+    
+
+    @And("^user click and enter the value in code under approve screen$")
+    public void user_click_and_enter_the_value_in_code_under_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_Approve_inputField());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputField());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputField());
+        ChequeBookRequestObject.csmParam_General_ledger_Approve_inputField().sendKeys(testData.get("User Code"));
+        ChequeBookRequestObject.csmParam_General_ledger_Approve_inputField().sendKeys(Keys.ENTER);
+    }
+
+    @And("^user retrieve the internal account record in approve screen$")
+    public void user_retrieve_the_internal_account_record_in_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick());
+        seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.csmParam_General_ledger_Approve_inputfield_doubleclick());
+        
+    }
+
+    @And("^user click on transaction type submenu$")
+    public void user_click_on_transaction_type_submenu() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype());
+    }
+
+    @And("^user click on update after approve$")
+    public void user_click_on_update_after_approve() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Updateafterapprovefield());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Updateafterapprovefield());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Updateafterapprovefield());
+    }
+
+    @And("^user click and enter the value in code under transaction type$")
+    public void user_click_and_enter_the_value_in_code_under_transaction_type() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_inputfield());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_inputfield());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_inputfield());
+        ChequeBookRequestObject.csmParam_Transactiontype_inputfield().sendKeys("377");
+        ChequeBookRequestObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
+        
+    }
+
+    @And("^user retrieve the record under transaction type$")
+    public void user_retrieve_the_record_under_transaction_type() throws Throwable {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_inputfield_doubleclick());
+    	        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_inputfield_doubleclick());
+    	        seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.csmParam_Transactiontype_inputfield_doubleclick());
+//    	        seleniumActions.getJavascriptHelper().scrollIntoView(ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    	        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());	
+				}
+				
+			}
+			
+		}
+//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_inputfield_doubleclick());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_inputfield_doubleclick());
+//        seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.csmParam_Transactiontype_inputfield_doubleclick());
+    }
+
+    @And("^user click on update after approve button$")
+    public void user_click_on_update_after_approve_button() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton());
+        seleniumActions.getJavascriptHelper().scrollIntoView(ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_proceedoninsufficentfunds_UpdateAfterApproveButton());
+    }
+    
+    @Then("^user click on approve button under transaction type$")
+    public void user_click_on_approve_button_under_transactio_type() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve());
+    }
+
+    @And("^user click on approve screen under transaction type$")
+    public void user_click_on_approve_screen_under_transaction_type() throws Throwable {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+    	        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+    	        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+//        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approvefield());
+    }
+
+    @And("^user click and enter the value in code in approve screen under transaction type$")
+    public void user_click_and_enter_the_value_in_code_in_approve_screen_under_transaction_type() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield());
+        ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield().sendKeys("377");
+        ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield().sendKeys(Keys.ENTER);
+    }
+
+    @And("^user retrieve the internal account record in approve screen under transaction type$")
+    public void user_retrieve_the_internal_account_record_in_approve_screen_under_transaction_type() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
+        seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
     }
 }
     
