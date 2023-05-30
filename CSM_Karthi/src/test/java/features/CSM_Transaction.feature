@@ -3,6 +3,7 @@ Feature: To test the funcnalities of Transaction module
   @TRS_023
   Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
     Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_023
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
@@ -28,10 +29,12 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the GLCode under TRXType
     And user Enter the CifCode under TRXType
     And user Enter the SerialNo under TRXType
+    And user validate the popup
 
   @TRS_024
   Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
     Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_024
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
@@ -53,12 +56,13 @@ Feature: To test the funcnalities of Transaction module
     Given navigate to CSM application and login with valid credentials
     And user click Transaction submenu on CSMCore
     And user click Maintance screen under Transaction submenu
-    And user Enter the TRXType on maintance screen
+   And user Enter the TRXType on maintance screen
     And user Enter the BranchCode under TRXType
     And user Enter the CurrencyCode under TRXType
     And user Enter the GLCode under TRXType
     And user Enter the CifCode under TRXType
     And user Enter the SerialNo under TRXType
+    And user validate the popup
 
   @TRS_027
   Scenario: Checking Cash Deposit Transaction - CV/FC
@@ -99,6 +103,7 @@ Feature: To test the funcnalities of Transaction module
   @TRS_025
   Scenario: Checking Cash Deposit Transaction - Currency Denomination
     Given navigate to CSM param application and login with valid credentials
+    And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
@@ -136,6 +141,7 @@ Feature: To test the funcnalities of Transaction module
   @TRS_026
   Scenario: Checking Cash Withdrawal Transaction - Currency Denomination
     Given navigate to CSM param application and login with valid credentials
+    And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
@@ -169,3 +175,62 @@ Feature: To test the funcnalities of Transaction module
     And double click the Value
     Then click the Approve button
     And system show the popup success user click the ok button
+    
+    
+     @TRS_063
+  Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund Checked/ Allow Overdraw unchecked
+  
+    Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_063
+    And user click the parameters menu
+    And user click the system parameters submenu
+    And user click the transationtype submenu under systemparameters
+    And user click the updateafterapprove menu under transationtype
+    And user Enter the code in inputfield on updateafterapprove screen under transactiontype for TRS_063
+    And User double click the record under updateafterapprove screen
+   And User deal with the ProceedOnInsufficientFund chequebox
+   Given navigate to CSM param application and login with valid credentials
+   And user click the AccountParameter submenu under Parameters
+   And user click the AccountType under AccountParameters
+   And user click the UPA field under AccountTypes
+   And user Enter the TypeCode in UPA field
+   And user double click the TypeCode in UPA field
+   And user click the Instructions in AccountTypes
+   And user deal with AllowAccess checkBox under Instructions
+   And user click UPA Button
+   And user click the save ok button
+    And user click the ok
+   And user click the Approve field under AccountTypes
+   And user Enter the TypeCode in Approve Field
+   And user double click the Typecode in Approve field
+   And user click the Approve button
+   And user click the save ok button
+    And user click the ok 
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Date
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button in Information PopUp menu
+    And User Click on Close Button in Change Running Date Popup
+    And User Click on Technical Details Icon
+    And User Click Clear Cache in Technical Details Icon
+    And User Click Ok Button Under Information PopUp Menu
+   Given navigate to CSM application and login with valid credentials
+    And user click Transaction submenu on CSMCore
+    And user click Maintance screen under Transaction submenu
+    And user Enter the TRXType on maintance screen
+    And user Enter the BranchCode under TRXType
+    And user Enter the CurrencyCode under TRXType
+    And user Enter the GLCode under TRXType
+    And user Enter the CifCode under TRXType
+    And user Enter the SerialNo under TRXType
+    And user validate the popup
+    Then System show the warning popup clikc ok button
+    And user enter the currency
+    And Enter the Amount in this Checkbox
+    And click the save button
+    And system show the popup success user click the ok button
+    And User click the Approve screen
+    
+    
+   
+   

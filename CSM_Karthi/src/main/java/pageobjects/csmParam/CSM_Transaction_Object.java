@@ -252,12 +252,97 @@ public WebElement Transactions_Approvebtn()
 return Transactions_Approvebtn;
 }
 
+@FindBy(xpath="//div[contains(text(),'Not A Valid Non Internal GL')]")
+private WebElement nonInternalGlCodeValidationPopUp;
+public WebElement nonInternalGlCodeValidationPopUp()
+{
+return nonInternalGlCodeValidationPopUp;
+}
 //TRS_024
 @FindBy(xpath="//input[@id='rqst_cy_nomination_det_P024MA']")
 private WebElement TransactionType_UPAA_dealwithCurrencyDominationChequbox;
 public WebElement TransactionType_UPAA_dealwithCurrencyDominationChequbox()
 {
 return Transactions_Approvebtn;
+}
+//TRS_063
+@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
+private WebElement csmParam_Transactiontype_inputfield ;
+
+public WebElement csmParam_Transactiontype_inputfield() {
+return csmParam_Transactiontype_inputfield;
+}
+@FindBy(xpath = "//td[text()='Accounts Parameters']")
+private WebElement csmParam_AccountParameters ;
+
+public WebElement csmParam_AccountParameters() {
+return csmParam_AccountParameters;
+}
+@FindBy(xpath = "//td[text()='Account Type']")
+private WebElement csmParam_AccountParameters_AccountTypes ;
+
+public WebElement csmParam_AccountParameters_AccountTypes() {
+return csmParam_AccountParameters_AccountTypes;
+}
+@FindBy(xpath = "//a[@id='P017MA']")
+private WebElement csmParam_AccountParameters_AccountTypes_UPAField ;
+
+public WebElement csmParam_AccountParameters_AccountTypes_UPAField() {
+return csmParam_AccountParameters_AccountTypes_UPAField;
+}
+@FindBy(xpath = "//input[@id='acctypeList_GridTbl_Id_P017MA_gs_TYPE_CODE']")
+private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode ;
+
+public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode() {
+return csmParam_AccountParameters_AccountTypes_UPA_TypeCode;
+}
+@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017MA_2_TYPE_CODE']")
+private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick ;
+
+public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick() {
+return csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick;
+}
+@FindBy(xpath = "//div[@id='instructionsColl_P017MA']")
+private WebElement csmParam_AccountParameters_AccountTypes_Instructions;
+
+public WebElement csmParam_AccountParameters_AccountTypes_Instructions() {
+return csmParam_AccountParameters_AccountTypes_Instructions;
+}
+@FindBy(xpath = "//label[@id='lbl_accTypeDetFormID_51_P017MA']")
+private WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
+
+public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag() {
+return csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
+}
+@FindBy(xpath = "//label[@id='acctypeMaint_FormId_P017MA_Update_After_Approve_key']")
+private WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton;
+
+public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton() {
+return csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton;
+}
+@FindBy(xpath = "//a[@id='P017P']")
+private WebElement csmParam_AccountParameters_AccountTypes_ApproveField;
+
+public WebElement csmParam_AccountParameters_AccountTypes_ApproveField() {
+return csmParam_AccountParameters_AccountTypes_ApproveField;
+}
+@FindBy(xpath = "//input[@id='acctypeList_GridTbl_Id_P017P_gs_TYPE_CODE']")
+private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode;
+
+public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode() {
+return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode;
+}
+@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017P_1_TYPE_CODE']")
+private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick;
+
+public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick() {
+return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick;
+}
+@FindBy(xpath = "//button[@id='submit_930322714']")
+private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton;
+
+public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton() {
+return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton;
 }
 }
 

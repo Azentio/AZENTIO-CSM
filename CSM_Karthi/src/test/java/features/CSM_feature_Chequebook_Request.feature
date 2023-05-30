@@ -47,7 +47,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     #And user retrive the existing data in update after approve screen
-    And user select the logged in branch
+    And user select All the Branch in dropdown
     And user click the update after approve button
     And user click the save ok button
     And user click the ok
@@ -88,6 +88,9 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
+    And user click the ok
+    # Given navigate to CSM param application and login with valid credentials
+    # And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
@@ -142,6 +145,8 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
+     Given navigate to CSM param application and login with valid credentials
+     And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
@@ -197,6 +202,8 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
+     Given navigate to CSM param application and login with valid credentials
+     And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype

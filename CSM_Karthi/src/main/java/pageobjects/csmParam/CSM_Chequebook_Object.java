@@ -325,7 +325,7 @@ public class CSM_Chequebook_Object {
 public WebElement csmParam_Transactiontype_Updateafterapprovefield() {
 	return csmParam_Transactiontype_Updateafterapprovefield;
 }
-@FindBy(xpath = "//input[@id='transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE']")
+@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
 private WebElement csmParam_Transactiontype_inputfield ;
 
 public WebElement csmParam_Transactiontype_inputfield() {

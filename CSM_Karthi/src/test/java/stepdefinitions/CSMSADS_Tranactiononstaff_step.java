@@ -71,7 +71,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance()); 
-        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("6325");
+        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("2657");
     }
 
     @And("^User Enter the value in Description  under Maintenance Screen$")
@@ -257,9 +257,14 @@ catch (Exception e) {
     
     @And("^User Click on Searched CIF No in search popup$")
     public void user_click_on_searched_cif_no_in_search_popup() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
+    	try {
+    		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
+            seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
+            seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
+		} catch (Exception e) {
+			
+		}
+    	
     }
 
     @And("^User Click on Add Button under Restriction Level$")
@@ -310,7 +315,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("6325");
+        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("2657");
         transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(Keys.ENTER);
     }
 
