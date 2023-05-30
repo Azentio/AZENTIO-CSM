@@ -14,6 +14,65 @@ public class CSM_CheckingMultiTransfer {
 		PageFactory.initElements(driver, this);
 	}
 	
+	//Date Start
+	@FindBy(id="hdr_runn_date")
+	private WebElement CSM_DateToChangeTheCurrentDate;
+
+	public WebElement CSMDateToChangeTheCurrentDate() {
+		return CSM_DateToChangeTheCurrentDate;
+	}
+	
+	@FindBy(id="global_user_run_date")
+	private WebElement CSM_DateInUserRunningDate;
+
+	public WebElement CSMDateInUserRunningDate() {
+		return CSM_DateInUserRunningDate;
+	}
+	
+	@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
+	private WebElement CSM_UseButtonInChangeRunningDate;
+
+	public WebElement CSMUseButtonInChangeRunningDate() {
+		return CSM_UseButtonInChangeRunningDate;
+	}
+	
+	@FindBy(xpath = "//label[contains(text(),'Clear Cache ')]")
+	private WebElement CSM_ClearCacheInTechnicalDetailsIcon;
+
+	public WebElement CSM_ClearCacheInTechnicalDetailsIcon() {
+		return CSM_ClearCacheInTechnicalDetailsIcon;
+
+	}
+	
+	@FindBy(id="_popup_path_sol_ok")
+	private WebElement CSM_OkButtonInInformationPopUpMenu;
+
+	public WebElement CSMOkButtonInInformationPopUpMenu() {
+		return CSM_OkButtonInInformationPopUpMenu;
+	}
+	
+	@FindBy(id="_header_rundate_dialog_close")
+	private WebElement CSM_CloseButtonInChangeRunningDate;
+
+	public WebElement CSMCloseButtonInChangeRunningDate() {
+		return CSM_CloseButtonInChangeRunningDate;
+	}
+	
+	@FindBy(id="tech_details_icon")
+	private WebElement CSM_TechnicalDetailsIcon;
+
+	public WebElement CSMTechnicalDetailsIcon() {
+		return CSM_TechnicalDetailsIcon;
+	}
+	
+	@FindBy(id="_popup_path_sol_ok")
+	private WebElement CSM_OkButtonUnderInformationPopUp;
+
+	public WebElement CSMOkButtonUnderInformationPopUp() {
+		return CSM_OkButtonUnderInformationPopUp;
+	}
+	//Date End
+	
 	@FindBy(xpath="//td[text()='Transactions']")
 	 private WebElement CoreTransactionsFlag;
 	 public WebElement Core_TransactionsFlag() {
@@ -90,27 +149,32 @@ public class CSM_CheckingMultiTransfer {
 	 public WebElement AddIcon_AccountDetails() {
 		 return AddIconAccountDetails;
 	 }
-	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_BR']")
+	 @FindBy(xpath="(//td[text()='1'])[1]")
+	 private WebElement FirstRowClick;
+	 public WebElement First_RowClick() {
+		 return FirstRowClick;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_BR']//input")
 	 private WebElement BrachCodeAccountDetails;
 	 public WebElement BranchCode_AccountDetails() {
 		 return BrachCodeAccountDetails;
 	 }
-	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_GL']")
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_GL']//input")
 	 private WebElement GLCodeAccountDetails;
 	 public WebElement GLCode_AccountDetails() {
 		 return GLCodeAccountDetails;
 	 }
-	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_CIF']")
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_CIF']//input")
 	 private WebElement CIFCodeAccountDetails;
 	 public WebElement CIFCode_AccountDetails() {
 		 return CIFCodeAccountDetails;
 	 }
-	 @FindBy(xpath="//input[@id='new_1685017638623_ctstrsACCDETVO.AC_SL_lookuptxt_trxMgntAccountDtlGridTbl_Id_D001MT']")
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_SL']//input")
 	 private WebElement SerialNumberAccountDetails;
 	 public WebElement SerialNumber_AccountDetails() {
 		 return SerialNumberAccountDetails;
 	 }
-	 @FindBy(xpath="//input[@id='new_1685017638623_ctstrsACCDETVO.FC_AMOUNT']")
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.FC_AMOUNT']//input")
 	 private WebElement FirstAmountAccountDetails;
 	 public WebElement FirstAmount_AccountDetails() {
 		 return FirstAmountAccountDetails;
