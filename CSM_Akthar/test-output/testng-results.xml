@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-25T18:20:44 IST" name="Default suite" finished-at="2023-05-25T18:23:37 IST" duration-ms="172270">
+  <suite started-at="2023-06-01T10:05:45 IST" name="Default suite" finished-at="2023-06-01T10:06:27 IST" duration-ms="41504">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-25T18:20:44 IST" name="Default test" finished-at="2023-05-25T18:23:37 IST" duration-ms="172270">
+    <test started-at="2023-06-01T10:05:45 IST" name="Default test" finished-at="2023-06-01T10:06:27 IST" duration-ms="41504">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-05-25T18:20:44 IST" name="setUpClass" finished-at="2023-05-25T18:20:47 IST" duration-ms="2768" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-01T10:05:45 IST" name="setUpClass" finished-at="2023-06-01T10:05:49 IST" duration-ms="3765" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-05-25T18:20:47 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-25T18:22:50 IST" duration-ms="122729" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-01T10:05:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-01T10:06:15 IST" duration-ms="26020" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking Single Transfer (Main Debit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked"]]>
+                <![CDATA["Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked."]]>
               </value>
             </param>
             <param index="1">
@@ -27,57 +27,47 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="org.openqa.selenium.SessionNotCreatedException">
             <message>
-              <![CDATA[element click intercepted: Element <input type="text" autocomplete="off" name="trxMgntCO.ctstrsVO.AMOUNT" class="path-theme-cust-input textCompSize ui-state-focus ui-corner-all" value="" id="amount_D001MT" style="width:100px" mode="number" nbformat="#,##0.000" noformat="false" decimalsepa="." groupsepa="," maxvalue="999999999999.999" maxlenbeforedec="12" required="true" afterdepevent="trxMgntAfterAmountDependency" initialvalue="" prevvalue="" fieldaudit="1" dependency="@JS_VAR_amountDependency_D001MT,@JS_VAR_chargesCommonDep_D001MT,remittance_fr_num_D001MT:trxMgntCO.ctstrsVO.REMITTANCE_FR_NUM,cyPurchaseSaleBehavior_D001MT:trxMgntCO.cyPurchaseSaleBehavior,@JS_VAR_breakDepositDep_D001MT,lookuptxt_treasury_ref_no_D001MT:trxMgntCO.ctstrsExtendedVO.TREASURY_REFERENCE_NO" dependencysrc="/imal_core_portal_imal145_qc_o18/path/trxMgnt/TrxMgntDependencies_dependencyByAmount" parameters="trxMgntCO.ctstrsVO.BENEF_BANK:lookuptxt_benef_bank_D001MT,trxMgntCO.multiTrsNo:multi_trs_no_D001MT,@JS_VAR_amountParams_D001MT,@JS_VAR_chargesCommonParams_D001MT,trxMgntCO.ctstrsExtendedVO.CY_PURCHASE_SALE:cy_purchaseSale_D001MT,trxMgntCO.ctstrsExtendedVO.TRX_DETAILS:trx_details_D001MT,trxMgntCO.ctstrsExtendedVO.NEGOTIATED_RATE:nego_exchange_rate_D001MT,trxMgntCO.availAmount:avail_am_D001MT,trxMgntCO.ctsCircularDefVO.AUTH_CEILING_CV_AMNT:auth_ceiling_circular_D001MT,trxMgntCO.ctsTrsExchClientDetVO.AUTHORIZATION_CEILING:auth_ceiling_D001MT,trxMgntCO.ctstrsVO.TRS_AC_CY:trs_ac_cy_D001MT,trxMgntCO.ctstrsVO.TRS_AC_CIF:trs_ac_cif_D001MT,trxMgntCO.ctstrsVO.TO_TRS_AC_CY:to_trs_ac_cy_D001MT,trxMgntCO.ctstrsVO.TO_TRS_AC_CIF:to_trs_ac_cif_D001MT,trxMgntCO.ctstrsVO.TRS_CY:lookuptxt_trs_cy_D001MT,trxMgntCO.ctstrxtypeVO.TYPE:type_D001MT,trxMgntCO.ctstrxtypeVO.CR_DR_FOREX:cr_dr_forex_D001MT,trxMgntCO.proceedWithCyPurchaseSale:proceedWithCyPurchaseSale_D001MT,trxMgntCO.ctstrsVO.VOID_REASON:holdReason_D001MT,trxMgntCO.ctstrsExtendedVO.TREASURY_REFERENCE_NO:lookuptxt_treasury_ref_no_D001MT" overridelabeltext="Amount" overridelabelkey="Amount_key" title="Amount"> is not clickable at point (933, 522). Other element would receive the click: <div style="display: block; width: 360px; height: 153px; overflow: auto;">...</div>
-  (Session info: chrome=113.0.5672.127)
+              <![CDATA[Could not start a new session. Response code 500. Message: session not created
+from no such execution context: loader has changed while resolving nodes
+  (Session info: chrome=113.0.5672.127) 
+Host info: host: 'DESKTOP-PSK9T3X', ip: '10.81.234.14'
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [711a80bb5bbff766d4fc3b04e1f6e3ed, clickElement {id=61B5F0FBE0849A9950666E567555A960_element_878}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56578}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56578/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (711a80bb5bbff766d4fc3b04e1f6e3ed)] -> xpath: //input[@id='amount_D001MT']]
-Session ID: 711a80bb5bbff766d4fc3b04e1f6e3ed]]>
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="text" autocomplete="off" name="trxMgntCO.ctstrsVO.AMOUNT" class="path-theme-cust-input textCompSize ui-state-focus ui-corner-all" value="" id="amount_D001MT" style="width:100px" mode="number" nbformat="#,##0.000" noformat="false" decimalsepa="." groupsepa="," maxvalue="999999999999.999" maxlenbeforedec="12" required="true" afterdepevent="trxMgntAfterAmountDependency" initialvalue="" prevvalue="" fieldaudit="1" dependency="@JS_VAR_amountDependency_D001MT,@JS_VAR_chargesCommonDep_D001MT,remittance_fr_num_D001MT:trxMgntCO.ctstrsVO.REMITTANCE_FR_NUM,cyPurchaseSaleBehavior_D001MT:trxMgntCO.cyPurchaseSaleBehavior,@JS_VAR_breakDepositDep_D001MT,lookuptxt_treasury_ref_no_D001MT:trxMgntCO.ctstrsExtendedVO.TREASURY_REFERENCE_NO" dependencysrc="/imal_core_portal_imal145_qc_o18/path/trxMgnt/TrxMgntDependencies_dependencyByAmount" parameters="trxMgntCO.ctstrsVO.BENEF_BANK:lookuptxt_benef_bank_D001MT,trxMgntCO.multiTrsNo:multi_trs_no_D001MT,@JS_VAR_amountParams_D001MT,@JS_VAR_chargesCommonParams_D001MT,trxMgntCO.ctstrsExtendedVO.CY_PURCHASE_SALE:cy_purchaseSale_D001MT,trxMgntCO.ctstrsExtendedVO.TRX_DETAILS:trx_details_D001MT,trxMgntCO.ctstrsExtendedVO.NEGOTIATED_RATE:nego_exchange_rate_D001MT,trxMgntCO.availAmount:avail_am_D001MT,trxMgntCO.ctsCircularDefVO.AUTH_CEILING_CV_AMNT:auth_ceiling_circular_D001MT,trxMgntCO.ctsTrsExchClientDetVO.AUTHORIZATION_CEILING:auth_ceiling_D001MT,trxMgntCO.ctstrsVO.TRS_AC_CY:trs_ac_cy_D001MT,trxMgntCO.ctstrsVO.TRS_AC_CIF:trs_ac_cif_D001MT,trxMgntCO.ctstrsVO.TO_TRS_AC_CY:to_trs_ac_cy_D001MT,trxMgntCO.ctstrsVO.TO_TRS_AC_CIF:to_trs_ac_cif_D001MT,trxMgntCO.ctstrsVO.TRS_CY:lookuptxt_trs_cy_D001MT,trxMgntCO.ctstrxtypeVO.TYPE:type_D001MT,trxMgntCO.ctstrxtypeVO.CR_DR_FOREX:cr_dr_forex_D001MT,trxMgntCO.proceedWithCyPurchaseSale:proceedWithCyPurchaseSale_D001MT,trxMgntCO.ctstrsVO.VOID_REASON:holdReason_D001MT,trxMgntCO.ctstrsExtendedVO.TREASURY_REFERENCE_NO:lookuptxt_treasury_ref_no_D001MT" overridelabeltext="Amount" overridelabelkey="Amount_key" title="Amount"> is not clickable at point (933, 522). Other element would receive the click: <div style="display: block; width: 360px; height: 153px; overflow: auto;">...</div>
-  (Session info: chrome=113.0.5672.127)
+              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
+from no such execution context: loader has changed while resolving nodes
+  (Session info: chrome=113.0.5672.127) 
+Host info: host: 'DESKTOP-PSK9T3X', ip: '10.81.234.14'
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [711a80bb5bbff766d4fc3b04e1f6e3ed, clickElement {id=61B5F0FBE0849A9950666E567555A960_element_878}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56578}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56578/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (711a80bb5bbff766d4fc3b04e1f6e3ed)] -> xpath: //input[@id='amount_D001MT']]
-Session ID: 711a80bb5bbff766d4fc3b04e1f6e3ed
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:106)
+at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-at stepdefinitions.TransactionStaffAccs_Steps.enter_the_Amount_in_this_checkbox(TransactionStaffAccs_Steps.java:430)
-at ✽.Enter the Amount in this Checkbox(file:///C:/Users/inindc00613/eclipse-workspace/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:153)
+at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
+at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
+at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:101)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:82)
+at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:71)
+at resources.BaseClass.initializeDriver(BaseClass.java:29)
+at stepdefinitions.HooksClass.browserSetup(HooksClass.java:45)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-05-25T18:22:50 IST" name="tearDownClass" finished-at="2023-05-25T18:23:37 IST" duration-ms="46661" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-01T10:06:15 IST" name="tearDownClass" finished-at="2023-06-01T10:06:27 IST" duration-ms="11643" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

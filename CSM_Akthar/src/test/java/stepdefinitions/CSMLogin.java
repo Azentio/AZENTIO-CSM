@@ -89,7 +89,7 @@ public class CSMLogin {
 	}
 
 	public void loginIntoCSMApplication() throws IOException {
-		csmLoginTestData = csmLoginExceldata.getTestdata("CSMUser2");
+		csmLoginTestData = csmLoginExceldata.getTestdata("CSMUser1");
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
