@@ -296,7 +296,7 @@ private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode ;
 public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode() {
 return csmParam_AccountParameters_AccountTypes_UPA_TypeCode;
 }
-@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017MA_2_TYPE_CODE']")
+@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017MA_1_TYPE_CODE']")
 private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick ;
 
 public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick() {
@@ -308,7 +308,7 @@ private WebElement csmParam_AccountParameters_AccountTypes_Instructions;
 public WebElement csmParam_AccountParameters_AccountTypes_Instructions() {
 return csmParam_AccountParameters_AccountTypes_Instructions;
 }
-@FindBy(xpath = "//label[@id='lbl_accTypeDetFormID_51_P017MA']")
+@FindBy(xpath = "//input[@id='allow_overdrawn_P017MA']")
 private WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
 
 public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag() {
@@ -338,12 +338,56 @@ private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode
 public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick() {
 return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick;
 }
-@FindBy(xpath = "//button[@id='submit_930322714']")
+@FindBy(xpath = "//label[@id='acctypeMaint_FormId_P017P_Approve_key']")
 private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton;
 
 public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton() {
 return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton;
 }
+@FindBy(xpath="//div[contains(text(),'Amount Exceeds')]")
+private WebElement AmountExceedsWarningPopUp;
+public WebElement AmountExceedsWarningPopUp()
+{
+return AmountExceedsWarningPopUp;
+}
+@FindBy(xpath="//input[@id='ctrl_cy_D001MT']")
+private WebElement checkIfValueIsEntered;
+public WebElement checkIfValueIsEntered()
+{
+return checkIfValueIsEntered;
 }
 
+@FindBy(xpath = "//input[@id='branch_code_D001MT']")
+private WebElement CSMCore_Transactions_Maintenance_BranchCodeForCredit;
+public WebElement CSMCore_Transactions_Maintenance_BranchCodeForCredit() {
+	return CSMCore_Transactions_Maintenance_BranchCodeForCredit;
+}
 
+@FindBy(xpath = "//input[@id='ctrl_cy_D001MT']")
+private WebElement CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit;
+public WebElement CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit() {
+	return CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit;
+}
+@FindBy(xpath = "//input[@id='ctrl_gl_D001MT']")
+private WebElement CSMCore_Transactions_Maintenance_GLCodeCodeForCredit;
+public WebElement CSMCore_Transactions_Maintenance_GLCodeCodeForCredit() {
+	return CSMCore_Transactions_Maintenance_GLCodeCodeForCredit;
+}
+@FindBy(xpath = "//input[@id='ctrl_cif_D001MT']")
+private WebElement CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit;
+public WebElement CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit() {
+	return CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit;
+}
+@FindBy(xpath = "//input[@id='lookuptxt_ctrl_sl_D001MT']")
+private WebElement CSMCore_Transactions_Maintenance_SerialNoCodeForCredit;
+public WebElement CSMCore_Transactions_Maintenance_SerialNoCodeForCredit() {
+	return CSMCore_Transactions_Maintenance_SerialNoCodeForCredit;
+}
+
+@FindBy(xpath = "//input[@id=\"proceed_on_insuff_fund_P024MA\"]")
+private WebElement csmParam_Transactiontype_proceedoninsufficentfunds ;
+
+public WebElement csmParam_Transactiontype_proceedoninsufficentfunds() {
+return csmParam_Transactiontype_proceedoninsufficentfunds;
+}
+}

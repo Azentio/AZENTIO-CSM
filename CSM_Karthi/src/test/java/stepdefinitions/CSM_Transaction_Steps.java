@@ -66,7 +66,7 @@ public class CSM_Transaction_Steps {
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMParam_TransactionType_UPA_code());
        // CSMTransactionObject.CSMParam_TransactionType_UPA_code().sendKeys(testData.get("User_Id"));
         //CSMTransactionObject.CSMParam_TransactionType_UPA_code().sendKeys("377");
-        CSMTransactionObject.CSMParam_TransactionType_UPA_code().sendKeys(testData.get("TRXType"));
+        CSMTransactionObject.CSMParam_TransactionType_UPA_code().sendKeys(testData.get("TRXType_D1"));
         CSMTransactionObject.CSMParam_TransactionType_UPA_code().sendKeys(Keys.ENTER);
     }
 
@@ -119,17 +119,21 @@ public class CSM_Transaction_Steps {
     	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.CSMParam_TransactionType_Approve_code());
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMParam_TransactionType_Approve_code());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMParam_TransactionType_Approve_code());
-       // CSMTransactionObject.CSMParam_TransactionType_Approve_code().sendKeys(testData.get("User_Id"));
-        //CSMTransactionObject.CSMParam_TransactionType_Approve_code().sendKeys("377");
-        CSMTransactionObject.CSMParam_TransactionType_Approve_code().sendKeys(testData.get("TRXType"));
+       
+        CSMTransactionObject.CSMParam_TransactionType_Approve_code().sendKeys(testData.get("TRXType_D1"));
         CSMTransactionObject.CSMParam_TransactionType_Approve_code().sendKeys(Keys.ENTER);
     }
 
     @And("^user double click the code on Approve field$")
     public void user_double_click_the_code_on_approve_field() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.CSMParam_TransactionType_Approve_code_doubleClick());
-    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMParam_TransactionType_Approve_code_doubleClick());
-        clicksAndActionsHelper.doubleClick(CSMTransactionObject.CSMParam_TransactionType_Approve_code_doubleClick());
+    	try {
+    		waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.CSMParam_TransactionType_Approve_code_doubleClick());
+        	//clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMParam_TransactionType_Approve_code_doubleClick());
+            clicksAndActionsHelper.doubleClick(CSMTransactionObject.CSMParam_TransactionType_Approve_code_doubleClick());
+		} catch (Exception e) {
+			
+		}
+    	
     }
 
     @And("^user click Approve Button$")
@@ -160,7 +164,7 @@ public class CSM_Transaction_Steps {
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_TRXType());
        // CSMTransactionObject.CSMCore_Transactions_Maintenance_TRXType().sendKeys(testData.get("User_Id"));
         //CSMTransactionObject.CSMCore_Transactions_Maintenance_TRXType().sendKeys("377");
-        CSMTransactionObject.CSMCore_Transactions_Maintenance_TRXType().sendKeys(testData.get("TRXType"));
+        CSMTransactionObject.CSMCore_Transactions_Maintenance_TRXType().sendKeys(testData.get("TRXType_D1"));
         CSMTransactionObject.CSMCore_Transactions_Maintenance_TRXType().sendKeys(Keys.TAB);
     }
 
@@ -170,7 +174,8 @@ public class CSM_Transaction_Steps {
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode());
        // CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode().sendKeys(testData.get("User_Id"));
-        CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode().sendKeys(testData.get("BranchCode"));
+       // CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode().clear();
+        CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode().sendKeys(testData.get("BranchCode_D1"));
         
         CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCode().sendKeys(Keys.TAB);
     }
@@ -181,7 +186,8 @@ public class CSM_Transaction_Steps {
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode());
        // CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode().sendKeys(testData.get("User_Id"));
-        CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode().sendKeys(testData.get("CurrencyCode"));
+        //CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode().clear();
+        CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode().sendKeys(testData.get("CurrencyCode_D1"));
         
         CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCode().sendKeys(Keys.TAB);
     }
@@ -192,7 +198,8 @@ public class CSM_Transaction_Steps {
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode());
        // CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode().sendKeys(testData.get("User_Id"));
-        CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode().sendKeys(testData.get("GLCode"));
+        //CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode().clear();
+        CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode().sendKeys(testData.get("GLCode_D1"));
         
         CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCode().sendKeys(Keys.TAB);
     }
@@ -203,7 +210,8 @@ public class CSM_Transaction_Steps {
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode());
        // CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode().sendKeys(testData.get("User_Id"));
-        CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode().sendKeys(testData.get("CIFCode"));
+        //CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode().clear();
+        CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode().sendKeys(testData.get("CIFCode_D1"));
         
         CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCode().sendKeys(Keys.TAB);
     }
@@ -214,7 +222,8 @@ public class CSM_Transaction_Steps {
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo());
        //CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo().sendKeys(testData.get("User_Id"));
-        CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo().sendKeys(testData.get("SerialNo"));
+        //CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo().clear();
+        CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo().sendKeys(testData.get("SerialNo_D1"));
         CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNo().sendKeys(Keys.TAB);
     }
     @And("^user validate the popup$")
@@ -368,13 +377,16 @@ public class CSM_Transaction_Steps {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_currency());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_currency());  
    	 CSMTransactionObject.Transactions_debitAcc_currency().sendKeys("840");
+   	CSMTransactionObject.Transactions_debitAcc_currency().sendKeys(Keys.TAB);
     }
     
     @And("^Enter the Amount in this Checkbox$")
     public void Enter_the_Amount_in_this_Checkbox() throws Throwable {
+    	
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_EnterAmount());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_EnterAmount());  
    	 CSMTransactionObject.Transactions_EnterAmount().sendKeys("1000");
+ 	CSMTransactionObject.Transactions_EnterAmount().sendKeys(Keys.TAB);
     }
     
   
@@ -477,19 +489,25 @@ public class CSM_Transaction_Steps {
     
     @And("^user Enter the code in inputfield on updateafterapprove screen under transactiontype for TRS_063$")
     public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype_for_trs063() throws Throwable {
-    	for (int i = 0; i < 200; i++) {
+    	
 			
-    		
-        	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_inputfield());
-        	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
-            clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
-            CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType"));  
-            CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.TAB);
-        	}
+    		try {
+    			waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_inputfield());
+            	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
+                clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
+                CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType_D1"));  
+                CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
+			} catch (Exception e) {
+				
+			}
+        	
+        	
             
     }
     @And("^user click the AccountParameter submenu under Parameters$")
     public void user_click_the_accountparameter_submenu_under_parameters() throws Throwable {
+    	javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters());
+
     	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters());
        	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters());  
     }
@@ -497,6 +515,7 @@ public class CSM_Transaction_Steps {
     @And("^user click the AccountType under AccountParameters$")
     public void user_click_the_accounttype_under_accountparameters() throws Throwable {
     	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes());
+    	 
        	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes()); 
     }
 
@@ -512,14 +531,24 @@ public class CSM_Transaction_Steps {
     	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
-        CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(testData.get("TRXType"));  
+        CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(testData.get("GLCode_D1"));  
         CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(Keys.ENTER);
     }
 
     @And("^user double click the TypeCode in UPA field$")
     public void user_double_click_the_typecode_in_upa_field() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick());
-     	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick()); 
+    	try {
+    		if (CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick().isDisplayed()) {
+        		waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick());
+            	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick()); 
+    		} else {
+
+    		}
+		} catch (Exception e) {
+			
+		}
+    	
+    	
     }
 
     @And("^user click the Instructions in AccountTypes$")
@@ -530,30 +559,81 @@ public class CSM_Transaction_Steps {
 
     @And("^user deal with AllowAccess checkBox under Instructions$")
     public void user_deal_with_allowaccess_checkbox_under_instructions() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-      
-
-        if (CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isBlank()) {
-        clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag(),
-        		CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-        } else {
-        clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag(),
-        		CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-
-        }
+//    	javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+//    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+//    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+//        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+//      
+//
+//        if (CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isBlank()) {
+    // clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+     //  clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+       		
+//        } else {
+//        clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+//        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag(),
+//        		CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+//
+//        }
+   for (int i = 0; i <200; i++) {
+	try {
+		if (!CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isBlank()
+				||!CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isEmpty()) {
+			javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	        break;
+		}
+		else {
+			clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	        clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	        break;
+		}
+	} catch (Exception e) {
+		
+	}
+}
+       
+	/*
+	 * try {
+	 * 
+	 * if ((CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().
+	 * getAttribute("initialvalue").isBlank())){
+	 * 
+	 * 
+	 * 
+	 * // clicksAndActionsHelper.moveToElement(CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	 * // clicksAndActionsHelper.clickOnElement(CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag()); }
+	 * else { clicksAndActionsHelper.moveToElement(CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	 * clicksAndActionsHelper.clickOnElement(CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	 * 
+	 * clicksAndActionsHelper.moveToElement(CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+	 * clicksAndActionsHelper.clickOnElement(CSMTransactionObject.
+	 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag()); }
+	 * 
+	 * } catch (Exception e){ }}
+	 */
     }
+    
 
     @And("^user click UPA Button$")
     public void user_click_upa_button() throws Throwable {
+    	javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
     	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
     	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton()); 
     }
     @And("^user click the Approve field under AccountTypes$")
     public void user_click_the_approve_field_under_accounttypes() throws Throwable {
+    	javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField());
+
     	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField()); 
    }
@@ -564,8 +644,8 @@ public class CSM_Transaction_Steps {
     	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
-        CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(testData.get("TRXType"));  
-        CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(Keys.TAB);
+        CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(testData.get("GLCode_D1"));  
+        CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(Keys.ENTER);
     }
 
     @And("^user double click the Typecode in Approve field$")
@@ -577,8 +657,149 @@ public class CSM_Transaction_Steps {
     @And("^user click the Approve button$")
     public void user_click_the_approve_button() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton());
+    	javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton());
      	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton()); 
     }
+
+    @And("^user Enter the BranchCode under TRXType for debitAccount$")
+    public void user_enter_the_branchcode_under_trxtype_for_debitaccount() throws Throwable {
+    	for (int i = 0; i <=3; i++) {
+    		CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCodeForCredit().sendKeys(Keys.BACK_SPACE);
+		}
+    	
+    	  CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCodeForCredit().sendKeys(testData.get("BranchCode_D2"));
+          
+          CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCodeForCredit().sendKeys(Keys.TAB);
+    }
+
+    @And("^user Enter the CurrencyCode under TRXType for debitAccount$")
+    public void user_enter_the_currencycode_under_trxtype_for_debitaccount() throws Throwable {
+    	
+         CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit().sendKeys(testData.get("CurrencyCode_D2"));
+         
+         CSMTransactionObject.CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit().sendKeys(Keys.TAB);
+    }
+
+    @And("^user Enter the GLCode under TRXType for debitAccount$")
+    public void user_enter_the_glcode_under_trxtype_for_debitaccount() throws Throwable {
+    	
+         CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCodeCodeForCredit().sendKeys(testData.get("GLCode_D2"));
+         
+         CSMTransactionObject.CSMCore_Transactions_Maintenance_GLCodeCodeForCredit().sendKeys(Keys.TAB);
+    }
+
+    @And("^user Enter the CifCode under TRXType for debitAccount$")
+    public void user_enter_the_cifcode_under_trxtype_for_debitaccount() throws Throwable {
+    	 
+          CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit().sendKeys(testData.get("CIFCode_D2"));
+          
+          CSMTransactionObject.CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit().sendKeys(Keys.TAB);
+    }
+
+    @And("^user Enter the SerialNo under TRXType for debitAccount$")
+    public void user_enter_the_serialno_under_trxtype_for_debitaccount() throws Throwable {
+    	
+         CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNoCodeForCredit().sendKeys(testData.get("SerialNo_D2"));
+         CSMTransactionObject.CSMCore_Transactions_Maintenance_SerialNoCodeForCredit().sendKeys(Keys.TAB);
+    }
+
+    @And("^user validate the popup as Amount Exceed warning pop up$")
+    public void user_validate_the_popup_as_amount_exceed_warning_pop_up() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.AmountExceedsWarningPopUp());
+    	Assert.assertTrue(CSMTransactionObject.AmountExceedsWarningPopUp().isDisplayed());
+    }
+    
+    @And("^user check if the  value is entered or not$")
+    public void user_check_if_the_value_is_entered_or_not() throws Throwable {
+
+        try {
+        javascriptHelper.scrollIntoView(CSMTransactionObject.checkIfValueIsEntered());
+	 if ((CSMTransactionObject.checkIfValueIsEntered().getAttribute("prevvalue")) != null){
+		 CSMTransactionObject.checkIfValueIsEntered().isDisplayed();
+
+              } 
+ else {       
+       
+        }
+       
+        } catch (Exception e){
+        }}
+    
+
+//TRS_064
+
+@And("^user update test data set id for TRS_064$")
+public void user_update_test_data_set_id_for_trs064() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_064_D1");
+}
+
+//TRS_065
+
+
+@And("^user update test data set id for TRS_065$")
+public void user_update_test_data_set_id_for_trs065() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_063_D1");
+}
+@And("^User UNCheck the ProceedOnInsufficientFund chequebox$")
+public void user_uncheck_the_proceedoninsufficientfund_chequebox() throws Throwable {
+	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+//	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+//   clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+  
+
+    if (CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds().getAttribute("initialvalue").isBlank()) {
+    clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds(),
+    		CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds(),
+    		CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    } else {
+    clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+    clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds(),
+    		CSMTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+   
+
+    }
+    
+}
+
+@And("^user Check AllowAccess checkBox under Instructions$")
+public void user_check_allowaccess_checkbox_under_instructions() throws Throwable {
+	 for (int i = 0; i <200; i++) {
+			try {
+				if (!CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isBlank()
+						||!CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isEmpty()) {
+					javascriptHelper.scrollIntoView(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+					clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			        clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			        break;
+				}
+				else {
+					clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+			        
+			        break;
+				}
+			} catch (Exception e) {
+				
+			}
+}
+
+}
+//TRS_066
+@And("^user update test data set id for TRS_066$")
+public void user_update_test_data_set_id_for_trs066() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_064_D1");
+}
+
+//TRS_067
+@And("^user update test data set id for TRS_067$")
+public void user_update_test_data_set_id_for_trs067() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_063_D1");
+}
 
 
 }

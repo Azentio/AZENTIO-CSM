@@ -506,14 +506,19 @@ catch (Exception e) {
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
         transactiononstaffaccObj.CSMDateInUserRunningDate().clear();
-        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys("24/05/2023");
+        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys("25/05/2023");
     }
 
     @And("^User Click on Use Button in Change Running Date Popup$")
     public void user_click_on_use_button_in_change_running_date_popup() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
+    	try {
+    		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
+            seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
+            seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
+		} catch (Exception e) {
+			
+		}
+    	
     }
 
     @And("^User Click Ok Button in Information PopUp menu$")

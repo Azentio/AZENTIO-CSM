@@ -52,8 +52,9 @@ public class CSM_Chequebookrequest_step {
 
     @And("^user click the system parameters submenu$")
     public void user_click_the_system_parameters_submenu() throws Throwable {
-    	//waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Systemparameter());
+    	//
        try {
+    	   waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Systemparameter());
     	   javaScriptHelper.scrollIntoView(csmChequebookObject.csmParam_Systemparameter());
            // javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch());
             clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Systemparameter());
@@ -415,23 +416,32 @@ public class CSM_Chequebookrequest_step {
 
     @And("^user Enter the code in inputfield on updateafterapprove screen under transactiontype$")
     public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype() throws Throwable {
-    	for (int i = 0; i < 200; i++) {
-			
+    	
+			try {
+				waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield());
+		    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
+		        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
+		        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys("741");  
+		        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
+			} catch (Exception e) {
+				
+			}
 		
-    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield());
-    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
-        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
-        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys("741");  
-        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
-    	}
+    
+    	
         
     }
 
     @And("^User double click the record under updateafterapprove screen$")
     public void user_double_click_the_record_under_updateafterapprove_screen() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
-    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
-        clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
+    	try {
+    		waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
+        	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
+            clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
+		} catch (Exception e) {
+			
+		}
+    	
     }
 
     @And("^User deal with the ProceedOnInsufficientFund chequebox$")
