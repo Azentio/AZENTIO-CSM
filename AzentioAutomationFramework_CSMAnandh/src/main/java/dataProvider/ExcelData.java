@@ -3,6 +3,8 @@ package dataProvider;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import org.apache.poi.openxml4j.util.ZipSecureFile;
+
 public class ExcelData {
 	private String TestDataSheetName;
 	private String TestDataColumnName;
@@ -18,6 +20,7 @@ public class ExcelData {
 		int columnCount = reader.getColumnCount(TestDataSheetName);
 		//System.out.println(rowCount+"    "+columnCount);
 		int cellRowNum = reader.getCellRowNum(TestDataSheetName,TestDataColumnName,DataSetID);
+		ZipSecureFile.setMinInflateRatio(0);
 		//System.out.println(cellRowNum);
 		
 			for (int j = 1; j <=columnCount; j++) {
@@ -39,6 +42,7 @@ public class ExcelData {
 	}
 	
   public void updateTestData(String DataSetID,String ColumnName,String TestDataValue) {
+	  ZipSecureFile.setMinInflateRatio(0);
 	  int cellRowNum = reader.getCellRowNum(TestDataSheetName,TestDataColumnName,DataSetID);
 	  reader.setCellData(TestDataSheetName, ColumnName, cellRowNum, TestDataValue);
 

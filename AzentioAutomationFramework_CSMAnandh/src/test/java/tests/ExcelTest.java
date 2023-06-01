@@ -3,6 +3,8 @@ package tests;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.poi.openxml4j.util.ZipSecureFile;
+
 import dataProvider.ExcelReader;
 
 public class ExcelTest {
@@ -19,7 +21,9 @@ public class ExcelTest {
 	public  List<String> getTestCaseTagsfromExcel() {
 		ExcelReader excelReader = new ExcelReader(path);
 		List<String> li = new ArrayList<String>();
+		ZipSecureFile.setMinInflateRatio(0);
 		int columnCount = excelReader.getRowCount(sheetName);
+		
 		for (int i = 2; i <=columnCount; i++) {
 			String cellData = excelReader.getCellData(sheetName, columnName, i);
 			if (!(cellData.isBlank())) {

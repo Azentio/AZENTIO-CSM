@@ -306,5 +306,10 @@ public class CSMCommonWebElements {
 	public WebElement csmGridClearButton() {
 		return csm_GridClearButton;
 	}
-
+	@FindBy(xpath="//div[contains(text(),'Please wait while server request completes')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement csm_PleaseWaitServerOkbuton;
+	public WebElement csmPleaseWaitServerOkbuton()
+	{
+		return csm_PleaseWaitServerOkbuton;
+	}
 }

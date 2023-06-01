@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,8 +19,10 @@ import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pageobjects.CommonElements.CSMCommonWebElements;
+import pageobjects.csm.CSM_QueriesObj;
 import pageobjects.csm.CSM_TransactionObj;
 import resources.BaseClass;
+import resources.DateIncrementDecrement;
 
 public class CSM_TransactionSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
@@ -28,6 +31,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	CSM_TransactionObj transactionObj = new CSM_TransactionObj(driver);
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
+	CSM_QueriesObj csmQueriesObj = new CSM_QueriesObj(driver);
 	DropDownHelper dropdownHelper = new DropDownHelper(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData excelDataForChargeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
@@ -35,10 +39,12 @@ public class CSM_TransactionSteps extends BaseClass {
 	ExcelData excelDataForTransactionTestData = new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	ExcelData excelDataFortransactionTestData = new ExcelData(path, "TransactionTestData", "DataSet ID");
 	ExcelData excelDataForTransactionExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
+	DateIncrementDecrement dateIncrementDerement = new DateIncrementDecrement();
 	Map<String, String> transactionTestData = new HashMap<>();
 	Map<String, String> transactionExecutionData = new HashMap<>();
 	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
 	Robot robot;
+	String valueDate = "";
 
 	@And("^get the test data for test case CW_001$")
 	public void get_the_test_data_for_test_case_cw001() throws Throwable {
@@ -195,12 +201,55 @@ public class CSM_TransactionSteps extends BaseClass {
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
-	 @And("^get the test data for test case ID TRS_007$")
-	    public void get_the_test_data_for_test_case_id_trs007() throws Throwable {
-			transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_007");
-			System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
-			transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
-	    }
+
+	@And("^get the test data for test case ID TRS_007$")
+	public void get_the_test_data_for_test_case_id_trs007() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_007");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_048$")
+	public void get_the_test_data_for_test_case_id_trs048() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_048");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_046$")
+	public void get_the_test_data_for_test_case_id_trs046() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_046");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_045$")
+	public void get_the_test_data_for_test_case_id_trs045() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_045");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_049$")
+	public void get_the_test_data_for_test_case_id_trs049() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_049");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_047$")
+	public void get_the_test_data_for_test_case_id_trs047() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_047");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_050$")
+	public void get_the_test_data_for_test_case_id_trs050() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_050");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
 
 	@And("^enter the transaction type code in transaction$")
 	public void enter_the_transaction_type_code_in_transaction() throws Throwable {
@@ -209,8 +258,18 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTransactionTypeInput());
 		transactionObj.transactionTransactionTypeInput().sendKeys(transactionTestData.get("Transaction Type code"));
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
-		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
-		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionTypeInputDescription());
 		for (int i = 0; i <= 500; i++) {
 			if (!(transactionObj.transactionTransactionTypeInputDescription().getAttribute("prevvalue").isBlank())) {
@@ -253,6 +312,148 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+	}
+
+	@And("^click on live search in deposte transaction$")
+	public void click_on_live_search_in_deposte_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionManagementDepositeLiveSearch());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementDepositeLiveSearch());
+		clicksAndActionsHelper.doubleClick(transactionObj.transactionManagementDepositeLiveSearch());
+
+	}
+
+	@And("^search for branch code in deposite transaction live search$")
+	public void search_for_branch_code_in_deposite_transaction_live_search() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionManagementDepositeLiveSearchBranchCode());
+				clicksAndActionsHelper
+						.moveToElement(transactionObj.transactionManagementDepositeLiveSearchBranchCode());
+				transactionObj.transactionManagementDepositeLiveSearchBranchCode()
+						.sendKeys(transactionTestData.get("Credit Branch Code"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^search for gl code in deposite transaction live search$")
+	public void search_for_gl_code_in_deposite_transaction_live_search() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionManagementDepositeLiveSearchGlCode());
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementDepositeLiveSearchGlCode());
+				transactionObj.transactionManagementDepositeLiveSearchGlCode()
+						.sendKeys(transactionTestData.get("Credit Gl Code"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^select the other branch account from live search in deposite transaction$")
+	public void select_the_other_branch_account_from_live_search_in_deposite_transaction() throws Throwable {
+		// table[@id='gridtab_trs_ac_sl_D001MT']//tr[2]//td[6]
+		String xpath = "//table[@id='gridtab_trs_ac_sl_D001MT']//tr[2]//td[6]";
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				break;
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+	@And("^search for currency code in deposite live search$")
+    public void search_for_currency_code_in_deposite_live_search() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionManagementDepositeLiveSearchCurrencyCode());
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementDepositeLiveSearchCurrencyCode());
+				transactionObj.transactionManagementDepositeLiveSearchCurrencyCode()
+						.sendKeys(transactionTestData.get("Credit Currency Code"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+    }
+
+	@And("^search for CIF number in deposite transaction live search$")
+	public void search_for_cif_number_in_deposite_transaction_live_search() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionManagementDepositeLiveSearchCIFCode());
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementDepositeLiveSearchCIFCode());
+				transactionObj.transactionManagementDepositeLiveSearchCIFCode()
+						.sendKeys(transactionTestData.get("Credit CIF Code"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^search for serial number in deposite transaction live search$")
+	public void search_for_serial_number_in_deposite_transaction_live_search() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionManagementDepositeLiveSearchSerialNumber());
+				clicksAndActionsHelper
+						.moveToElement(transactionObj.transactionManagementDepositeLiveSearchSerialNumber());
+				transactionObj.transactionManagementDepositeLiveSearchSerialNumber()
+						.sendKeys(transactionTestData.get("Credit Serial Number"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("^verify system should show the validation for multi branch validation$")
+	public void verify_system_should_show_the_validation_for_multi_branch_validation() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionManagementMultiBranchValidation());
+		Assert.assertTrue(transactionObj.transactionManagementMultiBranchValidation().isDisplayed());
+
+	}
+
+	@And("clear the currency code value from deposite")
+	public void clear_the_currency_code_value_from_deposite() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitCurrencyCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitCurrencyCode());
+		for (int i = 0; i <= 10; i++) {
+			try {
+				transactionObj.transactionTypeDebitCurrencyCode().sendKeys(Keys.BACK_SPACE);
+			} catch (Exception e) {
+
+			}
+		}
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			if (transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
+
 	}
 
 	@And("^enter the debit currency code in tranaction$")
@@ -402,6 +603,21 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	}
 
+	@And("^click on ok button no resident pop up$")
+	public void click_on_ok_button_no_resident_pop_up() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceIsNoResidentOkbuton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceIsNoResidentOkbuton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
 	@Then("^verify system should show the validation message for no access for account type$")
 	public void verify_system_should_show_the_validation_message_for_no_access_for_account_type() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionsNoAccountTypeAccessValidation());
@@ -418,11 +634,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionsNoCIFTypeAccessValidation());
 		Assert.assertTrue(transactionObj.transactionsNoCIFTypeAccessValidation().isDisplayed());
 	}
+
 	@Then("^verify system should show the validation message for no access for Priority$")
-    public void verify_system_should_show_the_validation_message_for_no_access_for_priority() throws Throwable {
+	public void verify_system_should_show_the_validation_message_for_no_access_for_priority() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionsNoPriorityAccessValidation());
 		Assert.assertTrue(transactionObj.transactionsNoPriorityAccessValidation().isDisplayed());
-    }
+	}
 
 	@And("^enter the currency code$")
 	public void enter_the_currency_code() throws Throwable {
@@ -432,8 +649,17 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionObj.transactionMaintenanceCurrencyCodeInput()
 				.sendKeys(transactionTestData.get("Input Currency Code"));
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
-		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
-		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 		for (int i = 0; i <= 500; i++) {
 			try {
 				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed())) {
@@ -566,6 +792,183 @@ public class CSM_TransactionSteps extends BaseClass {
 		}
 	}
 
+	@And("^change the value date to past date in transaction maintenance$")
+	public void change_the_value_date_to_past_date_in_transaction_maintenance() throws Throwable {
+		String date = transactionTestData.get("System Date");
+		String[] split = date.split("/");
+		int year = Integer.parseInt(split[2]);
+		int month = Integer.parseInt(split[1]);
+		int day = Integer.parseInt(split[0]);
+		String ValueDate = dateIncrementDerement.dateDecrementor(year, month, day);
+		System.out.println("Value date " + ValueDate);
+		String[] valueDateSplit = ValueDate.split("-");
+		String strMonth = "";
+		String dateValidation = "";
+
+		switch (valueDateSplit[1]) {
+		case "Jan":
+			strMonth = "01";
+			break;
+		case "Feb":
+			strMonth = "02";
+			break;
+		case "Mar":
+			strMonth = "03";
+			break;
+		case "Apr":
+			strMonth = "04";
+			break;
+		case "May":
+			strMonth = "05";
+			break;
+		case "Jun":
+			strMonth = "06";
+			break;
+		case "Jul":
+			strMonth = "07";
+			break;
+		case "Aug":
+			strMonth = "08";
+			break;
+		case "Sep":
+			strMonth = "09";
+			break;
+		case "Oct":
+			strMonth = "10";
+			break;
+		case "Nov":
+			strMonth = "11";
+			break;
+		case "Dec":
+			strMonth = "12";
+			break;
+		}
+
+		valueDate = valueDateSplit[2].toString() + "/" + strMonth + "/" + valueDateSplit[0].toString();
+		System.out.println("Post Value Date " + valueDate);
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactinMaintenanceValueDateInput());
+		for (int i = 0; i < 13; i++) {
+			clicksAndActionsHelper.clickOnElement(transactionObj.transactinMaintenanceValueDateInput());
+			transactionObj.transactinMaintenanceValueDateInput().sendKeys(Keys.BACK_SPACE);
+		}
+		transactionObj.transactinMaintenanceValueDateInput().sendKeys(valueDate);
+		transactionObj.transactinMaintenanceValueDateInput().sendKeys(Keys.ENTER);
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		// prevvalue
+		for (int i = 0; i <= 200; i++) {
+			if (!transactionObj.transactinMaintenanceValueDateInput().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dateValidation = javascriptHelper
+						.executeScript("return document.getElementsByName('trxMgntCO.ctstrsVO.VALUE_DATE')[0].value")
+						.toString();
+				if (!(dateValidation.isBlank())) {
+					break;
+				}
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@And("^change the value date to post date in transaction maintenance$")
+	public void change_the_value_date_to_post_date_in_transaction_maintenance() throws Throwable {
+		String date = transactionTestData.get("System Date");
+		String[] split = date.split("/");
+		int year = Integer.parseInt(split[2]);
+		int month = Integer.parseInt(split[1]);
+		int day = Integer.parseInt(split[0]);
+		String ValueDate = dateIncrementDerement.dateIncrementor(year, month, day);
+		System.out.println("Value date " + ValueDate);
+		String[] valueDateSplit = ValueDate.split("-");
+		String strMonth = "";
+		String dateValidation = "";
+
+		switch (valueDateSplit[1]) {
+		case "Jan":
+			strMonth = "01";
+			break;
+		case "Feb":
+			strMonth = "02";
+			break;
+		case "Mar":
+			strMonth = "03";
+			break;
+		case "Apr":
+			strMonth = "04";
+			break;
+		case "May":
+			strMonth = "05";
+			break;
+		case "Jun":
+			strMonth = "06";
+			break;
+		case "Jul":
+			strMonth = "07";
+			break;
+		case "Aug":
+			strMonth = "08";
+			break;
+		case "Sep":
+			strMonth = "09";
+			break;
+		case "Oct":
+			strMonth = "10";
+			break;
+		case "Nov":
+			strMonth = "11";
+			break;
+		case "Dec":
+			strMonth = "12";
+			break;
+		}
+
+		valueDate = valueDateSplit[2].toString() + "/" + strMonth + "/" + valueDateSplit[0].toString();
+		System.out.println("Post Value Date " + valueDate);
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactinMaintenanceValueDateInput());
+		for (int i = 0; i < 13; i++) {
+			clicksAndActionsHelper.clickOnElement(transactionObj.transactinMaintenanceValueDateInput());
+			transactionObj.transactinMaintenanceValueDateInput().sendKeys(Keys.BACK_SPACE);
+		}
+		transactionObj.transactinMaintenanceValueDateInput().sendKeys(valueDate);
+		transactionObj.transactinMaintenanceValueDateInput().sendKeys(Keys.ENTER);
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		// prevvalue
+		for (int i = 0; i <= 400; i++) {
+			if (!transactionObj.transactinMaintenanceValueDateInput().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dateValidation = javascriptHelper
+						.executeScript("return document.getElementsByName('trxMgntCO.ctstrsVO.VALUE_DATE')[0].value")
+						.toString();
+				if (!(dateValidation.isBlank())) {
+					break;
+				}
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
 	@And("^give the ending date in transaction of SO$")
 	public void give_the_ending_date_in_transaction_of_so() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeSOEndingDateInput());
@@ -595,8 +998,103 @@ public class CSM_TransactionSteps extends BaseClass {
 		}
 	}
 
+	@And("^change the value date to past date in multi credit transaction$")
+	public void change_the_value_date_to_past_date_in_multi_credit_transaction() throws Throwable {
+		String date = transactionTestData.get("System Date");
+		String[] split = date.split("/");
+		int year = Integer.parseInt(split[2]);
+		int month = Integer.parseInt(split[1]);
+		int day = Integer.parseInt(split[0]);
+		String ValueDate = dateIncrementDerement.dateDecrementor(year, month, day);
+		System.out.println("Value date " + ValueDate);
+		String[] valueDateSplit = ValueDate.split("-");
+		String strMonth = "";
+		String dateValidation = "";
+
+		switch (valueDateSplit[1]) {
+		case "Jan":
+			strMonth = "01";
+			break;
+		case "Feb":
+			strMonth = "02";
+			break;
+		case "Mar":
+			strMonth = "03";
+			break;
+		case "Apr":
+			strMonth = "04";
+			break;
+		case "May":
+			strMonth = "05";
+			break;
+		case "Jun":
+			strMonth = "06";
+			break;
+		case "Jul":
+			strMonth = "07";
+			break;
+		case "Aug":
+			strMonth = "08";
+			break;
+		case "Sep":
+			strMonth = "09";
+			break;
+		case "Oct":
+			strMonth = "10";
+			break;
+		case "Nov":
+			strMonth = "11";
+			break;
+		case "Dec":
+			strMonth = "12";
+			break;
+		}
+
+		valueDate = valueDateSplit[2].toString() + "/" + strMonth + "/" + valueDateSplit[0].toString();
+		System.out.println("Post Value Date " + valueDate);
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactinMaintenanceValueDateInput());
+		for (int i = 0; i < 13; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactinMaintenanceValueDateInput());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactinMaintenanceValueDateInput());
+				transactionObj.transactinMaintenanceValueDateInput().sendKeys(Keys.BACK_SPACE);
+			} catch (Exception e) {
+
+			}
+		}
+		transactionObj.transactinMaintenanceValueDateInput().sendKeys(valueDate);
+		transactionObj.transactinMaintenanceValueDateInput().sendKeys(Keys.ENTER);
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		// prevvalue
+		for (int i = 0; i <= 200; i++) {
+			if (!transactionObj.transactinMaintenanceValueDateInput().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				dateValidation = javascriptHelper
+						.executeScript("return document.getElementsByName('trxMgntCO.ctstrsVO.VALUE_DATE')[0].value")
+						.toString();
+				if (!(dateValidation.isBlank())) {
+					break;
+				}
+
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
 	@And("^click on save button in transaction$")
 	public void click_on_save_button_in_transaction() throws Throwable {
+
 		for (int i = 0; i <= 100; i++) {
 			try {
 				javascriptHelper.scrollIntoView(csmCommonWebElements.csmSaveButton());
@@ -608,6 +1106,15 @@ public class CSM_TransactionSteps extends BaseClass {
 					Assert.fail(e.getMessage());
 				}
 			}
+		}
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmPleaseWaitServerOkbuton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmPleaseWaitServerOkbuton());
+				break;
+			} catch (Exception e) {
+			}
+
 		}
 
 	}
@@ -677,6 +1184,20 @@ public class CSM_TransactionSteps extends BaseClass {
 		System.out.println(transactionObj.transaction_TransactionNumber().getText());
 		String finalTransaNum = transaNum.substring(15, 19);
 		excelDataForTransWaiver.updateTestData(transactionTestData.get("DataSet ID"), "Transaction Number",
+				finalTransaNum);
+		System.out.println("Transaction Number" + finalTransaNum);
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transaction_TransactionNumberOkButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.transaction_TransactionNumberOkButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transaction_TransactionNumberOkButton());
+	}
+
+	@And("^store the transaction number in transaction excel database$")
+	public void store_the_transaction_number_in_transaction_excel_database() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transaction_TransactionNumber());
+		String transaNum = transactionObj.transaction_TransactionNumber().getText();
+		System.out.println(transactionObj.transaction_TransactionNumber().getText());
+		String finalTransaNum = transaNum.substring(15, 19);
+		excelDataFortransactionTestData.updateTestData(transactionTestData.get("DataSet ID"), "Transaction Number",
 				finalTransaNum);
 		System.out.println("Transaction Number" + finalTransaNum);
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transaction_TransactionNumberOkButton());
@@ -1566,6 +2087,11 @@ public class CSM_TransactionSteps extends BaseClass {
 	public void verify_system_should_show_the_transaction_details_for_the_perticular_transaction_in_search_grid()
 			throws Throwable {
 		String xpath = "//td[text()='" + transactionTestData.get("Other Teller Transaction Number") + "']";
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
 		boolean status = false;
 		for (int i = 0; i <= 300; i++) {
 			try {
@@ -1654,6 +2180,37 @@ public class CSM_TransactionSteps extends BaseClass {
 		Thread.sleep(1000);
 	}
 
+	@And("^change the system date to given date$")
+	public void change_the_system_date_to_given_date() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSystemDate());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		for (int i = 0; i <= 15; i++) {
+			csmCommonWebElements.csmInputSystemDate().sendKeys(Keys.BACK_SPACE);
+		}
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
+		System.out.println("Transaction date " + transactionTestData.get("System Date"));
+		System.out.println("Transaction Type " + transactionTestData.get("Transaction Type"));
+		System.out.println("Transa Own " + transactionTestData.get("Own Teller Transaction number"));
+		System.out.println("Other Trans num " + transactionTestData.get("Other Teller Transaction Number"));
+		csmCommonWebElements.csmInputSystemDate().sendKeys(transactionTestData.get("System Date"));
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
+		Thread.sleep(1000);
+	}
+
 	@And("^click on search in transaction maintenance screen$")
 	public void click_on_search_in_transaction_maintenance_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSearchButton());
@@ -1679,8 +2236,9 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionObj.transactionSearchTransactionNo()
 				.sendKeys(transactionTestData.get("Other Teller Transaction Number"));
 		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
 		robot = new Robot();
-		for (int i = 0; i <= 5; i++) {
+		for (int i = 0; i <= 10; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 		}
@@ -1689,7 +2247,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	@Then("^system should display the transaction details which was created by himself$")
 	public void system_should_display_the_transaction_details_which_was_created_by_himself() throws Throwable {
 		robot = new Robot();
-		for (int i = 0; i <= 5; i++) {
+		for (int i = 0; i <= 10; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 		}
@@ -1723,6 +2281,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
 		transactionObj.transactionSearchTransactionNo()
 				.sendKeys(transactionTestData.get("Own Teller Transaction number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
 		robot = new Robot();
 		for (int i = 0; i <= 10; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
@@ -1732,8 +2292,14 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@Then("^verify system should show the transaction number in maintenance grid$")
 	public void verify_system_should_show_the_transaction_number_in_maintenance_grid() throws Throwable {
+		robot = new Robot();
+		for (int i = 0; i <= 5; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
 		String xpath = "//td[text()='" + transactionTestData.get("Current Date Transaction number") + "']";
 		boolean status = false;
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 				status = driver.findElement(By.xpath(xpath)).isDisplayed();
@@ -1760,6 +2326,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
 		transactionObj.transactionSearchTransactionNo()
 				.sendKeys(transactionTestData.get("Current Date Transaction number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
 		robot = new Robot();
 		for (int i = 0; i <= 10; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
@@ -1769,6 +2337,11 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@Then("^verify system should show the transaction details of the past date$")
 	public void verify_system_should_show_the_transaction_details_of_the_past_date() throws Throwable {
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
 		String xpath = "//td[text()='" + transactionTestData.get("Past transaction number") + "']";
 		boolean status = false;
 		for (int i = 0; i <= 500; i++) {
@@ -1810,11 +2383,773 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
 		transactionObj.transactionSearchTransactionNo().sendKeys(transactionTestData.get("Past transaction number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
 		robot = new Robot();
 		for (int i = 0; i <= 10; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
 			robot.keyRelease(KeyEvent.VK_ENTER);
 		}
+	}
+
+	@And("^click on booked entries button in approved transactions$")
+	public void click_on_booked_entries_button_in_approved_transactions() throws Throwable {
+		for (int i = 0; i <= 600; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionApproveBookedEntries());
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveBookedEntries());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveBookedEntries());
+				break;
+			} catch (Exception e) {
+				if (i == 600) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	// Queries
+
+	@And("^click on queries feature$")
+	public void click_on_queries_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.csmQueriesFeature());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.csmQueriesFeature());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.csmQueriesFeature());
+	}
+
+	@And("^click on statement of accounts feature$")
+	public void click_on_statement_of_accounts_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesStatementOfAccounts());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesStatementOfAccounts());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesStatementOfAccounts());
+	}
+
+	@And("^click on by value date under statements of accounts$")
+	public void click_on_by_value_date_under_statements_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesByValueDateFeature());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesByValueDateFeature());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesByValueDateFeature());
+	}
+
+	@And("^enter the branch code in staments of accounts$")
+	public void enter_the_branch_code_in_staments_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesBranchCodeInput());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesBranchCodeInput());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesBranchCodeInput());
+		csmQueriesObj.queriesBranchCodeInput().sendKeys(null);
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(csmQueriesObj.queriesBranchCodeInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the currency code in staments of accounts$")
+	public void enter_the_currency_code_in_staments_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesCurrencyCodeInput());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesCurrencyCodeInput());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesCurrencyCodeInput());
+		csmQueriesObj.queriesCurrencyCodeInput().sendKeys(transactionTestData.get("Credit Currency Code"));
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(csmQueriesObj.queriesCurrencyCodeInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the account type in statements of accounts$")
+	public void enter_the_account_type_in_statements_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesGlCodeInput());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesGlCodeInput());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesGlCodeInput());
+		csmQueriesObj.queriesGlCodeInput().sendKeys(transactionTestData.get("Credit Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(csmQueriesObj.queriesGlCodeInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the CIF number in staments of accounts$")
+	public void enter_the_cif_number_in_staments_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesCIFNumberInput());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesCIFNumberInput());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesCIFNumberInput());
+		csmQueriesObj.queriesCIFNumberInput().sendKeys(transactionTestData.get("Credit CIF Code"));
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(csmQueriesObj.queriesCIFNumberInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the serial number in statements of accounts$")
+	public void enter_the_serial_number_in_statements_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesSerialNumberInput());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesSerialNumberInput());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesSerialNumberInput());
+		csmQueriesObj.queriesSerialNumberInput().sendKeys(transactionTestData.get("Credit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(csmQueriesObj.queriesSerialNumberInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the from date in statements of accounts$")
+	public void enter_the_from_date_in_statements_of_accounts() throws Throwable {
+		for (int i = 0; i <= 14; i++) {
+
+			clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesFromDateInput());
+			csmQueriesObj.queriesFromDateInput().sendKeys(Keys.BACK_SPACE);
+		}
+		csmQueriesObj.queriesFromDateInput().sendKeys(valueDate);
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (!(csmQueriesObj.queriesFromDateInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("^enter the to date in statements of accounts$")
+	public void enter_the_to_date_in_statements_of_accounts() throws Throwable {
+		for (int i = 0; i <= 14; i++) {
+
+			clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesToDateInput());
+			csmQueriesObj.queriesToDateInput().sendKeys(Keys.BACK_SPACE);
+		}
+		csmQueriesObj.queriesToDateInput().sendKeys(valueDate);
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesLabel());
+		clicksAndActionsHelper.clickOnElement(csmQueriesObj.queriesLabel());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (!(csmQueriesObj.queriesToDateInput().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^click on retrive button in statements of accounts$")
+	public void click_on_retrive_button_in_statements_of_accounts() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, csmQueriesObj.queriesRetriveButton());
+		clicksAndActionsHelper.moveToElement(csmQueriesObj.queriesRetriveButton());
+		clicksAndActionsHelper.clickUsingActionClass(csmQueriesObj.queriesRetriveButton(),
+				csmQueriesObj.queriesRetriveButton());
+	}
+
+	@Then("^verify system should display the CV amount in statement of accounts screen$")
+	public void verify_system_should_display_the_cv_amount_in_statement_of_accounts_screen() throws Throwable {
+		int amt = Integer.parseInt(transactionTestData.get("Deposite Amount"));
+		String amount = String.format("%,d", amt);
+		String xpath = "//td[contains(text(),'" + amount + "')]";
+		boolean status = false;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = driver.findElement(By.xpath(xpath)).isDisplayed();
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		Assert.assertTrue(status);
+	}
+
+	@And("^enter the debit branch code$")
+	public void enter_the_debit_branch_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitBranchCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitBranchCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitBranchCode());
+		transactionObj.transactionTypeDebitBranchCode().sendKeys(transactionTestData.get("Debit Branch Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("^enter the debit currency code$")
+	public void enter_the_debit_currency_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitCurrencyCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitCurrencyCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitCurrencyCode());
+		transactionObj.transactionTypeDebitCurrencyCode().sendKeys(transactionTestData.get("Debit Currency Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the debit gl code$")
+	public void enter_the_debit_gl_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitGlCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitGlCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitGlCode());
+		transactionObj.transactionTypeDebitGlCode().sendKeys(transactionTestData.get("Debit Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitGlCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the debit cif number$")
+	public void enter_the_debit_cif_number() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitCIFCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitCIFCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitCIFCode());
+		transactionObj.transactionTypeDebitCIFCode().sendKeys(transactionTestData.get("Debit CIF Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitCIFCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the debit debit serial number$")
+	public void enter_the_debit_debit_serial_number() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitSerialNumber());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitSerialNumber());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitSerialNumber());
+		transactionObj.transactionTypeDebitSerialNumber().sendKeys(transactionTestData.get("Debit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitSerialNumber().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the credit branch code$")
+	public void enter_the_credit_branch_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditBranchCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditBranchCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditBranchCode());
+		transactionObj.transactionTypeCreditBranchCode().sendKeys(transactionTestData.get("Credit Branch Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the credit gl code$")
+	public void enter_the_credit_gl_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditGlCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditGlCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditGlCode());
+		transactionObj.transactionTypeCreditGlCode().sendKeys(transactionTestData.get("Credit Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditGlCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the credit cif number$")
+	public void enter_the_credit_cif_number() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditCIFCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditCIFCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditCIFCode());
+		transactionObj.transactionTypeCreditCIFCode().sendKeys(transactionTestData.get("Credit CIF Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditCIFCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the serial number$")
+	public void enter_the_serial_number() throws Throwable {
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditSerialNumCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditSerialNumCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditSerialNumCode());
+		transactionObj.transactionTypeCreditSerialNumCode().sendKeys(transactionTestData.get("Credit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditSerialNumCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("^enter the credit serial number$")
+	public void enter_the_credit_serial_number() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditSerialNumCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditSerialNumCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditSerialNumCode());
+		transactionObj.transactionTypeCreditSerialNumCode().sendKeys(transactionTestData.get("Credit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditSerialNumCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("^enter the amount for debit transfer transaction$")
+	public void enter_the_amount_for_debit_transfer_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionDepositeAmountInputBox());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionDepositeAmountInputBox());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
+		transactionObj.transactionDepositeAmountInputBox().sendKeys(transactionTestData.get("Deposite Amount"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed()))
+
+				{
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^click on account details button in transaction maintenance$")
+	public void click_on_account_details_button_in_transaction_maintenance() throws Throwable {
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.transactionsMaintenanceAccountDetailsButton());
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionsMaintenanceAccountDetailsButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionsMaintenanceAccountDetailsButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^click on add button in acccount details of transaction maintenance$")
+	public void click_on_add_button_in_acccount_details_of_transaction_maintenance() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				transactionObj.transactionsMaintenanceAccountDetailsAddButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionsMaintenanceAccountDetailsAddButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionsMaintenanceAccountDetailsAddButton());
+
+	}
+
+	@And("^enter the branch code in first grid of account details$")
+	public void enter_the_branch_code_in_first_grid_of_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsBlankBranchCodeOne());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsBlankBranchCodeOne());
+		clicksAndActionsHelper.clickUsingActionClass(transactionObj.additionalDetailsBlankBranchCodeOne(),
+				transactionObj.additionalDetailsBlankBranchCodeOne());
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionaDetailsBranchCodeInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionaDetailsBranchCodeInput());
+		clicksAndActionsHelper.clickUsingActionClass(transactionObj.additionaDetailsBranchCodeInput(),
+				transactionObj.additionaDetailsBranchCodeInput());
+		transactionObj.additionaDetailsBranchCodeInput().sendKeys(transactionTestData.get("Debit Branch Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmAdditionalDetailsLabel());
+		for (int i = 0; i <= 300; i++) {
+			if (!(transactionObj.additionaDetailsBranchCodeInput().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
+	}
+
+	@And("^enter the gl code in frist grid of account details$")
+	public void enter_the_gl_code_in_frist_grid_of_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsGLCodeInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsGLCodeInput());
+		clicksAndActionsHelper.clickUsingActionClass(transactionObj.additionalDetailsGLCodeInput(),
+				transactionObj.additionalDetailsGLCodeInput());
+		transactionObj.additionalDetailsGLCodeInput().sendKeys(transactionTestData.get("Debit Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmAdditionalDetailsLabel());
+		for (int i = 0; i <= 300; i++) {
+			if (!(transactionObj.additionalDetailsGLCodeInput().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
+	}
+
+	@And("^enter the cif number in first grid of account details$")
+	public void enter_the_cif_number_in_first_grid_of_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsCIFNumberInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsCIFNumberInput());
+		clicksAndActionsHelper.clickUsingActionClass(transactionObj.additionalDetailsCIFNumberInput(),
+				transactionObj.additionalDetailsCIFNumberInput());
+		transactionObj.additionalDetailsCIFNumberInput().sendKeys(transactionTestData.get("Debit CIF Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmAdditionalDetailsLabel());
+		for (int i = 0; i <= 300; i++) {
+			if (!(transactionObj.additionalDetailsCIFNumberInput().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
+	}
+
+	@And("^enter the serial number in frist grid of account details$")
+	public void enter_the_serial_number_in_frist_grid_of_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsSerialNumberInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsSerialNumberInput());
+		clicksAndActionsHelper.clickUsingActionClass(transactionObj.additionalDetailsSerialNumberInput(),
+				transactionObj.additionalDetailsSerialNumberInput());
+		transactionObj.additionalDetailsSerialNumberInput().sendKeys(transactionTestData.get("Debit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmAdditionalDetailsLabel());
+		for (int i = 0; i <= 300; i++) {
+			if (!(transactionObj.additionalDetailsSerialNumberInput().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
+	}
+
+	@And("^enter the amount in first grid of account details$")
+	public void enter_the_amount_in_first_grid_of_account_details() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.additionalDetailsAmountInput());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsAmountInput());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsAmountInput());
+		transactionObj.additionalDetailsAmountInput().sendKeys(transactionTestData.get("Withdraw Amount"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmAdditionalDetailsLabel());
+		for (int i = 0; i <= 300; i++) {
+			if (!(transactionObj.additionalDetailsAmountInput().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
+	}
+
+	@And("^click on live search in second row of account details$")
+	public void click_on_live_search_in_second_row_of_account_details() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.additionalDetailsBlankBranchCodeTwo());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsBlankBranchCodeTwo());
+		clicksAndActionsHelper.clickUsingActionClass(transactionObj.additionalDetailsBlankBranchCodeTwo(),
+				transactionObj.additionalDetailsBlankBranchCodeTwo());
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsLiveSearchButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsLiveSearchButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsLiveSearchButton());
+	}
+
+	@And("^enter the second account branch code in account details$")
+	public void enter_the_second_account_branch_code_in_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsLiveSearchBranchCodeInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsLiveSearchBranchCodeInput());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsLiveSearchBranchCodeInput());
+		transactionObj.additionalDetailsLiveSearchBranchCodeInput()
+				.sendKeys(transactionTestData.get("Debit Branch Code Two"));
+	}
+
+	@And("^search the second gl code in additional account details$")
+	public void search_the_second_gl_code_in_additional_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsLiveSearchGlCodeInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsLiveSearchGlCodeInput());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsLiveSearchGlCodeInput());
+		transactionObj.additionalDetailsLiveSearchGlCodeInput().sendKeys(transactionTestData.get("Debit Gl Code Two"));
+
+	}
+
+	@And("^search the second cif number in additional account details$")
+	public void search_the_second_cif_number_in_additional_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsLiveSearchCIFCodeInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsLiveSearchCIFCodeInput());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsLiveSearchCIFCodeInput());
+		transactionObj.additionalDetailsLiveSearchCIFCodeInput()
+				.sendKeys(transactionTestData.get("Debit CIF Code Two"));
+	}
+
+	@And("^search the second serial number in additional account details$")
+	public void search_the_second_serial_number_in_additional_account_details() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionObj.additionalDetailsLiveSearchSerialNumberInput());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsLiveSearchSerialNumberInput());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsLiveSearchSerialNumberInput());
+		transactionObj.additionalDetailsLiveSearchSerialNumberInput()
+				.sendKeys(transactionTestData.get("Debit Serial Number Two"));
+	}
+
+	@And("^select the record for second additional account$")
+	public void select_the_record_for_second_additional_account() throws Throwable {
+		String xpath = "// td[contains(text(),'" + transactionTestData.get("Debit Serial Number Two") + "')]";
+		for (int i = 0; i <= 50; i++) {
+			try {
+
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				// clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 50) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^enter the amount in second grid of account details$")
+	public void enter_the_amount_in_second_grid_of_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsAmountInput2());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsAmountInput2());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsAmountInput2());
+		transactionObj.additionalDetailsAmountInput2().sendKeys(transactionTestData.get("Debit Amount Two"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmAdditionalDetailsLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmAdditionalDetailsLabel());
+		for (int i = 0; i <= 300; i++) {
+			if (!(transactionObj.additionalDetailsAmountInput2().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
+	}
+
+	@And("^click on ok button in additional account details$")
+	public void click_on_ok_button_in_additional_account_details() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsOkButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsOkButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsOkButton());
 	}
 
 }

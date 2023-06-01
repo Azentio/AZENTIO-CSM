@@ -5,6 +5,7 @@ import java.io.FileOutputStream;
 import java.util.Calendar;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
+import org.apache.poi.openxml4j.util.ZipSecureFile;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFCellStyle;
 import org.apache.poi.xssf.usermodel.XSSFCreationHelper;
@@ -40,6 +41,7 @@ public class ExcelReader {
 	// returns the row count in a sheet
 
 	public int getRowCount(String sheetName) {
+		ZipSecureFile.setMinInflateRatio(0);
 		int index = workbook.getSheetIndex(sheetName);
 		if (index == -1)
 			return 0;
