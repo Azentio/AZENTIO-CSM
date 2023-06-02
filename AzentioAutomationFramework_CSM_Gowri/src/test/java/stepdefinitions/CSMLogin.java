@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -126,16 +127,29 @@ public class CSMLogin {
 
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
-		try {
-			waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutPopup());
-            
-             
-			waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
-			csmCommonWebElements.ForceLogoutYes().click();
-            
-		} catch (Exception e) {
-			// TODO: handle exception
+		for (int i = 0; i < 200; i++) {
+			try {
+				if (i==199) {
+					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
+					csmCommonWebElements.ForceLogoutYes().click();
+					break;
+				}
+//				
+			} catch (Exception e) {
+				
+				// TODO: handle exception
+			}
 		}
+//		try {
+//			waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutPopup());
+//            
+//             
+//			waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
+//			csmCommonWebElements.ForceLogoutYes().click();
+//            
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
 		

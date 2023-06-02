@@ -286,31 +286,142 @@ And user click and enter the value in debit account serial number under maintena
 Scenario: Checking Cash Withdrawal Transaction - Currency Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
 Given user login as csm core application
 And user update test data set id for TRS_078
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
 And user click the transactions in menu options
 And user click the maintenance in transactions 
-And user enter the value in transactions type
+And user click and enter the value in trx type under transactions 
 And user click the transaction maintenance type icon
-Then user enter the value for branch code in currency account
+#Then user click and enter the value for branch code in currency account
 And user click the transaction maintenance type icon
-And user enter the value for currency code in curency account 
+And user click and enter the value for currency code in curency account 
 And user click the transaction maintenance type icon
-And user enter the value for GL code in currency account
+And user click and enter the value for GL code in currency account
 And user click the transaction maintenance type icon
-And user enter the value for CIF code in currency account
+And user click and enter the value for CIF code in currency account
 And user click the transaction maintenance type icon
-And user enter the value for serial number in currency account
+And user click and enter the value for serial number in currency account
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon 
+And user click amount field and enter the value
+#And user click the transaction maintenance type icon
+Then user validate the stopper message popup  
+
+@TRS_079
+Scenario: Checking Cash Deposit Transaction - CurrencyDeposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
+Given user login as csm core application
+And user update test data set id for TRS_079
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the branch code value in credit account details
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
 And user click currency field and enter the value 
 And user click amount field and enter the value
-And user validate the stopper message popup  
+And user click save button in transactions menu
+And User Click Ok Button in Information PopUp menu
+#And user get transaction no from success popup
+Then user navigate to approve submenu
+And user click refresh icon in approve submenu
+And user retrieve the created record in approve submenu
+And user click approve button in approve submenu
+Then validate the popup transaction record was sucessfully approved
 
+@TRS_080
+Scenario: Checking Cash Depsoit Transaction - Currency Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
+Given user login as csm core application
+And user update test data set id for TRS_080
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the branch code value in credit account details
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value 
+And user click amount field and enter the value
+And user click the transaction maintenance type icon
+Then user validate the cannot proceed stopper message popup under transactions
 
+@TRS_077
+Scenario: Checking Cash Deposit Transaction - CurrencyDeposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
+Given user login as csm core application
+And user update test data set id for TRS_077
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the branch code value in credit account details
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value 
+Then user enter the GL code 
+And user click the transaction maintenance type icon 
+And user enter the cif code
+And user click the transaction maintenance type icon
+And user enter the serial no in credit account details
+And user click the transaction maintenance type icon
+And user click amount field and enter the value
+And user click save button in transactions menu
+And User Click Ok Button in Information PopUp menu
+Then user navigate to approve submenu
+And user click refresh icon in approve submenu
+And user retrieve the created record in approve submenu
+And user click approve button in approve submenu
 
-
-
-
-
-
-
+#pre-requesties
+@TRS_078_01
+Scenario: Checking Cash Withdrawal Transaction - Currency Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
+Given user login as csm params application 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
 
 
 

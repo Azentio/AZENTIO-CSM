@@ -323,6 +323,12 @@ public WebElement csmTransactionsMaintenanceScreenBookedEntries()
 	return csmTransactionsMaintenanceScreenBookedEntries;
 }
 //TRS_042
+@FindBy(xpath="//label[text()='TRX Type ']/parent::td/following-sibling::td[1]//input")
+private WebElement TransactionsTrxType;
+public WebElement TransactionsTrxType()
+{
+	return TransactionsTrxType;
+}
 @FindBy(xpath = "//input[@id='trs_ac_br_D001MT']")
 private WebElement debitAccountBranchCode;
 public WebElement debitAccountBranchCode()
@@ -389,6 +395,250 @@ public WebElement creditAccountSerialNo()
 {
     return creditAccountSerialNo;
 }
+@FindBy(id="hdr_runn_date")
+private WebElement CSM_DateToChangeTheCurrentDate;
+public WebElement CSMDateToChangeTheCurrentDate()
+{
+	return CSM_DateToChangeTheCurrentDate;
+}
+@FindBy(id="global_user_run_date")
+private WebElement CSM_DateInUserRunningDate;
+public WebElement CSMDateInUserRunningDate()
+{
+	return CSM_DateInUserRunningDate;
+}
+@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
+private WebElement CSM_UseButtonInChangeRunningDate;
+public WebElement CSMUseButtonInChangeRunningDate() 
+{
+	return CSM_UseButtonInChangeRunningDate;
+}
+@FindBy(xpath = "//label[contains(text(),'Clear Cache ')]")
+private WebElement CSM_ClearCacheInTechnicalDetailsIcon;
+public WebElement CSM_ClearCacheInTechnicalDetailsIcon() 
+{
+	return CSM_ClearCacheInTechnicalDetailsIcon;
+}
+@FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
+private WebElement confirmOkInChangeRunningDate;
+public WebElement confirmOkInChangeRunningDate()
+{
+	return confirmOkInChangeRunningDate;
+}
+@FindBy(id="_popup_path_sol_ok")
+private WebElement CSM_OkButtonInInformationPopUpMenu;
+public WebElement CSMOkButtonInInformationPopUpMenu() 
+{
+	return CSM_OkButtonInInformationPopUpMenu;
+}
+@FindBy(id="_header_rundate_dialog_close")
+private WebElement CSM_CloseButtonInChangeRunningDate;
+public WebElement CSMCloseButtonInChangeRunningDate() 
+{
+	return CSM_CloseButtonInChangeRunningDate;
+}
+@FindBy(id="tech_details_icon")
+private WebElement CSM_TechnicalDetailsIcon;
+public WebElement CSMTechnicalDetailsIcon() 
+{
+	return CSM_TechnicalDetailsIcon;
+}
+@FindBy(id="_popup_path_sol_ok")
+private WebElement CSM_OkButtonUnderInformationPopUp;
+public WebElement CSMOkButtonUnderInformationPopUp() 
+{
+	return CSM_OkButtonUnderInformationPopUp;
+}
+@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+private WebElement CSMOkButtonInAccessDeniedPopUpMenu;
+public WebElement CSMOkButtonInAccessDeniedPopUpMenu()
+{
+	return CSMOkButtonInAccessDeniedPopUpMenu;
+}
+@FindBy(xpath = "//div[text()='Cannot Proceed']")
+private WebElement csmStopperMessagePopupInTransactions;
+public WebElement csmStopperMessagePopupInTransactions()
+{
+	return csmStopperMessagePopupInTransactions;
+}
+
+//TRS_078
+@FindBy(xpath = "//button[@id='trxMgntSaveBtn_D001MT']")
+private WebElement saveButtonInTransactions;
+public WebElement saveButtonInTransactions()
+{
+	return saveButtonInTransactions;
+}
+//CSMOkButtonInInformationPopUpMenu
+@FindBy(xpath = "//span[text()='close']")
+private WebElement closeButtonInAlertPopup;
+public WebElement closeButtonInAlertPopup()
+{
+	return closeButtonInAlertPopup;
+}
+@FindBy(id = "D001AU")
+private WebElement approveScreenInTransactions;
+public WebElement approveScreenInTransactions()
+{
+	return approveScreenInTransactions;
+}
+@FindBy(xpath = "(//td[text()='Toggle']/following-sibling::td)[3]//span")
+private WebElement refreshButtonInApproveScreen;
+public WebElement refreshButtonInApproveScreen()
+{
+	return refreshButtonInApproveScreen;
+}
+@FindBy(id = "trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO")
+private WebElement transactionNoInApproveScreen;
+public WebElement transactionNoInApproveScreen()
+{
+	return transactionNoInApproveScreen;
+}
+@FindBy(id="td_trxMgntGridTbl_Id_D001AU_1_ctstrsVO.TRS_NO")
+private WebElement doubleClickTransactionNo;
+public WebElement doubleClickTransactionNo()
+{
+	return doubleClickTransactionNo;
+}
+@FindBy(xpath="//span[contains(text(),' Approve ')]//parent::button")
+private WebElement approveButtonInApproveScreen;
+public WebElement approveButtonInApproveScreen()
+{
+	return approveButtonInApproveScreen;
+}
+@FindBy(id="cyPurchaseSaleDet")
+private WebElement randomClick;
+public WebElement randomClick()
+{
+	return randomClick;
+}
+@FindBy(xpath = "//a[@id='dismissbut_D001MT']")
+private WebElement dismissAlertPopup;
+public WebElement dismissAlertPopup()
+{
+	return dismissAlertPopup;
+}
+@FindBy(xpath = "//div[text()='Transaction No 7685 Approved ']")
+private WebElement successfullyApprovedPopup;
+public WebElement successfullyApprovedPopup()
+{
+	return successfullyApprovedPopup;
+}
+@FindBy(xpath = "//div[text()='Success']")
+private WebElement successMessagePopup;
+public WebElement successMessagePopup()
+{
+	return successMessagePopup;
+}
+@FindBy(xpath = "//td[text()='USD']")
+private WebElement CSM_CurrencyName;
+public WebElement CSMCurrencyName() 
+{
+    return CSM_CurrencyName;
+}
+//prerequesties
+@FindBy(xpath = "//a[@id='E000MA']")
+private WebElement updateAfterApproveInUser;
+public WebElement updateAfterApproveInUser()
+{
+	return updateAfterApproveInUser;
+}
+@FindBy(xpath = "//input[@id='tellerParamList_GridTbl_Id_E000MA_gs_ctstellerVO.USER_ID']")
+private WebElement userIdInUpdateAfterApprove;
+public WebElement userIdInUpdateAfterApprove()
+{
+	return userIdInUpdateAfterApprove;
+}
+@FindBy(id="td_tellerParamList_GridTbl_Id_E000MA_1_ctstellerVO.USER_ID")
+private WebElement doubleClickUserInUpdateAfterApprove;
+public WebElement doubleClickUserInUpdateAfterApprove()
+{
+	return doubleClickUserInUpdateAfterApprove;
+}
+@FindBy(xpath="//span[text()=' Limits ']")
+private WebElement limitsButtonInUpdateAfterApprove;
+public WebElement limitsButtonInUpdateAfterApprove()
+{
+	return limitsButtonInUpdateAfterApprove;
+}
+@FindBy(xpath="//td[@id='add_tab3_C_GridTbl_Id_E000MA']")
+private WebElement addIconInUpdateAfterApprove;
+public WebElement addIconInUpdateAfterApprove()
+{
+	return addIconInUpdateAfterApprove;
+}
+@FindBy(xpath="//input[@name='lookupTxt_ctstellerlimitVO.CY_CODE']")
+private WebElement accountCurrencyInUpdateAfterApprove;
+public WebElement accountCurrencyInUpdateAfterApprove()
+{
+	return accountCurrencyInUpdateAfterApprove;
+}
+@FindBy(xpath="//input[@name='lookupTxt_ctstellerlimitVO.TRX_TYPE']")
+private WebElement transactionBoxInUpdateAfterApprove;
+public WebElement transactionBoxInUpdateAfterApprove()
+{
+	return transactionBoxInUpdateAfterApprove;
+}
+@FindBy(xpath="//td[@tdlabel='W/D Limit']//input")
+private WebElement withdrawalLimitInUpdateAfterApprove;
+public WebElement withdrawalLimitInUpdateAfterApprove()
+{
+	return withdrawalLimitInUpdateAfterApprove;
+}
+@FindBy(xpath="//td[@tdlabel='Deposit Limit']//input")
+private WebElement depositLimitInUpdateAfterApprove;
+public WebElement depositLimitInUpdateAfterApprove()
+{
+	return depositLimitInUpdateAfterApprove;
+}
+@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Warn User If Limit Exceed']/input")
+private WebElement warnUserIfLimitExceedInUpdateAfterApprove;
+public WebElement warnUserIfLimitExceedInUpdateAfterApprove()
+{
+	return warnUserIfLimitExceedInUpdateAfterApprove;
+}
+@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Proceed If Limit Exceed']//input")
+private WebElement proceedIfLimitExceedInUpdateAfterApprove;
+public WebElement proceedIfLimitExceedInUpdateAfterApprove()
+{
+	return proceedIfLimitExceedInUpdateAfterApprove;
+}
+//confirmOkButton()
+@FindBy(xpath="//button[@id='ok_btn_2_E000MA']")
+private WebElement okButtonInUpdateAfterApprove;
+public WebElement okButtonInUpdateAfterApprove()
+{
+	return okButtonInUpdateAfterApprove;
+}
+@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000MA_Update_After_Approve_key']")
+private WebElement updateAfterApproveButtonInUpdateAfterApprove;
+public WebElement updateAfterApproveButtonInUpdateAfterApprove()
+{
+	return updateAfterApproveButtonInUpdateAfterApprove;
+}
+//confirmOkButton()
+//CSMOkButtonInAccessDeniedPopUpMenu
+@FindBy(xpath="//a[@id='E000P']")
+private WebElement approveScreenInUser;
+public WebElement approveScreenInUser()
+{
+	return approveScreenInUser;
+}
+@FindBy(id="tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID")
+private WebElement userIdInApprove;
+public WebElement userIdInApprove()
+{
+	return userIdInApprove;
+}
+@FindBy(id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID")
+private WebElement doubleClickUserIdInApprove;
+public WebElement doubleClickUserIdInApprove()
+{
+	return doubleClickUserIdInApprove;
+}
+//approveButtonInApproveScreen
+//confirmOkButton
+//successOkButton
 
 
 

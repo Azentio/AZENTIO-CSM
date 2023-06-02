@@ -34,7 +34,7 @@ public WebElement Transactions()
 {
  	return Transactions;
 }
-@FindBy(xpath="//span[text()='Maintenance']")
+@FindBy(id="D001MT")
 private WebElement Maintenance;
 public WebElement Maintenance()
 {

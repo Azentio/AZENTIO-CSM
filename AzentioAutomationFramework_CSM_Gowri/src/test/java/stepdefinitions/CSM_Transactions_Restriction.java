@@ -27,7 +27,7 @@ public class CSM_Transactions_Restriction extends BaseClass{
 	CSMLogin login = new CSMLogin(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSM_Transactions_OBJ csmTransactions = new CSM_Transactions_OBJ(driver);
-	String path = System.getProperty("user.dir") +"\\TestData\\Test_Data.xlsx";
+	String path = System.getProperty("user.dir") +"\\TestData\\TestData.xlsx";
 	ExcelData csmTransactionsExcelData = new ExcelData(path,"CSM_Transactions","DataSet ID");
 	Map<String, String> testData;
 
@@ -62,8 +62,10 @@ public class CSM_Transactions_Restriction extends BaseClass{
 	@And("^user click the transactions in menu options$")
     public void user_click_the_transactions_in_menu_options() throws Throwable {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactions.Transactions());
+		seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactions.Transactions());
 		seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactions.Transactions());
-		csmTransactions.Transactions().click();
+		seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactions.Transactions());
+		//csmTransactions.Transactions().click();
     }
 	
 	@And("^user click the maintenance in transactions$")
@@ -92,8 +94,23 @@ public class CSM_Transactions_Restriction extends BaseClass{
 	
 	@And("^user click the transaction maintenance type icon$")
     public void user_click_the_search_icon_in_transaction_maintenance_type() throws Throwable {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactions.TrxMaintance());
-        csmTransactions.TrxMaintance().click();
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactions.TrxMaintance());
+		for (int i = 0; i < 200; i++) {
+			try {
+				seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactions.TrxMaintance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactions.TrxMaintance());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+			
+		}
+//		seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactions.TrxMaintance());
+//		seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactions.TrxMaintance());
+        //csmTransactions.TrxMaintance().click();
     }
 
     @Then("^user enter the value for branch code in currency account$")
