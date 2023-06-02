@@ -211,9 +211,55 @@ And click on ok buton in staff member ok button
 And enter the currency code
 And enter the amount for deposite in transaction
 Then verify system should show the validation message for no access for Priority
+@TRS_044_01
+Scenario: To un check the enable multi branh in transaction type
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_044_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the deposite transaction number in update after approve
+And select the transaction record in update after approve screen
+And check the multi branch field in transaction type
+And check the allow internal GL flag
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+@TRS_044
+Scenario: Checking Cash Deposit Transaction - Interbranch
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_044
+And change the system date to given date
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And enter the currency code
+And enter the amount for deposite in transaction
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_044
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+Then verify system should show the stopper message for transaction approval
 
 @TRS_045_01
-Scenario: To check the show today TRX falg under user in CSM Param
+Scenario: To un check the enable multi branh in transaction type
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter
@@ -239,6 +285,9 @@ Scenario: Checking Cash Deposit Transaction - Interbranch
 Given navigate to CSM application and login with valid credentials
 And get the test data for test case ID TRS_045
 And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
 And click on Transaction module
 And click on maintenance scree under transaction module
 And enter the transaction type code in transaction
@@ -254,7 +303,7 @@ And select the other branch account from live search in deposite transaction
 Then verify system should show the validation for multi branch validation
 
 @TRS_046_01
-Scenario: To check the show today TRX falg under user in CSM Param
+Scenario: To check the multi branch and post and past date of falg in transaction type 
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter

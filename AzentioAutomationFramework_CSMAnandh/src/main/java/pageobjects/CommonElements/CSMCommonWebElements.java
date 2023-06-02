@@ -312,4 +312,10 @@ public class CSMCommonWebElements {
 	{
 		return csm_PleaseWaitServerOkbuton;
 	}
+	@FindBy(xpath="//div[contains(text(),'Is a Company holiday')]//parent::div//following-sibling::center//input[@value='Ok ']")
+	private WebElement csm_CompanyHolidayOkButton;
+	public WebElement csmCompanyHolidayOkButton()
+	{
+		return csm_CompanyHolidayOkButton;
+	}
 }

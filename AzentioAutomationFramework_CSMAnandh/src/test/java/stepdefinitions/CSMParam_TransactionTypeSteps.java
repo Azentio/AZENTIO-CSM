@@ -49,6 +49,13 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("^get the test data for test case ID TRS_044_01$")
+	public void get_the_test_data_for_test_case_id_trs04401() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_044_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("^get the test data for test case ID TRS_047_50_01$")
 	public void get_the_test_data_for_test_case_id_trs04701() throws Throwable {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_047_50_01");
@@ -114,10 +121,26 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 
-			
 		} else {
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+		}
+	}
+
+	@And("^check the multi branch field in transaction type$")
+	public void check_the_multi_branch_field_in_transaction_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+		String flagStatus = transactionTypeObj.transactionTypeEnableMultiBranchFalg().getAttribute("initialvalue");
+		if (!(flagStatus.isBlank())) {
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+
+		} else {
+
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 		}

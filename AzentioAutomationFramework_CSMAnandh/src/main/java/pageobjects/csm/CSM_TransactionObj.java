@@ -650,6 +650,13 @@ public class CSM_TransactionObj {
 		return additionalDetails_OkButton;
 	}
 
+	@FindBy(xpath = "//div[contains(text(),'Invalid Branch Exchange Earning Account')]")
+	private WebElement csm_InvalidBranchExchangeValidation;
+
+	public WebElement csmInvalidBranchExchangeValidation() {
+		return csm_InvalidBranchExchangeValidation;
+	}
+
 	@FindBy(xpath = "//span[@class='ui-search ui-state-default liveSearchSpanCorner liveSearchSpanSize liveSearchSpanDisplay']")
 	private WebElement additionsDetails_liveSearchButton;
 

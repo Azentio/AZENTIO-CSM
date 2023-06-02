@@ -216,6 +216,13 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("^get the test data for test case ID TRS_044$")
+	public void get_the_test_data_for_test_case_id_trs044() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_044");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("^get the test data for test case ID TRS_046$")
 	public void get_the_test_data_for_test_case_id_trs046() throws Throwable {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_046");
@@ -301,6 +308,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			if (transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the currency code for cash deposite$")
@@ -312,6 +324,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			if (transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
 	}
 
 	@And("^click on live search in deposte transaction$")
@@ -375,12 +392,14 @@ public class CSM_TransactionSteps extends BaseClass {
 			}
 		}
 	}
+
 	@And("^search for currency code in deposite live search$")
-    public void search_for_currency_code_in_deposite_live_search() throws Throwable {
+	public void search_for_currency_code_in_deposite_live_search() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(transactionObj.transactionManagementDepositeLiveSearchCurrencyCode());
-				clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementDepositeLiveSearchCurrencyCode());
+				clicksAndActionsHelper
+						.moveToElement(transactionObj.transactionManagementDepositeLiveSearchCurrencyCode());
 				transactionObj.transactionManagementDepositeLiveSearchCurrencyCode()
 						.sendKeys(transactionTestData.get("Credit Currency Code"));
 				break;
@@ -390,7 +409,7 @@ public class CSM_TransactionSteps extends BaseClass {
 				}
 			}
 		}
-    }
+	}
 
 	@And("^search for CIF number in deposite transaction live search$")
 	public void search_for_cif_number_in_deposite_transaction_live_search() throws Throwable {
@@ -498,6 +517,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			if (transactionObj.transactionTypeDebitGlCode().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the debit CIF code in transaction$")
@@ -520,6 +544,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			if (transactionObj.transactionTypeDebitCIFCode().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the debit serial number in transaction$")
@@ -540,6 +569,12 @@ public class CSM_TransactionSteps extends BaseClass {
 
 			}
 		}
+		for (int i = 0; i <= 200; i++) {
+			if (transactionObj.transactionTypeDebitSerialNumber().getAttribute("prevvalue").isBlank()) {
+				break;
+			}
+		}
+		
 
 	}
 
@@ -3150,6 +3185,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.additionalDetailsOkButton());
 		clicksAndActionsHelper.moveToElement(transactionObj.additionalDetailsOkButton());
 		clicksAndActionsHelper.clickOnElement(transactionObj.additionalDetailsOkButton());
+	}
+
+	@Then("^verify system should show the stopper message for transaction approval$")
+	public void verify_system_should_show_the_stopper_message_for_transaction_approval() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmInvalidBranchExchangeValidation());
+		Assert.assertTrue(transactionObj.csmInvalidBranchExchangeValidation().isDisplayed());
 	}
 
 }
