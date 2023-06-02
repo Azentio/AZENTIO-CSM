@@ -184,8 +184,8 @@ public class CSM_CheckingMultiTransferStep {
 		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.AddIcon_AccountDetails());
 		checkingMultiTransferObj.AddIcon_AccountDetails().click();	
     }
-	@And("^Click the first row to add the account details$")
-    public void click_the_first_row_to_add_the_account_details() throws Throwable {
+	@And("^Click the first row$")
+    public void click_the_first_row() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.First_RowClick());
 		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.First_RowClick());
 		checkingMultiTransferObj.First_RowClick().click();	
@@ -229,8 +229,93 @@ public class CSM_CheckingMultiTransferStep {
 		checkingMultiTransferObj.FirstAmount_AccountDetails().click();
 		checkingMultiTransferObj.FirstAmount_AccountDetails().sendKeys("25");
 		checkingMultiTransferObj.FirstAmount_AccountDetails().sendKeys(Keys.TAB);
-		
     }
+	@Then("^Enter the first instruction box$")
+    public void enter_the_first_instruction_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.First_Instructions());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.FirstAmount_AccountDetails());
+		checkingMultiTransferObj.First_Instructions().click();
+		checkingMultiTransferObj.First_Instructions().sendKeys("ok");
+		checkingMultiTransferObj.First_Instructions().sendKeys(Keys.TAB);	
+    }
+	@And("^Enter the second instruction box$")
+    public void enter_the_second_instruction_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_Instructions());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_Instructions());
+		checkingMultiTransferObj.Second_Instructions().click();
+		checkingMultiTransferObj.Second_Instructions().sendKeys("ok");
+    }
+	@And("^Click the Second Row$")
+    public void click_the_second_row() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_RowClick());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_RowClick());
+		checkingMultiTransferObj.Second_RowClick().click();
+    }
+	@Then("^Enter the second branch code$")
+    public void enter_the_second_branch_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_BranchCode());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_BranchCode());
+		checkingMultiTransferObj.Second_BranchCode().click();
+		checkingMultiTransferObj.Second_BranchCode().sendKeys("01");
+		checkingMultiTransferObj.Second_BranchCode().sendKeys(Keys.TAB);
+    }
+	@And("^Enter the second GL code$")
+    public void enter_the_second_gl_code() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_Glcode());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_Glcode());
+		checkingMultiTransferObj.Second_Glcode().click();
+		checkingMultiTransferObj.Second_Glcode().sendKeys("1899");
+		checkingMultiTransferObj.Second_Glcode().sendKeys(Keys.TAB);
+    }
+	@Then("^Enter the second cif number$")
+    public void enter_the_second_cif_number() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_CifCode());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_CifCode());
+		clicksAndActionsHelper.doubleClick(checkingMultiTransferObj.Second_CifCode());
+		checkingMultiTransferObj.Second_CifCode().sendKeys(Keys.DELETE);
+		checkingMultiTransferObj.Second_CifCode().sendKeys("993608");
+		checkingMultiTransferObj.Second_CifCode().sendKeys(Keys.TAB);	
+    }
+	@And("^Enter the second serial number$")
+    public void enter_the_second_serial_number() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_SerialNumber());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_SerialNumber());
+		checkingMultiTransferObj.Second_SerialNumber().click();
+		checkingMultiTransferObj.Second_SerialNumber().sendKeys("0");
+		checkingMultiTransferObj.Second_SerialNumber().sendKeys(Keys.TAB);	
+    }
+	@And("^Enter debit amount for second account$")
+    public void enter_debit_amount_for_second_account() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Second_DebitAmount());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Second_DebitAmount());
+		checkingMultiTransferObj.Second_DebitAmount().click();
+		checkingMultiTransferObj.Second_DebitAmount().sendKeys("25");
+		checkingMultiTransferObj.Second_DebitAmount().sendKeys(Keys.TAB);
+    }
+	@Then("^Enter the first instruction box for second account$")
+    public void enter_the_first_instruction_box_for_second_account() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.FirstInstructions_Two());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.FirstInstructions_Two());
+		checkingMultiTransferObj.FirstInstructions_Two().click();
+		checkingMultiTransferObj.FirstInstructions_Two().sendKeys("ok");
+		checkingMultiTransferObj.FirstInstructions_Two().sendKeys(Keys.TAB);	
+    }
+	@And("^Enter the second instruction box for second account$")
+    public void enter_the_second_instruction_box_for_second_account() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.SecondInstructions_Two());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.SecondInstructions_Two());
+		checkingMultiTransferObj.SecondInstructions_Two().click();
+		checkingMultiTransferObj.SecondInstructions_Two().sendKeys("ok");
+		checkingMultiTransferObj.SecondInstructions_Two().sendKeys(Keys.TAB);	
+    }
+	@And("^Save the transaction$")
+    public void save_the_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Save_Button());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Save_Button());
+		checkingMultiTransferObj.Save_Button().click();	
+    }
+	
+    
 	
 	 
 	 

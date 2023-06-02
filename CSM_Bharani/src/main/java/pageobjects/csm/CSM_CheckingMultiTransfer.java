@@ -149,7 +149,7 @@ public class CSM_CheckingMultiTransfer {
 	 public WebElement AddIcon_AccountDetails() {
 		 return AddIconAccountDetails;
 	 }
-	 @FindBy(xpath="(//td[text()='1'])[1]")
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_rn']")
 	 private WebElement FirstRowClick;
 	 public WebElement First_RowClick() {
 		 return FirstRowClick;
@@ -178,6 +178,56 @@ public class CSM_CheckingMultiTransfer {
 	 private WebElement FirstAmountAccountDetails;
 	 public WebElement FirstAmount_AccountDetails() {
 		 return FirstAmountAccountDetails;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.INSTRUCTIONS1']//input")
+	 private WebElement FirstInstructions;
+	 public WebElement First_Instructions() {
+		 return FirstInstructions;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.INSTRUCTIONS2']//input")
+	 private WebElement SecondInstructions;
+	 public WebElement Second_Instructions() {
+		 return SecondInstructions;
+	 }
+	 @FindBy(xpath="((//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_rn'])[2]")
+	 private WebElement SecondRowClick;
+	 public WebElement Second_RowClick() {
+		 return SecondRowClick;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_BR']//input")
+	 private WebElement SecondBranchCode;
+	 public WebElement Second_BranchCode() {
+		 return SecondBranchCode;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_GL']//input")
+	 private WebElement SecondGlCode;
+	 public WebElement Second_Glcode() {
+		 return SecondGlCode;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_CIF']//input")
+	 private WebElement SecondCifCode;
+	 public WebElement Second_CifCode() {
+		 return SecondCifCode;
+	 }
+	 @FindBy(xpath="//table[@id='liveSearchTb_new_1685593408516_ctstrsACCDETVO.AC_SL']//input")
+	 private WebElement SecondSerialNumber;
+	 public WebElement Second_SerialNumber() {
+		 return SecondSerialNumber;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.FC_AMOUNT']//input")
+	 private WebElement SecondDebitAmount;
+	 public WebElement Second_DebitAmount() {
+		 return SecondDebitAmount;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.INSTRUCTIONS1']//input")
+	 private WebElement FirstInstructionsTwo;
+	 public WebElement FirstInstructions_Two() {
+		 return FirstInstructionsTwo;
+	 }
+	 @FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.INSTRUCTIONS2']//input")
+	 private WebElement SecondInstructionsTwo;
+	 public WebElement SecondInstructions_Two() {
+		 return SecondInstructionsTwo;
 	 }
 	 @FindBy(xpath="//span[text()='ok']")
 	 private WebElement OkButtonAccountDetails;
