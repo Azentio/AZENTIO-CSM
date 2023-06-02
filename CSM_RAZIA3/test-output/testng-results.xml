@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-29T14:21:45 IST" name="Default suite" finished-at="2023-05-29T17:45:32 IST" duration-ms="12227130">
+  <suite started-at="2023-06-02T11:08:41 IST" name="Default suite" finished-at="2023-06-02T11:12:08 IST" duration-ms="207123">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@53045c6c]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5149d738]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-05-29T14:21:45 IST" name="Default test" finished-at="2023-05-29T17:45:32 IST" duration-ms="12227130">
+    <test started-at="2023-06-02T11:08:41 IST" name="Default test" finished-at="2023-06-02T11:12:08 IST" duration-ms="207123">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@53045c6c]" started-at="2023-05-29T14:21:45 IST" name="setUpClass" finished-at="2023-05-29T14:21:50 IST" duration-ms="4694" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5149d738]" started-at="2023-06-02T11:08:41 IST" name="setUpClass" finished-at="2023-06-02T11:08:45 IST" duration-ms="4377" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@53045c6c]" started-at="2023-05-29T14:21:50 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-05-29T17:44:57 IST" duration-ms="12187288" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5149d738]" started-at="2023-06-02T11:08:45 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-02T11:11:43 IST" duration-ms="177475" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking Cash Deposit Transaction - FC/ CV"]]>
+                <![CDATA["Checking Cash Withdrawal Transaction Currency Withdrawal Limit Defined and Warn User if Limit Exceeds Checked and Proceed if Limit Exceeds Checked - Amount > Limit"]]>
               </value>
             </param>
             <param index="1">
@@ -27,38 +27,57 @@
               </value>
             </param>
           </params>
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
             <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
+              <![CDATA[element click intercepted: Element <input type="text" colmodel="[object Object]" maxlength="11" id="new_1685684481056_ctstellerlimitVO.WITHD_LIMIT_FC" gridid="tab3_C_GridTbl_Id_E000MA" editrowid="new_1685684481056" role="textbox" class="editable" prevvalue=" " style="width: 98%; text-align: right;"> is not clickable at point (1143, 520). Other element would receive the click: <div class="jMsgbox-background" style="position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;"></div>
   (Session info: chrome=113.0.5672.127)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [dd049705ede8d98cb3d245c43b1a5210, findElement {using=xpath, value=//td[text()='USD']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57987}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57987/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: dd049705ede8d98cb3d245c43b1a5210]]>
+Command: [274c11cc653955166d34db28281a17a8, clickElement {id=DEA3C398A651A3F85A862C4592C36550_element_342}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55470}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55470/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (274c11cc653955166d34db28281a17a8)] -> xpath: (//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input]
+Session ID: 274c11cc653955166d34db28281a17a8]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: no such window: target window already closed
-from unknown error: web view not found
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <input type="text" colmodel="[object Object]" maxlength="11" id="new_1685684481056_ctstellerlimitVO.WITHD_LIMIT_FC" gridid="tab3_C_GridTbl_Id_E000MA" editrowid="new_1685684481056" role="textbox" class="editable" prevvalue=" " style="width: 98%; text-align: right;"> is not clickable at point (1143, 520). Other element would receive the click: <div class="jMsgbox-background" style="position: fixed; width: 1920px; height: 924px; z-index: 999999; opacity: 0.6; top: 0px; left: 0px;"></div>
   (Session info: chrome=113.0.5672.127)
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [dd049705ede8d98cb3d245c43b1a5210, findElement {using=xpath, value=//td[text()='USD']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57987}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57987/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: dd049705ede8d98cb3d245c43b1a5210
-at org.testng.Assert.fail(Assert.java:99)
-at stepdefinitions.CSM_TransactionsSteps.user_enter_the_amount_in_maintenance_screen(CSM_TransactionsSteps.java:225)
-at ✽.User Enter the Amount in Maintenance Screen(file:///C:/Users/inindc00612/git/AZENTIO-CSM/CSM_RAZIA2/src/test/java/features/CSM_transactions.feature:73)
+Command: [274c11cc653955166d34db28281a17a8, clickElement {id=DEA3C398A651A3F85A862C4592C36550_element_342}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.127, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55470}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55470/devtoo..., se:cdpVersion: 113.0.5672.127, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (274c11cc653955166d34db28281a17a8)] -> xpath: (//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input]
+Session ID: 274c11cc653955166d34db28281a17a8
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
+at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
+at stepdefinitions.CSM_TransactionsSteps.user_enter_value_with_wdlimit_in_limits(CSM_TransactionsSteps.java:656)
+at ✽.User enter value with WdLimit in Limits(file:///C:/Users/inindc00612/git/CSM1/CSM_RAZIA3/src/test/java/features/CSM_transactions.feature:303)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@53045c6c]" started-at="2023-05-29T17:44:58 IST" name="tearDownClass" finished-at="2023-05-29T17:45:32 IST" duration-ms="34834" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5149d738]" started-at="2023-06-02T11:11:43 IST" name="tearDownClass" finished-at="2023-06-02T11:12:08 IST" duration-ms="25169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

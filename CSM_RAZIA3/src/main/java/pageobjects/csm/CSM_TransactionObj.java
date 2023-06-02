@@ -407,8 +407,379 @@ public class CSM_TransactionObj {
 	public WebElement CSMBookedEntriesInMaintenanceScreen() {
 		return CSM_BookedEntriesInMaintenanceScreen;
 	}
-		
-		
-		
-		
+	
+	
+	
+	
+	
+	
+	//debit
+	@FindBy(id="trs_ac_br_D001MT")
+	private WebElement CSM_BranchCodeINdebitAc;
+	public WebElement CSM_BranchCodeINdebitAc() {
+		return CSM_BranchCodeINdebitAc;
+	}
+	
+	@FindBy(id="trs_ac_cy_D001MT")
+	private WebElement CSM_CurrencyCodedebitAc;
+
+	public WebElement CSM_CurrencyCodedebitAc() {
+		return CSM_CurrencyCodedebitAc;
+	}
+	
+	@FindBy(id="trs_ac_gl_D001MT")
+	private WebElement CSM_GLCodedebitAc;
+
+	public WebElement CSM_GLCodedebitAc() {
+		return CSM_GLCodedebitAc;
+	}
+	
+	@FindBy(id="trs_ac_cif_D001MT")
+	private WebElement CSM_CIFCodeIndebitAc;
+
+	public WebElement CSM_CIFCodeIndebitAc() {
+		return CSM_CIFCodeIndebitAc;
+	}
+	
+	@FindBy(id="lookuptxt_trs_ac_sl_D001MT")
+	private WebElement CSM_SerialIndebitAc;
+	public WebElement CSM_SerialIndebitAc() {
+		return CSM_SerialIndebitAc;
+	}
+///t ac @31
+//
+//	@FindBy(id="to_trs_ac_br_D001MT")
+//	private WebElement CSM_BranchCodeInDebitAc;
+//
+//	public WebElement CSM_BranchCodeInDebitAc() {
+//		return CSM_BranchCodeInDebitAc;
+//	}
+//	
+//
+//	@FindBy(id="to_trs_ac_gl_D001MT")
+//	private WebElement CSM_GlcodeInDebitAc;
+//
+//	public WebElement CSM_GlcodeInDebitAc() {
+//		return CSM_GlcodeInDebitAc;
+//	}
+//	
+//	@FindBy(id="to_trs_ac_cif_D001MT")
+//	private WebElement CSM_CifcodeInDebitAc;
+//
+//	public WebElement CSM_CifcodeInDebitAc() {
+//		return CSM_CifcodeInDebitAc;
+//	}
+//	@FindBy(id="lookuptxt_to_trs_ac_sl_D001MT")
+//	private WebElement CSM_SerialcodeInDebitAc;
+//
+//	public WebElement CSM_SerialcodeInDebitAc() {
+//		return CSM_SerialcodeInDebitAc;
+//	}
+
+		////param prerequites
+	@FindBy(xpath ="//td[text()='Parameters']")
+	private WebElement  csmparam_parameters ;
+
+	public WebElement csmparam_parameters() {
+		return csmparam_parameters;
+	}
+	@FindBy(xpath ="//td[text()='System Parameters']")
+	private WebElement  csmparam_sysparameter_submenu ;
+
+	public WebElement csmparam_sysparameter_submenu() {
+		return csmparam_sysparameter_submenu;
+	}
+	
+	@FindBy(xpath = "//td[text()='User']")
+	private WebElement csmParam_Systemparameter_User ;
+
+	public WebElement csmParam_Systemparameter_User() {
+		return csmParam_Systemparameter_User;
+	}
+	
+	@FindBy(xpath = "//span[text()='Update after Approve']")
+	private WebElement csmParam_Systemparameter_User_UpadateAfterapprove ;
+
+	public WebElement csmParam_Systemparameter_User_UpadateAfterapprove() {
+		return csmParam_Systemparameter_User_UpadateAfterapprove;
+	}
+	
+	@FindBy(id = "tellerParamList_GridTbl_Id_E000MA_gs_ctstellerVO.USER_ID")
+	private WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid;
+
+	public WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid() {
+		return csmParam_Systemparameter_User_UpadateAfterapprove_Userid;
+	}
+	//(xpath="//td[text()='ANANDH']")
+	
+	@FindBy(id="td_tellerParamList_GridTbl_Id_E000MA_1_ctstellerVO.CODE")
+	private WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick;
+
+	public WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick() {
+		return csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick;
+	}
+	
+	@FindBy(xpath = "//select[@id='view_show_recieve_E000MA']")
+	private WebElement csmParam_User_Userid_doubleclick_logintobranch;
+
+	public WebElement csmParam_User_Userid_doubleclick_logintobranch() {
+		return csmParam_User_Userid_doubleclick_logintobranch;
+	}
+	
+	// check if the retrive button is  in the field  da karthi
+	
+	@FindBy(xpath = "//label[text()='Update After Approve ']")
+	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove;
+
+	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove() {
+		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove;
+	}
+	@FindBy(id = "_popup_path_sol_confirm_ok")
+	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
+
+	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok() {
+		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
+	}
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
+
+	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok() {
+		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
+	}
+	@FindBy(id="E000P")
+	private WebElement csmParam_User_Approve;
+
+	public WebElement csmParam_User_Approve() {
+		return csmParam_User_Approve;
+	}
+	@FindBy(id = "tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID")
+	private WebElement csmParam_User_Approve_UserID;
+
+	public WebElement csmParam_User_Approve_UserID() {
+		return csmParam_User_Approve_UserID;
+	}
+	
+	@FindBy(id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID")
+	private WebElement csmParam_User_Approve_Username_doubleclick;
+	public WebElement csmParam_User_Approve_Username_doubleclick() {
+		return csmParam_User_Approve_Username_doubleclick;
+	}
+	
+	@FindBy(id="tellerParamMaint_FormId_E000P_Approve_key")
+	private WebElement csmParam_User_Approve_Username_doubleclick_Approve;
+
+	public WebElement csmParam_User_Approve_Username_doubleclick_Approve() {
+		return csmParam_User_Approve_Username_doubleclick_Approve;
+	}
+	@FindBy(xpath="//span[text()=' Limits ']")
+	private WebElement csm_sysparam_user_updateafterapprove_Limits;
+
+	public WebElement csm_sysparam_user_updateafterapprove_Limits() {
+		return csm_sysparam_user_updateafterapprove_Limits;
+	}
+	@FindBy(id="add_tab3_C_GridTbl_Id_E000MA")
+	private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn;
+	
+	public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn() {
+		return csm_sysparam_user_updateafterapprove_Limits_addbtn;
+	}
+	@FindBy(xpath="(//input[@role='livesearch'])[1]")
+	private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
+		public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency() {
+		return csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
+	}	
+		@FindBy(xpath="(//input[@role='livesearch'])[2]")
+		private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx;
+			public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx() {
+			return csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx;
+		}
+			
+			@FindBy(xpath="(//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input")
+			private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
+				public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits() {
+				return csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
+			}
+				
+				@FindBy(xpath="//input[@id='17_ctstellerlimitVO.WARN_LIMIT_EXCEED_tab3_C_GridTbl_Id_E000MA']")
+				private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
+					public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check() {
+					return csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
+				}
+					
+					
+					@FindBy(xpath="//input[@id='17_ctstellerlimitVO.PROCEED_LIMIT_EXCEED_tab3_C_GridTbl_Id_E000MA']")
+					private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
+						public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check() {
+						return csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
+					}
+						
+						
+
+				@FindBy(id="ok_btn_2_E000MA")
+				private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
+				public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok() {
+				return csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
+			}
+										
+	//029 param
+				@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
+				private WebElement csmParam_Transactiontype_inputfield ;
+
+				public WebElement csmParam_Transactiontype_inputfield() {
+				return csmParam_Transactiontype_inputfield;
+				}
+				@FindBy(xpath = "//td[text()='Accounts Parameters']")
+				private WebElement csmParam_AccountParameters ;
+
+				public WebElement csmParam_AccountParameters() {
+				return csmParam_AccountParameters;
+				}
+				@FindBy(xpath = "//td[text()='Account Type']")
+				private WebElement csmParam_AccountParameters_AccountTypes ;
+
+				public WebElement csmParam_AccountParameters_AccountTypes() {
+				return csmParam_AccountParameters_AccountTypes;
+				}
+				@FindBy(xpath = "//a[@id='P017MA']")
+				private WebElement csmParam_AccountParameters_AccountTypes_UPAField ;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_UPAField() {
+				return csmParam_AccountParameters_AccountTypes_UPAField;
+				}
+				@FindBy(xpath = "//input[@id='acctypeList_GridTbl_Id_P017MA_gs_TYPE_CODE']")
+				private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode ;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode() {
+				return csmParam_AccountParameters_AccountTypes_UPA_TypeCode;
+				}
+				@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017MA_1_TYPE_CODE']")
+				private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick ;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick() {
+				return csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick;
+				}
+				@FindBy(xpath = "//div[@id='instructionsColl_P017MA']")
+				private WebElement csmParam_AccountParameters_AccountTypes_Instructions;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_Instructions() {
+				return csmParam_AccountParameters_AccountTypes_Instructions;
+				}
+				@FindBy(xpath = "//input[@id='allow_overdrawn_P017MA']")
+				private WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag() {
+				return csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
+				}
+				@FindBy(xpath = "//label[@id='acctypeMaint_FormId_P017MA_Update_After_Approve_key']")
+				private WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton() {
+				return csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton;
+				}
+				@FindBy(xpath = "//a[@id='P017P']")
+				private WebElement csmParam_AccountParameters_AccountTypes_ApproveField;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_ApproveField() {
+				return csmParam_AccountParameters_AccountTypes_ApproveField;
+				}
+				@FindBy(xpath = "//input[@id='acctypeList_GridTbl_Id_P017P_gs_TYPE_CODE']")
+				private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode() {
+				return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode;
+				}
+				@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017P_1_TYPE_CODE']")
+				private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick() {
+				return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick;
+				}
+				@FindBy(xpath = "//label[@id='acctypeMaint_FormId_P017P_Approve_key']")
+				private WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton;
+
+				public WebElement csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton() {
+				return csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton;
+				}
+				@FindBy(xpath="//div[contains(text(),'Amount Exceeds')]")
+				private WebElement AmountExceedsWarningPopUp;
+				public WebElement AmountExceedsWarningPopUp()
+				{
+				return AmountExceedsWarningPopUp;
+				}
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.AMOUNT']")
+				private WebElement checkIfValueIsEntered;
+				public WebElement checkIfValueIsEntered()
+				{
+				return checkIfValueIsEntered;
+				}
+				@FindBy(xpath = "//td[text()='Transaction Type']")
+						private WebElement csmParam_Transactiontype ;
+
+					public WebElement csmParam_Transactiontype() {
+						return csmParam_Transactiontype;
+					}
+					
+					@FindBy(xpath = "//a[@id='P024MA']")
+					private WebElement csmParam_Transactiontype_Updateafterapprovefield ;
+
+				public WebElement csmParam_Transactiontype_Updateafterapprovefield() {
+					return csmParam_Transactiontype_Updateafterapprovefield;
+				}
+				@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
+				private WebElement csmParam_Transactiontype_inputfield ;
+
+				public WebElement csmParam_Transactiontype_inputfield() {
+				return csmParam_Transactiontype_inputfield;
+				}
+				@FindBy(xpath = "//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.CODE']")
+				private WebElement csmParam_Transactiontype_inputfield_doubleclick ;
+
+				public WebElement csmParam_Transactiontype_inputfield_doubleclick() {
+				return csmParam_Transactiontype_inputfield_doubleclick;
+				}
+				@FindBy(xpath = "//input[@id=\"proceed_on_insuff_fund_P024MA\"]")
+				private WebElement csmParam_Transactiontype_proceedoninsufficentfunds ;
+
+				public WebElement csmParam_Transactiontype_proceedoninsufficentfunds() {
+				return csmParam_Transactiontype_proceedoninsufficentfunds;
+				}
+				@FindBy(xpath = "//label[@id='transactionTypesMaint_FormId_P024MA_Update_After_Approve_key']")
+				private WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton ;
+
+				public WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton() {
+				return csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton;
+				}
+				//@FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
+				//private WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton_Ok ;
+				//
+				//public WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton_Ok() {
+				//return csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton_Ok;
+				//}
+				@FindBy(xpath = "//a[@id='P024P']")
+				private WebElement csmParam_Transactiontype_Approvefield ;
+
+				public WebElement csmParam_Transactiontype_Approvefield() {
+				return csmParam_Transactiontype_Approvefield;
+				}
+
+				@FindBy(xpath = "//input[@id='transactionTypesList_GridTbl_Id_P024P_gs_ctstrxtypeVO.CODE']")
+				private WebElement csmParam_Transactiontype_Approve_Inputfield ;
+
+				public WebElement csmParam_Transactiontype_Approve_Inputfield() {
+				return csmParam_Transactiontype_Approve_Inputfield;
+				}
+				@FindBy(xpath = "//td[@id='td_transactionTypesList_GridTbl_Id_P024P_1_ctstrxtypeVO.CODE']")
+				private WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick ;
+
+				public WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick() {
+				return csmParam_Transactiontype_Approve_Inputfield_doubleclick;
+				}
+				@FindBy(xpath = "//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
+				private WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve ;
+
+				public WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve() {
+				return csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve;
+				}
+
+					
 }
