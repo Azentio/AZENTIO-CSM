@@ -72,6 +72,7 @@ Feature: To verify the functionality of Chequebook request module
 @CHB_180
   Scenario: Cheque book - GL type field is 'Notify and Don’t Proceed','Proceed on insufficient funds' flag checked at Transaction type
     Given navigate to CSM param application and login with valid credentials
+     And user update test data set id for CHB_180
     And user click the parameters menu
     And user click the Account parameters submenu
     And user click the General Ledger submenu
@@ -88,156 +89,182 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
-    And user click the ok
-    # Given navigate to CSM param application and login with valid credentials
-    # And user click the parameters menu
+    And user click the ok 
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype
     And User double click the record under updateafterapprove screen
-    And User deal with the ProceedOnInsufficientFund chequebox
+    And User Check the ProceedOnInsufficientFund chequebox
     And User click UpdateAfterApprove button on updateafterapprove field
     And user click the save ok button
     And user click the ok
     And user click the Approve field under the transactiontype
     And user Enter the code in inputfield on Approve screen under transactiontype
     And User double click the record Approve screen
-	  And user click the save ok button
-    And user click the ok
     And user click the Approve button on Approve field
+    And user click the save ok button
+    And user click the ok  
   Given navigate to CSM application and login with valid credentials
+   And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Date for CHB_180
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button in Information PopUp menu
+    And User Click on Close Button in Change Running Date Popup
+    And User Click on Technical Details Icon
+    And User Click Clear Cache in Technical Details Icon
+    And User Click Ok Button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
+    And user Enter the NoOfCheques in the field
     And user Enter the code on chequebookrequest maintanance screen
-    And user click on some thing in visible screen
+   # And user click on some thing in visible screen
     And user Enter the Branchcode on chequebookrequest maintenance screen
     And user Enter the Currencycode on chequebookrequest maintenance screen
     And user Enter the GLCode on chequebookrequest maintenance screen
     And user Enter the CIFCode on chequebookrequest maintenance screen
     And user Enter the SerialNo on chequebookrequest maintance screen
     And user click the ok
-    #that warning popup
+    #And that warning popup
     And user click the Save button on maintance screen
-    And user click the Approve button under chequebookrequest field
-    And user enter the GL code on approve screen
-    And user double click the Gl code on approve screen
+    And user click the Approve field under chequebookrequest field
+    And user enter the cheque code on approve screen
+    And user double click the cheque code on approve screen
     And user click the ok
-    #that warning popup
-    And user Approve the Gl record on Approve field
+   # And that warning popup
+    And user Approve the cheque record on Approve field
+    And user validate the cannot Proceed Message
     
     @CHB_181
   Scenario: Cheque book - GL type field is 'Notify and Proceed ','Proceed on insufficient funds' flag unchecked at Transaction type
     Given navigate to CSM param application and login with valid credentials
+     And user update test data set id for CHB_181
     And user click the parameters menu
     And user click the Account parameters submenu
     And user click the General Ledger submenu
     And user click the update after approve screen under general ledger
-    And user update test data set id for CHB_181 in update after screen
+    And user update test data set id for CHB_180 in update after screen
     And user double click the record in Update after approve screen
     And user click Additional Details
-    And user change the value as Notify and dont proceed in drop down
+    And user change the value as Notify and  proceed in drop down
     And user click update button under the drop down
     And user click the ok
     And user click approve sub menu under General Ledger
-    And user update test data set id for CHB_181 in approve screen
+    And user update test data set id for CHB_180 in approve screen
     And user double click the record in Approve screen
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
-     Given navigate to CSM param application and login with valid credentials
-     And user click the parameters menu
+    And user click the ok 
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype
     And User double click the record under updateafterapprove screen
-    And User deal with the ProceedOnInsufficientFund chequebox
+    And User Uncheck the ProceedOnInsufficientFund chequebox
     And User click UpdateAfterApprove button on updateafterapprove field
     And user click the save ok button
     And user click the ok
     And user click the Approve field under the transactiontype
     And user Enter the code in inputfield on Approve screen under transactiontype
     And User double click the record Approve screen
-	  And user click the save ok button
-    And user click the ok
     And user click the Approve button on Approve field
+    And user click the save ok button
+    And user click the ok  
   Given navigate to CSM application and login with valid credentials
+  And User Enter the Date in User Running Date for CHB_180
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button in Information PopUp menu
+    And User Click on Close Button in Change Running Date Popup
+    And User Click on Technical Details Icon
+    And User Click Clear Cache in Technical Details Icon
+    And User Click Ok Button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
+    And user Enter the NoOfCheques in the field
     And user Enter the code on chequebookrequest maintanance screen
-    And user click on some thing in visible screen
+   # And user click on some thing in visible screen
     And user Enter the Branchcode on chequebookrequest maintenance screen
     And user Enter the Currencycode on chequebookrequest maintenance screen
     And user Enter the GLCode on chequebookrequest maintenance screen
     And user Enter the CIFCode on chequebookrequest maintenance screen
     And user Enter the SerialNo on chequebookrequest maintance screen
     And user click the ok
-    #that warning popup
+    #And that warning popup
     And user click the Save button on maintance screen
-    And user click the Approve button under chequebookrequest field
-    And user enter the GL code on approve screen
-    And user double click the Gl code on approve screen
+    And user click the Approve field under chequebookrequest field
+    And user enter the cheque code on approve screen
+    And user double click the cheque code on approve screen
     And user click the ok
-    #that warning popup
-    And user Approve the Gl record on Approve field
-  
-  
-   @CHB_182
+   # And that warning popup
+    And user Approve the cheque record on Approve field
+    And user validate the cannot Proceed Message
+    
+    
+    @CHB_182
   Scenario: Cheque book -  GL type field is 'Notify and Proceed ','Proceed on insufficient funds' flag checked at Transaction type
     Given navigate to CSM param application and login with valid credentials
+     And user update test data set id for CHB_181
     And user click the parameters menu
     And user click the Account parameters submenu
     And user click the General Ledger submenu
     And user click the update after approve screen under general ledger
-    And user update test data set id for CHB_182 in update after screen
+    And user update test data set id for CHB_180 in update after screen
     And user double click the record in Update after approve screen
     And user click Additional Details
-    And user change the value as Notify and dont proceed in drop down
+    And user change the value as Notify and  proceed in drop down
     And user click update button under the drop down
     And user click the ok
     And user click approve sub menu under General Ledger
-    And user update test data set id for CHB_182 in approve screen
+    And user update test data set id for CHB_180 in approve screen
     And user double click the record in Approve screen
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
-     Given navigate to CSM param application and login with valid credentials
-     And user click the parameters menu
+    And user click the ok 
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype
     And User double click the record under updateafterapprove screen
-    And User deal with the ProceedOnInsufficientFund chequebox
+   And User Check the ProceedOnInsufficientFund chequebox
     And User click UpdateAfterApprove button on updateafterapprove field
     And user click the save ok button
     And user click the ok
     And user click the Approve field under the transactiontype
     And user Enter the code in inputfield on Approve screen under transactiontype
     And User double click the record Approve screen
-	  And user click the save ok button
-    And user click the ok
     And user click the Approve button on Approve field
+    And user click the save ok button
+    And user click the ok  
   Given navigate to CSM application and login with valid credentials
+  #And User Enter the Date in User Running Date for CHB_180
+    #And User Click on Use Button in Change Running Date Popup
+    #And User Click Ok Button in Information PopUp menu
+    #And User Click on Close Button in Change Running Date Popup
+    #And User Click on Technical Details Icon
+    #And User Click Clear Cache in Technical Details Icon
+    #And User Click Ok Button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
+    And user Enter the NoOfCheques in the field
     And user Enter the code on chequebookrequest maintanance screen
-    And user click on some thing in visible screen
+   # And user click on some thing in visible screen
     And user Enter the Branchcode on chequebookrequest maintenance screen
     And user Enter the Currencycode on chequebookrequest maintenance screen
     And user Enter the GLCode on chequebookrequest maintenance screen
     And user Enter the CIFCode on chequebookrequest maintenance screen
     And user Enter the SerialNo on chequebookrequest maintance screen
     And user click the ok
-    #that warning popup
+    #And that warning popup
     And user click the Save button on maintance screen
-    And user click the Approve button under chequebookrequest field
-    And user enter the GL code on approve screen
-    And user double click the Gl code on approve screen
+    And user click the Approve field under chequebookrequest field
+    And user enter the cheque code on approve screen
+    And user double click the cheque code on approve screen
     And user click the ok
-    #that warning popup
-    And user Approve the Gl record on Approve field
-  
-  
-  
+   # And that warning popup
+    And user Approve the cheque record on Approve field
+    #And user validate the cannot Proceed Message
+    
+    
+    

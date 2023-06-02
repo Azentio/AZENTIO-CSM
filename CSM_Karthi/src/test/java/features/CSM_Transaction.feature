@@ -67,6 +67,7 @@ Feature: To test the funcnalities of Transaction module
   @TRS_027
   Scenario: Checking Cash Deposit Transaction - CV/FC
     Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TRS_027
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -102,6 +103,7 @@ Feature: To test the funcnalities of Transaction module
   @TRS_025
   Scenario: Checking Cash Deposit Transaction - Currency Denomination
     Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_025
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
@@ -138,6 +140,22 @@ Feature: To test the funcnalities of Transaction module
     Then System show the warning popup clikc ok button
     And user enter the currency
     And Enter the Amount in this Checkbox
+     And user check if the  values is entered or not
+    #And User Click Transactions Maintenance for loading Amount
+    And User Click Save Button in Maintenance Screen
+   
+     And User get Transaction number from sucess pop up
+    And User Click Ok Button in Success PopUp Menu
+     And User click the Approve screens
+    Then user Enter the Transaction number
+    And double click the Value
+    Then click the Approve buttons
+    
+    And User click the Approve screens
+    Then user Enter the Transaction number
+    And double click the Value
+    Then click the Approve buttons
+    And system show the popup success user clicks the ok button
     And click the save button
     And system show the popup success user click the ok button
     And User click the Approve screen
@@ -149,6 +167,7 @@ Feature: To test the funcnalities of Transaction module
   @TRS_026
   Scenario: Checking Cash Withdrawal Transaction - Currency Denomination
     Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_026
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
@@ -185,6 +204,16 @@ Feature: To test the funcnalities of Transaction module
     Then System show the warning popup clikc ok button
     And user enter the currency
     And Enter the Amount in this Checkbox
+     And user check if the  values is entered or not
+    #And User Click Transactions Maintenance for loading Amount
+    And User Click Save Button in Maintenance Screen
+    And User get Transaction number from sucess pop up
+    And User Click Ok Button in Success PopUp Menu
+     And User click the Approve screens
+    Then user Enter the Transaction number
+    And double click the Value
+    Then click the Approve buttons
+    
     And click the save button
     And system show the popup success user click the ok button
     And User click the Approve screen
@@ -203,7 +232,7 @@ Feature: To test the funcnalities of Transaction module
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype for TRS_063
     And User double click the record under updateafterapprove screen
-    And User deal with the ProceedOnInsufficientFund chequebox
+    And User Check the ProceedOnInsufficientFund chequebox
     And user click UpdateAfterApprove Button
     And user click the save ok button
     And user click the ok
@@ -240,6 +269,29 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Technical Details Icon
     And User Click Clear Cache in Technical Details Icon
     And User Click Ok Button Under Information PopUp Menu
+    And User Click on Close Button in Change Running Date Popup
+    And User Click on Technical Details Icon
+    And User Click Clear Cache in Technical Details Icon
+    And User Click Ok Button Under Information PopUp Menu
+    And user click Transaction submenu on CSMCore
+    And user click Maintance screen under Transaction submenu
+    And user Enter the TRXType on maintance screen
+    And user Enter the BranchCode under TRXType
+    And user Enter the CurrencyCode under TRXType
+    And user Enter the GLCode under TRXType
+    And user Enter the CifCode under TRXType
+    And user Enter the SerialNo under TRXType
+    Then System show the warning popup clikc ok button
+    And user enter the currency
+    And user Enter the BranchCode under TRXType for debitAccount
+    And user Enter the CurrencyCode under TRXType for debitAccount
+    And user Enter the GLCode under TRXType for debitAccount
+    And user Enter the CifCode under TRXType for debitAccount
+    And user Enter the SerialNo under TRXType for debitAccount
+    And user check if the  value is entered or not
+    And Enter the Amount in this Checkbox
+    And user validate the popup as Amount Exceed warning pop up
+    
 
   @TRS_064
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Proceed on Insufficient Fund Checked/ Allow Overdraw unchecked
@@ -251,7 +303,7 @@ Feature: To test the funcnalities of Transaction module
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype for TRS_063
     And User double click the record under updateafterapprove screen
-    And User deal with the ProceedOnInsufficientFund chequebox
+   And User Check the ProceedOnInsufficientFund chequebox
     And user click UpdateAfterApprove Button
     And user click the save ok button
     And user click the ok
@@ -318,7 +370,7 @@ Feature: To test the funcnalities of Transaction module
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype for TRS_063
     And User double click the record under updateafterapprove screen
-     And User deal with the ProceedOnInsufficientFund chequebox
+    And User UNCheck the ProceedOnInsufficientFund chequebox
     And user click UpdateAfterApprove Button
     And user click the save ok button
     And user click the ok

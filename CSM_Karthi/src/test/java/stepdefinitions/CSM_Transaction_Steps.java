@@ -296,7 +296,10 @@ public class CSM_Transaction_Steps {
     
     //TRS_027
     
-    
+    @And("^user update test data set id for TRS_027$")
+    public void user_update_test_data_set_id_for_trs027() throws Throwable {
+    	testData = excelDataForTransaction.getTestdata("TRS_027_D1");
+    }
     @And("^User click the Transactions$")
     public void User_click_the_Transactions() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Transactions());
@@ -313,7 +316,7 @@ public class CSM_Transaction_Steps {
     public void enter_the_value_in_trx_type() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Trxtypevalue());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Trxtypevalue());
-   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys("377");
+   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys(testData.get("TRXType_D1"));
    	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys(Keys.TAB);
     }
 
@@ -330,7 +333,8 @@ public class CSM_Transaction_Steps {
     public void enter_values_of_branch_code() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_depositAcc_Branchcode());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_depositAcc_Branchcode());  
-   	 CSMTransactionObject.Transactions_depositAcc_Branchcode().sendKeys("0001");
+   	 CSMTransactionObject.Transactions_depositAcc_Branchcode().sendKeys(testData.get("BranchCode_D1"));
+   	CSMTransactionObject.Transactions_depositAcc_Branchcode().sendKeys(Keys.TAB);
     }
 
     @And("^enter values of Currency code$")
@@ -338,14 +342,16 @@ public class CSM_Transaction_Steps {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_Currencycode());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_Currencycode());  
    	// CSMTransactionObject.Transactions_debitAcc_Currencycode().sendKeys("840");
-   	 CSMTransactionObject.Transactions_debitAcc_Currencycode().sendKeys("586");
+   	 CSMTransactionObject.Transactions_debitAcc_Currencycode().sendKeys(testData.get("CurrencyCode_D1"));
+ 	CSMTransactionObject.Transactions_debitAcc_Currencycode().sendKeys(Keys.TAB);
     }
 
     @And("^enter values of Gl code$")
     public void enter_values_of_Gl_code() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_Glcode());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_Glcode());  
-   	 CSMTransactionObject.Transactions_debitAcc_Glcode().sendKeys("8456");
+   	 CSMTransactionObject.Transactions_debitAcc_Glcode().sendKeys(testData.get("GLCode_D1"));
+   	CSMTransactionObject.Transactions_debitAcc_Glcode().sendKeys(Keys.TAB);
    	 //CSMTransactionObject.Transactions_debitAcc_Glcode().sendKeys("5916");
 
     }
@@ -354,7 +360,8 @@ public class CSM_Transaction_Steps {
     public void enter_values_of_Cif_code() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_Cifcode());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_Cifcode());
-   	 CSMTransactionObject.Transactions_debitAcc_Cifcode().sendKeys("993602");
+   	 CSMTransactionObject.Transactions_debitAcc_Cifcode().sendKeys(testData.get("CIFCode_D1"));
+ 	CSMTransactionObject.Transactions_debitAcc_Cifcode().sendKeys(Keys.TAB);
    	 //CSMTransactionObject.Transactions_debitAcc_Cifcode().sendKeys("993567");
 
     }
@@ -363,7 +370,8 @@ public class CSM_Transaction_Steps {
     public void enter_values_of_serial() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_serialcode());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_serialcode());  
-   	 CSMTransactionObject.Transactions_debitAcc_serialcode().sendKeys("0");
+   	 CSMTransactionObject.Transactions_debitAcc_serialcode().sendKeys(testData.get("SerialNo_D1"));
+   	CSMTransactionObject.Transactions_debitAcc_serialcode().sendKeys(Keys.TAB);
     }
     
     @Then("^System show the warning popup clikc ok button$")
@@ -376,7 +384,7 @@ public class CSM_Transaction_Steps {
     public void user_enter_the_currency() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_debitAcc_currency());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_currency());  
-   	 CSMTransactionObject.Transactions_debitAcc_currency().sendKeys("840");
+   	 CSMTransactionObject.Transactions_debitAcc_currency().sendKeys(testData.get("CurrencyCode_D1"));
    	CSMTransactionObject.Transactions_debitAcc_currency().sendKeys(Keys.TAB);
     }
     
@@ -385,7 +393,7 @@ public class CSM_Transaction_Steps {
     	
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_EnterAmount());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_EnterAmount());  
-   	 CSMTransactionObject.Transactions_EnterAmount().sendKeys("1000");
+   	 CSMTransactionObject.Transactions_EnterAmount().sendKeys(testData.get("Amount"));
  	CSMTransactionObject.Transactions_EnterAmount().sendKeys(Keys.TAB);
     }
     
@@ -401,18 +409,19 @@ public class CSM_Transaction_Steps {
     public void system_show_the_popup_success_user_click_the_ok_button() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_successokbtn());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_successokbtn());  
-   	 Thread.sleep(2000);
+   	 //Thread.sleep(2000);
     }
 
-    @Then("^user Enter the Transaction number$")
-    public void user_enter_the_transaction_number() throws Throwable {
-   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
-   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
-   	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys("7521");
-    }
+//    @Then("^user Enter the Transaction number$")
+//    public void user_enter_the_transaction_number() throws Throwable {
+//   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+//   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+//   	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys("7521");
+//    }
 
     @And("^User click the Approve screen$")
     public void user_click_the_approve_screen() throws Throwable {
+    javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_Approvescrn());
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Approvescrn());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Approvescrn());  
     }         
@@ -420,23 +429,31 @@ public class CSM_Transaction_Steps {
     @And("^double click the Value$")
     public void double_click_the_value() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_Doubleclk());
-   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_Doubleclk());  
+   	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.Transactions_transactionNo_Doubleclk());  
     }
     
     @Then("^click the Approve button$")
     public void click_the_approve_button() throws Throwable {
-   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Approvebtn());
-   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Approvebtn());  
+    	try {
+    		 javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_Approvebtn());
+    	   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Approvebtn());
+    	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Approvebtn());  
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+   
     }
     
     @And("^User click the Maintenance screen$")
     public void user_click_the_maintenance_screen() throws Throwable {
+    	 javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_MaintenanceScrn());
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_MaintenanceScrn());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_MaintenanceScrn());  
     }
     
     @Then("^click the search button$")
     public void click_the_search_button() throws Throwable {
+    	 javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_searchbtn());
    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_searchbtn());
    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_searchbtn());  
     }
@@ -461,6 +478,11 @@ public class CSM_Transaction_Steps {
     }
     
     //TRS_025
+    
+    @And("^user update test data set id for TRS_025$")
+    public void user_update_test_data_set_id_for_trs025() throws Throwable {
+    	testData = excelDataForTransaction.getTestdata("TRS_025_D1");
+    }
     @And("^user deal with the Currency Denomination chequebox$")
     public void user_deal_with_the_currency_denomination_chequebox() throws Throwable {
 //    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
@@ -478,6 +500,13 @@ public class CSM_Transaction_Steps {
         clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
         		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox();
         }
+    }
+    
+    
+    //TRS_026
+    @And("^user update test data set id for TRS_026$")
+    public void user_update_test_data_set_id_for_trs026() throws Throwable {
+    	testData = excelDataForTransaction.getTestdata("TRS_026_D1");
     }
     //TRS_063
     

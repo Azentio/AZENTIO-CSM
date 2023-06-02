@@ -355,7 +355,7 @@ return csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton;
 //public WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton_Ok() {
 //return csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton_Ok;
 //}
-@FindBy(xpath = "//span[text()='Approve']")
+@FindBy(xpath = "//a[@id='P024P']")
 private WebElement csmParam_Transactiontype_Approvefield ;
 
 public WebElement csmParam_Transactiontype_Approvefield() {
@@ -413,6 +413,13 @@ public WebElement csmcore_Chequebookrequest_maintanace_Code_branchcode() {
 return csmcore_Chequebookrequest_maintanace_Code_branchcode;
 }
 
+
+@FindBy(xpath = "//input[@id='num_of_chqbooks_Q000MT']")
+private WebElement csmcore_Chequebookrequest_maintanace_NoofChequeBooks ;
+
+public WebElement csmcore_Chequebookrequest_maintanace_NoofChequeBooks() {
+return csmcore_Chequebookrequest_maintanace_NoofChequeBooks;
+}
 @FindBy(xpath = "//input[@id='acc_cy_Q000MT']")
 private WebElement csmcore_Chequebookrequest_maintanace_currencyCode ;
 
@@ -449,13 +456,13 @@ private WebElement csmcore_Chequebookrequest_Approve ;
 public WebElement csmcore_Chequebookrequest_Approve() {
 return csmcore_Chequebookrequest_Approve;
 }
-@FindBy(xpath = "//input[@id='chequeBookGridTbl_Id_Q000AP_gs_ctschqbookVO.ACC_GL']")
+@FindBy(xpath = "//input[@id='chequeBookGridTbl_Id_Q000AP_gs_ctschqbookVO.CHEQUE_CODE']")
 private WebElement csmcore_Chequebookrequest_Approve_InputField ;
 
 public WebElement csmcore_Chequebookrequest_Approve_InputField() {
 return csmcore_Chequebookrequest_Approve_InputField;
 }
-@FindBy(xpath = "//td[@id='td_chequeBookGridTbl_Id_Q000AP_1_ctschqbookVO.ACC_GL']")
+@FindBy(xpath = "//td[@id='td_chequeBookGridTbl_Id_Q000AP_1_ctschqbookVO.CHEQUE_CODE']")
 private WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick ;
 
 public WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick() {
@@ -466,5 +473,17 @@ private WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick_Appr
 
 public WebElement csmcore_Chequebookrequest_Approve_InputField_doubleclick_Approvebutton() {
 return csmcore_Chequebookrequest_Approve_InputField_doubleclick_Approvebutton;
+}
+@FindBy(xpath="//div[contains(text(),'Cannot Proceed')]")
+private WebElement cannotProceedWarningPopUp;
+public WebElement cannotProceedWarningPopUp()
+{
+return cannotProceedWarningPopUp;
+}
+@FindBy(id="global_user_run_date")
+private WebElement CSM_DateInUserRunningDate;
+
+public WebElement CSMDateInUserRunningDate() {
+	return CSM_DateInUserRunningDate;
 }
 }

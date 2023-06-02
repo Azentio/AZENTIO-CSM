@@ -350,11 +350,25 @@ public WebElement AmountExceedsWarningPopUp()
 {
 return AmountExceedsWarningPopUp;
 }
-@FindBy(xpath="//input[@id='ctrl_cy_D001MT']")
+@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.AMOUNT']")
 private WebElement checkIfValueIsEntered;
 public WebElement checkIfValueIsEntered()
 {
 return checkIfValueIsEntered;
+}
+
+@FindBy(xpath="//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
+private WebElement Transactions_transactionNo_codeValues;
+public WebElement Transactions_transactionNo_codeValues()
+
+{
+    return Transactions_transactionNo_codeValues;
+}
+@FindBy(xpath="//div[contains(text(),'Saved Successfully')]")
+private WebElement getTransactionNumber;
+public WebElement getTransactionNumber()
+{
+   return getTransactionNumber;
 }
 
 @FindBy(xpath = "//input[@id='branch_code_D001MT']")

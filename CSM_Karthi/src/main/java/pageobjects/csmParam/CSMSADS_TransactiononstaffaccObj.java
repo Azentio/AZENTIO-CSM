@@ -389,7 +389,32 @@ public class CSMSADS_TransactiononstaffaccObj {
 		public WebElement CSMDateInUserRunningDate() {
 			return CSM_DateInUserRunningDate;
 		}
+		@FindBy(xpath="//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
+		private WebElement Transactions_transactionNo_codeValues;
+		public WebElement Transactions_transactionNo_codeValues()
+
+		{
+		    return Transactions_transactionNo_codeValues;
+		}
+		@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
+		 private WebElement Transactions_Approvebtn;
+		public WebElement Transactions_Approvebtn()
+		 {
+		return Transactions_Approvebtn;
+		}
+		@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+		private WebElement Transactions_successokbtn;
+		public WebElement Transactions_successokbtn()
+		{
+			return Transactions_successokbtn;
+		}
 		
+		@FindBy(xpath="//button[@id='submit_255022178']")
+		 private WebElement Transactions_Approvebtns;
+		public WebElement Transactions_Approvebtns()
+		 {
+		return Transactions_Approvebtns;
+		}
 		@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
 		private WebElement CSM_UseButtonInChangeRunningDate;
 
@@ -454,6 +479,63 @@ public class CSMSADS_TransactiononstaffaccObj {
 			return CSM_TRXTypeInMaintenanceScreen;
 		}
 		
+		@FindBy(xpath = "//input[@id='branch_code_D001MT']")
+		private WebElement CSMCore_Transactions_Maintenance_BranchCodeForCredit;
+		public WebElement CSMCore_Transactions_Maintenance_BranchCodeForCredit() {
+			return CSMCore_Transactions_Maintenance_BranchCodeForCredit;
+		}
+
+		@FindBy(xpath = "//input[@id='ctrl_cy_D001MT']")
+		private WebElement CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit;
+		public WebElement CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit() {
+			return CSMCore_Transactions_Maintenance_CurrencyCodeCodeForCredit;
+		}
+		@FindBy(xpath = "//input[@id='ctrl_gl_D001MT']")
+		private WebElement CSMCore_Transactions_Maintenance_GLCodeCodeForCredit;
+		public WebElement CSMCore_Transactions_Maintenance_GLCodeCodeForCredit() {
+			return CSMCore_Transactions_Maintenance_GLCodeCodeForCredit;
+		}
+		@FindBy(xpath = "//input[@id='ctrl_cif_D001MT']")
+		private WebElement CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit;
+		public WebElement CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit() {
+			return CSMCore_Transactions_Maintenance_CIFCodeCodeForCredit;
+		}
+		@FindBy(xpath = "//input[@id='lookuptxt_ctrl_sl_D001MT']")
+		private WebElement CSMCore_Transactions_Maintenance_SerialNoCodeForCredit;
+		public WebElement CSMCore_Transactions_Maintenance_SerialNoCodeForCredit() {
+			return CSMCore_Transactions_Maintenance_SerialNoCodeForCredit;
+		}
+		@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.AMOUNT']")
+		private WebElement checkIfValueIsEntered;
+		public WebElement checkIfValueIsEntered()
+		{
+		return checkIfValueIsEntered;
+		}
+
+		@FindBy(xpath="//a[@id='D001AU']")
+		private WebElement Transactions_Approvescrn;
+		public WebElement Transactions_Approvescrn()
+		{
+			return Transactions_Approvescrn;
+		}
+		@FindBy(xpath="//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
+		private WebElement Transactions_transactionNo_codeValue;
+		public WebElement Transactions_transactionNo_codeValue()
+		{
+			return Transactions_transactionNo_codeValue;
+		}
+		@FindBy(xpath="//td[@id='td_trxMgntGridTbl_Id_D001AU_1_ctstrsVO.TRS_NO']")
+		private WebElement Transactions_transactionNo_Doubleclk;
+		public WebElement Transactions_transactionNo_Doubleclk()
+		{
+			return Transactions_transactionNo_Doubleclk;
+		}	
+		@FindBy(xpath="//a[@id='infoBarSearchButton_D001MT']")
+		private WebElement Transactions_searchbtn;
+		public WebElement Transactions_searchbtn()
+		{
+			return Transactions_searchbtn;
+		}
 //		@FindBy(id="Transactions / Maintenance")
 //		private WebElement CSM_TransactionsMaintenanceForLoading;
 	//
@@ -622,7 +704,12 @@ public class CSMSADS_TransactiononstaffaccObj {
 			return CSM_ValidateIfTheStatementOfAccountDisplayedAsAccessDenied;
 		}
 
-
+		@FindBy(xpath="//div[@class='jMsgbox-contentWrap']")
+	    private WebElement getTransactionNumber;
+	    public WebElement getTransactionNumber()
+	    {
+	       return getTransactionNumber;
+	    }
 	}
 	
 	
