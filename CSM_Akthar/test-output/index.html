@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse-1526129571\testng-customsuite.xml</span>
+                    <span>C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--2107906686\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates&quot;, &quot;Optio...)">runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag check...)">runScenario("Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag check...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -127,13 +127,41 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates&quot;, &quot;Optio...)">
-                  </a> <!-- runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...) -->
+                  <a name="runScenario(&quot;Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag check...)">
+                  </a> <!-- runScenario("Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag check...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optional[To check the functionalitites of TransactionStaffAccounts request]")</span>
-                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;this.testData&quot; is null
-	at stepdefinitions.TransactionStaffAccs_Steps.enter_the_single_transfer_code_value(TransactionStaffAccs_Steps.java:238)
-	at ✽.Enter the single transfer Code value(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:316)
+                  <span class="parameters">("Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked", "Optional[To check the functionalitites of TransactionStaffAccounts request]")</span>
+                  <div class="stack-trace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;text&quot; autocomplete=&quot;off&quot; name=&quot;trxMgntCO.ctstrsVO.AMOUNT&quot; class=&quot;path-theme-cust-input textCompSize ui-state-focus ui-corner-all&quot; value=&quot;&quot; id=&quot;amount_D001MT&quot; style=&quot;width:100px&quot; mode=&quot;number&quot; nbformat=&quot;#,##0.000&quot; noformat=&quot;false&quot; decimalsepa=&quot;.&quot; groupsepa=&quot;,&quot; maxvalue=&quot;999999999999.999&quot; maxlenbeforedec=&quot;12&quot; required=&quot;true&quot; afterdepevent=&quot;trxMgntAfterAmountDependency&quot; initialvalue=&quot;&quot; prevvalue=&quot;&quot; fieldaudit=&quot;1&quot; dependency=&quot;@JS_VAR_amountDependency_D001MT,@JS_VAR_chargesCommonDep_D001MT,remittance_fr_num_D001MT:trxMgntCO.ctstrsVO.REMITTANCE_FR_NUM,cyPurchaseSaleBehavior_D001MT:trxMgntCO.cyPurchaseSaleBehavior,@JS_VAR_breakDepositDep_D001MT,lookuptxt_treasury_ref_no_D001MT:trxMgntCO.ctstrsExtendedVO.TREASURY_REFERENCE_NO&quot; dependencysrc=&quot;/imal_core_portal_imal145_qc_o18/path/trxMgnt/TrxMgntDependencies_dependencyByAmount&quot; parameters=&quot;trxMgntCO.ctstrsVO.BENEF_BANK:lookuptxt_benef_bank_D001MT,trxMgntCO.multiTrsNo:multi_trs_no_D001MT,@JS_VAR_amountParams_D001MT,@JS_VAR_chargesCommonParams_D001MT,trxMgntCO.ctstrsExtendedVO.CY_PURCHASE_SALE:cy_purchaseSale_D001MT,trxMgntCO.ctstrsExtendedVO.TRX_DETAILS:trx_details_D001MT,trxMgntCO.ctstrsExtendedVO.NEGOTIATED_RATE:nego_exchange_rate_D001MT,trxMgntCO.availAmount:avail_am_D001MT,trxMgntCO.ctsCircularDefVO.AUTH_CEILING_CV_AMNT:auth_ceiling_circular_D001MT,trxMgntCO.ctsTrsExchClientDetVO.AUTHORIZATION_CEILING:auth_ceiling_D001MT,trxMgntCO.ctstrsVO.TRS_AC_CY:trs_ac_cy_D001MT,trxMgntCO.ctstrsVO.TRS_AC_CIF:trs_ac_cif_D001MT,trxMgntCO.ctstrsVO.TO_TRS_AC_CY:to_trs_ac_cy_D001MT,trxMgntCO.ctstrsVO.TO_TRS_AC_CIF:to_trs_ac_cif_D001MT,trxMgntCO.ctstrsVO.TRS_CY:lookuptxt_trs_cy_D001MT,trxMgntCO.ctstrxtypeVO.TYPE:type_D001MT,trxMgntCO.ctstrxtypeVO.CR_DR_FOREX:cr_dr_forex_D001MT,trxMgntCO.proceedWithCyPurchaseSale:proceedWithCyPurchaseSale_D001MT,trxMgntCO.ctstrsVO.VOID_REASON:holdReason_D001MT,trxMgntCO.ctstrsExtendedVO.TREASURY_REFERENCE_NO:lookuptxt_treasury_ref_no_D001MT&quot; overridelabeltext=&quot;Amount&quot; overridelabelkey=&quot;Amount_key&quot; title=&quot;Amount&quot;&gt; is not clickable at point (933, 511). Other element would receive the click: &lt;div style=&quot;display: block; width: 360px; height: 153px; overflow: auto;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=113.0.5672.129)
+Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d8148327cf2dc2929404b817a8e11dbc, clickElement {id=78EB15B35372BC91F5AF45C430EF9A75_element_912}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 113.0.5672.129, chrome: {chromedriverVersion: 113.0.5672.63 (0e1a4471d5ae..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:56002}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56002/devtoo..., se:cdpVersion: 113.0.5672.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (d8148327cf2dc2929404b817a8e11dbc)] -&gt; xpath: //input[@id=&apos;amount_D001MT&apos;]]
+Session ID: d8148327cf2dc2929404b817a8e11dbc
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
+	at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
+	at stepdefinitions.TransactionStaffAccs_Steps.Enter_the_Amount_in_this_Checkbox(TransactionStaffAccs_Steps.java:467)
+	at ✽.Enter the Amount in this Checkbox(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:125)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -145,7 +173,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse-1526129571\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--2107906686\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -206,12 +234,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.TestApplication')
-data.setCell(0, 3, 70531);
+data.setCell(0, 3, 144764);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 1 minutes</span>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -245,12 +273,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...)</span>
-                <span class="method-start">5921 ms</span>
+                <span class="method-name">runScenario("Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag check...)</span>
+                <span class="method-start">4061 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">76460 ms</span>
+                <span class="method-start">148833 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -200,13 +200,26 @@ public class TransactionStaffAccs_Steps {
          
        //TRS_017//
          
+         @And("^user update test data set id for TRS_017$")
+         public void user_update_test_data_set_id_for_TRS017() throws Throwable {
+        	 testData = excelDataForTransaction.getTestdata("TRS_017_D1");
+         }
+         
+         
          @And("^user check the flag Main Acc credit$")
          public void user_check_the_flag_main_Acc_credit() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Mainacc_credit_flag());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Mainacc_credit_flag());
+        	 
          }
          
     //TRS_018//
+         
+         @And("^user update test data set id for TRS_018$")
+         public void user_update_test_data_set_id_for_TRS018() throws Throwable {
+        	 testData = excelDataForTransaction.getTestdata("TRS_018_D1");
+         }
+         
          
          @And("^User click the Transaction type$")
          public void user_click_the_transaction_type() throws Throwable {
@@ -225,7 +238,7 @@ public class TransactionStaffAccs_Steps {
          public void Enter_the_code_value() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Entercodevalue());
          	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Entercodevalue());
-         	 transactionStaffAcc.Transactions_Entercodevalue().sendKeys("377");
+         	 transactionStaffAcc.Transactions_Entercodevalue().sendKeys(testData.get("Transaction Type code"));
          	 Thread.sleep(2000);
         	 transactionStaffAcc.Transactions_Entercodevalue().sendKeys(Keys.ENTER);
          }
@@ -242,9 +255,9 @@ public class TransactionStaffAccs_Steps {
 
          @Then("^User double click the Existing data$")
          public void user_double_click_the_Existing_data() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Existingdata());
-         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Existingdata());
-         	clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Existingdata());
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transaction_existingdata());
+         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transaction_existingdata());
+         	clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transaction_existingdata());
          }
 
           @And("^Allow internal GL Account flag should be checked$")
@@ -301,7 +314,7 @@ public class TransactionStaffAccs_Steps {
          public void enter_the_approved_record_in_the_code() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_codevalue());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_codevalue());
-        	 transactionStaffAcc.Transactions_codevalue().sendKeys("377");
+        	 transactionStaffAcc.Transactions_codevalue().sendKeys(testData.get("Transaction Type code"));
         	 transactionStaffAcc.Transactions_codevalue().sendKeys(Keys.ENTER);
          }
          
@@ -377,8 +390,8 @@ public class TransactionStaffAccs_Steps {
          public void enter_the_value_in_trx_type() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Trxtypevalue());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Trxtypevalue());
-//        	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys("377");
-//        	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys(Keys.TAB);
+        	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys(testData.get("Transaction Type code"));
+        	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys(Keys.TAB);
          }
 
          @And("^enter the single transfer in trx type$")
@@ -392,7 +405,7 @@ public class TransactionStaffAccs_Steps {
 
          @Then("^enter values of Branch code$")
          public void enter_values_of_Branch_code() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_depositAcc_Branchcode());
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_depositAcc_Branchcode()); 
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_depositAcc_Branchcode());  
         	 transactionStaffAcc.Transactions_depositAcc_Branchcode().sendKeys(testData.get("Credit Branch Code"));
          }
@@ -404,21 +417,21 @@ public class TransactionStaffAccs_Steps {
         	 transactionStaffAcc.Transactions_debitAcc_Currencycode().sendKeys(testData.get("Credit Currency Code"));
          }
 
-         @And("^enter values of Gl code$")
-         public void enter_values_of_Gl_code() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_Glcode());
-        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Glcode());  
-        	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys("5916");
+//         @And("^enter values of Gl code$")
+//         public void enter_values_of_Gl_code() throws Throwable {
+//        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_Glcode());
+//        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Glcode());  
 //        	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys("5916");
-         }
-
-         @And("^enter values of Cif code$")
-         public void enter_values_of_Cif_code() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_Cifcode());
-        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Cifcode());
-        	 transactionStaffAcc.Transactions_debitAcc_Cifcode().sendKeys("993567");
-//        	  transactionStaffAcc.Transactions_debitAcc_Cifcode().sendKeys("993575");
-         }
+////        	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys("5916");
+//         }
+//
+//         @And("^enter values of Cif code$")
+//         public void enter_values_of_Cif_code() throws Throwable {
+//        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_Cifcode());
+//        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Cifcode());
+//        	 transactionStaffAcc.Transactions_debitAcc_Cifcode().sendKeys("993567");
+////        	  transactionStaffAcc.Transactions_debitAcc_Cifcode().sendKeys("993575");
+//         }
 
          @Then("^enter values of serial$")
          public void enter_values_of_serial() throws Throwable {

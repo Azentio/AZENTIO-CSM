@@ -121,7 +121,12 @@ public class TransactionStaffAcc_obj {
 		return Transactions_Mainacc_credit_flag;
 	}
 	
-	
+	@FindBy(xpath="//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.CODE']")
+	private WebElement Transaction_existingdata;
+	public WebElement Transaction_existingdata()
+	{
+		return Transaction_existingdata;
+	}
 	
 	//TRS_018//
 	
@@ -149,6 +154,7 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_Existingdata;
 	}
+	
 	@FindBy(xpath="//label[@id='lbl_nostro_mvt_P024MA']")
 	private WebElement Transactions_GLflagChecked;
 	public WebElement Transactions_GLflagChecked()

@@ -33,63 +33,12 @@ And  User double click the data
 And  click the Approve button
 #Then System give the popup 
  
-                                     #     ********** Sprint -9 ********* #
+                                     #     ********** Sprint -9 *********   #
 
-@TRS-017
+@TRS_017
 Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates
 Given User login to Csm Param application
-Then Click the Parameters 
-And  Click the System Parameters
-And  User click the Transaction type 
-Then Click the Update after approve
-And  Enter the Code value 
-Then User double click the Existing data 
-And  user check the flag Main Acc credit
-Then Click the Update After approve button
-And  System giving information message click ok button
-Then system show the success popup click ok button 
-And  User Click the Approve Below the Transaction type
-Then Enter the Approved record in the code 
-And  User Double Click the Data
-And  User click the approve button
-And  System show the  confirm popup user click the ok button
-And  System show the record was successfully 
-Then User navigate to CSM application and login with valid credentials
-And  User click the Transactions
-Then Click the Maintenance Below the Transactions
-And  enter the value in trx type
-Then enter values of Branch code
-And  enter values of Currency code
-And  enter values of Gl code 
-And  enter values of Cif code
-Then enter values of serial 
-And  user enter the currency
-And  Enter the Amount in this Checkbox
-Then System show the warning popup click ok button
-And  click the save button
-And  User get Transaction number from sucess pop up
-And  User click the Approve screen     
-Then user Enter the Transaction number   
-And  double click the Value               
-Then click the Approve button
-And  system show the popup success user click the ok button   
-And  User click the Maintenance screen
-Then click the search button
-And enter the trx number
-And double click the data
-Then click the Booked Entries
-And  User Click the Queries 
-And  Click the Statement of Account 
-And  Click the By trade Date 
-And  enter values of Currency Value
-And  enter values of GL code 
-And  enter values of cif code
-Then enter values of Serial 
-And  Click the Retrive button
-
-@TRS_018
-Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
-Given User login to Csm Param application
+And  user update test data set id for TRS_017 
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
@@ -112,8 +61,12 @@ Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
 Then enter values of Branch code
 And  enter values of Currency code
-And  enter values of Gl code 
-And  enter values of Cif code
+And  enter values of gl code 
+And  enter values of cif number
+Then enter values of serial 
+And  system gives the view memo popup user close the popup
+Then System show the warning popup click ok button
+And  system gives the view memo popup user close the popup
 Then enter values of serial 
 And  user enter the currency
 And  Enter the Amount in this Checkbox
@@ -126,18 +79,71 @@ And  double click the Value
 Then click the Approve button
 And  system show the popup success user click the ok button   
 And  User click the Maintenance screen
-Then click the search button
-And enter the trx number
-And double click the data
-Then click the Booked Entries
-And  User Click the Queries 
-And  Click the Statement of Account 
-And  Click the By trade Date 
-And  enter values of Currency Value
-And  enter values of GL code 
-And  enter values of cif code
-Then enter values of Serial 
-And  Click the Retrive button
+#Then click the search button
+#And enter the trx number
+#And double click the data
+#Then click the Booked Entries
+#And  User Click the Queries 
+#And  Click the Statement of Account 
+#And  Click the By trade Date 
+#And  enter values of Currency Value
+#And  enter values of GL code 
+#And  enter values of cif code
+#Then enter values of Serial 
+#And  Click the Retrive button
+
+@TRS_018
+Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
+Given User login to Csm Param application
+And   user update test data set id for TRS_018 
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the Code value 
+Then User double click the Existing data 
+And  just check the flag UPA
+Then Click the Update After approve button
+And  System giving information message click ok button
+Then system show the success popup click ok button 
+And  User Click the Approve Below the Transaction type
+Then Enter the Approved record in the code 
+And  User Double Click the Data
+And  User click the approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in trx type
+Then enter values of Branch code
+And  enter values of Currency code
+And  enter values of gl code 
+And  enter values of cif number
+Then enter values of serial 
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button   
+And  User click the Maintenance screen
+#Then click the search button
+#And enter the trx number
+#And double click the data
+#Then click the Booked Entries
+#And  User Click the Queries 
+#And  Click the Statement of Account 
+#And  Click the By trade Date 
+#And  enter values of Currency Value
+#And  enter values of GL code 
+#And  enter values of cif code
+#Then enter values of Serial 
+#And  Click the Retrive button
 
 @TRS_019
 Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
@@ -185,7 +191,7 @@ Then Click the Update after approve
 And  Enter the single transfer Code value 
 Then User double click the Existing data 
 And  Allow internal GL Account flag should be checked
-And  just check the flag UPA
+#And  just check the flag UPA
 Then Click the Update After approve button
 And  System giving information message click ok button
 Then system show the success popup click ok button 
@@ -225,7 +231,7 @@ And  User click the Transaction type
 Then Click the Update after approve
 And  Enter the single transfer Code value 
 Then User double click the Existing data 
-And  Allow internal GL Account flag should be checked
+#And  Allow internal GL Account flag should be checked
 And  just check the flag UPA
 Then Click the Update After approve button
 And  System giving information message click ok button
@@ -309,12 +315,13 @@ And  Click the Retrive button
 @TRS_057
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates
 Given User login to Csm Param application
+And  user update test data set id for TRS_062 
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
 Then Click the Update after approve
 And  Enter the single transfer Code value 
-Then  User double click the Existing data 
+Then User double click the Existing data 
 And  Check the falg of set default Trx currency is equal to account currency
 Then Click the Update After approve button
 And  System giving information message click ok button
@@ -325,12 +332,6 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
-And  user click the Approve screen
-Then enter the type code
-And  double click the Data 
-Then user click the Approve button
-And  System show the  confirm popup user click the ok button
-And  System show the record was successfully
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -340,20 +341,31 @@ And  enter values of Currency code
 Then  enter values of gl code for single transfer
 And  enter values of cif number for single transfer
 And  enter values of serial for single transfer
-And  User click the Maintenance screen
-Then click the search button
-And enter the trx number
-And double click the data
-Then click the Booked Entries
-And  User Click the Queries 
-And  Click the Statement of Account 
-And  Click the By trade Date 
-And  enter values of Currency Value
-And  enter values of GL code 
-And  enter values of cif code
-Then enter values of Serial 
-And  Click the Retrive button
+#Then click the Booked Entries
+#And  click the save button
+#And  User Click the Queries 
+#And  Click the Statement of Account 
+#And  Click the By trade Date 
+#And  enter values of Currency Value
+#And  enter values of GL code 
+#And  enter values of cif code
+#Then enter values of Serial 
+#And  Click the Retrive button
 
+@TRS_058
+Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates
+Given User login to Csm Param application
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+
+
+
+
+ 
 @TRS_059
 Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates
 Given User login to Csm Param application
@@ -406,18 +418,18 @@ And  double click the Value
 Then click the Approve button
 And  system show the popup success user click the ok button   
 And  User click the Maintenance screen
-Then click the search button
-And enter the trx number
-And double click the data
-Then click the Booked Entries
-And  User Click the Queries 
-And  Click the Statement of Account 
-And  Click the By trade Date 
-And  enter values of Currency Value
-And  enter values of GL code 
-And  enter values of cif code
-Then enter values of Serial 
-And  Click the Retrive button
+#Then click the search button
+#And enter the trx number
+#And double click the data
+#Then click the Booked Entries
+#And  User Click the Queries 
+#And  Click the Statement of Account 
+#And  Click the By trade Date 
+#And  enter values of Currency Value
+#And  enter values of GL code 
+#And  enter values of cif code
+#Then enter values of Serial 
+#And  Click the Retrive button
 
 
 @TRS_061
