@@ -1,4 +1,7 @@
 Feature: To check the functionalitites of chequebook request
+
+                                       #  ********* Sprint -6 ********** #
+                                       
 @CHB_117
 Scenario: Unchecking the flags Reason on Rejecting and Records rejection reason and  rejecting a chequebook under Approve Cancel screen
 Given navigate to CSM application and login with valid credentials
@@ -16,9 +19,6 @@ And Reject and validate the record
 
 
 
-
-
-
 @CHB_118
 Scenario: Checking "Reason on Rejecting" flag upon rejecting a chequebook underr Approve Cancel screen for alert
 Given navigate to CSM application and login with valid credentials
@@ -33,7 +33,9 @@ Then Enter the teller User information
 And Click the submit button under the user information
 Then Enter the reason under the teller account
 And Reject and validate the record
-
+     
+     
+                                     # ********* Sprint -7 *********  #
 
 @CHB_149
 Scenario: UnCheck the "Reason on Rejecting"and "Records rejection reason is mandatory" flag reject chequebook Destroy screen
@@ -48,52 +50,6 @@ Then Enter the teller User information
 And Click the submit button under the user information
 Then Enter the reason under the teller account
 And Reject and validate the record
-
-@TSA_152
-
-And user click the maintenance screen under chequebook request
-And user click the number of chequebooks button
-And user enter the value in number of chequebooks
-And user click the cheque code 
-And user enter the value in cheque code under chequebook request screen
-And user click the chequebook request/maintenance icon
-And user click the branch code 
-And user enter the value in branch code
-And user click the chequebook request/maintenance icon 
-And user click the currency code
-And user enter the value in currency code
-And user click the chequebook request/maintenance icon
-And user click the gl code
-And user enter the value in gl code
-And user click the chequebook request/maintenance icon
-And user click the cif code 
-And user enter the value in cif code
-And user click the chequebook request/maintenance icon
-And user click the serial number
-And user enter the value in serial number
-And user click the chequebook request/maintenance icon
-And user click the save button under chequebook request
-And User Click Approve Sub Menu
-And User Search Cheque Book Code in Approve Screen
-And User Select Cheque Book Code in Approve Screen
-And User Click Approve button in Approve Screen
-And User Click Ok button in Warning pop up Message in Approve Screen
-
-#And user click the to be reversed chequeboo... 
-#And user click the to be reversed chequebook screen
-#And user click the checkbook code in to be reversed chequebook screen
-#And user enter the value in chequebook code
-#And user check on the reason field and fill the reason in to be reversed chequebook screen
-#And user click the to be reversed button
-#Then verify the alert send to the BM user and click the approve button
-#And user click and enter the username in BM approval 
-#And user click and enter the password in BM approval
-#And user click the reverse chequebook screen
-#And user click the chequebook code in reverse chequebook screen
-#And user enter the value in chequebook code under reverse chequebook screen
-#And user click the reject button under reverse chequebook screen
-#
-#has context menu
 
 
 @CHB_150
@@ -122,6 +78,9 @@ And   click the To be Destroy
 And   enter the value in the code box  
 Then  check the same Data will Appear in To be Destroy 
    
+   
+   
+                                         #     ********* Sprint -8 (1)  **********  #
 
 #@CHB_152
 #Scenario: Checking if "Bulk Destroy" screen is the same as "To be Destroyed" screen with the "In branch" chequebooks
@@ -139,8 +98,51 @@ Then  check the same Data will Appear in To be Destroy
 
    
 
-
-
+#@TSA_152
+#And user click the maintenance screen under chequebook request
+#And user click the number of chequebooks button
+#And user enter the value in number of chequebooks
+#And user click the cheque code 
+#And user enter the value in cheque code under chequebook request screen
+#And user click the chequebook request/maintenance icon
+#And user click the branch code 
+#And user enter the value in branch code
+#And user click the chequebook request/maintenance icon 
+#And user click the currency code
+#And user enter the value in currency code
+#And user click the chequebook request/maintenance icon
+#And user click the gl code
+#And user enter the value in gl code
+#And user click the chequebook request/maintenance icon
+#And user click the cif code 
+#And user enter the value in cif code
+#And user click the chequebook request/maintenance icon
+#And user click the serial number
+#And user enter the value in serial number
+#And user click the chequebook request/maintenance icon
+#And user click the save button under chequebook request
+#And User Click Approve Sub Menu
+#And User Search Cheque Book Code in Approve Screen
+#And User Select Cheque Book Code in Approve Screen
+#And User Click Approve button in Approve Screen
+#And User Click Ok button in Warning pop up Message in Approve Screen
+#
+#And user click the to be reversed chequeboo... 
+#And user click the to be reversed chequebook screen
+#And user click the checkbook code in to be reversed chequebook screen
+#And user enter the value in chequebook code
+#And user check on the reason field and fill the reason in to be reversed chequebook screen
+#And user click the to be reversed button
+#Then verify the alert send to the BM user and click the approve button
+#And user click and enter the username in BM approval 
+#And user click and enter the password in BM approval
+#And user click the reverse chequebook screen
+#And user click the chequebook code in reverse chequebook screen
+#And user enter the value in chequebook code under reverse chequebook screen
+#And user click the reject button under reverse chequebook screen
+#
+#has context menu
+#
 
 
 

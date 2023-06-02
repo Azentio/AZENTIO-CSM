@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-01T10:05:45 IST" name="Default suite" finished-at="2023-06-01T10:06:27 IST" duration-ms="41504">
+  <suite started-at="2023-06-02T10:19:45 IST" name="Default suite" finished-at="2023-06-02T10:21:22 IST" duration-ms="97049">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-01T10:05:45 IST" name="Default test" finished-at="2023-06-01T10:06:27 IST" duration-ms="41504">
+    <test started-at="2023-06-02T10:19:45 IST" name="Default test" finished-at="2023-06-02T10:21:22 IST" duration-ms="97049">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-01T10:05:45 IST" name="setUpClass" finished-at="2023-06-01T10:05:49 IST" duration-ms="3765" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-02T10:19:45 IST" name="setUpClass" finished-at="2023-06-02T10:19:51 IST" duration-ms="5824" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-01T10:05:49 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-01T10:06:15 IST" duration-ms="26020" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-02T10:19:51 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-02T10:21:01 IST" duration-ms="70531" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked."]]>
+                <![CDATA["Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates"]]>
               </value>
             </param>
             <param index="1">
@@ -27,47 +27,21 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.SessionNotCreatedException">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-PSK9T3X', ip: '10.81.234.14'
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]]]>
+              <![CDATA[Cannot invoke "java.util.Map.get(Object)" because "this.testData" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: 'DESKTOP-PSK9T3X', ip: '10.81.234.14'
-Build info: version: '4.8.1', revision: '8ebccac989'
-System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:106)
-at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-at org.openqa.selenium.remote.RemoteWebDriver.<init>(RemoteWebDriver.java:157)
-at org.openqa.selenium.chromium.ChromiumDriver.<init>(ChromiumDriver.java:101)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:82)
-at org.openqa.selenium.chrome.ChromeDriver.<init>(ChromeDriver.java:71)
-at resources.BaseClass.initializeDriver(BaseClass.java:29)
-at stepdefinitions.HooksClass.browserSetup(HooksClass.java:45)
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "this.testData" is null
+at stepdefinitions.TransactionStaffAccs_Steps.enter_the_single_transfer_code_value(TransactionStaffAccs_Steps.java:238)
+at ✽.Enter the single transfer Code value(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:316)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.SessionNotCreatedException -->
+          </exception> <!-- java.lang.NullPointerException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-01T10:06:15 IST" name="tearDownClass" finished-at="2023-06-01T10:06:27 IST" duration-ms="11643" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-02T10:21:01 IST" name="tearDownClass" finished-at="2023-06-02T10:21:22 IST" duration-ms="20543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

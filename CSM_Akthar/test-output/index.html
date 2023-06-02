@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--1830999927\testng-customsuite.xml</span>
+                    <span>C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse-1526129571\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unche...)">runScenario("Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unche...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates&quot;, &quot;Optio...)">runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -127,32 +127,13 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unche...)">
-                  </a> <!-- runScenario("Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unche...) -->
+                  <a name="runScenario(&quot;Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates&quot;, &quot;Optio...)">
+                  </a> <!-- runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked.", "Optional[To check the functionalitites of TransactionStaffAccounts request]")</span>
-                  <div class="stack-trace">org.openqa.selenium.SessionNotCreatedException: Could not start a new session. Response code 500. Message: session not created
-from no such execution context: loader has changed while resolving nodes
-  (Session info: chrome=113.0.5672.127) 
-Host info: host: &apos;DESKTOP-PSK9T3X&apos;, ip: &apos;10.81.234.14&apos;
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}], desiredCapabilities=Capabilities {browserName: chrome, goog:chromeOptions: {args: [--remote-allow-origins=*], extensions: []}}}]
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:148)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:106)
-	at org.openqa.selenium.remote.ProtocolHandshake.createSession(ProtocolHandshake.java:67)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:156)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebDriver.startSession(RemoteWebDriver.java:229)
-	at org.openqa.selenium.remote.RemoteWebDriver.&lt;init&gt;(RemoteWebDriver.java:157)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:101)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:82)
-	at org.openqa.selenium.chrome.ChromeDriver.&lt;init&gt;(ChromeDriver.java:71)
-	at resources.BaseClass.initializeDriver(BaseClass.java:29)
-	at stepdefinitions.HooksClass.browserSetup(HooksClass.java:45)
+                  <span class="parameters">("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optional[To check the functionalitites of TransactionStaffAccounts request]")</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;this.testData&quot; is null
+	at stepdefinitions.TransactionStaffAccs_Steps.enter_the_single_transfer_code_value(TransactionStaffAccs_Steps.java:238)
+	at ✽.Enter the single transfer Code value(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:316)
 
 </div> <!-- stack-trace -->
                   <em>
@@ -164,7 +145,7 @@ Command: [null, newSession {capabilities=[Capabilities {browserName: chrome, goo
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--1830999927\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse-1526129571\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -225,12 +206,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.TestApplication')
-data.setCell(0, 3, 26020);
+data.setCell(0, 3, 70531);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 26 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -264,12 +245,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unche...)</span>
-                <span class="method-start">3793 ms</span>
+                <span class="method-name">runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...)</span>
+                <span class="method-start">5921 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">29824 ms</span>
+                <span class="method-start">76460 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

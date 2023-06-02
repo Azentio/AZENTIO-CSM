@@ -111,6 +111,18 @@ public class TransactionStaffAcc_obj {
 		return TransactionStaffAcc_MI;
 	}
 	
+	
+	//TRS_017//
+	
+	@FindBy(xpath="//input[@id='cr_dr_forex_P024MAC']")
+	private WebElement Transactions_Mainacc_credit_flag;
+	public WebElement Transactions_Mainacc_credit_flag()
+	{
+		return Transactions_Mainacc_credit_flag;
+	}
+	
+	
+	
 	//TRS_018//
 	
 	@FindBy(xpath="//td[text()='Transaction Type']")
@@ -422,6 +434,13 @@ public class TransactionStaffAcc_obj {
 		return Transactions_withdraw_ApproveExistingvalue;
 	}
 	
+	@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+	private WebElement Transactions_Nochages_okbtn;
+	public WebElement Transactions_Nochages_okbtn()
+	{
+		return Transactions_Nochages_okbtn;
+	}
+	
 	//TRS_061//
 	
 	@FindBy(xpath="//td[text()='Accounts Parameters']")
@@ -527,7 +546,22 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_Acctype_Appbtn;
 	}
-
+	
+//TRS_057//
+	
+	@FindBy(xpath="//input[@id='default_trscy_P024MA']")
+	private WebElement Transactions_flag_setAcc;
+	public WebElement Transactions_flag_setAcc()
+	{
+		return Transactions_flag_setAcc;
+	}
+	
+	@FindBy(xpath="")
+	private WebElement Transactions_;
+	public WebElement Transactions_()
+	{
+		return Transactions_;
+	}
 	
 	
 	

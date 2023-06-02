@@ -1,4 +1,6 @@
 Feature: To check the functionalitites of TransactionStaffAccounts request
+ 
+                                       #    *********** Sprint - 8 (2) **********  #
 @TSA_148
 Scenario: Checking if the system is sending an alert when saving the transaction if any of the accounts defined is related to a Staff account
 Given User login to Csm Param application
@@ -31,9 +33,9 @@ And  User double click the data
 And  click the Approve button
 #Then System give the popup 
  
+                                     #     ********** Sprint -9 ********* #
 
-
-#@TRS-017
+@TRS-017
 Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates
 Given User login to Csm Param application
 Then Click the Parameters 
@@ -42,7 +44,7 @@ And  User click the Transaction type
 Then Click the Update after approve
 And  Enter the Code value 
 Then User double click the Existing data 
-And  just check the flag UPA
+And  user check the flag Main Acc credit
 Then Click the Update After approve button
 And  System giving information message click ok button
 Then system show the success popup click ok button 
@@ -302,23 +304,84 @@ And  enter values of cif code
 Then enter values of Serial 
 And  Click the Retrive button
 
+                                #  ********* Sprint - 10 ***********  #
 
-@TRS_060
-Scenario: Checking Cash Withdrawal Transaction - Booked Entries + Balance Updates
+@TRS_057
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates
 Given User login to Csm Param application
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
 Then Click the Update after approve
-And  Enter the Withdrawal Code value 
-Then User double click the Withdrawal data 
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+And  Check the falg of set default Trx currency is equal to account currency
+Then Click the Update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  User Click the Approve Below the Transaction type
+Then Enter the Approved record in the type code 
+And  User Double Click the Data
+And  User click the approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
+And  user click the Approve screen
+Then enter the type code
+And  double click the Data 
+Then user click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the single transfer in trx type
+Then enter values of Branch code
+And  enter values of Currency code
+Then  enter values of gl code for single transfer
+And  enter values of cif number for single transfer
+And  enter values of serial for single transfer
+And  User click the Maintenance screen
+Then click the search button
+And enter the trx number
+And double click the data
+Then click the Booked Entries
+And  User Click the Queries 
+And  Click the Statement of Account 
+And  Click the By trade Date 
+And  enter values of Currency Value
+And  enter values of GL code 
+And  enter values of cif code
+Then enter values of Serial 
+And  Click the Retrive button
+
+@TRS_059
+Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates
+Given User login to Csm Param application
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+
+
+@TRS_060
+Scenario: Checking Cash Withdrawal Transaction - Booked Entries + Balance Updates
+Given User login to Csm Param application
+And  user update test data set id for TRS_061 
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the type Code value 
+Then User double click the typecode data
 And  just check the flag UPA
 Then Click the Update After approve button
 And  System giving information message click ok button
-Then system show the success popup click ok button 
+And  system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
-Then Enter the Approved record in the Withdrawal code 
-And  User Double Click the Approved Withdrawal Data
+Then Enter the Approved record in the type code 
+And  User Double Click the Approved typecode Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
@@ -329,8 +392,9 @@ And  enter the value in Trx type
 Then enter values of Branch code
 And  enter values of currency code
 And  enter values of gl code 
-And  enter values of cif number
-Then enter values of serial  
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
 And  user enter the currency
 And  Enter the Amount in this Checkbox
 Then System show the warning popup click ok button
@@ -369,7 +433,7 @@ Then User double click the typecode data
 And  uncheck the flag of proceed on insufficient fund
 Then Click the Update After approve button
 And  System giving information message click ok button
-And system show the success popup click ok button 
+And  system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
 Then Enter the Approved record in the type code 
 And  User Double Click the Approved typecode Data
@@ -390,9 +454,8 @@ And  user click the Approve screen
 Then enter the type code
 And  double click the Data 
 Then user click the Approve button
-Then System show the warning popup click ok button
-#And  System show the  confirm popup user click the ok button
-#And  System show the record was successfully
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -413,13 +476,13 @@ And  Click the System Parameters
 And  User click the Transaction type 
 Then Click the Update after approve
 And  Enter the single transfer Code value 
-Then User double click the Existing data 
+Then  User double click the Existing data 
 And  uncheck the flag of proceed on insufficient fund
 Then Click the Update After approve button
 And  System giving information message click ok button
-And system show the success popup click ok button 
+And  system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
-Then Enter the single transfar Approved record in the code 
+Then Enter the Approved record in the type code 
 And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
@@ -428,16 +491,16 @@ Then user click the Account parameters
 And  click the Account type
 Then click the update after Approve
 And  Enter the type code
-Then double click the data
+Then Double click the data
 And  click the Instructions
 Then uncheck the flag Allow Overdrawn
 Then Click the Update After approve button
-And  System giving information message click ok button
-Then system show the success popup click ok button 
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
 And  user click the Approve screen
 Then enter the type code
 And  double click the Data 
-Then User click the approve button
+Then user click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
 Then User navigate to CSM application and login with valid credentials

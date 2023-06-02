@@ -129,299 +129,299 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
       
       //CHB_149//         
 
-      @And("^user click the maintenance screen under chequebook request$")
-       public void user_click_the_maintenance_screen_under_chequebook_request() throws Throwable {
-        for (int i = 0; i < 200; i++) {
-      try {
-       clicksAndActionsHelper.moveToElement(chequeBookRequestObj.MaintenanceButton());
-            chequeBookRequestObj.MaintenanceButton().click();
-      break;}
-                   catch (Exception e) {
-       if (i==199) {
-         Assert.fail(e.getMessage());
-         
-                           }
-                   
-     }
-
-               
-        }     
-                             }
-
-    
-
-      @And("^user click the number of chequebooks button$")
-      public void user_click_the_number_of_chequebooks_button() throws Throwable {
-    	  waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.numberOfChequeBooksInMaintenance());
-          clicksAndActionsHelper.moveToElement(chequeBookRequestObj.numberOfChequeBooksInMaintenance());
-      
-          }    
-
-          @And("^user enter the value in number of chequebooks$")
-     public void user_enter_the_value_in_number_of_chequebooks() throws Throwable {
-      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.numberOfChequeBooksInMaintenance());
-      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.numberOfChequeBooksInMaintenance());
-      chequeBookRequestObj.numberOfChequeBooksInMaintenance().sendKeys(testData.get("No of Cheque boooks"));
-      
-          }
-
-      
-
-      @And("^user click the cheque code$")
-      public void user_click_the_cheque_code() throws Throwable {
-      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeCodeInMaintenanceScreen());
-      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeCodeInMaintenanceScreen());
-      
-          }     
-
-       @And("^user enter the value in cheque code under chequebook request screen$")
-      public void user_enter_the_value_in_cheque_code_under_chequebook_request_screen() throws Throwable {
-      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeCodeInMaintenanceScreen());
-      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeCodeInMaintenanceScreen());
-      chequeBookRequestObj.chequeCodeInMaintenanceScreen().sendKeys(testData.get("Cheque Code"));
-          }     
-
-      @And("^user click the chequebook request/maintenance icon$")
-      public void user_click_the_chequebook_requestmaintenance_icon() throws Throwable {
-      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.randomClickInChequeBookCreation());
-      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.randomClickInChequeBookCreation());
-      chequeBookRequestObj.randomClickInChequeBookCreation().click();
-          }    
-
-      @And("^user click the branch code$")
-      public void user_click_the_branch_code() throws Throwable {
-    	  waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.branchCodeInMaintenanceScreen());
-    	  clicksAndActionsHelper.moveToElement(chequeBookRequestObj.branchCodeInMaintenanceScreen());
-    	  chequeBookRequestObj.branchCodeInMaintenanceScreen().click();
-          }
-   
-
-      @And("^user enter the value in branch code$")
-      public void user_enter_the_value_in_branch_code() throws Throwable {
-      seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.branchCodeInMaintenanceScreen());
-      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.branchCodeInMaintenanceScreen());
-      ChequeBookRequestObject.branchCodeInMaintenanceScreen().sendKeys(testData.get("Branch code"));
-          }
-
-              @And("^user click the currency code$")
-              public void user_click_the_currency_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
-              ChequeBookRequestObject.currencyCodeInMaintenanceScreen().click();
-          }       
-
-          @And("^user enter the value in currency code$")
-          public void user_enter_the_value_in_currency_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
-              ChequeBookRequestObject.currencyCodeInMaintenanceScreen().sendKeys(testData.get("Currency code"));
-          }      
-     
-
-      @And("^user click the gl code$")
-          public void user_click_the_gl_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.glCodeInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.glCodeInMaintenanceScreen());
-              ChequeBookRequestObject.glCodeInMaintenanceScreen().click();
-          }
-       
-
-          @And("^user enter the value in gl code$")
-          public void user_enter_the_value_in_gl_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.glCodeInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.glCodeInMaintenanceScreen());
-              ChequeBookRequestObject.glCodeInMaintenanceScreen().sendKeys(testData.get("GL code"));
-          }
-
-       
-
-          @And("^user click the cif code$")
-          public void user_click_the_cif_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.cifCodeInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.cifCodeInMaintenanceScreen());
-              ChequeBookRequestObject.cifCodeInMaintenanceScreen().click();
-          }
-       
-
-          @And("^user enter the value in cif code$")
-          public void user_enter_the_value_in_cif_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.cifCodeInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.cifCodeInMaintenanceScreen());
-              ChequeBookRequestObject.cifCodeInMaintenanceScreen().sendKeys(testData.get("CIF code"));
-          }
-       
-
-          @And("^user click the serial number$")
-          public void user_click_the_serial_number() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.serialNoInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.serialNoInMaintenanceScreen());
-              ChequeBookRequestObject.serialNoInMaintenanceScreen().click();
-          }
-
-       
-
-          @And("^user enter the value in serial number$")
-          public void user_enter_the_value_in_serial_number() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.serialNoInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.serialNoInMaintenanceScreen());
-              ChequeBookRequestObject.serialNoInMaintenanceScreen().sendKeys(testData.get("Serial No"));
-          }
-       
-
-          @And("^user click the     save button under chequebook request$")
-          public void user_click_the_save_button_under_chequebook_request() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.saveButtonInMaintenanceScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.saveButtonInMaintenanceScreen());
-              ChequeBookRequestObject.saveButtonInMaintenanceScreen().click();
-          }
-     
-
-      @And("^User Click Approve Sub Menu$")
-          public void user_click_approve_sub_menu() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.approveSubMenu());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.approveSubMenu());
-              seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.approveSubMenu());
-          }
-
-          @And("^User Search Cheque Book Code in Approve Screen$")
-          public void user_search_cheque_book_code_in_approve_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
-              seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
-              ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(testData.get("Approve ChequeBookCode"));
-              ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(Keys.ENTER);
-          }
-
-          @And("^User Select Cheque Book Code in Approve Screen$")
-          public void user_select_cheque_book_code_in_approve_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.selectChequeBookCodeInApproveScreen());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.selectChequeBookCodeInApproveScreen());
-              seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.selectChequeBookCodeInApproveScreen());
-          }
-
-
-          @And("^User Click Approve button in Approve Screen$")
-          public void user_click_approve_buttonin_approve_screen() throws Throwable {
-              for (int i = 0; i <200; i++) {
-                  try {
-                      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.approveButton());
-                      seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.approveButton());
-                      break;
-                  } catch (Exception e) {
-                      if (i==199) {
-                          Assert.fail(e.getMessage());
-                      }
-                  }
-              }
-          }
-
-          @And("^User Click Ok button in Warning pop up Message in Approve Screen$")
-          public void user_click_ok_button_in_warning_pop_up_message_in_approve_screen() throws Throwable {
-              for (int i = 0; i <200; i++) {
-                  try {
-                      if (ChequeBookRequestObject.closeIconInWarningPopUpcancelScreen().isDisplayed()) {
-                          seleniumActions.getClickAndActionsHelper()
-                          .moveToElement(ChequeBookRequestObject.closeIconInWarningPopUpcancelScreen());
-                  seleniumActions.getClickAndActionsHelper()
-                          .clickOnElement(ChequeBookRequestObject.closeIconInWarningPopUpcancelScreen());
-                  break;
-                      }
-
-
-                  } catch (Exception e) {
-                      if (i==199) {
-                      Assert.fail(e.getMessage());    
-                      }
-                  }
-              }
-          }     
-      
-
-      @And("^user click the to be reversed chequebook screen$")
-          public void user_click_the_to_be_reversed_chequebook_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.toBeReversedChequeBook());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.toBeReversedChequeBook());
-              ChequeBookRequestObject.toBeReversedChequeBook().click();
-          }     
-      
-
-      @And("^user click the checkbook code in to be reversed chequebook screen$")
-          public void user_click_the_checkbook_code_in_to_be_reversed_chequebook_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCodeToBeReversed());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCodeToBeReversed());
-              ChequeBookRequestObject.chequeBookCodeToBeReversed().click();
-          }
-      
-
-      @And("^user enter the value in chequebook code$")
-          public void user_enter_the_value_in_chequebook_code() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCodeToBeReversed());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCodeToBeReversed());
-              ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(testData.get("To Be Reversed ChequeBook Code"));
-              ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(Keys.ENTER);
-              seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
-              //ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(Keys.ENTER);
-
-          }
-     
-
-      @And("^user click the to be reversed button$")
-          public void user_click_the_to_be_reversed_button() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.clickTheToBeReversedButton());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.clickTheToBeReversedButton());
-              ChequeBookRequestObject.clickTheToBeReversedButton().click();
-          }
-      
-
-      @And("^user click the reverse chequebook screen$")
-          public void user_click_the_reverse_chequebook_screen() throws Throwable {
-      //        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookScreen());
-      //      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookScreen());
-      //      ChequeBookRequestObject.reverseChequeBookScreen().click();
-              for(int i=0;i<200;i++) {
-                  try {
-                      seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookScreen());
-                      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookScreen());
-                      ChequeBookRequestObject.reverseChequeBookScreen().click();
-                      break;
-                  } catch (Exception e) {
-                   if(i==199) {
-                      Assert.fail(e.getMessage());
-                   }
-                  }
-              }
-
-          }   
-   
-    
-
-      @And("^user click the chequebook code in reverse chequebook screen$")
-          public void user_click_the_chequebook_code_in_reverse_chequebook_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookCode());
-              ChequeBookRequestObject.reverseChequeBookCode().click();
-          } 
-     
-
-      @And("^user enter the value in chequebook code under reverse chequebook screen$")
-          public void user_enter_the_value_in_chequebook_code_under_reverse_chequebook_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookCode());
-              ChequeBookRequestObject.reverseChequeBookCode().sendKeys(testData.get("Reverse ChequeBook Code"));
-              ChequeBookRequestObject.reverseChequeBookCode().sendKeys(Keys.ENTER);
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
-              seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
-          }   
-  
-
-      @And("^user click the reject button under reverse chequebook screen$")
-          public void user_click_the_reject_button_under_reverse_chequebook_screen() throws Throwable {
-              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu());
-              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu());
-              ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu().click();
-          }
-
-     
+//      @And("^user click the maintenance screen under chequebook request$")
+//       public void user_click_the_maintenance_screen_under_chequebook_request() throws Throwable {
+//        for (int i = 0; i < 200; i++) {
+//      try {
+//       clicksAndActionsHelper.moveToElement(chequeBookRequestObj.MaintenanceButton());
+//            chequeBookRequestObj.MaintenanceButton().click();
+//      break;}
+//                   catch (Exception e) {
+//       if (i==199) {
+//         Assert.fail(e.getMessage());
+//         
+//                          
+//       }
+//     }
+//
+//               
+//        }     
+//                             }
+//
+//    
+//
+//      @And("^user click the number of chequebooks button$")
+//      public void user_click_the_number_of_chequebooks_button() throws Throwable {
+//    	  waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.numberOfChequeBooksInMaintenance());
+//          clicksAndActionsHelper.moveToElement(chequeBookRequestObj.numberOfChequeBooksInMaintenance());
+//      
+//          }    
+//
+//          @And("^user enter the value in number of chequebooks$")
+//     public void user_enter_the_value_in_number_of_chequebooks() throws Throwable {
+//      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.numberOfChequeBooksInMaintenance());
+//      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.numberOfChequeBooksInMaintenance());
+//      chequeBookRequestObj.numberOfChequeBooksInMaintenance().sendKeys(testData.get("No of Cheque boooks"));
+//      
+//          }
+//
+//      
+//
+//      @And("^user click the cheque code$")
+//      public void user_click_the_cheque_code() throws Throwable {
+//      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeCodeInMaintenanceScreen());
+//      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeCodeInMaintenanceScreen());
+//      
+//          }     
+//
+//       @And("^user enter the value in cheque code under chequebook request screen$")
+//      public void user_enter_the_value_in_cheque_code_under_chequebook_request_screen() throws Throwable {
+//      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequeCodeInMaintenanceScreen());
+//      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequeCodeInMaintenanceScreen());
+//      chequeBookRequestObj.chequeCodeInMaintenanceScreen().sendKeys(testData.get("Cheque Code"));
+//          }     
+//
+//      @And("^user click the chequebook request/maintenance icon$")
+//      public void user_click_the_chequebook_requestmaintenance_icon() throws Throwable {
+//      waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.randomClickInChequeBookCreation());
+//      clicksAndActionsHelper.moveToElement(chequeBookRequestObj.randomClickInChequeBookCreation());
+//      chequeBookRequestObj.randomClickInChequeBookCreation().click();
+//          }    
+//
+//      @And("^user click the branch code$")
+//      public void user_click_the_branch_code() throws Throwable {
+//    	  waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.branchCodeInMaintenanceScreen());
+//    	  clicksAndActionsHelper.moveToElement(chequeBookRequestObj.branchCodeInMaintenanceScreen());
+//    	  chequeBookRequestObj.branchCodeInMaintenanceScreen().click();
+//          }
+//   
+//
+//      @And("^user enter the value in branch code$")
+//      public void user_enter_the_value_in_branch_code() throws Throwable {
+//      seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.branchCodeInMaintenanceScreen());
+//      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.branchCodeInMaintenanceScreen());
+//      ChequeBookRequestObject.branchCodeInMaintenanceScreen().sendKeys(testData.get("Branch code"));
+//          }
+//
+//              @And("^user click the currency code$")
+//              public void user_click_the_currency_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
+//              ChequeBookRequestObject.currencyCodeInMaintenanceScreen().click();
+//          }       
+//
+//          @And("^user enter the value in currency code$")
+//          public void user_enter_the_value_in_currency_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.currencyCodeInMaintenanceScreen());
+//              ChequeBookRequestObject.currencyCodeInMaintenanceScreen().sendKeys(testData.get("Currency code"));
+//          }      
+//     
+//
+//      @And("^user click the gl code$")
+//          public void user_click_the_gl_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.glCodeInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.glCodeInMaintenanceScreen());
+//              ChequeBookRequestObject.glCodeInMaintenanceScreen().click();
+//          }
+//       
+//
+//          @And("^user enter the value in gl code$")
+//          public void user_enter_the_value_in_gl_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.glCodeInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.glCodeInMaintenanceScreen());
+//              ChequeBookRequestObject.glCodeInMaintenanceScreen().sendKeys(testData.get("GL code"));
+//          }
+//
+//       
+//
+//          @And("^user click the cif code$")
+//          public void user_click_the_cif_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.cifCodeInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.cifCodeInMaintenanceScreen());
+//              ChequeBookRequestObject.cifCodeInMaintenanceScreen().click();
+//          }
+//       
+//
+//          @And("^user enter the value in cif code$")
+//          public void user_enter_the_value_in_cif_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.cifCodeInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.cifCodeInMaintenanceScreen());
+//              ChequeBookRequestObject.cifCodeInMaintenanceScreen().sendKeys(testData.get("CIF code"));
+//          }
+//       
+//
+//          @And("^user click the serial number$")
+//          public void user_click_the_serial_number() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.serialNoInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.serialNoInMaintenanceScreen());
+//              ChequeBookRequestObject.serialNoInMaintenanceScreen().click();
+//          }
+//
+//       
+//
+//          @And("^user enter the value in serial number$")
+//          public void user_enter_the_value_in_serial_number() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.serialNoInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.serialNoInMaintenanceScreen());
+//              ChequeBookRequestObject.serialNoInMaintenanceScreen().sendKeys(testData.get("Serial No"));
+//          }
+//       
+//
+//          @And("^user click the     save button under chequebook request$")
+//          public void user_click_the_save_button_under_chequebook_request() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.saveButtonInMaintenanceScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.saveButtonInMaintenanceScreen());
+//              ChequeBookRequestObject.saveButtonInMaintenanceScreen().click();
+//          }
+//     
+//
+//      @And("^User Click Approve Sub Menu$")
+//          public void user_click_approve_sub_menu() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.approveSubMenu());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.approveSubMenu());
+//              seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.approveSubMenu());
+//          }
+//
+//          @And("^User Search Cheque Book Code in Approve Screen$")
+//          public void user_search_cheque_book_code_in_approve_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
+//              seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.searchChequeBookCodeInApproveScreen());
+//              ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(testData.get("Approve ChequeBookCode"));
+//              ChequeBookRequestObject.searchChequeBookCodeInApproveScreen().sendKeys(Keys.ENTER);
+//          }
+//
+//          @And("^User Select Cheque Book Code in Approve Screen$")
+//          public void user_select_cheque_book_code_in_approve_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.selectChequeBookCodeInApproveScreen());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.selectChequeBookCodeInApproveScreen());
+//              seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.selectChequeBookCodeInApproveScreen());
+//          }
+//
+//
+//          @And("^User Click Approve button in Approve Screen$")
+//          public void user_click_approve_buttonin_approve_screen() throws Throwable {
+//              for (int i = 0; i <200; i++) {
+//                  try {
+//                      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.approveButton());
+//                      seleniumActions.getClickAndActionsHelper().clickOnElement(ChequeBookRequestObject.approveButton());
+//                      break;
+//                  } catch (Exception e) {
+//                      if (i==199) {
+//                          Assert.fail(e.getMessage());
+//                      }
+//                  }
+//              }
+//          }
+//
+//          @And("^User Click Ok button in Warning pop up Message in Approve Screen$")
+//          public void user_click_ok_button_in_warning_pop_up_message_in_approve_screen() throws Throwable {
+//              for (int i = 0; i <200; i++) {
+//                  try {
+//                      if (ChequeBookRequestObject.closeIconInWarningPopUpcancelScreen().isDisplayed()) {
+//                          seleniumActions.getClickAndActionsHelper()
+//                          .moveToElement(ChequeBookRequestObject.closeIconInWarningPopUpcancelScreen());
+//                  seleniumActions.getClickAndActionsHelper()
+//                          .clickOnElement(ChequeBookRequestObject.closeIconInWarningPopUpcancelScreen());
+//                  break;
+//                      }
+//
+//
+//                  } catch (Exception e) {
+//                      if (i==199) {
+//                      Assert.fail(e.getMessage());    
+//                      }
+//                  }
+//              }
+//          }     
+//      
+//
+//      @And("^user click the to be reversed chequebook screen$")
+//          public void user_click_the_to_be_reversed_chequebook_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.toBeReversedChequeBook());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.toBeReversedChequeBook());
+//              ChequeBookRequestObject.toBeReversedChequeBook().click();
+//          }     
+//      
+//
+//      @And("^user click the checkbook code in to be reversed chequebook screen$")
+//          public void user_click_the_checkbook_code_in_to_be_reversed_chequebook_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCodeToBeReversed());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCodeToBeReversed());
+//              ChequeBookRequestObject.chequeBookCodeToBeReversed().click();
+//          }
+//      
+//
+//      @And("^user enter the value in chequebook code$")
+//          public void user_enter_the_value_in_chequebook_code() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.chequeBookCodeToBeReversed());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.chequeBookCodeToBeReversed());
+//              ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(testData.get("To Be Reversed ChequeBook Code"));
+//              ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(Keys.ENTER);
+//              seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
+//              //ChequeBookRequestObject.chequeBookCodeToBeReversed().sendKeys(Keys.ENTER);
+//
+//          }
+//     
+//
+//      @And("^user click the to be reversed button$")
+//          public void user_click_the_to_be_reversed_button() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.clickTheToBeReversedButton());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.clickTheToBeReversedButton());
+//              ChequeBookRequestObject.clickTheToBeReversedButton().click();
+//          }
+//      
+//
+//      @And("^user click the reverse chequebook screen$")
+//          public void user_click_the_reverse_chequebook_screen() throws Throwable {
+//      //        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookScreen());
+//      //      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookScreen());
+//      //      ChequeBookRequestObject.reverseChequeBookScreen().click();
+//              for(int i=0;i<200;i++) {
+//                  try {
+//                      seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookScreen());
+//                      seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookScreen());
+//                      ChequeBookRequestObject.reverseChequeBookScreen().click();
+//                      break;
+//                  } catch (Exception e) {
+//                   if(i==199) {
+//                      Assert.fail(e.getMessage());
+//                   }
+//                  }
+//              }
+//
+//          }   
+//   
+//    
+//
+//      @And("^user click the chequebook code in reverse chequebook screen$")
+//          public void user_click_the_chequebook_code_in_reverse_chequebook_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookCode());
+//              ChequeBookRequestObject.reverseChequeBookCode().click();
+//          } 
+//     
+//
+//      @And("^user enter the value in chequebook code under reverse chequebook screen$")
+//          public void user_enter_the_value_in_chequebook_code_under_reverse_chequebook_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.reverseChequeBookCode());
+//              ChequeBookRequestObject.reverseChequeBookCode().sendKeys(testData.get("Reverse ChequeBook Code"));
+//              ChequeBookRequestObject.reverseChequeBookCode().sendKeys(Keys.ENTER);
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.reverseChequeBookCode());
+//              seleniumActions.getClickAndActionsHelper().doubleClick(ChequeBookRequestObject.doubleClickTheRecord());
+//          }   
+//  
+//
+//      @And("^user click the reject button under reverse chequebook screen$")
+//          public void user_click_the_reject_button_under_reverse_chequebook_screen() throws Throwable {
+//              seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu());
+//              seleniumActions.getClickAndActionsHelper().moveToElement(ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu());
+//              ChequeBookRequestObject.rejectButtonInReverseChequeBookSubMenu().click();
+//          }
+//
+//     
       
 
 //CHB_150//	   
