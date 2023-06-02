@@ -67,7 +67,14 @@ public class CSMCommonWebElements {
 	public WebElement csmContinueButton() {
 		return csm_ContinueButton;
 	}
+	
+	@FindBy(id="continueBtn")
+	private WebElement csm_ForceLogin;
 
+	public WebElement csmForceLogin() {
+		return csm_ForceLogin;
+	}
+	
 	@FindBy(xpath = "//label[contains(text(),'User')]")
 	private WebElement csm_LoginValidation;
 

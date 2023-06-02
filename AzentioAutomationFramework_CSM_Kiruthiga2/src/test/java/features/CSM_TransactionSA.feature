@@ -374,6 +374,169 @@ And User Click Retrieve Button under By Trade Date Screen
 And User Enter the Op No in By Trade Date Screen
 Then User Validate the Debit Amount in By Trade Date Screen
 
+@TRS_052_01
+Scenario: Checking Cash Deposit Transaction - Interbranch - Prerequisites ( Enable Multi Branch flag - Check )
+Given User Navigate to CSMParam application and login with valid credentials
+And User Click on Parameters under CSMParam Application
+And User Click on System Parameters under Parameters Main Menu
+And User Click on Transaction Type under System Parameters Sub Menu
+And User Click on Update After Approve in Transaction Type under System Parameters Sub Menu
+And User Enter the Trx Type in Code under Update After Approve Screen
+And Use Double Click on the Searched Code in Update After Approve Screen
+And User Check the Enable Multi Branch flag in Update After Approve Screen
+And User Click on Update After Approve button in Update After Approve Screen
+And User Click Ok Button in Confirm PopUp Menu in Update After Approve Screen
+And User Click Ok Button in Success PopUp Menu in Update After Approve Screen
+And User Click on Approve under Transaction Type
+And User Enter the Trx Type in Code under Approve Screen
+And User Double Click on the Searched Code in Approve Screen
+And User Click on Approve Button in Approve Screen under System Parameters
+And User Click on Ok Button in Confirm PopUp under Approve Screen
+And User Click on Ok Button in Success PopUp under Approve Screen
+@TRS_052_02
+Scenario: Checking Cash Deposit Transaction - Interbranch
+Given User Navigate to CSM application and login with valid credentials
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And User Click on Technical Details Icon
+And User Click Clear Cache in Technical Details Icon
+And User Click Ok Button Under Information PopUp Menu
+And User Click on Transactions under CSM application
+And User Click on Maintenance under Transactions
+And User Enter TRX Type in Maintenance Screen
+And User Enter the Branch Code in Credit Ac in Maintenance Screen
+And User Enter Currency Code in Credit Ac in Maintenance Screen
+And User Enter GL Code in Credit Ac in Maintenance Screen
+And User Enter CIF Code in Credit Ac in Maintenance Screen
+And User Enter Serial in Credit Ac in Maintenance Screen
+And User Enter the Currency in Maintenance Screen
+And User Enter the Value Date in Maintenance Screen
+And User Enter the Amount in Maintenance Screen
+#And User Enter the Amount under Maintenance Menu
+And User Click Save Button in Maintenance Screen
+And User Get the Transaction No in Success PopUo Menu
+And User Click Ok Button in Success PopUp Menu
+And User Click on Approve Screen under Transactions
+And User Enter the Transaction No in Approve Screen
+And User Double Click on the Transaction No
+And User Click on Approve Button for approve the Transaction
+Then User Validate the Stopper Message in Cannot Proceed PopUp Menu
+And User Click Ok Button in Cannot Proceed PopUp Menu in Maintenance
+@TRS_052_03
+Scenario: Checking Cash Deposit Transaction - Interbranch - Prerequisites ( Enable Multi Branch flag - UnCheck )
+Given User Navigate to CSMParam application and login with valid credentials
+And User Click on Parameters under CSMParam Application
+And User Click on System Parameters under Parameters Main Menu
+And User Click on Transaction Type under System Parameters Sub Menu
+And User Click on Update After Approve in Transaction Type under System Parameters Sub Menu
+And User Enter the Trx Type in Code under Update After Approve Screen
+And Use Double Click on the Searched Code in Update After Approve Screen
+And User Uncheck the Enable Multi Branch flag in Update After Approve Screen
+And User Click on Update After Approve button in Update After Approve Screen
+And User Click Ok Button in Confirm PopUp Menu in Update After Approve Screen
+And User Click Ok Button in Success PopUp Menu in Update After Approve Screen
+And User Click on Approve under Transaction Type
+And User Enter the Trx Type in Code under Approve Screen
+And User Double Click on the Searched Code in Approve Screen
+And User Click on Approve Button in Approve Screen under System Parameters
+And User Click on Ok Button in Confirm PopUp under Approve Screen
+And User Click on Ok Button in Success PopUp under Approve Screen
+@TRS_053_01
+Scenario: Checking Cash Deposit Transaction - Interbranch
+Given User Navigate to CSM application and login with valid credentials
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And User Click on Technical Details Icon
+And User Click Clear Cache in Technical Details Icon
+And User Click Ok Button Under Information PopUp Menu
+And User Click on Transactions under CSM application
+And User Click on Maintenance under Transactions
+And User Enter TRX Type in Maintenance Screen
+#And User Enter the Branch Code in Credit Ac in Maintenance Screen
+And User Enter Currency Code in Credit Ac in Maintenance Screen
+And User Enter GL Code in Credit Ac in Maintenance Screen
+And User Enter CIF Code in Credit Ac in Maintenance Screen
+And User Enter Serial in Credit Ac in Maintenance Screen
+And User Click Ok Button in Warning PopUp Menu
+And User Enter the Currency in Maintenance Screen
+And User Enter the Value Date in Maintenance Screen
+And User Enter the Amount in Maintenance Screen
+#And User Enter the Amount under Maintenance Menu
+And User Click Save Button in Maintenance Screen
+And User Get the Transaction No in Success PopUo Menu
+And User Click Ok Button in Success PopUp Menu
+@TRS_053_02
+Scenario: Checking Cash Deposit Transaction - Interbranch - Prerequisites ( Allow Back dated Value Date flag  and Allow Post dated Value Date flag - UCheck )
+Given User Navigate to CSMParam application and login with valid credentials
+And User Click on Parameters under CSMParam Application
+And User Click on System Parameters under Parameters Main Menu
+And User Click on Transaction Type under System Parameters Sub Menu
+And User Click on Update After Approve in Transaction Type under System Parameters Sub Menu
+And User Enter the Trx Type in Code under Update After Approve Screen
+And Use Double Click on the Searched Code in Update After Approve Screen
+And User UnCheck the Allow Back dated Value Date flag in Update After Approve Screen
+And User UnCheck the Allow Post dated Value Date flag in Update After Approve Screen
+And User Click on Update After Approve button in Update After Approve Screen
+And User Click Ok Button in Confirm PopUp Menu in Update After Approve Screen
+And User Click Ok Button in Success PopUp Menu in Update After Approve Screen
+And User Click on Approve under Transaction Type
+And User Enter the Trx Type in Code under Approve Screen
+And User Double Click on the Searched Code in Approve Screen
+And User Click on Approve Button in Approve Screen under System Parameters
+And User Click on Ok Button in Confirm PopUp under Approve Screen
+And User Click on Ok Button in Success PopUp under Approve Screen
+@TRS_053_03
+Scenario: Checking Cash Deposit Transaction - Interbranch
+Given User Navigate to CSM application and login with valid credentials
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And User Click on Technical Details Icon
+And User Click Clear Cache in Technical Details Icon
+And User Click Ok Button Under Information PopUp Menu
+And User Click on Transactions under CSM application
+And User Click on Maintenance under Transactions
+And User Click on Search Button in Maintenance Screen
+And User Enter the Transaction No in Search Box
+And User Double Click on the Searched Transaction No in Search Box
+Then User Validate if the Value Date field is Disable
+@TRS_053_04
+Scenario: Checking Cash Deposit Transaction - Interbranch - Prerequisites ( Allow Back dated Value Date flag  and Allow Post dated Value Date flag - Check )
+Given User Navigate to CSMParam application and login with valid credentials
+And User Click on Parameters under CSMParam Application
+And User Click on System Parameters under Parameters Main Menu
+And User Click on Transaction Type under System Parameters Sub Menu
+And User Click on Update After Approve in Transaction Type under System Parameters Sub Menu
+And User Enter the Trx Type in Code under Update After Approve Screen
+And Use Double Click on the Searched Code in Update After Approve Screen
+And User Check the Allow Back dated Value Date flag in Update After Approve Screen
+And User Check the Allow Post dated Value Date flag in Update After Approve Screen
+And User Click on Update After Approve button in Update After Approve Screen
+And User Click Ok Button in Confirm PopUp Menu in Update After Approve Screen
+And User Click Ok Button in Success PopUp Menu in Update After Approve Screen
+And User Click on Approve under Transaction Type
+And User Enter the Trx Type in Code under Approve Screen
+And User Double Click on the Searched Code in Approve Screen
+And User Click on Approve Button in Approve Screen under System Parameters
+And User Click on Ok Button in Confirm PopUp under Approve Screen
+And User Click on Ok Button in Success PopUp under Approve Screen
+
+
+
+
+
+
+
+
+
 
 
 

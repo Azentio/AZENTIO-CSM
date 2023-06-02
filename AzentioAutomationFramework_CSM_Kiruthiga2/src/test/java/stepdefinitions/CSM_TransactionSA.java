@@ -1,8 +1,8 @@
 package stepdefinitions;
 
-import java.util.Iterator;
 import java.util.Map;
 
+import org.junit.Assume;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -30,6 +30,7 @@ public class CSM_TransactionSA extends BaseClass {
 //	Map<String, String> loginTestData = new HashMap<>();
 	Map<String, String> testData;
 	ConfigFileReader configFileReader = new ConfigFileReader();
+	boolean status;
 	
 	//********************************************************** @TSA_158_01 ***********************************************
 	
@@ -46,117 +47,117 @@ public class CSM_TransactionSA extends BaseClass {
 	
 	@And("^User Click on Parameters under SADS application$")
     public void user_click_on_parameters_under_sads_application() throws Throwable {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSParametersMainMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSParametersMainMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSParametersMainMenu());
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSParametersMainMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSParametersMainMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSParametersMainMenu());
     }
 
     @And("^User Click on Account Restrictions in Parameters under SADS application$")
     public void user_click_on_account_restrictions_in_parameters_under_sads_application() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSAccountRestrictionsInParameters());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSAccountRestrictionsInParameters());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSAccountRestrictionsInParameters()); 
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSAccountRestrictionsInParameters());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSAccountRestrictionsInParameters());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSAccountRestrictionsInParameters()); 
     }
 
     @And("^User Click on Maintenance in Account Restrictions under Parameters$")
     public void user_click_on_maintenance_in_account_restrictions_under_parameters() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSMaintenanceInAccountRestrictions());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSMaintenanceInAccountRestrictions());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSMaintenanceInAccountRestrictions()); 
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSMaintenanceInAccountRestrictions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSMaintenanceInAccountRestrictions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSMaintenanceInAccountRestrictions()); 
     }
 
     @And("^User Enter the value in Code under Maintenance Screen$")
     public void user_enter_the_value_in_code_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance()); 
-        //transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys(testData.get("Code")); 
-        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("6598");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterTheValueInCodeUnderMaintenance());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterTheValueInCodeUnderMaintenance());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterTheValueInCodeUnderMaintenance()); 
+        //transactiononstaffaccObj.csmSADSEnterTheValueInCodeUnderMaintenance().sendKeys(testData.get("Code")); 
+        transactiononstaffaccObj.csmSADSEnterTheValueInCodeUnderMaintenance().sendKeys("6598");
     }
 
     @And("^User Enter the value in Description  under Maintenance Screen$")
     public void user_enter_the_value_in_description_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance()); 
-        //transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys(testData.get("Description"));
-        transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys("test");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterTheValueInDescriptionUnderMaintenance());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterTheValueInDescriptionUnderMaintenance());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterTheValueInDescriptionUnderMaintenance()); 
+        //transactiononstaffaccObj.csmSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys(testData.get("Description"));
+        transactiononstaffaccObj.csmSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys("test");
     }
     
     @And("^User Click the CheckBox in Grant Access to Personal Accounts under Maintenance Screen$")
     public void user_click_the_checkbox_in_grant_access_to_personal_accounts_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCheckBoxInGrantAccessToPersonalAccounts());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCheckBoxInGrantAccessToPersonalAccounts());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSCheckBoxInGrantAccessToPersonalAccounts());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSCheckBoxInGrantAccessToPersonalAccounts());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSCheckBoxInGrantAccessToPersonalAccounts());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSCheckBoxInGrantAccessToPersonalAccounts());
     }
 
     @And("^User Click the RootIcon in ApplicationsOROPTs under maintenance secreen$")
     public void user_click_the_rooticon_in_applicationsoropts_under_maintenance_secreen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSRootIconInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSRootIconInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSRootIconInApplicationsOROPTs());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSRootIconInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSRootIconInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSRootIconInApplicationsOROPTs());
     }
 
     @And("^User Click on RADM application in ApplicationsOROPTs$")
     public void user_click_on_radm_application_in_applicationsoropts() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSRADMApplicationInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSRADMApplicationInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSRADMApplicationInApplicationsOROPTs());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSRADMApplicationInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSRADMApplicationInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSRADMApplicationInApplicationsOROPTs());
     }
 
     @And("^User Click on RADM application Checkbox in ApplicationsOROPTs$")
     public void user_click_on_radm_application_checkbox_in_applicationsoropts() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSRADMApplicationCheckboxInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSRADMApplicationCheckboxInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSRADMApplicationCheckboxInApplicationsOROPTs());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSRADMApplicationCheckboxInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSRADMApplicationCheckboxInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSRADMApplicationCheckboxInApplicationsOROPTs());
     }
 
     @And("^User Click on RET application in ApplicationsOROPTs$")
     public void user_click_on_ret_application_in_applicationsoropts() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSRETApplicationInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSRETApplicationInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSRETApplicationInApplicationsOROPTs());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSRETApplicationInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSRETApplicationInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSRETApplicationInApplicationsOROPTs());
     }
 
     @And("^User Click on RET application Checkbox in ApplicationsOROPTs$")
     public void user_click_on_ret_application_checkbox_in_applicationsoropts() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSRETApplicationCheckboxInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSRETApplicationCheckboxInApplicationsOROPTs());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSRETApplicationCheckboxInApplicationsOROPTs());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSRETApplicationCheckboxInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSRETApplicationCheckboxInApplicationsOROPTs());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSRETApplicationCheckboxInApplicationsOROPTs());
     }
 
     @And("^User Click on RootIcon in Companies OR Branches in maintenance secreen$")
     public void user_click_on_rooticon_in_companies_or_branches_in_maintenance_secreen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSRootIconInCompaniesORBranchesInMaintenance());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSRootIconInCompaniesORBranchesInMaintenance());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSRootIconInCompaniesORBranchesInMaintenance());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSRootIconInCompaniesORBranchesInMaintenance());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSRootIconInCompaniesORBranchesInMaintenance());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSRootIconInCompaniesORBranchesInMaintenance());
     }
 
     @And("^User Click on 1 BAJ application in Companies OR Branches$")
     public void user_click_on_1_baj_application_in_companies_or_branches() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS1BAJapplicationInCompaniesORBranches());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS1BAJapplicationInCompaniesORBranches());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADS1BAJapplicationInCompaniesORBranches());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS1BAJapplicationInCompaniesORBranches());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS1BAJapplicationInCompaniesORBranches());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADS1BAJapplicationInCompaniesORBranches());
     }
 
     @And("^User Click on  1 BAJ application Checkbox in Companies OR Branches$")
     public void user_click_on_1_baj_application_checkbox_in_companies_or_branches() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS1BAJApplicationCheckboxInCompaniesORBranches());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS1BAJApplicationCheckboxInCompaniesORBranches());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADS1BAJApplicationCheckboxInCompaniesORBranches());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS1BAJApplicationCheckboxInCompaniesORBranches());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS1BAJApplicationCheckboxInCompaniesORBranches());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADS1BAJApplicationCheckboxInCompaniesORBranches());
     }
 
 
     @And("^User Enter the User ID in UserID tab$")
     public void user_enter_the_user_id_in_userid_tab() throws Throwable {
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
-		        //transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys(testData.get("User ID"));
-		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys("CHRISAG");
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterTheUserIDInUserIDTab());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterTheUserIDInUserIDTab());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterTheUserIDInUserIDTab());
+		        //transactiononstaffaccObj.csmSADSEnterTheUserIDInUserIDTab().sendKeys(testData.get("User ID"));
+		        transactiononstaffaccObj.csmSADSEnterTheUserIDInUserIDTab().sendKeys("CHRISAG");
 		        for (int i = 0; i < 200; i++) {
 					try {						
-						transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys(Keys.ENTER);
+						transactiononstaffaccObj.csmSADSEnterTheUserIDInUserIDTab().sendKeys(Keys.ENTER);
 							break;												
 					} catch (Exception e) {
 						Assert.fail("CannotClickEnter");
@@ -178,63 +179,63 @@ public class CSM_TransactionSA extends BaseClass {
 				}
 			}	
     }
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSUserIDCheckbox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSUserIDCheckbox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSUserIDCheckbox());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSUserIDCheckbox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSUserIDCheckbox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSUserIDCheckbox());
     }
 
     @And("^User Click on Add button in Restriction Type under Maintenance Screen$")
     public void user_click_on_add_button_in_restriction_type_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSAddButtonInRestrictionType());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSAddButtonInRestrictionType());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSAddButtonInRestrictionType());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSAddButtonInRestrictionType());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSAddButtonInRestrictionType());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSAddButtonInRestrictionType());
     }
 
     
     @And("^User Click on Select Icon for GL under Restriction Type$")
     public void user_click_on_select_icon_for_gl_under_restriction_type() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSelectTIconUnderRestrictionType());
-    	//seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.CSMSADSSelectTIconUnderRestrictionType(), testData.get("Restriction Type")); 
-    	seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.CSMSADSSelectTIconUnderRestrictionType(), "GL");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSelectTIconUnderRestrictionType());
+    	//seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.csmSADSSelectTIconUnderRestrictionType(), testData.get("Restriction Type")); 
+    	seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.csmSADSSelectTIconUnderRestrictionType(), "GL");
     }
     
     @And("^User Click on Select Icon for CIF under Restriction Type$")
     public void user_click_on_select_icon_for_cif_under_restriction_type() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSelectTIconUnderRestrictionType());
-    	//seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.CSMSADSSelectTIconUnderRestrictionType(), testData.get("Restriction Type1")); 
-    	seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.CSMSADSSelectTIconUnderRestrictionType(), "CIF");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSelectTIconUnderRestrictionType());
+    	//seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.csmSADSSelectTIconUnderRestrictionType(), testData.get("Restriction Type1")); 
+    	seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.csmSADSSelectTIconUnderRestrictionType(), "CIF");
     }
 
 
     @And("^User Search the GL code in the Restriction Type$")
     public void user_search_the_gl_code_in_the_restriction_type() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchTheGLCode());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchTheGLCode());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSearchTheGLCode());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchTheGLCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchTheGLCode());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSSearchTheGLCode());
     }
 
     @And("^User Enter the GL code in the GL code search popup$")
     public void user_enter_the_gl_code_in_the_gl_code_search_popup() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
-        //transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys(testData.get("GL Code"));
-        transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys("95916");      
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterTheGLCodeInSearchPopUp());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterTheGLCodeInSearchPopUp());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterTheGLCodeInSearchPopUp());
+        //transactiononstaffaccObj.csmSADSEnterTheGLCodeInSearchPopUp().sendKeys(testData.get("GL Code"));
+        transactiononstaffaccObj.csmSADSEnterTheGLCodeInSearchPopUp().sendKeys("95916");      
     }
 
     @And("^User Click on Searched GL code in search popup$")
     public void user_click_on_searched_gl_code_in_search_popup() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSClickSearchedGLCodeInSearchPopup());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSClickSearchedGLCodeInSearchPopup());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSClickSearchedGLCodeInSearchPopup());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSClickSearchedGLCodeInSearchPopup());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSClickSearchedGLCodeInSearchPopup());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSClickSearchedGLCodeInSearchPopup());
     }
 
     @And("^User Click on Account Balance select Tab in Restriction Level$")
     public void user_click_on_account_balance_select_tab_in_restriction_level() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSAccountBalanceSelectTabInRestrictionLevel());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSAccountBalanceSelectTabInRestrictionLevel());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSAccountBalanceSelectTabInRestrictionLevel());
-        seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.CSMSADSAccountBalanceSelectTabInRestrictionLevel(), "All Account Info");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSAccountBalanceSelectTabInRestrictionLevel());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSAccountBalanceSelectTabInRestrictionLevel());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSAccountBalanceSelectTabInRestrictionLevel());
+        seleniumActions.getDropDownHelper().SelectUsingVisibleText(transactiononstaffaccObj.csmSADSAccountBalanceSelectTabInRestrictionLevel(), "All Account Info");
     }
     
     @And("^User Click on Searched CIF No in search popup$")
@@ -243,9 +244,9 @@ public class CSM_TransactionSA extends BaseClass {
 			try {
 				String xpath = "//td[text()='"+"993558"+"']";
 				driver.findElement(By.xpath(xpath)).isDisplayed();
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
-				seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
-		        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADS_SearchedCIFNoInSearchPopup());
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS_SearchedCIFNoInSearchPopup());
+				seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS_SearchedCIFNoInSearchPopup());
+		        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADS_SearchedCIFNoInSearchPopup());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -257,93 +258,93 @@ public class CSM_TransactionSA extends BaseClass {
 
     @And("^User Click on Add Button under Restriction Level$")
     public void user_click_on_add_button_under_restriction_level() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_AddButtonUnderRestrictionType());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_AddButtonUnderRestrictionType());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADS_AddButtonUnderRestrictionType());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS_AddButtonUnderRestrictionType());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS_AddButtonUnderRestrictionType());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADS_AddButtonUnderRestrictionType());
     }
 
     @And("^User Click on Search Icon in  CIF NO Under the Restriction Level$")
     public void user_click_on_search_icon_in_cif_no_under_the_restriction_level() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchIconInCIFNOUnderTheRestrictionLevel());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchIconInCIFNOUnderTheRestrictionLevel());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSearchIconInCIFNOUnderTheRestrictionLevel());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchIconInCIFNOUnderTheRestrictionLevel());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchIconInCIFNOUnderTheRestrictionLevel());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSSearchIconInCIFNOUnderTheRestrictionLevel());
     }
 
     @And("^User Enter the CIF No in the Search box$")
     public void user_enter_the_cif_no_in_the_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
-        //transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys(testData.get("CIF No"));
-        transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys("993558");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterTheCIFNoInTheSearchBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterTheCIFNoInTheSearchBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterTheCIFNoInTheSearchBox());
+        //transactiononstaffaccObj.csmSADSEnterTheCIFNoInTheSearchBox().sendKeys(testData.get("CIF No"));
+        transactiononstaffaccObj.csmSADSEnterTheCIFNoInTheSearchBox().sendKeys("993558");
     }
 
     @And("^User Click on Save Button under Maintenance Screen$")
     public void user_click_on_save_button_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_SaveButtonUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_SaveButtonUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADS_SaveButtonUnderMaintenanceScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS_SaveButtonUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS_SaveButtonUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADS_SaveButtonUnderMaintenanceScreen());
     }
 
     @And("^User Click on Ok Button in Success PopUp Menu$")
     public void user_click_on_ok_button_in_success_popup_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSClickOkButtonInSuccessPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSClickOkButtonInSuccessPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSClickOkButtonInSuccessPopUpMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSClickOkButtonInSuccessPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSClickOkButtonInSuccessPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSClickOkButtonInSuccessPopUpMenu());
     }
 
     @And("^User Click on Approve under Account Restrictions$")
     public void user_click_on_approve_under_account_restrictions() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSApproveUnderAccountRestrictions());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSApproveUnderAccountRestrictions());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSApproveUnderAccountRestrictions());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSApproveUnderAccountRestrictions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSApproveUnderAccountRestrictions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSApproveUnderAccountRestrictions());
     }
 
     @And("^User Enter the Code in Approve Screen$")
     public void user_enter_the_code_in_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        //transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(testData.get("Code"));
-        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("6598");
-        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(Keys.ENTER);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterCodeInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterCodeInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterCodeInApproveScreen());
+        //transactiononstaffaccObj.csmSADSEnterCodeInApproveScreen().sendKeys(testData.get("Code"));
+        transactiononstaffaccObj.csmSADSEnterCodeInApproveScreen().sendKeys("6598");
+        transactiononstaffaccObj.csmSADSEnterCodeInApproveScreen().sendKeys(Keys.ENTER);
     }
 
     @And("^User Click the Selected code in Approve Screen$")
     public void user_click_the_selected_code_in_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_ClickTheSelectedCodeInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_ClickTheSelectedCodeInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADS_ClickTheSelectedCodeInApproveScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS_ClickTheSelectedCodeInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS_ClickTheSelectedCodeInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADS_ClickTheSelectedCodeInApproveScreen());
     }
 
     @And("^User Click on Approve button in Approve Screen$")
     public void user_click_on_approve_button_in_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSApproveButtonInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSApproveButtonInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSApproveButtonInApproveScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSApproveButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSApproveButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSApproveButtonInApproveScreen());
     }
     
     @And("^User Click on Maintenance in User under Parameters$")
     public void user_click_on_maintenance_in_user_under_parameters() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSMaintenanceInUserUnderParameters());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSMaintenanceInUserUnderParameters());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSMaintenanceInUserUnderParameters());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSMaintenanceInUserUnderParameters());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSMaintenanceInUserUnderParameters());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSMaintenanceInUserUnderParameters());
     }
 
     @And("^User Click on Search Button under Maintenance Screen$")
     public void user_click_on_search_button_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchButtonUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchButtonUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSearchButtonUnderMaintenanceScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchButtonUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchButtonUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSSearchButtonUnderMaintenanceScreen());
     }
 
     @And("^User Enter User ID in search under Maintenance Screen$")
     public void user_enter_user_id_in_search_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
-        //transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys(testData.get("User ID"),Keys.ENTER);
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys("CHRISAG",Keys.ENTER);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderMaintenanceScreen());
+        //transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys(testData.get("User ID"),Keys.ENTER);
+        transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys("CHRISAG",Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Maintenance Screen$")
@@ -359,18 +360,18 @@ public class CSM_TransactionSA extends BaseClass {
 				}
 			}	
     }    	 	
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchedIDUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchedIDUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSSearchedIDUnderMaintenanceScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchedIDUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchedIDUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSSearchedIDUnderMaintenanceScreen());
     }
     
     @And("^User Click on Company Search Button in Employee Details$")
     public void user_click_on_company_search_button_in_emplouee_details() throws Throwable {
     	for (int i = 0; i < 200; i++) {
 			try {
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCompanySearchButtonInEmployeeDetails());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCompanySearchButtonInEmployeeDetails());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSCompanySearchButtonInEmployeeDetails());	   
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSCompanySearchButtonInEmployeeDetails());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSCompanySearchButtonInEmployeeDetails());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSCompanySearchButtonInEmployeeDetails());	   
 		        break;		        
 			} catch (Exception e) {
 				if (i==199) {
@@ -383,92 +384,92 @@ public class CSM_TransactionSA extends BaseClass {
     	        
     @And("^User Enter the Company Code in Search Box$")
     public void user_enter_the_company_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCompanyCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCompanyCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSCompanyCodeInSearchBox());
-        transactiononstaffaccObj.CSMSADSCompanyCodeInSearchBox().sendKeys("1");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSCompanyCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSCompanyCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSCompanyCodeInSearchBox());
+        transactiononstaffaccObj.csmSADSCompanyCodeInSearchBox().sendKeys("1");
     }
 
     @And("^User Double Click on the Company Searched Code in Search Box$")
     public void user_double_click_on_the_company_searched_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDoubleClickOnTheCompanySearchedCode());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDoubleClickOnTheCompanySearchedCode());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSDoubleClickOnTheCompanySearchedCode());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDoubleClickOnTheCompanySearchedCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDoubleClickOnTheCompanySearchedCode());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSDoubleClickOnTheCompanySearchedCode());
     }
 
     @And("^User Click on Branch Search Button in Employee Details$")
     public void user_click_on_branch_search_button_in_emplouee_details() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSBranchSearchButtonInEmployeeDetails());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSBranchSearchButtonInEmployeeDetails());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSBranchSearchButtonInEmployeeDetails());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSBranchSearchButtonInEmployeeDetails());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSBranchSearchButtonInEmployeeDetails());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSBranchSearchButtonInEmployeeDetails());
     }
 
     @And("^User Enter the Branch Code in Search Box$")
     public void user_enter_the_branch_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSBranchCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSBranchCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSBranchCodeInSearchBox());
-        transactiononstaffaccObj.CSMSADSBranchCodeInSearchBox().sendKeys("1");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSBranchCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSBranchCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSBranchCodeInSearchBox());
+        transactiononstaffaccObj.csmSADSBranchCodeInSearchBox().sendKeys("1");
     }
 
     @And("^User Double Click on the Branch Searched Code in Search Box$")
     public void user_double_click_on_the_branch_searched_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDoubleClickOnTheBranchSearchedCode());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDoubleClickOnTheBranchSearchedCode());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSDoubleClickOnTheBranchSearchedCode());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDoubleClickOnTheBranchSearchedCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDoubleClickOnTheBranchSearchedCode());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSDoubleClickOnTheBranchSearchedCode());
     }
 
     @And("^User Click on Division Search Button in Employee Details$")
     public void user_click_on_division_search_button_in_emplouee_details() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDivisionSearchButtonInEmployeeDetails());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDivisionSearchButtonInEmployeeDetails());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSDivisionSearchButtonInEmployeeDetails());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDivisionSearchButtonInEmployeeDetails());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDivisionSearchButtonInEmployeeDetails());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSDivisionSearchButtonInEmployeeDetails());
     }
 
     @And("^User Enter the Division Code in Search Box$")
     public void user_enter_the_division_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDivisionCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDivisionCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSDivisionCodeInSearchBox());
-        transactiononstaffaccObj.CSMSADSDivisionCodeInSearchBox().sendKeys("1");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDivisionCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDivisionCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSDivisionCodeInSearchBox());
+        transactiononstaffaccObj.csmSADSDivisionCodeInSearchBox().sendKeys("1");
     }
 
     @And("^User Double Click on the Division Searched Code in Search Box$")
     public void user_double_click_on_the_division_searched_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDoubleClickOnTheDivisionSearchedCode());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDoubleClickOnTheDivisionSearchedCode());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSDoubleClickOnTheDivisionSearchedCode());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDoubleClickOnTheDivisionSearchedCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDoubleClickOnTheDivisionSearchedCode());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSDoubleClickOnTheDivisionSearchedCode());
     }
 
     @And("^User Click on Department Search Button in Employee Details$")
     public void user_click_on_department_search_button_in_emplouee_details() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDepartmentSearchButtonInEmployeeDetails());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDepartmentSearchButtonInEmployeeDetails());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSDepartmentSearchButtonInEmployeeDetails());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDepartmentSearchButtonInEmployeeDetails());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDepartmentSearchButtonInEmployeeDetails());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSDepartmentSearchButtonInEmployeeDetails());
     }
 
     @And("^User Enter the Department Code in Search Box$")
     public void user_enter_the_department_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDepartmentCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDepartmentCodeInSearchBox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSDepartmentCodeInSearchBox());
-        transactiononstaffaccObj.CSMSADSDepartmentCodeInSearchBox().sendKeys("1");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDepartmentCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDepartmentCodeInSearchBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSDepartmentCodeInSearchBox());
+        transactiononstaffaccObj.csmSADSDepartmentCodeInSearchBox().sendKeys("1");
     }
 
     @And("^User Double Click on the Department Searched Code in Search Box$")
     public void user_double_click_on_the_department_searched_code_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSDoubleClickOnTheDepartmentSearchedCode());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSDoubleClickOnTheDepartmentSearchedCode());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSDoubleClickOnTheDepartmentSearchedCode());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSDoubleClickOnTheDepartmentSearchedCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSDoubleClickOnTheDepartmentSearchedCode());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSDoubleClickOnTheDepartmentSearchedCode());
     }
 
     @And("^User Click on CIF Search Button in Employee Details under Maintenance Screen$")
     public void user_click_on_search_button_in_employee_details_under_maintenance_screen() throws Throwable {
     	for (int i = 0; i < 200; i++) {
 			try {
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchButtonInEmployeeDetails());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchButtonInEmployeeDetails());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSearchButtonInEmployeeDetails());
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchButtonInEmployeeDetails());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchButtonInEmployeeDetails());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSSearchButtonInEmployeeDetails());
 		        break;		        
 			} catch (Exception e) {
 				if (i==199) {
@@ -481,11 +482,11 @@ public class CSM_TransactionSA extends BaseClass {
 
     @And("^User Enter the CIF No in SearchBox$")
     public void user_enter_the_cif_no_in_searchbox() throws Throwable {   	
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCIFNoInSearchBox());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCIFNoInSearchBox());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSCIFNoInSearchBox());
-		        //transactiononstaffaccObj.CSMSADSCIFNoInSearchBox().sendKeys(testData.get("CIF No"));
-		        transactiononstaffaccObj.CSMSADSCIFNoInSearchBox().sendKeys("993558");
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSCIFNoInSearchBox());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSCIFNoInSearchBox());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSCIFNoInSearchBox());
+		        //transactiononstaffaccObj.csmSADSCIFNoInSearchBox().sendKeys(testData.get("CIF No"));
+		        transactiononstaffaccObj.csmSADSCIFNoInSearchBox().sendKeys("993558");
 	}
     
     @And("^User Click the Searched CIF NO in Search Box$")
@@ -494,9 +495,9 @@ public class CSM_TransactionSA extends BaseClass {
 			try {
 				String xpath = "//td[text()='"+"993558"+"']";
 				driver.findElement(By.xpath(xpath)).isDisplayed();	
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCSearchedCIFNOInSearchBox());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCSearchedCIFNOInSearchBox());
-		        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSCSearchedCIFNOInSearchBox());
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSCSearchedCIFNOInSearchBox());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSCSearchedCIFNOInSearchBox());
+		        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSCSearchedCIFNOInSearchBox());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -508,11 +509,11 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Check the Physical User CheckBox in Privilege under Maintenance Screen$")
     public void user_check_the_physical_user_checkbox_in_privilege_under_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCheckThePhysicalUserCheckBoxInPrivilege());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSCheckThePhysicalUserCheckBoxInPrivilege());
         try {
-			if (transactiononstaffaccObj.CSMSADSCheckThePhysicalUserCheckBoxInPrivilege().getAttribute("checked").equalsIgnoreCase("checked")) {
-				seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCheckThePhysicalUserCheckBoxInPrivilege());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSCheckThePhysicalUserCheckBoxInPrivilege());
+			if (transactiononstaffaccObj.csmSADSCheckThePhysicalUserCheckBoxInPrivilege().getAttribute("checked").equalsIgnoreCase("checked")) {
+				seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSCheckThePhysicalUserCheckBoxInPrivilege());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSCheckThePhysicalUserCheckBoxInPrivilege());
 			}
 		} catch (Exception e) {
 			
@@ -521,16 +522,16 @@ public class CSM_TransactionSA extends BaseClass {
 
     @And("^User Click on Save Button in Maintenance Screen$")
     public void user_click_on_save_button_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSaveButtonInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSaveButtonInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSaveButtonInMaintenanceScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSaveButtonInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSaveButtonInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSSaveButtonInMaintenanceScreen());
     }
 
     @And("^User Click on Ok Button in Success PopUp in User$")
     public void user_click_on_ok_button_in_success_popup_in_user() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSOkButtonInSuccessPopUpInUser());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSOkButtonInSuccessPopUpInUser());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSOkButtonInSuccessPopUpInUser());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSOkButtonInSuccessPopUpInUser());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSOkButtonInSuccessPopUpInUser());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSOkButtonInSuccessPopUpInUser());
     }
     	
     
@@ -544,55 +545,55 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Click on Parameter in SADS Application$")
     public void user_click_on_parameter_in_sads_application() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSParameterInSADSApplication());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSParameterInSADSApplication());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSParameterInSADSApplication());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSParameterInSADSApplication());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSParameterInSADSApplication());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSParameterInSADSApplication());
     }
 
     @And("^User Click on User in Parameters under SADS application$")
     public void user_click_on_user_in_parameters_under_sads_application() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSUserInParametersUnderSADSApplication());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSUserInParametersUnderSADSApplication());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSUserInParametersUnderSADSApplication());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSUserInParametersUnderSADSApplication());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSUserInParametersUnderSADSApplication());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSUserInParametersUnderSADSApplication());
     }
 
     @And("^User Click on Approve in User under Parameters$")
     public void user_click_on_approve_in_user_under_parameters() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSApproveInUserUnderParameters());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSApproveInUserUnderParameters());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSApproveInUserUnderParameters());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSApproveInUserUnderParameters());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSApproveInUserUnderParameters());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSApproveInUserUnderParameters());
     }
 
     @And("^User Click on Search Button under Approve Screen$")
     public void user_click_on_search_button_under_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchButtonUnderApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchButtonUnderApproveScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSearchButtonUnderApproveScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchButtonUnderApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchButtonUnderApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSSearchButtonUnderApproveScreen());
     }
 
     @And("^User Enter User ID in search under Approve Screen$")
     public void user_enter_user_id_in_search_under_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
-        //transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys(testData.get("User ID"),Keys.ENTER);
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("CHRISAG",Keys.ENTER);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderApproveScreen());
+        //transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderApproveScreen().sendKeys(testData.get("User ID"),Keys.ENTER);
+        transactiononstaffaccObj.csmSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("CHRISAG",Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Approve Screen$")
     public void user_click_on_searched_id_under_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSSearchedIDunderApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSSearchedIDunderApproveScreen());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMSADSSearchedIDunderApproveScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSSearchedIDunderApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSSearchedIDunderApproveScreen());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmSADSSearchedIDunderApproveScreen());
     }
 
     @And("^User Click on Approve button in Approve Screen under Parameter$")
     public void user_click_on_approve_button_in_approve_screen_under_parameter() throws Throwable {
     	for (int i = 0; i < 200; i++) {
     		try {
-    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADS_ClickApproveButtonInApproveScreen());
-    	        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADS_ClickApproveButtonInApproveScreen());
-    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADS_ClickApproveButtonInApproveScreen()); 	        
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADS_ClickApproveButtonInApproveScreen());
+    	        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADS_ClickApproveButtonInApproveScreen());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADS_ClickApproveButtonInApproveScreen()); 	        
     	        break;
 			} catch (Exception e) {
 					if (i==199) {
@@ -606,9 +607,9 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Click Ok button in Success Popup in User Approve$")
     public void user_click_ok_button_in_success_popup_in_user_approve() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSOkButtonInSuccessPopupInUserApprove());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSOkButtonInSuccessPopupInUserApprove());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSOkButtonInSuccessPopupInUserApprove()); 
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSADSOkButtonInSuccessPopupInUserApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSADSOkButtonInSuccessPopupInUserApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSADSOkButtonInSuccessPopupInUserApprove()); 
     }
 
     
@@ -622,140 +623,140 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Click on Date to Change the Current Date$")
     public void user_click_on_date_to_change_the_current_date() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMDateToChangeTheCurrentDate());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDateToChangeTheCurrentDate());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMDateToChangeTheCurrentDate());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmDateToChangeTheCurrentDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmDateToChangeTheCurrentDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmDateToChangeTheCurrentDate());
     }
 
     @And("^User Enter the Date in User Running Date$")
     public void user_enter_the_date_in_user_running_date() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMDateInUserRunningDate());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
-        transactiononstaffaccObj.CSMDateInUserRunningDate().clear();
-        //transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(testData.get("Date in URD"));
-        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys("25/05/2023");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmDateInUserRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmDateInUserRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmDateInUserRunningDate());
+        transactiononstaffaccObj.csmDateInUserRunningDate().clear();
+        //transactiononstaffaccObj.csmDateInUserRunningDate().sendKeys(testData.get("Date in URD"));
+        transactiononstaffaccObj.csmDateInUserRunningDate().sendKeys("01/06/2023");
     }
 
     @And("^User Click on Use Button in Change Running Date Popup$")
     public void user_click_on_use_button_in_change_running_date_popup() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmUseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmUseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmUseButtonInChangeRunningDate());
     }
 
     @And("^User Click Ok Button in Information PopUp menu$")
     public void user_click_ok_button_in_information_popup_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInAccessDeniedPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInAccessDeniedPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInAccessDeniedPopUpMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInAccessDeniedPopUpMenu());
     }
 
     @And("^User Click on Close Button in Change Running Date Popup$")
     public void user_click_on_close_button_in_change_running_date_popup() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCloseButtonInChangeRunningDate());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCloseButtonInChangeRunningDate());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCloseButtonInChangeRunningDate());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCloseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCloseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCloseButtonInChangeRunningDate());
     }
 
     @And("^User Click on Technical Details Icon$")
     public void user_click_on_technical_details_icon() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMTechnicalDetailsIcon());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMTechnicalDetailsIcon());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMTechnicalDetailsIcon()); 
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmTechnicalDetailsIcon());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmTechnicalDetailsIcon());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmTechnicalDetailsIcon()); 
     }
     
     @And("^User Click Clear Cache in Technical Details Icon$")
     public void user_click_clear_cache_in_technical_details_icon() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM_ClearCacheInTechnicalDetailsIcon());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSM_ClearCacheInTechnicalDetailsIcon());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSM_ClearCacheInTechnicalDetailsIcon()); 
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csm_ClearCacheInTechnicalDetailsIcon());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csm_ClearCacheInTechnicalDetailsIcon());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csm_ClearCacheInTechnicalDetailsIcon()); 
     }
     
     @And("^User Click Ok Button Under Information PopUp Menu$")
     public void user_click_ok_button_under_information_popup_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonUnderInformationPopUp());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonUnderInformationPopUp());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonUnderInformationPopUp());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonUnderInformationPopUp());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonUnderInformationPopUp());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonUnderInformationPopUp());
     }	
 
     @And("^User Click on Transactions under CSM application$")
     public void user_click_on_transactions_under_csm_application() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMTransactionsMainMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMTransactionsMainMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMTransactionsMainMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmTransactionsMainMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmTransactionsMainMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmTransactionsMainMenu());
     }
 
     @And("^User Click on Maintenance under Transactions$")
     public void user_click_on_maintenance_under_transactions() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMMaintenanceUnderTransactions());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMMaintenanceUnderTransactions());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMMaintenanceUnderTransactions());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmMaintenanceUnderTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmMaintenanceUnderTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmMaintenanceUnderTransactions());
     }
 
     @And("^User Enter TRX Type in Maintenance Screen$")
     public void user_enter_trx_type_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen());
-        //transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen().sendKeys(testData.get("Trx Type"),Keys.TAB);
-        transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen().sendKeys("377",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen());
+        //transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen().sendKeys(testData.get("Trx Type"),Keys.TAB);
+        transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen().sendKeys("377",Keys.TAB);
         
     }
     
     @And("^User Enter the Branch Code in Credit Ac in Maintenance Screen$")
     public void user_enter_the_branch_code_in_credit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMBranchCodeInCreditAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMBranchCodeInCreditAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMBranchCodeInCreditAc());
-        //transactiononstaffaccObj.CSMBranchCodeInCreditAc().sendKeys(testData.get("Branch Code"),Keys.TAB);
-        transactiononstaffaccObj.CSMBranchCodeInCreditAc().sendKeys("1",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmBranchCodeInCreditAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmBranchCodeInCreditAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmBranchCodeInCreditAc());
+        //transactiononstaffaccObj.csmBranchCodeInCreditAc().sendKeys(testData.get("Branch Code"),Keys.TAB);
+        transactiononstaffaccObj.csmBranchCodeInCreditAc().sendKeys("1",Keys.TAB);
     }
 
 
     @And("^User Enter Currency Code in Credit Ac in Maintenance Screen$")
     public void user_enter_currency_code_in_credit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCurrencyCodeCreditAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCurrencyCodeCreditAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCurrencyCodeCreditAc());
-        //transactiononstaffaccObj.CSMCurrencyCodeCreditAc().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
-        transactiononstaffaccObj.CSMCurrencyCodeCreditAc().sendKeys("840",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCurrencyCodeCreditAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCurrencyCodeCreditAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCurrencyCodeCreditAc());
+        //transactiononstaffaccObj.csmCurrencyCodeCreditAc().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
+        transactiononstaffaccObj.csmCurrencyCodeCreditAc().sendKeys("840",Keys.TAB);
     }
     
     @And("^User Enter GL Code in Credit Ac in Maintenance Screen$")
     public void user_enter_gl_code_in_credit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMGLCodeCreditAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMGLCodeCreditAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMGLCodeCreditAc());
-        //transactiononstaffaccObj.CSMGLCodeCreditAc().sendKeys(testData.get("GL Code"),Keys.TAB);
-        transactiononstaffaccObj.CSMGLCodeCreditAc().sendKeys("95916",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmGLCodeCreditAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmGLCodeCreditAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmGLCodeCreditAc());
+        //transactiononstaffaccObj.csmGLCodeCreditAc().sendKeys(testData.get("GL Code"),Keys.TAB);
+        transactiononstaffaccObj.csmGLCodeCreditAc().sendKeys("95916",Keys.TAB);
     }
     
     @And("^User Enter CIF Code in Credit Ac in Maintenance Screen$")
     public void user_enter_cif_code_in_credit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCIFCodeInCreditAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCIFCodeInCreditAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCIFCodeInCreditAc());
-        //transactiononstaffaccObj.CSMCIFCodeInCreditAc().sendKeys(testData.get("CIF No"),Keys.TAB);
-        transactiononstaffaccObj.CSMCIFCodeInCreditAc().sendKeys("993558",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCIFCodeInCreditAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCIFCodeInCreditAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCIFCodeInCreditAc());
+        //transactiononstaffaccObj.csmCIFCodeInCreditAc().sendKeys(testData.get("CIF No"),Keys.TAB);
+        transactiononstaffaccObj.csmCIFCodeInCreditAc().sendKeys("993558",Keys.TAB);
     }
 
     @And("^User Enter Serial in Credit Ac in Maintenance Screen$")
     public void user_enter_serial_in_credit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSerialInCreditAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSerialInCreditAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSerialInCreditAc());
-        //transactiononstaffaccObj.CSMSerialInCreditAc().sendKeys(testData.get("Serial"),Keys.TAB);
-        transactiononstaffaccObj.CSMSerialInCreditAc().sendKeys("0",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSerialInCreditAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSerialInCreditAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSerialInCreditAc());
+        //transactiononstaffaccObj.csmSerialInCreditAc().sendKeys(testData.get("Serial"),Keys.TAB);
+        transactiononstaffaccObj.csmSerialInCreditAc().sendKeys("0",Keys.TAB);
     }
 
     @And("^User Click Ok Button in Warning PopUp Menu$")
     public void user_click_ok_button_in_warning_popup_menu() throws Throwable {
     	for (int i = 0; i < 200; i++) {
     		try {
-    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInWarningPopUpMenu());
-    	        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInWarningPopUpMenu());
-    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInWarningPopUpMenu());
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInWarningPopUpMenu());
+    	        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInWarningPopUpMenu());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInWarningPopUpMenu());
     	        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -770,11 +771,11 @@ public class CSM_TransactionSA extends BaseClass {
     	
     	for (int i = 0; i < 200; i++) {
     		try {
-    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCurrencyInMaintenanceScreen());
-    			seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCurrencyInMaintenanceScreen());
-    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCurrencyInMaintenanceScreen());
-    	        //transactiononstaffaccObj.CSMCurrencyInMaintenanceScreen().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
-    	        transactiononstaffaccObj.CSMCurrencyInMaintenanceScreen().sendKeys("840",Keys.TAB);
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCurrencyInMaintenanceScreen());
+    			seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCurrencyInMaintenanceScreen());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCurrencyInMaintenanceScreen());
+    	        //transactiononstaffaccObj.csmCurrencyInMaintenanceScreen().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
+    	        transactiononstaffaccObj.csmCurrencyInMaintenanceScreen().sendKeys("840",Keys.TAB);
         break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -787,20 +788,20 @@ public class CSM_TransactionSA extends BaseClass {
     
 //    @And("^User Click Transactions Maintenance for loading Currency code$")
 //    public void user_click_transactions_maintenance_for_loading_currency_code() throws Throwable {
-//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM_TransactionsMaintenanceForLoading());
-//        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSM_TransactionsMaintenanceForLoading());
-//        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSM_TransactionsMaintenanceForLoading());
+//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csm_TransactionsMaintenanceForLoading());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csm_TransactionsMaintenanceForLoading());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csm_TransactionsMaintenanceForLoading());
 //    }
 
     @And("^User Enter the Amount in Maintenance Screen$")
     public void user_enter_the_amount_in_maintenance_screen() throws Throwable {
     	for (int i = 0; i < 200; i++) {
     		try {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMAmountInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMAmountInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMAmountInMaintenanceScreen());
-        //transactiononstaffaccObj.CSMAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
-        transactiononstaffaccObj.CSMAmountInMaintenanceScreen().sendKeys("1000",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        //transactiononstaffaccObj.csmAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
+        transactiononstaffaccObj.csmAmountInMaintenanceScreen().sendKeys("1000",Keys.TAB);
         break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -811,8 +812,8 @@ public class CSM_TransactionSA extends BaseClass {
  	
     	for (int i = 0; i < 200; i++) {
    		try {
-   			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCurrencyName());
-    		transactiononstaffaccObj.CSMCurrencyName().isDisplayed();
+   			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCurrencyName());
+    		transactiononstaffaccObj.csmCurrencyName().isDisplayed();
     			break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -822,21 +823,23 @@ public class CSM_TransactionSA extends BaseClass {
 		}
     
     }
+    
+    
  
 //    @And("^User Click Transactions Maintenance for loading Amount$")
 //    public void user_click_transactions_maintenance_for_loading_amount() throws Throwable {
-//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM_TransactionsMaintenanceForLoading());
-//        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSM_TransactionsMaintenanceForLoading());
-//        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSM_TransactionsMaintenanceForLoading());
+//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csm_TransactionsMaintenanceForLoading());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csm_TransactionsMaintenanceForLoading());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csm_TransactionsMaintenanceForLoading());
 //    }
 
     @And("^User Click Save Button in Maintenance Screen$")
     public void user_click_save_button_in_maintenance_screen() throws Throwable {
     	for (int i = 0; i <200; i++) {
 			try {			
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
-		    	seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
-		    	seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSaveButtonInMaintenanceScreen());
+		    	seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSaveButtonInMaintenanceScreen());
+		    	seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSaveButtonInMaintenanceScreen());
 		    	break;										
 			} catch (Exception e) {
 				if (i==199) {
@@ -851,7 +854,7 @@ public class CSM_TransactionSA extends BaseClass {
     	String text = "";
         for (int i = 0; i <200; i++) {
 			try {
-				text = transactiononstaffaccObj.CSMGetTheTransactionNo().getText();
+				text = transactiononstaffaccObj.csmGetTheTransactionNo().getText();
 			    break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -867,9 +870,9 @@ public class CSM_TransactionSA extends BaseClass {
     public void user_click_ok_button_in_success_popup_menu() throws Throwable {
     	for (int i = 0; i < 200; i++) {
     		try {
-    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInSuccessPopUpMenu());
-    	        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInSuccessPopUpMenu());
-    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInSuccessPopUpMenu());
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInSuccessPopUpMenu());
+    	        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInSuccessPopUpMenu());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInSuccessPopUpMenu());
     	        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -881,139 +884,139 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Click on Approve Screen under Transactions$")
     public void user_click_on_approve_screen_under_transactions() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMApproveScreenUnderTransactions());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMApproveScreenUnderTransactions());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMApproveScreenUnderTransactions());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmApproveScreenUnderTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmApproveScreenUnderTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmApproveScreenUnderTransactions());
     }
 
     @And("^User Enter the Transaction No in Approve Screen$")
     public void user_enter_the_transaction_no_in_approve_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMTransactionNoInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMTransactionNoInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMTransactionNoInApproveScreen());
-        transactiononstaffaccObj.CSMTransactionNoInApproveScreen().sendKeys("7804", Keys.ENTER);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmTransactionNoInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmTransactionNoInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmTransactionNoInApproveScreen());
+        transactiononstaffaccObj.csmTransactionNoInApproveScreen().sendKeys("7609", Keys.ENTER);
     }
 
     @And("^User Double Click on the Transaction No$")
     public void user_double_click_on_the_transaction_no() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMDoubleClickOnTheTransactionNo());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDoubleClickOnTheTransactionNo());
-        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMDoubleClickOnTheTransactionNo());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmDoubleClickOnTheTransactionNo());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmDoubleClickOnTheTransactionNo());
+        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmDoubleClickOnTheTransactionNo());
     }
     
     @And("^User Click on Approve Button for approve the Transaction$")
     public void user_click_on_approve_button_for_approve_the_transaction() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMApproveButtonInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMApproveButtonInApproveScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMApproveButtonInApproveScreen());
-    }	
-
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmApproveButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmApproveButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmApproveButtonInApproveScreen());
+    }
+    
     @And("^User Click on Ok Button in Success PopUp Menu for Approve Transcation$")
-    public void user_click_on_ok_button_in_success_popup_menu_for_transcation() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInSuccessPopUpMenuForTranscation());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInSuccessPopUpMenuForTranscation());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInSuccessPopUpMenuForTranscation());
+    public void user_click_on_ok_button_in_success_popup_menu_for_approve_transcation() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInSuccessPopUpMenuForTranscation());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInSuccessPopUpMenuForTranscation());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInSuccessPopUpMenuForTranscation());
     }
 
     @And("^User Click on Queries under CSM application$")
     public void user_click_on_queries_under_csm_application() throws Throwable {
-    	seleniumActions.getJavascriptHelper().scrollIntoView(transactiononstaffaccObj.CSMQueriesMainMenu());
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMQueriesMainMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMQueriesMainMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMQueriesMainMenu());
+    	seleniumActions.getJavascriptHelper().scrollIntoView(transactiononstaffaccObj.csmQueriesMainMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmQueriesMainMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmQueriesMainMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmQueriesMainMenu());
     }
 
     @And("^User Click on Statement Of Accounts in Queries under CSM application$")
     public void user_click_on_statement_of_accounts_in_queries_under_csm_application() throws Throwable {
-    	//seleniumActions.getJavascriptHelper().scrollIntoView(transactiononstaffaccObj.CSMStatementOfAccountsInQueries());
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMStatementOfAccountsInQueries());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMStatementOfAccountsInQueries());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMStatementOfAccountsInQueries());
+    	//seleniumActions.getJavascriptHelper().IntoView(transactiononstaffaccObj.csmStatementOfAccountsInQueries());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmStatementOfAccountsInQueries());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmStatementOfAccountsInQueries());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmStatementOfAccountsInQueries());
     }
 
     @And("^User Click on By Trade Date under Statement Of Accounts Sub Menu$")
     public void user_click_on_by_trade_date_under_statement_of_accounts_sub_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMByTradeDateUnderStatementOfAccountsSubMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMByTradeDateUnderStatementOfAccountsSubMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMByTradeDateUnderStatementOfAccountsSubMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmByTradeDateUnderStatementOfAccountsSubMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmByTradeDateUnderStatementOfAccountsSubMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmByTradeDateUnderStatementOfAccountsSubMenu());
     }
 
     @And("^User Enter the Currency Value in Account under By Trade Date Screen$")
     public void user_enter_the_currency_value_in_account_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen());
-        //transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
-        transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys("840",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCurrencyValueIinAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCurrencyValueIinAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCurrencyValueIinAccountUnderByTradeDateScreen());
+        //transactiononstaffaccObj.csmCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
+        transactiononstaffaccObj.csmCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys("840",Keys.TAB);
     }
 
     @And("^User Enter the GL Code in Account under By Trade Date Screen$")
     public void user_enter_the_gl_code_in_account_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen());
-        //transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen().sendKeys(testData.get("GL Code"),Keys.TAB);
-        transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen().sendKeys("96136",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmGLCodeInAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmGLCodeInAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmGLCodeInAccountUnderByTradeDateScreen());
+        //transactiononstaffaccObj.csmGLCodeInAccountUnderByTradeDateScreen().sendKeys(testData.get("GL Code"),Keys.TAB);
+        transactiononstaffaccObj.csmGLCodeInAccountUnderByTradeDateScreen().sendKeys("96136",Keys.TAB);
     }
 
     @And("^User Enter the CIF Code in Account under By Trade Date Screen$")
     public void user_enter_the_cif_code_in_account_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen());
-        //transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen().sendKeys(testData.get("CIF No"),Keys.TAB);
-        transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen().sendKeys("993561",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCIFCodeInAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCIFCodeInAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCIFCodeInAccountUnderByTradeDateScreen());
+        //transactiononstaffaccObj.csmCIFCodeInAccountUnderByTradeDateScreen().sendKeys(testData.get("CIF No"),Keys.TAB);
+        transactiononstaffaccObj.csmCIFCodeInAccountUnderByTradeDateScreen().sendKeys("993561",Keys.TAB);
     }
 
     @And("^User Enter the Serial in Account under By Trade Date Screen$")
     public void user_enter_the_serial_in_account_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen());
-        //transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen().sendKeys(testData.get("Serial"),Keys.TAB);
-        transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen().sendKeys("0",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSerialInAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSerialInAccountUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSerialInAccountUnderByTradeDateScreen());
+        //transactiononstaffaccObj.csmSerialInAccountUnderByTradeDateScreen().sendKeys(testData.get("Serial"),Keys.TAB);
+        transactiononstaffaccObj.csmSerialInAccountUnderByTradeDateScreen().sendKeys("0",Keys.TAB);
     }
 
     @And("^User Enter From Date in Periodicity Of Statement under By Trade Date Screen$")
     public void user_enter_from_date_in_periodicity_of_statement_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement());
-        transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement().clear();
-        //transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement().sendKeys(testData.get("From Date"));
-        transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement().sendKeys("25/05/2023");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmFromDateInPeriodicityOfStatement());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmFromDateInPeriodicityOfStatement());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmFromDateInPeriodicityOfStatement());
+        transactiononstaffaccObj.csmFromDateInPeriodicityOfStatement().clear();
+        //transactiononstaffaccObj.csmFromDateInPeriodicityOfStatement().sendKeys(testData.get("From Date"));
+        transactiononstaffaccObj.csmFromDateInPeriodicityOfStatement().sendKeys("25/05/2023");
     }
 
     @And("^User Enter To Date in Periodicity Of Statement under By Trade Date Screen$")
     public void user_enter_to_date_in_periodicity_of_statement_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement());
-        transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement().clear();
-        //transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement().sendKeys(testData.get("To Date"));
-        transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement().sendKeys("29/05/2023");
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmToDateInPeriodicityOfStatement());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmToDateInPeriodicityOfStatement());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmToDateInPeriodicityOfStatement());
+        transactiononstaffaccObj.csmToDateInPeriodicityOfStatement().clear();
+        //transactiononstaffaccObj.csmToDateInPeriodicityOfStatement().sendKeys(testData.get("To Date"));
+        transactiononstaffaccObj.csmToDateInPeriodicityOfStatement().sendKeys("29/05/2023");
     }
 
     @And("^User Click Retrieve Button under By Trade Date Screen$")
     public void user_click_retrieve_button_under_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMRetrieveButtonUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMRetrieveButtonUnderByTradeDateScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMRetrieveButtonUnderByTradeDateScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmRetrieveButtonUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmRetrieveButtonUnderByTradeDateScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmRetrieveButtonUnderByTradeDateScreen());
     }
 
     @And("^User Click on Ok Button in Access Denied PopUp Menu$")
     public void user_click_on_ok_button_in_access_denied_popup_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInAccessDeniedPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInAccessDeniedPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInAccessDeniedPopUpMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInAccessDeniedPopUpMenu());
     }
     
     @Then("^User Validate If the Statement of Account Displayed as Access Denied$")
     public void user_validate_if_the_statement_of_account_displayed_as_access_denied() throws Throwable {
     	for (int i = 0; i <200; i++) {
     		try {
-    			//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMValidateIfTheStatementOfAccountDisplayedAsAccessDenied());
-    	        Assert.assertTrue(transactiononstaffaccObj.CSMValidateIfTheStatementOfAccountDisplayedAsAccessDenied().isDisplayed());
+    			//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmValidateIfTheStatementOfAccountDisplayedAsAccessDenied());
+    	        Assert.assertTrue(transactiononstaffaccObj.csmValidateIfTheStatementOfAccountDisplayedAsAccessDenied().isDisplayed());
     	        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -1025,8 +1028,8 @@ public class CSM_TransactionSA extends BaseClass {
     
     @Then("^User Validate If the Statement of Account is Displayed$")
     public void user_validate_if_the_statement_of_account_is_displayed() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMValidateIfTheStatementOfAccountIsDisplayed());
-        Assert.assertTrue(transactiononstaffaccObj.CSMValidateIfTheStatementOfAccountIsDisplayed().isDisplayed());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmValidateIfTheStatementOfAccountIsDisplayed());
+        Assert.assertTrue(transactiononstaffaccObj.csmValidateIfTheStatementOfAccountIsDisplayed().isDisplayed());
     }
 
     
@@ -1036,9 +1039,9 @@ public class CSM_TransactionSA extends BaseClass {
     public void user_click_close_button_in_view_memo_popup_menu() throws Throwable {
     	for (int i = 0; i < 50; i++) {
 			try {
-				if (transactiononstaffaccObj.CSMCloseButtonInViewMemoPopupMenu().isEnabled()) {
-					seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCloseButtonInViewMemoPopupMenu());
-		    	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCloseButtonInViewMemoPopupMenu());
+				if (transactiononstaffaccObj.csmCloseButtonInViewMemoPopupMenu().isEnabled()) {
+					seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCloseButtonInViewMemoPopupMenu());
+		    	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCloseButtonInViewMemoPopupMenu());
 		    	    break;
 				}
 								
@@ -1046,46 +1049,46 @@ public class CSM_TransactionSA extends BaseClass {
 				
 			}
 		}
-    		//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCloseButtonInViewMemoPopupMenu());
+    		//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCloseButtonInViewMemoPopupMenu());
     		
     }		
     
     @Then("^User Validate User Does Not have Access On this TRX type 377 For the Economic Sector 4 Of This CIF$")
     public void user_validate_user_does_not_have_access_on_this_trx_type_377_for_the_economic_sector_4_of_this_cif() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMValidateUserDoesNotHaveAcces());
-        Assert.assertTrue(transactiononstaffaccObj.CSMValidateUserDoesNotHaveAcces().isDisplayed());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmValidateUserDoesNotHaveAcces());
+        Assert.assertTrue(transactiononstaffaccObj.csmValidateUserDoesNotHaveAcces().isDisplayed());
     }
 
     @And("^User Click Ok Button in Cannot Proceed PopUp Menu$")
     public void user_click_ok_button_in_cannot_proceed_popup_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInCannotProceedPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInCannotProceedPopUpMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInCannotProceedPopUpMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInCannotProceedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInCannotProceedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInCannotProceedPopUpMenu());
     }
     
     //************************************************* @TRS_009 ***********************************************
     
     @Then("^User Validate User does not have rights to trade with selected Currency 144$")
     public void user_validate_user_does_not_have_rights_to_trade_with_selected_currency_144() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM_ValidateUserDoesNotHaveRightsToTradeWithSelectedCurrency());
-        Assert.assertTrue(transactiononstaffaccObj.CSM_ValidateUserDoesNotHaveRightsToTradeWithSelectedCurrency().isDisplayed());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csm_ValidateUserDoesNotHaveRightsToTradeWithSelectedCurrency());
+        Assert.assertTrue(transactiononstaffaccObj.csm_ValidateUserDoesNotHaveRightsToTradeWithSelectedCurrency().isDisplayed());
     }
 
     @And("^User Click Ok Button in CannotProceed Popup Menu$")
     public void user_click_ok_button_in_cannotproceed_popup_menu() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMClickOkButtonInCannotProceedPopupMenu());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMClickOkButtonInCannotProceedPopupMenu());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMClickOkButtonInCannotProceedPopupMenu());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmClickOkButtonInCannotProceedPopupMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmClickOkButtonInCannotProceedPopupMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmClickOkButtonInCannotProceedPopupMenu());
     }
     
     @And("^User Enter the Amount under Maintenance Screen$")
     public void user_enter_the_amount_under_maintenance_screen() throws Throwable {
     	for (int i = 0; i < 200; i++) {
     		try {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMAmountUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMAmountUnderMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMAmountUnderMaintenanceScreen());
-        transactiononstaffaccObj.CSMAmountUnderMaintenanceScreen().sendKeys("1000",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmAmountUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmAmountUnderMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmAmountUnderMaintenanceScreen());
+        transactiononstaffaccObj.csmAmountUnderMaintenanceScreen().sendKeys("1000",Keys.TAB);
         break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -1099,18 +1102,18 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Click Ok Button in Warning PopUp to go back to Maintenance$")
     public void user_click_ok_button_in_warning_popup_to_go_back_to_maintenance() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMOkButtonInWarningPopUpToGoBackToMaintenance());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMOkButtonInWarningPopUpToGoBackToMaintenance());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMOkButtonInWarningPopUpToGoBackToMaintenance());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmOkButtonInWarningPopUpToGoBackToMaintenance());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmOkButtonInWarningPopUpToGoBackToMaintenance());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmOkButtonInWarningPopUpToGoBackToMaintenance());
     }
 
     @And("^User Click on Search Button in Maintenance Screen$")
     public void user_click_on_search_button_in_meintenance_screen() throws Throwable {
     	for (int i = 0; i < 200; i++) {
 			try {
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSearchButtonInMaintenanceScreen());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSearchButtonInMaintenanceScreen());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSearchButtonInMaintenanceScreen());
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSearchButtonInMaintenanceScreen());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSearchButtonInMaintenanceScreen());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSearchButtonInMaintenanceScreen());
 		        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -1123,19 +1126,19 @@ public class CSM_TransactionSA extends BaseClass {
 
     @And("^User Enter the Transaction No in Search Box$")
     public void user_enter_the_transaction_no_in_search_box() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMEnterTheTransactionNoInSearchBox());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMEnterTheTransactionNoInSearchBox());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMEnterTheTransactionNoInSearchBox());
-        transactiononstaffaccObj.CSMEnterTheTransactionNoInSearchBox().sendKeys("7609",Keys.ENTER);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmEnterTheTransactionNoInSearchBox());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmEnterTheTransactionNoInSearchBox());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmEnterTheTransactionNoInSearchBox());
+        transactiononstaffaccObj.csmEnterTheTransactionNoInSearchBox().sendKeys("7609",Keys.ENTER);
     }
 
     @And("^User Double Click on the Searched Transaction No in Search Box$")
     public void user_double_click_on_the_searched_transaction_no_in_search_box() throws Throwable {
     	for (int i = 0; i < 200; i++) {
 			try {
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMDoubleClickOnTheSearchedTransactionNo());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDoubleClickOnTheSearchedTransactionNo());
-		        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMDoubleClickOnTheSearchedTransactionNo());
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmDoubleClickOnTheSearchedTransactionNo());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmDoubleClickOnTheSearchedTransactionNo());
+		        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmDoubleClickOnTheSearchedTransactionNo());
 		        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -1149,17 +1152,17 @@ public class CSM_TransactionSA extends BaseClass {
 
     @And("^User Click on Booked Entries in Maintenance Screen$")
     public void user_click_on_booked_entries_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMBookedEntriesInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMBookedEntriesInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMBookedEntriesInMaintenanceScreen());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmBookedEntriesInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmBookedEntriesInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmBookedEntriesInMaintenanceScreen());
     }
     
     @Then("^User Validate the Credit Amount in By Trade Date Screen$")
     public void user_validate_the_credit_amount_in_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMValidateTheCreditAmount());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmValidateTheCreditAmount());
     	 String amount1 = "1000";
     	 System.out.println(amount1);
-    	 String amount = transactiononstaffaccObj.CSMValidateTheCreditAmount().getText();
+    	 String amount = transactiononstaffaccObj.csmValidateTheCreditAmount().getText();
     	 String replace = amount.replace(",","");
     	 String[] CVAmount = replace.split("[.]"); 
     	 for (String string : CVAmount) {			 
@@ -1173,10 +1176,10 @@ public class CSM_TransactionSA extends BaseClass {
     public void user_enter_the_op_no_in_by_trade_date_screen() throws Throwable {
     	for (int i = 0; i < 200; i++) {
 			try {
-				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMEnterTheOpNoInByTradeDateScreen());
-		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMEnterTheOpNoInByTradeDateScreen());
-		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMEnterTheOpNoInByTradeDateScreen());
-		        transactiononstaffaccObj.CSMEnterTheOpNoInByTradeDateScreen().sendKeys("1110461", Keys.ENTER);
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmEnterTheOpNoInByTradeDateScreen());
+		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmEnterTheOpNoInByTradeDateScreen());
+		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmEnterTheOpNoInByTradeDateScreen());
+		        transactiononstaffaccObj.csmEnterTheOpNoInByTradeDateScreen().sendKeys("1110461", Keys.ENTER);
 		        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -1189,9 +1192,9 @@ public class CSM_TransactionSA extends BaseClass {
 
 //    @And("^User Double Click the Searched Op No in By Trade Date Screen$")
 //    public void user_double_click_the_searched_op_no_in_by_trade_date_screen() throws Throwable {
-//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMDoubleClickTheSearchedOpNo());
-//        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDoubleClickTheSearchedOpNo());
-//        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.CSMDoubleClickTheSearchedOpNo());
+//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmDoubleClickTheSearchedOpNo());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmDoubleClickTheSearchedOpNo());
+//        seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmDoubleClickTheSearchedOpNo());
 //    }
     
     
@@ -1199,71 +1202,71 @@ public class CSM_TransactionSA extends BaseClass {
     
     @And("^User Enter Withdrawal TRX Type in Maintenance Screen$")
     public void user_enter_withdrawal_trx_type_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen());
-        //transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen().sendKeys(testData.get("Trx Type"),Keys.TAB);
-        transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen().sendKeys("977",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen());
+        //transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen().sendKeys(testData.get("Trx Type"),Keys.TAB);
+        transactiononstaffaccObj.csmTRXTypeInMaintenanceScreen().sendKeys("977",Keys.TAB);
     }
     
     @And("^User Enter Currency Code in Debit Ac in Maintenance Screen$")
     public void user_enter_currency_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCurrencyCodeDebitAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCurrencyCodeDebitAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCurrencyCodeDebitAc());
-        //transactiononstaffaccObj.CSMCurrencyCodeDebitAc().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
-        transactiononstaffaccObj.CSMCurrencyCodeDebitAc().sendKeys("840",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCurrencyCodeDebitAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCurrencyCodeDebitAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCurrencyCodeDebitAc());
+        //transactiononstaffaccObj.csmCurrencyCodeDebitAc().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
+        transactiononstaffaccObj.csmCurrencyCodeDebitAc().sendKeys("840",Keys.TAB);
     }
 
     @And("^User Enter GL Code in Debit Ac in Maintenance Screen$")
     public void user_enter_gl_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMGLCodeDebitAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMGLCodeDebitAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMGLCodeDebitAc());
-        //transactiononstaffaccObj.CSMGLCodeDebitAc().sendKeys(testData.get("GL Code"),Keys.TAB);
-        transactiononstaffaccObj.CSMGLCodeDebitAc().sendKeys("96136",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmGLCodeDebitAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmGLCodeDebitAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmGLCodeDebitAc());
+        //transactiononstaffaccObj.csmGLCodeDebitAc().sendKeys(testData.get("GL Code"),Keys.TAB);
+        transactiononstaffaccObj.csmGLCodeDebitAc().sendKeys("96136",Keys.TAB);
     }
 
     @And("^User Enter CIF Code in Debit Ac in Maintenance Screen$")
     public void user_enter_cif_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCIFCodeInDebitAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCIFCodeInDebitAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCIFCodeInDebitAc());
-        //transactiononstaffaccObj.CSMCIFCodeInDebitAc().sendKeys(testData.get("CIF No"),Keys.TAB);
-        transactiononstaffaccObj.CSMCIFCodeInDebitAc().sendKeys("993561",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmCIFCodeInDebitAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmCIFCodeInDebitAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmCIFCodeInDebitAc());
+        //transactiononstaffaccObj.csmCIFCodeInDebitAc().sendKeys(testData.get("CIF No"),Keys.TAB);
+        transactiononstaffaccObj.csmCIFCodeInDebitAc().sendKeys("993561",Keys.TAB);
     }
 
     @And("^User Enter Serial in Debit Ac in Maintenance Screen$")
     public void user_enter_serial_in_debit_ac_in_maintenance_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSerialInDebitAc());
-        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSerialInDebitAc());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSerialInDebitAc());
-        //transactiononstaffaccObj.CSMSerialInDebitAc().sendKeys(testData.get("Serial"),Keys.TAB);
-        transactiononstaffaccObj.CSMSerialInDebitAc().sendKeys("0",Keys.TAB);
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmSerialInDebitAc());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmSerialInDebitAc());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmSerialInDebitAc());
+        //transactiononstaffaccObj.csmSerialInDebitAc().sendKeys(testData.get("Serial"),Keys.TAB);
+        transactiononstaffaccObj.csmSerialInDebitAc().sendKeys("0",Keys.TAB);
     }
     
     @And("^User Enter the Amount for Debit in Maintenance Screen$")
     public void user_enter_the_amount_for_debit_in_maintenance_screen() throws Throwable {
-    	for (int i = 0; i < 200; i++) {
-    		try { 			
-    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMAmountInMaintenanceScreen());
-    		    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMAmountInMaintenanceScreen());
-    		    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMAmountInMaintenanceScreen());
-    		    //transactiononstaffaccObj.CSMAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);   		   
-    		    transactiononstaffaccObj.CSMAmountInMaintenanceScreen().sendKeys("1000",Keys.TAB);
-        		    break;     		     	
-			} catch (Exception e) {
-				Assert.fail();
-			}			
+    		for (int i = 0; i < 200; i++) {  		
+    			try { 			
+        			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        		    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        		    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        		    //transactiononstaffaccObj.csmAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);   		   
+        		    transactiononstaffaccObj.csmAmountInMaintenanceScreen().sendKeys("1000",Keys.TAB);
+            		    break;     		     	
+    			} catch (Exception e) {
+    				Assert.fail();
+    			}			   		
 		}   	
     }
 
     @Then("^User Validate the Debit Amount in By Trade Date Screen$")
     public void user_validate_the_debit_amount_in_by_trade_date_screen() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM_ValidateTheDebitAmount());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csm_ValidateTheDebitAmount());
    	 String amount1 = "1000";
    	 System.out.println(amount1);
-   	 String amount = transactiononstaffaccObj.CSM_ValidateTheDebitAmount().getText();
+   	 String amount = transactiononstaffaccObj.csm_ValidateTheDebitAmount().getText();
    	 String replace = amount.replace(",","");
    	 String[] CVAmount = replace.split("[.]"); 
    	 for (String string : CVAmount) {			 
@@ -1271,11 +1274,326 @@ public class CSM_TransactionSA extends BaseClass {
 		}
    	 System.out.println(CVAmount[0]);
    	 Assert.assertEquals(CVAmount[0], amount1);
-   }    
- }
- 
-
+   }   
     
+    //*************************************************************** TRS_052_01 *******************************************
+    
+    @Given("^User Navigate to CSMParam application and login with valid credentials$")
+    public void user_navigate_to_csmparam_application_and_login_with_valid_credentials() throws Throwable {
+    	driver.get(configFileReader.getCSMparamsUrl());
+		login.loginIntoCSMParamApplication();
+    }
+
+    @And("^User Click on Parameters under CSMParam Application$")
+    public void user_click_on_parameters_under_csmparam_application() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamParametersUndercsmParamApplication());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamParametersUndercsmParamApplication());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamParametersUndercsmParamApplication());
+    }
+
+    @And("^User Click on System Parameters under Parameters Main Menu$")
+    public void user_click_on_system_parameters_under_parameters_main_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamSystemParametersUnderParametersMainMenu());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamSystemParametersUnderParametersMainMenu());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamSystemParametersUnderParametersMainMenu());
+    }
+
+    @And("^User Click on Transaction Type under System Parameters Sub Menu$")
+    public void user_click_on_transaction_type_under_system_parameters_sub_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamTransactionTypeUnderSystemParameters());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamTransactionTypeUnderSystemParameters());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamTransactionTypeUnderSystemParameters());
+    }
+
+    @And("^User Click on Update After Approve in Transaction Type under System Parameters Sub Menu$")
+    public void user_click_on_update_after_approve_in_transaction_type_under_system_parameters_sub_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamUpdateAfterApproveInTransactionType());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamUpdateAfterApproveInTransactionType());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamUpdateAfterApproveInTransactionType());
+    }
+
+    @And("^User Enter the Trx Type in Code under Update After Approve Screen$")
+    public void user_enter_the_trx_type_in_code_under_update_after_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamEnterTheTrxTypeInCode());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamEnterTheTrxTypeInCode());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamEnterTheTrxTypeInCode());
+	    transactiononstaffaccObj.csmParamEnterTheTrxTypeInCode().sendKeys("377",Keys.ENTER);
+    }
+
+    @And("^Use Double Click on the Searched Code in Update After Approve Screen$")
+    public void use_double_click_on_the_searched_code_in_update_after_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamDoubleClickOnTheSearchedCode());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamDoubleClickOnTheSearchedCode());
+	    seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmParamDoubleClickOnTheSearchedCode());
+    }
+
+    @And("^User Check the Enable Multi Branch flag in Update After Approve Screen$")
+    public void user_check_the_enable_multi_branch_flag_in_update_after_approve_screen() throws Throwable { 
+    	for (int i = 0; i < 100; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag());
+				if (transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().getAttribute("initialvalue").isBlank()||transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().getAttribute("initialvalue").isEmpty()) {
+					transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().click();
+				    break;
+				}
+				    else {
+				    	transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().getAttribute("initialvalue");
+				    	transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().click();
+				    	transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().click();
+				    	break;
+					}		    	
+			} catch (Exception e) {	
+			
+			}
+		}
+    		}
+
+
+    @And("^User Click on Update After Approve button in Update After Approve Screen$")
+    public void user_click_on_update_after_approve_button_in_update_after_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamUpdateAfterApproveButton());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamUpdateAfterApproveButton());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamUpdateAfterApproveButton());
+    }
+
+    @And("^User Click Ok Button in Confirm PopUp Menu in Update After Approve Screen$")
+    public void user_click_ok_button_in_confirm_popup_menu_in_update_after_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamOkButtonInConfirmPopUpMenuInUpdateAfterApprove());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamOkButtonInConfirmPopUpMenuInUpdateAfterApprove());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamOkButtonInConfirmPopUpMenuInUpdateAfterApprove());
+    }
+
+    @And("^User Click Ok Button in Success PopUp Menu in Update After Approve Screen$")
+    public void user_click_ok_button_in_success_popup_menu_in_update_after_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamOkButtonInSuccessPopUpMenuInUpdateAfterApprove());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamOkButtonInSuccessPopUpMenuInUpdateAfterApprove());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamOkButtonInSuccessPopUpMenuInUpdateAfterApprove());
+    }
+
+    @And("^User Click on Approve under Transaction Type$")
+    public void user_click_on_approve_under_transaction_type() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamApproveUnderTransactionType());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamApproveUnderTransactionType());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamApproveUnderTransactionType());
+    }
+
+    @And("^User Enter the Trx Type in Code under Approve Screen$")
+    public void user_enter_the_trx_type_in_code_under_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParam_TrxTypeInCodeUnderApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParam_TrxTypeInCodeUnderApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParam_TrxTypeInCodeUnderApproveScreen());
+	    transactiononstaffaccObj.csmParam_TrxTypeInCodeUnderApproveScreen().sendKeys("377",Keys.ENTER);
+    }
+
+    @And("^User Double Click on the Searched Code in Approve Screen$")
+    public void user_double_click_on_the_searched_code_in_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamDoubleClickOnTheSearchedCodeInApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamDoubleClickOnTheSearchedCodeInApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().doubleClick(transactiononstaffaccObj.csmParamDoubleClickOnTheSearchedCodeInApproveScreen());
+    }
+
+    @And("^User Click on Approve Button in Approve Screen under System Parameters$")
+    public void user_click_on_approve_button_in_approve_screen_under_system_parameters() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamApproveButtonInApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamApproveButtonInApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamApproveButtonInApproveScreen());
+    }
+
+    @And("^User Click on Ok Button in Confirm PopUp under Approve Screen$")
+    public void user_click_on_ok_button_in_confirm_popup_under_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamOkButtonInConfirmPopUpUnderApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParamOkButtonInConfirmPopUpUnderApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParamOkButtonInConfirmPopUpUnderApproveScreen());
+    }
+
+    @And("^User Click on Ok Button in Success PopUp under Approve Screen$")
+    public void user_click_on_ok_button_in_success_popup_under_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParam_OkButtonInSuccessPopUpUnderApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmParam_OkButtonInSuccessPopUpUnderApproveScreen());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmParam_OkButtonInSuccessPopUpUnderApproveScreen());
+    }
+    
+    @And("^User Uncheck the Enable Multi Branch flag in Update After Approve Screen$")
+    public void user_uncheck_the_enable_multi_branch_flag_in_update_after_approve_screen() throws Throwable {
+    	for (int i = 0; i < 100; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag());
+				if (transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().getAttribute("initialvalue").isBlank()||transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().getAttribute("initialvalue").isEmpty()) {
+				    break;
+				}
+				    else {
+				    	transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().getAttribute("initialvalue");
+				    	transactiononstaffaccObj.csmParamCheckTheEnableMultiBranchFlag().click();			    
+				    	break;
+					}		    	
+			} catch (Exception e) {	
+			
+			}
+		}
+    		}
+ 
+//    @And("^User Click Ok Button in information PopUp menu in Update After Approve Screen$")
+//    public void user_click_ok_button_in_information_popup_menu_in_update_after_approve_screen() throws Throwable {
+//    	status= false;
+//    	//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParam_OkButtonInInformationPopUpMenuInUpdateAfterApproveScreen());
+//    	for (int i = 0; i < 50; i++) {
+//			try {
+//				if (transactiononstaffaccObj.csmParam_InformationPopUpForUpdateAfterApproveScreen().isDisplayed()) {
+//					status= true;
+//					transactiononstaffaccObj.csmParam_OkButtonInInformationPopUpMenuInUpdateAfterApproveScreen().click();
+//					break;
+//				}				
+//			} catch (Exception e) {
+//				
+//			}
+//		}
+//    }
+    
+    @And("^User Enter the Value Date in Maintenance Screen$")
+    public void user_enter_the_value_date_in_maintenance_screen() throws Throwable {
+    	for (int i = 0; i < 500; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmValueDateInMaintenanceScreen());
+			    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmValueDateInMaintenanceScreen());
+			    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmValueDateInMaintenanceScreen());
+			    transactiononstaffaccObj.csmValueDateInMaintenanceScreen().clear();
+			    transactiononstaffaccObj.csmValueDateInMaintenanceScreen().sendKeys("31/05/2023");
+			    break;
+			} catch (Exception e) {
+				
+			}
+		}
+    	
+		/*
+		 * for (int i = 0; i < 200; i++) { try {
+		 * seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+		 * transactiononstaffaccObj.csmCurrencyName());
+		 * transactiononstaffaccObj.csmCurrencyName().isDisplayed(); break; } catch
+		 * (Exception e) { if (i==199) { Assert.fail(e.getMessage()); } } }
+		 */
+    }
+    
+    @Then("^User Validate the Stopper Message in Cannot Proceed PopUp Menu$")
+    public void user_validate_the_stopper_message_in_cannot_proceed_popup_menu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmStopperMessageInCannotProceedPopUpMenu());
+        Assert.assertTrue(transactiononstaffaccObj.csmStopperMessageInCannotProceedPopUpMenu().isDisplayed());
+    }
+
+    @And("^User Click Ok Button in Cannot Proceed PopUp Menu in Maintenance$")
+    public void user_click_ok_button_in_cannot_proceed_popup_menu_in_maintenance() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csm_OkButtonInCannotProceedPopUpMenuInMaintenance());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csm_OkButtonInCannotProceedPopUpMenuInMaintenance());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csm_OkButtonInCannotProceedPopUpMenuInMaintenance());
+    }
+    
+    @And("^User Enter the Amount under Maintenance Menu$")
+    public void user_enter_the_amount_under_maintenance_menu() throws Throwable {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.csmAmountInMaintenanceScreen());
+        //transactiononstaffaccObj.csmAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
+        transactiononstaffaccObj.csmAmountInMaintenanceScreen().sendKeys("1000",Keys.TAB);
+        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}   
+   
+    	} 
+    	
+    }
+    
+    @And("^User Check the Allow Back dated Value Date flag in Update After Approve Screen$")
+    public void user_check_the_allow_back_dated_value_date_flag_in_update_after_approve_screen() throws Throwable {
+    	for (int i = 0; i < 100; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag());
+				if (transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().getAttribute("initialvalue").isBlank()||transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().getAttribute("initialvalue").isEmpty()) {
+					transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().click();
+				    break;
+				}
+				    else {
+				    	transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().getAttribute("initialvalue");
+				    	transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().click();
+				    	transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().click();
+				    	break;
+					}		    	
+			} catch (Exception e) {	
+			
+			}
+		}
+    }
+
+    @And("^User Check the Allow Post dated Value Date flag in Update After Approve Screen$")
+    public void user_check_the_allow_post_dated_value_date_flag_in_update_after_approve_screen() throws Throwable {
+    	for (int i = 0; i < 100; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag());
+				if (transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().getAttribute("initialvalue").isBlank()||transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().getAttribute("initialvalue").isEmpty()) {
+					transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().click();
+				    break;
+				}
+				    else {
+				    	transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().getAttribute("initialvalue");
+				    	transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().click();
+				    	transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().click();
+				    	break;
+					}		    	
+			} catch (Exception e) {	
+			
+			}
+		}
+    }
+    
+    @And("^User UnCheck the Allow Back dated Value Date flag in Update After Approve Screen$")
+    public void user_uncheck_the_allow_back_dated_value_date_flag_in_update_after_approve_screen() throws Throwable {
+    	for (int i = 0; i < 100; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag());
+				if (transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().getAttribute("initialvalue").isBlank()||transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().getAttribute("initialvalue").isEmpty()) {
+				    break;
+				}
+				    else {
+				    	transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().getAttribute("initialvalue");
+				    	transactiononstaffaccObj.csmParamAllowBackDatedValueDateFlag().click();			    
+				    	break;
+					}		    	
+			} catch (Exception e) {	
+			
+			}
+		}
+    }
+
+    @And("^User UnCheck the Allow Post dated Value Date flag in Update After Approve Screen$")
+    public void user_uncheck_the_allow_post_dated_value_date_flag_in_update_after_approve_screen() throws Throwable {
+    	for (int i = 0; i < 100; i++) {
+			try {
+				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag());
+				if (transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().getAttribute("initialvalue").isBlank()||transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().getAttribute("initialvalue").isEmpty()) {
+				    break;
+				}
+				    else {
+				    	transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().getAttribute("initialvalue");
+				    	transactiononstaffaccObj.csmParam_AllowPostDatedValueDateFlag().click();			    
+				    	break;
+					}		    	
+			} catch (Exception e) {	
+			
+			}
+		}
+    }
+
+    @Then("^User Validate if the Value Date field is Disable$")
+    public void user_validate_if_the_value_date_field_is_disable() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.csmValueDateInMaintenanceScreen());
+        Assert.assertTrue(transactiononstaffaccObj.csmValueDateInMaintenanceScreen().getAttribute("readonly").equalsIgnoreCase("readonly"));
+    }
+}
+
+
     
     
 

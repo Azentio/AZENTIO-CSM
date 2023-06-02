@@ -69,6 +69,19 @@ public class CSMLogin {
 
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
+		
+		//waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmForceLogin());
+		for (int j = 0; j < 200; j++) {
+			try {
+				if (csmCommonWebElements.csm_UserAlreadyLoginPopUp().isDisplayed()) {
+					csmCommonWebElements.csmForceLogin().click();
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}	
+		
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmLoginValidation());
