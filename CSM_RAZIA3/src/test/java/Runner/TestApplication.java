@@ -15,7 +15,7 @@ import utilities.ExtentTestManager;
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"}
                //dryRun = false //to check compilation errors                                      
-              , tags="@TRS_73_01"
+              , tags="@TRS_073_01"
               		
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
@@ -24,7 +24,11 @@ public class TestApplication extends AbstractTestNGCucumberTests {
 	 *
 	 * @DataProvider(parallel = true) public Object[][] scenarios() { return
 	 * super.scenarios(); }
+	 * 
+	 * 
+	 * 
 	 */
+		
 	
 
 	

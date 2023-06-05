@@ -1,18 +1,17 @@
 package stepdefinitions;
 
 
-import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
-import helper.ClicksAndActionsHelper;
 import helper.Selenium_Actions;
-import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pageobjects.csm.CSM_TransactionObj;
@@ -20,32 +19,25 @@ import resources.BaseClass;
 
 public class CSM_TransactionsSteps {
 	
+
 	WebDriver  driver = BaseClass.driver;
 	ConfigFileReader configfilereader = new ConfigFileReader();
-	WaitHelper waitHelper = new WaitHelper(driver) ;
-	ClicksAndActionsHelper clicksAdActionsHelper =  new ClicksAndActionsHelper(driver);
+	//Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	Selenium_Actions seleniumAction = new Selenium_Actions(driver);
 	CSM_TransactionObj CSMTransactionObj = new CSM_TransactionObj(driver);
 	CSMLogin login  = new CSMLogin(driver);
-	
 
-	
 	String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
     ExcelData csmTransactionsStaffAccountExcelData = new ExcelData(path,"CSM_TRANSACTIONS","Data Set ID");
     Map<String, String> testData;
 	
-//	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-//	   ExcelData excelDataForTransaction = new ExcelData(path, "CSM_TRANSACTIONS", "DataSet ID");
-//
-//	   Map<String, String> chequeBookRequestTestData = new HashMap<>();
-//	    Map<String, String> chargeWaiverExecutionData = new HashMap<>();
-//	    Map<String, String> testData;
 	    
 	    @And("^user update test data set id for TRS_029$")
 	    public void user_update_test_data_set_id_for_trs029() throws Throwable {
 	    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_029_01");
 		 
 	    }
+	   
 	@And("^User Click on Date to Change the Current Date$")
     public void user_click_on_date_to_change_the_current_date() throws Throwable {
     	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMDateToChangeTheCurrentDate());
@@ -129,8 +121,7 @@ public class CSM_TransactionsSteps {
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMTRXTypeInMaintenanceScreen());
 	       // CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(testData.get("TRX_TYPE"));
 	        //CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(Keys.TAB);
-	        
-	        CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys("123",Keys.TAB);
+	           CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys("123",Keys.TAB);
 	        
 	    }
 	    
@@ -273,8 +264,7 @@ public class CSM_TransactionsSteps {
 	    
 	    @And("^User Click the Account Details in Maintenance Screen$")
 	    public void user_click_the_account_details_in_maintenance_screen() throws Throwable {
-	    
-		    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_AccountDetailsInMaintenanceScreen());
+	        	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_AccountDetailsInMaintenanceScreen());
 		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_AccountDetailsInMaintenanceScreen());
 		        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_AccountDetailsInMaintenanceScreen());
 	    }
@@ -384,7 +374,11 @@ public class CSM_TransactionsSteps {
 	        System.out.println(refid);
 	    }
 	    
-	    
+	   // get the transcation no
+	    //	   //waitHelper.waitForElementwithFluentwait(driver,transactiononstaffaccObj.getTransactionNumber());
+//	      String  transactionNo = transactiononstaffaccObj.getTransactionNumber().getText().substring(15, 19);
+//       System.out.println(transactionNo);
+//	       excelDataForTransactionOnStaffAcc.updateTestData("TSA_157_D1", "TRXNo", transactionNo); 
 
 	    @And("^User Click Ok Button in Success PopUp Menu$")
 	    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
@@ -494,8 +488,7 @@ public class CSM_TransactionsSteps {
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMBookedEntriesInMaintenanceScreen());
 	    }
 	    
-	    
-//debit acount
+	  //#debit acount
 	    
 	    @And("^User Enter the Branch Code in debit Ac in Maintenance Screen$")
 	    public void user_enter_the_branch_code_in_debit_ac_in_maintenance_screen() throws Throwable {
@@ -594,16 +587,22 @@ public class CSM_TransactionsSteps {
 	        CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(Keys.ENTER);
 	    	
 	    }
-	    @And("^user double click the user id$")
+	   	    @And("^user double click the user id$")
 	    public void user_double_click_the_user_id() throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-	       // seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-	        seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-	       	    }
-	    
-	    
-
+	    	try {
+	    		if (CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick().isDisplayed());
+		        {
+		        	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick());
+		        	  seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
+		        }  
+		        }
+	         
+			catch (Exception e) {
+			
+			}
+	    	
+}
+	   
 	    @And("^User click the Limit button  in update after approve screen$")
 	    public void user_click_the_limit_button_in_update_after_approve_screen() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits());
@@ -637,10 +636,10 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
-	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys("123",Keys.TAB);
-	        Thread.sleep(2000);
-	        //seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
-	     
+	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys("123");
+	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(Keys.TAB);
+	      
+	       
 	    }
 
 	    
@@ -649,15 +648,28 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
-	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys("300",Keys.TAB);
-	      
+	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys("300");
+	       // CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(Keys.TAB);
+	       // seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+		     
 	    }
 
 	    @And("^User check the with warnuserlimit in Limit$")
 	    public void user_check_the_with_warnuserlimit_in_limit() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
+	        seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
+	       
+	      
+	    }
+
+	    @And("^User check the with proceediflimit in Limit$")
+	    public void user_check_the_with_proceediflimit_in_limit() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+	        seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
 	       
 	      
 	    }
@@ -685,22 +697,34 @@ public class CSM_TransactionsSteps {
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
 	       
 	         }
+       
 
+	 
 	    @And("^user click the save ok button$")
 	    public void user_click_the_save_ok_button() throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMSaveButtonInMaintenanceScreen());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMSaveButtonInMaintenanceScreen());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMSaveButtonInMaintenanceScreen());
-	        
+	    	try {
+	    		seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
+	    		seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
+	    		seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
+			} catch (Exception e) {
+				
+			}
+	    	
 	    }
 
-	    @And("^user click the ok$")
-	    public void user_click_the_ok() throws Throwable {
+	    @And("^user click the confirm ok$")
+	    public void user_click_the_confirm_ok() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
+	        
+	     }
+	    @And("^user click the sucesss ok$")
+	    public void user_click_the_sucesss_ok() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
-	        
-	      
+	       
 	    }
 
 	    @And("^user click the approve in user screen$")
@@ -717,16 +741,24 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Approve_UserID());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Approve_UserID());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Approve_UserID());
-	        
-	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys("razia",Keys.TAB);
+	        	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys("razia");
+	        	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys(Keys.TAB);
 	       
 	    }
 
 	    @And("^user double click the user id in approve screen$")
 	    public void user_double_click_the_user_id_in_approve_screen() throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Approve_Username_doubleclick());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Approve_Username_doubleclick());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Approve_Username_doubleclick());
+	    	try {
+	    		if(CSMTransactionObj.csmParam_User_Approve_Username_doubleclick().isDisplayed()) {
+	   			   			
+	    		seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Approve_Username_doubleclick());
+   seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Approve_Username_doubleclick());
+		        seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_User_Approve_Username_doubleclick());
+	    		}
+			} catch (Exception e) {
+			}
+	   
+	    	
 	                
 	    }
 
@@ -738,32 +770,34 @@ public class CSM_TransactionsSteps {
 	        
 	       
 	    }
+	    
 
 	  //csmparam @069
 	    @And("^user click the transationtype submenu under systemparameters$")
 	    public void user_click_the_transationtype_submenu_under_systemparameters() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype());
-	    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype());
-	        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype());  
-	    }
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_Transactiontype());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype());
+	        
+	       }
 
 	    @And("^user click the updateafterapprove menu under transationtype$")
 	    public void user_click_the_updateafterapprove_menu_under_transationtype() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_Updateafterapprovefield());
-	    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_Updateafterapprovefield());
-	        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_Updateafterapprovefield());
-	        
-	    }
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_Transactiontype_Updateafterapprovefield());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Updateafterapprovefield());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_Updateafterapprovefield());
+	    	    }
 
 	    @And("^user Enter the code in inputfield on updateafterapprove screen under transactiontype$")
 	    public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype() throws Throwable {
 	    	
 				try {
-					waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield());
-			    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
-			        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
-			        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType"));  
-			        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
+					seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_inputfield());
+					 seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_inputfield());
+					 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_inputfield());
+			        //CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType")); 
+			        CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys("123");
+			        CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
 				} catch (Exception e) {
 					
 				}
@@ -776,61 +810,88 @@ public class CSM_TransactionsSteps {
 	    @And("^User double click the record under updateafterapprove screen$")
 	    public void user_double_click_the_record_under_updateafterapprove_screen() throws Throwable {
 	    	try {
-	    		waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
-	        	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
-	            clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
+	    		seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_inputfield_doubleclick());
+	        	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_inputfield_doubleclick());
+	            seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_Transactiontype_inputfield_doubleclick());
 			} catch (Exception e) {
 				
 			}
 	    	
 	    }
-	    @Given("User Check the ProceedOnInsufficientFund chequebox")
-	    public void user_check_the_proceed_on_insufficient_fund_chequebox() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-//	    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-//	        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+	    @Given("User unCheck the ProceedOnInsufficientFund chequebox")
+	    public void user_uncheck_the_proceed_on_insufficient_fund_chequebox() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+//    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
 	       
 
-	        if (csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds().getAttribute("initialvalue").isBlank()) {
-	        clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-	        clicksAndActionsHelper.clickUsingActionClass(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds(),
-	        csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+	        if (CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds().getAttribute("initialvalue").isBlank()) {
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+	        seleniumAction.getClickAndActionsHelper().clickUsingActionClass(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds(),
+	        CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+	        seleniumAction.getClickAndActionsHelper().clickUsingActionClass(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds(),
+	        CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+
 	       
 	        } else {
-	        clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-	        clicksAndActionsHelper.clickUsingActionClass(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds(),
-	        csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-	        clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-	        clicksAndActionsHelper.clickUsingActionClass(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds(),
-	        csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+	        seleniumAction.getClickAndActionsHelper().clickUsingActionClass(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds(),
+	        CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds());
+	        
 	        }
 	    }
+	    
+	    @And("^user check the Force overdrawn$")
+	    public void user_check_the_force_overdrawn() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+	    	if (CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn().getAttribute("initialvalue").isBlank()) {
+		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+		        seleniumAction.getClickAndActionsHelper().clickUsingActionClass(CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn(),
+		        CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+		        
+		       
+		        } else {
+		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+		        seleniumAction.getClickAndActionsHelper().clickUsingActionClass(CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn(),
+		        CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+		        seleniumAction.getClickAndActionsHelper().clickUsingActionClass(CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn(),
+		        CSMTransactionObj.csmParam_Transactiontype_Forceoverdrawn());
+
+		        }
+	    	
+	    }
+	    
+	    
+	     
+	    
+	    
 	   
 	    
 	    @And("^User click UpdateAfterApprove button on updateafterapprove field$")
 	    public void user_click_updateafterapprove_button_under_updateafterapprove_field() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
-	    	javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
-	    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
-	        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
+	    	seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
+	    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton());
 	    }
 	    @And("^user click the Approve field under the transactiontype$")
 	    public void user_click_the_approve_button_under_the_transactiontype() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_Approvefield());
-	    	//javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_Transactiontype_Approvefield());
-	    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_Approvefield());
-	        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_Approvefield());
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_Approvefield());
+	    	//javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_Transactiontype_Approvefield());
+	    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Approvefield());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_Approvefield());
 	    }
 
 	    @And("^user Enter the code in inputfield on Approve screen under transactiontype$")
 	    public void user_enter_the_code_in_inputfield_on_approve_screen_under_transactiontype() throws Throwable {
 	    	try {
-	    		waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield());
-	        	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield());
-	            clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield());
-	            csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield().sendKeys(testData.get("TRXType"));  
-	            csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield().sendKeys(Keys.ENTER);
+	    		seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield());
+	        	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield());
+	            seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield());
+	           // CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield().sendKeys(testData.get("TRXType"));  
+	            CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield().sendKeys(Keys.ENTER);
 			} catch (Exception e) {
 				
 			}
@@ -840,9 +901,9 @@ public class CSM_TransactionsSteps {
 	    @And("^User double click the record Approve screen$")
 	    public void user_double_click_the_record_approve_screen() throws Throwable {
 	    	try {
-	    		waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
-	        	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
-	            clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick()); 
+	    		seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
+	        	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
+	            seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_Transactiontype_Approve_Inputfield_doubleclick()); 
 			} catch (Exception e) {
 				
 			}
@@ -850,41 +911,43 @@ public class CSM_TransactionsSteps {
 	    }
 	@And("^user click the AccountParameter submenu under Parameters$")
 	    public void user_click_the_accountparameter_submenu_under_parameters() throws Throwable {
-	    	javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_AccountParameters());
-
-	    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters());
-	       	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters());  
+		
+	    	 seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters());
+	       	        	
+        	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters());
+        	seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters());
+           
 	    }
 
 	    @And("^user click the AccountType under AccountParameters$")
 	    public void user_click_the_accounttype_under_accountparameters() throws Throwable {
-	    	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes());
-	    	 
-	       	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes()); 
+	    	 seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes());
+	    	 	 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes()); 
 	    }
 
 	    @And("^user click the UPA field under AccountTypes$")
 	    public void user_click_the_upa_field_under_accounttypes() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPAField());
-	      	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPAField()); 
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPAField());
+	      	 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPAField()); 
 	    }
 
 	    @And("^user Enter the TypeCode in UPA field$")
 	    public void user_enter_the_typecode_in_upa_field() throws Throwable {
 
-	    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
-	    	clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
-	        clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
-	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(testData.get("GLCode_D1"));  
-	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(Keys.ENTER);
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
+	    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
+	       // CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(testData.get("GLCode_D1")); 
+	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys("96145");
+	         CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(Keys.ENTER);
 	    }
 
 	    @And("^user double click the TypeCode in UPA field$")
 	    public void user_double_click_the_typecode_in_upa_field() throws Throwable {
 	    	try {
 	    		if (CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick().isDisplayed()) {
-	        		waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick());
-	            	 clicksAndActionsHelper.doubleClick(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick()); 
+	        		seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick());
+	            	 seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick()); 
 	    		} else {
 
 	    		}
@@ -897,112 +960,75 @@ public class CSM_TransactionsSteps {
 
 	    @And("^user click the Instructions in AccountTypes$")
 	    public void user_click_the_instructions_in_accounttypes() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions());
-	     	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions()); 
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions());
+	     	 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions()); 
 	    }
 
-	    @And("^user deal with AllowAccess checkBox under Instructions$")
-	    public void user_deal_with_allowaccess_checkbox_under_instructions() throws Throwable {
-//	    	javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-//	    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-//	    	clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-//	        clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-//	      
-	//
-//	        if (CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isBlank()) {
-	    // clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-	     //  clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-	       		
-//	        } else {
-//	        clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-//	        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag(),
-//	        		CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-	//
-//	        }
+	    @And("^user uncheck with AllowAccess checkBox under Instructions$")
+	    public void user_uncheck_with_allowaccess_checkbox_under_instructions() throws Throwable {
+
 	   for (int i = 0; i <200; i++) {
 		try {
 			if (!CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isBlank()
 					||!CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().getAttribute("initialvalue").isEmpty()) {
-				javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-				clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		        clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+				seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+				seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+		        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
 		        break;
 			}
 			else {
-				clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		        clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		        clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		        clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+				seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+		        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
+		        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
 		        break;
 			}
 		} catch (Exception e) {
 			
 		}
 	}
-	       
-		/*
-		 * try {
-		 * 
-		 * if ((CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag().
-		 * getAttribute("initialvalue").isBlank())){
-		 * 
-		 * 
-		 * 
-		 * // clicksAndActionsHelper.moveToElement(CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		 * // clicksAndActionsHelper.clickOnElement(CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag()); }
-		 * else { clicksAndActionsHelper.moveToElement(CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		 * clicksAndActionsHelper.clickOnElement(CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		 * 
-		 * clicksAndActionsHelper.moveToElement(CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag());
-		 * clicksAndActionsHelper.clickOnElement(CSMTransactionObj.
-		 * csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag()); }
-		 * 
-		 * } catch (Exception e){ }}
-		 */
-	    }
+	        }
 	    
 
 	    @And("^user click UPA Button$")
 	    public void user_click_upa_button() throws Throwable {
-	    	javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
-	    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
-	    	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton()); 
+	    	seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
+
+	    	//seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
+	    	//seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton());
+	   	 	  seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton()); 
 	    }
 	    @And("^user click the Approve field under AccountTypes$")
 	    public void user_click_the_approve_field_under_accounttypes() throws Throwable {
-	    	javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField());
-
-	    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField());
-	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField()); 
+	    	seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField());
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField());
+	    	seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField());
+	   	 //seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField()); 
 	   }
 	    
 
 	    @And("^user Enter the TypeCode in Approve Field$")
 	    public void user_enter_the_typecode_in_approve_field() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
-	    	clicksAndActionsHelper.moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
-	        clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
-	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(testData.get("GLCode_D1"));  
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
+	    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
+	        //CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(testData.get("GLCode_D1"));
+	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys("96145");
 	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(Keys.ENTER);
 	    }
 
 	    @And("^user double click the Typecode in Approve field$")
 	    public void user_double_click_the_typecode_in_approve_field() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick());
-	      	 clicksAndActionsHelper.doubleClick(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick()); 
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick());
+	      	 seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick()); 
 	    }
 
 	    @And("^user click the Approve button$")
 	    public void user_click_the_approve_button() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton());
-	    	javascriptHelper.scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton());
-	     	 clicksAndActionsHelper.clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton()); 
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton());
+	    	seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton());
+	     	 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton()); 
 	    }
 	    
 

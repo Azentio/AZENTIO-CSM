@@ -525,7 +525,11 @@ public class CSM_TransactionObj {
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch() {
 		return csmParam_User_Userid_doubleclick_logintobranch;
 	}
-	
+	   @FindBy(id="_popup_path_sol_confirm_ok")
+		private WebElement success_ok;
+		public WebElement success_ok() {
+			return success_ok;
+		}
 	// check if the retrive button is  in the field  da karthi
 	
 	@FindBy(xpath = "//label[text()='Update After Approve ']")
@@ -540,7 +544,7 @@ public class CSM_TransactionObj {
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok() {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
 	}
-	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']") 
 	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
 
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok() {
@@ -579,8 +583,7 @@ public class CSM_TransactionObj {
 	}
 	@FindBy(id="add_tab3_C_GridTbl_Id_E000MA")
 	private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn;
-	
-	public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn() {
+		public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn() {
 		return csm_sysparam_user_updateafterapprove_Limits_addbtn;
 	}
 	@FindBy(xpath="(//input[@role='livesearch'])[1]")
@@ -593,21 +596,21 @@ public class CSM_TransactionObj {
 			public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx() {
 			return csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx;
 		}
-			
-			@FindBy(xpath="(//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input")
-			private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
+			//(//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input
+			@FindBy(xpath="//td[@tdlabel='W/D Limit']//input")
+						private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
 				public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits() {
 				return csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
 			}
 				
-				@FindBy(xpath="//input[@id='17_ctstellerlimitVO.WARN_LIMIT_EXCEED_tab3_C_GridTbl_Id_E000MA']")
+				@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Warn User If Limit Exceed']/input")
 				private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
 					public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check() {
 					return csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
 				}
 					
 					
-					@FindBy(xpath="//input[@id='17_ctstellerlimitVO.PROCEED_LIMIT_EXCEED_tab3_C_GridTbl_Id_E000MA']")
+					@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Proceed If Limit Exceed']//input")
 					private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
 						public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check() {
 						return csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
@@ -676,7 +679,7 @@ public class CSM_TransactionObj {
 				public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton() {
 				return csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag_UPAButton;
 				}
-				@FindBy(xpath = "//a[@id='P017P']")
+				@FindBy(xpath = "//a[@id='P017P']//span[2]")
 				private WebElement csmParam_AccountParameters_AccountTypes_ApproveField;
 
 				public WebElement csmParam_AccountParameters_AccountTypes_ApproveField() {
@@ -725,12 +728,14 @@ public class CSM_TransactionObj {
 				public WebElement csmParam_Transactiontype_Updateafterapprovefield() {
 					return csmParam_Transactiontype_Updateafterapprovefield;
 				}
-				@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
-				private WebElement csmParam_Transactiontype_inputfield ;
-
-				public WebElement csmParam_Transactiontype_inputfield() {
-				return csmParam_Transactiontype_inputfield;
-				}
+				
+//				@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
+//				private WebElement csmParam_Transactiontype_inputfield ;
+//				public WebElement csmParam_Transactiontype_inputfield() {
+//				return csmParam_Transactiontype_inputfield;
+//				}
+//				
+				
 				@FindBy(xpath = "//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.CODE']")
 				private WebElement csmParam_Transactiontype_inputfield_doubleclick ;
 
@@ -743,6 +748,15 @@ public class CSM_TransactionObj {
 				public WebElement csmParam_Transactiontype_proceedoninsufficentfunds() {
 				return csmParam_Transactiontype_proceedoninsufficentfunds;
 				}
+				@FindBy(xpath = "//input[@id='force_overdraw_P024MA']")
+				private WebElement csmParam_Transactiontype_Forceoverdrawn ;
+
+				public WebElement csmParam_Transactiontype_Forceoverdrawn() {
+				return csmParam_Transactiontype_Forceoverdrawn;
+				}
+				
+				
+				
 				@FindBy(xpath = "//label[@id='transactionTypesMaint_FormId_P024MA_Update_After_Approve_key']")
 				private WebElement csmParam_Transactiontype_proceedoninsufficentfunds_UPAbutton ;
 
