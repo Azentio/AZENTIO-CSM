@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jun 02 18:21:23 IST 2023</td>
+<td>Started on:</td><td>Mon Jun 05 18:51:56 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>182 seconds (182732 ms)</td>
+<tr><td>Total time:</td><td>59 seconds (59118 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,73 +75,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking Cash Deposit Transaction - CV/FC", "Optional[To test the funcnalities of Transaction module]"</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; id=&quot;_popup_path_sol_ok&quot; class=&quot;ui-button-text fg-button ui-button ui-corner-all ui-widget ui-state-default ui-button-text-only&quot; value=&quot;Ok&quot;&gt; is not clickable at point (959, 537). Other element would receive the click: &lt;div style=&quot;display: block; width: 360px; height: 153px; overflow: auto;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=114.0.5735.91)
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cdae0bc7305c99ca8711bd68c63fe986, clickElement {id=A732C252E22156304944DFA009BDF8C9_element_329}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50603}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50603/devtoo..., se:cdpVersion: 114.0.5735.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (cdae0bc7305c99ca8711bd68c63fe986)] -&gt; xpath: //input[@id=&apos;_popup_path_sol_ok&apos;]]
-Session ID: cdae0bc7305c99ca8711bd68c63fe986
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-	at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-	at stepdefinitions.CSM_Transaction_Steps.system_show_the_popup_success_user_click_the_ok_button(CSM_Transaction_Steps.java:411)
-	at ✽.system show the popup success user click the ok button(file:///C:/Users/inindc00606/git/Karthik_CSM/CSM_Karthi/src/test/java/features/CSM_Transaction.feature:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1002194889", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1002194889'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;button&quot; id=&quot;_popup_path_sol_ok&quot; class=&quot;ui-button-text fg-button ui-button ui-corner-all ui-widget ui-state-default ui-button-text-only&quot; value=&quot;Ok&quot;&gt; is not clickable at point (959, 537). Other element would receive the click: &lt;div style=&quot;display: block; width: 360px; height: 153px; overflow: auto;&quot;&gt;...&lt;/div&gt;
-  (Session info: chrome=114.0.5735.91)
-Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
-System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cdae0bc7305c99ca8711bd68c63fe986, clickElement {id=A732C252E22156304944DFA009BDF8C9_element_329}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.91, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:50603}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:50603/devtoo..., se:cdpVersion: 114.0.5735.91, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (cdae0bc7305c99ca8711bd68c63fe986)] -&gt; xpath: //input[@id=&apos;_popup_path_sol_ok&apos;]]
-Session ID: cdae0bc7305c99ca8711bd68c63fe986
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
-	at jdk.proxy2/jdk.proxy2.$Proxy45.click(Unknown Source)
-	at helper.ClicksAndActionsHelper.clickOnElement(ClicksAndActionsHelper.java:22)
-	at stepdefinitions.CSM_Transaction_Steps.system_show_the_popup_success_user_click_the_ok_button(CSM_Transaction_Steps.java:411)
-	at ✽.system show the popup success user click the ok button(file:///C:/Users/inindc00606/git/Karthik_CSM/CSM_Karthi/src/test/java/features/CSM_Transaction.feature:91)
+<td title='Runner.TestApplication.runScenario()'><b>runScenario</b><br>Test class: Runner.TestApplication<br>Test method: Runs Cucumber Scenarios<br>Parameters: "Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General", "Optional[To test the funcnalities of Transaction module]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;this.testData&quot; is null
+	at stepdefinitions.CSM_Transaction_Steps.user_enter_the_date_in_user_running_dates(CSM_Transaction_Steps.java:954)
+	at ✽.User Enter the Date in User Running Dates(file:///C:/Users/inindc00606/git/Karthik_CSM/CSM_Karthi/src/test/java/features/CSM_Transaction.feature:594)
+</pre></div><a href='#' onClick='toggleBox("stack-trace374205056", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace374205056'><pre>java.lang.NullPointerException: Cannot invoke &quot;java.util.Map.get(Object)&quot; because &quot;this.testData&quot; is null
+	at stepdefinitions.CSM_Transaction_Steps.user_enter_the_date_in_user_running_dates(CSM_Transaction_Steps.java:954)
+	at ✽.User Enter the Date in User Running Dates(file:///C:/Users/inindc00606/git/Karthik_CSM/CSM_Karthi/src/test/java/features/CSM_Transaction.feature:594)
 </pre></div></td>
-<td>136</td>
-<td>Runner.TestApplication@19e4653c</td></tr>
+<td>43</td>
+<td>Runner.TestApplication@795509d9</td></tr>
 </table><p>
 </body>
 </html>

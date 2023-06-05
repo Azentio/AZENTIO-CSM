@@ -12,6 +12,7 @@ import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;
 import helper.JavascriptHelper;
+import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -26,6 +27,7 @@ public class CSM_Transaction_Steps {
 	CSM_Transaction_Object CSMTransactionObject = new CSM_Transaction_Object(driver);
 	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	DropDownHelper dropDownHelper = new DropDownHelper(driver);
+	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	JavascriptHelper javaScriptHelper = new JavascriptHelper(driver);
 	CSMLogin login = new CSMLogin(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
@@ -328,6 +330,17 @@ public class CSM_Transaction_Steps {
 //   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys("685");
 //   	 CSMTransactionObject.Transactions_Trxtypevalue().sendKeys(Keys.TAB);
 //    }
+    @And("^user click and send the values in user id under update after approve screens$")
+    public void user_click_the_user_id_in_update_after_approve_screens() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
+    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
+        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
+     //   csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+        CSMTransactionObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+        
+        CSMTransactionObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(Keys.ENTER);
+        
+    }
 
     @Then("^enter values of Branch code$")
     public void enter_values_of_branch_code() throws Throwable {
@@ -695,7 +708,6 @@ public class CSM_Transaction_Steps {
     	for (int i = 0; i <=3; i++) {
     		CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCodeForCredit().sendKeys(Keys.BACK_SPACE);
 		}
-    	
     	  CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCodeForCredit().sendKeys(testData.get("BranchCode_D2"));
           
           CSMTransactionObject.CSMCore_Transactions_Maintenance_BranchCodeForCredit().sendKeys(Keys.TAB);
@@ -829,6 +841,131 @@ public void user_update_test_data_set_id_for_trs066() throws Throwable {
 public void user_update_test_data_set_id_for_trs067() throws Throwable {
 	testData = excelDataForTransaction.getTestdata("TRS_063_D1");
 }
+//TRS_111
+@And("^user update test data set id for TRS_111$")
+public void user_update_test_data_set_id_for_trs111() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_111_D1");
+}
+
+@And("^User click the Limit button  in update after approve screen$")
+public void user_click_the_limit_button_in_update_after_approve_screen() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits());
+           } 
+
+@And("^user  click add button under Limits$")
+     public void user_click_add_button_under_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn());
+    seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
+
+}
+@And("^user enter the value of currency in Limits$")
+public void user_enter_the_value_of_currency_in_limits() throws Throwable {
+
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
+    seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency().sendKeys(testData.get("CurrencyCode_D1"));
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency().sendKeys(Keys.TAB);
+
+}
+
+@And("^User enter the Transaction type in Limits$")
+
+public void user_enter_the_transaction_type_in_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
+    
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(testData.get("TRXType_D1"));
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(Keys.TAB);
+    //seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+}
+
+@And("^User enter value with DepositLimit in Limits$")
+
+public void user_enter_value_with_DepositLimit_in_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+    
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(testData.get("DepositLimit"));
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(Keys.TAB);
+  
+}
 
 
+@And("^User check the with warnuserlimit in Limit$")
+public void user_check_the_with_warnuserlimit_in_limit() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
+    seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check());
+
+
+}
+
+
+
+@And("^User check the with proceediflimit in Limit$")
+public void user_check_the_with_proceediflimit_in_limit() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+    seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check());
+
+
+}
+
+
+
+@And("^user click and send the values in user id under Approve screens$")
+	    public void user_click_the_user_id_in_approve_screens() throws Throwable {
+	    	
+					waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_User_Approve_UserID());
+			    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_User_Approve_UserID());
+			        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_User_Approve_UserID());
+			       // csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+			        CSMTransactionObject.csmParam_User_Approve_UserID().sendKeys(testData.get("User_Id"));
+			        CSMTransactionObject.csmParam_User_Approve_UserID().sendKeys(Keys.ENTER);
+					
+	    }
+	
+
+
+@And("^user click the ok button under limit$")
+public void user_click_the_ok_button_under_limit() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_ok());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_ok());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_ok());
+}
+
+
+@And("^User Enter the Date in User Running Dates$")
+public void user_enter_the_date_in_user_running_dates() throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.CSMDateInUserRunningDate());
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.CSMDateInUserRunningDate());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.CSMDateInUserRunningDate());
+    CSMTransactionObject.CSMDateInUserRunningDate().clear();
+    CSMTransactionObject.CSMDateInUserRunningDate().sendKeys(testData.get("Dates"));
+}
+
+
+	
+
+
+
+
+
+
+//@And("^user click the update after approve button$")
+//public void user_click_the_update_after_approve_button() throws Throwable {
+//    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
+//    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
+//    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
+//     }
 }

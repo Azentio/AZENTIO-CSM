@@ -87,6 +87,7 @@ Feature: To test the funcnalities of Transaction module
     Then System show the warning popup clikc ok button
     And user enter the currency
     And Enter the Amount in this Checkbox
+    And User get Transaction number from sucess pop up
     And click the save button
     And system show the popup success user click the ok button
     And User click the Approve screen
@@ -560,3 +561,67 @@ Feature: To test the funcnalities of Transaction module
     And Enter the Amount in this Checkbox
     And user validate the popup as Amount Exceed warning pop up
     
+    
+    @TRS_111
+    Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
+  #Given navigate to CSM param application and login with valid credentials
+  #And user update test data set id for TRS_111
+   #And user click the parameters menu
+    #And user click the system parameters submenu
+    #And user click the User screen in system parameters
+    #And user click the update after approve screen  
+    #And user click and send the values in user id under update after approve screens
+    #And user double click the user id
+#		And User click the Limit button  in update after approve screen
+#		And user  click add button under Limits
+   #And user enter the value of currency in Limits
+    #And User enter the Transaction type in Limits
+    #And User enter value with DepositLimit in Limits
+    #User check the with warnuserlimit in Limit
+    #And User check the with proceediflimit in Limit
+    #And user click the ok button under limit
+ #		And user click the update after approve button
+    #And user click the save ok button
+    #And user click the ok
+    #And user click the approve in user screen  
+    #And user click and send the values in user id under Approve screens
+    #And user double click the user id in approve screen
+    #And user click the approve box
+    #And user click the save ok button
+    #And user click the ok
+     Given navigate to CSM application and login with valid credentials
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
+    And User Click on Use Button in Change Running Date Popup
+    And user click the ok
+    And User Click on Close Button in Change Running Date Popup
+    And User Click on Technical Details Icon
+    And User Click Clear Cache in Technical Details Icon
+    And User Click Ok Button Under Information PopUp Menu
+    And user click Transaction submenu on CSMCore
+    And user click Maintance screen under Transaction submenu
+    And user Enter the TRXType on maintance screen
+    And user Enter the BranchCode under TRXType
+    And user Enter the CurrencyCode under TRXType
+    And user Enter the GLCode under TRXType
+    And user Enter the CifCode under TRXType
+    Then System show the warning popup clikc ok button
+    And user Enter the SerialNo under TRXType
+    Then System show the warning popup clikc ok button
+     And user check if the  value is entered or not
+    And Enter the Amount in this Checkbox
+     And User Click Save Button in Maintenance Screen
+    And User get Transaction number from sucess pop up
+    And User Click Ok Button in Success PopUp Menu
+     And User click the Approve screens
+    Then user Enter the Transaction number
+    And double click the Value
+    Then click the Approve buttons
+    And click the save button
+    And system show the popup success user click the ok button
+    And User click the Approve screen
+    Then user Enter the Transaction number
+    And double click the Value
+    Then click the Approve button
+    And system show the popup success user click the ok button
+

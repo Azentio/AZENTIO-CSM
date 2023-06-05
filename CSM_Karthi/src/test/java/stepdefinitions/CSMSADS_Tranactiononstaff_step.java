@@ -77,6 +77,12 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance()); 
+        int min = 1000;  
+    	int max = 9000;   
+    	//String code = (String)(Math.random()*(max-min+1)+min);  
+    	//System.out.println(code);  
+    	//excelDataForTransactionOnStaffAcc.updateTestData("TSA_157_D1", "TRXNo", code);
+    	  
         transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("2657");
     }
 
@@ -512,7 +518,7 @@ catch (Exception e) {
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
         transactiononstaffaccObj.CSMDateInUserRunningDate().clear();
-        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys("25/05/2023");
+        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(testData.get("Dates"));
     }
 
     @And("^User Click on Use Button in Change Running Date Popup$")

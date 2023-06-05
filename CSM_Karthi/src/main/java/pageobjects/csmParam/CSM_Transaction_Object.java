@@ -404,4 +404,255 @@ private WebElement csmParam_Transactiontype_proceedoninsufficentfunds ;
 public WebElement csmParam_Transactiontype_proceedoninsufficentfunds() {
 return csmParam_Transactiontype_proceedoninsufficentfunds;
 }
+
+//TRS_111
+
+@FindBy(xpath = "//td[text()='System Parameters']")
+private WebElement csmParam_Systemparameter ;
+
+public WebElement csmParam_Systemparameter() {
+	return csmParam_Systemparameter;
+}
+
+@FindBy(xpath = "//td[text()='User']")
+private WebElement csmParam_Systemparameter_User ;
+
+public WebElement csmParam_Systemparameter_User() {
+	return csmParam_Systemparameter_User;
+}
+
+@FindBy(xpath = "//span[text()='Update after Approve']")
+private WebElement csmParam_Systemparameter_User_UpadateAfterapprove ;
+
+public WebElement csmParam_Systemparameter_User_UpadateAfterapprove() {
+	return csmParam_Systemparameter_User_UpadateAfterapprove;
+}
+
+@FindBy(id = "tellerParamList_GridTbl_Id_E000MA_gs_ctstellerVO.USER_ID")
+private WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid;
+
+public WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid() {
+	return csmParam_Systemparameter_User_UpadateAfterapprove_Userid;
+}
+
+@FindBy(id = "td_tellerParamList_GridTbl_Id_E000MA_1_ctstellerVO.USER_ID")
+private WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick;
+
+public WebElement csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick() {
+	return csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick;
+}
+
+@FindBy(xpath = "//a[@id='E000MA']")
+private WebElement updateAfterApproveInUser;
+public WebElement updateAfterApproveInUser()
+{
+    return updateAfterApproveInUser;
+
+}
+@FindBy(xpath = "//label[text()='Update After Approve ']")
+private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove;
+
+public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove() {
+	return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove;
+}
+@FindBy(id = "_popup_path_sol_confirm_ok")
+private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
+
+public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok() {
+	return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
+}
+@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
+
+public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok() {
+	return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
+}
+@FindBy(id="E000P")
+private WebElement csmParam_User_Approve;
+
+public WebElement csmParam_User_Approve() {
+	return csmParam_User_Approve;
+}
+@FindBy(id = "tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID")
+private WebElement csmParam_User_Approve_UserID;
+
+public WebElement csmParam_User_Approve_UserID() {
+	return csmParam_User_Approve_UserID;
+}
+
+@FindBy(id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID")
+private WebElement csmParam_User_Approve_Username_doubleclick;
+public WebElement csmParam_User_Approve_Username_doubleclick() {
+	return csmParam_User_Approve_Username_doubleclick;
+}
+
+@FindBy(id="tellerParamMaint_FormId_E000P_Approve_key")
+private WebElement csmParam_User_Approve_Username_doubleclick_Approve;
+
+public WebElement csmParam_User_Approve_Username_doubleclick_Approve() {
+	return csmParam_User_Approve_Username_doubleclick_Approve;
+}
+
+
+@FindBy(xpath = "//input[@id='tellerParamList_GridTbl_Id_E000MA_gs_ctstellerVO.USER_ID']")
+private WebElement userIdInUpdateAfterApprove;
+public WebElement userIdInUpdateAfterApprove()
+{
+    return userIdInUpdateAfterApprove;
+}
+
+@FindBy(id="td_tellerParamList_GridTbl_Id_E000MA_1_ctstellerVO.USER_ID")
+private WebElement doubleClickUserInUpdateAfterApprove;
+public WebElement doubleClickUserInUpdateAfterApprove()
+{
+    return doubleClickUserInUpdateAfterApprove;
+}
+
+
+@FindBy(xpath="//td[@tdlabel='Deposit Limit']//input")
+private WebElement depositLimitInUpdateAfterApprove;
+public WebElement depositLimitInUpdateAfterApprove()
+{
+    return depositLimitInUpdateAfterApprove;
+}
+
+@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000MA_Update_After_Approve_key']")
+private WebElement updateAfterApproveButtonInUpdateAfterApprove;
+public WebElement updateAfterApproveButtonInUpdateAfterApprove()
+{
+   return updateAfterApproveButtonInUpdateAfterApprove;
+}
+@FindBy(xpath="//a[@id='E000P']")
+private WebElement approveScreenInUser;
+public WebElement approveScreenInUser()
+{
+    return approveScreenInUser;
+}
+@FindBy(id="tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID")
+private WebElement userIdInApprove;
+public WebElement userIdInApprove()
+{
+   return userIdInApprove;
+}
+@FindBy(id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID")
+private WebElement doubleClickUserIdInApprove;
+public WebElement doubleClickUserIdInApprove()
+{
+    return doubleClickUserIdInApprove;
+}
+@FindBy(xpath="//span[text()=' Limits ']")
+
+private WebElement csm_sysparam_user_updateafterapprove_Limits;
+
+
+public WebElement csm_sysparam_user_updateafterapprove_Limits() {
+    return csm_sysparam_user_updateafterapprove_Limits;
+}
+@FindBy(id="add_tab3_C_GridTbl_Id_E000MA")
+private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn;
+
+public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn() {
+    return csm_sysparam_user_updateafterapprove_Limits_addbtn;
+}
+
+@FindBy(xpath="(//input[@role='livesearch'])[1]")
+private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
+    public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency() {
+    return csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
+}    
+
+    @FindBy(xpath="(//input[@role='livesearch'])[2]")
+    private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx;
+        public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx() {
+        return csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx;
+    }
+
+        @FindBy(xpath="(//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input")
+        private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
+            public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits() {
+            return csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
+        }
+            @FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Warn User If Limit Exceed']/input")
+            private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
+                public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check() {
+                return csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
+            }
+
+
+                @FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Proceed If Limit Exceed']//input")
+                private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
+                    public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check() {
+                    return csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
+                }       
+            @FindBy(id="ok_btn_2_E000MA")
+            private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
+           public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok() {
+            return csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
+        }
+       	@FindBy(id="hdr_runn_date")
+		private WebElement CSM_DateToChangeTheCurrentDate;
+
+		public WebElement CSMDateToChangeTheCurrentDate() {
+			return CSM_DateToChangeTheCurrentDate;
+		}
+		
+		@FindBy(id="global_user_run_date")
+		private WebElement CSM_DateInUserRunningDate;
+
+		public WebElement CSMDateInUserRunningDate() {
+			return CSM_DateInUserRunningDate;
+		}
+	
+		
+		@FindBy(xpath="//button[@id='submit_255022178']")
+		 private WebElement Transactions_Approvebtns;
+		public WebElement Transactions_Approvebtns()
+		 {
+		return Transactions_Approvebtns;
+		}
+		@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
+		private WebElement CSM_UseButtonInChangeRunningDate;
+
+		public WebElement CSMUseButtonInChangeRunningDate() {
+			return CSM_UseButtonInChangeRunningDate;
+		}
+		
+		@FindBy(xpath = "//label[contains(text(),'Clear Cache ')]")
+		private WebElement CSM_ClearCacheInTechnicalDetailsIcon;
+
+		public WebElement CSM_ClearCacheInTechnicalDetailsIcon() {
+			return CSM_ClearCacheInTechnicalDetailsIcon;
+
+		}
+		
+		@FindBy(id="_popup_path_sol_ok")
+		private WebElement CSM_OkButtonInInformationPopUpMenu;
+
+		public WebElement CSMOkButtonInInformationPopUpMenu() {
+			return CSM_OkButtonInInformationPopUpMenu;
+		}
+		
+		@FindBy(id="_header_rundate_dialog_close")
+		private WebElement CSM_CloseButtonInChangeRunningDate;
+
+		public WebElement CSMCloseButtonInChangeRunningDate() {
+			return CSM_CloseButtonInChangeRunningDate;
+		}
+		
+		@FindBy(id="tech_details_icon")
+		private WebElement CSM_TechnicalDetailsIcon;
+
+		public WebElement CSMTechnicalDetailsIcon() {
+			return CSM_TechnicalDetailsIcon;
+		}
+		
+		@FindBy(id="_popup_path_sol_ok")
+		private WebElement CSM_OkButtonUnderInformationPopUp;
+
+		public WebElement CSMOkButtonUnderInformationPopUp() {
+			return CSM_OkButtonUnderInformationPopUp;
+		}
+                                    
+
+
 }

@@ -131,6 +131,7 @@ public class CSM_Chequebookrequest_step {
     @And("^user click the update after approve button$")
     public void user_click_the_update_after_approve_button() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
+    	javascriptHelper.scrollIntoView(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
     	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
         clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
     }
