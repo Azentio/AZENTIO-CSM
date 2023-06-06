@@ -30,6 +30,7 @@ public class UserUtility {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, webElement);
 		seleniumActions.getClickAndActionsHelper().moveToElement(webElement);
 		seleniumActions.getClickAndActionsHelper().clickOnElement(webElement);
+		webElement.clear();
 		webElement.sendKeys(value, Keys.TAB);
 	}
 
@@ -39,6 +40,7 @@ public class UserUtility {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, webElement);
 		seleniumActions.getClickAndActionsHelper().moveToElement(webElement);
 		seleniumActions.getClickAndActionsHelper().clickOnElement(webElement);
+		webElement.clear();
 		webElement.sendKeys(value, Keys.ENTER);
 	}
 	
@@ -201,6 +203,8 @@ public class UserUtility {
 			}
 
 			map.put(titleHeader, map1);
+			
+			System.out.println(map);
 			
 			try {
 				try {

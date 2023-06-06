@@ -31,7 +31,7 @@ public class CSM_TransactionIntra extends BaseClass {
 //	Map<String, String> loginTestData = new HashMap<>();
 	Map<String, String> testData;
 	ConfigFileReader configFileReader = new ConfigFileReader();
-	UserUtility UserUtility = new UserUtility();
+	UserUtility userUtility = new UserUtility();
 	
 	//********************************************************** @TRS_0012 ***********************************************
 	
@@ -288,7 +288,7 @@ public class CSM_TransactionIntra extends BaseClass {
     @And("^User enters the transaction type for deposit account with AC CY equal to Trx CY$")
     public void userEntersTheTransactionTypeForDepositAccountWithACCYEqualToTrxCY() throws Throwable {
     	
-    	UserUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), "215");
+    	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), "215");
         
     }
 
@@ -315,7 +315,121 @@ public class CSM_TransactionIntra extends BaseClass {
     	
     }
     
+    
+    // ___________________________________________ TRS_0051 _______________________________________________________________________________________________
+    
+    @And("^User Enters the Date in User Running Date$")
+    public void user_enters_the_date_in_user_running_date() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMDateInUserRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMDateInUserRunningDate());
+        transactiononstaffaccObj.CSMDateInUserRunningDate().clear();
+        //transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(testData.get("Date in URD"));
+        transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(userUtility.currentDate());
+    }
+    
+    @And("^User enters the Multi Transfer Main Credit Transaction Interbranch transaction type$")
+    public void UserEntersTheMultiTransferMainCreditTransactionInterbranchTransactionType() {
+    	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_0051", "TrxType"));
+    }
+    
+    @And("^User Enter the Branch Code in Credit Ac in Maintenance Screen for TRS_0051$")
+    public void UserEnterTheBranchCodeInCreditAcInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "BranchCode1"));
+    }
+    @And("^User Enter Currency Code in Credit Ac in Maintenance Screen for TRS_0051$")
+    public void UserEnterCurrencyCodeInCreditAcInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCurrencyCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "CurrencyCode1"));
 
+    }
+    @And("^User Enter GL Code in Credit Ac in Maintenance Screen for TRS_0051$")
+    public void UserEnterGlCodeInCreditAcInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "GLCode1"));
+    }
+    @And("^User Enter CIF Code in Credit Ac in Maintenance Screen for TRS_0051$")
+    public void UserEnterCifCodeInCreditAcInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "CIFNo1"));
+    }
+    @And("^User Enter Serial in Credit Ac in Maintenance Screen for TRS_0051$")
+    public void UserEnterSerialInCreditAcInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSerialNoUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "SLNO1"));
+    }
+    @And("^User Enter the Currency in Maintenance Screen for TRS_0051$")
+    public void UserEnterTheCurrencyInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmCurrencyCodeForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "TRXCURCODE"));
+    }
+    @And("^User Enter the Amount in Maintenance Screen for TRS_0051$")
+    public void UserEnterTheAmountInMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmEnterAmountForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "CreditAmount1"));
+    }
+    @And("^User click on the account details button$")
+    public void UserClickOnTheAccountDetailsButton() {
+    	userUtility.clickOnElement(seleniumActions, driver, CsmTransactionObject.csmAccuntDetailsLabelUnderMaintenenanceTRX());
+    }
+    @And("^User clicks on the plus icon to add the account details$")
+    public void UserClicksOnThePlusIconToAddTheAccountDetails() {
+    	userUtility.clickOnElement(seleniumActions, driver, CsmTransactionObject.csmAddRowUnderAccuntDetailsLabelUnderMaintenenanceTRX());
+    }
+    @And("^User Enter the Branch Code in Debit Ac1 in Maintenance Screen for TRS_0051$")
+    public void UserEnterTheBranchCodeInDebitAc1InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "BranchCode2"));
+    }
+    @And("^User Enter Currency Code in Debit Ac1 in Maintenance Screen for TRS_0051$")
+    public void UserEnterCurrencyCodeInDebitAc1InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "CurrencyCode2"));
+    }
+    @And("^User Enter GL Code in Debit Ac1 in Maintenance Screen for TRS_0051$")
+    public void UserEnterGlCodeInDebitAc1InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), "312");
+    }
+    @And("^User Enter CIF Code in Debit Ac1 in Maintenance Screen for TRS_0051$")
+    public void UserEnterCifCodeInDebitAc1InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "CIFNo2"));
+    }
+    @And("^User Enter Serial in Debit Ac1 in Maintenance Screen for TRS_0051$")
+    public void UserEnterSerialInDebitAc1InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSINOUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "SLNO2"));
+    }
+    @And("^User Enter the debit amount for Ac1 for TRS_0051$")
+    public void UserEnterTheDebitAmountForAc1ForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountEnterAmountUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "DebitAmount1"));
+    }
+    @And("^User Enter the Branch Code in Debit Ac2 in Maintenance Screen for TRS_0051$")
+    public void UserEnterTheBranchCodeInDebitAc2InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmSecondAccountBranchCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "BranchCode3"));
+    }
+    @And("^User Enter GL Code in Debit Ac2 in Maintenance Screen for TRS_0051$")
+    public void UserEnterGlCodeInDebitAc2InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmSecondAccountGLCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "GLCode3"));
+    }
+    @And("^User Enter CIF Code in Debit Ac2 in Maintenance Screen for TRS_0051$")
+    public void UserEnterCifCodeInDebitAc2InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmSecondAccountCIFCodeUnderAccuntDetailsLabelUnderMaintenenanceTRX(), "00993607");
+    }
+    @And("^User Enter Serial in Debit Ac2 in Maintenance Screen for TRS_0051$")
+    public void UserEnterSerialInDebitAc2InMaintenanceScreenForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmSecondAccountSINOUnderAccuntDetailsLabelUnderMaintenenanceTRX(), "000");
+    }
+    @And("^User Enter the debit amount for Ac2 for TRS_0051$")
+    public void UserEnterTheDebitAmountForAc2ForTrs_0051() {
+    	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmSecondAccountEnterAmountUnderAccuntDetailsLabelUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_0051", "DebitAmount1"));
+    }
+    @And("^User clicks on the ok button after adding the debit account details$")
+    public void UserClicksOnTheOkButtonAfterAddingTheDebitAccountDetails() {
+    	userUtility.clickOnElement(seleniumActions, driver, CsmTransactionObject.csmClickOKUnderAccuntDetailsLabelUnderMaintenenanceTRX());
+    }
+    
+    @And("^User double clicks on the branch code in Ac1 in add account details$")
+    public void UserDoubleClicksOnTheBranchCodeInAc1InAddAccountDetails() {
+    	userUtility.doubleClickOnElement(seleniumActions, driver, CsmTransactionObject.csmFirstAccountBranchCodeEmptyUnderAccuntDetailsLabelUnderMaintenenanceTRX());;
+    }
+    
+    @And("^User double clicks on the branch code in Ac2 in add account details$")
+    public void UserDoubleClicksOnTheBranchCodeInAc2InAddAccountDetails() {
+    	userUtility.doubleClickOnElement(seleniumActions, driver, CsmTransactionObject.csmSecondAccountBranchCodeEmptyUnderAccuntDetailsLabelUnderMaintenenanceTRX());
+    }
+    
+    
 
 }
 
