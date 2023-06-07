@@ -278,7 +278,7 @@ And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 @TRS_098
 Scenario: Transactions -> Checking Cash Withdrawal Transaction - CIF Type Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
 
-Given User Navigate to CSM application and login with valid credentialsVimal
+Given User Navigate to CSM application and login with valid credentials
 And User Click on Date to Change the Current Date
 And User Enters the Date in User Running Date
 And User Click on Use Button in Change Running Date Popup
@@ -290,30 +290,27 @@ And User Click Ok Button Under Information PopUp Menu
 And User Click on Transactions under CSM application
 And User Click on Maintenance under Transactions
 And User enters the transaction type for TRS_098
-And User Enter the Branch Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter Currency Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter GL Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter CIF Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter Serial in debit Ac in Maintenance Screen for TRS_098 and TRS_103
+And User Enter the Branch Code in debit Ac in Maintenance Screen for TRS_098
+And User Enter Currency Code in debit Ac in Maintenance Screen for TRS_098
+And User Enter GL Code in debit Ac in Maintenance Screen for TRS_098
+And User Enter CIF Code in debit Ac in Maintenance Screen for TRS_098
+And User Enter Serial in debit Ac in Maintenance Screen for TRS_098
 And User Click Ok Button in Warning PopUp Menu
-And User Enter the Currency in Maintenance Screen for TRS_098 and TRS_103
-And User Enter the Amount in Maintenance Screen for TRS_098 and TRS_103
-And User Click Ok Button in Warning PopUp Menu
+And User Enter the Currency in Maintenance Screen for TRS_098
+And User Enter the Amount in Maintenance Screen for TRS_098
 And User Click Save Button in Maintenance Screen
-And User Click Ok Button in Warning PopUp Menus
 And User Get the Transaction No in Success PopUo Menus
 And User Click Ok Button in Success PopUp Menu
 And User Click on Approve Screen under Transactions
 And User Enter the Transaction No in Approve Screens
 And User Double Click on the Transaction No
 And User Click on Approve Button for approve the Transaction
-And User Click Ok Button in Warning PopUp Menus
 And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 
 @TRS_099
 Scenario: Transactions -> Checking Cash Withdrawal Transaction - CIF Type Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
 
-Given User Navigate to CSM application and login with valid credentialsVimal
+Given User Navigate to CSM application and login with valid credentials
 And User Click on Date to Change the Current Date
 And User Enters the Date in User Running Date
 And User Click on Use Button in Change Running Date Popup
@@ -346,7 +343,7 @@ And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 @TRS_100
 Scenario: Transactions -> Checking Cash Withdrawal Transaction - CIF Type Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
 
-Given User Navigate to CSM application and login with valid credentialsVimal
+Given User Navigate to CSM application and login with valid credentials
 And User Click on Date to Change the Current Date
 And User Enters the Date in User Running Date
 And User Click on Use Button in Change Running Date Popup
@@ -379,7 +376,7 @@ And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 @TRS_101
 Scenario: Transactions -> Checking Cash Deposit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
 
-Given User Navigate to CSM application and login with valid credentialsVimal
+Given User Navigate to CSM application and login with valid credentials
 And User Click on Date to Change the Current Date
 And User Enters the Date in User Running Date
 And User Click on Use Button in Change Running Date Popup
@@ -411,7 +408,7 @@ And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 @TRS_102
 Scenario: Transactions -> Checking Cash Depsoit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
 
-Given User Navigate to CSM application and login with valid credentialsVimal
+Given User Navigate to CSM application and login with valid credentials
 And User Click on Date to Change the Current Date
 And User Enters the Date in User Running Date
 And User Click on Use Button in Change Running Date Popup
@@ -443,7 +440,7 @@ And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 @TRS_103
 Scenario: Transactions -> Checking Cash Deposit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
 
-Given User Navigate to CSM application and login with valid credentialsVimal
+Given User Navigate to CSM application and login with valid credentials
 And User Click on Date to Change the Current Date
 And User Enters the Date in User Running Date
 And User Click on Use Button in Change Running Date Popup
@@ -455,24 +452,21 @@ And User Click Ok Button Under Information PopUp Menu
 And User Click on Transactions under CSM application
 And User Click on Maintenance under Transactions
 And User enters the transaction type for TRS_103
-#And User Enter the Branch Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter Currency Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter GL Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter CIF Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103
-And User Enter Serial in debit Ac in Maintenance Screen for TRS_098 and TRS_103
+And User Enter the Branch Code in Credit Ac in Maintenance Screen for TRS_103
+And User Enter Currency Code in Credit Ac in Maintenance Screen for TRS_103
+And User Enter GL Code in Credit Ac in Maintenance Screen for TRS_103
+And User Enter CIF Code in Credit Ac in Maintenance Screen for TRS_103
+And User Enter Serial in Credit Ac in Maintenance Screen for TRS_103
 And User Click Ok Button in Warning PopUp Menu
-And User Enter the Currency in Maintenance Screen for TRS_098 and TRS_103
-And User Enter the Amount in Maintenance Screen for TRS_098 and TRS_103
-And User Click Ok Button in Warning PopUp Menu
+And User Enter the Currency in Maintenance Screen for TRS_103
+And User Enter the Amount in Maintenance Screen for TRS_103
 And User Click Save Button in Maintenance Screen
-And User Click Ok Button in Warning PopUp Menus
 And User Get the Transaction No in Success PopUo Menus
 And User Click Ok Button in Success PopUp Menu
 And User Click on Approve Screen under Transactions
 And User Enter the Transaction No in Approve Screens
 And User Double Click on the Transaction No
 And User Click on Approve Button for approve the Transaction
-And User Click Ok Button in Warning PopUp Menus
 And User Click on Ok Button in Success PopUp Menu for Approve Transcation
 
 

@@ -13,6 +13,7 @@ import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.Selenium_Actions;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import pageobjects.csm.CSMSADS_TransactiononstaffaccObj;
 import pageobjects.csm.CSM_Transaction_Object;
 import resources.BaseClass;
@@ -431,9 +432,218 @@ public class CSM_TransactionIntra extends BaseClass {
     
     
 
+
+
+
+// ---------------------------- TRS_098 and TRS_103 -------------------------------------------
+    
+@And("^User Click Ok Button in PopUp Menu under maintenance TRX$")
+public void UserClickOkButtonInPopupMenuUnderMaintenanceTrx() {
+	userUtility.clickOnElement(seleniumActions, driver, CsmTransactionObject.csmClickOKUnderMaintenanceTRX());
+}
+    
+    
+@Given("^User Navigate to CSM application and login with valid credentialsVimal$")
+public void user_navigate_to_csm_application_and_login_with_valid_credentials() throws Throwable {
+	driver.get(configFileReader.getCSMApplicationUrl());
+	login.loginIntoCSMApplicationVimal();
+}
+
+@And("^User enters the transaction type for TRS_098$")
+public void UserEntersTheTransactionTypeForTrs_098() {
+	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_098", "TrxType"));
+}
+@And("^User Enter the Branch Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterTheBranchCodeInDebitAcInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "BranchCode1"));
+}
+@And("^User Enter Currency Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterCurrencyCodeInDebitAcInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCurrencyCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "CurrencyCode1"));
+}
+@And("^User Enter GL Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterGlCodeInDebitAcInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "GLCode1"));
+}
+@And("^User Enter CIF Code in debit Ac in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterCifCodeInDebitAcInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "CIFNo1"));
+}
+@And("^User Enter Serial in debit Ac in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterSerialInDebitAcInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSerialNoUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "SLNO1"));
+}
+
+@And("^User Enter the Currency in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterTheCurrencyInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmCurrencyCodeForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "TRXCURCODE"));
+}
+@And("^User Enter the Amount in Maintenance Screen for TRS_098 and TRS_103$")
+public void UserEnterTheAmountInMaintenanceScreenForTrs_098AndTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmEnterAmountForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_098", "CreditAmount1"));
+}
+
+@And("^User Click Ok Button in Warning PopUp Menus$")
+public void user_click_ok_button_in_warning_popup_menus() throws Throwable {
+	for (int i = 0; i < 200; i++) {
+		try {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CsmTransactionObject.csmConcurrentPopUp());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(CsmTransactionObject.csmConcurrentPopUp());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(CsmTransactionObject.csmConcurrentPopUp());
+	        break;
+		} catch (Exception e) {
+			if (i==199) {
+				Assert.fail(e.getMessage());
+			}
+		}			
+	}
+}
+
+	
+	
+@And("^User enters the transaction type for TRS_103$")
+public void UserEntersTheTransactionTypeForTrs_103() {
+	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_103", "TrxType"));
+}
+	
+	
+@And("^User enters the transaction type for TRS_099$")	
+public void UserEntersTheTransactionTypeForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_099", "TrxType"));
+}	
+@And("^User Enter the Branch Code in debit Ac in Maintenance Screen for TRS_099$")	
+public void UserEnterTheBranchCodeInDebitAcInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "BranchCode1"));
+}	
+@And("^User Enter Currency Code in debit Ac in Maintenance Screen for TRS_099$")	
+public void UserEnterCurrencyCodeInDebitAcInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCurrencyCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "CurrencyCode1"));
+}	
+@And("^User Enter GL Code in debit Ac in Maintenance Screen for TRS_099$")	
+public void UserEnterGlCodeInDebitAcInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "GLCode1"));
+}	
+@And("^User Enter CIF Code in debit Ac in Maintenance Screen for TRS_099$")	
+public void UserEnterCifCodeInDebitAcInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "CIFNo1"));
+}	
+@And("^User Enter Serial in debit Ac in Maintenance Screen for TRS_099$")	
+public void UserEnterSerialInDebitAcInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSerialNoUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "SLNO1"));
+
 }
 
 
+@And("^User Enter the Currency in Maintenance Screen for TRS_099$")	
+public void UserEnterTheCurrencyInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmCurrencyCodeForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "TRXCURCODE"));
+}	
+@And("^User Enter the Amount in Maintenance Screen for TRS_099$")	
+public void UserEnterTheAmountInMaintenanceScreenForTrs_099() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmEnterAmountForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_099", "CreditAmount1"));
+}	
+
+
+@And("^User enters the transaction type for TRS_100$")	
+public void UserEntersTheTransactionTypeForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_100", "TrxType"));
+}	
+@And("^User Enter the Branch Code in debit Ac in Maintenance Screen for TRS_100$")	
+public void UserEnterTheBranchCodeInDebitAcInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "BranchCode1"));
+}	
+@And("^User Enter Currency Code in debit Ac in Maintenance Screen for TRS_100$")	
+public void UserEnterCurrencyCodeInDebitAcInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCurrencyCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "CurrencyCode1"));
+}	
+@And("^User Enter GL Code in debit Ac in Maintenance Screen for TRS_100$")	
+public void UserEnterGlCodeInDebitAcInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "GLCode1"));
+}	
+@And("^User Enter CIF Code in debit Ac in Maintenance Screen for TRS_100$")	
+public void UserEnterCifCodeInDebitAcInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "CIFNo1"));
+}	
+@And("^User Enter Serial in debit Ac in Maintenance Screen for TRS_100$")	
+public void UserEnterSerialInDebitAcInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSerialNoUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "SLNO1"));
+}	
+@And("^User Enter the Currency in Maintenance Screen for TRS_100$")	
+public void UserEnterTheCurrencyInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmCurrencyCodeForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "TRXCURCODE"));
+}	
+@And("^User Enter the Amount in Maintenance Screen for TRS_100$")	
+public void UserEnterTheAmountInMaintenanceScreenForTrs_100() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmEnterAmountForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_100", "CreditAmount1"));
+}	
+
+
+@And("^User enters the transaction type for TRS_101$")	
+public void UserEntersTheTransactionTypeForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_101", "TrxType"));
+}	
+@And("^User Enter the Branch Code in Credit Ac in Maintenance Screen for TRS_101$")	
+public void UserEnterTheBranchCodeInCreditAcInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "BranchCode1"));
+}	
+@And("^User Enter Currency Code in Credit Ac in Maintenance Screen for TRS_101$")	
+public void UserEnterCurrencyCodeInCreditAcInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCurrencyCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "CurrencyCode1"));
+}	
+@And("^User Enter GL Code in Credit Ac in Maintenance Screen for TRS_101$")	
+public void UserEnterGlCodeInCreditAcInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "GLCode1"));
+}	
+@And("^User Enter CIF Code in Credit Ac in Maintenance Screen for TRS_101$")	
+public void UserEnterCifCodeInCreditAcInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "CIFNo1"));
+}	
+@And("^User Enter Serial in Credit Ac in Maintenance Screen for TRS_101$")	
+public void UserEnterSerialInCreditAcInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSerialNoUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "SLNO1"));
+}	
+@And("^User Enter the Currency in Maintenance Screen for TRS_101$")	
+public void UserEnterTheCurrencyInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmCurrencyCodeForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "TRXCURCODE"));
+}	
+@And("^User Enter the Amount in Maintenance Screen for TRS_101$")	
+public void UserEnterTheAmountInMaintenanceScreenForTrs_101() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmEnterAmountForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_101", "CreditAmount1"));
+}	
+
+
+@And("^User enters the transaction type for TRS_102$")	
+public void UserEntersTheTransactionTypeForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver, transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen(), userUtility.getExcelData("TRS_102", "TrxType"));
+}	
+@And("^User Enter the Branch Code in Credit Ac in Maintenance Screen for TRS_102$")	
+public void UserEnterTheBranchCodeInCreditAcInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountBranchCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "BranchCode1"));
+}	
+@And("^User Enter Currency Code in Credit Ac in Maintenance Screen for TRS_102$")	
+public void UserEnterCurrencyCodeInCreditAcInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCurrencyCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "CurrencyCode1"));
+}	
+@And("^User Enter GL Code in Credit Ac in Maintenance Screen for TRS_102$")	
+public void UserEnterGlCodeInCreditAcInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountGLCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "GLCode1"));
+}	
+@And("^User Enter CIF Code in Credit Ac in Maintenance Screen for TRS_102$")	
+public void UserEnterCifCodeInCreditAcInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountCIFCodeUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "CIFNo1"));
+}	
+@And("^User Enter Serial in Credit Ac in Maintenance Screen for TRS_102$")	
+public void UserEnterSerialInCreditAcInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmFirstAccountSerialNoUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "SLNO1"));
+}	
+@And("^User Enter the Currency in Maintenance Screen for TRS_102$")	
+public void UserEnterTheCurrencyInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmCurrencyCodeForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "TRXCURCODE"));
+}	
+@And("^User Enter the Amount in Maintenance Screen for TRS_102$")	
+public void UserEnterTheAmountInMaintenanceScreenForTrs_102() {	
+	userUtility.enterDataAndTab(seleniumActions, driver,CsmTransactionObject.csmEnterAmountForTRXUnderMaintenenanceTRX(), userUtility.getExcelData("TRS_102", "CreditAmount1"));
+}	
 
 
 
@@ -444,6 +654,11 @@ public class CSM_TransactionIntra extends BaseClass {
 
 
 
+
+
+
+
+}
 
 
 

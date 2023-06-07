@@ -449,6 +449,62 @@ public class CSM_Transaction_Object {
 	{
 		return csm_ClickOKUnderAccuntDetailsLabelUnderMaintenenanceTRX;
 	}
+	
+	@FindBy(xpath="//*[text()='ok']")
+	private WebElement csm_ClickOKUnderMaintenanceTRX;
+	public WebElement csmClickOKUnderMaintenanceTRX()
+	{
+		return csm_ClickOKUnderMaintenanceTRX;
+	}
+	
+	@FindBy(xpath="//input[@id='branch_code_D001MT']")
+	private WebElement csm_BranchCodeForCurrencyUnderMaintenanceTRX;
+	public WebElement csmBranchCodeForCurrencyUnderMaintenanceTRX()
+	{
+		return csm_BranchCodeForCurrencyUnderMaintenanceTRX;
+	}
+	
+	
+	
+	@FindBy(xpath="//input[@id='ctrl_cy_D001MT']")
+	private WebElement csm_CurrencyCodeForCurrencyUnderMaintenanceTRX;
+	public WebElement csmCurrencyCodeForCurrencyUnderMaintenanceTRX()
+	{
+		return csm_CurrencyCodeForCurrencyUnderMaintenanceTRX;
+	}
+	
+	
+	@FindBy(xpath="//input[@id='ctrl_gl_D001MT']")
+	private WebElement csm_GLCodeForCurrencyUnderMaintenanceTRX;
+	public WebElement csmGLCodeForCurrencyUnderMaintenanceTRX()
+	{
+		return csm_GLCodeForCurrencyUnderMaintenanceTRX;
+	}
+	
+	@FindBy(xpath="//input[@id='ctrl_cif_D001MT']")
+	private WebElement csm_CIFCodeForCurrencyUnderMaintenanceTRX;
+	public WebElement csmCIFCodeForCurrencyUnderMaintenanceTRX()
+	{
+		return csm_CIFCodeForCurrencyUnderMaintenanceTRX;
+	}
+	
+	@FindBy(xpath="//input[@id='lookuptxt_ctrl_sl_D001MT']")
+	private WebElement csm_SICodeForCurrencyUnderMaintenanceTRX;
+	public WebElement csmSICodeForCurrencyUnderMaintenanceTRX()
+	{
+		return csm_SICodeForCurrencyUnderMaintenanceTRX;
+	}
+	
+	
+	
+	@FindBy(xpath="(//input[@id='_popup_path_sol_ok'])[2]")
+	private WebElement csm_ConcurrentPopUp;
+	public WebElement csmConcurrentPopUp()
+	{
+		return csm_ConcurrentPopUp;
+	}
+	
+	
 }
 
 
