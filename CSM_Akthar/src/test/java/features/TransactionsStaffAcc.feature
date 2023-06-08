@@ -32,6 +32,42 @@ Then enter the transaction No in below Checkbox
 And  User double click the data
 And  click the Approve button
 #Then System give the popup 
+
+
+@TSA_152
+Scenario: Check if the user is able to see his account the flag is unchecked grant access personal acc
+Given Navigate to SADS application and login with valid credentials
+    And User Click on Parameters under SADS application
+    And User Click on Account Restrictions in Parameters under SADS application
+    And User Click on Maintenance in Account Restrictions under Parameters
+    And User click warning ok button
+    And User Enter the value in Code under Maintenance Screen
+    And User Enter the value in Description  under Maintenance Screen
+    And User Click the CheckBox in Grant Access to Personal Accounts under Maintenance Screen
+    And User Click the RootIcon in ApplicationsOROPTs under maintenance secreen
+    And User Click on RADM application in ApplicationsOROPTs
+    And User Click on RADM application Checkbox in ApplicationsOROPTs
+    And User Click on RET application in ApplicationsOROPTs
+    And User Click on RET application Checkbox in ApplicationsOROPTs
+    And User Click on RootIcon in Companies OR Branches in maintenance secreen
+    And User Click on 1BAJ application in Companies OR Branches
+    And User Click on  1BAJ application Checkbox in Companies OR Branches
+    And User Enter the User ID in UserID tab
+    And User Click on User ID Checkbox under UserID tab
+    And User Click on Add button in Restriction Type under Maintenance Screen
+    And User Click on Select Icon under Restriction Type
+    And user select all account info under Restriction Level
+    And User Click on Add button under Restriction Level
+    And User Click on Search Icon in  CIF NO Under the Restriction Level
+    And User Enter the CIF No in the Search box
+    And User double the data in the Search box
+    And User Click on Save button under Maintenance Screen
+    And User Click on Ok button in Success PopUp Menu
+    And User Click on Approve under Account Restrictions
+    And User Enter the Code in Approve Screen
+    And User Click the Selected code in Approve Screen
+    Then User Click on Approve button in Approve Screen
+
  
                                      #     ********** Sprint -9 *********   #
 
@@ -527,9 +563,240 @@ And  enter values of serial for single transfer
 #Then system show the popup of Non internal Account
 
 
+                                 # **********   Sprint -11   ********** #
+                                 
+@TRS_105 
+                              
+Scenario: Checking Cash Depsoit Transaction -CIF Type Deposit Limit Defined -Warn User if Limit Exceeds Checked -Amount > Limit -Specifc vs. General
+Given User login to Csm Param application
+And  user update test data set id for TRS_105 
+Then Click the Parameters 
+And  Click the System Parameters
+Then Click the User 
+Then Click the Update after approve
+Then User Enter the Name in the UserId
+And  User double click the data
+Then User click the cif types
+And  enter the code values
+#Then user enter the Transaction
+#And  enter the value in deposit limit
+#Then check the flag of Warn user If Limit Exceeds
+And  click the ok button
+Then Click the update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  Click the approve screen 
+Then user Enter the Name in the UserId
+And  user double click the Data
+Then Click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+#Then system show the stopper message
 
 
- 
+@TRS_104
+
+Scenario: Checking Cash Deposit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given User login to Csm Param application
+And  user update test data set id for TRS_105 
+Then Click the Parameters 
+And  Click the System Parameters
+Then Click the User 
+Then Click the Update after approve
+Then User Enter the Name in the UserId
+And  User double click the data
+Then User click the cif types
+And  enter the code values
+Then check the flag of Warn user If Limit Exceeds
+And  click the ok button
+Then Click the update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  Click the approve screen 
+Then user Enter the Name in the UserId
+And  user double click the Data
+Then Click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+
+
+
+
+@TRS_106
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
+Given User login to Csm Param application
+And  user update test data set id for TRS_106 
+Then Click the Parameters 
+And  Click the System Parameters
+Then Click the User 
+Then Click the Update after approve
+Then User Enter the Name in the UserId
+And  User double click the data
+Then User click the Priority
+And  Click the Number one 
+#Then enter the withdraw limit 
+#Then check the flag of Warn user If Limit Exceeds
+And  click the ok button
+Then Click the update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  Click the approve screen 
+Then user Enter the Name in the UserId
+And  user double click the Data
+Then Click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+#Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+
+
+
+@TRS_107
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
+Given User login to Csm Param application
+And  user update test data set id for TRS_107 
+Then Click the Parameters 
+And  Click the System Parameters
+Then Click the User 
+Then Click the Update after approve
+Then User Enter the Name in the UserId
+And  User double click the data
+Then User click the Priority
+And  Click the Number one 
+#Then enter the withdraw limit 
+#Then check the flag of Warn user If Limit Exceeds
+And  click the ok button
+Then Click the update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  Click the approve screen 
+Then user Enter the Name in the UserId
+And  user double click the Data
+Then Click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+
+
+@TRS_108
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given User login to Csm Param application
+And  user update test data set id for TRS_107 
+Then Click the Parameters 
+And  Click the System Parameters
+Then Click the User 
+Then Click the Update after approve
+Then User Enter the Name in the UserId
+And  User double click the data
+Then User click the Priority
+And  Click the Number one 
+#Then enter the withdraw limit 
+#Then check the flag of Warn user If Limit Exceeds
+#And check the falg of proceed If Limit Exceeds
+And  click the ok button
+Then Click the update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  Click the approve screen 
+Then user Enter the Name in the UserId
+And  user double click the Data
+Then Click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
 
 
 
@@ -540,38 +807,9 @@ And  enter values of serial for single transfer
 
 
 
-@TSA_152
-Scenario: Check if the user is able to see his account the flag is unchecked grant access personal acc
-Given Navigate to SADS application and login with valid credentials
-    And User Click on Parameters under SADS application
-    And User Click on Account Restrictions in Parameters under SADS application
-    And User Click on Maintenance in Account Restrictions under Parameters
-    And User click warning ok button
-    And User Enter the value in Code under Maintenance Screen
-    And User Enter the value in Description  under Maintenance Screen
-    And User Click the CheckBox in Grant Access to Personal Accounts under Maintenance Screen
-    And User Click the RootIcon in ApplicationsOROPTs under maintenance secreen
-    And User Click on RADM application in ApplicationsOROPTs
-    And User Click on RADM application Checkbox in ApplicationsOROPTs
-    And User Click on RET application in ApplicationsOROPTs
-    And User Click on RET application Checkbox in ApplicationsOROPTs
-    And User Click on RootIcon in Companies OR Branches in maintenance secreen
-    And User Click on 1BAJ application in Companies OR Branches
-    And User Click on  1BAJ application Checkbox in Companies OR Branches
-    And User Enter the User ID in UserID tab
-    And User Click on User ID Checkbox under UserID tab
-    And User Click on Add button in Restriction Type under Maintenance Screen
-    And User Click on Select Icon under Restriction Type
-    And user select all account info under Restriction Level
-    And User Click on Add button under Restriction Level
-    And User Click on Search Icon in  CIF NO Under the Restriction Level
-    And User Enter the CIF No in the Search box
-    And User double the data in the Search box
-    And User Click on Save button under Maintenance Screen
-    And User Click on Ok button in Success PopUp Menu
-    And User Click on Approve under Account Restrictions
-    And User Enter the Code in Approve Screen
-    And User Click the Selected code in Approve Screen
-    Then User Click on Approve button in Approve Screen
+
+
+
+
 
   

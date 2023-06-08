@@ -562,12 +562,154 @@ public class TransactionStaffAcc_obj {
 		return Transactions_flag_setAcc;
 	}
 	
-	@FindBy(xpath="")
-	private WebElement Transactions_;
-	public WebElement Transactions_()
+	
+	
+	//TRS_105//
+	
+	
+	@FindBy(xpath="//td[text()='User']")
+	private WebElement Transactions_User;
+	public WebElement Transactions_User()
 	{
-		return Transactions_;
+		return Transactions_User;
 	}
+	
+	@FindBy(xpath="//input[@id='tellerParamList_GridTbl_Id_E000MA_gs_ctstellerVO.USER_ID']")
+	private WebElement Transactions_User_userid;
+	public WebElement Transactions_User_userid()
+	{
+		return Transactions_User_userid;
+	}
+	
+	@FindBy(xpath="//td[@id='td_tellerParamList_GridTbl_Id_E000MA_1_ctstellerVO.CODE']")
+	private WebElement Transactions_User_doubleclk;
+	public WebElement Transactions_User_doubleclk()
+	{
+		return Transactions_User_doubleclk;
+	}
+	
+	@FindBy(xpath="//span[contains(text(),' CIF Types ')]")
+	private WebElement Transactions_User_CifType;
+	public WebElement Transactions_User_CifType()
+	{
+		return Transactions_User_CifType;
+	}
+	
+	@FindBy(xpath="//td[@id='td_tab5_C_GridTbl_Id_E000MA_7_ctstellerciftypedetVO.CIF_TYPE']")
+	private WebElement Transactions_Ciftype_Code;
+	public WebElement Transactions_Ciftype_Code()
+	{
+		return Transactions_Ciftype_Code;
+	}
+	
+	@FindBy(xpath="//td[@id='add_tab5_C_GridTbl_Id_E000MA']")
+	private WebElement Transactions_Ciftype_Addsym;
+	public WebElement Transactions_Ciftype_Addsym()
+	{
+		return Transactions_Ciftype_Addsym;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1685954235933_ctstellerciftypedetVO.TRX_TYPE_lookuptxt_tab5_C_GridTbl_Id_E000MA']")
+	private WebElement Transactions_Ciftype_Transactions;
+	public WebElement Transactions_Ciftype_Transactions()
+	{
+		return Transactions_Ciftype_Transactions;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1685954235933_ctstellerciftypedetVO.WITHD_LIMIT_CV']")
+	private WebElement Transactions_Ciftype_WDLimit;
+	public WebElement Transactions_Ciftype_WDLimit()
+	{
+		return Transactions_Ciftype_WDLimit;
+	}
+	@FindBy(xpath="//input[@id='new_1685954235933_ctstellerciftypedetVO.DEP_LIMIT_CV']")
+	private WebElement Transactions_Ciftype_DepositLimit;
+	public WebElement Transactions_Ciftype_DepositLimit()
+	{
+		return Transactions_Ciftype_DepositLimit;
+	}
+	@FindBy(xpath="//td[@id='td_tab5_C_GridTbl_Id_E000MA_8_ctstellerciftypedetVO.WARN_USER_LIMIT_EXCEED']")
+	private WebElement Transactions_Ciftype_Warn_Flag;
+	public WebElement Transactions_Ciftype_Warn_Flag()
+	{
+		return Transactions_Ciftype_Warn_Flag;
+	}
+	
+	@FindBy(xpath="//span[text()='Ok']")
+	private WebElement Transactions_Ciftype_okbtn;
+	public WebElement Transactions_Ciftype_okbtn()
+	{
+		return Transactions_Ciftype_okbtn;
+	}
+	@FindBy(xpath="//span[text()='Approve']")
+	private WebElement Transactions_User_appscrn;
+	public WebElement Transactions_User_appscrn()
+	{
+		return Transactions_User_appscrn;
+	}
+	@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000P_Approve_key']")
+	private WebElement Transactions_User_appbtn;
+	public WebElement Transactions_User_appbtn()
+	{
+		return Transactions_User_appbtn;
+	}
+	
+	@FindBy(xpath="//span[text()='Update after Approve']")
+	private WebElement Transactions_User_UPA;
+	public WebElement Transactions_User_UPA()
+	{
+		return Transactions_User_UPA;
+	}
+	@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000MA_Update_After_Approve_key']")
+	private WebElement Transactions_User_UPAbtn;
+	public WebElement Transactions_User_UPAbtn()
+	{
+		return Transactions_User_UPAbtn;
+	}
+	
+	@FindBy(xpath="//td[@id='td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.CODE']")
+	private WebElement Transactions_User_Appdoubleclk;
+	public WebElement Transactions_User_Appdoubleclk()
+	{
+		return Transactions_User_Appdoubleclk;
+	}
+	
+	@FindBy(xpath="//input[@id='tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID']")
+	private WebElement Transactions_User_Appcodevalue;
+	public WebElement Transactions_User_Appcodevalue()
+	{
+		return Transactions_User_Appcodevalue;
+	}
+	
+	@FindBy(xpath="//input[@id='lookuptxt_trx_type_D001MT']]")
+	private WebElement Transactions_trxvalue;
+	public WebElement Transactions_trxvalue()
+	{
+		return Transactions_trxvalue;
+	}
+	
+	//TRS_106 //
+	
+	
+	@FindBy(xpath="//span[text()=' Priority ']")
+	private WebElement Transactions_priority;
+	public WebElement Transactions_priority()
+	{
+		return Transactions_priority;
+	}
+	
+	@FindBy(xpath="//td[@id='td_tab5_P_GridTbl_Id_E000MA_1_ctstellerciftypedetVO.CIF_TYPE']")
+	private WebElement Transactions_priority_one;
+	public WebElement Transactions_priority_one()
+	{
+		return Transactions_priority_one;
+	}
+	
+
+	
+	
+	
+	
 	
 	
 	
