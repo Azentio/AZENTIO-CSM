@@ -129,14 +129,17 @@ public class CSMLogin {
 		csmCommonWebElements.csmContinueButton().click();
 		for (int i = 0; i < 200; i++) {
 			try {
-				if (i==199) {
+				 {
 					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
 					csmCommonWebElements.ForceLogoutYes().click();
 					break;
 				}
 //				
 			} catch (Exception e) {
-				
+				if (i==199)
+				{
+					Assert.fail(e.getMessage());
+				}
 				// TODO: handle exception
 			}
 		}

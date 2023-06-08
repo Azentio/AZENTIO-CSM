@@ -469,6 +469,12 @@ public WebElement saveButtonInTransactions()
 {
 	return saveButtonInTransactions;
 }
+@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.AMOUNT']")
+private WebElement checkIfValueIsEntered;
+public WebElement checkIfValueIsEntered()
+{
+return checkIfValueIsEntered;
+}
 //CSMOkButtonInInformationPopUpMenu
 @FindBy(xpath = "//span[text()='close']")
 private WebElement closeButtonInAlertPopup;
@@ -555,6 +561,30 @@ public WebElement doubleClickUserInUpdateAfterApprove()
 {
 	return doubleClickUserInUpdateAfterApprove;
 }
+@FindBy(xpath="(//input[@name='USER_ID'])[2]")
+private WebElement userIdInApproveScreen;
+public WebElement userIdInApproveScreen()
+{
+	return userIdInApproveScreen;
+}
+@FindBy(xpath="//td[@id='td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID']")
+private WebElement doubleClickRecordInApproveScreen;
+public WebElement doubleClickRecordInApproveScreen()
+{
+	return doubleClickRecordInApproveScreen;
+}
+@FindBy(xpath="//td[@id='td_tab5_E_GridTbl_Id_E000MA_0_rn']")
+private WebElement selectRowForDeleteInEcoSector;
+public WebElement selectRowForDeleteInEcoSector()
+{
+	return selectRowForDeleteInEcoSector;
+}
+@FindBy(xpath="//td[@id='del_tab5_E_GridTbl_Id_E000MA']")
+private WebElement deleteButtonInEcoSector;
+public WebElement deleteButtonInEcoSector()
+{
+	return deleteButtonInEcoSector;
+}
 @FindBy(xpath="//span[text()=' Limits ']")
 private WebElement limitsButtonInUpdateAfterApprove;
 public WebElement limitsButtonInUpdateAfterApprove()
@@ -592,19 +622,19 @@ public WebElement depositLimitInUpdateAfterApprove()
 	return depositLimitInUpdateAfterApprove;
 }
 @FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Warn User If Limit Exceed']/input")
-private WebElement warnUserIfLimitExceedInUpdateAfterApprove;
-public WebElement warnUserIfLimitExceedInUpdateAfterApprove()
+private WebElement warnUserIfLimitExceedFlagInUpdateAfterApprove;
+public WebElement warnUserIfLimitExceedFlagInUpdateAfterApprove()
 {
-	return warnUserIfLimitExceedInUpdateAfterApprove;
+	return warnUserIfLimitExceedFlagInUpdateAfterApprove;
 }
 @FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Proceed If Limit Exceed']//input")
-private WebElement proceedIfLimitExceedInUpdateAfterApprove;
-public WebElement proceedIfLimitExceedInUpdateAfterApprove()
+private WebElement proceedIfLimitExceedFlagInUpdateAfterApprove;
+public WebElement proceedIfLimitExceedFlagInUpdateAfterApprove()
 {
-	return proceedIfLimitExceedInUpdateAfterApprove;
+	return proceedIfLimitExceedFlagInUpdateAfterApprove;
 }
 //confirmOkButton()
-@FindBy(xpath="//button[@id='ok_btn_2_E000MA']")
+@FindBy(xpath="//span[text()='Ok']")
 private WebElement okButtonInUpdateAfterApprove;
 public WebElement okButtonInUpdateAfterApprove()
 {
@@ -636,9 +666,75 @@ public WebElement doubleClickUserIdInApprove()
 {
 	return doubleClickUserIdInApprove;
 }
-//approveButtonInApproveScreen
+@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000P_Approve_key']")
+private WebElement approveButtonInUser;
+public WebElement approveButtonInUser()
+{
+	return approveButtonInUser;
+}
 //confirmOkButton
 //successOkButton
+
+//TRS_122
+@FindBy(xpath = "//span[text()=' Eco Sector ']")
+private WebElement ecoSectorInUpdateAfterApprove;
+public WebElement ecoSectorInUpdateAfterApprove()
+{
+	return ecoSectorInUpdateAfterApprove;
+}
+@FindBy(id="add_tab5_E_GridTbl_Id_E000MA")
+private WebElement addIconInEcoSectorLimit;
+public WebElement addIconInEcoSectorLimit()
+{
+	return addIconInEcoSectorLimit;
+}
+@FindBy(xpath="//input[@name='lookupTxt_ctstellerciftypedetVO.CIF_TYPE']")
+private WebElement ecoSectorLimit;
+public WebElement ecoSectorLimit()
+{
+	return ecoSectorLimit;
+}
+@FindBy(xpath="//input[@name='lookupTxt_ctstellerciftypedetVO.TRX_TYPE']")
+private WebElement transactionInEcoSectorLimit;
+public WebElement transactionInEcoSectorLimit()
+{
+	return transactionInEcoSectorLimit;
+}
+//withdrawalLimitInUpdateAfterApprove
+//depositLimitInUpdateAfterApprove
+@FindBy(xpath="//td[@tdlabel='Overdraw Limit']//input")
+private WebElement overdrawLimitInUpdateAfterApprove;
+public WebElement overdrawLimitInUpdateAfterApprove()
+{
+	return overdrawLimitInUpdateAfterApprove;
+}
+@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input")
+private WebElement localApprovalLimitLimitInUpdateAfterApprove;
+public WebElement localApprovalLimitLimitInUpdateAfterApprove()
+{
+	return localApprovalLimitLimitInUpdateAfterApprove;
+}
+//warnUserIfLimitExceedFlagInUpdateAfterApprove
+//proceedIfLimitExceedFlagInUpdateAfterApprove
+@FindBy(xpath="//div[text()='Economic Sector: Limit Amount should be between 0.0  and 300']")
+private WebElement validatePopupInEcoSector;
+public WebElement validatePopupInEcoSector()
+{
+	return validatePopupInEcoSector;
+}
+@FindBy(xpath="(//input[@id='_popup_path_sol_ok'])[2]")
+private WebElement warningPopupInEcoSector;
+public WebElement warningPopupInEcoSector()
+{
+	return warningPopupInEcoSector;
+}
+@FindBy(xpath="//div[text()='Success']")
+private WebElement successMessagePopupInApproveScreen;
+public WebElement successMessagePopupInApproveScreen()
+{
+	return successMessagePopupInApproveScreen;
+}
+//csmStopperMessagePopupInTransactions
 
 
 

@@ -422,12 +422,376 @@ Given user login as csm params application
 And user click parameters menu
 And user click system parameters submenu
 And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click limits button
+And user click add icon 
+And user enter account currency value under limits
+And user enter transaction value under limits
+And user enter withdrawal limit under limits
+Then user verify the warn user if limit exceeds flag unchecked
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button
 
+#pre-requesties
+@TRS_079_02
+Scenario: Checking Cash Deposit Transaction - CurrencyDeposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
+Given user login as csm params application 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click limits button
+And user click add icon 
+And user enter account currency value under limits
+And user enter transaction value under limits
+And user enter deposit limit under limits
+Then user verify the warn user if limit exceeds flag checked
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button
+ 	
+#pre-requesties
+@TRS_122_01
+Scenario: Checking Cash Depsoit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_122_01 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user click add icon under Eco sector limit
+And user enter eco sector value
+And user enter transaction value under Eco sector 
+And user enter deposit limit value under Eco sector
+Then user verify the warn user if limit exceed flag checked under Eco sector
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button  
 
+@TRS_122
+Scenario: Checking Cash Depsoit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
+Given user login as csm core application
+And user update test data set id for TRS_122
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+#And user enter the branch code value in credit account details
+#And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon 
+And user click amount field and enter the value
+And user check if the  value is entered or not
+Then user verify the stopper message popup
 
+#post-requesties
+@TRS_122_02
+Scenario: Checking Cash Depsoit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_122_02 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user select the row for delete the record
+And user delete the inserted record under Eco sector
+And user click confirm ok button 
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button 
 
+#pre-requesties
+@TRS_123_01
+Scenario: Checking Cash Deposit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_123_01 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user click add icon under Eco sector limit
+And user enter eco sector value
+And user enter transaction value under Eco sector 
+And user enter deposit limit value under Eco sector
+Then user verify the warn user if limit exceed flag checked under Eco sector
+Then user verify the proceed if limits exceeds flag checked under Eco sector
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button  
 
+@TRS_123
+Scenario: Checking Cash Deposit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm core application
+And user update test data set id for TRS_123
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon
+And user click amount field and enter the value
+And user check if the  value is entered or not
+And user click ok button in warning popup menu
+And user click save button in transactions menu
+And user click ok button in warning popup menu under transactions
+And User Click Ok Button in Information PopUp menu
+Then user navigate to approve submenu
+And user click refresh icon in approve submenu
+And user retrieve the created record in approve submenu
+And user click approve button in approve submenu
 
+#post-requesties
+@TRS_123_02
+Scenario: Checking Cash Deposit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_123_02 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user select the row for delete the record
+And user delete the inserted record under Eco sector
+And user click confirm ok button 
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button 
+
+#pre-requesties
+@TRS_124_01
+Scenario: Checking Cash Deposit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_124_01 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user click add icon under Eco sector limit
+And user enter eco sector value
+And user enter transaction value under Eco sector 
+And user enter deposit limit value under Eco sector
+Then user verify the proceed if limits exceeds flag checked under Eco sector
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button  
+
+@TRS_124
+Scenario: Checking Cash Deposit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm core application
+And user update test data set id for TRS_124
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon
+And user click amount field and enter the value
+And user check if the  value is entered or not
+And user click save button in transactions menu
+#And user click ok button in warning popup menu under transactions
+And User Click Ok Button in Information PopUp menu
+Then user navigate to approve submenu
+And user click refresh icon in approve submenu
+And user retrieve the created record in approve submenu
+And user click approve button in approve submenu
+Then user verify the successfully approved message popup in approve submenu
+
+#post-requesties
+@TRS_124_02
+Scenario: Checking Cash Deposit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_124_02 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user select the row for delete the record
+And user delete the inserted record under Eco sector
+And user click confirm ok button 
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button
+ 
+#pre-requesties
+@TRS_125_01
+Scenario: Checking Cash Depsoit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit - Specifc vs. General
+Given user login as csm params application
+And user update test data set id for TRS_125_01 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user click add icon under Eco sector limit
+And user enter eco sector value
+And user enter transaction value under Eco sector 
+And user enter deposit limit value under Eco sector
+Then user verify the warn user if limit exceed flag checked under Eco sector
+And user click add icon under Eco sector limit
+And user enter eco sector value
+And user enter transaction type under Eco sector 
+And user enter deposit limit value in Eco sector
+Then user verify the warn user if limit exceed flag checked under Eco sector
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button  
+
+@TRS_125
+Scenario: Checking Cash Depsoit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit - Specifc vs. General
+Given user login as csm core application
+And user update test data set id for TRS_125
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon
+And user click amount field and enter the value
+And user check if the  value is entered or not
+Then validate the stopper message popup
 
 
 

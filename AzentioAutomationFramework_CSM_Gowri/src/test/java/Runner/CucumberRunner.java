@@ -1,5 +1,7 @@
 package Runner;
 
+import java.util.List;
+
 import org.apiguardian.api.API;
 
 import io.cucumber.core.logging.Logger;
@@ -24,6 +26,9 @@ public class CucumberRunner {
 	public static void run(String[] args,int sizeOfList,int tagIndex) {
 	   run(args, Thread.currentThread().getContextClassLoader(),sizeOfList,tagIndex);
 	}
+	public static void run3(List<String[]> argv) {
+	       run3(argv, Thread.currentThread().getContextClassLoader());
+	    }
 
 	public static void run2(String[] args) {
 		testRunner(args, Thread.currentThread().getContextClassLoader());
@@ -55,9 +60,46 @@ public class CucumberRunner {
 			runtime.run(tagIndex,sizeOfList);
 			
 		}
+	
 			
 		
-		
+	public static void run3(List<String[]> arg, ClassLoader classLoader) {
+        CommandlineOptionsParser commandlineOptionsParser = null;
+        CucumberRunTime runtime = null; 
+        for (String[] args : arg) {
+            RuntimeOptions propertiesFileOptions = new CucumberPropertiesParser()
+                    .parse(CucumberProperties.fromPropertiesFile()).build();
+
+ 
+
+            RuntimeOptions environmentOptions = new CucumberPropertiesParser().parse(CucumberProperties.fromEnvironment())
+                    .build(propertiesFileOptions);
+
+ 
+
+            RuntimeOptions systemOptions = new CucumberPropertiesParser().parse(CucumberProperties.fromSystemProperties())
+                    .build(environmentOptions);
+
+ 
+
+         commandlineOptionsParser = new CommandlineOptionsParser(System.out);
+            RuntimeOptions runtimeOptions = commandlineOptionsParser.parse(args).addDefaultGlueIfAbsent()
+                    .addDefaultFeaturePathIfAbsent().addDefaultFormatterIfAbsent().addDefaultSummaryPrinterIfAbsent()
+                    .enablePublishPlugin().build(systemOptions);
+
+ 
+
+            
+
+ 
+
+            runtime = CucumberRunTime.builder().withRuntimeOptions(runtimeOptions).withClassLoader(() -> classLoader)
+                    .build();
+        System.out.println("Index Number "+arg.indexOf(args));
+            runtime.run(arg.indexOf(args),arg.size());
+
+        }
+	}
 		
 		
 	

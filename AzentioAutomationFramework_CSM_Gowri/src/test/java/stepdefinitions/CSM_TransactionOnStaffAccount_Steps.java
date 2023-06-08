@@ -43,6 +43,7 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
 
     @And("^user click parameters menu$")
     public void user_click_parameters_menu() throws Throwable {
+    	
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.parametersMenu());
         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.parametersMenu());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.parametersMenu());
@@ -247,9 +248,10 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
 
     @And("^user click approve button$")
     public void user_click_approve_button() throws Throwable {
-    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.approveButton());
-        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.approveButton());
-        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.approveButton());
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.approveButtonInUser());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.approveButtonInUser());
+        seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.approveButtonInUser());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.approveButtonInUser());
     }
 
     @And("^user click populate screen$")
@@ -310,6 +312,7 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionsCurrencyField());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionsCurrencyField());
         csmTransactionOnStaffAccount.csmTransactionsCurrencyField().sendKeys(testData.get("Currency"));
+        csmTransactionOnStaffAccount.csmTransactionsCurrencyField().sendKeys(Keys.TAB);
         
     }
 
@@ -320,7 +323,8 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
     			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionsAmountField());
     			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionsAmountField());
     	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionsAmountField());
-    	        csmTransactionOnStaffAccount.csmTransactionsAmountField().sendKeys(testData.get("Amount"),Keys.TAB);
+    	        csmTransactionOnStaffAccount.csmTransactionsAmountField().sendKeys(testData.get("Amount"));
+    	        csmTransactionOnStaffAccount.csmTransactionsAmountField().sendKeys(Keys.TAB);
     	        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -330,17 +334,17 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
 			}
     	}
     		
-    		for (int i = 0; i < 200; i++) {
-    	           try {
-    	               seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.CSMCurrencyName());
-    	               csmTransactionOnStaffAccount.CSMCurrencyName().isDisplayed();
-    	                break;
-    	            } catch (Exception e) {
-    	                if (i==199) {
-    	                    Assert.fail(e.getMessage());
-    	                }
-    	            }            
-    	        }
+//    		for (int i = 0; i < 200; i++) {
+//    	           try {
+//    	               seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.CSMCurrencyName());
+//    	               csmTransactionOnStaffAccount.CSMCurrencyName().isDisplayed();
+//    	                break;
+//    	            } catch (Exception e) {
+//    	                if (i==199) {
+//    	                    Assert.fail(e.getMessage());
+//    	                }
+//    	            }            
+//    	        }
     		
 			
 		}
@@ -348,15 +352,36 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
 //        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionsAmountField());
 //        csmTransactionOnStaffAccount.csmTransactionsAmountField().sendKeys(testData.get("Amount"));
     
+    @And("^user check if the  value is entered or not$")
 
+    public void user_check_if_the_value_is_entered_or_not() throws Throwable {
+    	try {
 
+        seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.checkIfValueIsEntered());
+        if ((csmTransactionOnStaffAccount.checkIfValueIsEntered().getAttribute("prevvalue")) != null){
+        	csmTransactionOnStaffAccount.checkIfValueIsEntered().isDisplayed();
+        }
+        else
+        {       
+         
+        }
+      } catch (Exception e){
+    	  
+      }
+    }
+    
+    
+    
+    
     @And("^user click value date field and enter the value$")
     public void user_click_value_date_field_and_enter_the_value() throws Throwable {
         
     }
     @And("^user click approve screen$")
     public void user_click_approve_screen() throws Throwable {
-        
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.approveScreenInUser());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.approveScreenInUser());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.approveScreenInUser());
     }
 
     @And("^user click search icon in approve screen$")
@@ -518,20 +543,6 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
     
     @Then("^user validate the stopper message popup$")
     public void user_validate_the_stopper_message_popup() throws Throwable {
-//    	for (int i = 0; i < 200; i++) {
-//    		try {
-//    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmStopperMessagePopupInTransactions());
-//    	        Assert.assertTrue(csmTransactionOnStaffAccount.csmStopperMessagePopupInTransactions().isDisplayed());
-//    	        break;
-//			} catch (Exception e) {
-//				if (i==199) {
-//					Assert.fail(e.getMessage());
-//					
-//				}
-//				// TODO: handle exception
-//			}
-//			
-//		}
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmStopperMessagePopupInTransactions());
         Assert.assertTrue(csmTransactionOnStaffAccount.csmStopperMessagePopupInTransactions().isDisplayed());
     }
@@ -616,11 +627,38 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         csmTransactionOnStaffAccount.debitAccountSerialNo().sendKeys(testData.get("Debit Serial No"));
     }
     
+    @And("^user click ok button in warning popup menu$")
+    public void user_click_ok_button_in_warning_popup_menu() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+    }
+    
     @And("^user click save button in transactions menu$")
     public void user_click_save_button_in_transactions_menu() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.saveButtonInTransactions());
         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.saveButtonInTransactions());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.saveButtonInTransactions());
+    }
+    
+    @Given("user click ok button in warning popup menu under transactions")
+    public void user_click_ok_button_in_warning_popup_menu_under_transactions() {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.warningPopupInEcoSector());
+    	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.warningPopupInEcoSector());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.warningPopupInEcoSector());
+    	        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+//        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
     }
     
     @Then("^user navigate to approve submenu$")
@@ -705,9 +743,293 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         csmTransactionOnStaffAccount.creditAccountSerialNo().sendKeys("000");
     }
     
+    //TRS_078_01
+    
+    @Then("^user click limits button$")
+    public void user_click_limits_button() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.limitsButtonInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.limitsButtonInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.limitsButtonInUpdateAfterApprove());
+    }
+
+    @And("^user click update after approve$")
+    public void user_click_update_after_approve() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.updateAfterApproveInUser());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.updateAfterApproveInUser());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.updateAfterApproveInUser());
+    }
+
+    @And("^user enter the value in user id$")
+    public void user_enter_the_value_in_user_id() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.userIdInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.userIdInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.userIdInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.userIdInUpdateAfterApprove().sendKeys(testData.get("User Id"));
+        csmTransactionOnStaffAccount.userIdInUpdateAfterApprove().sendKeys(Keys.ENTER);
+    }
+
+    @And("^user retrieve the selected user id$")
+    public void user_retrieve_the_selected_user_id() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.doubleClickUserInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.doubleClickUserInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().doubleClick(csmTransactionOnStaffAccount.doubleClickUserInUpdateAfterApprove());
+    }
+
+    @And("^user click add icon$")
+    public void user_click_add_icon() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.addIconInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.addIconInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().doubleClick(csmTransactionOnStaffAccount.addIconInUpdateAfterApprove());
+    }
+
+    @And("^user enter account currency value under limits$")
+    public void user_enter_account_currency_value_under_limits() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.accountCurrencyInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.accountCurrencyInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.accountCurrencyInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.accountCurrencyInUpdateAfterApprove().sendKeys("840");
+    }
+
+    @And("^user enter transaction value under limits$")
+    public void user_enter_transaction_value_under_limits() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.transactionBoxInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.transactionBoxInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.transactionBoxInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.transactionBoxInUpdateAfterApprove().sendKeys("000");
+    }
+
+    @And("^user enter withdrawal limit under limits$")
+    public void user_enter_withdrawal_limit_under_limits() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove().sendKeys("100");
+    }
+
+    @And("^user click ok button under limits$")
+    public void user_click_ok_button_under_limits() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.okButtonInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.okButtonInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.okButtonInUpdateAfterApprove());
+    }
+
+    @And("^user click update after approve button$")
+    public void user_click_update_after_approve_button() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.updateAfterApproveButtonInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.updateAfterApproveButtonInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.updateAfterApproveButtonInUpdateAfterApprove());
+    }
+
+    @And("^user click confirm ok button$")
+    public void user_click_confirm_ok_button() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.confirmOkButton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.confirmOkButton());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.confirmOkButton());
+    }
+    
+    @Then("^user verify the warn user if limit exceeds flag unchecked$")
+    public void user_verify_the_warn_user_if_limit_exceeds_flag_unchecked() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+    	seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+        Assert.assertTrue(csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove().isDisplayed());
+    }
+    
+    //TRS_079_02
+    @Then("^user verify the warn user if limit exceeds flag checked$")
+    public void user_verify_the_warn_user_if_limit_exceeds_flag_checked() throws Throwable {
+        
+    }
+
+    @And("^user enter deposit limit under limits$")
+    public void user_enter_deposit_limit_under_limits() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove().sendKeys("300");
+        
+    }
+    
+    //TRS_122_01
     
     
+    @Then("^user click Eco sector button$")
+    public void user_click_eco_sector_button() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.ecoSectorInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.ecoSectorInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.ecoSectorInUpdateAfterApprove());
+    }
+
+    @Then("^user verify the warn user if limit exceed flag checked under Eco sector$")
+    public void user_verify_the_warn_user_if_limit_exceed_flag_checked_under_eco_sector() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+        seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+    }
+
+    @And("^user click add icon under Eco sector limit$")
+    public void user_click_add_icon_under_eco_sector_limit() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.addIconInEcoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.addIconInEcoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.addIconInEcoSectorLimit());
+    }
     
+    @And("^user enter eco sector value$")
+    public void user_enter_eco_sector_value() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.ecoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.ecoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.ecoSectorLimit());
+        csmTransactionOnStaffAccount.ecoSectorLimit().sendKeys(testData.get("Eco Sector Value"));
+    }
+
+    @And("^user enter transaction value under Eco sector$")
+    public void user_enter_transaction_value_under_eco_sector() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.transactionInEcoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.transactionInEcoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.transactionInEcoSectorLimit());
+        csmTransactionOnStaffAccount.transactionInEcoSectorLimit().sendKeys(testData.get("Transaction Type"));
+    }
+
+    @And("^user enter deposit limit value under Eco sector$")
+    public void user_enter_deposit_limit_value_under_eco_sector() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove().sendKeys(testData.get("Deposit Limit"));
+    }
+    
+    @And("^user enter the value in user id under approve screen$")
+    public void user_enter_the_value_in_user_id_under_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.userIdInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.userIdInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.userIdInApproveScreen());
+        csmTransactionOnStaffAccount.userIdInApproveScreen().sendKeys(testData.get("User Id"));
+        csmTransactionOnStaffAccount.userIdInApproveScreen().sendKeys(Keys.ENTER);
+    }
+
+    @And("^user retrieve the selected user id under approve screen$")
+    public void user_retrieve_the_selected_user_id_under_approve_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.doubleClickRecordInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.doubleClickRecordInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().doubleClick(csmTransactionOnStaffAccount.doubleClickRecordInApproveScreen());
+    }
+    
+    @Then("^user verify the stopper message popup$")
+    public void user_verify_the_stopper_message_popup() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.validatePopupInEcoSector());
+        Assert.assertTrue(csmTransactionOnStaffAccount.validatePopupInEcoSector().isDisplayed());
+    }
+
+    @And("^user update test data set id for TRS_122$")
+    public void user_update_test_data_set_id_for_trs122() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_122_D1");
+    }
+    
+    @And("^user select the row for delete the record$")
+    public void user_select_the_row_for_delete_the_record() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.selectRowForDeleteInEcoSector());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.selectRowForDeleteInEcoSector());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.selectRowForDeleteInEcoSector());
+    }
+    
+    @And("^user delete the inserted record under Eco sector$")
+    public void user_delete_the_inserted_record_under_eco_sector() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.deleteButtonInEcoSector());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.deleteButtonInEcoSector());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.deleteButtonInEcoSector());
+    }
+    
+    //@TRS_123_02
+    
+    @Then("^user verify the proceed if limits exceeds flag checked under Eco sector$")
+    public void user_verify_the_proceed_if_limits_exceeds_flag_checked_under_eco_sector() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+        seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    }
+    
+    //@TRS_124
+    
+    @Then("^user verify the successfully approved message popup in approve submenu$")
+    public void user_verify_the_successfully_approved_message_popup_in_approve_submenu() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.successMessagePopupInApproveScreen());
+        Assert.assertTrue(csmTransactionOnStaffAccount.successMessagePopupInApproveScreen().isDisplayed());
+    }
+    
+    @And("^user update test data set id for TRS_123$")
+    public void user_update_test_data_set_id_for_trs123() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_123_D2");
+    }
+
+    @And("^user update test data set id for TRS_124$")
+    public void user_update_test_data_set_id_for_trs124() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_122_D1");
+    }
+    
+    @And("^user update test data set id for TRS_122_01$")
+    public void user_update_test_data_set_id_for_trs12201() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_122_01");
+    }
+
+    @And("^user update test data set id for TRS_122_02$")
+    public void user_update_test_data_set_id_for_trs12202() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_122_02");
+    }
+
+    @And("^user update test data set id for TRS_123_01$")
+    public void user_update_test_data_set_id_for_trs12301() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_123_01");
+    }
+
+    @And("^user update test data set id for TRS_123_02$")
+    public void user_update_test_data_set_id_for_trs12302() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_123_02");
+    }
+
+    @And("^user update test data set id for TRS_124_01$")
+    public void user_update_test_data_set_id_for_trs12401() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_124_01");
+    }
+
+    @And("^user update test data set id for TRS_124_02$")
+    public void user_update_test_data_set_id_for_trs12402() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_124_02");
+    }
+    
+    //@TRS_125
+    
+    @Then("^validate the stopper message popup$")
+    public void validate_the_stopper_message_popup() throws Throwable {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmStopperMessagePopupInTransactions());
+        Assert.assertTrue(csmTransactionOnStaffAccount.csmStopperMessagePopupInTransactions().isDisplayed());
+    }
+
+    @And("^user update test data set id for TRS_125$")
+    public void user_update_test_data_set_id_for_trs125() throws Throwable {
+        testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_125_D4");
+    }
+    
+    @Then("user enter transaction type under Eco sector")
+    public void user_enter_transaction_type_under_eco_sector() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.transactionInEcoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.transactionInEcoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.transactionInEcoSectorLimit());
+        csmTransactionOnStaffAccount.transactionInEcoSectorLimit().sendKeys(testData.get("Transaction Type1"));
+    }
+    
+    @Then("user enter deposit limit value in Eco sector")
+    public void user_enter_deposit_limit_value_in_eco_sector() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.depositLimitInUpdateAfterApprove().sendKeys(testData.get("Deposit Limit1"));
+    }
+    
+    @And("^user update test data set id for TRS_125_01$")
+    public void user_update_test_data_set_id_for_trs12501() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_125_01");
+    }
     
     
     
