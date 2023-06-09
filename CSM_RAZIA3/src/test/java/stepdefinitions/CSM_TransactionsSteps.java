@@ -5,8 +5,6 @@ import java.util.Map;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 import dataProvider.ConfigFileReader;
@@ -14,6 +12,7 @@ import dataProvider.ExcelData;
 import helper.Selenium_Actions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import pageobjects.csm.CSM_TransactionObj;
 import resources.BaseClass;
 
@@ -22,22 +21,22 @@ public class CSM_TransactionsSteps {
 
 	WebDriver  driver = BaseClass.driver;
 	ConfigFileReader configfilereader = new ConfigFileReader();
-	//Selenium_Actions seleniumActions = new Selenium_Actions(driver);
+	//Selenium_Actions seleniumAction = new Selenium_Actions(driver);
 	Selenium_Actions seleniumAction = new Selenium_Actions(driver);
 	CSM_TransactionObj CSMTransactionObj = new CSM_TransactionObj(driver);
 	CSMLogin login  = new CSMLogin(driver);
 
 	String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
-    ExcelData csmTransactionsStaffAccountExcelData = new ExcelData(path,"CSM_TRANSACTIONS","Data Set ID");
+    ExcelData CSM_TransactionsStepsExcelData = new ExcelData(path,"CSM_TRANSACTIONS","DataSet ID");
     Map<String, String> testData;
 	
 	    
-	    @And("^user update test data set id for TRS_029$")
-	    public void user_update_test_data_set_id_for_trs029() throws Throwable {
-	    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_029_01");
-		 
-	    }
-	   
+//	    @And("^user update test data set id for TRS_029$")
+//	    public void user_update_test_data_set_id_for_trs029() throws Throwable {
+//	    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_029_01");
+//		 
+//	    }
+//	   
 	@And("^User Click on Date to Change the Current Date$")
     public void user_click_on_date_to_change_the_current_date() throws Throwable {
     	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMDateToChangeTheCurrentDate());
@@ -51,8 +50,8 @@ public class CSM_TransactionsSteps {
         seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMDateInUserRunningDate());
         seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMDateInUserRunningDate());
         CSMTransactionObj.CSMDateInUserRunningDate().clear();
-        //CSMTransactionObj.CSMDateInUserRunningDate().sendKeys(testData.get("Date in URD"));
-        CSMTransactionObj.CSMDateInUserRunningDate().sendKeys("02/06/2023");
+        CSMTransactionObj.CSMDateInUserRunningDate().sendKeys(testData.get("Dates"));
+        //CSMTransactionObj.CSMDateInUserRunningDate().sendKeys("07/06/2023");
     }
 
     @And("^User Click on Use Button in Change Running Date Popup$")
@@ -119,9 +118,9 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMTRXTypeInMaintenanceScreen());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMTRXTypeInMaintenanceScreen());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMTRXTypeInMaintenanceScreen());
-	       // CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(testData.get("TRX_TYPE"));
-	        //CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(Keys.TAB);
-	           CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys("123",Keys.TAB);
+	        CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(testData.get("TRXType_D1"));
+	        CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(Keys.TAB);
+	          // CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys("",Keys.TAB);
 	        
 	    }
 	    
@@ -130,7 +129,7 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMBranchCodeInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMBranchCodeInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMBranchCodeInCreditAc());
-	        CSMTransactionObj.CSMBranchCodeInCreditAc().sendKeys(testData.get("Branch Code"),Keys.TAB);
+	        CSMTransactionObj.CSMBranchCodeInCreditAc().sendKeys(testData.get("BranchCode_D2"),Keys.TAB);
 	       // CSMTransactionObj.CSMBranchCodeInCreditAc().sendKeys("1",Keys.TAB);
 	    }
 
@@ -140,8 +139,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCurrencyCodeCreditAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMCurrencyCodeCreditAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMCurrencyCodeCreditAc());
-	        //CSMTransactionObj.CSMCurrencyCodeCreditAc().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
-	        CSMTransactionObj.CSMCurrencyCodeCreditAc().sendKeys("840",Keys.TAB);
+	        CSMTransactionObj.CSMCurrencyCodeCreditAc().sendKeys(testData.get("CurrencyCode_D1"),Keys.TAB);
+	        //CSMTransactionObj.CSMCurrencyCodeCreditAc().sendKeys("840",Keys.TAB);
 	    }
 	    
 	    @And("^User Enter GL Code in Credit Ac in Maintenance Screen$")
@@ -149,8 +148,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMGLCodeCreditAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMGLCodeCreditAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMGLCodeCreditAc());
-	        //CSMTransactionObj.CSMGLCodeCreditAc().sendKeys(testData.get("GL Code"),Keys.TAB);
-	        CSMTransactionObj.CSMGLCodeCreditAc().sendKeys("96138",Keys.TAB);
+	        CSMTransactionObj.CSMGLCodeCreditAc().sendKeys(testData.get("GLCode_D2"),Keys.TAB);
+	       // CSMTransactionObj.CSMGLCodeCreditAc().sendKeys("96145",Keys.TAB);
 	    }
 	    
 	    @And("^User Enter CIF Code in Credit Ac in Maintenance Screen$")
@@ -158,8 +157,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCIFCodeInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMCIFCodeInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMCIFCodeInCreditAc());
-	        //CSMTransactionObj.CSMCIFCodeInCreditAc().sendKeys(testData.get("CIF No"),Keys.TAB);
-	        CSMTransactionObj.CSMCIFCodeInCreditAc().sendKeys("993563",Keys.TAB);
+	        CSMTransactionObj.CSMCIFCodeInCreditAc().sendKeys(testData.get("CIFCode_D2"),Keys.TAB);
+	       // CSMTransactionObj.CSMCIFCodeInCreditAc().sendKeys("993579",Keys.TAB);
 	    }
 
 	    @And("^User Enter Serial in Credit Ac in Maintenance Screen$")
@@ -167,8 +166,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMSerialInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMSerialInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMSerialInCreditAc());
-	        //CSMTransactionObj.CSMSerialInCreditAc().sendKeys(testData.get("Serial"),Keys.TAB);
-	        CSMTransactionObj.CSMSerialInCreditAc().sendKeys("0",Keys.TAB);
+	        CSMTransactionObj.CSMSerialInCreditAc().sendKeys(testData.get("SerialNo_D2"),Keys.TAB);
+	        //CSMTransactionObj.CSMSerialInCreditAc().sendKeys("0",Keys.TAB);
 	    }
 
 	    @And("^User Click Ok Button in Warning PopUp Menu$")
@@ -196,8 +195,9 @@ public class CSM_TransactionsSteps {
 	    			seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
 	    			seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
 	    	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
-	    	        //CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys(testData.get("Currency Code 1"),Keys.TAB);
-	    	        CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys("840",Keys.TAB);
+	    	        CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys(testData.get("CurrencyCode_D1"));
+	    	        CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys(Keys.TAB);
+	    	        //CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys("840",Keys.TAB);
 	        break;
 				} catch (Exception e) {
 					if (i==199) {
@@ -219,8 +219,8 @@ public class CSM_TransactionsSteps {
 	    		    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMAmountInMaintenanceScreen());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMAmountInMaintenanceScreen());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMAmountInMaintenanceScreen());
-	        //CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
-	        CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys("1000",Keys.ENTER);
+	        CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
+	        //CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys("100",Keys.ENTER);
 	    		}
 
 //	    @And("^User Enter the Amount in Maintenance Screen$")
@@ -356,29 +356,97 @@ public class CSM_TransactionsSteps {
 	    		
 	    	        
 	    }
-	    
+//	    
+//	    @And("^User Get the Transaction No in Success PopUo Menu$")
+//	    public void user_get_the_transaction_no_in_success_popuo_menu() throws Throwable {
+//	    	String text = "";
+//	        for (int i = 0; i <200; i++) {
+//				try {
+//					text = CSMTransactionObj.CSMGetTheTransactionNo().getText();
+//				    break;
+//				} catch (Exception e) {
+//					if (i==199) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//	        String refid = text.substring(15, 19);
+//	        System.out.println(refid);
+//	    }
 	    @And("^User Get the Transaction No in Success PopUo Menu$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu() throws Throwable {
-	    	String text = "";
-	        for (int i = 0; i <200; i++) {
-				try {
-					text = CSMTransactionObj.CSMGetTheTransactionNo().getText();
-				    break;
-				} catch (Exception e) {
-					if (i==199) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-	        String refid = text.substring(15, 19);
-	        System.out.println(refid);
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_116_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_116_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUo Menu for73$")
+	    public void user_get_the_transaction_no_in_success_popuo_menu_for73() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_073_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_073_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUo Menu for69$")
+	    public void user_get_the_transaction_no_in_success_popuo_menu_for69() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_069_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_069_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUo Menu for70$")
+	    public void user_get_the_transaction_no_in_success_popuo_menu_for70() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_070_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_070_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUo Menu for121$")
+	    public void user_get_the_transaction_no_in_success_popuo_menu_for121() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_121_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_121_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUo Menu for118$")
+	    public void user_get_the_transaction_no_in_success_popuo_menu_for118() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_118_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_118_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUo Menu for119$")
+	    public void user_get_the_transaction_no_in_success_popuo_menu_for119() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_119_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_119_D1");
+	    	
 	    }
 	    
-	   // get the transcation no
-	    //	   //waitHelper.waitForElementwithFluentwait(driver,transactiononstaffaccObj.getTransactionNumber());
-//	      String  transactionNo = transactiononstaffaccObj.getTransactionNumber().getText().substring(15, 19);
-//       System.out.println(transactionNo);
-//	       excelDataForTransactionOnStaffAcc.updateTestData("TSA_157_D1", "TRXNo", transactionNo); 
+	    
+	    
+	   
 
 	    @And("^User Click Ok Button in Success PopUp Menu$")
 	    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
@@ -408,7 +476,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMTransactionNoInApproveScreen());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMTransactionNoInApproveScreen());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMTransactionNoInApproveScreen());
-	        CSMTransactionObj.CSMTransactionNoInApproveScreen().sendKeys("7543", Keys.ENTER);
+	        CSMTransactionObj.CSMTransactionNoInApproveScreen().sendKeys(testData.get("TRXNo"));
+	        CSMTransactionObj.CSMTransactionNoInApproveScreen().sendKeys(Keys.ENTER);
 	    }
 
 	    @And("^User Double Click on the Transaction No$")
@@ -460,7 +529,9 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMEnterTheTransactionNoInSearchBox());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMEnterTheTransactionNoInSearchBox());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMEnterTheTransactionNoInSearchBox());
-	        CSMTransactionObj.CSMEnterTheTransactionNoInSearchBox().sendKeys("7597",Keys.ENTER);
+	        CSMTransactionObj.CSMEnterTheTransactionNoInSearchBox().sendKeys(testData.get("TRXNo"));
+	         CSMTransactionObj.CSMEnterTheTransactionNoInSearchBox().sendKeys(Keys.ENTER);
+	         Thread.sleep(2000);
 	    }
 
 	    @And("^User Double Click on the Searched Transaction No in Search Box$")
@@ -495,7 +566,7 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_BranchCodeINdebitAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_BranchCodeINdebitAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_BranchCodeINdebitAc());
-	        CSMTransactionObj.CSM_BranchCodeINdebitAc().sendKeys("1",Keys.TAB);
+	        CSMTransactionObj.CSM_BranchCodeINdebitAc().sendKeys(testData.get("BranchCode_D1"),Keys.TAB);
 	        
 	       }
 
@@ -504,7 +575,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_CurrencyCodedebitAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_CurrencyCodedebitAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_CurrencyCodedebitAc());
-	        CSMTransactionObj.CSM_CurrencyCodedebitAc().sendKeys("840",Keys.TAB);
+	        CSMTransactionObj.CSM_CurrencyCodedebitAc().sendKeys(testData.get("CurrencyCode_D1"),Keys.TAB);
+	        
 	          
 	    }
 
@@ -513,7 +585,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_GLCodedebitAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_GLCodedebitAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_GLCodedebitAc());
-	        CSMTransactionObj.CSM_GLCodedebitAc().sendKeys("96145",Keys.TAB);
+	        CSMTransactionObj.CSM_GLCodedebitAc().sendKeys(testData.get("GLCode_D1"));
+	        CSMTransactionObj.CSM_GLCodedebitAc().sendKeys(Keys.TAB);
 	        
 	    }
 
@@ -522,7 +595,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCIFCodeInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMCIFCodeInCreditAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMCIFCodeInCreditAc());
-	        CSMTransactionObj.CSMBranchCodeInCreditAc().sendKeys("993579",Keys.TAB);
+	        CSMTransactionObj.CSMCIFCodeInCreditAc().sendKeys(testData.get("CIFCode_D1"));
+	        CSMTransactionObj.CSMCIFCodeInCreditAc().sendKeys(Keys.TAB);
 	        
 	    }
 
@@ -531,7 +605,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_SerialIndebitAc());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_SerialIndebitAc());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_SerialIndebitAc());
-	        CSMTransactionObj.CSM_SerialIndebitAc().sendKeys("0",Keys.TAB);
+	        CSMTransactionObj.CSM_SerialIndebitAc().sendKeys(testData.get("SerialNo_D1"),Keys.TAB);
+	        CSMTransactionObj.CSM_SerialIndebitAc().sendKeys(Keys.TAB);
 	        
 	    }
 
@@ -545,7 +620,49 @@ public class CSM_TransactionsSteps {
 	    	login.loginIntoCSMParamApplication();
 	        
 	    }
-   	    
+	    
+	    @And("^user update test data set id for TRS_121$")
+	    public void user_update_test_data_set_id_for_trs121() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_121_D1");
+		 
+	    }
+	    
+	    @And("^user update test data set id for TRS_116")
+	    public void user_update_test_data_set_id_for_trs116() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_116_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_117")
+	    public void user_update_test_data_set_id_for_trs117() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_117_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_118")
+	    public void user_update_test_data_set_id_for_trs118() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_118_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_119")
+	    public void user_update_test_data_set_id_for_trs119() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_119_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_70$")
+	    public void user_update_test_data_set_id_for_trs70() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_070_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_69$")
+	    public void user_update_test_data_set_id_for_trs69() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_069_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_73$")
+	    public void user_update_test_data_set_id_for_trs73() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_073_D1");
+		 
+	    }
+	    
 	    @And("^user click the parameters menu$")
 	    public void user_click_the_parameters_menu() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmparam_parameters());
@@ -583,7 +700,7 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
-	        CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys("razia");
+	        CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
 	        CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(Keys.ENTER);
 	    	
 	    }
@@ -593,7 +710,8 @@ public class CSM_TransactionsSteps {
 	    		if (CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick().isDisplayed());
 		        {
 		        	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick());
-		        	  seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid());
+		        	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick());
+		        	seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.csmParam_Systemparameter_User_UpadateAfterapprove_Userid_doubleclick());
 		        }  
 		        }
 	         
@@ -602,7 +720,10 @@ public class CSM_TransactionsSteps {
 			}
 	    	
 }
-	   
+	   	    
+	   	
+	  
+	   	    
 	    @And("^User click the Limit button  in update after approve screen$")
 	    public void user_click_the_limit_button_in_update_after_approve_screen() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits());
@@ -627,7 +748,7 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency());
-	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency().sendKeys("840",Keys.TAB);
+	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_currency().sendKeys(testData.get("CurrencyCode_D1"),Keys.TAB);
 	      
 	       	        
 	    }
@@ -636,10 +757,56 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
-	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys("123");
+	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(testData.get("TRXType_D1"));
 	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(Keys.TAB);
-	      
-	       
+	          
+	   }
+	    @And("^user retrive the existing record from the limits screen$")
+	    public void user_retrive_the_existing_record_from_the_limits_screen() throws Throwable {
+	    	 seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.limits_retriveTheRecord());
+		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.limits_retriveTheRecord());
+		        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.limits_retriveTheRecord());
+		    
+
+	    	
+	    }
+	    
+//	          try {
+//	        	  seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.limits_retriveTheRecord());
+//
+//	        	  seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.limits_retriveTheRecord());
+//	        	  seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.limits_retriveTheRecord());
+//	        	  seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.limits_retriveTheRecord());
+//	               seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.limits_retriveTheRecord());
+//	             if ((CSMTransactionObj.limits_retriveTheRecord().getAttribute("prevvalue")).equalsIgnoreCase("977")){	   
+//	            	 CSMTransactionObj.limits_retriveTheRecord().isDisplayed();
+//	    
+//	                      } 
+//	         else {       
+//	               	                }
+//	               
+//	                } catch (Exception e){
+//	                }}
+//
+//	   
+
+	     
+
+	    @And("^user delete the record from the limits screen$")
+	    public void user_delete_the_record_from_the_limits_screen() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.limits_DeleteButton());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.limits_DeleteButton());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.limits_DeleteButton());
+	    	
+	    	
+//	        try {
+//	        	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.limits_DeleteButton());
+//	        	seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.limits_DeleteButton());
+//	        	seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.limits_DeleteButton());
+//	        } catch (Exception e) {
+//
+//	        }
 	    }
 
 	    
@@ -648,9 +815,9 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
-	        CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys("300");
-	       // CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(Keys.TAB);
-	       // seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+	        //CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys("300");
+	       CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(testData.get("WithdrawLimit"),Keys.TAB);
+	       
 		     
 	    }
 
@@ -733,6 +900,7 @@ public class CSM_TransactionsSteps {
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Approve());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Approve());
 	       
+	       
 	    }
 
 	    
@@ -741,8 +909,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Approve_UserID());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Approve_UserID());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Approve_UserID());
-	        	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys("razia");
-	        	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys(Keys.TAB);
+	        	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys(testData.get("User_Id"));
+	        	        CSMTransactionObj.csmParam_User_Approve_UserID().sendKeys(Keys.ENTER);
 	       
 	    }
 
@@ -760,6 +928,14 @@ public class CSM_TransactionsSteps {
 	   
 	    	
 	                
+	    }
+	    
+	    @And("user click the Approvebttn$")
+	    public void user_click_the_approvebttn()throws Throwable  {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.csmParam_User_Approvebttn());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_User_Approvebttn());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_User_Approvebttn());
+	        
 	    }
 
 	    @And("^user click the approve box$")
@@ -795,8 +971,8 @@ public class CSM_TransactionsSteps {
 					seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_Transactiontype_inputfield());
 					 seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_Transactiontype_inputfield());
 					 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_Transactiontype_inputfield());
-			        //CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType")); 
-			        CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys("123");
+			        CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType_D1")); 
+			        //CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys("123");
 			        CSMTransactionObj.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
 				} catch (Exception e) {
 					
@@ -937,8 +1113,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
 	    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode());
-	       // CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(testData.get("GLCode_D1")); 
-	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys("96145");
+	       CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(testData.get("GLCode_D1")); 
+	       //CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys("96145");
 	         CSMTransactionObj.csmParam_AccountParameters_AccountTypes_UPA_TypeCode().sendKeys(Keys.ENTER);
 	    }
 
@@ -1013,8 +1189,8 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
 	    	seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode());
-	        //CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(testData.get("GLCode_D1"));
-	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys("96145");
+	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(testData.get("GLCode_D1"));
+	       // CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys("96145");
 	        CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode().sendKeys(Keys.ENTER);
 	    }
 
@@ -1031,8 +1207,144 @@ public class CSM_TransactionsSteps {
 	     	 seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick_ApproveButton()); 
 	    }
 	    
+//@121
+	    @Then("^user click Eco sector button$")
+	    public void user_click_eco_sector_button() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.ecoSectorInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.ecoSectorInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.ecoSectorInUpdateAfterApprove());
+	    }
+	    @And("User click the Eco sector Delete All$")
+	    public void user_click_the_eco_sector_delete_all() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.ecoSectorInUpdateAfterApprove_DeleteAll());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.ecoSectorInUpdateAfterApprove_DeleteAll());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.ecoSectorInUpdateAfterApprove_DeleteAll());
+       // Thread.sleep(3000);
+	    	   }
+//	    @And("user click the ok")
+//	    public void user_click_the_ok() throws Throwable {
+//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csm_ok());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_OkButtonInWarningPopUpToGoBackToMaintenance());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_OkButtonInWarningPopUpToGoBackToMaintenance());
+//	        //Thread.sleep(3000);
+//	        
+//	    }
 
+	    
+	    
+	    
+	 
 
+	    @Then("^user verify the warn user if limit exceed flag checked under Eco sector$")
+	    public void user_verify_the_warn_user_if_limit_exceed_flag_checked_under_eco_sector() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+	        seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+	    }
+
+//	    @Then("^user verify the warn user if limit exceed flag unchecked under Eco sector$")
+//	    public void user_verify_the_warn_user_if_limit_exceed_flag_unchecked_under_eco_sector() throws Throwable {
+//	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+//	        seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.warnUserIfLimitExceedFlagInUpdateAfterApprove());
+//	    }
+@Then("user verify the Proceed if Limit Exceeds Checked under Eco sector")
+public void user_verify_the_proceed_if_limit_exceeds_checked_under_eco_sector() throws  Throwable{
+	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    seleniumAction.getJavascriptHelper().scrollIntoView(CSMTransactionObj.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.proceedIfLimitExceedFlagInUpdateAfterApprove());
+   
+}
+
+	 
+
+	    @And("^user click add icon under Eco sector limit$")
+	    public void user_click_add_icon_under_eco_sector_limit() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.addIconInEcoSectorLimit());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.addIconInEcoSectorLimit());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.addIconInEcoSectorLimit());
+	    }
+
+	    @And("^user enter eco sector value$")
+	    public void user_enter_eco_sector_value() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.ecoSectorLimit());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.ecoSectorLimit());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.ecoSectorLimit());
+	        CSMTransactionObj.ecoSectorLimit().sendKeys(testData.get("Ecosector-limit"));
+	    }
+
+	 
+
+	    @And("^user enter transaction value under Eco sector$")
+	    public void user_enter_transaction_value_under_eco_sector() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.transactionInEcoSectorLimit());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.transactionInEcoSectorLimit());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.transactionInEcoSectorLimit());
+	        CSMTransactionObj.transactionInEcoSectorLimit().sendKeys(testData.get("TRXType_D1"));
+	        
+	    }
+
+	 
+
+	    @And("^user enter deposit limit value under Eco sector$")
+	    public void user_enter_deposit_limit_value_under_eco_sector() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.depositLimitInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.depositLimitInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.depositLimitInUpdateAfterApprove());
+	        CSMTransactionObj.depositLimitInUpdateAfterApprove().sendKeys(testData.get("DepositLimit"));
+	    }
+
+	    @And("^user enter withdraw limit value under Eco sector$")
+	    public void user_enter_withdraw_limit_value_under_eco_sector() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.withdrawalLimitInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.withdrawalLimitInUpdateAfterApprove());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.withdrawalLimitInUpdateAfterApprove());
+	        CSMTransactionObj.withdrawalLimitInUpdateAfterApprove().sendKeys(testData.get("WithdrawLimit"));
+	    }
+	    @And("^user enter the value in user id under approve screen$")
+	    public void user_enter_the_value_in_user_id_under_approve_screen() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.userIdInApproveScreen());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.userIdInApproveScreen());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.userIdInApproveScreen());
+	        CSMTransactionObj.userIdInApproveScreen().sendKeys(testData.get("User_Id"));
+	        CSMTransactionObj.userIdInApproveScreen().sendKeys(Keys.ENTER);
+	    }
+
+	 
+
+	    @And("^user retrieve the selected user id under approve screen$")
+	    public void user_retrieve_the_selected_user_id_under_approve_screen() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.doubleClickRecordInApproveScreen());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.doubleClickRecordInApproveScreen());
+	        seleniumAction.getClickAndActionsHelper().doubleClick(CSMTransactionObj.doubleClickRecordInApproveScreen());
+	    }
+
+//	    @Then("^user verify the stopper message popup$")
+//	    public void user_verify_the_stopper_message_popup() throws Throwable {
+//	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.validatePopupInEcoSector());
+//	        Assert.assertTrue(CSMTransactionObj.validatePopupInEcoSector().isDisplayed());
+//	    }
+
+	 
+	  
+	    @And("^user select the row for delete the record$")
+	    public void user_select_the_row_for_delete_the_record() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.selectRowForDeleteInEcoSector());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.selectRowForDeleteInEcoSector());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.selectRowForDeleteInEcoSector());
+	    }
+
+	    @And("^user delete the inserted record under Eco sector$")
+	    public void user_delete_the_inserted_record_under_eco_sector() throws Throwable {
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.deleteButtonInEcoSector());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.deleteButtonInEcoSector());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.deleteButtonInEcoSector());
+	    }
+	    
 
 	
 	

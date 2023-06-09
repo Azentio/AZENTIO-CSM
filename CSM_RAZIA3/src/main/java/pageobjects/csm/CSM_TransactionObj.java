@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import io.cucumber.java.en.Then;
+
 public class CSM_TransactionObj {
 
 	
@@ -140,8 +142,8 @@ public class CSM_TransactionObj {
 	public WebElement CSMOkButtonInWarningPopUpMenu() {
 		return CSM_OkButtonInWarningPopUpMenu;
 	}
-	
-	@FindBy(id="lookuptxt_trs_cy_D001MT")
+	//id="lookuptxt_trs_cy_D001MT"
+	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_CY']")
 	private WebElement CSM_CurrencyInMaintenanceScreen;
 
 	public WebElement CSMCurrencyInMaintenanceScreen() {
@@ -530,7 +532,7 @@ public class CSM_TransactionObj {
 		public WebElement success_ok() {
 			return success_ok;
 		}
-	// check if the retrive button is  in the field  da karthi
+	// check if the retrive button is  in the field  
 	
 	@FindBy(xpath = "//label[text()='Update After Approve ']")
 	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove;
@@ -544,17 +546,26 @@ public class CSM_TransactionObj {
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok() {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
 	}
-	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']") 
+	
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']") //button[@id='ok_btn_4_E000MA']
 	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
 
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok() {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
 	}
-	@FindBy(id="E000P")
+	
+	@FindBy(xpath="//span[text()='Approve']")
 	private WebElement csmParam_User_Approve;
 
 	public WebElement csmParam_User_Approve() {
 		return csmParam_User_Approve;
+	}
+	
+	@FindBy(xpath="//label[text()='Approve ']")
+	private WebElement csmParam_User_Approvebttn;
+
+	public WebElement csmParam_User_Approvebttn() {
+		return csmParam_User_Approvebttn;
 	}
 	@FindBy(id = "tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID")
 	private WebElement csmParam_User_Approve_UserID;
@@ -563,7 +574,8 @@ public class CSM_TransactionObj {
 		return csmParam_User_Approve_UserID;
 	}
 	
-	@FindBy(id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID")
+	//id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID
+	@FindBy(xpath="//td[text()='RAZIA']")
 	private WebElement csmParam_User_Approve_Username_doubleclick;
 	public WebElement csmParam_User_Approve_Username_doubleclick() {
 		return csmParam_User_Approve_Username_doubleclick;
@@ -586,6 +598,25 @@ public class CSM_TransactionObj {
 		public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn() {
 		return csm_sysparam_user_updateafterapprove_Limits_addbtn;
 	}
+
+			    @FindBy(id = "td_tab3_C_GridTbl_Id_E000MA_0_rn")
+		        private WebElement limits_retriveTheRecord ;
+
+		         public WebElement limits_retriveTheRecord() {
+		            return limits_retriveTheRecord;
+		        }  
+		        @FindBy(xpath = "//td[@id='del_tab3_C_GridTbl_Id_E000MA']")
+		        private WebElement limits_DeleteButton ;
+
+		 
+
+		        public WebElement limits_DeleteButton() {
+		            return limits_DeleteButton;
+		        }  
+		
+		
+		
+		
 	@FindBy(xpath="(//input[@role='livesearch'])[1]")
 	private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
 		public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency() {
@@ -615,10 +646,9 @@ public class CSM_TransactionObj {
 						public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check() {
 						return csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
 					}
-						
-						
+										
 
-				@FindBy(id="ok_btn_2_E000MA")
+				@FindBy(xpath="//span[contains(text(),'Ok')]")
 				private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
 				public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok() {
 				return csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
@@ -794,6 +824,375 @@ public class CSM_TransactionObj {
 				public WebElement csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve() {
 				return csmParam_Transactiontype_Approve_Inputfield_doubleclick_Approve;
 				}
+//=@122
+							
+				@FindBy(xpath = "//a[@id='E000MA']")
 
-					
+				private WebElement updateAfterApproveInUser;
+
+				public WebElement updateAfterApproveInUser()
+
+				{
+
+				    return updateAfterApproveInUser;
+
+				}
+
+				@FindBy(xpath = "//input[@id='tellerParamList_GridTbl_Id_E000MA_gs_ctstellerVO.USER_ID']")
+
+				private WebElement userIdInUpdateAfterApprove;
+
+				public WebElement userIdInUpdateAfterApprove()
+
+				{
+
+				    return userIdInUpdateAfterApprove;
+
+				}
+
+				@FindBy(id="td_tellerParamList_GridTbl_Id_E000MA_1_ctstellerVO.USER_ID")
+
+				private WebElement doubleClickUserInUpdateAfterApprove;
+
+				public WebElement doubleClickUserInUpdateAfterApprove()
+
+				{
+
+				    return doubleClickUserInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="(//input[@name='USER_ID'])[2]")
+
+				private WebElement userIdInApproveScreen;
+
+				public WebElement userIdInApproveScreen()
+
+				{
+
+				    return userIdInApproveScreen;
+
+				}
+
+				@FindBy(xpath="//td[@id='td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID']")
+
+				private WebElement doubleClickRecordInApproveScreen;
+
+				public WebElement doubleClickRecordInApproveScreen()
+
+				{
+
+				    return doubleClickRecordInApproveScreen;
+
+				}
+
+				@FindBy(xpath="//td[@id='td_tab5_E_GridTbl_Id_E000MA_0_rn']")
+
+				private WebElement selectRowForDeleteInEcoSector;
+
+				public WebElement selectRowForDeleteInEcoSector()
+
+				{
+
+				    return selectRowForDeleteInEcoSector;
+
+				}
+
+				@FindBy(xpath="//td[@id='del_tab5_E_GridTbl_Id_E000MA']")
+
+				private WebElement deleteButtonInEcoSector;
+
+				public WebElement deleteButtonInEcoSector()
+
+				{
+
+				    return deleteButtonInEcoSector;
+
+				}
+
+				@FindBy(xpath="//span[text()=' Limits ']")
+
+				private WebElement limitsButtonInUpdateAfterApprove;
+
+				public WebElement limitsButtonInUpdateAfterApprove()
+
+				{
+
+				    return limitsButtonInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//td[@id='add_tab3_C_GridTbl_Id_E000MA']")
+
+				private WebElement addIconInUpdateAfterApprove;
+
+				public WebElement addIconInUpdateAfterApprove()
+
+				{
+
+				    return addIconInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//input[@name='lookupTxt_ctstellerlimitVO.CY_CODE']")
+
+				private WebElement accountCurrencyInUpdateAfterApprove;
+
+				public WebElement accountCurrencyInUpdateAfterApprove()
+
+				{
+
+				    return accountCurrencyInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//input[@name='lookupTxt_ctstellerlimitVO.TRX_TYPE']")
+
+				private WebElement transactionBoxInUpdateAfterApprove;
+
+				public WebElement transactionBoxInUpdateAfterApprove()
+
+				{
+
+				    return transactionBoxInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//td[@tdlabel='W/D Limit']//input")
+
+				private WebElement withdrawalLimitInUpdateAfterApprove;
+
+				public WebElement withdrawalLimitInUpdateAfterApprove()
+
+				{
+
+				    return withdrawalLimitInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//td[@tdlabel='Deposit Limit']//input")
+
+				private WebElement depositLimitInUpdateAfterApprove;
+
+				public WebElement depositLimitInUpdateAfterApprove()
+
+				{
+
+				    return depositLimitInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Warn User If Limit Exceed']/input")
+
+				private WebElement warnUserIfLimitExceedFlagInUpdateAfterApprove;
+
+				public WebElement warnUserIfLimitExceedFlagInUpdateAfterApprove()
+
+				{
+
+				    return warnUserIfLimitExceedFlagInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Proceed If Limit Exceed']//input")
+
+				private WebElement proceedIfLimitExceedFlagInUpdateAfterApprove;
+
+				public WebElement proceedIfLimitExceedFlagInUpdateAfterApprove()
+
+				{
+
+				    return proceedIfLimitExceedFlagInUpdateAfterApprove;
+
+				}
+
+				//confirmOkButton()
+
+				@FindBy(xpath="//span[text()='Ok']")
+
+				private WebElement okButtonInUpdateAfterApprove;
+
+				public WebElement okButtonInUpdateAfterApprove()
+
+				{
+
+				    return okButtonInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000MA_Update_After_Approve_key']")
+
+				private WebElement updateAfterApproveButtonInUpdateAfterApprove;
+
+				public WebElement updateAfterApproveButtonInUpdateAfterApprove()
+
+				{
+
+				    return updateAfterApproveButtonInUpdateAfterApprove;
+
+				}
+
+				//confirmOkButton()
+
+				//CSMOkButtonInAccessDeniedPopUpMenu
+
+				@FindBy(xpath="//a[@id='E000P']")
+
+				private WebElement approveScreenInUser;
+
+				public WebElement approveScreenInUser()
+
+				{
+
+				    return approveScreenInUser;
+
+				}
+
+				@FindBy(id="tellerParamList_GridTbl_Id_E000P_gs_ctstellerVO.USER_ID")
+
+				private WebElement userIdInApprove;
+
+				public WebElement userIdInApprove()
+
+				{
+
+				    return userIdInApprove;
+
+				}
+
+				@FindBy(id="td_tellerParamList_GridTbl_Id_E000P_1_ctstellerVO.USER_ID")
+
+				private WebElement doubleClickUserIdInApprove;
+
+				public WebElement doubleClickUserIdInApprove()
+
+				{
+
+				    return doubleClickUserIdInApprove;
+
+				}
+
+				@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000P_Approve_key']")
+
+				private WebElement approveButtonInUser;
+
+				public WebElement approveButtonInUser()
+
+				{
+
+				    return approveButtonInUser;
+
+				}
+
+				//confirmOkButton
+
+				//successOkButton
+
+				 
+
+				//TRS_122
+
+				@FindBy(xpath = "//span[text()=' Eco Sector ']")
+
+				private WebElement ecoSectorInUpdateAfterApprove;
+
+				public WebElement ecoSectorInUpdateAfterApprove()
+
+				{
+
+				    return ecoSectorInUpdateAfterApprove;
+
+				}
+
+				@FindBy(id="add_tab5_E_GridTbl_Id_E000MA")
+
+				private WebElement addIconInEcoSectorLimit;
+
+				public WebElement addIconInEcoSectorLimit()
+
+				{
+
+				    return addIconInEcoSectorLimit;
+
+				}
+
+				@FindBy(xpath="//input[@name='lookupTxt_ctstellerciftypedetVO.CIF_TYPE']")
+
+				private WebElement ecoSectorLimit;
+
+				public WebElement ecoSectorLimit()
+
+				{
+
+				    return ecoSectorLimit;
+
+				}
+
+				@FindBy(xpath="//input[@name='lookupTxt_ctstellerciftypedetVO.TRX_TYPE']")
+
+				private WebElement transactionInEcoSectorLimit;
+
+				public WebElement transactionInEcoSectorLimit()
+
+				{
+
+				    return transactionInEcoSectorLimit;
+
+				}
+
+				//withdrawalLimitInUpdateAfterApprove
+
+				//depositLimitInUpdateAfterApprove
+
+				@FindBy(xpath="//td[@tdlabel='Overdraw Limit']//input")
+
+				private WebElement overdrawLimitInUpdateAfterApprove;
+
+				public WebElement overdrawLimitInUpdateAfterApprove()
+
+				{
+
+				    return overdrawLimitInUpdateAfterApprove;
+
+				}
+
+				@FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input")
+
+				private WebElement localApprovalLimitLimitInUpdateAfterApprove;
+
+				public WebElement localApprovalLimitLimitInUpdateAfterApprove()
+
+				{
+
+				    return localApprovalLimitLimitInUpdateAfterApprove;
+
+				}
+			
+
+				@FindBy(xpath="//div[contains(text(),'Saved Successfully')]")
+
+				private WebElement getTransactionNumber;
+
+				public WebElement getTransactionNumber()
+
+				{
+
+				   return getTransactionNumber;
+
+				}
+				
+				 
+
+				@FindBy(xpath="//span[text()='Delete All']")
+
+				private WebElement ecoSectorInUpdateAfterApprove_DeleteAll ;
+
+				public WebElement ecoSectorInUpdateAfterApprove_DeleteAll ()
+
+				{
+
+				    return ecoSectorInUpdateAfterApprove_DeleteAll;
+
+				}	 
+
 }
