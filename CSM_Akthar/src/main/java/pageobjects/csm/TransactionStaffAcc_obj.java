@@ -705,9 +705,15 @@ public class TransactionStaffAcc_obj {
 		return Transactions_priority_one;
 	}
 	
-
+	//TRS_106//
 	
 	
+	@FindBy(xpath="//a[@id='D001AU']")
+	private WebElement Transactions_core_appscrn;
+	public WebElement Transactions_core_appscrn()
+	{
+		return Transactions_core_appscrn;
+	}
 	
 	
 	

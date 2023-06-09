@@ -454,9 +454,22 @@ public class TransactionStaffAccs_Steps {
          
          @Then("^System show the warning popup click ok button$")
          public void system_show_the_warning_popup_click_ok_button() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Warning_okbtn());
-        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Warning_okbtn());
-        	 Thread.sleep(2000);
+        	 //waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Warning_okbtn());
+        	 for (int i = 0; i <300; i++) {
+        		 try {
+ 					clicksAndActionsHelper.moveToElement(transactionStaffAcc.Transactions_Warning_okbtn());
+ 					clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Warning_okbtn());
+ 					break;
+ 			} catch (Exception e) {
+ 				if (i==299) {
+ 					Assert.fail(e.getMessage());
+				}
+ 				
+ 			}
+			}
+        	 
+        	// transactionStaffAcc.Transactions_Warning_okbtn().click();
+        	 //Thread.sleep(2000);
          }
          
          @And("^user enter the currency$")
@@ -464,7 +477,8 @@ public class TransactionStaffAccs_Steps {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_currency());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_currency());  
         	 transactionStaffAcc.Transactions_debitAcc_currency().sendKeys(testData.get("Credit Currency Code"));
-        	 Thread.sleep(2000);
+        	 transactionStaffAcc.Transactions_debitAcc_currency().sendKeys(Keys.TAB);
+        	 Thread.sleep(3000);
          }
          
          @And("^Enter the Amount in this Checkbox$")
@@ -472,7 +486,8 @@ public class TransactionStaffAccs_Steps {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_EnterAmount());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_EnterAmount());  
         	 transactionStaffAcc.Transactions_EnterAmount().sendKeys(testData.get("Amend Amount"));
-        	 Thread.sleep(2000);
+        	 transactionStaffAcc.Transactions_EnterAmount().sendKeys(Keys.TAB);
+        	 Thread.sleep(3000);
         	 
         	 
          }        
@@ -863,7 +878,8 @@ public class TransactionStaffAccs_Steps {
          @Then("^check the flag of Warn user If Limit Exceeds$")
          public void check_the_flag_of_warn_user_if_limit_exceeds() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Ciftype_Warn_Flag());
-             clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Ciftype_Warn_Flag());   
+             clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Ciftype_Warn_Flag()); 
+             Thread.sleep(2000);
          }
 
          @And("^click the ok button$")

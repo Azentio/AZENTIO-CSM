@@ -564,7 +564,54 @@ And  enter values of serial for single transfer
 
 
                                  # **********   Sprint -11   ********** #
-                                 
+
+@TRS_104 
+               
+Scenario: Checking Cash Deposit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given User login to Csm Param application
+And  user update test data set id for TRS_105 
+Then Click the Parameters 
+And  Click the System Parameters
+Then Click the User 
+Then Click the Update after approve
+Then User Enter the Name in the UserId
+And  User double click the data
+Then User click the cif types
+And  enter the code values
+Then check the flag of Warn user If Limit Exceeds
+And  click the ok button
+Then Click the update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  Click the approve screen 
+Then user Enter the Name in the UserId
+And  user double click the Data
+Then Click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And  System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+
+
 @TRS_105 
                               
 Scenario: Checking Cash Depsoit Transaction -CIF Type Deposit Limit Defined -Warn User if Limit Exceeds Checked -Amount > Limit -Specifc vs. General
@@ -606,53 +653,6 @@ Then system gives the view memo popup user close the popup
 And  user enter the currency
 And  Enter the Amount in this Checkbox
 #Then system show the stopper message
-
-
-@TRS_104
-
-Scenario: Checking Cash Deposit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
-Given User login to Csm Param application
-And  user update test data set id for TRS_105 
-Then Click the Parameters 
-And  Click the System Parameters
-Then Click the User 
-Then Click the Update after approve
-Then User Enter the Name in the UserId
-And  User double click the data
-Then User click the cif types
-And  enter the code values
-Then check the flag of Warn user If Limit Exceeds
-And  click the ok button
-Then Click the update After approve button
-And  System giving information message click ok button
-And  system show the success popup click ok button 
-And  Click the approve screen 
-Then user Enter the Name in the UserId
-And  user double click the Data
-Then Click the Approve button
-And  System show the  confirm popup user click the ok button
-And  System show the record was successfully
-Then User navigate to CSM application and login with valid credentials
-And  User click the Transactions
-Then Click the Maintenance Below the Transactions
-And  enter the value in Trx type
-Then enter values of Branch code
-And  enter values of currency code
-And  enter values of gl code 
-And  enter values of cif number  
-And  system gives the view memo popup user close the popup
-Then enter values of serial
-And System show the warning popup click ok button
-Then system gives the view memo popup user close the popup
-And  user enter the currency
-And  Enter the Amount in this Checkbox
-And  click the save button
-And  User get Transaction number from sucess pop up
-And  User click the Approve screen     
-Then user Enter the Transaction number   
-And  double click the Value               
-Then click the Approve button
-And  system show the popup success user click the ok button
 
 
 
@@ -744,9 +744,7 @@ And System show the warning popup click ok button
 Then system gives the view memo popup user close the popup
 And  user enter the currency
 And  Enter the Amount in this Checkbox
-Then System show the warning popup click ok button
-And  click the save button
-And  User get Transaction number from sucess pop up
+#Then system show the stopper message
 
 
 @TRS_108
@@ -789,8 +787,8 @@ Then system gives the view memo popup user close the popup
 And  user enter the currency
 And  Enter the Amount in this Checkbox
 Then System show the warning popup click ok button
+Then System show the warning popup click ok button
 And  click the save button
-And  User get Transaction number from sucess pop up
 And  User get Transaction number from sucess pop up
 And  User click the Approve screen     
 Then user Enter the Transaction number   
