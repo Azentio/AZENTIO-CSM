@@ -19,7 +19,6 @@ public class NewExcelTestRunner {
 	Map<String, String> testExecutionData;
 	ExcelTest excelTest = new ExcelTest(path, "Transaction_ExecutionTracker", "TestCaseID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
-
 	static String currentExecutionTag;
 	public void excelTestArea(String tags, int listSize, int tagIndex) {
 
@@ -28,7 +27,7 @@ public class NewExcelTestRunner {
 				"--glue", "stepdefinitions", "--plugin", "pretty", "--plugin",
 				"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", "--plugin",
 				"rerun:ReRunScenarios/FailedReRun.txt", "--tags", "@" + tags };
-		CucumberRunner.run(parameter, listSize, tagIndex);
+		CucumberRunner.run(parameter, listSize, tagIndex);	
 	}
 
 	@BeforeTest

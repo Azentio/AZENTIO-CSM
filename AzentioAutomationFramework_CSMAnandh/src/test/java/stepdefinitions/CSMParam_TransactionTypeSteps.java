@@ -62,6 +62,12 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+	@And("^get the test data for test case ID TRS_095_02$")
+    public void get_the_test_data_for_test_case_id_trs09502() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_02");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+    }
 
 	@And("^get the test data for test case ID TRS_049_01$")
 	public void get_the_test_data_for_test_case_id_trs04901() throws Throwable {
@@ -96,6 +102,19 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		}
 
 	}
+	 @And("^search the transaction type in update after approve transaction type$")
+	    public void search_the_transaction_type_in_update_after_approve_transaction_type() throws Throwable {
+		 robot = new Robot();
+			waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeTransactionCode());
+			clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeTransactionCode(),
+					transactionTypeObj.transactionTypeTransactionCode());
+			transactionTypeObj.transactionTypeTransactionCode().sendKeys(transactionTypeTestData.get("TransactionType"));
+			transactionTypeObj.transactionTypeTransactionCode().sendKeys(Keys.ENTER);
+			for (int i = 0; i <= 10; i++) {
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+			}
+	    }
 
 	@And("^select the transaction record in update after approve screen$")
 	public void select_the_transaction_record_in_update_after_approve_screen() throws Throwable {
@@ -249,6 +268,31 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 					clicksAndActionsHelper.clickUsingActionClass(
 							transactionTypeObj.transactionTypeEnableMultiBranchFlag(),
 							transactionTypeObj.transactionTypeEnableMultiBranchFlag());
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^check the force overdrawn flg under transaction type$")
+	public void check_the_force_overdrawn_flg_under_transaction_type() throws Throwable {
+		for (int i = 0; i <= 500; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeForceOverdrawnFlag());
+				if (transactionTypeObj.transactionTypeForceOverdrawnFlag().getAttribute("initialvalue").isBlank()) {
+					System.out.println("Post multi branch falg value "
+							+ transactionTypeObj.transactionTypeForceOverdrawnFlag().getAttribute("initialvalue"));
+					clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeForceOverdrawnFlag(),
+							transactionTypeObj.transactionTypeForceOverdrawnFlag());
+				} else {
+					clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeForceOverdrawnFlag(),
+							transactionTypeObj.transactionTypeForceOverdrawnFlag());
+					clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeForceOverdrawnFlag(),
+							transactionTypeObj.transactionTypeForceOverdrawnFlag());
 				}
 				break;
 			} catch (Exception e) {

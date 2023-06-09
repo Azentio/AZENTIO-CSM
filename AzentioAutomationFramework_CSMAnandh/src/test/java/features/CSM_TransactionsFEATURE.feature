@@ -574,3 +574,458 @@ And search the approved trsnaction number in transaction maintenenace screen
 Then verify transaction status should show as approved
 And open the approved transaction record
 And click on booked entries button in approved transactions
+
+@TRS_089_01
+Scenario: under csm Param need to set the limit for withdraw transaction
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_089_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the limit for withdraw in account type access
+And check the warn if user limit exceeds in account type
+And check the proceed if limit exceeds in account type
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_089_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the transaction number and withdraw amount in transaction excel Database
+And logout from the application
+@TRS_089
+Scenario: Checking Cash Withdrawal Transaction - Account Type Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_089
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for debit from the account
+Then verify system should show the validation for limit for account type
+And click on save button in transaction
+And click on ok button in transaction warning
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_089
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button in transaction warning
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_090_01
+Scenario: under csm Param need to set the limit for withdraw transaction (check the proceed) 
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_090_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the limit for withdraw in account type access
+And check the proceed if limit exceeds in account type
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_090_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the transaction number and withdraw amount in transaction excel Database
+And logout from the application
+
+@TRS_090
+Scenario: Checking Cash Withdrawal Transaction - Account Type Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_090
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for debit from the account
+Then verify system should not show the validation for limit for account type
+And click on save button in transaction
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_090
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_091_01
+Scenario: under csm Param need to set the limit for deposite transaction (check the proceed) 
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_091_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the limit for deposite in account type access
+And check the warn if user limit exceeds in account type
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_091_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the transaction number and deposite amount and exceed amount in transaction excel Database
+And logout from the application
+@TRS_091
+Scenario: Checking Cash Deposit Transaction - Account Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_091
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And choose the transaction reason in transaction maintenance
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for deposite in transaction
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_091
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_092
+Scenario: Checking Cash Deposit Transaction - Account Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_092
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And choose the transaction reason in transaction maintenance
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the limit exceed amount for deposite in transaction
+Then verify system should show the validation for limit of account type
+
+@TRS_093_01
+Scenario: under csm Param need to set the limit for deposite transaction (check the proceed,Check warn user if limit exceed) 
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_093_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the limit for deposite in account type access
+And check the warn if user limit exceeds in account type
+And check the proceed if limit exceeds in account type
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_093_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the high deposite amount and transaction type in transaction excel database
+And logout from the application
+@TRS_093
+Scenario: Checking Cash Deposit Transaction - Accont Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_093
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And choose the transaction reason in transaction maintenance
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the limit exceed amount for deposite in transaction
+Then verify system should show the validation for limit for account type
+And click on save button in transaction 
+And click on ok button in transaction warning
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_093
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button in transaction warning
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+@TRS_094_01
+Scenario: under csm Param need to set the limit for deposite transaction (check the proceed,Check warn user if limit exceed) 
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_094_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the limit for deposite in account type access
+And check the proceed if limit exceeds in account type
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_094_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the high deposite amount and transaction type in transaction excel database
+And logout from the application
+@TRS_094
+Scenario: Checking Cash Deposit Transaction - Accont Type Deposit Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_094
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And choose the transaction reason in transaction maintenance
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the limit exceed amount for deposite in transaction
+Then verify system should not show the validation for limit for account type
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_094
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_095_01
+Scenario: under csm Param need to set the limit for withdraw transaction
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_095_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the limit for withdraw in account type access
+And enter the overdrawn for withdraw accout type access
+And check the warn if user limit exceeds in account type
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_095_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the transaction number and withdraw amount in transaction excel database for limit and overdrawn
+And logout from the application
+@TRS_095_02
+Scenario: To check the show today TRX falg under user in CSM Param
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_095_02
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And select the transaction record in update after approve screen
+And check the force overdrawn flg under transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+@TRS_095
+Scenario: Checking Cash Withdrawal Transaction - Account Type Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_095
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for debit from the account
+Then verify system should not show the validation for limit for account type
+And click on save button in transaction
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_095
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved

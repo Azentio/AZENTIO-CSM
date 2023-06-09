@@ -27,6 +27,13 @@ public class CSM_TransactionObj {
 		return transaction_Maintenance;
 	}
 
+	@FindBy(xpath = "//select[@name='trxMgntCO.ctstrsVO.VOID_REASON']")
+	private WebElement transaction_TrxPurpose;
+
+	public WebElement transactionTrxPurpose() {
+		return transaction_TrxPurpose;
+	}
+
 	@FindBy(xpath = "//a[@id='infoBarSearchButton_D001MT']")
 	private WebElement transaction_SearchIcon;
 
@@ -719,6 +726,20 @@ public class CSM_TransactionObj {
 
 	public WebElement transactionManagementMultiBranchValidation() {
 		return transactionManagement_MultiBranchValidation;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'WARNING')]//parent::div//following-sibling::div//div[contains(text(),'Account Type: Limit Amount should be between')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+	private WebElement transactionManagement_AccountTypeLimitWarningValidation;
+
+	public WebElement transactionManagementAccountTypeLimitWarningValidation() {
+		return transactionManagement_AccountTypeLimitWarningValidation;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Cannot Proceed')]//parent::div//following-sibling::div//div[contains(text(),'Account Type: Limit Amount should be between')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+	private WebElement transactionManagement_AccountTypeLimitCanNotProceedValidation;
+
+	public WebElement transactionManagementAccountTypeLimitCanNotProceedValidation() {
+		return transactionManagement_AccountTypeLimitCanNotProceedValidation;
 	}
 
 }

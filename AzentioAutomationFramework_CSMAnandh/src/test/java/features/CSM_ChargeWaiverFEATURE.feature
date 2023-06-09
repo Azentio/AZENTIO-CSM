@@ -239,10 +239,11 @@ And click on charge button
 Then verify system should not deduct the charges for the transaction
 @CW_019
 Scenario: Checking the waiver for SO suspend charges
+And get the test data for test case CW_19
 Given navigate to CSM application and login with valid credentials
+And change the system date within excemption date
 And click on Transaction module
 And click on maintenance scree under transaction module
-And get the test data for test case CW_19
 And enter the transaction type code in transaction
 And enter the debit branch code in tranaction
 And enter the debit currency code in tranaction

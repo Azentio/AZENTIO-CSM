@@ -62,6 +62,13 @@ public class CSMParam_UserAccessObj {
 		return user_AccountTypeAccess;
 	}
 
+	@FindBy(xpath = "//span[@id='ui-dialog-title-tellerParam_popupAccountTypes_div_E000MA']")
+	private WebElement userAccess_Label;
+
+	public WebElement userAccessLabel() {
+		return userAccess_Label;
+	}
+
 	@FindBy(xpath = "//span[text()=' CIF Types ']")
 	private WebElement user_CIFTypeAccess;
 
@@ -349,10 +356,39 @@ public class CSMParam_UserAccessObj {
 	public WebElement userMaintenanceUserStatus() {
 		return userMaintenance_UserStatus;
 	}
-	@FindBy(name="tellerparamCO.ctstellerVO.SHOW_TODAY_TRX")
+
+	@FindBy(name = "tellerparamCO.ctstellerVO.SHOW_TODAY_TRX")
 	private WebElement user_ShowTodayTrxFlg;
-	public WebElement userShowTodayTrxFlag()
-	{
+
+	public WebElement userShowTodayTrxFlag() {
 		return user_ShowTodayTrxFlg;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='W/D Limit']//input")
+	private WebElement accountType_withdrawLimitInput;
+
+	public WebElement accountTypeWithdrawLimitInput() {
+		return accountType_withdrawLimitInput;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='Deposit Limit']//input")
+	private WebElement accountType_DepositeLimitInput;
+
+	public WebElement accountTypeDepositeLimitInput() {
+		return accountType_DepositeLimitInput;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='Overdraw Limit']//input")
+	private WebElement accountType_OverdrawnLimitInput;
+
+	public WebElement accountTypeOverdrawnLimitInput() {
+		return accountType_OverdrawnLimitInput;
+	}
+
+	@FindBy(xpath = "//span[@id='ui-dialog-title-tellerParam_popupAccountTypes_div_E000MA']")
+	private WebElement accountTypeAccess_label;
+
+	public WebElement accountTypeAccesslabel() {
+		return accountTypeAccess_label;
 	}
 }

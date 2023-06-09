@@ -180,6 +180,12 @@ public class CSMCommonWebElements {
 	public WebElement csmQuitOkButton() {
 		return csm_QuitOkButton;
 	}
+	@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+	private WebElement csm_WarningOkButton;
+
+	public WebElement csmWarningOkButton() {
+		return csm_WarningOkButton;
+	}
 
 	@FindBy(xpath = "//span[text()='close']")
 	private WebElement csm_AlertCloseButton;
@@ -317,5 +323,17 @@ public class CSMCommonWebElements {
 	public WebElement csmCompanyHolidayOkButton()
 	{
 		return csm_CompanyHolidayOkButton;
+	}
+	@FindBy(xpath="//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
+	private WebElement csm_DeleteRowButton;
+	public WebElement csmDeleteRowButton()
+	{
+		return csm_DeleteRowButton;
+	}
+	@FindBy(xpath="//div[contains(text(),'Confirm Delete Process')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement csm_Delete_ConfirmationOkButton;
+	public WebElement csmDeleteConfirmationOkButton()
+	{
+		return csm_Delete_ConfirmationOkButton;
 	}
 }

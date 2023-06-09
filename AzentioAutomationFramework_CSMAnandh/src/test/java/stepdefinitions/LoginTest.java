@@ -24,15 +24,15 @@ public class LoginTest extends BaseClass {
 
 	@Given("^navigate to CSM application and login with valid credentials$")
 	public void navigate_to_csm_application_and_login_with_valid_credentials() throws Throwable {
-
+//CSMUser1
 		driver.get(configFileReader.getCSMApplicationUrl());
-		csmLogin.loginIntoCSMApplication();
+		csmLogin.loginIntoCSMApplication("CSMUser1");
 	}
 
 	@Given("^navigate to CSM application and login with valid teller credentials$")
 	public void navigate_to_csm_application_and_login_with_valid_teller_credentials() throws Throwable {
 		driver.get(configFileReader.getCSMApplicationUrl());
-		csmLogin.loginIntoCSMApplication();
+		csmLogin.loginIntoCSMApplication("CSMUser2");
 	}
 
 	@Given("^navigate to CSM param application and login with valid credentials$")
@@ -48,7 +48,8 @@ public class LoginTest extends BaseClass {
 	@Given("^navigate to CSM sads application and login with valid credentials$")
 	public void navigate_to_csm_sads_application_and_login_with_valid_credentials() throws Throwable {
 		driver.get(configFileReader.getSADSApplicationUrl());
-		csmLogin.loginIntoSadsApplication();
+		
+		csmLogin.loginIntoSadsApplication("Sadsuser1");
 	}
 
 	@And("^logout from the application$")

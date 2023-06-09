@@ -26,64 +26,76 @@ public class CSMParam_TransactionTypeObj {
 	public WebElement transactionTypeUpdateAfterApprove() {
 		return transactionType_UpdateAfterApprove;
 	}
-	@FindBy(xpath="//input[@name='CODE']")
+
+	@FindBy(xpath = "//input[@name='CODE']")
 	private WebElement transactionType_TransactionCode;
-	public WebElement transactionTypeTransactionCode()
-	{
+
+	public WebElement transactionTypeTransactionCode() {
 		return transactionType_TransactionCode;
 	}
-	@FindBy(xpath="//a[contains(text(),'Parameters / System Parameters / Transaction Type / Update After Approve')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Parameters / System Parameters / Transaction Type / Update After Approve')]//parent::td//following-sibling::td//span")
 	private WebElement transactionType_UpdateAfterApproveLabelClose;
-	public WebElement transactionTypeUpdateAfterApproveLabelClose()
-	{
+
+	public WebElement transactionTypeUpdateAfterApproveLabelClose() {
 		return transactionType_UpdateAfterApproveLabelClose;
 	}
-	@FindBy(xpath="//a[contains(text(),'Parameters / System Parameters / Transaction Type / Update After Approve')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Parameters / System Parameters / Transaction Type / Update After Approve')]")
 	private WebElement transactionType_UpdateAfterApproveLabel;
-	public WebElement transactionTypeUpdateAfterApproveLabel()
-	{
+
+	public WebElement transactionTypeUpdateAfterApproveLabel() {
 		return transactionType_UpdateAfterApproveLabel;
 	}
-	@FindBy(xpath="//td[contains(text(),'Transaction Type')]//ancestor::a//following-sibling::ul//span[text()='Approve']")
+
+	@FindBy(xpath = "//td[contains(text(),'Transaction Type')]//ancestor::a//following-sibling::ul//span[text()='Approve']")
 	private WebElement transactionType_ApproveFeature;
-	public WebElement transactionTypeApproveFeature()
-	{
+
+	public WebElement transactionTypeApproveFeature() {
 		return transactionType_ApproveFeature;
 	}
-	@FindBy(xpath="//input[@name='transactiontypesCO.ctstrxtypeVO.MULTI_BRANCH']")
+
+	@FindBy(xpath = "//input[@name='transactiontypesCO.ctstrxtypeVO.MULTI_BRANCH']")
 	private WebElement transactionType_EnableMultiBranchFalg;
-	public WebElement transactionTypeEnableMultiBranchFalg()
-	{
+
+	public WebElement transactionTypeEnableMultiBranchFalg() {
 		return transactionType_EnableMultiBranchFalg;
 	}
-	@FindBy(name="transactiontypesCO.ctstrxtypeVO.BACK_DATED_VDATE")
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.BACK_DATED_VDATE")
 	private WebElement transactionType_AllowBackDateVAluDateFalg;
-	public WebElement transactionTypeAllowBackDateValuaDateFlag()
-	{
+
+	public WebElement transactionTypeAllowBackDateValuaDateFlag() {
 		return transactionType_AllowBackDateVAluDateFalg;
 	}
-	//initialvalue
-	@FindBy(name="transactiontypesCO.ctstrxtypeVO.POST_DATED_VDATE")
+
+	// initialvalue
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.POST_DATED_VDATE")
 	private WebElement transactionType_AllowPostDateVAluDateFalg;
-	public WebElement transactionTypeAllowPostDateVAluDateFalg()
-	{
+
+	public WebElement transactionTypeAllowPostDateVAluDateFalg() {
 		return transactionType_AllowPostDateVAluDateFalg;
 	}
-	@FindBy(name="transactiontypesCO.ctstrxtypeVO.NOSTRO_MVT")
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.NOSTRO_MVT")
 	private WebElement transactionType_AllowInternalGlsFlag;
-	public WebElement transactionTypeAllowInternalGlsFlag()
-	{
+
+	public WebElement transactionTypeAllowInternalGlsFlag() {
 		return transactionType_AllowInternalGlsFlag;
 	}
-	@FindBy(name="transactiontypesCO.ctstrxtypeVO.MULTI_BRANCH")
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.MULTI_BRANCH")
 	private WebElement transactionType_EnableMultiBranchFlag;
-	public WebElement transactionTypeEnableMultiBranchFlag()
-	{
+
+	public WebElement transactionTypeEnableMultiBranchFlag() {
 		return transactionType_EnableMultiBranchFlag;
 	}
-	
-	
-	
-	
+
+	@FindBy(xpath = "//input[@name='transactiontypesCO.ctstrxtypeExtendedVO.FORCE_OVERDRAW']")
+	private WebElement transactionType_ForceOverdrawnFlag;
+
+	public WebElement transactionTypeForceOverdrawnFlag() {
+		return transactionType_ForceOverdrawnFlag;
+	}
 
 }

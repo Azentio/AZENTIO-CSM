@@ -151,9 +151,18 @@ public class CSM_PassbookSteps extends BaseClass {
 
 	@And("^click on close in memo screen$")
 	public void click_on_close_in_memo_screen() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.memoAlertCloseButton());
-		clicksAndActionHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
-		clicksAndActionHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
+				clicksAndActionHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 	}
 
 	@And("^click on ok button in dormant$")

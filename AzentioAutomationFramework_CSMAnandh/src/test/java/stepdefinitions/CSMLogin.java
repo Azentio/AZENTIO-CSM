@@ -89,8 +89,8 @@ public class CSMLogin {
 	
 	}
 
-	public void loginIntoCSMApplication() throws IOException {
-		csmLoginTestData = csmLoginExceldata.getTestdata("CSMUser1");
+	public void loginIntoCSMApplication(String userType) throws IOException {
+		csmLoginTestData = csmLoginExceldata.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
@@ -157,8 +157,9 @@ public class CSMLogin {
 		 */
 	}
 
-	public void loginIntoSadsApplication() throws IOException {
-		csmLoginTestData = sadsLoginExceldata.getTestdata("Sadsuser1");
+	public void loginIntoSadsApplication(String userType) throws IOException {
+		
+		csmLoginTestData = sadsLoginExceldata.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());

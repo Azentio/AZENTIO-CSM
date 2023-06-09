@@ -2,7 +2,6 @@ package stepdefinitions;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -28,6 +27,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	WaitHelper waitHelper = new WaitHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
+
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	CSM_TransactionObj transactionObj = new CSM_TransactionObj(driver);
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
@@ -35,7 +35,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	DropDownHelper dropdownHelper = new DropDownHelper(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData excelDataForChargeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
-	ExcelData excelDataForTransWaiver = new ExcelData(path, "CSM_Transaction", "DataSet ID");
+	ExcelData excelDataForChargeWaiver = new ExcelData(path, "CSM_ChargeWaiverTestData", "DataSet ID");
 	ExcelData excelDataForTransactionTestData = new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	ExcelData excelDataFortransactionTestData = new ExcelData(path, "TransactionTestData", "DataSet ID");
 	ExcelData excelDataForTransactionExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
@@ -49,62 +49,63 @@ public class CSM_TransactionSteps extends BaseClass {
 	@And("^get the test data for test case CW_001$")
 	public void get_the_test_data_for_test_case_cw001() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_001");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		System.out.println("Data Set ID " + chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_003$")
 	public void get_the_test_data_for_test_case_cw003() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_003");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_04$")
 	public void get_the_test_data_for_test_case_cw04() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_004");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_005$")
 	public void get_the_test_data_for_test_case_cw005() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_005");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_006$")
 	public void get_the_test_data_for_test_case_cw006() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_006");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 
 	}
 
 	@And("^get the test data for test case CW_007$")
 	public void get_the_test_data_for_test_case_cw007() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_007");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_19$")
 	public void get_the_test_data_for_test_case_cw19() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_019");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_21$")
 	public void get_the_test_data_for_test_case_cw21() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_021");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_22$")
 	public void get_the_test_data_for_test_case_cw22() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_022");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case CW_23$")
 	public void get_the_test_data_for_test_case_cw23() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_023");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^change the system date to less waiver date which is configured$")
@@ -258,11 +259,61 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("^get the test data for test case ID TRS_089$")
+	public void get_the_test_data_for_test_case_id_trs089() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_089");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_095$")
+	public void get_the_test_data_for_test_case_id_trs095() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_090$")
+	public void get_the_test_data_for_test_case_id_trs090() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_090");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_091$")
+	public void get_the_test_data_for_test_case_id_trs091() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_091");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_092$")
+	public void get_the_test_data_for_test_case_id_trs092() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_092");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_093$")
+	public void get_the_test_data_for_test_case_id_trs093() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_093");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_094$")
+	public void get_the_test_data_for_test_case_id_trs094() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_094");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("^enter the transaction type code in transaction$")
 	public void enter_the_transaction_type_code_in_transaction() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionTypeInput());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionTransactionTypeInput());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTransactionTypeInput());
+		System.out.println("Transaction Type code " + transactionTestData.get("Transaction Type code"));
 		transactionObj.transactionTransactionTypeInput().sendKeys(transactionTestData.get("Transaction Type code"));
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		for (int i = 0; i <= 200; i++) {
@@ -297,6 +348,22 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^choose the transaction reason in transaction maintenance$")
+	public void choose_the_transaction_reason_in_transaction_maintenance() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTrxPurpose());
+		dropdownHelper.SelectUsingIndex(transactionObj.transactionTrxPurpose(), 2);
 	}
 
 	@And("^enter the branch code for cash deposite$")
@@ -308,8 +375,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
-		for (int i = 0; i <= 200; i++) {
-			if (transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank()) {
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank())) {
 				break;
 			}
 		}
@@ -324,8 +391,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
-		for (int i = 0; i <= 200; i++) {
-			if (transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank()) {
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank())) {
 				break;
 			}
 		}
@@ -495,6 +562,15 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
 	}
 
 	@And("^enter the debit GL code in transaction$")
@@ -506,6 +582,15 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitGlCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
 	}
 
 	@And("^enter the gl code for cash deposite$")
@@ -517,8 +602,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
-		for (int i = 0; i <= 200; i++) {
-			if (transactionObj.transactionTypeDebitGlCode().getAttribute("prevvalue").isBlank()) {
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeDebitGlCode().getAttribute("prevvalue").isBlank())) {
 				break;
 			}
 		}
@@ -533,6 +618,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeDebitCIFCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the CIF code for cash deposite$")
@@ -544,8 +634,8 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
-		for (int i = 0; i <= 200; i++) {
-			if (transactionObj.transactionTypeDebitCIFCode().getAttribute("prevvalue").isBlank()) {
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeDebitCIFCode().getAttribute("prevvalue").isBlank())) {
 				break;
 			}
 		}
@@ -574,7 +664,6 @@ public class CSM_TransactionSteps extends BaseClass {
 				break;
 			}
 		}
-		
 
 	}
 
@@ -597,9 +686,18 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@And("^close the memo alert in transaction screen$")
 	public void close_the_memo_alert_in_transaction_screen() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.memoAlertCloseButton());
-		clicksAndActionsHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
-		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
+				break;
+			} catch (Exception e) {
+
+			}
+
+		}
+
 	}
 
 	@And("^enter the serial number for cash deposite$")
@@ -618,6 +716,11 @@ public class CSM_TransactionSteps extends BaseClass {
 				}
 			} catch (Exception e) {
 
+			}
+		}
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeDebitSerialNumber().getAttribute("prevvalue").isBlank())) {
+				break;
 			}
 		}
 	}
@@ -718,6 +821,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeCreditBranchCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the credit gl code in transaction$")
@@ -729,6 +837,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeCreditGlCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the credit CIF number in transaction$")
@@ -740,6 +853,11 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.transactionTypeCreditCIFCode().getAttribute("prevvalue").isBlank())) {
+				break;
+			}
+		}
 	}
 
 	@And("^enter the credit serial number in transaction$")
@@ -751,16 +869,10 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		
 		for (int i = 0; i <= 500; i++) {
-			try {
-				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed())) {
-					break;
-				}
-			} catch (Exception e) {
-				if (i == 500) {
-					System.out.println("Still Loading");
-				}
-
+			if (!(transactionObj.transactionTypeCreditSerialNumCode().getAttribute("prevvalue").isBlank())) {
+				break;
 			}
 		}
 	}
@@ -810,7 +922,9 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
-		transactionObj.transactionDepositeAmountInputBox().sendKeys(transactionTestData.get("Deposite Amount"));
+		String amount = transactionTestData.get("Deposite Amount") + "0.00";
+		System.out.println("Deposite Amount " + amount);
+		transactionObj.transactionDepositeAmountInputBox().sendKeys(amount);
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
@@ -825,6 +939,35 @@ public class CSM_TransactionSteps extends BaseClass {
 
 			}
 		}
+	}
+
+	@And("^enter the limit exceed amount for deposite in transaction$")
+	public void enter_the_limit_exceed_amount_for_deposite_in_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionDepositeAmountInputBox());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionDepositeAmountInputBox());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
+		transactionObj.transactionDepositeAmountInputBox().sendKeys(transactionTestData.get("Exceed Deposite Amount"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed()))
+
+				{
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@Then("^verify system should show the validation for limit of account type$")
+	public void verify_system_should_show_the_validation_for_limit_of_account_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				transactionObj.transactionManagementAccountTypeLimitCanNotProceedValidation());
+		Assert.assertTrue(transactionObj.transactionManagementAccountTypeLimitCanNotProceedValidation().isDisplayed());
 	}
 
 	@And("^change the value date to past date in transaction maintenance$")
@@ -856,7 +999,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		case "May":
 			strMonth = "05";
 			break;
-		case "Jun":
+		case "June":
 			strMonth = "06";
 			break;
 		case "Jul":
@@ -879,8 +1022,18 @@ public class CSM_TransactionSteps extends BaseClass {
 			break;
 		}
 
-		valueDate = valueDateSplit[2].toString() + "/" + strMonth + "/" + valueDateSplit[0].toString();
-		System.out.println("Post Value Date " + valueDate);
+		String valueDateOne = "";
+
+		String beforeProcessDate = valueDateSplit[2].toString();
+		int intDate = Integer.parseInt(beforeProcessDate);
+		if (intDate <= 9) {
+			valueDateOne = "0" + beforeProcessDate;
+		} else {
+			valueDateOne = beforeProcessDate;
+		}
+
+		valueDate = valueDateOne + "/" + strMonth + "/" + valueDateSplit[0].toString();
+		System.out.println("Past Value Date " + valueDate);
 
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactinMaintenanceValueDateInput());
 		for (int i = 0; i < 13; i++) {
@@ -945,7 +1098,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		case "May":
 			strMonth = "05";
 			break;
-		case "Jun":
+		case "June":
 			strMonth = "06";
 			break;
 		case "Jul":
@@ -967,8 +1120,19 @@ public class CSM_TransactionSteps extends BaseClass {
 			strMonth = "12";
 			break;
 		}
+		String valueDateOne = "";
 
-		valueDate = valueDateSplit[2].toString() + "/" + strMonth + "/" + valueDateSplit[0].toString();
+		String beforeProcessDate = valueDateSplit[2].toString();
+		int intDate = Integer.parseInt(beforeProcessDate);
+		if (intDate <= 9) {
+			System.out.println("Date " + intDate);
+			valueDateOne = "0" + beforeProcessDate;
+			System.out.println("value Date " + valueDateOne);
+		} else {
+			valueDateOne = beforeProcessDate;
+		}
+
+		valueDate = valueDateOne + "/" + strMonth + "/" + valueDateSplit[0].toString();
 		System.out.println("Post Value Date " + valueDate);
 
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactinMaintenanceValueDateInput());
@@ -1006,10 +1170,19 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@And("^give the ending date in transaction of SO$")
 	public void give_the_ending_date_in_transaction_of_so() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeSOEndingDateInput());
-		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeSOEndingDateInput());
-		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeSOEndingDateInput());
-		transactionObj.transactionTypeSOEndingDateInput().sendKeys(transactionTestData.get("Ending Date"));
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeSOEndingDateInput());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeSOEndingDateInput());
+				transactionObj.transactionTypeSOEndingDateInput().sendKeys(transactionTestData.get("Ending Date"));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
 		robot = new Robot();
 		for (int i = 0; i <= 5; i++) {
 			robot.keyPress(KeyEvent.VK_ENTER);
@@ -1127,6 +1300,59 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	}
 
+	@And("^enter the amount for debit from the account$")
+	public void enter_the_amount_for_debit_from_the_account() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionDepositeAmountInputBox());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionDepositeAmountInputBox());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
+		transactionObj.transactionDepositeAmountInputBox().sendKeys(transactionTestData.get("Withdraw Amount"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				if (!(csmCommonWebElements.csmLoadingImage().isDisplayed()))
+
+				{
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@Then("^verify system should show the validation for limit for account type$")
+	public void verify_system_should_show_the_validation_for_limit_for_account_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				transactionObj.transactionManagementAccountTypeLimitWarningValidation());
+		Assert.assertTrue(transactionObj.transactionManagementAccountTypeLimitWarningValidation().isDisplayed());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementAccountTypeLimitWarningValidation());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionManagementAccountTypeLimitWarningValidation());
+	}
+
+	@Then("^verify system should not show the validation for limit for account type$")
+	public void verify_system_should_not_show_the_validation_for_limit_for_account_type() throws Throwable {
+		boolean status = true;
+		boolean statusForCannotProceedMsg = true;
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = transactionObj.transactionManagementAccountTypeLimitWarningValidation().isDisplayed();
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				status = transactionObj.transactionManagementAccountTypeLimitCanNotProceedValidation().isDisplayed();
+			} catch (Exception e) {
+
+			}
+		}
+		Assert.assertTrue(status);
+		Assert.assertTrue(statusForCannotProceedMsg);
+	}
+
 	@And("^click on save button in transaction$")
 	public void click_on_save_button_in_transaction() throws Throwable {
 
@@ -1150,6 +1376,27 @@ public class CSM_TransactionSteps extends BaseClass {
 			} catch (Exception e) {
 			}
 
+		}
+
+	}
+
+	@And("^click on ok button in transaction warning$")
+	public void click_on_ok_button_in_transaction_warning() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				transactionObj.transactionManagementAccountTypeLimitWarningValidation());
+
+		for (int i = 0; i <= 500; i++) {
+			try {
+				clicksAndActionsHelper
+						.moveToElement(transactionObj.transactionManagementAccountTypeLimitWarningValidation());
+				clicksAndActionsHelper
+						.clickOnElement(transactionObj.transactionManagementAccountTypeLimitWarningValidation());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
 		}
 
 	}
@@ -1218,7 +1465,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		String transaNum = transactionObj.transaction_TransactionNumber().getText();
 		System.out.println(transactionObj.transaction_TransactionNumber().getText());
 		String finalTransaNum = transaNum.substring(15, 19);
-		excelDataForTransWaiver.updateTestData(transactionTestData.get("DataSet ID"), "Transaction Number",
+		excelDataForChargeWaiver.updateTestData(transactionTestData.get("DataSet ID"), "Transaction Number",
 				finalTransaNum);
 		System.out.println("Transaction Number" + finalTransaNum);
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transaction_TransactionNumberOkButton());
@@ -1322,8 +1569,18 @@ public class CSM_TransactionSteps extends BaseClass {
 	@And("^click on ok button after approve the transaction record$")
 	public void click_on_ok_button_after_approve_the_transaction_record() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionApproveOkButton());
-		clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveOkButton());
-		clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveOkButton());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveOkButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveOkButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
 	}
 
 	@And("^close the transaction tab$")
@@ -1599,7 +1856,7 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@And("^update the transaction number in test case CW_020$")
 	public void update_the_transaction_number_in_test_case_cw020() throws Throwable {
-		excelDataForTransWaiver.updateTestData(transactionTestData.get("Update DataSetID"), "Transaction Number",
+		excelDataForChargeWaiver.updateTestData(transactionTestData.get("Update DataSetID"), "Transaction Number",
 				transactionTestData.get("Transaction Number"));
 	}
 
@@ -1622,7 +1879,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	@And("^get the test data for test case CW_020$")
 	public void get_the_test_data_for_test_case_cw020() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_020");
-		transactionTestData = excelDataForTransWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^search for the suspended record under reactive standing order$")
