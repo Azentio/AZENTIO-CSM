@@ -110,7 +110,7 @@ public class CardRequest_Management {
 	    	Card_Managementobj.Transactiontype1().click();
 	    }
 
-	    @And("^click the search button$")
+	    @And("^click the search buttonsss$")
 	    public void click_the_search_button() throws Throwable {
 	    	waitHelper.waitForElementToVisibleWithFluentWait(driver, Card_Managementobj.SearchBUTTOn1(), 60, 2);
 	    	ClicksAndActionsHelperobj.moveToElement(Card_Managementobj.SearchBUTTOn1());

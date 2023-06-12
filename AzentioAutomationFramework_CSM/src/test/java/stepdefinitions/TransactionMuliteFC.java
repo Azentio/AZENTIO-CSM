@@ -178,7 +178,7 @@ public class TransactionMuliteFC {
    	Transaction_MultiTransferobj.Transactions_MaintenanceScrn().click();
     }
     
-    @Then("^click the search button$")
+    @Then("^click the search buttons11$")
     public void click_the_search_button() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,Transaction_MultiTransferobj.Transactions_searchbtn());
    	ClicksAndActionsHelperobj.clickOnElement(Transaction_MultiTransferobj.Transactions_searchbtn());  
@@ -189,7 +189,8 @@ public class TransactionMuliteFC {
     @And("^enter the trx number$")
     public void enter_the_trx_number() throws Throwable {
    	 waitHelper.waitForElementwithFluentwait(driver,Transaction_MultiTransferobj.Transactions_trxno_code());
-   	ClicksAndActionsHelperobj.clickOnElement(Transaction_MultiTransferobj.Transactions_trxno_code());  
+   	ClicksAndActionsHelperobj.clickOnElement(Transaction_MultiTransferobj.Transactions_trxno_code());
+   	
     }
     
     @And("^double click the data$")

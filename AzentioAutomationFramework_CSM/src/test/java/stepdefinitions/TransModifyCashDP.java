@@ -13,11 +13,9 @@ import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import pageobjects.CashDepositTransaction;
-
 import resources.BaseClass;
 
-public class CashtransactionWarnlimit {
-
+public class TransModifyCashDP {
 	WebDriver driver = BaseClass.driver;
 	WaitHelper waitHelper = new WaitHelper(driver);
 	CashDepositTransaction CashDepositTransactionobj = new CashDepositTransaction (driver);
@@ -27,6 +25,8 @@ public class CashtransactionWarnlimit {
 	Map<String, String> testData = new HashMap<>();
 	Map<String, String> loginTestData = new HashMap<>();
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
+	
+	
 	
 	
 	@And("^User Click on Date to Change the Current Date$")
@@ -46,7 +46,7 @@ public class CashtransactionWarnlimit {
         CashDepositTransactionobj.CSMDateInUserRunningDate().sendKeys("29/05/2023");
     }
 
-    @And("^User Click on Use Button in Change Running Date Popup$")
+    @And("^User Click on Use Button in Change Running Date Popupss1$")
     public void user_click_on_use_button_in_change_running_date_popup() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMUseButtonInChangeRunningDate());
         ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMUseButtonInChangeRunningDate());
@@ -60,21 +60,21 @@ public class CashtransactionWarnlimit {
         ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMOkButtonInAccessDeniedPopUpMenu());
     }
 
-    @And("^User Click on Close Button in Change Running Date Popupss1$")
+    @And("^User Click on Close Button in Change Running Date Popupss$")
     public void user_click_on_close_button_in_change_running_date_popup() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMCloseButtonInChangeRunningDate());
         ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMCloseButtonInChangeRunningDate());
         ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMCloseButtonInChangeRunningDate());
     }
 
-    @And("^User Click on Technical Details Icons$")
+    @And("^User Click on Technical Details Icon$")
     public void user_click_on_technical_details_icon() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMTechnicalDetailsIcon());
         ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMTechnicalDetailsIcon());
         ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMTechnicalDetailsIcon()); 
     }
     
-    @And("^User Click Clear Cache in Technical Details Icon$")
+    @And("^User Click Clear Cache in Technical Details Icons$")
     public void user_click_clear_cache_in_technical_details_icon() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_ClearCacheInTechnicalDetailsIcon());
         ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_ClearCacheInTechnicalDetailsIcon());
@@ -95,14 +95,14 @@ public class CashtransactionWarnlimit {
         ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMTransactionsMainMenu());
     }
 	
-	 @And("^User Click on Maintenance under Transactions$")
+	 @And("^User Click on Maintenance under Transactionss$")
 	    public void user_click_on_maintenance_under_transactions() throws Throwable {
 	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMMaintenanceUnderTransactions());
 	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMMaintenanceUnderTransactions());
 	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMMaintenanceUnderTransactions());
 	    }
 
-	    @And("^User Enter TRX Type in Maintenance Screen$")
+	    @And("^User Enter TRX Type in Maintenance Screens$")
 	    public void user_enter_trx_type_in_maintenance_screen() throws Throwable {
 	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMTRXTypeInMaintenanceScreen());
 	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMTRXTypeInMaintenanceScreen());
@@ -112,7 +112,7 @@ public class CashtransactionWarnlimit {
 	        
 	    }
 	    
-	    @And("^User Click Ok Button in Warning PopUp Menus$")
+	    @And("^User Click Ok Button in Warning PopUp Menu$")
 	    public void user_click_ok_button_in_warning_popup_menu() throws Throwable {
 	    	for (int i = 0; i < 200; i++) {
 	    		try {
@@ -129,7 +129,7 @@ public class CashtransactionWarnlimit {
 	    	}
 	    }
 
-	    @And("^User Enter the Currency in Maintenance Screenss$")
+	    @And("^User Enter the Currency in Maintenance Screen$")
 	    public void user_enter_the_currency_in_maintenance_screen() throws Throwable {
 	    	
 	    	for (int i = 0; i < 200; i++) {
@@ -195,7 +195,7 @@ public class CashtransactionWarnlimit {
 //	    }
 	    
 	    
-	    @And("^User Click the Account Details in Maintenance Screenss$")
+	    @And("^User Click the Account Details in Maintenance Screen$")
 	    public void user_click_the_account_details_in_maintenance_screen() throws Throwable {
 	    
 		    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_AccountDetailsInMaintenanceScreen());
@@ -250,7 +250,7 @@ public class CashtransactionWarnlimit {
 	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSM_addbtn_Amount());	
 	    }
 
-	    @And("^User give some Msg Instruction1 in AccountDetails$")
+	    @And("^User give some Msg Instruction1 in AccountDetails12$")
 	    public void user_give_some_msg_instruction1_in_accountdetails() throws Throwable {
 	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_addbtn_instr1());
 	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_addbtn_instr1());
@@ -273,7 +273,7 @@ public class CashtransactionWarnlimit {
 	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSM_addbtn_ok());	
 	    }
 
-	    @And("^User Click Save Button in Maintenance Screen$")
+	    @And("^User Click Save Button in Maintenance Screenss$")
 	    public void user_click_save_button_in_maintenance_screen() throws Throwable {
 	    	for (int i = 0; i <200; i++) {
 				try {
@@ -290,189 +290,4 @@ public class CashtransactionWarnlimit {
 	    		
 	    	        
 	    }
-	    
-	    @And("^User Get the Transaction No in Success PopUo Menu$")
-	    public void user_get_the_transaction_no_in_success_popuo_menu() throws Throwable {
-	    	String text = "";
-	        for (int i = 0; i <200; i++) {
-				try {
-					text = CashDepositTransactionobj.CSMGetTheTransactionNo().getText();
-				    break;
-				} catch (Exception e) {
-					if (i==199) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-	        String refid = text.substring(15, 19);
-	        System.out.println(refid);
-	    }
-	    
-	    
-
-	    @And("^User Click Ok Button in Success PopUp Menu$")
-	    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
-	    	for (int i = 0; i < 200; i++) {
-	    		try {
-	    			waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMOkButtonInSuccessPopUpMenu());
-	    	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMOkButtonInSuccessPopUpMenu());
-	    	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMOkButtonInSuccessPopUpMenu());
-	    	        break;
-				} catch (Exception e) {
-					if (i==199) {
-						Assert.fail(e.getMessage());
-					}
-				}			
-			}
-	    }
-	    
-	    @And("^User Click on Approve Screen under Transactions$")
-	    public void user_click_on_approve_screen_under_transactions() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMApproveScreenUnderTransactions());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMApproveScreenUnderTransactions());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMApproveScreenUnderTransactions());
-	    }
-
-	    @And("^User Enter the Transaction No in Approve Screen$")
-	    public void user_enter_the_transaction_no_in_approve_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMTransactionNoInApproveScreen());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMTransactionNoInApproveScreen());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMTransactionNoInApproveScreen());
-	        CashDepositTransactionobj.CSMTransactionNoInApproveScreen().sendKeys("7543", Keys.ENTER);
-	    }
-
-	    @And("^User Double Click on the Transaction No$")
-	    public void user_double_click_on_the_transaction_no() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMDoubleClickOnTheTransactionNo());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMDoubleClickOnTheTransactionNo());
-	        ClicksAndActionsHelperobj.doubleClick(CashDepositTransactionobj.CSMDoubleClickOnTheTransactionNo());
-	    }
-
-	    @And("^User Click on Approve Button for approve the Transaction$")
-	    public void user_click_on_approve_button_for_approve_the_transaction() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMApproveButtonInApproveScreen());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMApproveButtonInApproveScreen());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMApproveButtonInApproveScreen());
-	    }	
-
-	    @And("^User Click on Ok Button in Success PopUp Menu for Approve Transcation$")
-	    public void user_click_on_ok_button_in_success_popup_menu_for_transcation() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMOkButtonInSuccessPopUpMenuForTranscation());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMOkButtonInSuccessPopUpMenuForTranscation());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMOkButtonInSuccessPopUpMenuForTranscation());
-	    }
-
-	 @And("^User Click Ok Button in Warning PopUp to go back to Maintenance$")
-	    public void user_click_ok_button_in_warning_popup_to_go_back_to_maintenance() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMOkButtonInWarningPopUpToGoBackToMaintenance());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMOkButtonInWarningPopUpToGoBackToMaintenance());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMOkButtonInWarningPopUpToGoBackToMaintenance());
-	    }
-
-	    @And("^User Click on Search Button in Maintenance Screen$")
-	    public void user_click_on_search_button_in_meintenance_screen() throws Throwable {
-	    	for (int i = 0; i < 200; i++) {
-				try {
-					waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMSearchButtonInMaintenanceScreen());
-			        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMSearchButtonInMaintenanceScreen());
-			        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMSearchButtonInMaintenanceScreen());
-			        break;
-				} catch (Exception e) {
-					if (i==199) {
-						Assert.fail(e.getMessage());
-					}				
-				}
-			}
-	    	
-	    }
-	    @And("^User Enter the Transaction No in Search Box$")
-	    public void user_enter_the_transaction_no_in_search_box() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMEnterTheTransactionNoInSearchBox());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMEnterTheTransactionNoInSearchBox());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMEnterTheTransactionNoInSearchBox());
-	        CashDepositTransactionobj.CSMEnterTheTransactionNoInSearchBox().sendKeys("7597",Keys.ENTER);
-	    }
-
-	    @And("^User Double Click on the Searched Transaction No in Search Box$")
-	    public void user_double_click_on_the_searched_transaction_no_in_search_box() throws Throwable {
-	    	for (int i = 0; i < 200; i++) {
-				try {
-					waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMDoubleClickOnTheTransactionNo());
-			        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMDoubleClickOnTheTransactionNo());
-			        ClicksAndActionsHelperobj.doubleClick(CashDepositTransactionobj.CSMDoubleClickOnTheTransactionNo());
-			        break;
-				} catch (Exception e) {
-					if (i==199) {
-						Assert.fail(e.getMessage());
-					}
-					
-				}
-			}
-	    	
-	    }
-
-	    @And("^User Click on Booked Entries in Maintenance Screen$")
-	    public void user_click_on_booked_entries_in_maintenance_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMBookedEntriesInMaintenanceScreen());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMBookedEntriesInMaintenanceScreen());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMBookedEntriesInMaintenanceScreen());
-	    }
-	    
-	    
-//debit acount
-	    @And("^User Enter the Branch Code in debit Ac in Maintenance Screen$")
-	    public void user_enter_the_branch_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_BranchCodeINdebitAc());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_BranchCodeINdebitAc());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSM_BranchCodeINdebitAc());
-	        CashDepositTransactionobj.CSM_BranchCodeINdebitAc().sendKeys("1",Keys.TAB);
-	        
-	       }
-
-	    @And("^User Enter Currency Code in debit Ac in Maintenance Screen$")
-	    public void user_enter_currency_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_CurrencyCodedebitAc());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_CurrencyCodedebitAc());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSM_CurrencyCodedebitAc());
-	        CashDepositTransactionobj.CSM_CurrencyCodedebitAc().sendKeys("586",Keys.TAB);
-	          
-	    }
-
-	    @And("^User Enter GL Code in debit Ac in Maintenance Screen$")
-	    public void user_enter_gl_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_GLCodedebitAc());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_GLCodedebitAc());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSM_GLCodedebitAc());
-	        CashDepositTransactionobj.CSM_GLCodedebitAc().sendKeys("8456",Keys.TAB);
-	        
-	    }
-
-	    @And("^User Enter CIF Code in debit Ac in Maintenance Screen$")
-	    public void user_enter_cif_code_in_debit_ac_in_maintenance_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMCIFCodeInCreditAc());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMCIFCodeInCreditAc());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMCIFCodeInCreditAc());
-	        CashDepositTransactionobj.CSMBranchCodeInCreditAc().sendKeys("993602",Keys.TAB);
-	        
-	    }
-
-	    @And("^User Enter Serial in debit Ac in Maintenance Screen$")
-	    public void user_enter_serial_in_debit_ac_in_maintenance_screen() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_SerialIndebitAc());
-	        ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_SerialIndebitAc());
-	        ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSM_SerialIndebitAc());
-	        CashDepositTransactionobj.CSM_SerialIndebitAc().sendKeys("0",Keys.TAB);
-	        
-	    }
-
-	    
-	    
-	    
-
-
-
-	
-	
-	
-
 }

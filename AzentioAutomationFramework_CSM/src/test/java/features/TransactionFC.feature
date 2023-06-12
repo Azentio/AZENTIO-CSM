@@ -22,7 +22,7 @@ And  double click the Value
 Then click the Approve button
 And  system show the popup success user click the ok button   
 And  User click the Maintenance screen
-Then click the search button
+Then click the search buttonsss
 And enter the trx number
 And double click the data
 Then click the Booked Entries

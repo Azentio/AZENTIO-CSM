@@ -8,14 +8,14 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/CSMParamApplication.feature"},
+@CucumberOptions(features = {"src/test/java/features/AmendCheque_card.feature"},
                 glue = "stepdefinitions",
                 //monochrome=false, //to make steps in color
                 plugin = { "pretty",
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"}
                //dryRun = false //to check compilation errors                                      
-             , tags="@TSA_010"
+           //  , tags="@TSA_010"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

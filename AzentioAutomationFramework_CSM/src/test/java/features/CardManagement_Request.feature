@@ -13,7 +13,7 @@ Given User login in CSM Param in waive charge
 And User click the  Parameters12 tab
 And User click the SystemParameters tab
 And User click the Transactiontype1 tab
-And click the search button
+And click the search buttons11
 And Enter the code value in COdesearchbox
 And Click the element short discription
 And Click the Element Allow User to clear
