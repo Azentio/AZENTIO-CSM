@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -138,22 +139,45 @@ public class CSM_Chequebookrequest_step {
     
     @And("^user click the save ok button$")
     public void user_click_the_save_ok_button() throws Throwable {
-    	try {
+    	
     		waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
         	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
             clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok());
-		} catch (Exception e) {
-			
-		}
-    	
+		
     }
 
     @And("^user click the ok$")
     public void user_click_the_ok() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
-    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
-        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
-    }
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			//waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
+            	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
+                clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
+                break;
+			} catch (Exception e) {
+				 
+			}
+    		
+		}
+    		
+		
+    		
+		
+		}
+    		
+		
+    @And("^user click the ok button$")
+    public void user_click_the_ok_button() throws Throwable {
+    	for (int i = 0; i < 200; i++) {
+    		//waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
+        	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
+            clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok());
+		
+		}
+    		
+		}
+    	
+    
 
     @And("^user click the approve in user screen$")
     public void user_click_the_approve_in_user_screen() throws Throwable {
@@ -231,6 +255,15 @@ public class CSM_Chequebookrequest_step {
        // csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
        csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield().sendKeys(testData.get("code"));
     }
+    @And("^user update test data set id for CHB_187_D3 in send to provider screen$")
+    public void user_update_test_data_set_id_for_chb187d3() throws Throwable {
+    	
+    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield());
+    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield());
+        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield());
+       // csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+       csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_Senttoprovider_Inputfield().sendKeys(testData.get("code"));
+    }
 
     
 
@@ -251,6 +284,16 @@ public class CSM_Chequebookrequest_step {
        // csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield().sendKeys("1");
         csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield().sendKeys(testData.get("code"));
     }
+    @And("^user update test data set id for CHB_187_D3 in receive from provider screen$")
+    public void user_update_test_data_set_id_for_chb187d3_in_receive_from_provider_screen() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield());
+    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield());
+        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield());
+       // csmChequebookObject.csmParam_Systemparameter_User_UpadateAfterapprove_Userid().sendKeys(testData.get("User_Id"));
+       // csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield().sendKeys("1");
+        csmChequebookObject.csmcore_ChequeBookRequest_senttoreceivefrom_recievefromprovider_Inputfield().sendKeys(testData.get("code"));
+    }
+
     
     
     //CHB_187
@@ -423,19 +466,12 @@ public class CSM_Chequebookrequest_step {
     @And("^user Enter the code in inputfield on updateafterapprove screen under transactiontype$")
     public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype() throws Throwable {
     	
-			try {
+			
 				waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_inputfield());
 		    	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
 		        clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_inputfield());
 		        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType"));  
-		        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
-			} catch (Exception e) {
-				
-			}
-		
-    
-    	
-        
+		        csmChequebookObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);		
     }
 
     @And("^User double click the record under updateafterapprove screen$")
@@ -445,8 +481,10 @@ public class CSM_Chequebookrequest_step {
         	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
             clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_Transactiontype_inputfield_doubleclick());
 		} catch (Exception e) {
-			
+			Assert.fail(e.getMessage());
 		}
+    		
+		
     	
     }
     @Given("User Check the ProceedOnInsufficientFund chequebox")
@@ -490,16 +528,13 @@ public class CSM_Chequebookrequest_step {
 
     @And("^user Enter the code in inputfield on Approve screen under transactiontype$")
     public void user_enter_the_code_in_inputfield_on_approve_screen_under_transactiontype() throws Throwable {
-    	try {
+   
     		waitHelper.waitForElementwithFluentwait(driver, csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield());
         	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield());
             clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield());
             csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield().sendKeys(testData.get("TRXType"));  
             csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield().sendKeys(Keys.ENTER);
-		} catch (Exception e) {
-			
-		}
-    	
+		
     }
 
     @And("^User double click the record Approve screen$")
@@ -509,8 +544,10 @@ public class CSM_Chequebookrequest_step {
         	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick());
             clicksAndActionsHelper.doubleClick(csmChequebookObject.csmParam_Transactiontype_Approve_Inputfield_doubleclick()); 
 		} catch (Exception e) {
-			
+			Assert.fail(e.getMessage());
 		}
+    		
+		
     	
     }
     @And("^user click the Chequebookrequest submenu on CSMCORE$")
@@ -622,9 +659,10 @@ public class CSM_Chequebookrequest_step {
         	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmcore_Chequebookrequest_Approve());
             clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmcore_Chequebookrequest_Approve());
 		} catch (Exception e) {
-			// TODO: handle exception
+			Assert.fail(e.getMessage());
 		}
-    	
+    		
+		
     }
 
     @And("^user enter the cheque code on approve screen$")

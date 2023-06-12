@@ -396,12 +396,12 @@ public class CSMSADS_TransactiononstaffaccObj {
 		{
 		    return Transactions_transactionNo_codeValues;
 		}
-		@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
-		 private WebElement Transactions_Approvebtn;
-		public WebElement Transactions_Approvebtn()
-		 {
-		return Transactions_Approvebtn;
-		}
+//		@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
+//		 private WebElement Transactions_Approvebtn;
+//		public WebElement Transactions_Approvebtn()
+//		 {
+//		return Transactions_Approvebtn;
+//		}
 		@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
 		private WebElement Transactions_successokbtn;
 		public WebElement Transactions_successokbtn()
@@ -414,6 +414,12 @@ public class CSMSADS_TransactiononstaffaccObj {
 		public WebElement Transactions_Approvebtns()
 		 {
 		return Transactions_Approvebtns;
+		}
+		@FindBy(xpath="//span[contains(text(),' Approve ')]")
+		 private WebElement Transactions_Approvebtn;
+		public WebElement Transactions_Approvebtn()
+		 {
+		return Transactions_Approvebtn;
 		}
 		@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
 		private WebElement CSM_UseButtonInChangeRunningDate;

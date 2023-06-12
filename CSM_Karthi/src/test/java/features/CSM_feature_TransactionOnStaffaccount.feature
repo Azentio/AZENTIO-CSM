@@ -37,7 +37,7 @@ Feature: To verify the functionality of Transaction on Staff Accounts module
     And User Enter the Code in Approve Screen
     And User Click the Selected code in Approve Screen
     And User Click on Approve button in Approve Screen
-    And User Click on Ok Button in Success PopUp Menu
+    And User Click on Ok Button in Success PopUp Menu  
     Given navigate to CSM application and login with valid credentials
     And user update test data set id for TSA_157
     And User Click on Date to Change the Current Date
@@ -78,7 +78,7 @@ Feature: To verify the functionality of Transaction on Staff Accounts module
     And User click the Approve screens
     Then user Enter the Transaction number
     And double click the Value
-    Then click the Approve buttons
+		And click the Approve button
     And system show the popup success user clicks the ok button
     And User Click on Queries under CSM application
     And User Click on Statement Of Accounts in Queries under CSM application

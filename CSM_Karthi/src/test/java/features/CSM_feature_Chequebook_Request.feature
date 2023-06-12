@@ -31,11 +31,10 @@ Feature: To verify the functionality of Chequebook request module
     And user click the send to provider screen
     And user click the retrive button in send to provider
     And user update test data set id for CHB_186_D3 in send to provider screen
-    #And user Enter the  branch code in send to provider
+    
     And user click the receive from provider screen
     And user update test data set id for CHB_186_D3 in receive from provider screen
-  #And user Enter the  branch code in receive from provider
-
+ 
   @CHB_187
   Scenario: Functional testing -Testing "Chequebook Request - Send To/Receive From Provider" Screen If the DDL is set to all branches
     Given navigate to CSM param application and login with valid credentials
@@ -63,13 +62,13 @@ Feature: To verify the functionality of Chequebook request module
     And user click the send to receive from provider
     And user click the send to provider screen
     And user click the retrive button in send to provider
-    And user update test data set id for CHB_186_D3 in send to provider screen
+    And user update test data set id for CHB_187_D3 in send to provider screen
     #And user Enter the  branch code in send to provider
     And user click the receive from provider screen
-    And user update test data set id for CHB_186_D3 in receive from provider screen
+    And user update test data set id for CHB_187_D3 in receive from provider screen
   #And user Enter the  branch code in receive from provider
 
-@CHB_180
+ @CHB_180
   Scenario: Cheque book - GL type field is 'Notify and Don’t Proceed','Proceed on insufficient funds' flag checked at Transaction type
     Given navigate to CSM param application and login with valid credentials
      And user update test data set id for CHB_180
@@ -104,8 +103,8 @@ Feature: To verify the functionality of Chequebook request module
     And User double click the record Approve screen
     And user click the Approve button on Approve field
     And user click the save ok button
-    And user click the ok  
-  Given navigate to CSM application and login with valid credentials
+    And user click the ok   
+  Given navigate to CSM application and login with valid credentials 
    And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date for CHB_180
     And User Click on Use Button in Change Running Date Popup
@@ -172,6 +171,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click the save ok button
     And user click the ok  
   Given navigate to CSM application and login with valid credentials
+  And User Click on Date to Change the Current Date
   And User Enter the Date in User Running Date for CHB_180
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
@@ -238,13 +238,14 @@ Feature: To verify the functionality of Chequebook request module
     And user click the save ok button
     And user click the ok  
   Given navigate to CSM application and login with valid credentials
-  #And User Enter the Date in User Running Date for CHB_180
-    #And User Click on Use Button in Change Running Date Popup
-    #And User Click Ok Button in Information PopUp menu
-    #And User Click on Close Button in Change Running Date Popup
-    #And User Click on Technical Details Icon
-    #And User Click Clear Cache in Technical Details Icon
-    #And User Click Ok Button Under Information PopUp Menu
+  And User Click on Date to Change the Current Date
+  And User Enter the Date in User Running Date for CHB_180
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button in Information PopUp menu
+    And User Click on Close Button in Change Running Date Popup
+    And User Click on Technical Details Icon
+    And User Click Clear Cache in Technical Details Icon
+    And User Click Ok Button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field

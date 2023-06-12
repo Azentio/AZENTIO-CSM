@@ -1,51 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-05T18:51:56 IST" name="Default suite" finished-at="2023-06-05T18:52:55 IST" duration-ms="59118">
+  <suite started-at="2023-06-12T17:34:00 IST" name="Default suite" finished-at="2023-06-12T17:37:01 IST" duration-ms="180685">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@795509d9]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-05T18:51:56 IST" name="Default test" finished-at="2023-06-05T18:52:55 IST" duration-ms="59118">
-      <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-05T18:51:56 IST" name="setUpClass" finished-at="2023-06-05T18:51:58 IST" duration-ms="2421" status="PASS">
+    <test started-at="2023-06-12T17:34:00 IST" name="Default test" finished-at="2023-06-12T17:37:01 IST" duration-ms="180685">
+      <class name="Runner.MultipleRunner">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.MultipleRunner@63376bed]" started-at="2023-06-12T17:34:00 IST" name="beforeTest" finished-at="2023-06-12T17:34:03 IST" duration-ms="2215" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-05T18:51:58 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-05T18:52:42 IST" duration-ms="43815" status="FAIL">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[To test the funcnalities of Transaction module]"]]>
-              </value>
-            </param>
-          </params>
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "java.util.Map.get(Object)" because "this.testData" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "java.util.Map.get(Object)" because "this.testData" is null
-at stepdefinitions.CSM_Transaction_Steps.user_enter_the_date_in_user_running_dates(CSM_Transaction_Steps.java:954)
-at ✽.User Enter the Date in User Running Dates(file:///C:/Users/inindc00606/git/Karthik_CSM/CSM_Karthi/src/test/java/features/CSM_Transaction.feature:594)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- beforeTest -->
+        <test-method signature="test()[pri:0, instance:Runner.MultipleRunner@63376bed]" started-at="2023-06-12T17:34:03 IST" name="test" finished-at="2023-06-12T17:37:01 IST" duration-ms="178095" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-05T18:52:42 IST" name="tearDownClass" finished-at="2023-06-05T18:52:55 IST" duration-ms="12785" status="PASS">
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.MultipleRunner@63376bed]" started-at="2023-06-12T17:37:01 IST" name="afterTest" finished-at="2023-06-12T17:37:01 IST" duration-ms="240" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.TestApplication -->
+        </test-method> <!-- afterTest -->
+      </class> <!-- Runner.MultipleRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

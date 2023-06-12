@@ -69,6 +69,7 @@ public class CSM_Transaction_Object {
 	public WebElement CSMCore_Transactions() {
 		return CSMCore_Transactions;
 	}
+	
 	@FindBy(xpath = "//a[@id='D001MT']")
 	private WebElement CSMCore_Transactions_Maintenance;
 	public WebElement CSMCore_Transactions_Maintenance() {
@@ -245,7 +246,7 @@ public class CSM_Transaction_Object {
 		return Transactions_BookedEntries;
 	}	
 	
-	@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
+	@FindBy(xpath="//span[contains(text(),' Approve ')]")
  private WebElement Transactions_Approvebtn;
 public WebElement Transactions_Approvebtn()
  {
@@ -263,7 +264,7 @@ return nonInternalGlCodeValidationPopUp;
 private WebElement TransactionType_UPAA_dealwithCurrencyDominationChequbox;
 public WebElement TransactionType_UPAA_dealwithCurrencyDominationChequbox()
 {
-return Transactions_Approvebtn;
+return TransactionType_UPAA_dealwithCurrencyDominationChequbox;
 }
 //TRS_063
 @FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
@@ -277,6 +278,13 @@ private WebElement csmParam_AccountParameters ;
 
 public WebElement csmParam_AccountParameters() {
 return csmParam_AccountParameters;
+}
+
+@FindBy(xpath = "//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.CODE']")
+private WebElement csmParam_Transactiontype_inputfield_doubleclick ;
+
+public WebElement csmParam_Transactiontype_inputfield_doubleclick() {
+return csmParam_Transactiontype_inputfield_doubleclick;
 }
 @FindBy(xpath = "//td[text()='Account Type']")
 private WebElement csmParam_AccountParameters_AccountTypes ;
@@ -301,6 +309,13 @@ private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleCl
 
 public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick() {
 return csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick;
+}
+
+@FindBy(xpath = "//td[text()='55']")
+private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick_forTRS064 ;
+
+public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick_forTRS064() {
+return csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick_forTRS064;
 }
 @FindBy(xpath = "//div[@id='instructionsColl_P017MA']")
 private WebElement csmParam_AccountParameters_AccountTypes_Instructions;
@@ -567,11 +582,17 @@ private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
         return csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx;
     }
 
-        @FindBy(xpath="(//td[@id='td_tab3_C_GridTbl_Id_E000MA_1_TRX_DESC'])[2]//following-sibling::td[1]//input")
+        @FindBy(xpath="//td[@tdlabel='W/D Limit']//input")
         private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
             public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits() {
             return csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits;
         }
+
+            @FindBy(xpath="//td[@tdlabel='W/D Limit']//input")
+            private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2;
+                public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2() {
+                return csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2;
+            }
             @FindBy(xpath="//td[@tdlabel='Local Approval Limit']//input/ancestor::td[@tdlabel='Local Approval Limit']/following-sibling::td[@tdlabel='Warn User If Limit Exceed']/input")
             private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check;
                 public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_warnuserlimit_check() {
@@ -652,7 +673,64 @@ private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_currency;
 		public WebElement CSMOkButtonUnderInformationPopUp() {
 			return CSM_OkButtonUnderInformationPopUp;
 		}
-                                    
+		@FindBy(xpath = "(//td[text()='840'])[1]")
+		private WebElement limits_retriveTheRecordfor_TRS110 ;
+
+		public WebElement limits_retriveTheRecordfor_TRS110() {
+			return limits_retriveTheRecordfor_TRS110;
+		}  
+		@FindBy(xpath = "//td[text()='452']")
+		private WebElement limits_retriveTheRecord ;
+
+		public WebElement limits_retriveTheRecord() {
+			return limits_retriveTheRecord;
+		}  
+		@FindBy(xpath = "//td[text()='CASH WD']")
+		private WebElement limits_retriveTheRecord_DataNo2 ;
+
+		public WebElement limits_retriveTheRecord_DataNo2() {
+			return limits_retriveTheRecord_DataNo2;
+		}  
+		
+		
+		@FindBy(xpath = "//td[text()='Deposit Rita']")
+		private WebElement limits_retriveTheRecordtoDelete ;
+
+		public WebElement limits_retriveTheRecordtoDelete() {
+			return limits_retriveTheRecordtoDelete;
+		}
+		@FindBy(xpath = "//td[@id='del_tab3_C_GridTbl_Id_E000MA']")
+		private WebElement limits_DeleteButton ;
+
+		public WebElement limits_DeleteButton() {
+			return limits_DeleteButton;
+		}  
+		@FindBy(xpath = "//div[text()='Cannot Proceed']//parent::div//following-sibling::div//div[contains(text(),'Currency: Limit Amount should be between')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+		private WebElement CannotProceed_Warning_popup ;
+
+		public WebElement CannotProceed_Warning_popup() {
+			return CannotProceed_Warning_popup;
+		}  
+		@FindBy(xpath = "//div[contains(text(),'WARNING')]//parent::div//following-sibling::div//div[contains(text(),'Currency: Limit Amount should be between')]//parent::div//following-sibling::center//input")
+		private WebElement Warning_popup ;
+
+		public WebElement Warning_popup() {
+			return Warning_popup;
+		}  
+		//TRS_127
+		@FindBy(xpath = "//td[text()='KARTHIK']")
+		private WebElement Transaction_maintanance_alertclickingUserId ;
+
+		public WebElement Transaction_maintanance_alertclickingUserId() {
+			return Transaction_maintanance_alertclickingUserId;
+		}  
+		@FindBy(xpath = "//a[@id='sendBut_D001MT']")
+		private WebElement Transaction_maintanance_alertclickingUserId_SendBtn ;
+
+		public WebElement Transaction_maintanance_alertclickingUserId_SendBtn() {
+			return Transaction_maintanance_alertclickingUserId_SendBtn;
+		}  
+		
 
 
 }

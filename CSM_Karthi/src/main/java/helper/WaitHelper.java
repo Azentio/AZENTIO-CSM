@@ -88,10 +88,10 @@ public class WaitHelper {
 
 	}
 	
-	public  WebElement waitForElementwithFluentwait(WebDriver driver, WebElement element) throws IOException 
+	public  WebElement waitForElementwithFluentwait(WebDriver driver, WebElement element)  
 	{ 	
-		fileInputStream= new FileInputStream(fileLocation);
-		prop.load(fileInputStream);
+//		fileInputStream= new FileInputStream(fileLocation);
+//		prop.load(fileInputStream);
 		
 		int duration=Integer.parseInt(prop.getProperty("timeout"));
 		int pollinngSecond=Integer.parseInt(prop.getProperty("pollingTime"));

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,8 +35,8 @@ public class CSM_Transaction_Steps {
 	ExcelData excelDataForTransaction = new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
-	Map<String, String> chequeBookRequestTestData = new HashMap<>();
-	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
+//	Map<String, String> chequeBookRequestTestData = new HashMap<>();
+//	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
 	Map<String, String> testData;
 
 //	@And("^user click the TransactionType under Systemparameters submenu$")
@@ -147,7 +148,9 @@ public class CSM_Transaction_Steps {
 
     @And("^user click Transaction submenu on CSMCore$")
     public void user_click_transaction_submenu_on_csmcore() throws Throwable {
+    	javascriptHelper.scrollIntoView(CSMTransactionObject.CSMCore_Transactions());
     	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.CSMCore_Transactions());
+    	
     	clicksAndActionsHelper.moveToElement(CSMTransactionObject.CSMCore_Transactions());
         clicksAndActionsHelper.clickOnElement(CSMTransactionObject.CSMCore_Transactions());
     }
@@ -420,17 +423,64 @@ public class CSM_Transaction_Steps {
     
     @And("^system show the popup success user click the ok button$")
     public void system_show_the_popup_success_user_click_the_ok_button() throws Throwable {
-   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_successokbtn());
-   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_successokbtn());  
+    	
+    		waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_successokbtn());
+    		clicksAndActionsHelper.moveToElement(CSMTransactionObject.Transactions_successokbtn());
+    	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_successokbtn()); 
+		
+   	  
    	 //Thread.sleep(2000);
     }
 
-//    @Then("^user Enter the Transaction number$")
-//    public void user_enter_the_transaction_number() throws Throwable {
-//   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
-//   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
-//   	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys("7521");
-//    }
+    @Then("^user Enters the Transaction number$")
+   public void user_enters_the_transaction_number() throws Throwable {
+    	
+    		 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+    	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+    	  	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(testData.get("TRXNo"));
+    	  	CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(Keys.ENTER);
+		
+   }
+    @Then("^user Enters the Transaction number forTRS_114$")
+    public void user_enters_the_transaction_number_forTRS_114() throws Throwable {
+     	
+     		 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+     	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+     	   
+     	  	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(testData.get("TRXNo"));
+     	  	CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(Keys.ENTER);
+ 		
+    }
+    @Then("^user Enters the Transaction number forTRS_027$")
+    public void user_enters_the_transaction_number_forTRS_027() throws Throwable {
+     	
+     		 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+     	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+     	   
+     	  	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(testData.get("TRXNo"));
+     	  	CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(Keys.ENTER);
+ 		
+    }
+    @Then("^user Enters the Transaction number forTRS_026$")
+    public void user_enters_the_transaction_number_forTRS_026() throws Throwable {
+     	
+     		 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+     	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+     	   
+     	  	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(testData.get("TRXNo"));
+     	  	CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(Keys.ENTER);
+ 		
+    }
+
+    @Then("^user Enters the Transaction number forTRS_113$")
+    public void user_enters_the_transaction_number_forTRS_113() throws Throwable {
+     	
+     		 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_codeValue());
+     	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_transactionNo_codeValue());  
+     	  	 CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(testData.get("TRXNo"));
+     	  	CSMTransactionObject.Transactions_transactionNo_codeValue().sendKeys(Keys.ENTER);
+ 		
+    }
 
     @And("^User click the Approve screen$")
     public void user_click_the_approve_screen() throws Throwable {
@@ -441,22 +491,32 @@ public class CSM_Transaction_Steps {
 
     @And("^double click the Value$")
     public void double_click_the_value() throws Throwable {
-   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_Doubleclk());
-   	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.Transactions_transactionNo_Doubleclk());  
+    	
+    		 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_transactionNo_Doubleclk());
+    	   	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.Transactions_transactionNo_Doubleclk());  
+		
+   	
     }
     
-    @Then("^click the Approve button$")
+    @And("^click the Approve button$")
     public void click_the_approve_button() throws Throwable {
-    	try {
-    		 javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_Approvebtn());
+    	
+    		 
     	   	 waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.Transactions_Approvebtn());
+    	   	javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_Approvebtn());
+    		 clicksAndActionsHelper.moveToElement(CSMTransactionObject.Transactions_Approvebtn());
     	   	 clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_Approvebtn());  
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+		
    
     }
-    
+    @And("^User get Transaction number from sucess pop upforTRS_026$")
+    public void user_get_transaction_number_from_sucess_pop_upforTRS_026() throws Throwable {
+        waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+      String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+       System.out.println(transactionNo);
+       excelDataForTransaction.updateTestData("TRS_026_D1", "TRXNo", transactionNo);
+       testData = excelDataForTransaction.getTestdata("TRS_026_D1");
+    }
     @And("^User click the Maintenance screen$")
     public void user_click_the_maintenance_screen() throws Throwable {
     	 javascriptHelper.scrollIntoView(CSMTransactionObject.Transactions_MaintenanceScrn());
@@ -501,20 +561,68 @@ public class CSM_Transaction_Steps {
 //    	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
 //    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
 //        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        if (CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox().getAttribute("initialvalue").isBlank()) {
-        clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox(),
-        		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        } else {
-        clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox(),
-        		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
-        		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox();
-        }
+    	for (int i = 0; i < 200; i++) {
+    		try {
+        		javascriptHelper.scrollIntoView(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                if (CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox().getAttribute("initialvalue").isBlank()) {
+                clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox(),
+                		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                break;
+                } else {
+                clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                clicksAndActionsHelper.clickUsingActionClass(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox(),
+                		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                clicksAndActionsHelper.moveToElement(CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox());
+                		CSMTransactionObject.TransactionType_UPAA_dealwithCurrencyDominationChequbox();
+                		break;
+                }
+    		} catch (Exception e) {
+//    			Assert.fail(e.getMessage());
+    		}
+		}
+    	
+    	
     }
-    
+    @And("^user Enter the code in inputfield on updateafterapprove screen under transactiontypeforTRS_025$")
+    public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype() throws Throwable {
+    	
+			
+				waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_inputfield());
+		    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
+		        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
+		        CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType_D1"));  
+		        CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);		
+    }
+    @And("^User double click the record under updateafterapprove screenforTRS_025$")
+    public void user_double_click_the_record_under_updateafterapprove_screen() throws Throwable {
+    	
+    		waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_inputfield_doubleclick());
+        	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_inputfield_doubleclick());
+            clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_Transactiontype_inputfield_doubleclick());
+		
+    	
+    }
+    @And("^user Enter the code in inputfield on updateafterapprove screen under transactiontypeforTRS_026$")
+    public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontypeforTRS_026() throws Throwable {
+    	
+			
+				waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_inputfield());
+		    	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
+		        clicksAndActionsHelper.clickOnElement(CSMTransactionObject.csmParam_Transactiontype_inputfield());
+		        CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType_D1"));  
+		        CSMTransactionObject.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);		
+    }
+    @And("^User double click the record under updateafterapprove screenforTRS_026$")
+    public void user_double_click_the_record_under_updateafterapprove_screenforTRS_026() throws Throwable {
+    	
+    		waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.csmParam_Transactiontype_inputfield_doubleclick());
+        	clicksAndActionsHelper.moveToElement(CSMTransactionObject.csmParam_Transactiontype_inputfield_doubleclick());
+            clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_Transactiontype_inputfield_doubleclick());
+		
+    	
+    }
     
     //TRS_026
     @And("^user update test data set id for TRS_026$")
@@ -545,6 +653,7 @@ public class CSM_Transaction_Steps {
         	
         	
             
+    		
     }
     @And("^user click the AccountParameter submenu under Parameters$")
     public void user_click_the_accountparameter_submenu_under_parameters() throws Throwable {
@@ -583,6 +692,21 @@ public class CSM_Transaction_Steps {
     		if (CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick().isDisplayed()) {
         		waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick());
             	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick()); 
+    		} else {
+
+    		}
+		} catch (Exception e) {
+			
+		}
+    	
+    	
+    }
+    @And("^user double click the TypeCode in UPA field forTRS064$")
+    public void user_double_click_the_typecode_in_upa_field_forTRS064() throws Throwable {
+    	try {
+    		if (CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick_forTRS064().isDisplayed()) {
+        		waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick_forTRS064());
+            	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick_forTRS064()); 
     		} else {
 
     		}
@@ -692,8 +816,19 @@ public class CSM_Transaction_Steps {
 
     @And("^user double click the Typecode in Approve field$")
     public void user_double_click_the_typecode_in_approve_field() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick());
-      	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick()); 
+    	try {
+    		waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick());
+         	 clicksAndActionsHelper.doubleClick(CSMTransactionObject.csmParam_AccountParameters_AccountTypes_ApproveField_TypeCode_doubleClick()); 
+		} catch (Exception e) {
+			Assert.fail(e.getMessage());
+		}
+    	
+    }
+    @And("^User Click on Close Button in Change Running Date Popups$")
+    public void user_click_on_close_button_in_change_running_date_popups() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.CSMCloseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.CSMCloseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.CSMCloseButtonInChangeRunningDate());
     }
 
     @And("^user click the Approve button$")
@@ -749,12 +884,23 @@ public class CSM_Transaction_Steps {
     	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.AmountExceedsWarningPopUp());
     	Assert.assertTrue(CSMTransactionObject.AmountExceedsWarningPopUp().isDisplayed());
     }
+    @And("^User get Transaction number from success pop up$")
+    public void user_get_transaction_number_from_success_pop_up() throws Throwable {
+        waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+      String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+       System.out.println(transactionNo);
+       excelDataForTransaction.updateTestData("TRS_111_D1", "TRXNo", transactionNo);
+       testData=excelDataForTransaction.getTestdata("TRS_111_D1");
+
+    }
+
     
     @And("^user check if the  value is entered or not$")
     public void user_check_if_the_value_is_entered_or_not() throws Throwable {
 
         try {
         javascriptHelper.scrollIntoView(CSMTransactionObject.checkIfValueIsEntered());
+        waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.checkIfValueIsEntered());
 	 if ((CSMTransactionObject.checkIfValueIsEntered().getAttribute("prevvalue")) != null){
 		 CSMTransactionObject.checkIfValueIsEntered().isDisplayed();
 
@@ -764,6 +910,7 @@ public class CSM_Transaction_Steps {
         }
        
         } catch (Exception e){
+        	Assert.fail(e.getMessage());
         }}
     
 
@@ -841,6 +988,98 @@ public void user_update_test_data_set_id_for_trs066() throws Throwable {
 public void user_update_test_data_set_id_for_trs067() throws Throwable {
 	testData = excelDataForTransaction.getTestdata("TRS_063_D1");
 }
+
+//TRS_110
+@And("^user update test data set id for TRS_110$")
+public void user_update_test_data_set_id_for_trs110() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_110_D1");
+}
+
+@And("^User enter value with WithdrawLimit in Limits$")
+
+public void user_enter_value_with_WithdrawLimit_in_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+    
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(testData.get("WithdrawLimit"));
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(Keys.TAB);
+  
+}
+@And("^User enter value with WithdrawLimit No2 in Limits$")
+
+public void user_enter_value_with_WithdrawLimit_no2__in_limits() throws Throwable {
+	try {
+		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2());
+		    
+		    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2());
+		    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2());
+		    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2().sendKeys(testData.get("AllTRX"));
+		    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimitsNo2().sendKeys(Keys.TAB);
+	} catch (Exception e) {
+		
+	}
+   
+  
+}
+@And("^User enter the Transaction type no2 in Limits$")
+
+public void user_enter_the_transaction_type_no2__in_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
+    
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx());
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(testData.get("TRXType_D2"));
+    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_Trx().sendKeys(Keys.TAB);
+    //seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+}
+@And("^user retrive the existing record no2 from the limits screen$")
+public void user_retrive_the_existing_record_no2_from_the_limits_screen() throws Throwable {
+	  
+		  //seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.limits_retriveTheRecord_DataNo2());
+	
+        
+        	// seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.limits_retriveTheRecord_DataNo2());
+	 	        javascriptHelper.scrollIntoView(CSMTransactionObject.limits_retriveTheRecord_DataNo2());
+	 	        seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.limits_retriveTheRecord_DataNo2());
+        
+            
+        
+    }
+@And("^user retrive the existing record forTRS115 from the limits screen$")
+public void user_retrive_the_existing_record_forTRS115_from_the_limits_screen() throws Throwable {
+	  
+		  //seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.limits_retriveTheRecord_DataNo2());
+	
+        
+        	// seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.limits_retriveTheRecord_DataNo2());
+	 	        javascriptHelper.scrollIntoView(CSMTransactionObject.limits_retriveTheRecordtoDelete());
+	 	        seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.limits_retriveTheRecordtoDelete());
+          }
+	        		
+ 	 	       
+	       
+
+@And("^user retrive the existing record forTRS110 from the limits screen$")
+public void user_retrive_the_existing_record_forTRS110_from_the_limits_screen() throws Throwable {
+	 
+		  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	        
+	        seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	        javascriptHelper.scrollIntoView(CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	      
+	        }
+@And("^user retrive the existing record forTRS115no1 from the limits screen$")
+public void user_retrive_the_existing_record_forTRS115no1_from_the_limits_screen() throws Throwable {
+	 
+		  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	        
+	        seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	        javascriptHelper.scrollIntoView(CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.limits_retriveTheRecordfor_TRS110());
+	      
+	        }
 //TRS_111
 @And("^user update test data set id for TRS_111$")
 public void user_update_test_data_set_id_for_trs111() throws Throwable {
@@ -886,15 +1125,26 @@ public void user_enter_the_transaction_type_in_limits() throws Throwable {
     //seleniumActions.getJavascriptHelper().scrollIntoView(CSMTransactionObj.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
 }
 
-@And("^User enter value with DepositLimit in Limits$")
+@And("^User enter value with DepositLimitno1 in Limits$")
 
-public void user_enter_value_with_DepositLimit_in_limits() throws Throwable {
-    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
+public void user_enter_value_with_DepositLimitno1_in_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.depositLimitInUpdateAfterApprove());
     
-    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
-    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits());
-    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(testData.get("DepositLimit"));
-    CSMTransactionObject.csm_sysparam_user_updateafterapprove_Limits_addbtn_WDLimits().sendKeys(Keys.TAB);
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.depositLimitInUpdateAfterApprove());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.depositLimitInUpdateAfterApprove());
+    CSMTransactionObject.depositLimitInUpdateAfterApprove().sendKeys(testData.get("DepositLimit"));
+    CSMTransactionObject.depositLimitInUpdateAfterApprove().sendKeys(Keys.TAB);
+  
+}
+@And("^User enter value with DepositLimitno2 in Limits$")
+
+public void user_enter_value_with_DepositLimitno2_in_limits() throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.depositLimitInUpdateAfterApprove());
+    
+    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.depositLimitInUpdateAfterApprove());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.depositLimitInUpdateAfterApprove());
+    CSMTransactionObject.depositLimitInUpdateAfterApprove().sendKeys(testData.get("AllTRX"));
+    CSMTransactionObject.depositLimitInUpdateAfterApprove().sendKeys(Keys.TAB);
   
 }
 
@@ -908,6 +1158,7 @@ public void user_check_the_with_warnuserlimit_in_limit() throws Throwable {
 
 
 }
+
 
 
 
@@ -953,10 +1204,84 @@ public void user_enter_the_date_in_user_running_dates() throws Throwable {
     CSMTransactionObject.CSMDateInUserRunningDate().clear();
     CSMTransactionObject.CSMDateInUserRunningDate().sendKeys(testData.get("Dates"));
 }
+@And("^user retrive the existing record from the limits screen$")
+public void user_retrive_the_existing_record_from_the_limits_screen() throws Throwable {
+	  try {
+		  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.limits_retriveTheRecord());
+	        
+	        seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.limits_retriveTheRecord());
+	        javascriptHelper.scrollIntoView(CSMTransactionObject.limits_retriveTheRecord());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.limits_retriveTheRecord());
+	      
+	        } catch (Exception e){
+	        }}
 
+	  
+
+
+@And("^user delete the record from the limits screen$")
+public void user_delete_the_record_from_the_limits_screen() throws Throwable {
+	
+		seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.limits_DeleteButton());
+		 javascriptHelper.scrollIntoView(CSMTransactionObject.limits_DeleteButton());
+		    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.limits_DeleteButton());
+	
+	 
+}
+
+//TRS_112
+@And("^user update test data set id for TRS_112$")
+public void user_update_test_data_set_id_for_trs112() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_112_D1");
+}
+@And("^user validate the popup as CannotProceed warning pop up$")
+public void user_validate_the_popup_as_CannotProceed_warning_pop_up() throws Throwable {
+	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.CannotProceed_Warning_popup());
+	Assert.assertTrue(CSMTransactionObject.CannotProceed_Warning_popup().isDisplayed());
+}
+
+//TRS_113
+@And("^user update test data set id for TRS_113$")
+public void user_update_test_data_set_id_for_trs113() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_113_D1");
+}
+@And("^user validate the warning pop up$")
+public void user_validate_the_warning_pop_up() throws Throwable {
+	waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.Warning_popup());
+	Assert.assertTrue(CSMTransactionObject.Warning_popup().isDisplayed());
+	  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.Warning_popup());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.Warning_popup());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.Warning_popup());
+}
+@And("^User get Transaction number from success pop up forTRS_113$")
+public void user_get_transaction_number_from_success_pop_up_forTRS_113() throws Throwable {
+    waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+  String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+   System.out.println(transactionNo);
+   excelDataForTransaction.updateTestData("TRS_113_D1", "TRXNo", transactionNo);
+   testData=excelDataForTransaction.getTestdata("TRS_113_D1");
+}
+
+//TRS_114
+@And("^user update test data set id for TRS_114$")
+public void user_update_test_data_set_id_for_trs114() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_114_D1");
+}
+	@And("^User get Transaction number from success pop up forTRS_114$")
+	public void user_get_transaction_number_from_success_pop_up_forTRS_114() throws Throwable {
+	    waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+	  String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+	   System.out.println(transactionNo);
+	   excelDataForTransaction.updateTestData("TRS_114_D1", "TRXNo", transactionNo);
+	   testData=excelDataForTransaction.getTestdata("TRS_114_D1");
+	}
 
 	
-
+//TRS_115
+@And("^user update test data set id for TRS_115$")
+public void user_update_test_data_set_id_for_trs115() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_115_D1");
+}
 
 
 
@@ -968,4 +1293,126 @@ public void user_enter_the_date_in_user_running_dates() throws Throwable {
 //    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
 //    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove());
 //     }
+
+//TRS_127
+@And("^user update test data set id for TRS_127$")
+public void user_update_test_data_set_id_for_trs127() throws Throwable {
+	testData = excelDataForTransaction.getTestdata("TRS_127_D1");
 }
+	@And("^User get Transaction number from success pop up forTRS_127$")
+	public void user_get_transaction_number_from_success_pop_up_forTRS_127() throws Throwable {
+	    waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+	  String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+	   System.out.println(transactionNo);
+	   excelDataForTransaction.updateTestData("TRS_127_D1", "TRXNo", transactionNo);
+	   testData=excelDataForTransaction.getTestdata("TRS_127_D1");
+	}
+	
+	@And("user click the BranchManager Account in the Alert popup")
+	public void user_click_the_branch_manager_account_in_the_alert_popup() throws Throwable{
+		  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.Transaction_maintanance_alertclickingUserId());
+		    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.Transaction_maintanance_alertclickingUserId());
+		    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.Transaction_maintanance_alertclickingUserId());
+	}
+	
+	@Then("user click the send button in Alert popup")
+	public void user_click_the_send_button_in_alert_popup()throws Throwable {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObject.Transaction_maintanance_alertclickingUserId_SendBtn());
+	    seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.Transaction_maintanance_alertclickingUserId_SendBtn());
+	    seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.Transaction_maintanance_alertclickingUserId_SendBtn());
+	}
+	//TRS_128
+	@And("^user update test data set id for TRS_128$")
+	public void user_update_test_data_set_id_for_trs128() throws Throwable {
+		testData = excelDataForTransaction.getTestdata("TRS_128_D1");
+	}
+		@And("^User get Transaction number from success pop up forTRS_128$")
+		public void user_get_transaction_number_from_success_pop_up_forTRS_128() throws Throwable {
+		    waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+		  String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+		   System.out.println(transactionNo);
+		   excelDataForTransaction.updateTestData("TRS_128_D1", "TRXNo", transactionNo);
+		   testData=excelDataForTransaction.getTestdata("TRS_128_D1");
+		}
+		
+		//TRS_139
+		@And("^user update test data set id for TRS_139$")
+		public void user_update_test_data_set_id_for_trs139() throws Throwable {
+			testData = excelDataForTransaction.getTestdata("TRS_139_D1");
+		}
+			@And("^User get Transaction number from success pop up forTRS_139$")
+			public void user_get_transaction_number_from_success_pop_up_forTRS_139() throws Throwable {
+			    waitHelper.waitForElementwithFluentwait(driver,CSMTransactionObject.getTransactionNumber());
+			  String  transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+			   System.out.println(transactionNo);
+			   excelDataForTransaction.updateTestData("TRS_139_D1", "TRXNo", transactionNo);
+			   testData=excelDataForTransaction.getTestdata("TRS_139_D1");
+			}
+			@And("user_606 click ControlRecord sub menu under SystemParameter")
+			public void user_click_control_record_sub_menu_under_system_parameter()  {
+				
+			   
+			}
+
+			@And("user_606 click UPA under ControlRecord")
+			public void user_click_upa_under_control_record() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 click AlertActivation field under controlRecord")
+			public void user_click_alert_activation_field_under_control_record() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 click the AccountBalanceOverdrawnFlag under AlertActivation")
+			public void user_click_the_account_balance_overdrawn_flag_under_alert_activation() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 click the AccountBalanceOverdrawnfield under AlertActivation")
+			public void user_click_the_account_balance_overdrawnfield_under_alert_activation() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 check the AccountBalanceOverdrawnCheckBox under AlertActivation")
+			public void user_check_the_account_balance_overdrawn_check_box_under_alert_activation() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 click the AccountBalanceOverdrawnfield under AccountBalanceOverdrawnFlag")
+			public void user_click_the_account_balance_overdrawnfield_under_account_balance_overdrawn_flag() {
+			   
+			   
+			}
+
+			@And("user_606 check the AccountBalanceOverdrawnCheckBox under AccountBalanceOverdrawnFlag")
+			public void user_check_the_account_balance_overdrawn_check_box_under_account_balance_overdrawn_flag() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 click the UPA button under ControlRecord")
+			public void user_click_the_upa_button_under_control_record() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 Click the Approve field under ControlRecord")
+			public void user_click_the_approve_field_under_control_record() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+			@And("user_606 Click the Approve Button under ControlRecord")
+			public void user_click_the_approve_button_under_control_record() {
+			   
+			    throw new io.cucumber.java.PendingException();
+			}
+
+
+	}

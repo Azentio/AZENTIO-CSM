@@ -325,13 +325,13 @@ public class CSM_Chequebook_Object {
 public WebElement csmParam_Transactiontype_Updateafterapprovefield() {
 	return csmParam_Transactiontype_Updateafterapprovefield;
 }
-@FindBy(xpath = "//*[@id=\"transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE\"]")
+@FindBy(xpath = "//td[text()='55']")
 private WebElement csmParam_Transactiontype_inputfield ;
 
 public WebElement csmParam_Transactiontype_inputfield() {
 return csmParam_Transactiontype_inputfield;
 }
-@FindBy(xpath = "//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.CODE']")
+@FindBy(xpath = "//td[text()='201']")
 private WebElement csmParam_Transactiontype_inputfield_doubleclick ;
 
 public WebElement csmParam_Transactiontype_inputfield_doubleclick() {

@@ -37,8 +37,7 @@ public class CSMSADS_Tranactiononstaff_step {
 	ExcelData excelDataForTransactionOnStaffAcc = new ExcelData(path, "CSM_TransactionOnStaffAcc", "DataSet ID");
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
-	Map<String, String> chequeBookRequestTestData = new HashMap<>();
-	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
+	
 	Map<String, String> testData;
 
 	
@@ -79,11 +78,12 @@ public class CSMSADS_Tranactiononstaff_step {
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance()); 
         int min = 1000;  
     	int max = 9000;   
-    	//String code = (String)(Math.random()*(max-min+1)+min);  
-    	//System.out.println(code);  
-    	//excelDataForTransactionOnStaffAcc.updateTestData("TSA_157_D1", "TRXNo", code);
-    	  
-        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("2657");
+    	int code = (int)(Math.random()*(max-min+1)+min); 
+    	String restrictionCodeStr = String.valueOf(code);        	
+    	System.out.println(restrictionCodeStr);  
+    	excelDataForTransactionOnStaffAcc.updateTestData("TSA_157_D1", "RestrictionCode", restrictionCodeStr);
+    	testData = excelDataForTransactionOnStaffAcc.getTestdata("TSA_157_D1");
+        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys(testData.get("RestrictionCode"));
     }
 
     @And("^User Enter the value in Description  under Maintenance Screen$")
@@ -91,7 +91,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance()); 
-        transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys("test");
+        transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys(testData.get("Description"));
     }
     
     @And("^User Click the CheckBox in Grant Access to Personal Accounts under Maintenance Screen$")
@@ -184,21 +184,18 @@ public class CSMSADS_Tranactiononstaff_step {
 				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
 		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
 		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
-		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys("RAZIA",Keys.ENTER); 
-		       
+		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys(testData.get("User_Id")); 
+		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys(Keys.ENTER);
 			
 			}
 		
     	
-    	
-    	
-    
 
     @And("^User Click on User ID Checkbox under UserID tab$")
     public void user_click_on_user_id_checkbox_under_userid_tab() throws Throwable {
     	for (int i = 0; i < 200; i++) {
 			try {
-				String xpath = "//td[text()='"+"RAZIA"+"']";
+				String xpath = "//td[text()='"+"KARTHIK"+"']";
 				driver.findElement(By.xpath(xpath)).isDisplayed();
 					
 			        break;
@@ -249,7 +246,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
-        transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys("95916");
+        transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys(testData.get("GLCode_D3"));
     }
 
     @And("^User Click on Searched GL code in search popup$")
@@ -298,7 +295,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
-        transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys("993558");
+        transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys(testData.get("CIFCode_D3"));
     }
 
     @And("^User Click on Save Button under Maintenance Screen$")
@@ -327,7 +324,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("2657");
+        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(testData.get("RestrictionCode"));
         transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(Keys.ENTER);
     }
 
@@ -364,7 +361,8 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys("RAZIA",Keys.ENTER);
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys(testData.get("User_Id"));
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys(Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Maintenance Screen$")
@@ -396,7 +394,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSCIFNoInSearchBox());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSCIFNoInSearchBox());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSCIFNoInSearchBox());
-        transactiononstaffaccObj.CSMSADSCIFNoInSearchBox().sendKeys("99358");
+        transactiononstaffaccObj.CSMSADSCIFNoInSearchBox().sendKeys(testData.get("CIFCode_D3"));
     }
 
     @And("^User Click the Searched CIF NO in Search Box$")
@@ -436,7 +434,7 @@ catch (Exception e) {
     }
     	
     
-    //@TSA_158_02
+    //@TSA_157_02
     
     
     
@@ -473,7 +471,8 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("RAZIA",Keys.ENTER);
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys(testData.get("User_Id"));
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys(Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Approve Screen$")
@@ -592,7 +591,7 @@ catch (Exception e) {
         transactiononstaffaccObj.CSMTRXTypeInMaintenanceScreen().sendKeys(Keys.TAB);
         
 	} catch (Exception e) {
-		// TODO: handle exception
+		
 	}
     	
     }
@@ -769,19 +768,23 @@ catch (Exception e) {
 
     @And("^User Click Save Button in Maintenance Screen$")
     public void user_click_save_button_in_maintenance_screen() throws Throwable {
-    	
+    	for (int i = 0; i < 200; i++) {
+			
+		
 			try {
 				javascriptHelper.scrollIntoView(transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
 				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
 	    	    seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
 	    	    seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSaveButtonInMaintenanceScreen());
-	    	    
+			break;
 			} catch (Exception e) {
-				
-		}
-    		
+				 
+				 if (i==199) {
+						Assert.fail(e.getMessage());
+				}
     	        
-    }
+    }}}
+    
     @And("^user check if the  values is entered or not$")
     public void user_check_if_the_values_is_entered_or_not() throws Throwable {
 
@@ -806,7 +809,7 @@ catch (Exception e) {
             transactiononstaffaccObj.Transactions_transactionNo_codeValues().sendKeys(testData.get("TRXNo"));
             transactiononstaffaccObj.Transactions_transactionNo_codeValues().sendKeys(Keys.ENTER);
 		} catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 
           
@@ -823,6 +826,7 @@ catch (Exception e) {
       String  transactionNo = transactiononstaffaccObj.getTransactionNumber().getText().substring(15, 19);
        System.out.println(transactionNo);
        excelDataForTransactionOnStaffAcc.updateTestData("TSA_157_D1", "TRXNo", transactionNo);
+       testData = excelDataForTransactionOnStaffAcc.getTestdata("TSA_157_D1");
     }
 
     @And("^User Click Ok Button in Success PopUp Menu$")
@@ -842,13 +846,11 @@ catch (Exception e) {
     }
     @Then("^click the Approve buttons$")
     public void click_the_approve_buttons() throws Throwable {
-    	try {
-    		 javascriptHelper.scrollIntoView(transactiononstaffaccObj.Transactions_Approvebtns());
-    	   	 waitHelper.waitForElementwithFluentwait(driver,transactiononstaffaccObj.Transactions_Approvebtns());
-    	   	 clicksAndActionsHelper.clickOnElement(transactiononstaffaccObj.Transactions_Approvebtns());  
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+    	
+    		 javascriptHelper.scrollIntoView(transactiononstaffaccObj.Transactions_Approvebtn());
+    	   	 waitHelper.waitForElementwithFluentwait(driver,transactiononstaffaccObj.Transactions_Approvebtn());
+    	   	 clicksAndActionsHelper.clickOnElement(transactiononstaffaccObj.Transactions_Approvebtn());  
+		
    
     }
     @And("^User Click on Queries under CSM application$")
@@ -879,7 +881,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen());
-        transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys("840");
+        transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys(testData.get("CurrencyCode_D2"));
         transactiononstaffaccObj.CSMCurrencyValueIinAccountUnderByTradeDateScreen().sendKeys(Keys.TAB);
     }
 
@@ -888,7 +890,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen());
-        transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen().sendKeys("95916");
+        transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen().sendKeys(testData.get("GLCode_D3"));
         transactiononstaffaccObj.CSMGLCodeInAccountUnderByTradeDateScreen().sendKeys(Keys.TAB);
     }
 
@@ -897,7 +899,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen());
-        transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen().sendKeys("993558");
+        transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen().sendKeys(testData.get("CIFCode_D3"));
         transactiononstaffaccObj.CSMCIFCodeInAccountUnderByTradeDateScreen().sendKeys(Keys.TAB);
     }
 
@@ -906,7 +908,7 @@ catch (Exception e) {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen());
-        transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen().sendKeys("0");
+        transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen().sendKeys(testData.get("SerialNo_D2"));
         transactiononstaffaccObj.CSMSerialInAccountUnderByTradeDateScreen().sendKeys(Keys.TAB);
     }
 
@@ -916,7 +918,7 @@ catch (Exception e) {
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement());
         transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement().clear();
-        transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement().sendKeys("01/12/2020");
+        transactiononstaffaccObj.CSMFromDateInPeriodicityOfStatement().sendKeys(testData.get("Date_No1"));
     }
 
     @And("^User Enter To Date in Periodicity Of Statement under By Trade Date Screen$")
@@ -925,7 +927,7 @@ catch (Exception e) {
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement());
         transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement().clear();
-        transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement().sendKeys("23/05/2023");
+        transactiononstaffaccObj.CSMToDateInPeriodicityOfStatement().sendKeys(testData.get("Dates"));
     }
 
     @And("^User Click Retrieve Button under By Trade Date Screen$")
