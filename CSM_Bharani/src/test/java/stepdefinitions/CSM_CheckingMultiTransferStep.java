@@ -1,13 +1,17 @@
 package stepdefinitions;
 
+import java.util.Map;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import dataProvider.ConfigFileReader;
+import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.csm.CSM_CheckingMultiTransfer;
 import resources.BaseClass;
@@ -19,6 +23,11 @@ public class CSM_CheckingMultiTransferStep {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
+	
+	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+    ExcelData csmTransactionsExcelData = new ExcelData(path, "Transactions", "Data Set ID");
+    Map<String, String> testData;
+    
 	@And("^User Click on Date to Change the Current Date$")
     public void user_click_on_date_to_change_the_current_date() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,checkingMultiTransferObj.CSMDateToChangeTheCurrentDate());
@@ -77,6 +86,11 @@ public class CSM_CheckingMultiTransferStep {
         seleniumActions.getClickAndActionsHelper().moveToElement(checkingMultiTransferObj.CSMOkButtonUnderInformationPopUp());
         seleniumActions.getClickAndActionsHelper().clickOnElement(checkingMultiTransferObj.CSMOkButtonUnderInformationPopUp());
     }
+    @Given("User update test data for test case number TRS_604")
+    public void user_update_test_data_for_test_case_number_trs_604() {
+    	testData = csmTransactionsExcelData.getTestdata("DS01_TRS_096");
+    }
+    
 	@And("^Click the Transactions flag$")
     public void click_the_transactions_flag() throws Throwable {
     waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Core_TransactionsFlag());
@@ -94,7 +108,8 @@ public class CSM_CheckingMultiTransferStep {
 		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Maintenance_TRXTypeBox());
 		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Maintenance_TRXTypeBox());
 		checkingMultiTransferObj.Maintenance_TRXTypeBox().click();
-		checkingMultiTransferObj.Maintenance_TRXTypeBox().sendKeys("587");
+		//checkingMultiTransferObj.Maintenance_TRXTypeBox().sendKeys("587");
+		checkingMultiTransferObj.Maintenance_TRXTypeBox().sendKeys(testData.get("TRX Type"));
 		checkingMultiTransferObj.Maintenance_TRXTypeBox().sendKeys(Keys.ENTER);
 		checkingMultiTransferObj.Maintenance_TRXTypeBox().sendKeys(Keys.TAB);
 	}
