@@ -8,15 +8,15 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/CSM_Transaction_On_Staff_Account.feature"},
+@CucumberOptions(features = {"src/test/java/features/CSM_AmendChequeCard_Retrieve.feature"},
                 glue = "stepdefinitions",
                 //dryRun = true,
                 //monochrome=false, //to make steps in color
                 plugin = { "pretty",
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"}
-              //, dryRun = true //to check compilation errors                                      
-              , tags="@TRS_125_01"
+              , dryRun = true //to check compilation errors                                      
+              , tags="@ACSD_013"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

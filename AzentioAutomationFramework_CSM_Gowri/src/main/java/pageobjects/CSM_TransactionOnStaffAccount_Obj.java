@@ -420,10 +420,10 @@ public WebElement CSM_ClearCacheInTechnicalDetailsIcon()
 	return CSM_ClearCacheInTechnicalDetailsIcon;
 }
 @FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
-private WebElement confirmOkInChangeRunningDate;
-public WebElement confirmOkInChangeRunningDate()
+private WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday;
+public WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday()
 {
-	return confirmOkInChangeRunningDate;
+	return csmOkButtonForConfirmationPopUpForCompanyHoliday;
 }
 @FindBy(id="_popup_path_sol_ok")
 private WebElement CSM_OkButtonInInformationPopUpMenu;
@@ -735,12 +735,36 @@ public WebElement successMessagePopupInApproveScreen()
 	return successMessagePopupInApproveScreen;
 }
 //csmStopperMessagePopupInTransactions
-
-
-
-
-
-
+@FindBy(xpath="//td[@id='td_tab5_E_GridTbl_Id_E000MA_1_rn']")
+private WebElement deleteRowInEcoSector;
+public WebElement deleteRowInEcoSector()
+{
+	return deleteRowInEcoSector;
+}
+@FindBy(id="_popup_path_sol_confirm_ok")
+private WebElement holidayOkButtonInRunningDate;
+public WebElement holidayOkButtonInRunningDate()
+{
+	return holidayOkButtonInRunningDate;
+}
+@FindBy(xpath="//input[@id='ctrl_gl_D001MT']")
+private WebElement glCodeInTransactions;
+public WebElement glCodeInTransactions()
+{
+	return glCodeInTransactions;
+}
+@FindBy(xpath="//input[@id='ctrl_cif_D001MT']")
+private WebElement cifCodeInTransactions;
+public WebElement cifCodeInTransactions()
+{
+	return cifCodeInTransactions;
+}
+@FindBy(xpath="//input[@id='lookuptxt_ctrl_sl_D001MT']")
+private WebElement serialNoInTransactions;
+public WebElement serialNoInTransactions()
+{
+	return serialNoInTransactions;
+}
 
 
 }

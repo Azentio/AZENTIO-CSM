@@ -490,6 +490,28 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMUseButtonInChangeRunningDate());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMUseButtonInChangeRunningDate());
     }
+    
+    @Given("User Click Ok Button for confirmation PopUp for Company Holiday")
+    public void user_click_ok_button_for_confirmation_pop_up_for_company_holiday() {
+    	for (int i = 0; i < 50; i++) {
+
+            try {
+
+                if (csmTransactionOnStaffAccount.csmOkButtonForConfirmationPopUpForCompanyHoliday().isDisplayed()) {
+                    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+                    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+                    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+                    break;
+               }            
+              } catch (Exception e)
+            {
+            	  if (i==49) {
+  					Assert.fail(e.getMessage());
+  				}  
+            }
+        }
+      }
+    
 
     @And("^User Click Ok Button in Information PopUp menu$")
     public void user_click_ok_button_in_information_popup_menu() throws Throwable {
@@ -1029,6 +1051,187 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
     @And("^user update test data set id for TRS_125_01$")
     public void user_update_test_data_set_id_for_trs12501() throws Throwable {
     	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_125_01");
+    }
+    
+    //TRS_125_02
+   
+    @Then("user select the another row to delete the record")
+    public void user_select_the_another_row_to_delete_the_record() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.deleteRowInEcoSector());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.deleteRowInEcoSector());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.deleteRowInEcoSector());
+    }
+    
+    @Given("user update test data set id for TRS_125_02")
+    public void user_update_test_data_set_id_for_trs12502() throws Throwable {
+        testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_125_02");
+    }
+    
+    //TRS_126
+    @Given("user enter GL code")
+    public void user_enter_gl_code() {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.glCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.glCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.glCodeInTransactions());
+        csmTransactionOnStaffAccount.glCodeInTransactions().clear();
+        csmTransactionOnStaffAccount.glCodeInTransactions().sendKeys(testData.get("Debit GL Code1"));
+    }
+    
+    @Given("user enter CIF code")
+    public void user_enter_cif_code() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.cifCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.cifCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.cifCodeInTransactions());
+        csmTransactionOnStaffAccount.cifCodeInTransactions().sendKeys(testData.get("Debit CIF Code1"));
+    }
+    
+    @Given("user enter serial no")
+    public void user_enter_serial_no() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.serialNoInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.serialNoInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.serialNoInTransactions());
+        csmTransactionOnStaffAccount.serialNoInTransactions().sendKeys(testData.get("Debit Serial No1"));
+    }
+    
+    @Given("user update test data set id for TRS_126$")
+    public void user_update_test_data_set_id_for_trs126() throws Throwable {
+        testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_126_D5");
+    }
+    
+    //TRS_126_01
+    @Given("user update test data set id for TRS_126_01")
+    public void user_update_test_data_set_id_for_trs126_01() throws Throwable {
+        
+    }
+    
+    @Given("user click the transationtype submenu under systemparameters")
+    public void user_click_the_transationtype_submenu_under_systemparameters() {
+        
+    }
+    
+    @Given("user click the updateafterapprove menu under transationtype")
+    public void user_click_the_updateafterapprove_menu_under_transationtype() {
+        
+    }
+    
+    @Given("user Enter the code in inputfield on updateafterapprove screen under transactiontype")
+    public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype() {
+        
+    }
+    
+    @Given("User double click the record under updateafterapprove screen")
+    public void user_double_click_the_record_under_updateafterapprove_screen() {
+        
+    }
+    
+    @Given("User unCheck the ProceedOnInsufficientFund chequebox")
+    public void user_un_check_the_proceed_on_insufficient_fund_chequebox() {
+        
+    }
+
+    @Given("user check the Force overdrawn")
+    public void user_check_the_force_overdrawn() {
+        
+    }
+    
+    @Given("User click UpdateAfterApprove button on updateafterapprove field")
+    public void user_click_update_after_approve_button_on_updateafterapprove_field() {
+       
+    }
+
+    @Given("user click the save ok button")
+    public void user_click_the_save_ok_button() {
+        
+    }
+    
+    @Given("user click the confirm ok")
+    public void user_click_the_confirm_ok() {
+        
+    }
+    
+    @Given("user click the approve in user screen")
+    public void user_click_the_approve_in_user_screen() {
+        
+    }
+    
+    @Given("user click and send the values in user id under Approve screen")
+    public void user_click_and_send_the_values_in_user_id_under_approve_screen() {
+        
+    }
+    
+    @Given("user double click the user id in approve screen")
+    public void user_double_click_the_user_id_in_approve_screen() {
+       
+    }
+    
+    @Given("user click the approve box")
+    public void user_click_the_approve_box() {
+        
+    }
+    
+    @Given("user click the AccountParameter submenu under Parameters")
+    public void user_click_the_account_parameter_submenu_under_parameters() {
+        
+    }
+    
+    @Given("user click the AccountType under AccountParameters")
+    public void user_click_the_account_type_under_account_parameters() {
+        
+    }
+    
+    @Given("user click the UPA field under AccountTypes")
+    public void user_click_the_upa_field_under_account_types() {
+        
+    }
+
+    @Given("user Enter the TypeCode in UPA field")
+    public void user_enter_the_type_code_in_upa_field() {
+        
+    }
+    
+    @Given("user double click the TypeCode in UPA field")
+    public void user_double_click_the_type_code_in_upa_field() {
+        
+    }
+    
+    @Given("user click the Instructions in AccountTypes")
+    public void user_click_the_instructions_in_account_types() {
+       
+    }
+    
+    @Given("user uncheck with AllowAccess checkBox under Instructions")
+    public void user_uncheck_with_allow_access_check_box_under_instructions() {
+        
+    }
+    
+    @Given("user click UPA Button")
+    public void user_click_upa_button() {
+        
+    }
+    
+    @Given("user click the sucesss ok")
+    public void user_click_the_sucesss_ok() {
+        
+    }
+    
+    @Given("user click the Approve field under AccountTypes")
+    public void user_click_the_approve_field_under_account_types() {
+        
+    }
+    
+    @Given("user Enter the TypeCode in Approve Field")
+    public void user_enter_the_type_code_in_approve_field() {
+       
+    }
+
+    @Given("user double click the Typecode in Approve field")
+    public void user_double_click_the_typecode_in_approve_field() {
+        
+    }
+    
+    @Given("user click the Approve button")
+    public void user_click_the_approve_button() {
+        
     }
     
     

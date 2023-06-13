@@ -44,9 +44,9 @@ public class MultipleTagsRun {
 	@Test()
 	public void test() {
 		List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
-		testCaseTagsfromExcel1.add("@TRS_122_01");
-		testCaseTagsfromExcel1.add("@TRS_122");
-		testCaseTagsfromExcel1.add("@TRS_122_02");
+		testCaseTagsfromExcel1.add("TRS_122_01");
+		testCaseTagsfromExcel1.add("TRS_122");
+		testCaseTagsfromExcel1.add("TRS_122_02");
 //		testCaseTagsfromExcel1.add("");
 //		testCaseTagsfromExcel1.add("KUBS_TAX_UAT_009_001_TC_001");
 //		testCaseTagsfromExcel1.add("KUBS_TAX_UAT_009_001_TC_002");

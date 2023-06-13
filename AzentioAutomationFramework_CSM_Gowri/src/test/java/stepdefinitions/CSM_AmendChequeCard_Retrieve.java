@@ -36,7 +36,12 @@ public class CSM_AmendChequeCard_Retrieve {
     public void user_update_test_data_set_id_for_acsd015() throws Throwable {
 		testData = csmAmendChequeCardExcelData.getTestdata("ACSD_015_D1");
     }
-
+    
+	@Given("user update test data set id for ACSD_{int}")
+	public void user_update_test_data_set_id_for_acsd(Integer int1) {
+		testData = csmAmendChequeCardExcelData.getTestdata("ACSD_013_D3");
+	}
+	
     @Then("^user enter the card type value under maintenance$")
     public void user_enter_the_card_type_value_under_maintenance() throws Throwable {
         seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmAmendChequeCard.CardType);

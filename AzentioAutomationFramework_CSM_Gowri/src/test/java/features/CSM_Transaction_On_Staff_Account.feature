@@ -793,7 +793,112 @@ And user click amount field and enter the value
 And user check if the  value is entered or not
 Then validate the stopper message popup
 
+#post-requesties
+@TRS_125_02
+Scenario: Checking Cash Depsoit Transaction - Eco Sector Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit - Specifc vs. General
+Given user login as csm params application
+And user update test data set id for TRS_125_02 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user select the row for delete the record
+And user delete the inserted record under Eco sector
+And user click confirm ok button 
+And user select the another row to delete the record
+And user delete the inserted record under Eco sector
+And user click confirm ok button
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button
 
+#pre-requesties
+@TRS_126_01
+Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked/ Force Overdraw checked - Overdraw Limit Exceeded Alert Checked
+Given user login as csm params application
+And user update test data set id for TRS_126_01 
+And user click parameters menu
+And user click system parameters submenu
+And user click the transationtype submenu under systemparameters
+And user click the updateafterapprove menu under transationtype
+And user Enter the code in inputfield on updateafterapprove screen under transactiontype
+And User double click the record under updateafterapprove screen
+And User unCheck the ProceedOnInsufficientFund chequebox
+And user check the Force overdrawn
+And User click UpdateAfterApprove button on updateafterapprove field
+And user click the save ok button
+And user click the confirm ok
+And user click the approve in user screen
+And user click and send the values in user id under Approve screen
+And user double click the user id in approve screen
+And user click the approve box
+And user click the save ok button
+And user click the confirm ok
+And user click the AccountParameter submenu under Parameters
+And user click the AccountType under AccountParameters
+And user click the UPA field under AccountTypes
+And user Enter the TypeCode in UPA field
+And user double click the TypeCode in UPA field
+And user click the Instructions in AccountTypes
+And user uncheck with AllowAccess checkBox under Instructions
+And user click UPA Button
+And user click the confirm ok
+And user click the sucesss ok
+And user click the Approve field under AccountTypes
+And user Enter the TypeCode in Approve Field
+And user double click the Typecode in Approve field
+And user click the Approve button
+And user click the save ok button
 
-
+@TRS_126
+Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked/ Force Overdraw checked - Overdraw Limit Exceeded Alert Checked
+Given user login as csm core application
+And user update test data set id for TRS_126
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button for confirmation PopUp for Company Holiday
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon
+And user enter GL code
+And user click the transaction maintenance type icon
+And user enter CIF code
+And user click the transaction maintenance type icon
+And user enter serial no
+And user click the transaction maintenance type icon
+And user click amount field and enter the value
+And user check if the  value is entered or not
+And user click save button in transactions menu
+#And user click ok button in warning popup menu under transactions
+And User Click Ok Button in Information PopUp menu
+Then user navigate to approve submenu
+And user click refresh icon in approve submenu
+And user retrieve the created record in approve submenu
+And user click approve button in approve submenu
+Then user verify the successfully approved message popup in approve submenu
 
