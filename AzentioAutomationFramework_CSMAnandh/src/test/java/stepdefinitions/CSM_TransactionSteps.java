@@ -258,6 +258,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+	@And("get the test data for test case ID TRS_156")
+	public void get_the_test_data_for_test_case_id_trs_156() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_156");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
 
 	@And("^get the test data for test case ID TRS_089$")
 	public void get_the_test_data_for_test_case_id_trs089() throws Throwable {
@@ -869,7 +875,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
-		
+
 		for (int i = 0; i <= 500; i++) {
 			if (!(transactionObj.transactionTypeCreditSerialNumCode().getAttribute("prevvalue").isBlank())) {
 				break;
@@ -2463,6 +2469,15 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmCompanyHolidayOkButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmCompanyHolidayOkButton());
+				break;
+			} catch (Exception e) {
+
+			}
+		}
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());
@@ -2494,6 +2509,15 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDateUseButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDateUseButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDateUseButton());
+		for (int i = 0; i <= 100; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmCompanyHolidayOkButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmCompanyHolidayOkButton());
+				break;
+			} catch (Exception e) {
+
+			}
+		}
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmOkButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmOkButton());

@@ -956,7 +956,6 @@ And delete the account type details
 And click on add button in account type access
 And enter the account type for access
 And enter the transaction type for withdraw in account type access
-And enter the limit for withdraw in account type access
 And enter the overdrawn for withdraw accout type access
 And check the warn if user limit exceeds in account type
 And click on ok button in access screen
@@ -974,7 +973,39 @@ And click on approval confirmation ok button under user screen
 And click on ok button after approval screen under user screen
 And store the transaction number and withdraw amount in transaction excel database for limit and overdrawn
 And logout from the application
-@TRS_095_02
+@TRS_095_03
+Scenario: under csm Param need to set the limit for withdraw transaction
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_095_03
+And search the user ID in user module
+And select the user from suggestion
+And click on limit button under user
+And search for the withdraw transaction type
+And click on add buttton in limit button 
+And enter the currency in withdraw limit
+And enter the transaction type in limit button
+And enter the withdraw limit in limit button
+#And check the flag warn if user limit exceeds under limit
+And click on ok button in limit access
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_095_03
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And store the transaction number and withdraw amount in transaction excel database for limit and overdrawn
+And logout from the application
+@TRS_095_03
 Scenario: To check the show today TRX falg under user in CSM Param
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
@@ -1029,3 +1060,67 @@ And click on maintenance scree under transaction module
 And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
 Then verify transaction status should show as approved
+
+
+@TRS_156_01
+Scenario: check the flag deduct from cash (In Transactionn Type)
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_156_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And select the transaction record in update after approve screen
+And check the charge deduct from cash under transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And update the transaction type in transaction excel database to check the charge deduct from cash
+@TRS_156
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Cash
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_156
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code  
+And enter the amount for debit from the account
+And enter the credit branch code
+And enter the credit gl code
+And enter the credit cif number
+And enter the credit serial number
+And click on ok buton in staff member ok button
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_156
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+And open the approved transaction record
+And click on booked entries button in approved transactions

@@ -165,6 +165,13 @@ public class CSM_UserAccessSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessPlusIcon());
 	}
 
+	@And("^click on ok button in limit access$")
+	public void click_on_ok_button_in_limit_access() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.limitButtonOkButton());
+		clicksAndActionsHelper.moveToElement(userAccessObj.limitButtonOkButton());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.limitButtonOkButton());
+	}
+
 	@And("^delete the account type details$")
 	public void delete_the_account_type_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonElements.csmDeleteRowButton());
@@ -288,6 +295,11 @@ public class CSM_UserAccessSteps extends BaseClass {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_01");
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+	@And("^get the test data for test case ID TRS_095_03$")
+    public void get_the_test_data_for_test_case_id_trs09503() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_03");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+    }
 
 	@And("^get the test data for test case ID TRS_002_01$")
 	public void get_the_test_data_for_test_case_id_trs00201() throws Throwable {
@@ -458,7 +470,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 			throws Throwable {
 		int wdLimit = Integer.parseInt(userAccessTestData.get("Withdraw limit"));
 		int overdrawnLimit = Integer.parseInt(userAccessTestData.get("Overdrawn Limit"));
-		int divOverdrawn=overdrawnLimit / 2;
+		int divOverdrawn = overdrawnLimit / 2;
 		int withdrawAmount = wdLimit + divOverdrawn;
 		excelDataForTransactionData.updateTestData(userAccessTestData.get("Update_DataSet_ID_1"),
 				"Transaction Type code", userAccessTestData.get("Transaction Type"));
@@ -584,4 +596,106 @@ public class CSM_UserAccessSteps extends BaseClass {
 		userAccessObj.accountTypeDepositeLimitInput().sendKeys(userAccessTestData.get("Deposite Limit"));
 	}
 
+	@And("^click on limit button under user$")
+	public void click_on_limit_button_under_user() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.accountTypeAccessLimitButton());
+		clicksAndActionsHelper.moveToElement(userAccessObj.accountTypeAccessLimitButton());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.accountTypeAccessLimitButton());
+	}
+
+	@And("^search for the withdraw transaction type$")
+	public void search_for_the_withdraw_transaction_type() throws Throwable {
+		String xpath = "//td[contains(text(),'" + userAccessTestData.get("Transaction Type") + "')]";
+
+		for (int i = 0; i <= 100; i++) {
+			try {
+
+				if (driver.findElement(By.xpath(xpath)).isDisplayed()) {
+					
+					clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+					clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+					clicksAndActionsHelper.moveToElement(csmCommonElements.csmDeleteRowButton());
+					clicksAndActionsHelper.clickOnElement(csmCommonElements.csmDeleteRowButton());
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+		
+		for (int i = 0; i <= 100; i++) {
+			try {
+
+				clicksAndActionsHelper.moveToElement(csmCommonElements.csmDeleteConfirmationOkButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonElements.csmDeleteConfirmationOkButton());
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("^click on add buttton in limit button$")
+	public void click_on_add_buttton_in_limit_button() throws Throwable {
+		for (int i = 0; i <= 50; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(userAccessObj.limitButtonAddIcon());
+				clicksAndActionsHelper.clickOnElement(userAccessObj.limitButtonAddIcon());
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("^enter the currency in withdraw limit$")
+	public void enter_the_currency_in_withdraw_limit() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.limitAccessCurrencyCode());
+		clicksAndActionsHelper.moveToElement(userAccessObj.limitAccessCurrencyCode());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.limitAccessCurrencyCode());
+		userAccessObj.limitAccessCurrencyCode().sendKeys(userAccessTestData.get("Currency Code"));
+	}
+
+	@And("^enter the withdraw limit in limit button$")
+	public void enter_the_withdraw_limit_in_limit_button() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.limitAccessWithdrawLimitInput());
+		clicksAndActionsHelper.moveToElement(userAccessObj.limitAccessWithdrawLimitInput());
+		clicksAndActionsHelper.clickOnElement(userAccessObj.limitAccessWithdrawLimitInput());
+		userAccessObj.limitAccessWithdrawLimitInput().sendKeys(userAccessTestData.get("Withdraw limit"));
+	}
+
+	@And("^enter the transaction type in limit button$")
+	public void enter_the_transaction_type_in_limit_button() throws Throwable {
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.scrollIntoView(userAccessObj.limitAccessTransactionType());
+				clicksAndActionsHelper.moveToElement(userAccessObj.limitAccessTransactionType());
+				clicksAndActionsHelper.clickOnElement(userAccessObj.limitAccessTransactionType());
+				userAccessObj.limitAccessTransactionType().sendKeys(userAccessTestData.get("Transaction Type"));
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("^check the flag warn if user limit exceeds under limit$")
+	public void check_the_flag_warn_if_user_limit_exceeds_under_limit() throws Throwable {
+		String xpath = "//input[@prevvalue='" + userAccessTestData.get("Transaction Type")
+				+ "']//ancestor::td[@tdlabel='Transaction']//following-sibling::td[@tdlabel='Warn User If Limit Exceed']//input";
+		for (int i = 0; i <= 100; i++) {
+			try {
+				javascriptHelper.scrollIntoView(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 100) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 }

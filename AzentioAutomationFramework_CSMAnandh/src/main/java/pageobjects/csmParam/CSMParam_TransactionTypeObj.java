@@ -98,4 +98,39 @@ public class CSMParam_TransactionTypeObj {
 		return transactionType_ForceOverdrawnFlag;
 	}
 
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.DEDUCT_CASH")
+	private WebElement transactionType_DeductChargeFroMCashFlag;
+
+	public WebElement transactionTypeDeductChargeFromCash() {
+		return transactionType_DeductChargeFroMCashFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.DEDUCT_OTHER")
+	private WebElement transactionType_DeductChargeFromOtherAccountFlag;
+
+	public WebElement transactionTypeDeductChargeFromOtherAccountFlag() {
+		return transactionType_DeductChargeFromOtherAccountFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.DEDUCT_CREDITOR")
+
+	private WebElement transactionType_DeductChargeFromCreditorAccountFlag;
+
+	public WebElement transactionTypeDeductChargeFromCreditorAccountFlag() {
+		return transactionType_DeductChargeFromCreditorAccountFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.DEDUCT_DEBITOR")
+	private WebElement transactionType_DeductChargeFromDebitorAccountFlag;
+
+	public WebElement transactionTypeDeductChargeFromDebitorAccountFlag() {
+		return transactionType_DeductChargeFromDebitorAccountFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.DEDUCT_TELLER")
+	private WebElement transactionType_DeductChargeFromTellerAccountFlag;
+
+	public WebElement transactionTypeDeductChargeFromTellerAccountFlag() {
+		return transactionType_DeductChargeFromTellerAccountFlag;
+	}
 }

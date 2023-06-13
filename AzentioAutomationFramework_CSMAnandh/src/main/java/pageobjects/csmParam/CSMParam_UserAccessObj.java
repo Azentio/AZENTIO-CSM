@@ -96,6 +96,19 @@ public class CSMParam_UserAccessObj {
 	public WebElement userAccessPlusIcon() {
 		return userAccess_PlusIcon;
 	}
+	@FindBy(xpath="//td[@title='Add new row']")
+	private WebElement limitButton_AddIcon;
+
+	public WebElement limitButtonAddIcon() {
+		return limitButton_AddIcon;
+	}
+	@FindBy(xpath="//span[contains(text(),'Ok')]//parent::button")
+	private WebElement limitButton_OkButton;
+
+	public WebElement limitButtonOkButton() {
+		return limitButton_OkButton;
+	}
+	
 
 	@FindBy(xpath = "//input[@name='lookupTxt_ctstelleracctypedetVO.ACC_TYPE']")
 	private WebElement userAccess_SearchAccountType;
@@ -391,4 +404,32 @@ public class CSMParam_UserAccessObj {
 	public WebElement accountTypeAccesslabel() {
 		return accountTypeAccess_label;
 	}
+
+	@FindBy(xpath = "//span[contains(text(),' Limits ')]//parent::a")
+	private WebElement accountTypeAccess_LimitButton;
+
+	public WebElement accountTypeAccessLimitButton() {
+		return accountTypeAccess_LimitButton;
+	}
+
+	@FindBy(xpath = "//input[@name='lookupTxt_ctstellerlimitVO.CY_CODE']")
+	private WebElement limitAccess_CurrencyCode;
+
+	public WebElement limitAccessCurrencyCode() {
+		return limitAccess_CurrencyCode;
+	}
+
+	@FindBy(xpath = "//input[@name='lookupTxt_ctstellerlimitVO.TRX_TYPE']")
+	private WebElement limitAccess_TransactionType;
+
+	public WebElement limitAccessTransactionType() {
+		return limitAccess_TransactionType;
+	}
+	@FindBy(xpath="//td[@tdlabel='W/D Limit']//input")
+	private WebElement limitAccess_WithdrawLimitInput;
+
+	public WebElement limitAccessWithdrawLimitInput() {
+		return limitAccess_WithdrawLimitInput;
+	}
+	
 }

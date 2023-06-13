@@ -330,6 +330,13 @@ public class CSMCommonWebElements {
 	{
 		return csm_DeleteRowButton;
 	}
+	@FindBy(xpath="(//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash'])[2]")
+	private WebElement csm_DeleteRowButtonTwo;
+	public WebElement csmDeleteRowButtonTwo()
+	{
+		return csm_DeleteRowButtonTwo;
+	}
+	
 	@FindBy(xpath="//div[contains(text(),'Confirm Delete Process')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_confirm_ok']")
 	private WebElement csm_Delete_ConfirmationOkButton;
 	public WebElement csmDeleteConfirmationOkButton()

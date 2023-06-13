@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -33,6 +34,7 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 	Robot robot;
 	ExcelData excelDataForTransactionTestData = new ExcelData(ParamDataPath, "CSMParam_TransactionTypeTestDat",
 			"DataSet ID");
+	ExcelData excelDataForTransactionData = new ExcelData(path, "TransactionTestData", "DataSet ID");
 	ExcelData excelDataForTransactionExecution = new ExcelData(path, "Transaction_ExecutionTracker", "TestCaseID");
 
 	@And("^get the test data for test case ID TRS_046_01$")
@@ -62,12 +64,21 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+
 	@And("^get the test data for test case ID TRS_095_02$")
-    public void get_the_test_data_for_test_case_id_trs09502() throws Throwable {
+	public void get_the_test_data_for_test_case_id_trs09502() throws Throwable {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_02");
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
-    }
+	}
+
+	@And("^get the test data for test case ID TRS_156_01$")
+	public void get_the_test_data_for_test_case_id_trs15601() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_156_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
 
 	@And("^get the test data for test case ID TRS_049_01$")
 	public void get_the_test_data_for_test_case_id_trs04901() throws Throwable {
@@ -102,19 +113,20 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		}
 
 	}
-	 @And("^search the transaction type in update after approve transaction type$")
-	    public void search_the_transaction_type_in_update_after_approve_transaction_type() throws Throwable {
-		 robot = new Robot();
-			waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeTransactionCode());
-			clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeTransactionCode(),
-					transactionTypeObj.transactionTypeTransactionCode());
-			transactionTypeObj.transactionTypeTransactionCode().sendKeys(transactionTypeTestData.get("TransactionType"));
-			transactionTypeObj.transactionTypeTransactionCode().sendKeys(Keys.ENTER);
-			for (int i = 0; i <= 10; i++) {
-				robot.keyPress(KeyEvent.VK_ENTER);
-				robot.keyRelease(KeyEvent.VK_ENTER);
-			}
-	    }
+
+	@And("^search the transaction type in update after approve transaction type$")
+	public void search_the_transaction_type_in_update_after_approve_transaction_type() throws Throwable {
+		robot = new Robot();
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeTransactionCode());
+		clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeTransactionCode(),
+				transactionTypeObj.transactionTypeTransactionCode());
+		transactionTypeObj.transactionTypeTransactionCode().sendKeys(transactionTypeTestData.get("TransactionType"));
+		transactionTypeObj.transactionTypeTransactionCode().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
 
 	@And("^select the transaction record in update after approve screen$")
 	public void select_the_transaction_record_in_update_after_approve_screen() throws Throwable {
@@ -319,6 +331,116 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		}
 	}
 
+	@And("check the charge deduct from cash under transaction type")
+	public void check_the_charge_deduct_from_cash_under_transaction_type() throws IOException {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeDeductChargeFromCash());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		if (transactionTypeObj.transactionTypeDeductChargeFromCash().getAttribute("initialvalue")
+				.equalsIgnoreCase("checked")) {
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromCash());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromCash());
+		} else {
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromCash());
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeDeductChargeFromOtherAccountFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		if (transactionTypeObj.transactionTypeDeductChargeFromOtherAccountFlag().getAttribute("initialvalue")
+				.equalsIgnoreCase("checked")) {
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromOtherAccountFlag());
+
+		} else {
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromOtherAccountFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromOtherAccountFlag());
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper
+						.scrollIntoView(transactionTypeObj.transactionTypeDeductChargeFromCreditorAccountFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		if (transactionTypeObj.transactionTypeDeductChargeFromCreditorAccountFlag().getAttribute("initialvalue")
+				.equalsIgnoreCase("checked")) {
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromCreditorAccountFlag());
+
+		} else {
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromCreditorAccountFlag());
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromCreditorAccountFlag());
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeDeductChargeFromDebitorAccountFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		if (transactionTypeObj.transactionTypeDeductChargeFromDebitorAccountFlag().getAttribute("initialvalue")
+				.equalsIgnoreCase("checked")) {
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromDebitorAccountFlag());
+
+		} else {
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromDebitorAccountFlag());
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromDebitorAccountFlag());
+		}
+
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeDeductChargeFromTellerAccountFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+		if (transactionTypeObj.transactionTypeDeductChargeFromTellerAccountFlag().getAttribute("initialvalue")
+				.equalsIgnoreCase("checked")) {
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromTellerAccountFlag());
+
+		} else {
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromTellerAccountFlag());
+			clicksAndActionsHelper
+					.clickOnElement(transactionTypeObj.transactionTypeDeductChargeFromTellerAccountFlag());
+		}
+
+	}
+
 	@And("^click on ok button in update confirmation of transaction type$")
 	public void click_on_ok_button_in_update_confirmation_of_transaction_type() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCOmmonWebElements.csmSaveConfirmOkButton());
@@ -402,6 +524,15 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 	public void click_on_ok_button_in_successful_approval_of_transaction_type() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCOmmonWebElements.csmApproveSuccessOkButton());
 		csmCOmmonWebElements.csmApproveSuccessOkButton().click();
+	}
+
+	@And("update the transaction type in transaction excel database to check the charge deduct from cash")
+	public void update_the_transaction_type_in_transaction_excel_database_to_check_the_charge_deduct_from_cash() {
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_1"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		System.out.println("Transaction Type " + transactionTypeTestData.get("TransactionType"));
+
+		System.out.println("Data Set ID " + transactionTypeTestData.get("Update_data_set_id_1"));
 	}
 
 }
