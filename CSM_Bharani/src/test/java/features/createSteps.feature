@@ -5,5 +5,6 @@ Feature: Title of your feature
   @tag1
   Scenario: Title of your scenario
     #Given navigate to CSM application and login with valid credentials
-And User update test data for test case number TRS_096
+Then User Enter the debit amount in Maintenance flag_604
+
  

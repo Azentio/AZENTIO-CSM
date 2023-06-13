@@ -43,12 +43,12 @@ public class CheckingCashDepositAmountGreaterLimit {
 	 public WebElement TRXType_CurrencyCode_604() {
 		 return TRXTypeCurrencyCode;
 	}
-	 @FindBy(xpath="//input[@id='trs_ac_gl_D001MT']")
+	 @FindBy(xpath="//input[@id='ctrl_gl_D001MT']")
 	 private WebElement TRXTypeGLCode;
 	 public WebElement TRXType_GLCode_604() {
 		 return TRXTypeGLCode;
 	 }
-	 @FindBy(xpath="//input[@id='trs_ac_cif_D001MT']")
+	 @FindBy(xpath="//input[@id='ctrl_cif_D001MT']")
 	 private WebElement TRXTypeCifCode;
 	 public WebElement TRXType_CifCode_604() {
 		 return TRXTypeCifCode;
@@ -64,7 +64,7 @@ public class CheckingCashDepositAmountGreaterLimit {
 		 return ClosePopup;
 	 }
 	 
-	 @FindBy(xpath="//input[@id='lookuptxt_trs_ac_sl_D001MT']")
+	 @FindBy(xpath="//input[@id='lookuptxt_ctrl_sl_D001MT']")
 	 private WebElement TRXTypeSerialNo;
 	 public WebElement TRXTypeSerial_No_604() {
 		 return TRXTypeSerialNo;

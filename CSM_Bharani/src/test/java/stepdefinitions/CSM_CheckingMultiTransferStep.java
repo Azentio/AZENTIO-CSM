@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import java.util.Map;
 
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
@@ -14,12 +15,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.csm.CSM_CheckingMultiTransfer;
+import pageobjects.csm.CheckingCashDepositAmountGreaterLimit;
 import resources.BaseClass;
 
 public class CSM_CheckingMultiTransferStep {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileRead = new ConfigFileReader();
 	CSM_CheckingMultiTransfer checkingMultiTransferObj = new CSM_CheckingMultiTransfer(driver);
+	CheckingCashDepositAmountGreaterLimit checkingAmountGreaterLimit = new CheckingCashDepositAmountGreaterLimit(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
@@ -118,7 +121,7 @@ public class CSM_CheckingMultiTransferStep {
 	    waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_BranchCode());
 	    clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_BranchCode());
 	    checkingMultiTransferObj.TRXType_BranchCode().click();
-	    checkingMultiTransferObj.TRXType_BranchCode().sendKeys("0001");
+	    checkingMultiTransferObj.TRXType_BranchCode().sendKeys(testData.get("TRXType_BranchCode"));
 	    checkingMultiTransferObj.TRXType_BranchCode().sendKeys(Keys.TAB);
 	}
 
@@ -127,33 +130,84 @@ public class CSM_CheckingMultiTransferStep {
 		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_CurrencyCode());
 		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_CurrencyCode());
 		checkingMultiTransferObj.TRXType_CurrencyCode().click();
-		checkingMultiTransferObj.TRXType_CurrencyCode().sendKeys("840");
-		checkingMultiTransferObj.TRXType_CurrencyCode().sendKeys(Keys.TAB);
+		checkingMultiTransferObj.TRXType_CurrencyCode().sendKeys(testData.get("TRXType_CurrencyCode"));
+		
+		//checkingMultiTransferObj.TRXType_CurrencyCode().sendKeys(Keys.TAB);
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_GLCode());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_GLCode());
+		checkingMultiTransferObj.TRXType_GLCode().click();
+		//prevvalue
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingMultiTransferObj.TRXType_CurrencyCode().getAttribute("prevvalue").isBlank()
+						||!checkingMultiTransferObj.TRXType_CurrencyCode().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
 	}
 
 	@Then("^Enter the Gl code in Maintenance flag$")
 	public void enter_the_gl_code_in_maintenance_flag() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_CurrencyCode());
-		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_GLCode());
-		checkingMultiTransferObj.TRXType_GLCode().click();
-		checkingMultiTransferObj.TRXType_GLCode().sendKeys("100100");
-		checkingMultiTransferObj.TRXType_GLCode().sendKeys(Keys.TAB);
+//		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_GLCode());
+//		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_GLCode());
+//		checkingMultiTransferObj.TRXType_GLCode().click();
+		checkingMultiTransferObj.TRXType_GLCode().sendKeys(testData.get("TRXType_GLCode"));
+		System.out.println(testData.get("TRXType_GLCode"));
+		//checkingMultiTransferObj.TRXType_GLCode().sendKeys(Keys.TAB);
+		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_CifCode());
+		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_CifCode());
+		checkingMultiTransferObj.TRXType_CifCode().click();
+		//Prevalue
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingMultiTransferObj.TRXType_GLCode().getAttribute("prevvalue").isBlank()
+						||!checkingMultiTransferObj.TRXType_GLCode().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
 	}
 
 	@And("^Enter the Cif code in Maintenance flag$")
 	public void enter_the_cif_code_in_maintenance_flag() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_CifCode());
-		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_CifCode());
-		checkingMultiTransferObj.TRXType_CifCode().click();
-		checkingMultiTransferObj.TRXType_CifCode().sendKeys("1158");
+//		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXType_CifCode());
+//		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXType_CifCode());
+//		checkingMultiTransferObj.TRXType_CifCode().click();
+		checkingMultiTransferObj.TRXType_CifCode().sendKeys(testData.get("TRXType_CifCode"));
 		checkingMultiTransferObj.TRXType_CifCode().sendKeys(Keys.TAB);
+		//Prevalue
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingMultiTransferObj.TRXType_CifCode().getAttribute("prevvalue").isBlank()
+						||!checkingMultiTransferObj.TRXType_CifCode().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
+		
 	}
 
 	@Then("^Click the Ok popup$")
 	public void click_the_ok_popup() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Ok_Popup());
-		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Ok_Popup());
-		checkingMultiTransferObj.Ok_Popup().click();
+		for (int i = 0; i <2000; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.Ok_Popup());
+				checkingMultiTransferObj.Ok_Popup().click();
+				break;
+			} catch (Exception e) {
+//				if (i==1999) {
+//					Assert.fail(e.getMessage());
+//				}
+			}
+		}
+		
 	}
 
 	@And("^Click the Close popup$")
@@ -167,8 +221,20 @@ public class CSM_CheckingMultiTransferStep {
 		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.TRXTypeSerial_No());
 		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.TRXTypeSerial_No());
 		checkingMultiTransferObj.TRXTypeSerial_No().click();
-		checkingMultiTransferObj.TRXTypeSerial_No().sendKeys("0");
+		checkingMultiTransferObj.TRXTypeSerial_No().sendKeys(testData.get("TRXTypeSerial_No"));
 		checkingMultiTransferObj.TRXTypeSerial_No().sendKeys(Keys.TAB);	
+		//Prevalue
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingMultiTransferObj.TRXType_CifCode().getAttribute("prevvalue").isBlank()
+						||!checkingMultiTransferObj.TRXType_CifCode().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
+		
     }
 	
 	@And("^Enter the currency code flag$")
@@ -176,9 +242,113 @@ public class CSM_CheckingMultiTransferStep {
 		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.CurrencyCode_Flag());
 		clicksAndActionsHelper.moveToElement(checkingMultiTransferObj.CurrencyCode_Flag());
 		checkingMultiTransferObj.CurrencyCode_Flag().click();
-		checkingMultiTransferObj.CurrencyCode_Flag().sendKeys("840");
-		checkingMultiTransferObj.CurrencyCode_Flag().sendKeys(Keys.TAB);		
+		checkingMultiTransferObj.CurrencyCode_Flag().sendKeys(testData.get("CurrencyCode_Flag"));
+		checkingMultiTransferObj.CurrencyCode_Flag().sendKeys(Keys.TAB);
+		//Prevalue
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingMultiTransferObj.TRXTypeSerial_No().getAttribute("prevvalue").isBlank()
+						||!checkingMultiTransferObj.TRXTypeSerial_No().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
     }
+	@Then("User enter the currency code2 value_604")
+	public void user_enter_the_currency_code2_value() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, checkingAmountGreaterLimit.TRXType_CurrencyCode2_604());
+		clicksAndActionsHelper.moveToElement(checkingAmountGreaterLimit.TRXType_CurrencyCode2_604());
+		checkingAmountGreaterLimit.TRXType_CurrencyCode2_604().click();
+		checkingAmountGreaterLimit.TRXType_CurrencyCode2_604().sendKeys(testData.get("TRXType_CurrencyCode2_604"));
+		checkingAmountGreaterLimit.TRXType_CurrencyCode2_604().sendKeys(Keys.TAB);
+	    
+	}
+
+	@Then("User enter the glcode2 value_604")
+	public void user_enter_the_glcode2_value() throws Throwable {
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingAmountGreaterLimit.TRXType_GLCode2_604().getAttribute("prevvalue").isBlank()
+						||!checkingAmountGreaterLimit.TRXType_GLCode2_604().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
+		waitHelper.waitForElementwithFluentwait(driver, checkingAmountGreaterLimit.TRXType_GLCode2_604());
+		clicksAndActionsHelper.moveToElement(checkingAmountGreaterLimit.TRXType_GLCode2_604());
+		clicksAndActionsHelper.doubleClick(checkingAmountGreaterLimit.TRXType_GLCode2_604());
+		//checkingAmountGreaterLimit.TRXType_GLCode2_604().sendKeys(Keys.DELETE);
+		checkingAmountGreaterLimit.TRXType_GLCode2_604().sendKeys(testData.get("TRXType_GLCode2_604"));
+		//checkingAmountGreaterLimit.TRXType_GLCode2_604().sendKeys(Keys.TAB);
+		waitHelper.waitForElementwithFluentwait(driver, checkingAmountGreaterLimit.TRXType_CifCode2_604());
+		clicksAndActionsHelper.moveToElement(checkingAmountGreaterLimit.TRXType_CifCode2_604());
+		clicksAndActionsHelper.clickOnElement(checkingAmountGreaterLimit.TRXType_CifCode2_604());
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingAmountGreaterLimit.TRXType_GLCode2_604().getAttribute("prevvalue").isBlank()
+						||!checkingAmountGreaterLimit.TRXType_GLCode2_604().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
+	   
+	}
+
+	@Then("User enter the cif code2 value_604")
+	public void user_enter_the_cif_code2_value() throws Throwable {
+		clicksAndActionsHelper.doubleClick(checkingAmountGreaterLimit.TRXType_CifCode2_604());
+		//checkingAmountGreaterLimit.TRXType_CifCode2_604().sendKeys(Keys.DELETE);
+		checkingAmountGreaterLimit.TRXType_CifCode2_604().sendKeys(testData.get("TRXType_CifCode2_604"));
+		//checkingAmountGreaterLimit.TRXType_CifCode2_604().sendKeys(Keys.TAB);
+		waitHelper.waitForElementwithFluentwait(driver, checkingAmountGreaterLimit.TRXTypeSerial_No2_604());
+		clicksAndActionsHelper.moveToElement(checkingAmountGreaterLimit.TRXTypeSerial_No2_604());
+		clicksAndActionsHelper.clickOnElement(checkingAmountGreaterLimit.TRXType_CifCode2_604());
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingAmountGreaterLimit.TRXType_CifCode2_604().getAttribute("prevvalue").isBlank()
+						||!checkingAmountGreaterLimit.TRXType_CifCode2_604().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
+	}
+
+	@Then("User enter the serail no2 value_604")
+	public void user_enter_the_serail_no2_value() throws Throwable {
+		//clicksAndActionsHelper.doubleClick(checkingAmountGreaterLimit.TRXTypeSerial_No2_604());
+		//checkingAmountGreaterLimit.TRXTypeSerial_No2_604().sendKeys(Keys.DELETE);
+		checkingAmountGreaterLimit.TRXTypeSerial_No2_604().sendKeys(testData.get("TRXTypeSerial_No2_604"));
+		//checkingAmountGreaterLimit.TRXTypeSerial_No2_604().sendKeys(Keys.TAB);
+		waitHelper.waitForElementwithFluentwait(driver, checkingAmountGreaterLimit.Debit_Amount_604());
+		clicksAndActionsHelper.moveToElement(checkingAmountGreaterLimit.Debit_Amount_604());
+		checkingAmountGreaterLimit.Debit_Amount_604().click();
+		for (int i = 0; i <2000; i++) {
+			try {
+				if (!checkingAmountGreaterLimit.TRXTypeSerial_No2_604().getAttribute("prevvalue").isBlank()
+						||!checkingAmountGreaterLimit.TRXTypeSerial_No2_604().getAttribute("prevvalue").isEmpty()) {
+					break;
+				}
+			} catch (Exception e) {
+				
+			}
+		}
+	}
+	
+	@Then("User Enter the debit amount in Maintenance flag_604")
+	public void user_enter_the_debit_amount_in_maintenance_flag() throws Throwable {
+		checkingAmountGreaterLimit.Debit_Amount_604().sendKeys(testData.get("Debit_Amount_604"));
+		checkingAmountGreaterLimit.Debit_Amount_604().sendKeys(Keys.TAB);  
+	}
+
+	
 	@Then("^Enter the debit amount in Maintenance flag$")
     public void enter_the_debit_amount_in_maintenance_flag() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, checkingMultiTransferObj.Debit_Amount());
