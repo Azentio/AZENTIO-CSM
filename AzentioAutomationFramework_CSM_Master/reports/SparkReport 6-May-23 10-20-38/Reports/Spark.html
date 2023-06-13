@@ -1,0 +1,2295 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Report HTML</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@c43b89d03a7c43dae8bb8f0f078bad1997af6b3b/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa bdd-report standard">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Azentio Automation Suite Report</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">May 6, 2023 10:20:38 am</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@CHB_002</a><a class="dropdown-item" href="#">@CHB_006</a><a class="dropdown-item" href="#">@CHB_102</a><a class="dropdown-item" href="#">@CHB_004</a><a class="dropdown-item" href="#">@CHB_037</a><a class="dropdown-item" href="#">@CHB_001</a><a class="dropdown-item" href="#">@CHB_036</a><a class="dropdown-item" href="#">@CHB_103</a><a class="dropdown-item" href="#">@CHB_035</a><a class="dropdown-item" href="#">@CHB_039</a><a class="dropdown-item" href="#">@CHB_003</a><a class="dropdown-item" href="#">@CHB_007</a><a class="dropdown-item" href="#">@CHB_005</a><a class="dropdown-item" href="#">@CHB_038</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="skip" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">Testing functionalities of Chequebook feature screen</p>
+            <p class="text-sm">
+              <span>10:20:40 am</span> / <span>31:30:827</span>
+              <span class="badge skip-bg log float-right">Skip</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-skip">Testing functionalities of Chequebook feature screen</h5>
+<span class='badge badge-success'>05.06.2023 10:20:40</span>
+<span class='badge badge-danger'>05.06.2023 10:22:11</span>
+<span class='badge badge-default'>31:30:827</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to create a chequebook - short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_the_test_data_id_for_chb001()">
+                <span>And User Update the test data id for CHB_001</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_the_number_of_cheque_books()">
+                <span>And User Enter the Number of Cheque Books</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_cheque_code_in_cheque_book_maintenance_screen()">
+                <span>And User Cheque Code in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_the_branch_code_in_cheque_book_maintenance_screen()">
+                <span>And User Enter the Branch Code in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_the_currency_code_in_cheque_book_maintenance_screen()">
+                <span>And User Enter the Currency Code in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_the_gl_code_in_cheque_book_maintenance_screen()">
+                <span>And User Enter the GL Code in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_the_cif_code_in_cheque_book_maintenance_screen()">
+                <span>And User Enter the CIF Code in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_the_serial_no_in_cheque_book_maintenance_screen()">
+                <span>And User Enter the Serial No in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_save_button_in_cheque_book_maintenance_screen()">
+                <span>And User Click Save button in Cheque book Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_ok_button_for_no_signatures_and_no_finger_print_pop_up_warning_message()">
+                <span>And User click ok button for no signatures and no finger print pop up warning Message</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_cheque_book_created()">
+                <span>And User Validate Cheque book created</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_store_the_newly_created_cheque_book_code()">
+                <span>And User Store the newly created Cheque book code</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="37"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to create a chequebook - short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_sub_menu()">
+                <span>And User Click Approve Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_the_test_data_id_for_chb002()">
+                <span>And User Update the test data id for CHB_002</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_approve_screen()">
+                <span>And User Search Cheque Book Code in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_approve_screen()">
+                <span>And User Select Cheque Book Code in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_buttonin_approve_screen()">
+                <span>And User Click Approve button in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_ok_button_in_warning_pop_up_message_in_approve_screen()">
+                <span>And User Click Ok button in Warning pop up Message in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_search_approved_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Approved chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_validate_the_approved_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Approved chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="64"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to submit a chequebook - short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_sub_menu()">
+                <span>And User Click Approve Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_the_test_data_id_for_chb002()">
+                <span>And User Update the test data id for CHB_002</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_approve_screen()">
+                <span>And User Search Cheque Book Code in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_approve_screen()">
+                <span>And User Select Cheque Book Code in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_buttonin_approve_screen()">
+                <span>And User Click Approve button in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_ok_button_in_warning_pop_up_message_in_approve_screen()">
+                <span>And User Click Ok button in Warning pop up Message in Approve Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_apply_to_submit_sub_menu()">
+                <span>And User Click Apply to Submit Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_apply_to_submit_screen()">
+                <span>And User Search Cheque Book Code in Apply to Submit Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_apply_to_submit_screen()">
+                <span>And User Select Cheque Book Code in Apply to Submit Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_apply_to_submit_button()">
+                <span>And User Click Apply to Submit button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_submit_sub_menu()">
+                <span>And User Submit Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_submit_screen()">
+                <span>And User Search Cheque Book Code in Submit Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_submit_screen()">
+                <span>And User Select Cheque Book Code in Submit Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_submit_button()">
+                <span>And User Click Submit button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_search_submitted_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Submitted chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_validate_the_submitted_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Submitted chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="107"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to cancel a chequebook without a reason - short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_cancel_sub_menu()">
+                <span>And User Click To Cancel Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_the_test_data_id_for_chb004()">
+                <span>And User Update the test data id for CHB_004</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_to_cancel_screen()">
+                <span>And User Search Cheque Book Code in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_to_cancel_screen()">
+                <span>And User Select Cheque Book Code in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_cancel_buttonin_to_cancel_screen()">
+                <span>And User Click To Cancel button	in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_cancel_sub_menu()">
+                <span>And User Click Approve Cancel Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_approve_cancel_screen()">
+                <span>And User Search Cheque Book Code in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_approve_cancel_screen()">
+                <span>And User Select Cheque Book Code in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_cancel_button_in_approve_cancel_screen()">
+                <span>And User Click Cancel button in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_ok_button_in_warning_pop_up_message_in_approve_cancel_screen()">
+                <span>And User Click Ok button in Warning pop up Message in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_search_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Cancelled chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Cancelled chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="142"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is abel to cancel the chequebook with a reason -short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_cancel_sub_menu()">
+                <span>And User Click To Cancel Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_the_test_data_id_for_chb005()">
+                <span>And User Update the test data id for CHB_005</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_to_cancel_screen()">
+                <span>And User Search Cheque Book Code in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_to_cancel_screen()">
+                <span>And User Select Cheque Book Code in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_cancel_buttonin_to_cancel_screen()">
+                <span>And User Click To Cancel button	in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_missing_reason_pop_up()">
+                <span>And User Validate Missing Reason Pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_cancel_reason_in_to_cancel_screen()">
+                <span>And User Enter Cancel Reason in To Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_cancel_sub_menu()">
+                <span>And User Click Approve Cancel Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_approve_cancel_screen()">
+                <span>And User Search Cheque Book Code in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_approve_cancel_screen()">
+                <span>And User Select Cheque Book Code in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_cancel_button_in_approve_cancel_screen()">
+                <span>And User Click Cancel button in Approve Cancel Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_search_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Cancelled chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Cancelled chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="179"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to destroy a  chequebook  - short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.LoginTest.navigate_to_csm_application_and_login_with_valid_credentials()">
+                <span>Given navigate to CSM application and login with valid credentials</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.click_on_cheque_request_module()">
+                <span>And click on cheque request module</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.click_on_to_be_destroyed_module()">
+                <span>And click on to be destroyed module</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_update_test_data_id_for_test_case_chb006()">
+                <span>And User update Test data id for test case CHB_006</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.search_the_cheque_code_for_to_be_destroyed_cheque_code()">
+                <span>And search the cheque code for to be destroyed cheque code</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_enter_reason_to_suspend_chequebook_record()">
+                <span>And User enter reason to suspend chequebook record</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.click_on_to_destroy_button()">
+                <span>And click on to destroy button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.verify_server_got_loaded_for_to_be_destroyed_record()">
+                <span>Then verify server got loaded for to be destroyed record</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.click_on_destroy_module()">
+                <span>And click on destroy module</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.search_for_destroy_record_cheque_code()">
+                <span>And search for destroy record cheque code</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.select_the_destroy_record()">
+                <span>And select the destroy record</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.click_on_destroy_button()">
+                <span>And click on destroy button</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.verify_server_got_loaded_while_we_destroy_the_cheque_in_destroy_stage()">
+                <span>Then verify server got loaded while we destroy the cheque in destroy stage</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_search_destroyed_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search destroyed chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_validate_the_destroyed_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the destroyed chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="216"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to suspend a chequebook - short process</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_suspend_sub_menu()">
+                <span>And User Click Suspend Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_test_data_id_for_checking_if_the_user_is_able_to_suspend_a_chequebook_short_process()">
+                <span>And User update Test data id for checking if the user is able to suspend a chequebook short process</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_chequebook_code_in_chequebook_request_maintenance_screen()">
+                <span>And User search the chequebook code in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_searched_record_in_chequebook_request_maintenance_screen()">
+                <span>And User Select the Searched Record in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_suspend_button_to_suspend_the_cheque_book_record()">
+                <span>And User click suspend button to suspend the cheque book record</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_suspended_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Suspended chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_suspended_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the suspended chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="241"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to approve reverse cancellation record under "approve cancellation reversal " screen</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_reverse_cancellation_sub_menu()">
+                <span>And User Click To Reverse Cancellation Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_test_data_id_for_checking_if_the_user_is_able_to_suspend_a_chequebook_short_process()">
+                <span>And User update Test data id for checking if the user is able to suspend a chequebook short process</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_chequebook_code_in_to_reverse_cancellation_screen()">
+                <span>And User Search the chequebook code in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_to_reverse_cancellation_screen()">
+                <span>And User Select the chequebook code in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_button_in_to_reverse_cancellation_screen()">
+                <span>And User Click Reverse button in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_cancellation_reversal_sub_menu()">
+                <span>And User Click Approve Cancellation Reversal Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_chequebook_code_in_approve_cancellation_reversal_screen()">
+                <span>And User Search the chequebook code in Approve Cancellation Reversal Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_approve_cancellation_reversal_screen()">
+                <span>And User Select the chequebook code in Approve Cancellation Reversal Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_button_in_approve_cancellation_reversal_screen()">
+                <span>And User Click Reverse button in Approve Cancellation Reversal Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_reversed_cancellation_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search the Reversed Cancellation chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_reversed_cancellation_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Reversed Cancellation chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="274"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able approve cancellation reversal throught alert</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_reverse_cancellation_sub_menu()">
+                <span>And User Click To Reverse Cancellation Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_test_data_id_for_checking_if_the_user_is_able_approve_cancellation_reversal_throught_alert()">
+                <span>And User update Test data id for checking if the user is able approve cancellation reversal throught alert</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_chequebook_code_in_to_reverse_cancellation_screen()">
+                <span>And User Search the chequebook code in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_to_reverse_cancellation_screen()">
+                <span>And User Select the chequebook code in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_button_in_to_reverse_cancellation_screen()">
+                <span>And User Click Reverse button in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_button_in_send_alert_to_reverse_cancellation_screen()">
+                <span>And User Click Approve button in Send Alert To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_bm_user_name_in_user_information_pop_up()">
+                <span>And User Enter BM User Name in User Information pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_bm_password_in_user_information_pop_up()">
+                <span>And User Enter BM Password in User Information pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_submit_button_in_user_information_pop_up()">
+                <span>And User Click Submit button in User Information pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_button_in_approve_item_pop_up()">
+                <span>And User Click Approve button in approve item pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_chequebook_code_in_approve_cancellation_reversal_screen()">
+                <span>And User Search the chequebook code in Approve Cancellation Reversal Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_approve_cancellation_reversal_screen()">
+                <span>And User Select the chequebook code in Approve Cancellation Reversal Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_button_in_approve_cancellation_reversal_screen()">
+                <span>And User Click Reverse button in Approve Cancellation Reversal Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_to_be_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search the To be Cancelled  chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_to_be_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the To be Cancelled chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="315"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able reject cancellation reversal throught alert</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_reverse_cancellation_sub_menu()">
+                <span>And User Click To Reverse Cancellation Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_test_data_id_for_checking_if_the_user_is_able_reject_cancellation_reversal_throught_alert()">
+                <span>And User update Test data id for checking if the user is able reject cancellation reversal throught alert</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_chequebook_code_in_to_reverse_cancellation_screen()">
+                <span>And User Search the chequebook code in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_to_reverse_cancellation_screen()">
+                <span>And User Select the chequebook code in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_button_in_to_reverse_cancellation_screen()">
+                <span>And User Click Reverse button in To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_button_in_send_alert_to_reverse_cancellation_screen()">
+                <span>And User Click Approve button in Send Alert To Reverse Cancellation Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_bm_user_name_in_user_information_pop_up()">
+                <span>And User Enter BM User Name in User Information pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_bm_password_in_user_information_pop_up()">
+                <span>And User Enter BM Password in User Information pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_submit_button_in_user_information_pop_up()">
+                <span>And User Click Submit button in User Information pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reject_button_in_approve_item_pop_up()">
+                <span>And User Click Reject button in approve item pop up</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_AmendChequeCardStatusSteps.user_search_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Cancelled chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Cancelled chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="350"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to reverse cancellation with batch record under "to reverse cancellation batch  " screen</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_to_reverse_cancellation_batch_sub_menu()">
+                <span>And User Click To Reverse Cancellation Batch Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_the_retrieve_button_in_to_reverse_cancellation_batch_screen()">
+                <span>And User Click the Retrieve button in To Reverse Cancellation Batch Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_test_data_id_for_checking_if_the_user_is_able_to_reverse_cancellation_with_batch_record()">
+                <span>And User update Test data id for checking if the user is able to reverse cancellation with batch record</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_to_reverse_cancellation_batch_screen()">
+                <span>And User Select the Chequebook code in To Reverse Cancellation Batch Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_button_in_to_reverse_cancellation_batch_screen()">
+                <span>And User Click Reverse button in To Reverse Cancellation Batch Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_to_reverse_cancellation_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search To Reverse Cancellation chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_to_reverse_cancellation_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the To Reverse Cancellation chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="375"><span class="badge log skip-bg mr-2">Skip</span>checking if the user is able to approve reverse cancellation with batch record under "approve reversal cancellation batch  " screen</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_reversal_of_cancellation_batch_sub_menu()">
+                <span>And User Click Approve Reversal of Cancellation Batch Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_the_retrieve_button_in_approve_reversal_of_cancellation_batch_screen()">
+                <span>And User Click the Retrieve button in Approve Reversal of Cancellation Batch Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_approve_reversal_of_cancellation_batch_screen()">
+                <span>And User Select the Chequebook code in Approve Reversal of Cancellation Batch Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_test_data_id_for_checking_if_the_user_is_able_to_approve_reverse_cancellation_with_batch_record()">
+                <span>And User update Test data id for checking if the user is able to approve reverse cancellation with batch record</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_reverse_button_in_approve_reversal_of_cancellation_batch_screen()">
+                <span>And User Click Approve Reverse button in Approve Reversal of Cancellation Batch Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_the_to_be_cancelled_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search the To be Cancelled  chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_to_be_cancelled_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the To be Cancelled chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="400"><span class="badge log skip-bg mr-2">Skip</span>Checking if the user is able to define the chequebook reject reason under "Reverse" screen</div>
+      </div>
+    </div>
+        <div class="">
+          <div class="card-body">
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reverse_chequebook_sub_menu()">
+                <span>And User Click Reverse Chequebook Sub Menu</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" >
+                <span>And User Update the test data id for CHB_102</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_chequebook_code_in_reverse_chequebook_screen()">
+                <span>And User Search ChequeBook Code in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_the_chequebook_code_in_reverse_chequebook_screen()">
+                <span>And User Select the Chequebook code in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reject_button_in_reverse_chequebook_screen()">
+                <span>And User Click Reject button in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_reject_reason_missing_pop_up_in_reverse_chequebook_screen()">
+                <span>And User Validate Reject Reason Missing Pop up in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_ok_button_in_cannot_proceed_pop_up_in_reverse_chequebook_screen()">
+                <span>And User Click Ok button in Cannot Proceed Pop up in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_reason_for_rejecting_reverse_chequebook_record_in_reverse_chequebook_screen()">
+                <span>And User Enter Reason for rejecting reverse chequebook record in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reject_button_in_reverse_chequebook_screen()">
+                <span>And User Click Reject button in Reverse Chequebook Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_rejected_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Rejected chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+              <div class="step skip-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_rejected_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Rejected chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>Step skipped
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="433"><span class="badge log pass-bg mr-2">Pass</span>Checking if the user is able to define the chequebook reject reason under"approve" screen</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="collapse">
+          <div class="card-body">
+              <div class="step pass-bg" title="stepdefinitions.AmendChequeBookScreen.user_launch_csm_core_application()">
+                <span>Given User Launch CSM Core Application</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded1.png' src="../Spark_Screenshots/embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.AmendChequeBookScreen.user_click_chequebook_request_menu()">
+                <span>And User Click Chequebook Request Menu</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded2.png' src="../Spark_Screenshots/embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_approve_sub_menu()">
+                <span>And User Click Approve Sub Menu</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded3.png' src="../Spark_Screenshots/embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_update_the_test_data_id_for_chb103()">
+                <span>And User Update the test data id for CHB_103</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded4.png' src="../Spark_Screenshots/embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_cheque_book_code_in_approve_screen()">
+                <span>And User Search Cheque Book Code in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded5.png' src="../Spark_Screenshots/embedded5.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_select_cheque_book_code_in_approve_screen()">
+                <span>And User Select Cheque Book Code in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded6.png' src="../Spark_Screenshots/embedded6.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reject_button_in_approve_screen()">
+                <span>And User Click Reject button in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded7.png' src="../Spark_Screenshots/embedded7.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_reject_reason_missing_pop_up_in_approve_screen()">
+                <span>And User Validate Reject Reason Missing Pop up in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded8.png' src="../Spark_Screenshots/embedded8.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_ok_button_in_cannot_proceed_pop_up_in_in_approve_screen()">
+                <span>And User Click Ok button in Cannot Proceed Pop up in in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded9.png' src="../Spark_Screenshots/embedded9.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_enter_reason_for_rejecting_reverse_chequebook_record_in_in_approve_screen()">
+                <span>And User Enter Reason for rejecting reverse chequebook record in in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded10.png' src="../Spark_Screenshots/embedded10.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_reject_button_in_approve_screen()">
+                <span>And User Click Reject button in Approve Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded11.png' src="../Spark_Screenshots/embedded11.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_maintanence_sub_menu_in_chequebook_request()">
+                <span>And User Click Maintanence sub menu in chequebook request</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded12.png' src="../Spark_Screenshots/embedded12.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_click_search_button_in_chequebook_request_maintenance_screen()">
+                <span>And User Click Search button in chequebook request Maintenance Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded13.png' src="../Spark_Screenshots/embedded13.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_search_rejected_chequebook_code_in_cheque_book_request_maintenance_screen()">
+                <span>And User Search Rejected chequebook code in Cheque book Request Maintenance Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded14.png' src="../Spark_Screenshots/embedded14.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="stepdefinitions.CSM_ChequeBookRequest.user_validate_the_rejected_chequebook_record_in_cheque_book_request_maintenance_screen()">
+                <span>Then User Validate the Rejected chequebook record in Cheque book Request Maintenance Screen</span>
+      <div>
+      </div>
+              </div>
+              <div class="step pass-bg" title="AFTER_STEP">
+                <span>stepdefinitions.HooksClass.addScreenshot(io.cucumber.java.Scenario)</span>
+      <div>screenshot
+          <div class="row mb-3"><div class="col-md-3">
+    <img data-featherlight='../Spark_Screenshots/embedded15.png' src="../Spark_Screenshots/embedded15.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+              </div>
+          </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>May 6, 2023 10:20:38 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>May 6, 2023 10:22:11 am</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Features Passed</p>
+<h3>0</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Features</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'>
+<b>0</b> features passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> features failed,
+<b>1</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='7%'><b>1</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> scenarios failed,
+<b>13</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='13%'><b>30</b> steps passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>196</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"Testing functionalities of Chequebook feature screen":90.827
+};
+</script>
+<div class="row">
+<div class="col-md-4 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@CHB_002</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_006</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_102</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_004</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_037</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_001</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_036</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_103</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@CHB_035</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_039</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_003</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_007</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_005</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>@CHB_038</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-md-4 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>10</td>
+</tr>
+<tr>
+<td>os</td>
+<td>windows</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 0,
+failParent: 0,
+warningParent: 0,
+skipParent: 1,
+childCount: 5,
+passChild: 1,
+failChild: 0,
+warningChild: 0,
+skipChild: 13,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 30,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 196,
+infoGrandChild: 0,
+eventsCount: 5,
+};
+</script><div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">14</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_002</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_002</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:43 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='37'>checking if the user is able to create a chequebook - short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to create a chequebook - short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_006</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_006</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:47 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='179'>checking if the user is able to destroy a chequebook - short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to destroy a chequebook - short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_102</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_102</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:50 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='400'>Checking if the user is able to define the chequebook reject reason under "Reverse" screen</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.Checking if the user is able to define the chequebook reject reason under "Reverse" screen</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_004</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_004</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:44 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='107'>checking if the user is able to cancel a chequebook without a reason - short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to cancel a chequebook without a reason - short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_037</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_037</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:49 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='315'>checking if the user is able reject cancellation reversal throught alert</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able reject cancellation reversal throught alert</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_001</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_001</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:40 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>checking if the user is able to create a chequebook - short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to create a chequebook - short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_036</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_036</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:48 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='274'>checking if the user is able approve cancellation reversal throught alert</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able approve cancellation reversal throught alert</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@CHB_103</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_103</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>10:20:50 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='433'>Checking if the user is able to define the chequebook reject reason under"approve" screen</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.Checking if the user is able to define the chequebook reject reason under"approve" screen</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_035</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_035</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:48 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='241'>checking if the user is able to approve reverse cancellation record under "approve cancellation reversal " screen</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to approve reverse cancellation record under "approve cancellation reversal " screen</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_039</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_039</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:49 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='375'>checking if the user is able to approve reverse cancellation with batch record under "approve reversal cancellation batch " screen</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to approve reverse cancellation with batch record under "approve reversal cancellation batch " screen</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_003</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_003</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:44 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='64'>checking if the user is able to submit a chequebook - short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to submit a chequebook - short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_007</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_007</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:48 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='216'>checking if the user is able to suspend a chequebook - short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to suspend a chequebook - short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_005</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_005</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:45 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='142'>checking if the user is abel to cancel the chequebook with a reason -short process</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is abel to cancel the chequebook with a reason -short process</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>1</span>
+</span>
+<p class="name">@CHB_038</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@CHB_038</h4>
+<span status="skip" class='badge log badge-skip'>1 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>10:20:49 am</td>
+<td>
+<a href="#" class="linked" test-id='1' id='350'>checking if the user is able to reverse cancellation with batch record under "to reverse cancellation batch " screen</a>
+<div class="">
+<span class="badge badge-default">Testing functionalities of Chequebook feature screen.checking if the user is able to reverse cancellation with batch record under "to reverse cancellation batch " screen</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@14e9bb345ef7e2ed3a102f271d84e9f0267c88e7/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
