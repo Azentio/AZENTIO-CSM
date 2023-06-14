@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -27,6 +29,11 @@ public class LoginTest extends BaseClass {
 //CSMUser1
 		driver.get(configFileReader.getCSMApplicationUrl());
 		csmLogin.loginIntoCSMApplication("CSMUser1");
+	}
+	@Given("user 076 navigate to CSM Aplication and login with teller account")
+	public void user_navigate_to_csm_aplication_and_login_with_teller_account() throws IOException {
+		driver.get(configFileReader.getCSMApplicationUrl());
+		csmLogin.loginIntoCSMApplication("CSMTellerUser");
 	}
 
 	@Given("^navigate to CSM application and login with valid teller credentials$")

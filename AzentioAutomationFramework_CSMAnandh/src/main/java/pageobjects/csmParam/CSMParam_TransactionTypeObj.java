@@ -133,4 +133,75 @@ public class CSMParam_TransactionTypeObj {
 	public WebElement transactionTypeDeductChargeFromTellerAccountFlag() {
 		return transactionType_DeductChargeFromTellerAccountFlag;
 	}
+
+	@FindBy(xpath = "//span[contains(text(),' Transaction Status ')]//parent::a")
+	private WebElement transactionType_TransactionStatusButton;
+
+	public WebElement transactionTypeTransactionStatusButton() {
+		return transactionType_TransactionStatusButton;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='AND/OR']")
+	private WebElement transactionTypeStatus_ANDORDropdownClickable;
+
+	public WebElement transactionTypeStatusANDORDropdownClickable() {
+		return transactionTypeStatus_ANDORDropdownClickable;
+	}
+
+	@FindBy(xpath = "//td[@id='td_tab31_GridTbl_Id_P024MA_1_ctstrxtypeStatusVO.AND_OR']//select")
+	private WebElement transactionTypeStatus_ANDORDropdown;
+
+	public WebElement transactionTypeStatusANDORDropdown() {
+		return transactionTypeStatus_ANDORDropdown;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='Priority']//input")
+	private WebElement transactionTypeStatus_PriorityInput;
+
+	public WebElement transactionTypeStatusPriorityInput() {
+		return transactionTypeStatus_PriorityInput;
+	}
+
+	@FindBy(xpath = "//input[@name='lookupTxt_ctstrxtypeStatusVO.STATUS_CODE']")
+	private WebElement transactionTypeStatus_StatusCodeInput;
+
+	public WebElement transactionTypeStatusStatusCodeInput() {
+		return transactionTypeStatus_StatusCodeInput;
+	}
+
+	@FindBy(xpath = "//input[@name='lookupTxt_ctstrxtypeStatusVO.USER_LEVEL']")
+	private WebElement transactionTypeStatus_UserLevelInput;
+
+	public WebElement transactionTypeStatusUserLevelInput() {
+		return transactionTypeStatus_UserLevelInput;
+	}
+
+	@FindBy(xpath = "//td[@id='del_tab31_GridTbl_Id_P024MA']//span")
+	private WebElement transactionStatus_DeleteRowNumber;
+
+	public WebElement transactionStatusDeleteRowNumber() {
+		return transactionStatus_DeleteRowNumber;
+	}
+
+	@FindBy(xpath = "//td[@id='add_tab31_GridTbl_Id_P024MA']//span")
+	private WebElement transactionStatus_AddNewRow;
+
+	public WebElement transactionStatusAddNewRow() {
+		return transactionStatus_AddNewRow;
+	}
+
+	@FindBy(xpath = "//span[contains(text(),'Ok')]//parent::button")
+	private WebElement transactionStatus_OkButton;
+
+	public WebElement transactionStatusOkButton() {
+		return transactionStatus_OkButton;
+	}
+
+	@FindBy(xpath = "//input[@name='transactiontypesCO.ctstrxtypeVO.RQST_CY_NOMINATION_DET']")
+	private WebElement transactionType_RequestCurrencyDenominationFlag;
+
+	public WebElement transactionTypeRequestCurrencyDenominationFlag() {
+		return transactionType_RequestCurrencyDenominationFlag;
+	}
+	
 }

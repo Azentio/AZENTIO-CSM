@@ -431,5 +431,11 @@ public class CSMParam_UserAccessObj {
 	public WebElement limitAccessWithdrawLimitInput() {
 		return limitAccess_WithdrawLimitInput;
 	}
+	@FindBy(xpath="//select[@name='tellerparamCO.ctstellerVO.VIEW_DORMANT_ACC']")
+	private WebElement userUpdateAfterApprove_DormantAccountDropdown;
+
+	public WebElement userUpdateAfterApproveDormantAccountDropdown() {
+		return userUpdateAfterApprove_DormantAccountDropdown;
+	}
 	
 }

@@ -1061,6 +1061,270 @@ And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
 Then verify transaction status should show as approved
 
+@TRS_150_155
+Scenario: To check the flags in control records (CIF Non-Resident Alert flag,Signature not Found Alert flag,Account Dormant Alert flag,Value Date changed Alert flag,KYC Outstanding Alert flag,Overdraw Limit Exceeded Alert flag)
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameters feature
+And click on control records sub feature
+And click on update after approve in control records
+And click on alert activation tab under control records
+And check the flag CIF non resident alert flag in alert activation
+And check the flag signature not fountt alert flag in alert activation
+And check the flag account dormant alert flag in alert activation
+And check the value date changed alert flag in alert activation
+And check the overdrawn limit exceeded alert falg in alert activation
+And check the KYC out standing alert flag in alert activation
+And click on update after approve screen under control records
+And click on ok button in save confirmation of control records
+And click on ok button for update confirmation in control records
+And click on approve feature under control records
+And approve the control records feature
+And click on ok in approve confirmation in control records
+And click on ok button in approve successful pop up in control records
+@TRS_150_01
+Scenario: To enter the transaction status in withdraw transaction for alert activation
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on transaction type feature
+And click on update after approve in transcation type
+And get the test data for test case ID TRS_150_01
+And search the transaction type in update after approve transaction type
+And select the transaction record in update after approve screen
+And click on transaction status buttton in transaction type
+And check the any existence transaction
+And click on add button to add the transaction status
+And enter the AND OR in transaction status
+And enter the priority in transaction status
+And enter the staus code in transaction status
+And enter the user level in transaction status
+And click on ok button in transaction status window
+And check the Allow Back Dated Value Date flag
+And check the Allow Post Dated Value Date flag
+And uncheck the flag request currency denomination flag in transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transaction excel data base for withdraw alert activation
+@TRS_150_02
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_150_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+@TRS_150
+Scenario: Checking Cash Withdrawal Transaction - CIF Non-Resident Alert flag
+Given user 076 navigate to CSM Aplication and login with teller account
+And get the test data for test case ID TRS_150
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+Then verify system should show the non resident warning message
+And enter the currency code
+And enter the amount for debit from the account
+And click on save button in transaction
+And store the transaction number in transaction excel database
+Then verify alert screen is open in transactio maintenannce
+And enter the branch manager user ID in alert section
+And click on the branch manager ID in alert suggestion grid
+And click on sent button in alert section
+@TRS_150_03
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_150_03
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+Then verify branch manager ANANDH got the alert which is sent from teller ANANDHTA
+And select the transaction record from alert
+And click on open item buttton in alert
+And click on approve button in alert screen
+And click on Transaction module
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_151
+Scenario: Checking Cash Withdrawal Transaction - CIF Non-Resident Alert flag
+Given user 076 navigate to CSM Aplication and login with teller account
+And get the test data for test case ID TRS_151
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+Then verify system should show the warning message for dormant account in transaction maintenance
+And enter the debit debit serial number
+Then verify system should show the validation for signature not found in transaction maintenance
+And click on ok button in transaction maintenance
+And enter the currency code
+And enter the amount for debit from the account
+And click on save button in transaction
+And store the transaction number in transaction excel database
+Then verify alert screen is open in transactio maintenannce
+And enter the branch manager user ID in alert section
+And click on the branch manager ID in alert suggestion grid
+And click on sent button in alert section
+@TRS_151_02
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_151_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+Then verify branch manager ANANDH got the alert which is sent from teller ANANDHTA
+And select the transaction record from alert
+And click on open item buttton in alert
+And click on approve button in alert screen
+And click on Transaction module
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_152_01
+Scenario: To update the dormant account DDL Value proceed on dormant account in user account
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_152_01
+And search the user ID in user module
+And select the user from suggestion
+And check the show all trx flag in CSM Param
+And update the dormant account DDL value in user update after approve screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_152_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And logout from the application
+@TRS_152
+Scenario: Checking Cash Withdrawal Transaction - CIF Non-Resident Alert flag
+Given user 076 navigate to CSM Aplication and login with teller account
+And get the test data for test case ID TRS_152
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+Then verify system should show the warning message for dormant account in transaction maintenance
+And enter the debit debit serial number
+Then verify system should show the validation for signature not found in transaction maintenance
+And click on ok button in transaction maintenance
+And enter the currency code
+And enter the amount for debit from the account
+And click on save button in transaction
+And store the transaction number in transaction excel database
+Then verify alert screen is open in transactio maintenannce
+And enter the branch manager user ID in alert section
+And click on the branch manager ID in alert suggestion grid
+And click on sent button in alert section
+@TRS_152_02
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_152_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+Then verify branch manager ANANDH got the alert which is sent from teller ANANDHTA
+And select the transaction record from alert
+And click on open item buttton in alert
+And click on approve button in alert screen
+And click on Transaction module
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+@TRS_153
+Scenario: Checking Cash Withdrawal Transaction - Value Date changed Alert flag
+Given user 076 navigate to CSM Aplication and login with teller account
+And get the test data for test case ID TRS_153
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+Then verify system should show the warning message for dormant account in transaction maintenance
+And enter the debit debit serial number
+Then verify system should show the validation for signature not found in transaction maintenance
+And click on ok button in transaction maintenance
+And enter the currency code
+And enter the amount for debit from the account
+And change the value date to past date in transaction maintenance
+And click on save button in transaction
+And store the transaction number in transaction excel database
+Then verify alert screen is open in transactio maintenannce
+And enter the branch manager user ID in alert section
+And click on the branch manager ID in alert suggestion grid
+And click on sent button in alert section
+@TRS_153_02
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_153_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+Then verify branch manager ANANDH got the alert which is sent from teller ANANDHTA
+And select the transaction record from alert
+And click on open item buttton in alert
+And click on approve button in alert screen
+And click on Transaction module
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
 
 @TRS_156_01
 Scenario: check the flag deduct from cash (In Transactionn Type)

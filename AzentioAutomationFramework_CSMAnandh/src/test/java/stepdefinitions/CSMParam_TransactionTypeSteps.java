@@ -13,6 +13,7 @@ import org.testng.Assert;
 
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
+import helper.DropDownHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
@@ -24,6 +25,7 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	CSMParam_TransactionTypeObj transactionTypeObj = new CSMParam_TransactionTypeObj(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
+	DropDownHelper dropdownHelper = new DropDownHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	CSMCommonWebElements csmCOmmonWebElements = new CSMCommonWebElements(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
@@ -87,6 +89,13 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("get the test data for test case ID TRS_150_01")
+	public void get_the_test_data_for_test_case_id_TRS_150_01() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_150_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("^click on transaction type feature$")
 	public void click_on_transaction_type_feature() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.systemParameterTransactionTypeFeature());
@@ -142,6 +151,96 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 				}
 			}
 		}
+	}
+
+	@And("click on transaction status buttton in transaction type")
+	public void click_on_transaction_status_buttton_in_transaction_type() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeTransactionStatusButton());
+		clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeTransactionStatusButton());
+		clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeTransactionStatusButton());
+	}
+
+	@And("check the any existence transaction")
+	public void check_the_any_existence_transaction() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (transactionTypeObj.transactionTypeStatusANDORDropdownClickable().isDisplayed()) {
+					javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeStatusANDORDropdownClickable());
+					clicksAndActionsHelper
+							.moveToElement(transactionTypeObj.transactionTypeStatusANDORDropdownClickable());
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeStatusANDORDropdownClickable());
+					javascriptHelper.scrollIntoView(transactionTypeObj.transactionStatusDeleteRowNumber());
+					clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionStatusDeleteRowNumber());
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionStatusDeleteRowNumber());
+
+					clicksAndActionsHelper.moveToElement(csmCOmmonWebElements.csmDeleteConfirmationOkButton());
+					clicksAndActionsHelper.clickOnElement(csmCOmmonWebElements.csmDeleteConfirmationOkButton());
+
+				}
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("click on add button to add the transaction status")
+	public void click_on_add_button_to_add_the_transaction_status() {
+		for (int i = 0; i <= 200; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionStatusAddNewRow());
+				clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionStatusAddNewRow());
+				clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionStatusAddNewRow());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("enter the AND OR in transaction status")
+	public void enter_the_and_or_in_transaction_status() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeStatusANDORDropdown());
+		dropdownHelper.SelectUsingVisibleText(transactionTypeObj.transactionTypeStatusANDORDropdown(),
+				transactionTypeTestData.get("AND OR"));
+
+	}
+
+	@And("enter the priority in transaction status")
+	public void enter_the_priority_in_transaction_status() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeStatusPriorityInput());
+		clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeStatusPriorityInput());
+		clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeStatusPriorityInput());
+		transactionTypeObj.transactionTypeStatusPriorityInput().sendKeys(transactionTypeTestData.get("Priority"));
+	}
+
+	@And("enter the staus code in transaction status")
+	public void enter_the_staus_code_in_transaction_status() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeStatusStatusCodeInput());
+		clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeStatusStatusCodeInput());
+		clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeStatusStatusCodeInput());
+		transactionTypeObj.transactionTypeStatusStatusCodeInput().sendKeys(transactionTypeTestData.get("Status"));
+		transactionTypeObj.transactionTypeStatusStatusCodeInput().sendKeys(Keys.TAB);
+
+	}
+
+	@And("enter the user level in transaction status")
+	public void enter_the_user_level_in_transaction_status() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeStatusUserLevelInput());
+		clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeStatusUserLevelInput());
+		clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeStatusUserLevelInput());
+		transactionTypeObj.transactionTypeStatusUserLevelInput().sendKeys(transactionTypeTestData.get("User Level"));
+
+	}
+
+	@And("click on ok button in transaction status window")
+	public void click_on_ok_button_in_transaction_status_window() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionStatusOkButton());
+		clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionStatusOkButton());
+		clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionStatusOkButton());
 	}
 
 	@And("^uncheck the multi branch field in transaction type$")
@@ -309,6 +408,31 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 				break;
 			} catch (Exception e) {
 				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("uncheck the flag request currency denomination flag in transaction type")
+	public void uncheck_the_flag_request_currency_denomination_flag_in_transaction_type() {
+		for (int i = 0; i <= 200; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeRequestCurrencyDenominationFlag());
+				if (transactionTypeObj.transactionTypeRequestCurrencyDenominationFlag().getAttribute("initialvalue")
+						.equalsIgnoreCase("checked")) {
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeRequestCurrencyDenominationFlag());
+				} else {
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeRequestCurrencyDenominationFlag());
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeRequestCurrencyDenominationFlag());
+				}
+				break;
+
+			} catch (Exception e) {
+				if (i == 200) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -529,6 +653,26 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 	@And("update the transaction type in transaction excel database to check the charge deduct from cash")
 	public void update_the_transaction_type_in_transaction_excel_database_to_check_the_charge_deduct_from_cash() {
 		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_1"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		System.out.println("Transaction Type " + transactionTypeTestData.get("TransactionType"));
+
+		System.out.println("Data Set ID " + transactionTypeTestData.get("Update_data_set_id_1"));
+	}
+
+	@And("store the transaction type in transaction excel data base for withdraw alert activation")
+	public void store_the_transaction_type_in_transaction_excel_data_base_for_withdraw_alert_activation() {
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_1"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_2"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_3"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_4"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_5"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_6"),
 				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
 		System.out.println("Transaction Type " + transactionTypeTestData.get("TransactionType"));
 

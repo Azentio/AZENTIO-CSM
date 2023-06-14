@@ -1,16 +1,20 @@
 package stepdefinitions;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import dataProvider.ExcelData;
+import helper.BrowserHelper;
 import helper.ClicksAndActionsHelper;
 import helper.DropDownHelper;
 import helper.JavascriptHelper;
@@ -20,6 +24,7 @@ import io.cucumber.java.en.Then;
 import pageobjects.CommonElements.CSMCommonWebElements;
 import pageobjects.csm.CSM_QueriesObj;
 import pageobjects.csm.CSM_TransactionObj;
+import pageobjects.csmParam.CSMParam_ControlRecordsObj;
 import resources.BaseClass;
 import resources.DateIncrementDecrement;
 
@@ -31,8 +36,10 @@ public class CSM_TransactionSteps extends BaseClass {
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	CSM_TransactionObj transactionObj = new CSM_TransactionObj(driver);
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
+	CSMParam_ControlRecordsObj controlRecordsObj = new CSMParam_ControlRecordsObj(driver);
 	CSM_QueriesObj csmQueriesObj = new CSM_QueriesObj(driver);
 	DropDownHelper dropdownHelper = new DropDownHelper(driver);
+	BrowserHelper brwoserHelper = new BrowserHelper(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData excelDataForChargeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 	ExcelData excelDataForChargeWaiver = new ExcelData(path, "CSM_ChargeWaiverTestData", "DataSet ID");
@@ -258,6 +265,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+
 	@And("get the test data for test case ID TRS_156")
 	public void get_the_test_data_for_test_case_id_trs_156() {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_156");
@@ -747,6 +755,21 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	}
 
+	@Then("verify system should show the non resident warning message")
+	public void verify_system_should_show_the_non_resident_warning_message() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionsNonResidentOkButton());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionsNonResidentOkButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
 	@And("^click on ok button no resident pop up$")
 	public void click_on_ok_button_no_resident_pop_up() throws Throwable {
 		for (int i = 0; i <= 300; i++) {
@@ -1053,7 +1076,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
 		// prevvalue
 		for (int i = 0; i <= 200; i++) {
-			if (!transactionObj.transactinMaintenanceValueDateInput().getAttribute("prevvalue").isBlank()) {
+			if (!(transactionObj.transactinMaintenanceValueDateInput().getAttribute("prevvalue").isBlank())) {
 				break;
 			}
 		}
@@ -1378,8 +1401,12 @@ public class CSM_TransactionSteps extends BaseClass {
 			try {
 				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmPleaseWaitServerOkbuton());
 				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmPleaseWaitServerOkbuton());
+				javascriptHelper.scrollIntoView(csmCommonWebElements.csmSaveButton());
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSaveButton());
+				clicksAndActionsHelper.doubleClick(csmCommonWebElements.csmSaveButton());
 				break;
 			} catch (Exception e) {
+
 			}
 
 		}
@@ -2447,6 +2474,74 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("get the test data for test case ID TRS_150")
+	public void get_the_test_data_for_test_case_id_TRS_150() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_150");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_151")
+	public void get_the_test_data_for_test_case_id_TRS_151() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_151");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_152")
+	public void get_the_test_data_for_test_case_id_TRS_152() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_152");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_153")
+	public void get_the_test_data_for_test_case_id_TRS_153() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_153");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_150_02")
+	public void get_the_test_data_for_test_case_id_trs() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_150_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
+	@And("get the test data for test case ID TRS_150_03")
+	public void get_the_test_data_for_test_case_id_trs_150_03() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_150_03");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
+	@And("get the test data for test case ID TRS_151_02")
+	public void get_the_test_data_for_test_case_id_trs_150_02() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_151_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
+	@And("get the test data for test case ID TRS_152_02")
+	public void get_the_test_data_for_test_case_id_TRS_152_02() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_152_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
+	@And("get the test data for test case ID TRS_153_02")
+	public void get_the_test_data_for_test_case_id_TRS_153_02() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_153_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
 	@And("^change the system date to current date$")
 	public void change_the_system_date_to_current_date() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
@@ -3474,4 +3569,311 @@ public class CSM_TransactionSteps extends BaseClass {
 		Assert.assertTrue(transactionObj.csmInvalidBranchExchangeValidation().isDisplayed());
 	}
 
+	@And("check the flag CIF non resident alert flag in alert activation")
+	public void check_the_flag_cif_non_resident_alert_flag_in_alert_activation() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver,
+				controlRecordsObj.alertActivationAccountBalanceOverdrawnSection());
+		clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationAccountBalanceOverdrawnSection());
+		clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationAccountBalanceOverdrawnSection());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationCIFisNonResidentLabel());
+				clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationCIFisNonResidentLabel());
+				clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationCIFisNonResidentLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 300)
+
+				{
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		for (int i = 0; i <= 50; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationCIFisNonResidentFlagStatus());
+
+				System.out.println("Flag Status "
+						+ controlRecordsObj.alertActivationCIFisNonResidentFlagStatus().getAttribute("checked"));
+				if (controlRecordsObj.alertActivationCIFisNonResidentFlagStatus().getAttribute("checked")
+						.equals("checked")) {
+					System.out.println("Flag is already checked");
+				}
+				{
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationCIFisNonResidentLabel());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationCIFisNonResidentLabel());
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationCIFisNonResidentFlagStatus());
+					clicksAndActionsHelper
+							.clickOnElement(controlRecordsObj.alertActivationCIFisNonResidentFlagStatus());
+				}
+				break;
+			} catch (NoSuchElementException e) {
+				if (i == 50)
+
+				{
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("check the flag signature not fountt alert flag in alert activation")
+	public void check_the_flag_signature_not_fountt_alert_flag_in_alert_activation() {
+		for (int i = 0; i <= 50; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationNoSignatureFoundFlagStatus());
+				if (controlRecordsObj.alertActivationNoSignatureFoundFlagStatus().getAttribute("checked")
+						.equals("checked")) {
+					System.out.println("Flag is already checked");
+				} else {
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationNoSignatureFoundLabel());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationNoSignatureFoundLabel());
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationNoSignatureFoundFlagStatus());
+					clicksAndActionsHelper
+							.clickOnElement(controlRecordsObj.alertActivationNoSignatureFoundFlagStatus());
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 50)
+
+				{
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("check the flag account dormant alert flag in alert activation")
+	public void check_the_flag_account_dormant_alert_flag_in_alert_activation() {
+		for (int i = 0; i <= 50; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationAccountDormantFlagStatus());
+				if (controlRecordsObj.alertActivationAccountDormantFlagStatus().getAttribute("checked")
+						.equals("checked")) {
+					System.out.println("Flag is already checked");
+				} else {
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationAccountDormantLabel());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationAccountDormantLabel());
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationAccountDormantFlagStatus());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationAccountDormantFlagStatus());
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 50)
+
+				{
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("check the value date changed alert flag in alert activation")
+	public void check_the_value_date_changed_alert_flag_in_alert_activation() {
+		for (int i = 0; i <= 50; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationValueDateChangedFlag());
+				if (controlRecordsObj.alertActivationValueDateChangedFlag().getAttribute("checked").equals("checked")) {
+					System.out.println("Flag is already checked");
+				} else {
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationValueDateChangedLabel());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationValueDateChangedLabel());
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationValueDateChangedFlag());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationValueDateChangedFlag());
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 50)
+
+				{
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("check the overdrawn limit exceeded alert falg in alert activation")
+	public void check_the_overdrawn_limit_exceeded_alert_falg_in_alert_activation() {
+		for (int i = 0; i <= 50; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationOverdrawLimitExceededFlagStatus());
+				if (controlRecordsObj.alertActivationOverdrawLimitExceededFlagStatus().getAttribute("checked")
+						.equals("checked")) {
+					System.out.println("Flag is already checked");
+				} else {
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationOverdrawLimitExceededLabel());
+					clicksAndActionsHelper
+							.clickOnElement(controlRecordsObj.alertActivationOverdrawLimitExceededLabel());
+					clicksAndActionsHelper
+							.moveToElement(controlRecordsObj.alertActivationOverdrawLimitExceededFlagStatus());
+					clicksAndActionsHelper
+							.clickOnElement(controlRecordsObj.alertActivationOverdrawLimitExceededFlagStatus());
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 50)
+
+				{
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("check the KYC out standing alert flag in alert activation")
+	public void check_the_kyc_out_standing_alert_flag_in_alert_activation() {
+		for (int i = 0; i <= 50; i++) {
+			try {
+				javascriptHelper.scrollIntoView(controlRecordsObj.alertActivationKYCOutStandingLabel());
+				if (controlRecordsObj.alertActivationKYCOutStandingFlagStatus().getAttribute("checked")
+						.equals("checked")) {
+					System.out.println("Flag is already checked");
+				} else {
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationKYCOutStandingLabel());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationKYCOutStandingLabel());
+					clicksAndActionsHelper.moveToElement(controlRecordsObj.alertActivationKYCOutStandingFlagStatus());
+					clicksAndActionsHelper.clickOnElement(controlRecordsObj.alertActivationKYCOutStandingFlagStatus());
+				}
+				break;
+			} catch (Exception e) {
+				if (i == 50) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Then("verify alert screen is open in transactio maintenannce")
+	public void verify_alert_screen_is_open_in_transactio_maintenannce() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSentAlertLabel());
+		Assert.assertTrue(csmCommonWebElements.csmSentAlertLabel().isDisplayed());
+	}
+
+	@And("enter the branch manager user ID in alert section")
+	public void enter_the_branch_manager_user_id_in_alert_section() throws IOException, AWTException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmAlertUserName());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAlertUserName());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmAlertUserName());
+		csmCommonWebElements.csmAlertUserName().sendKeys(transactionTestData.get("Branch manager Account"));
+		csmCommonWebElements.csmAlertUserName().sendKeys(Keys.ENTER);
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++)
+
+		{
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+
+	}
+
+	@And("click on the branch manager ID in alert suggestion grid")
+	public void click_on_the_branch_manager_id_in_alert_suggestion_grid() {
+		String xpath = "//td[text()='" + transactionTestData.get("Branch manager Account") + "']";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("click on sent button in alert section")
+	public void click_on_sent_button_in_alert_section() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmAlertSendButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAlertSendButton());
+		clicksAndActionsHelper.doubleClick(csmCommonWebElements.csmAlertSendButton());
+	}
+
+	@Then("verify branch manager ANANDH got the alert which is sent from teller ANANDHTA")
+	public void verify_branch_manager_anandh_got_the_alert_which_is_sent_from_teller_anandhta() {
+		boolean alertVisibilityStatus = false;
+		for (int i = 0; i < 3; i++) {
+			try {
+				alertVisibilityStatus = csmCommonWebElements.csmCoreAlertValidation().isDisplayed();
+				break;
+			} catch (Exception e) {
+				brwoserHelper.refresh();
+			}
+
+		}
+		Assert.assertTrue(alertVisibilityStatus, "Alert not visible");
+	}
+
+	@And("select the transaction record from alert")
+	public void select_the_transaction_record_from_alert() {
+		String xpath = "//td[contains(text(),'" + transactionTestData.get("Transaction Number")
+				+ "')]//preceding-sibling::td[25]//input";
+		for (int i = 0; i <= 300; i++) {
+			try {
+
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("click on open item buttton in alert")
+	public void click_on_open_item_buttton_in_alert() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmAlertOpenItemButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAlertOpenItemButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmAlertOpenItemButton());
+
+	}
+
+	@And("click on approve button in alert screen")
+	public void click_on_approve_button_in_alert_screen() {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(csmCommonWebElements.csmAlertApproveButton());
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAlertApproveButton());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmAlertApproveButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+	}
+
+	@Then("verify system should show the warning message for dormant account in transaction maintenance")
+	public void verify_system_should_show_the_warning_message_for_dormant_account_in_transaction_maintenance()
+			throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.dormantAccountPopupOkButton());
+		Assert.assertTrue(csmCommonWebElements.dormantAccountPopupOkButton().isDisplayed());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.dormantAccountPopupOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.dormantAccountPopupOkButton());
+
+	}
+
+	@Then("verify system should show the validation for signature not found in transaction maintenance")
+	public void verify_system_should_show_the_validation_for_signature_not_found_in_transaction_maintenance()
+			throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmCoreSignatureNotFoundMessageOkButton());
+		Assert.assertTrue(csmCommonWebElements.csmCoreSignatureNotFoundMessageOkButton().isDisplayed());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmCoreSignatureNotFoundMessageOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmCoreSignatureNotFoundMessageOkButton());
+	}
+
+	@Then("click on ok button in transaction maintenance")
+	public void click_on_ok_button_in_transaction_maintenance() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmCoreCommonOkButton());
+		Assert.assertTrue(csmCommonWebElements.csmCoreCommonOkButton().isDisplayed());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmCoreCommonOkButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmCoreCommonOkButton());
+	}
 }

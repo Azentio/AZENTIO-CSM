@@ -188,6 +188,13 @@ public class CSM_TransactionObj {
 		return transactions_StaffMemberOkButton;
 	}
 
+	@FindBy(xpath = "//div[contains(text(),'is Non Resident')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement transactions_NonResidentOkButton;
+
+	public WebElement transactionsNonResidentOkButton() {
+		return transactions_NonResidentOkButton;
+	}
+
 	@FindBy(xpath = "//input[@id='lookuptxt_trs_cy_D001MT']")
 	private WebElement transactionMaintenance_CurrencyCodeInput;
 

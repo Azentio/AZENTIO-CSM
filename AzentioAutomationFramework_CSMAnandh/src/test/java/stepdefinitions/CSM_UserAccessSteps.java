@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -10,6 +11,7 @@ import org.testng.Assert;
 
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
+import helper.DropDownHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
@@ -24,6 +26,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 	CSMCommonWebElements csmCommonElements = new CSMCommonWebElements(driver);
 	CSMParam_UserAccessObj userAccessObj = new CSMParam_UserAccessObj(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
+	DropDownHelper dropdownHelper = new DropDownHelper(driver);
 	String testDataPath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
 	String csmTestDataPath = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	ExcelData exelDataForUserAccess = new ExcelData(testDataPath, "CSMParam_userAccessTestData", "DataSet ID");
@@ -144,6 +147,27 @@ public class CSM_UserAccessSteps extends BaseClass {
 		clicksAndActionsHelper.clickOnElement(userAccessObj.userAccessSearchWdLimit());
 	}
 
+	@And("update the dormant account DDL value in user update after approve screen")
+	public void update_the_dormant_account_ddl_value_in_user_update_after_approve_screen() throws IOException {
+		for (int i = 0; i <= 200; i++) {
+			try {
+				javascriptHelper.scrollIntoView(userAccessObj.userUpdateAfterApproveDormantAccountDropdown());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		dropdownHelper.SelectUsingIndex(userAccessObj.userUpdateAfterApproveDormantAccountDropdown(), 0);
+		dropdownHelper.SelectUsingIndex(userAccessObj.userUpdateAfterApproveDormantAccountDropdown(), 1);
+		dropdownHelper.SelectUsingIndex(userAccessObj.userUpdateAfterApproveDormantAccountDropdown(), 2);
+		dropdownHelper.SelectUsingIndex(userAccessObj.userUpdateAfterApproveDormantAccountDropdown(), 3);
+		dropdownHelper.SelectUsingIndex(userAccessObj.userUpdateAfterApproveDormantAccountDropdown(), 4);
+		dropdownHelper.SelectUsingVisibleText(userAccessObj.userUpdateAfterApproveDormantAccountDropdown(),
+				userAccessTestData.get("Dormant account dropdown"));
+	}
+
 	@And("^click on ok button in CIF type access screen$")
 	public void click_on_ok_button_in_cif_type_access_screen() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, userAccessObj.userCIFTypeAccessInputBox());
@@ -258,6 +282,11 @@ public class CSM_UserAccessSteps extends BaseClass {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_001_01");
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+	@And("get the test data for test case ID TRS_152_01")
+	public void get_the_test_data_for_test_case_id_TRS_152_01() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_152_01");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
 
 	@And("^get the test data for test case ID TRS_089_01$")
 	public void get_the_test_data_for_test_case_ID_TRS_089_01() throws Throwable {
@@ -295,11 +324,12 @@ public class CSM_UserAccessSteps extends BaseClass {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_01");
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+
 	@And("^get the test data for test case ID TRS_095_03$")
-    public void get_the_test_data_for_test_case_id_trs09503() throws Throwable {
+	public void get_the_test_data_for_test_case_id_trs09503() throws Throwable {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_03");
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
-    }
+	}
 
 	@And("^get the test data for test case ID TRS_002_01$")
 	public void get_the_test_data_for_test_case_id_trs00201() throws Throwable {
@@ -611,7 +641,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 			try {
 
 				if (driver.findElement(By.xpath(xpath)).isDisplayed()) {
-					
+
 					clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
 					clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
 					clicksAndActionsHelper.moveToElement(csmCommonElements.csmDeleteRowButton());
@@ -622,7 +652,7 @@ public class CSM_UserAccessSteps extends BaseClass {
 
 			}
 		}
-		
+
 		for (int i = 0; i <= 100; i++) {
 			try {
 
