@@ -748,5 +748,135 @@ public class CSM_TransactionObj {
 	public WebElement transactionManagementAccountTypeLimitCanNotProceedValidation() {
 		return transactionManagement_AccountTypeLimitCanNotProceedValidation;
 	}
+	//***************************************************************ajith*************************************************************************************************//
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+	private WebElement recordSavedSuccessfully;
+
+	public WebElement recordSavedSuccessfully() {
+		return recordSavedSuccessfully;
+	}
+	@FindBy(id="Q000MT")
+	private WebElement CBMaintenanceScreen;
+	public WebElement CBMaintenanceScreen() {
+		return CBMaintenanceScreen;
+	}
+	@FindBy(xpath = "//a[@id='infoBarSearchButton_Q000MT']")
+	private WebElement searchIconInChequeBookMaintenanceScreen;
+
+	public WebElement searchIconInChequeBookMaintenanceScreen() {
+		return searchIconInChequeBookMaintenanceScreen;
+	}
+	@FindBy(id="chequeBookGridTbl_Id_Q000MT_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInCBMaintenance;
+	public WebElement searchChequeBookCodeInCBMaintenance() {
+		return searchChequeBookCodeInCBMaintenance;
+	}
+	@FindBy(id="chequeBookGridTbl_Id_Q000SB_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInSubmitScreen;
+	public WebElement searchChequeBookCodeInSubmitScreen() {
+		return searchChequeBookCodeInSubmitScreen;
+	}
+	@FindBy(id = "td_chequeBookGridTbl_Id_Q000SB_1_ctschqbookVO.CODE")
+	private WebElement selectChequeBookCodeInSubmitScreen;
+	public WebElement selectChequeBookCodeInSubmitScreen() {
+		return selectChequeBookCodeInSubmitScreen;
+	}
+	@FindBy(xpath="//div[text()='WARNING']/following-sibling::div/a")
+	private WebElement closeIconInWarningPopUpcancelScreen;
+	public WebElement closeIconInWarningPopUpcancelScreen() {
+		return closeIconInWarningPopUpcancelScreen;
+	}
+	@FindBy(xpath = "//td[text()='Apply To Submit']")
+	private WebElement applyToSubmitValidation;
+
+	public WebElement applyToSubmitValidation() {
+		return applyToSubmitValidation;
+	}
+	@FindBy(id="Q000SB")
+	private WebElement submitSubMenuInChequebookRequest;
+	public WebElement submitSubMenuInChequebookRequest() {
+		return submitSubMenuInChequebookRequest;
+	}
+	@FindBy(id="chequeBookDefFormId_Q000SB_submit")
+	private WebElement submitButton;
+	public WebElement submitButton() {
+		return submitButton;
+	}
+	@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+	private WebElement chequeBookCreation_OkbuttonWarningPopUp;
+	public WebElement chequeBookCreation_OkbuttonWarningPopUp() {
+		return chequeBookCreation_OkbuttonWarningPopUp;
+	}
+	@FindBy(xpath="//td[text()='Submitted']")
+	private WebElement submittedRecordValidationInCBMaintenance;
+	public WebElement submittedRecordValidationInCBMaintenance() {
+		return submittedRecordValidationInCBMaintenance;
+	}
+	@FindBy(xpath = "//select[@id='check_status_type_QG001MT']")
+	private WebElement selectChequeBookStatusInAmendChequeCardStatus;
+
+	public WebElement selectChequeBookStatusInAmendChequeCardStatus() {
+		return selectChequeBookStatusInAmendChequeCardStatus;
+	}
+	@FindBy(xpath="//td[text()='Approved']")
+	private WebElement approvedRecordValidationInCBMaintenance;
+	public WebElement approvedRecordValidationInCBMaintenance() {
+		return approvedRecordValidationInCBMaintenance;
+	}
+	@FindBy(id="Q000TC")
+	private WebElement toCancelScreen;
+	public WebElement toCancelScreen() {
+		return toCancelScreen;
+	}
+	@FindBy(id="chequeBookGridTbl_Id_Q000TC_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInToCancelScreen;
+	public WebElement searchChequeBookCodeInToCancelScreen() {
+		return searchChequeBookCodeInToCancelScreen;
+	}
+	@FindBy(id = "td_chequeBookGridTbl_Id_Q000TC_1_ctschqbookVO.CODE")
+	private WebElement selectChequeBookCodeInToCancelScreen;
+	public WebElement selectChequeBookCodeInToCancelScreen() {
+		return selectChequeBookCodeInToCancelScreen;
+	}
+	@FindBy(id="chequeBookDefFormId_Q000TC_toCancel_key")
+	private WebElement toCancelButton;
+	public WebElement toCancelButton() {
+		return toCancelButton;
+	}
+	@FindBy(id="chequeBookGridTbl_Id_Q000AC_gs_ctschqbookVO.CODE")
+	private WebElement searchChequeBookCodeInApproveCancelScreen;
+	public WebElement searchChequeBookCodeInApproveCancelScreen() {
+		return searchChequeBookCodeInApproveCancelScreen;
+	}
+	@FindBy(id="Q000AC")
+	private WebElement approveCancelScreen;
+	public WebElement approveCancelScreen() {
+		return approveCancelScreen;
+	}
+	@FindBy(xpath="//td[@id='td_chequeBookGridTbl_Id_Q000AC_1_ctschqbookVO.CODE']")
+	private WebElement selectChequeBookCodeInApproveCancelScreen;
+	public WebElement selectChequeBookCodeInApproveCancelScreen() {
+		return selectChequeBookCodeInApproveCancelScreen;
+	}
+	@FindBy(id="chequeBook_cancel_Q000AC")
+	private WebElement cancelButton;
+	public WebElement cancelButton() {
+		return cancelButton;
+	}
+	@FindBy(id="infoBarSearchButton_Q000MT")
+	private WebElement searchButtonInCBMaintenance;
+	public WebElement searchButtonInCBMaintenance() {
+		return searchButtonInCBMaintenance;
+	}
+	
+	@FindBy(xpath="//td[text()='Cancelled']")
+	private WebElement cancelledRecordValidationInCBMaintenance;
+	public WebElement cancelledRecordValidationInCBMaintenance() {
+		return cancelledRecordValidationInCBMaintenance;
+	}
+	
+	
+	
+	
 
 }

@@ -558,5 +558,9 @@ public class ChequeBookRequestObj {
 	public WebElement SubmitFeatureSubmitButton() {
 		return SubmitFeature_SubmitButton;
 	}
-
+	@FindBy(xpath="//td[text()='Sent to Provider']")
+	private WebElement sentToProviderRecordValidationInCBMaintenance;
+	public WebElement sentToProviderRecordValidationInCBMaintenance() {
+		return sentToProviderRecordValidationInCBMaintenance;
+	}
 }

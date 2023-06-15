@@ -85,8 +85,8 @@ public class CSMLogin {
 		 */
 	}
 
-	public void loginIntoCSMApplication() {
-		csmLoginTestData = csmLoginExceldata.getTestdata("CSMUser1");
+	public void loginIntoCSMApplication(String userType) {
+		csmLoginTestData = csmLoginExceldata.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
