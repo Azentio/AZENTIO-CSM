@@ -112,7 +112,7 @@ Feature: To verify the functionality of Chequebook request module
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
     And User Click Clear Cache in Technical Details Icon
-    And User Click Ok Button Under Information PopUp Menu
+    And User Click Ok button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field
@@ -178,7 +178,7 @@ Feature: To verify the functionality of Chequebook request module
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
     And User Click Clear Cache in Technical Details Icon
-    And User Click Ok Button Under Information PopUp Menu
+    And User Click Ok button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field
@@ -245,7 +245,7 @@ Feature: To verify the functionality of Chequebook request module
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
     And User Click Clear Cache in Technical Details Icon
-    And User Click Ok Button Under Information PopUp Menu
+    And User Click Ok button Under Information PopUp Menu
     And user click the Chequebookrequest submenu on CSMCORE
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field

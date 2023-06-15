@@ -16,7 +16,7 @@ import utilities.ExtentTestManager;
                            "rerun:ReRunScenarios/FailedReRun.txt"},
                //dryRun = true,
             		                                  
-               tags=" @TRS_127"
+               tags="@TRS_111_PostReq"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

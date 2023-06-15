@@ -57,13 +57,14 @@ import utilities.ExtentTestManager;
 		@Test()
 		public void test() {
 			List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
-			testCaseTagsfromExcel1.add("TRS_128_01");
-			testCaseTagsfromExcel1.add("TRS_128");
-			//testCaseTagsfromExcel1.add("TRS_111_Postreq");
-			//testCaseTagsfromExcel1.add("TRS_066");
-		//	testCaseTagsfromExcel1.add("TRS_066");
-//			testCaseTagsfromExcel1.add("TRS_110_PostReq");
-//			testCaseTagsfromExcel1.add("TRS_110_PostReq");
+			//testCaseTagsfromExcel1.add("TRS_127_01");
+			//testCaseTagsfromExcel1.add("TRS_127");
+			//testCaseTagsfromExcel1.add("TRS_128_01");
+			//testCaseTagsfromExcel1.add("TRS_128");
+			testCaseTagsfromExcel1.add("TRS_111_PreReq");
+		testCaseTagsfromExcel1.add("TRS_111");
+			testCaseTagsfromExcel1.add("TRS_111_PostReq");
+			//testCaseTagsfromExcel1.add("TRS_140");
 
 			MultipleRunner newExcelTestRunner= new MultipleRunner();
 			newExcelTestRunner.excelTestArea(testCaseTagsfromExcel1);

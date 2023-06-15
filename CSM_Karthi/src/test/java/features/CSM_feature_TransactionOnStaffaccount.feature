@@ -47,7 +47,7 @@ Feature: To verify the functionality of Transaction on Staff Accounts module
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
     And User Click Clear Cache in Technical Details Icon
-    And User Click Ok Button Under Information PopUp Menu
+    And User Click Ok button Under Information PopUp Menu
     And User Click on Transactions under CSM application
     And User Click on Maintenance under Transactions
     And User Enter TRX Type in Maintenance Screen

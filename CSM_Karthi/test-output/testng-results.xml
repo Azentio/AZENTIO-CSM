@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-12T17:34:00 IST" name="Default suite" finished-at="2023-06-12T17:37:01 IST" duration-ms="180685">
+  <suite started-at="2023-06-15T18:51:17 IST" name="Default suite" finished-at="2023-06-15T18:56:29 IST" duration-ms="312172">
     <groups>
     </groups>
-    <test started-at="2023-06-12T17:34:00 IST" name="Default test" finished-at="2023-06-12T17:37:01 IST" duration-ms="180685">
+    <test started-at="2023-06-15T18:51:17 IST" name="Default test" finished-at="2023-06-15T18:56:29 IST" duration-ms="312172">
       <class name="Runner.MultipleRunner">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.MultipleRunner@63376bed]" started-at="2023-06-12T17:34:00 IST" name="beforeTest" finished-at="2023-06-12T17:34:03 IST" duration-ms="2215" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.MultipleRunner@4145bad8]" started-at="2023-06-15T18:51:17 IST" name="beforeTest" finished-at="2023-06-15T18:51:19 IST" duration-ms="1883" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="test()[pri:0, instance:Runner.MultipleRunner@63376bed]" started-at="2023-06-12T17:34:03 IST" name="test" finished-at="2023-06-12T17:37:01 IST" duration-ms="178095" status="PASS">
+        <test-method signature="test()[pri:0, instance:Runner.MultipleRunner@4145bad8]" started-at="2023-06-15T18:51:19 IST" name="test" finished-at="2023-06-15T18:56:29 IST" duration-ms="309792" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.MultipleRunner@63376bed]" started-at="2023-06-12T17:37:01 IST" name="afterTest" finished-at="2023-06-12T17:37:01 IST" duration-ms="240" status="PASS">
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.MultipleRunner@4145bad8]" started-at="2023-06-15T18:56:29 IST" name="afterTest" finished-at="2023-06-15T18:56:29 IST" duration-ms="382" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->

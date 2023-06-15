@@ -19,12 +19,14 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import dataProvider.ConfigFileReader;
+
 public class WaitHelper {
 	private WebDriver driver;
 	Logger Log = LogManager.getLogger(WaitHelper.class.getName());
 	String fileLocation=System.getProperty("user.dir")+"\\configs\\data.properties";
 	FileInputStream fileInputStream;
-	Properties prop= new Properties();
+	ConfigFileReader configFileReader = new ConfigFileReader();
 	// wait helper constrcutor
 	public WaitHelper(WebDriver driver) {
 		this.driver = driver;
@@ -93,11 +95,9 @@ public class WaitHelper {
 //		fileInputStream= new FileInputStream(fileLocation);
 //		prop.load(fileInputStream);
 		
-		int duration=Integer.parseInt(prop.getProperty("timeout"));
-		int pollinngSecond=Integer.parseInt(prop.getProperty("pollingTime"));
 		Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-				.withTimeout(Duration.ofSeconds(duration)) 
-				.pollingEvery(Duration.ofMillis(pollinngSecond))
+				.withTimeout(Duration.ofSeconds(configFileReader.getTimeOut())) 
+				.pollingEvery(Duration.ofMillis(configFileReader.getPollingTime()))
 				.ignoring(Exception.class);
 //		WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(element));
 		WebElement element1 = wait.until(ExpectedConditions.visibilityOf(element));
