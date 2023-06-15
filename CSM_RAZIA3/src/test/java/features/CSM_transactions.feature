@@ -179,6 +179,7 @@ Feature: Checking the functionalities of transaction
   @TRS_033
   Scenario: Checking Cash Deposit Transaction - FC/ FC Same
     Given navigate to CSM application and login with valid credentials
+      And user update test data set id for TRS_33
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -205,7 +206,7 @@ Feature: Checking the functionalities of transaction
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUo Menu for33
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -222,6 +223,7 @@ Feature: Checking the functionalities of transaction
   @TRS_034
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction  FC/ FC Same
     Given navigate to CSM application and login with valid credentials
+     And user update test data set id for TRS_34
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -248,7 +250,7 @@ Feature: Checking the functionalities of transaction
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUo Menu for34
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -262,10 +264,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Searched Transaction No in Search Box
     And User Click on Booked Entries in Maintenance Screen
 
-  #prerequest
+  #pre request
   @TRS_071_01
   Scenario: Checking Cash Withdrawal Transaction Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked Amount < Limit
     Given navigate to CSMparam application and login with valid credentials
+    And user update test data set id for TRS_71
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the User screen in system parameters
@@ -273,6 +276,8 @@ Feature: Checking the functionalities of transaction
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     And User click the Limit button  in update after approve screen
+    And User click the Eco sector Delete All
+     And user click the confirm ok
     And user  click add button under Limits
     And user enter the value of currency in Limits
     And User enter the Transaction type in Limits
@@ -280,20 +285,20 @@ Feature: Checking the functionalities of transaction
     And User check the with warnuserlimit in Limit
     And user click the ok button under limit
     And user click the update after approve button
-    #And user click the save ok button
-    And user click the confirm ok
+      And user click the confirm ok
     And user click the sucesss ok
     And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
-    And user click the approve box
-    #And user click the save ok button
+    And user click the Approvebttn
     And user click the confirm ok
     And user click the sucesss ok
+    
 
-  @TRS_071_02
+  @TRS_071
   Scenario: Checking Cash Withdrawal Transaction Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked Amount < Limit
     Given navigate to CSM application and login with valid credentials
+     And user update test data set id for TRS_71
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -315,23 +320,24 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUo Menu for71
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+   # And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #postrequest
-  @TRS_071_03
+  @TRS_071_02
   Scenario: Checking Cash Withdrawal Transaction Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked Amount < Limit
     Given navigate to CSMparam application and login with valid credentials
+    And user update test data set id for TRS_71
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the User screen in system parameters
@@ -339,26 +345,26 @@ Feature: Checking the functionalities of transaction
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     And User click the Limit button  in update after approve screen
-    #And User select the existing record  under limit
-    #And User delete the existing record
     And user retrive the existing record from the limits screen
     And user delete the record from the limits screen
     And user click the confirm ok
+     And user click  the grantall keys under Eco sector
+    And user click the ok button under limit
     And user click the update after approve button
-    #And user click the save ok button
-    And user click the confirm ok
+        And user click the confirm ok
     And user click the sucesss ok
     And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
     And user click the approve box
-    #And user click the save ok button
-    And user click the confirm ok
+      And user click the Approvebttn
+        And user click the confirm ok
     And user click the sucesss ok
 
   @TRS_072_01
   Scenario: Checking Cash Withdrawal Transaction - Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
     Given navigate to CSMparam application and login with valid credentials
+    And user update test data set id for TRS_72
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the User screen in system parameters
@@ -366,7 +372,8 @@ Feature: Checking the functionalities of transaction
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     And User click the Limit button  in update after approve screen
-    # User click the Delete All under Limits
+   And User click the Eco sector Delete All
+     And user click the confirm ok
     And user  click add button under Limits
     And user enter the value of currency in Limits
     And User enter the Transaction type in Limits
@@ -374,20 +381,19 @@ Feature: Checking the functionalities of transaction
     And User check the with warnuserlimit in Limit
     And user click the ok button under limit
     And user click the update after approve button
-    #And user click the save ok button
-    And user click the confirm ok
+       And user click the confirm ok
     And user click the sucesss ok
     And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
-    And user click the approve box
-    #And user click the save ok button
+    And user click the Approvebttn
     And user click the confirm ok
     And user click the sucesss ok
 
-  @TRS_072_02
+  @TRS_072
   Scenario: Checking Cash Withdrawal Transaction- Currency Withdrawal Limit Defined -Warn User if Limit Exceeds Checked  Amount > Limit
     Given navigate to CSM application and login with valid credentials
+     And user update test data set id for TRS_72
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -410,9 +416,10 @@ Feature: Checking the functionalities of transaction
     And User Enter the Amount in Maintenance Screen
 
   #postrequest
-  @TRS_072_03
+  @TRS_072_02
   Scenario: Checking Cash Withdrawal Transaction Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked Amount < Limit
     Given navigate to CSMparam application and login with valid credentials
+    And user update test data set id for TRS_72
     And user click the parameters menu
     And user click the system parameters submenu
     And user click the User screen in system parameters
@@ -420,22 +427,21 @@ Feature: Checking the functionalities of transaction
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     And User click the Limit button  in update after approve screen
-    #And User select the existing record  under limit
-    #And User delete the existing record
-    And user retrive the existing record from the limits screen
+       And user retrive the existing record from the limits screen
     And user delete the record from the limits screen
+    And user click the confirm ok
+      And user click  the grantall keys under Eco sector
     And user click the ok button under limit
     And user click the update after approve button
-    #And user click the save ok button
-    And user click the confirm ok
+       And user click the confirm ok
     And user click the sucesss ok
     And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
-    And user click the approve box
-    #And user click the save ok button
-    And user click the confirm ok
+      And user click the Approvebttn
+        And user click the confirm ok
     And user click the sucesss ok
+    
 #pre req
   @TRS_73_01
   Scenario: Checking Cash Withdrawal Transaction Currency Withdrawal Limit Defined and Warn User if Limit Exceeds Checked and Proceed if Limit Exceeds Checked - Amount > Limit
@@ -448,7 +454,9 @@ Feature: Checking the functionalities of transaction
     And user click and send the values in user id under update after approve screen
     And user double click the user id
     And User click the Limit button  in update after approve screen
-    And user  click add button under Limits
+     And User click the Eco sector Delete All
+     And user click the confirm ok
+     And user  click add button under Limits
     And user enter the value of currency in Limits
     And User enter the Transaction type in Limits
     And User enter value with WdLimit in Limits
@@ -497,11 +505,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+   # And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #postrequest
   @TRS_073_02
@@ -518,6 +526,7 @@ Feature: Checking the functionalities of transaction
     And user retrive the existing record from the limits screen
     And user delete the record from the limits screen
      And user click the confirm ok
+      And user click  the grantall keys under Eco sector
     And user click the ok button under limit
     And user click the update after approve button
     And user click the confirm ok
@@ -525,12 +534,11 @@ Feature: Checking the functionalities of transaction
       And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
-  And user click the Approvebttn
-    #And user click the save ok button
-    And user click the confirm ok
+   And user click the Approvebttn
+        And user click the confirm ok
     And user click the sucesss ok
 
-  #param
+  #pre req
   @TRS_069_01
   Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked and Allow Overdraw unchecked and Force Overdraw checked
     Given navigate to CSMparam application and login with valid credentials
@@ -566,10 +574,11 @@ Feature: Checking the functionalities of transaction
     And user click the Approve field under AccountTypes
     And user Enter the TypeCode in Approve Field
     And user double click the Typecode in Approve field
-    And user click the Approve button
-    And user click the save ok button
+   And user click the Approvebttn
+    And user click the confirm ok
+    And user click the sucesss ok
 
-  @TRS_069_02
+  @TRS_069
   Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked and Allow Overdraw unchecked and Force Overdraw checked
     Given navigate to CSM application and login with valid credentials
        And user update test data set id for TRS_69
@@ -601,12 +610,13 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
-
+    #And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
+    
+#pre req
   @TRS_070_01
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked/ Force Overdraw checked
     Given navigate to CSMparam application and login with valid credentials
@@ -625,8 +635,9 @@ Feature: Checking the functionalities of transaction
     And user click the Approve field under AccountTypes
     And user Enter the TypeCode in Approve Field
     And user double click the Typecode in Approve field
-    And user click the Approve button
-    And user click the save ok button
+   And user click the Approvebttn
+    And user click the confirm ok
+    And user click the sucesss ok
 
   @TRS_070
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked/ Force Overdraw checked
@@ -665,11 +676,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+    #And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #pre-requesties
   @TRS_121_01
@@ -733,11 +744,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+    #And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #post-requesties
   @TRS_121_02
@@ -754,6 +765,7 @@ Feature: Checking the functionalities of transaction
     And user select the row for delete the record
     And user delete the inserted record under Eco sector
     And user click the confirm ok
+     And user click  the grantall keys under Eco sector
     And user click the ok button under limit
     And user click the update after approve button
     And user click the confirm ok
@@ -827,11 +839,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+   # And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #postreq
   @TRS_116_02
@@ -848,7 +860,8 @@ Feature: Checking the functionalities of transaction
     And user select the row for delete the record
     And user delete the inserted record under Eco sector
     And user click the confirm ok
-    And user click the ok button under limit
+    And user click  the grantall keys under Eco sector
+     And user click the ok button under limit
     And user click the update after approve button
     And user click the confirm ok
     And user click the sucesss ok
@@ -929,6 +942,7 @@ Feature: Checking the functionalities of transaction
     And user select the row for delete the record
     And user delete the inserted record under Eco sector
     And user click the confirm ok
+     And user click  the grantall keys under Eco sector
     And user click the ok button under limit
     And user click the update after approve button
     And user click the confirm ok
@@ -994,6 +1008,8 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
+    And User Click Ok Button in Warning PopUp Menu
+    #And User Click Ok Button in Warning PopUp Menu
     And User Click Save Button in Maintenance Screen
     And User Get the Transaction No in Success PopUo Menu for118
     And User Click Ok Button in Success PopUp Menu
@@ -1002,11 +1018,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+    #And User Click on Maintenance under Transactions
+   #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #post req
   @TRS_118_02
@@ -1023,6 +1039,7 @@ Feature: Checking the functionalities of transaction
     And user select the row for delete the record
     And user delete the inserted record under Eco sector
     And user click the confirm ok
+     And user click  the grantall keys under Eco sector
     And user click the ok button under limit
     And user click the update after approve button
     And user click the confirm ok
@@ -1096,11 +1113,11 @@ Feature: Checking the functionalities of transaction
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
-    And User Click Ok Button in Warning PopUp to go back to Maintenance
-    And User Click on Search Button in Maintenance Screen
-    And User Enter the Transaction No in Search Box
-    And User Double Click on the Searched Transaction No in Search Box
+    #And User Click on Maintenance under Transactions
+    #And User Click Ok Button in Warning PopUp to go back to Maintenance
+    #And User Click on Search Button in Maintenance Screen
+    #And User Enter the Transaction No in Search Box
+    #And User Double Click on the Searched Transaction No in Search Box
 
   #post req
   @TRS_119_02
@@ -1117,6 +1134,7 @@ Feature: Checking the functionalities of transaction
     And user select the row for delete the record
     And user delete the inserted record under Eco sector
     And user click the confirm ok
+     And user click  the grantall keys under Eco sector
     And user click the ok button under limit
     And user click the update after approve button
     And user click the confirm ok
@@ -1127,7 +1145,18 @@ Feature: Checking the functionalities of transaction
     And user click the Approvebttn
     And user click the confirm ok
     
-   
+
+ 
+
+    
+  
+ 
+ 
+    
+    
+ 
+
+ 
 
 
 

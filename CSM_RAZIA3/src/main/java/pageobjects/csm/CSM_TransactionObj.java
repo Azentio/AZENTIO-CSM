@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+
 import io.cucumber.java.en.Then;
 
 public class CSM_TransactionObj {
@@ -102,36 +103,36 @@ public class CSM_TransactionObj {
 //	public WebElement CSM_TransactionsMaintenanceForLoading() {
 //		return CSM_TransactionsMaintenanceForLoading;
 //	}
-	
-	@FindBy(id="trs_ac_br_D001MT")
+	//id="trs_ac_br_D001MT"
+	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_BR']")
 	private WebElement CSM_BranchCodeInCreditAc;
 
 	public WebElement CSMBranchCodeInCreditAc() {
 		return CSM_BranchCodeInCreditAc;
 	}
-	
-	@FindBy(id="trs_ac_cy_D001MT")
+	//id="trs_ac_cy_D001MT"
+	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_CY']")
 	private WebElement CSM_CurrencyCodeCreditAc;
 
 	public WebElement CSMCurrencyCodeCreditAc() {
 		return CSM_CurrencyCodeCreditAc;
 	}
-	
-	@FindBy(id="trs_ac_gl_D001MT")
+	//id="trs_ac_gl_D001MT
+	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_GL']")
 	private WebElement CSM_GLCodeCreditAc;
 
 	public WebElement CSMGLCodeCreditAc() {
 		return CSM_GLCodeCreditAc;
 	}
-	
-	@FindBy(id="trs_ac_cif_D001MT")
+	//id="trs_ac_cif_D001MT
+	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_CIF']")
 	private WebElement CSM_CIFCodeInCreditAc;
 
 	public WebElement CSMCIFCodeInCreditAc() {
 		return CSM_CIFCodeInCreditAc;
 	}
-	
-	@FindBy(id="lookuptxt_trs_ac_sl_D001MT")
+	//id="lookuptxt_trs_ac_sl_D001MT"
+	@FindBy(xpath="//input[@id='lookuptxt_to_trs_ac_sl_D001MT']")
 	private WebElement CSM_SerialInCreditAc;
 	public WebElement CSMSerialInCreditAc() {
 		return CSM_SerialInCreditAc;
@@ -143,7 +144,7 @@ public class CSM_TransactionObj {
 		return CSM_OkButtonInWarningPopUpMenu;
 	}
 	//id="lookuptxt_trs_cy_D001MT"
-	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_CY']")
+	@FindBy(id="lookuptxt_trs_cy_D001MT")
 	private WebElement CSM_CurrencyInMaintenanceScreen;
 
 	public WebElement CSMCurrencyInMaintenanceScreen() {
@@ -262,14 +263,26 @@ public class CSM_TransactionObj {
 	public WebElement CSMTransactionNoInApproveScreen() {
 		return CSM_TransactionNoInApproveScreen;
 	}
+
 	
-	@FindBy(id="td_trxMgntGridTbl_Id_D001AU_1_ctstrsVO.TRS_NO")
+	@FindBy(xpath="//td[@id='td_trxMgntGridTbl_Id_D001MT_1_ctstrsVO.TRS_NO']")
 	private WebElement CSM_DoubleClickOnTheTransactionNo;
 
 	public WebElement CSMDoubleClickOnTheTransactionNo() {
 		return CSM_DoubleClickOnTheTransactionNo;
 	}		
-			
+	
+
+		
+	@FindBy(xpath = "//td[@id='td_trxMgntGridTbl_Id_D001AU_1_ctstrsVO.TRS_NO']")
+
+    private WebElement Transactions_transactionNo_Doubleclk;
+ 
+    public WebElement Transactions_transactionNo_Doubleclk() {
+
+        return Transactions_transactionNo_Doubleclk;
+
+    }
 	@FindBy(xpath = "//span[contains(text(),' Approve ')]//parent::button")
 	private WebElement CSM_ApproveButtonInApproveScreen;
 
@@ -547,6 +560,8 @@ public class CSM_TransactionObj {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
 	}
 	
+	
+	
 	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']") //button[@id='ok_btn_4_E000MA']
 	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
 
@@ -685,7 +700,8 @@ public class CSM_TransactionObj {
 				public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode() {
 				return csmParam_AccountParameters_AccountTypes_UPA_TypeCode;
 				}
-				@FindBy(xpath = "//td[@id='td_acctypeList_GridTbl_Id_P017MA_1_TYPE_CODE']")
+				//td[@id='td_acctypeList_GridTbl_Id_P017MA_1_TYPE_CODE']
+				@FindBy(xpath = "(//td[text()='96145'])[1]")
 				private WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick ;
 
 				public WebElement csmParam_AccountParameters_AccountTypes_UPA_TypeCode_doubleClick() {
@@ -910,6 +926,21 @@ public class CSM_TransactionObj {
 
 				}
 
+				
+				@FindBy(xpath="//span[text()='grant_all_key']")
+
+				private WebElement grantallkey_InEcoSector;
+
+				public WebElement grantallkey_InEcoSector()
+
+				{
+
+				    return grantallkey_InEcoSector;
+
+				}
+				
+				
+				
 				@FindBy(xpath="//span[text()=' Limits ']")
 
 				private WebElement limitsButtonInUpdateAfterApprove;
