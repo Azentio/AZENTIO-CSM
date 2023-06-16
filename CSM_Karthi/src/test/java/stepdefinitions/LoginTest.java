@@ -28,6 +28,12 @@ public class LoginTest extends BaseClass {
 		driver.get(configFileReader.getCSMApplicationUrl());
 		csmLogin.loginIntoCSMApplication("CSMUser1");
 	}
+	@Given("^navigate to CSM application and login with valid credentials forBranch2$")
+	public void navigate_to_csm_application_and_login_with_valid_credentials_forBranch2() throws Throwable {
+		
+		driver.get(configFileReader.getCSMApplicationUrl());
+		csmLogin.loginIntoCSMApplication("CSMUser2");
+	}
 	@Given("^navigate to CSM application and login with valid credentials TellerUser$")
 	public void navigate_to_csm_application_and_login_with_valid_credentials_TellerUser() throws Throwable {
 		

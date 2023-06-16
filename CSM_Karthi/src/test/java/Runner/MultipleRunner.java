@@ -61,9 +61,9 @@ import utilities.ExtentTestManager;
 			//testCaseTagsfromExcel1.add("TRS_127");
 			//testCaseTagsfromExcel1.add("TRS_128_01");
 			//testCaseTagsfromExcel1.add("TRS_128");
-			testCaseTagsfromExcel1.add("TRS_111_PreReq");
-		testCaseTagsfromExcel1.add("TRS_111");
-			testCaseTagsfromExcel1.add("TRS_111_PostReq");
+			testCaseTagsfromExcel1.add("TRS_115_Prereq");
+		testCaseTagsfromExcel1.add("TRS_115");
+			testCaseTagsfromExcel1.add("TRS_115_PostReq");
 			//testCaseTagsfromExcel1.add("TRS_140");
 
 			MultipleRunner newExcelTestRunner= new MultipleRunner();

@@ -671,6 +671,27 @@ public class CSMSADS_Tranactiononstaff_step {
 
 	}
 
+	@And("User Click Ok Button for confirmation PopUp for Company Holiday")
+	public void user_click_ok_button_for_confirmation_pop_up_for_company_holiday() {
+		for (int i = 0; i < 50; i++) {
+			try {
+				if (transactiononstaffaccObj.csmOkButtonForConfirmationPopUpForCompanyHoliday().isDisplayed()) {
+					seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+							transactiononstaffaccObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+					seleniumActions.getClickAndActionsHelper()
+							.moveToElement(transactiononstaffaccObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+					seleniumActions.getClickAndActionsHelper().clickOnElement(
+							transactiononstaffaccObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 49) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
 	@And("^User Click Ok Button in Information PopUp menu$")
 	public void user_click_ok_button_in_information_popup_menu() throws Throwable {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
@@ -968,23 +989,23 @@ public class CSMSADS_Tranactiononstaff_step {
 
 	@And("^user check if the  values is entered or not$")
 	public void user_check_if_the_values_is_entered_or_not() throws Throwable {
-for (int i = 0; i < 200; i++) {
-	try {
-		javascriptHelper.scrollIntoView(transactiononstaffaccObj.checkIfValueIsEntered());
-		if ((transactiononstaffaccObj.checkIfValueIsEntered().getAttribute("prevvalue")) != null) {
-			transactiononstaffaccObj.checkIfValueIsEntered().isDisplayed();
+		for (int i = 0; i < 200; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactiononstaffaccObj.checkIfValueIsEntered());
+				if ((transactiononstaffaccObj.checkIfValueIsEntered().getAttribute("prevvalue")) != null) {
+					transactiononstaffaccObj.checkIfValueIsEntered().isDisplayed();
 
-		} else {
+				} else {
 
+				}
+
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
 		}
 
-	} catch (Exception e) {
-		if (i==199) {
-			Assert.fail(e.getMessage());
-		}
-	}
-}
-		
 	}
 
 	@Then("^user Enter the Transaction number$")
@@ -998,13 +1019,13 @@ for (int i = 0; i < 200; i++) {
 				transactiononstaffaccObj.Transactions_transactionNo_codeValues().sendKeys(Keys.ENTER);
 				break;
 			} catch (Exception e) {
-                       if (i==199) {
-	Assert.fail(e.getMessage());
-}
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
 			}
 
 		}
-		
+
 	}
 
 	@And("^User click the Approve screens$")

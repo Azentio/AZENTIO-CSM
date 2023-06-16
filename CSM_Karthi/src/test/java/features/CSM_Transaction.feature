@@ -71,6 +71,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     #And User Click on Technical Details Icon
@@ -85,10 +86,10 @@ Feature: To test the funcnalities of Transaction module
     And enter values of Cif code
     Then enter values of serial
     Then System show the warning popup clikc ok button
-    And user enter the currency
+    And user enter the currencycodeD2
     And Enters the Amount in this Checkbox
     And Enter the Amount in this Checkbox clicksomething
-   And user check if the  value is entered or not
+    And user check if the  value is entered or not
     #And user click the ok
     And User Click Save Button in Maintenance Screen
     And User get Transaction number from sucess pop upforTRS_027
@@ -97,13 +98,13 @@ Feature: To test the funcnalities of Transaction module
     And User click the Approve screen
     Then user Enters the Transaction number forTRS_114
     And double click the Value
-     And click the Approve button
+    And click the Approve button
     And system show the popup success user click the ok button
     #And system show the popup success user click the ok Button
     And User click the Maintenance screen
-     #And user click the save ok Button
+    #And user click the save ok Button
     Then click the search button
-     Then user Enters the Transaction number forTRS_027
+    Then user Enters the Transaction number forTRS_027
     And double click the data
     Then click the Booked Entries
 
@@ -131,6 +132,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -147,7 +149,6 @@ Feature: To test the funcnalities of Transaction module
     Then System show the warning popup clikc ok button
     And user enter the currency
     And Enter the Amount in this Checkbox
-    
     And user check if the  values is entered or not
     #And User Click Transactions Maintenance for loading Amount
     And User Click Save Button in Maintenance Screen
@@ -184,6 +185,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -209,7 +211,7 @@ Feature: To test the funcnalities of Transaction module
     Then user Enters the Transaction number forTRS_026
     And double click the Value
     And click the Approve button
-     And system show the popup success user click the ok button
+    And system show the popup success user click the ok button
 
   @TRS_063
   Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund Checked/ Allow Overdraw unchecked
@@ -254,6 +256,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popups
     #And User Click on Technical Details Icon
@@ -325,6 +328,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popups
     #And User Click on Technical Details Icon
@@ -395,6 +399,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popups
     And User Click on Technical Details Icon
@@ -461,6 +466,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popups
     And User Click on Technical Details Icon
@@ -527,6 +533,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popups
     And User Click on Technical Details Icon
@@ -547,20 +554,19 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the GLCode under TRXType for debitAccount
     And user Enter the CifCode under TRXType for debitAccount
     And user Enter the SerialNo under TRXType for debitAccount
-    
     And Enter the Amount in this Checkbox
     And user check if the  value is entered or not
     And User Click Save Button in Maintenance Screen
-     And User get Transaction number from sucess pop upforTRS_067
+    And User get Transaction number from sucess pop upforTRS_067
     And User Click Ok Button in Success PopUp Menu
     And User click the Approve screens
     Then user Enters the Transaction number forTRS_067
     And double click the Value
     And click the Approve button
-     And system show the popup success user click the ok button
-    
-  @TRS_110_PREREQ_01
-  Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
+    And system show the popup success user click the ok button
+
+  @TRS_110_to_115_PREREQ
+  Scenario: PreRequisites for Testcases TRS110 to TRS115 if the Limit is Exists to be deleted
     #Prerequestis No1
     Given navigate to CSM param application and login with valid credentials
     And user update test data set id for TRS_110
@@ -628,6 +634,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -678,7 +685,7 @@ Feature: To test the funcnalities of Transaction module
     And user click the ok
 
   @TRS_111_PreReq
-  Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
+  Scenario: Checking Cash Deposit Transaction - Priority Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
     #Prerequisites
     Given navigate to CSM param application and login with valid credentials
     And user update test data set id for TRS_111
@@ -708,12 +715,13 @@ Feature: To test the funcnalities of Transaction module
 
   #Steps
   @TRS_111
-  Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
+  Scenario: Checking Cash Deposit Transaction - Priority Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
     Given navigate to CSM application and login with valid credentials
     And user update test data set id for TRS_111
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -728,7 +736,7 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the CifCode under TRXType
     #Then System show the warning popup clikc ok button
     And user Enter the SerialNo under TRXType
-    #Then System show the warning popup clikc ok button
+    Then System show the warning popup clikc ok button
     And user enter the currency
     And Enter the Amount in this Checkbox
     And user check if the  value is entered or not
@@ -743,7 +751,7 @@ Feature: To test the funcnalities of Transaction module
     And system show the popup success user click the ok button
 
   @TRS_111_PostReq
-  Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Amount > Limit - Specific vs. General
+  Scenario: Checking Cash Deposit Transaction - Priority Deposit Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
     Given navigate to CSM param application and login with valid credentials
     And user update test data set id for TRS_111
     And user click the parameters menu
@@ -804,6 +812,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -816,7 +825,7 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the CurrencyCode under TRXType
     And user Enter the GLCode under TRXType
     And user Enter the CifCode under TRXType
-    Then System show the warning popup clikc ok button
+    #Then System show the warning popup clikc ok button
     And user Enter the SerialNo under TRXType
     Then System show the warning popup clikc ok button
     And user enter the currency
@@ -887,6 +896,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -899,7 +909,7 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the CurrencyCode under TRXType
     And user Enter the GLCode under TRXType
     And user Enter the CifCode under TRXType
-    Then System show the warning popup clikc ok button
+    #Then System show the warning popup clikc ok button
     And user Enter the SerialNo under TRXType
     Then System show the warning popup clikc ok button
     And user enter the currency
@@ -979,6 +989,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -991,7 +1002,7 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the CurrencyCode under TRXType
     And user Enter the GLCode under TRXType
     And user Enter the CifCode under TRXType
-    Then System show the warning popup clikc ok button
+    #Then System show the warning popup clikc ok button
     And user Enter the SerialNo under TRXType
     Then System show the warning popup clikc ok button
     And user enter the currency
@@ -1071,6 +1082,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -1083,7 +1095,7 @@ Feature: To test the funcnalities of Transaction module
     And user Enter the CurrencyCode under TRXType
     And user Enter the GLCode under TRXType
     And user Enter the CifCode under TRXType
-    Then System show the warning popup clikc ok button
+    #Then System show the warning popup clikc ok button
     And user Enter the SerialNo under TRXType
     Then System show the warning popup clikc ok button
     And user enter the currency
@@ -1119,13 +1131,14 @@ Feature: To test the funcnalities of Transaction module
     And user click the save ok button
     And user click the ok
 
-  @TRS_127_01 
+  @TRS_127_01
   Scenario: Checking Cash Deposit Transaction - Alert Approve
     Given navigate to CSM application and login with valid credentials
     And user update test data set id for TRS_127
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
 
@@ -1136,6 +1149,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     #And User Click on Technical Details Icon
@@ -1168,6 +1182,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
 
@@ -1178,6 +1193,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And user click Transaction submenu on CSMCore
@@ -1207,6 +1223,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
 
@@ -1266,6 +1283,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And user click Transaction submenu on CSMCore
@@ -1295,6 +1313,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
 
@@ -1337,6 +1356,7 @@ Feature: To test the funcnalities of Transaction module
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And user click the ok
     And User Click on Close Button in Change Running Date Popup
     And user click Transaction submenu on CSMCore
@@ -1358,3 +1378,110 @@ Feature: To test the funcnalities of Transaction module
     And User Click Ok Button in Success PopUp Menu
     And user click the BranchManager Account in the Alert popup
     And user click the send button in Alert popup
+
+  @TRS_133_01
+  Scenario: Checking Cash Deposit Transaction - Alert Approve - Manager Branch 2
+    Given navigate to CSM application and login with valid credentials forBranch2
+    And user update test data set id for TRS_133
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click the ok
+    And User Click on Close Button in Change Running Date Popup
+
+  @TRS_133
+  Scenario: Checking Cash Deposit Transaction - Alert Approve - Manager Branch 2
+    Given navigate to CSM application and login with valid credentials TellerUser
+    And user update test data set id for TRS_133
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click the ok
+    And User Click on Close Button in Change Running Date Popup
+    And user click Transaction submenu on CSMCore
+    And user click Maintance screen under Transaction submenu
+    And user Enter the TRXType on maintance screen
+    And user Enter the BranchCode under TRXType
+    And user Enter the CurrencyCode under TRXType
+    And user Enter the GLCode under TRXType
+    And user Enter the CifCode under TRXType
+    #Then System show the warning popup clikc ok Button
+    And user Enter the SerialNo under TRXType
+    Then System show the warning popup clikc ok button
+    And user enter the currency
+    And Enter the Amount in this Checkbox
+    And user check if the  value is entered or not
+    And user click the ok
+    And User Click Save Button in Maintenance Screen
+    And User get Transaction number from success pop up forTRS_133
+    And User Click Ok Button in Success PopUp Menu
+    And user click the BranchManager Account in the Alert popup
+    And user click the send button in Alert popup
+
+  @TRS_134_01
+  Scenario: Checking Cash Deposit Transaction - Alert Reject - Manager Branch 2
+    Given navigate to CSM application and login with valid credentials forBranch2
+    And user update test data set id for TRS_134
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click the ok
+    And User Click on Close Button in Change Running Date Popup
+
+  @TRS_134
+  Scenario: Checking Cash Deposit Transaction - Alert Reject - Manager Branch 2
+    Given navigate to CSM application and login with valid credentials TellerUser
+    And user update test data set id for TRS_134
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
+    And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click the ok
+    And User Click on Close Button in Change Running Date Popup
+    And user click Transaction submenu on CSMCore
+    And user click Maintance screen under Transaction submenu
+    And user Enter the TRXType on maintance screen
+    And user Enter the BranchCode under TRXType
+    And user Enter the CurrencyCode under TRXType
+    And user Enter the GLCode under TRXType
+    And user Enter the CifCode under TRXType
+    #Then System show the warning popup clikc ok Button
+    And user Enter the SerialNo under TRXType
+    Then System show the warning popup clikc ok button
+    And user enter the currency
+    And Enter the Amount in this Checkbox
+    And user check if the  value is entered or not
+    And user click the ok
+    And User Click Save Button in Maintenance Screen
+    And User get Transaction number from success pop up forTRS_134
+    And User Click Ok Button in Success PopUp Menu
+    And user click the BranchManager Account in the Alert popup
+    And user click the send button in Alert popup
+
+  @TRS_110_toTRS_115_PostReq
+  Scenario: PostRequisites for Testcases TRS110 to TRS115 To add the limits for All Transaction
+    Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_115
+    And user click the parameters menu
+    And user click the system parameters submenu
+    And user click the User screen in system parameters
+    And user click the update after approve screen
+    And user click and send the values in user id under update after approve screens
+    And user double click the user id
+    And User click the Limit button  in update after approve screen
+    And user  click add button under Limits
+    And user enter the value of currency in Limits
+    And User enter the Transaction type no2 in Limits
+    And user click the ok button under limit
+    And user click the update after approve button
+    And user click the save ok button
+    And user click the ok
+    And user click the approve in user screen
+    And user click and send the values in user id under Approve screens
+    And user double click the user id in approve screen
+    And user click the approve box
+    And user click the save ok button
+    And user click the ok

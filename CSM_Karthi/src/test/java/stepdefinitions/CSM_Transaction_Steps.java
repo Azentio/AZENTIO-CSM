@@ -1,7 +1,7 @@
 package stepdefinitions;
 
-import java.io.IOException;
-import java.util.HashMap;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -493,6 +493,13 @@ public class CSM_Transaction_Steps {
 		CSMTransactionObject.Transactions_debitAcc_currency().sendKeys(Keys.TAB);
 	}
 
+	@And("^user enter the currencycodeD2$")
+	public void user_enter_the_currencycodeD2() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.Transactions_debitAcc_currency());
+		clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_debitAcc_currency());
+		CSMTransactionObject.Transactions_debitAcc_currency().sendKeys(testData.get("CurrencyCode_D2"));
+		CSMTransactionObject.Transactions_debitAcc_currency().sendKeys(Keys.TAB);
+	}
 	@And("^Enters the Amount in this Checkbox$")
 	public void Enters_the_Amount_in_this_Checkbox() throws Throwable {
 
@@ -509,9 +516,9 @@ public class CSM_Transaction_Steps {
 		waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.Transactions_EnterAmount());
 		clicksAndActionsHelper.clickOnElement(CSMTransactionObject.Transactions_EnterAmount());
 		CSMTransactionObject.Transactions_EnterAmount().sendKeys(testData.get("Amount"));
-		
+		Thread.sleep(1000);
 		CSMTransactionObject.Transactions_EnterAmount().sendKeys(Keys.TAB);
-		//Thread.sleep(1000);
+		
 	}
 	@And("^Enter the Amount in this Checkbox clicksomething$")
 	public void Enter_the_Amount_in_this_Checkbox_clicksomething() throws Throwable {
@@ -1522,7 +1529,11 @@ if (i==199) {
 		seleniumActions.getClickAndActionsHelper().moveToElement(CSMTransactionObject.CSMDateInUserRunningDate());
 		seleniumActions.getClickAndActionsHelper().clickOnElement(CSMTransactionObject.CSMDateInUserRunningDate());
 		CSMTransactionObject.CSMDateInUserRunningDate().clear();
-		CSMTransactionObject.CSMDateInUserRunningDate().sendKeys(testData.get("Dates"));
+		//CSMTransactionObject.CSMDateInUserRunningDate().sendKeys(testData.get("Dates"));
+		DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate date =LocalDate.now();
+        String format = date.format(dtFormatter);
+        CSMTransactionObject.CSMDateInUserRunningDate().sendKeys(format);
 	}
 
 	@And("^user retrive the existing record from the limits screen$")
@@ -1847,11 +1858,38 @@ if (i==199) {
 	                }
 			}
 		}
-		
-		
-	    
-	    
+	
 	}
+//TRS_133
+	
+		@And("^user update test data set id for TRS_133$")
+		public void user_update_test_data_set_id_for_trs133() throws Throwable {
+			testData = excelDataForTransaction.getTestdata("TRS_133_D1");
+		}
 
+		@And("^User get Transaction number from success pop up forTRS_133$")
+		public void user_get_transaction_number_from_success_pop_up_forTRS_133() throws Throwable {
+			waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.getTransactionNumber());
+			String transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+			System.out.println(transactionNo);
+			excelDataForTransaction.updateTestData("TRS_133_D1", "TRXNo", transactionNo);
+			testData = excelDataForTransaction.getTestdata("TRS_133_D1");
+		}
+		
+		//TRS_134
+		
+			@And("^user update test data set id for TRS_134$")
+			public void user_update_test_data_set_id_for_trs134() throws Throwable {
+				testData = excelDataForTransaction.getTestdata("TRS_134_D1");
+			}
+
+			@And("^User get Transaction number from success pop up forTRS_134$")
+			public void user_get_transaction_number_from_success_pop_up_forTRS_134() throws Throwable {
+				waitHelper.waitForElementwithFluentwait(driver, CSMTransactionObject.getTransactionNumber());
+				String transactionNo = CSMTransactionObject.getTransactionNumber().getText().substring(15, 19);
+				System.out.println(transactionNo);
+				excelDataForTransaction.updateTestData("TRS_134_D1", "TRXNo", transactionNo);
+				testData = excelDataForTransaction.getTestdata("TRS_134_D1");
+			}
 
 }

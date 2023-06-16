@@ -448,7 +448,12 @@ public class CSMSADS_TransactiononstaffaccObj {
 	public WebElement CSMOkButtonInInformationPopUpMenu() {
 		return CSM_OkButtonInInformationPopUpMenu;
 	}
-
+	@FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday;
+	public WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday()
+	{
+	    return csmOkButtonForConfirmationPopUpForCompanyHoliday;
+	}
 	@FindBy(id = "_header_rundate_dialog_close")
 	private WebElement CSM_CloseButtonInChangeRunningDate;
 

@@ -1,7 +1,5 @@
 Feature: To verify the functionality of Chequebook request module
 
-
-
   @CHB_186
   Scenario: Functional testing -Testing "Chequebook Request - Send To/Receive From Provider" Screen If the DDL is set to logged-in branch
     Given navigate to CSM param application and login with valid credentials
@@ -31,14 +29,13 @@ Feature: To verify the functionality of Chequebook request module
     And user click the send to provider screen
     And user click the retrive button in send to provider
     And user update test data set id for CHB_186_D3 in send to provider screen
-    
     And user click the receive from provider screen
     And user update test data set id for CHB_186_D3 in receive from provider screen
- 
+
   @CHB_187
   Scenario: Functional testing -Testing "Chequebook Request - Send To/Receive From Provider" Screen If the DDL is set to all branches
     Given navigate to CSM param application and login with valid credentials
-   And user click the parameters menu
+    And user click the parameters menu
     And user click the system parameters submenu
     And user click the User screen in system parameters
     And user click the update after approve screen
@@ -66,12 +63,12 @@ Feature: To verify the functionality of Chequebook request module
     #And user Enter the  branch code in send to provider
     And user click the receive from provider screen
     And user update test data set id for CHB_187_D3 in receive from provider screen
-  #And user Enter the  branch code in receive from provider
 
- @CHB_180
+  #And user Enter the  branch code in receive from provider
+  @CHB_180
   Scenario: Cheque book - GL type field is 'Notify and Don’t Proceed','Proceed on insufficient funds' flag checked at Transaction type
     Given navigate to CSM param application and login with valid credentials
-     And user update test data set id for CHB_180
+    And user update test data set id for CHB_180
     And user click the parameters menu
     And user click the Account parameters submenu
     And user click the General Ledger submenu
@@ -88,7 +85,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
-    And user click the ok 
+    And user click the ok
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
@@ -103,11 +100,12 @@ Feature: To verify the functionality of Chequebook request module
     And User double click the record Approve screen
     And user click the Approve button on Approve field
     And user click the save ok button
-    And user click the ok   
-  Given navigate to CSM application and login with valid credentials 
-   And User Click on Date to Change the Current Date
-    And User Enter the Date in User Running Date for CHB_180
+    And user click the ok
+    Given navigate to CSM application and login with valid credentials
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -117,7 +115,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field
     And user Enter the code on chequebookrequest maintanance screen
-   # And user click on some thing in visible screen
+    # And user click on some thing in visible screen
     And user Enter the Branchcode on chequebookrequest maintenance screen
     And user Enter the Currencycode on chequebookrequest maintenance screen
     And user Enter the GLCode on chequebookrequest maintenance screen
@@ -130,14 +128,14 @@ Feature: To verify the functionality of Chequebook request module
     And user enter the cheque code on approve screen
     And user double click the cheque code on approve screen
     And user click the ok
-   # And that warning popup
+    # And that warning popup
     And user Approve the cheque record on Approve field
     And user validate the cannot Proceed Message
-    
-    @CHB_181
+
+  @CHB_181
   Scenario: Cheque book - GL type field is 'Notify and Proceed ','Proceed on insufficient funds' flag unchecked at Transaction type
     Given navigate to CSM param application and login with valid credentials
-     And user update test data set id for CHB_181
+    And user update test data set id for CHB_181
     And user click the parameters menu
     And user click the Account parameters submenu
     And user click the General Ledger submenu
@@ -154,7 +152,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
-    And user click the ok 
+    And user click the ok
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
@@ -169,11 +167,12 @@ Feature: To verify the functionality of Chequebook request module
     And User double click the record Approve screen
     And user click the Approve button on Approve field
     And user click the save ok button
-    And user click the ok  
-  Given navigate to CSM application and login with valid credentials
-  And User Click on Date to Change the Current Date
-  And User Enter the Date in User Running Date for CHB_180
+    And user click the ok
+    Given navigate to CSM application and login with valid credentials
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -183,7 +182,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field
     And user Enter the code on chequebookrequest maintanance screen
-   # And user click on some thing in visible screen
+    # And user click on some thing in visible screen
     And user Enter the Branchcode on chequebookrequest maintenance screen
     And user Enter the Currencycode on chequebookrequest maintenance screen
     And user Enter the GLCode on chequebookrequest maintenance screen
@@ -196,15 +195,14 @@ Feature: To verify the functionality of Chequebook request module
     And user enter the cheque code on approve screen
     And user double click the cheque code on approve screen
     And user click the ok
-   # And that warning popup
+    # And that warning popup
     And user Approve the cheque record on Approve field
     And user validate the cannot Proceed Message
-    
-    
-    @CHB_182
+
+  @CHB_182
   Scenario: Cheque book -  GL type field is 'Notify and Proceed ','Proceed on insufficient funds' flag checked at Transaction type
     Given navigate to CSM param application and login with valid credentials
-     And user update test data set id for CHB_181
+    And user update test data set id for CHB_181
     And user click the parameters menu
     And user click the Account parameters submenu
     And user click the General Ledger submenu
@@ -221,13 +219,13 @@ Feature: To verify the functionality of Chequebook request module
     And user click Additional Details
     And user click the Approve button under drop down menu
     And user click the ok button on information popup
-    And user click the ok 
+    And user click the ok
     And user click the system parameters submenu
     And user click the transationtype submenu under systemparameters
     And user click the updateafterapprove menu under transationtype
     And user Enter the code in inputfield on updateafterapprove screen under transactiontype
     And User double click the record under updateafterapprove screen
-   And User Check the ProceedOnInsufficientFund chequebox
+    And User Check the ProceedOnInsufficientFund chequebox
     And User click UpdateAfterApprove button on updateafterapprove field
     And user click the save ok button
     And user click the ok
@@ -236,11 +234,12 @@ Feature: To verify the functionality of Chequebook request module
     And User double click the record Approve screen
     And user click the Approve button on Approve field
     And user click the save ok button
-    And user click the ok  
-  Given navigate to CSM application and login with valid credentials
-  And User Click on Date to Change the Current Date
-  And User Enter the Date in User Running Date for CHB_180
+    And user click the ok
+    Given navigate to CSM application and login with valid credentials
+    And User Click on Date to Change the Current Date
+    And User Enter the Date in User Running Dates
     And User Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -250,7 +249,7 @@ Feature: To verify the functionality of Chequebook request module
     And user click the maintanance under the chequebookrequest screen
     And user Enter the NoOfCheques in the field
     And user Enter the code on chequebookrequest maintanance screen
-   # And user click on some thing in visible screen
+    # And user click on some thing in visible screen
     And user Enter the Branchcode on chequebookrequest maintenance screen
     And user Enter the Currencycode on chequebookrequest maintenance screen
     And user Enter the GLCode on chequebookrequest maintenance screen
@@ -263,9 +262,5 @@ Feature: To verify the functionality of Chequebook request module
     And user enter the cheque code on approve screen
     And user double click the cheque code on approve screen
     And user click the ok
-   # And that warning popup
+    # And that warning popup
     And user Approve the cheque record on Approve field
-    #And user validate the cannot Proceed Message
-    
-    
-    

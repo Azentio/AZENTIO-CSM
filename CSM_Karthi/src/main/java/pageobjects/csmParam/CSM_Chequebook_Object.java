@@ -351,6 +351,12 @@ public class CSM_Chequebook_Object {
 	public WebElement csmParam_Transactiontype_inputfield_doubleclick() {
 		return csmParam_Transactiontype_inputfield_doubleclick;
 	}
+	@FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday;
+	public WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday()
+	{
+	    return csmOkButtonForConfirmationPopUpForCompanyHoliday;
+	}
 
 	@FindBy(xpath = "//input[@id='proceed_on_insuff_fund_P024MA']")
 	private WebElement csmParam_Transactiontype_proceedoninsufficentfunds;

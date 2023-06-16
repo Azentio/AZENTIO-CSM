@@ -74,6 +74,7 @@ public class CSM_Transaction_Object {
 	public WebElement CSMParam_TransactionType_Approve_code_doubleClick() {
 		return CSMParam_TransactionType_Approve_code_doubleClick;
 	}
+
 	@FindBy(xpath = "(//td[text()='55']//following::td[text()='Transfer intra'])[1]")
 	private WebElement CSMParam_TransactionType_Approve_code_doubleClickforTRS_064;
 
@@ -259,28 +260,28 @@ public class CSM_Transaction_Object {
 	public WebElement Transactions_Approvescrn() {
 		return Transactions_Approvescrn;
 	}
-	
+
 	@FindBy(xpath = "//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
 	private WebElement Transactions_transactionNo_codeValue;
 
 	public WebElement Transactions_transactionNo_codeValue() {
 		return Transactions_transactionNo_codeValue;
 	}
+
 	@FindBy(xpath = "//input[@id='trxMgntGridTbl_Id_D001MT_gs_ctstrsVO.TRS_NO']")
 	private WebElement Transactions_transactionNo_codeValue2;
 
 	public WebElement Transactions_transactionNo_codeValue2() {
 		return Transactions_transactionNo_codeValue2;
 	}
+
 	@FindBy(xpath = "//a[contains(text(),'Transactions / Maintenance')]//parent::td//following-sibling::td//span")
 
 	private WebElement transaction_closeTransactionTab;
 
-	 
-
 	public WebElement transactionCloseTransactionTab() {
 
-	return transaction_closeTransactionTab;
+		return transaction_closeTransactionTab;
 
 	}
 
@@ -304,7 +305,8 @@ public class CSM_Transaction_Object {
 	public WebElement Transactions_trxno_code() {
 		return Transactions_trxno_code;
 	}
-	//id="td_trxMgntGridTbl_Id_D001MT_1_ctstrsVO.TRS_NO"
+
+	// id="td_trxMgntGridTbl_Id_D001MT_1_ctstrsVO.TRS_NO"
 	@FindBy(xpath = "//td[@id='td_trxMgntGridTbl_Id_D001MT_1_ctstrsVO.TRS_NO']")
 	private WebElement Transactions_doubleclk_codevalue;
 
@@ -355,6 +357,7 @@ public class CSM_Transaction_Object {
 	public WebElement csmParam_Transactiontype_inputfield_doubleclickforTRS_064() {
 		return csmParam_Transactiontype_inputfield_doubleclickforTRS_064;
 	}
+
 	@FindBy(xpath = "//td[text()='Accounts Parameters']")
 	private WebElement csmParam_AccountParameters;
 
@@ -476,6 +479,13 @@ public class CSM_Transaction_Object {
 		return Transactions_transactionNo_codeValues;
 	}
 
+	@FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday;
+
+	public WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday() {
+		return csmOkButtonForConfirmationPopUpForCompanyHoliday;
+	}
+
 	@FindBy(xpath = "//div[contains(text(),'Saved Successfully')]")
 	private WebElement getTransactionNumber;
 
@@ -526,8 +536,6 @@ public class CSM_Transaction_Object {
 	}
 
 //TRS_111
-
-	
 
 	@FindBy(xpath = "//td[text()='User']")
 	private WebElement csmParam_Systemparameter_User;
@@ -719,13 +727,13 @@ public class CSM_Transaction_Object {
 	public WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check() {
 		return csm_sysparam_user_updateafterapprove_Limits_addbtn_proceediflimit_check;
 	}
+
 	@FindBy(xpath = "//a[text()='Transactions / Maintenance']")
 	private WebElement clicksomething;
 
 	public WebElement clicksomething() {
 		return clicksomething;
 	}
-	
 
 	@FindBy(id = "ok_btn_2_E000MA")
 	private WebElement csm_sysparam_user_updateafterapprove_Limits_addbtn_ok;
@@ -861,101 +869,120 @@ public class CSM_Transaction_Object {
 	public WebElement Transaction_maintanance_alertclickingUserId_SendBtn() {
 		return Transaction_maintanance_alertclickingUserId_SendBtn;
 	}
-	
-	//TRS_139
+
+	// TRS_139
 	@FindBy(xpath = "//td[text()='Control Record']//parent::td")
 	private WebElement SystemParameters_ControlRecord;
 
 	public WebElement SystemParameters_ControlRecord_606() {
 		return SystemParameters_ControlRecord;
 	}
-	
+
 	@FindBy(xpath = "//td[text()='Control Record']/ancestor::a/following-sibling::ul//span[text()='Update After Approve']")
 	private WebElement SystemParameters_ControlRecord_UPA;
 
 	public WebElement SystemParameters_ControlRecord_UPA_606() {
 		return SystemParameters_ControlRecord_UPA;
 	}
-	
+
 	@FindBy(xpath = "//a[text()=' Alert Activation ']")
 	private WebElement SystemParameters_ControlRecord_UPA_AlertActivation;
 
 	public WebElement SystemParameters_ControlRecord_UPA_AlertActivation_606() {
 		return SystemParameters_ControlRecord_UPA_AlertActivation;
 	}
+
 	@FindBy(xpath = "//span[text()='Account Balance Overdrawn']//parent::td/div")
 	private WebElement ControlRecord_UPA_AlertActivation_flag;
 
 	public WebElement ControlRecord_UPA_AlertActivation_flag_606() {
 		return ControlRecord_UPA_AlertActivation_flag;
 	}
+
 	@FindBy(xpath = "//tr[@id='TRX']")
 	private WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn1;
 
 	public WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn1_606() {
 		return ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn1;
 	}
+
 	@FindBy(xpath = "//input[@id='TRX_ctscontrolAlertVO.ACTIVATE_tab4_GridTbl_Id_O001UP']")
 	private WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn1_Checkbox1;
+
 	public WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn1_Checkbox1_606() {
-		
+
 		return ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn1_Checkbox1;
 	}
+
 	@FindBy(xpath = "(//td[@id='td_tab4_GridTbl_Id_O001UP_1_CUSTOM_FIELD'])[2]")
 	private WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn2;
+
 	public WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn2_606() {
-		
+
 		return ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn2;
 	}
+
 	@FindBy(xpath = "//input[@id='1x1x10_ctscontrolAlertVO.ACTIVATE_tab4_GridTbl_Id_O001UP']")
 	private WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn2_CheckBox2;
+
 	public WebElement ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn2_CheckBox2_606() {
-		
+
 		return ControlRecord_UPA_AlertActivation_flag_AccountBalanceOverdrawn2_CheckBox2;
 	}
-	
+
 	@FindBy(xpath = "//label[@id='controlRecordMaint_FormId_O001UP_Update_After_Approve_key']")
 	private WebElement ControlRecord_UPA_AlertActivation_UPAButton;
+
 	public WebElement ControlRecord_UPA_AlertActivation_UPAButton_606() {
-		
+
 		return ControlRecord_UPA_AlertActivation_UPAButton;
 	}
+
 	@FindBy(xpath = "//td[text()='Control Record']/ancestor::a/following-sibling::ul//span[text()='Approve']")
 	private WebElement ControlRecord_UPA_AlertActivation_ApproveField;
+
 	public WebElement ControlRecord_UPA_AlertActivation_ApproveField_606() {
-		
+
 		return ControlRecord_UPA_AlertActivation_ApproveField;
 	}
+
 	@FindBy(xpath = "//label[@id='controlRecordMaint_FormId_O001P_Approve_key']")
 	private WebElement ControlRecord_UPA_AlertActivation_ApproveField_ApproveButton;
+
 	public WebElement ControlRecord_UPA_AlertActivation_ApproveField_ApproveButton_606() {
-		
+
 		return ControlRecord_UPA_AlertActivation_ApproveField_ApproveButton;
 	}
-	
-	//TRS_140
+
+	// TRS_140
 	@FindBy(xpath = "//td[text()='System Parameters']//parent::td")
 	private WebElement csmParam_Systemparameter;
 
 	public WebElement csmParam_Systemparameter() {
 		return csmParam_Systemparameter;
 	}
+
 	@FindBy(xpath = "//label[@id='lbl_multi_branch_P024MA']")
-	private WebElement SystemParameters_TransactionType_UPA_EnableMultiBranchCkeckbox ;
+	private WebElement SystemParameters_TransactionType_UPA_EnableMultiBranchCkeckbox;
+
 	public WebElement SystemParameters_TransactionType_UPA_EnableMultiBranchCkeckbox_606() {
-		
+
 		return SystemParameters_TransactionType_UPA_EnableMultiBranchCkeckbox;
 	}
+
 	@FindBy(xpath = "(//td[@id='td_tab4_GridTbl_Id_O001UP_4_CUSTOM_FIELD'])[1]")
-	private WebElement ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch ;
+	private WebElement ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch;
+
 	public WebElement ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch_606() {
-		
+
 		return ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch;
 	}
+
 	@FindBy(xpath = "//input[@id='1x1x13_ctscontrolAlertVO.ACTIVATE_tab4_GridTbl_Id_O001UP']")
-	private WebElement ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch_checkBox ;
+	private WebElement ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch_checkBox;
+
 	public WebElement ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch_checkBox_606() {
-		
+
 		return ControlRecords_UPA_AlertActivation_AccountBalanceoverdrawn_intraBranch_checkBox;
 	}
 
