@@ -30,13 +30,8 @@ public class CSM_TransactionsSteps {
     ExcelData CSM_TransactionsStepsExcelData = new ExcelData(path,"CSM_TRANSACTIONS","DataSet ID");
     Map<String, String> testData;
 	
-	    
-//	    @And("^user update test data set id for TRS_029$")
-//	    public void user_update_test_data_set_id_for_trs029() throws Throwable {
-//	    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_029_01");
-//		 
-//	    }
-//	   
+
+	   
 	@And("^User Click on Date to Change the Current Date$")
     public void user_click_on_date_to_change_the_current_date() throws Throwable {
     	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMDateToChangeTheCurrentDate());
@@ -206,60 +201,18 @@ public class CSM_TransactionsSteps {
 //			}   
 //	    }
 	    	
-//	    
-////	    @And("^User Click Transactions Maintenance for loading Currency code$")
-////	    public void user_click_transactions_maintenance_for_loading_currency_code() throws Throwable {
-////	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_TransactionsMaintenanceForLoading());
-////	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_TransactionsMaintenanceForLoading());
-////	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_TransactionsMaintenanceForLoading());
-////	    }
+
 	    @And("^User Enter the Amount in Maintenance Screen$")
 	    public void user_enter_the_amount_in_maintenance_screen() throws Throwable {
 	    		    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMAmountInMaintenanceScreen());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMAmountInMaintenanceScreen());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMAmountInMaintenanceScreen());
 	        CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
-	        //CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys("100",Keys.ENTER);
+	       
 	    		}
 
-//	    @And("^User Enter the Amount in Maintenance Screen$")
-//	    public void user_enter_the_amount_in_maintenance_screen() throws Throwable {
-//	    	for (int i = 0; i < 200; i++) {
-//	    		try {
-//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMAmountInMaintenanceScreen());
-//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMAmountInMaintenanceScreen());
-//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMAmountInMaintenanceScreen());
-//	        //CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys(testData.get("Amount"),Keys.TAB);
-//	        CSMTransactionObj.CSMAmountInMaintenanceScreen().sendKeys("1000",Keys.ENTER);
-//	        break;
-//				} catch (Exception e) {
-//					if (i==199) {
-//						Assert.fail(e.getMessage());
-//					}
-//				}			
-//			}
-//	 	
-//	    	for (int i = 0; i < 200; i++) {
-//	   		try {
-//	   			seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCurrencyName());
-//	    		CSMTransactionObj.CSMCurrencyName().isDisplayed();
-//	    			break;
-//				} catch (Exception e) {
-//					if (i==199) {
-//						Assert.fail(e.getMessage());
-//					}
-//				}			
-//			}
-//	    
-//	    }
-	 
-//	    @And("^User Click Transactions Maintenance for loading Amount$")
-//	    public void user_click_transactions_maintenance_for_loading_amount() throws Throwable {
-//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_TransactionsMaintenanceForLoading());
-//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_TransactionsMaintenanceForLoading());
-//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_TransactionsMaintenanceForLoading());
-//	    }
-	    
+
+
 	    
 	    @And("^User Click the Account Details in Maintenance Screen$")
 	    public void user_click_the_account_details_in_maintenance_screen() throws Throwable {
@@ -355,25 +308,22 @@ public class CSM_TransactionsSteps {
 	    		
 	    	        
 	    }
-//	    
-//	    @And("^User Get the Transaction No in Success PopUo Menu$")
-//	    public void user_get_the_transaction_no_in_success_popuo_menu() throws Throwable {
-//	    	String text = "";
-//	        for (int i = 0; i <200; i++) {
-//				try {
-//					text = CSMTransactionObj.CSMGetTheTransactionNo().getText();
-//				    break;
-//				} catch (Exception e) {
-//					if (i==199) {
-//						Assert.fail(e.getMessage());
-//					}
-//				}
-//			}
-//	        String refid = text.substring(15, 19);
-//	        System.out.println(refid);
-//	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu$")
-	    public void user_get_the_transaction_no_in_success_popuo_menu() throws Throwable {
+	    @And("^User Click Ok Button in Warning PopUp Menu for118$")
+	    public void user_click_ok_button_in_warning_popup_menu_for118() throws Throwable {
+	    	for (int i = 0; i < 200; i++) {
+	    		try {
+	    	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118());
+	    	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118());
+	    	        break;
+				} catch (Exception e) {
+				}
+	    	}
+	    }
+	   
+	    
+	  
+	    @And("^User Get the Transaction No in Success PopUp Menu for116$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for116() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
 	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
@@ -382,7 +332,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_116_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for73$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for73$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for73() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -392,7 +342,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_073_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for69$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for69$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for69() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -402,7 +352,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_069_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for70$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for70$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for70() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -412,7 +362,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_070_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for71$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for71$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for71() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -422,7 +372,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_071_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for121$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for121$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for121() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -432,7 +382,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_121_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for118$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for118$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for118() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -442,7 +392,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_118_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for119$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for119$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for119() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -455,7 +405,7 @@ public class CSM_TransactionsSteps {
 	    
 	    
 	    
-	    @And("^User Get the Transaction No in Success PopUo Menu for34$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for34$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for34() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -465,7 +415,7 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_034_D1");
 	    	
 	    }
-	    @And("^User Get the Transaction No in Success PopUo Menu for33$")
+	    @And("^User Get the Transaction No in Success PopUp Menu for33$")
 	    public void user_get_the_transaction_no_in_success_popuo_menu_for33() throws Throwable {
 	    	
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
@@ -475,7 +425,46 @@ public class CSM_TransactionsSteps {
 		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_033_D1");
 	    	
 	    }
-
+	    @And("^User Get the Transaction No in Success PopUp Menu for32$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for32() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_032_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_032_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUp Menu for30$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for30() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_030_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_030_D1");
+	    	
+	    }
+	    
+	    @And("^User Get the Transaction No in Success PopUp Menu for31$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for31() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_031_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_031_D1");
+	    	
+	    }
+	    @And("^User Get the Transaction No in Success PopUp Menu for29$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for29() throws Throwable {
+	    	
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.getTransactionNumber());
+	    	String  transactionNo = CSMTransactionObj.getTransactionNumber().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+		  CSM_TransactionsStepsExcelData.updateTestData("TRS_029_D1", "TRXNo", transactionNo); 
+		     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_029_D1");	    	
+	    }
 	    @And("^User Click Ok Button in Success PopUp Menu$")
 	    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
 	    	for (int i = 0; i < 200; i++) {
@@ -519,8 +508,7 @@ public class CSM_TransactionsSteps {
 		        }  
 		        }
 	         
-			catch (Exception e) {
-			
+			catch (Exception e) {		
 			}
 	    	
 
@@ -539,6 +527,7 @@ public class CSM_TransactionsSteps {
 		//	}
 	    	
 	    }
+	    
 
 	    @And("^User Click on Approve Button for approve the Transaction$")
 	    public void user_click_on_approve_button_for_approve_the_transaction() throws Throwable {
@@ -546,6 +535,15 @@ public class CSM_TransactionsSteps {
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMApproveButtonInApproveScreen());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMApproveButtonInApproveScreen());
 	    }	
+	    @And("^user_612 validate the warning pop upfor118$")
+	    public void user_validate_the_warning_pop_upfor118() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118());
+	        Assert.assertTrue(CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118().isDisplayed());
+	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.csm_transaction_warningpop_Economicsector_limitAmount_118());
+
+	    }
 
 	    @And("^User Click on Ok Button in Success PopUp Menu for Approve Transcation$")
 	    public void user_click_on_ok_button_in_success_popup_menu_for_transcation() throws Throwable {
@@ -747,6 +745,26 @@ public class CSM_TransactionsSteps {
 	    @And("^user update test data set id for TRS_33$")
 	    public void user_update_test_data_set_id_for_trs33() throws Throwable {
 	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_033_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_32$")
+	    public void user_update_test_data_set_id_for_trs32() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_032_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_30$")
+	    public void user_update_test_data_set_id_for_trs30() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_030_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_029$")
+	    public void user_update_test_data_set_id_for_trs029() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_029_D1");
+		 
+	    }
+	    @And("^user update test data set id for TRS_31$")
+	    public void user_update_test_data_set_id_for_trs31() throws Throwable {
+	    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_031_D1");
 		 
 	    }
 	   
@@ -1448,6 +1466,13 @@ public void user_verify_the_proceed_if_limit_exceeds_checked_under_eco_sector() 
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.deleteButtonInEcoSector());
 	    }
 	    
+	    @Given("User Vaildate the Cannot proceed Msg for117")
+	    public void user_vaildate_the_cannot_proceed_msg() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver, CSMTransactionObj.CSM_cannotproceed_msg117());
+	        Assert.assertTrue(CSMTransactionObj.CSM_cannotproceed_msg117().isDisplayed());
+	    
+	    }
+	        
 
 	
 	

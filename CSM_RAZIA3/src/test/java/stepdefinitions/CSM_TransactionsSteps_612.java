@@ -177,6 +177,7 @@ public class CSM_TransactionsSteps_612 {
 		    	        seleniumAction.getClickAndActionsHelper().clickOnElement(csmtransaction_612.CSMOkButtonInWarningPopUpMenu_612());
 		    	        break;
 					} catch (Exception e) {
+						
 					}
 		    	}
 		    }
@@ -335,6 +336,26 @@ public class CSM_TransactionsSteps_612 {
 			     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_173_D1");
 		    	
 		    }
+		    @And("^User_612 Get the Transaction No in Success PopUp Menu for174$")
+		    public void user_get_the_transaction_no_in_success_popup_menu_for174() throws Throwable {
+		    	
+		    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,csmtransaction_612.getTransactionNumber_612());
+		    	String  transactionNo = csmtransaction_612.getTransactionNumber_612().getText().substring(15, 19);
+		       System.out.println(transactionNo);
+			  CSM_TransactionsStepsExcelData.updateTestData("TRS_174_D1", "TRXNo", transactionNo); 
+			     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_174_D1");
+		    	
+		    }
+		    @And("^User_612 Get the Transaction No in Success PopUp Menu for175$")
+		    public void user_get_the_transaction_no_in_success_popup_menu_for175() throws Throwable {
+		    	
+		    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,csmtransaction_612.getTransactionNumber_612());
+		    	String  transactionNo = csmtransaction_612.getTransactionNumber_612().getText().substring(15, 19);
+		       System.out.println(transactionNo);
+			  CSM_TransactionsStepsExcelData.updateTestData("TRS_175_D1", "TRXNo", transactionNo); 
+			     testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_175_D1");
+		    	
+		    }
 		    @And("^User_612 Click Ok Button in Success PopUp Menu$")
 		    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
 		    	for (int i = 0; i < 200; i++) {
@@ -468,8 +489,16 @@ public class CSM_TransactionsSteps_612 {
 			    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_173_D1");
 				 
 			    }
-			    
-			    
+			    @And("^user_612 update test data set id for TRS_174$")
+			    public void user_update_test_data_set_id_for_trs174() throws Throwable {
+			    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_174_D1");
+				 
+			    }
+			    @And("^user_612 update test data set id for TRS_175$")
+			    public void user_update_test_data_set_id_for_trs175() throws Throwable {
+			    	testData = CSM_TransactionsStepsExcelData.getTestdata("TRS_175_D1");
+				 
+			    }
 			    
 			    @And("^user_612 check if the  value is entered or not$")
 			    public void user_check_if_the_value_is_entered_or_not() throws Throwable {
@@ -492,7 +521,7 @@ public class CSM_TransactionsSteps_612 {
 			    }
 			    
 			    
-			    //mode of payment in cash
+			  //mode of payment in cash
 			    @And("User_612 Click a mode of payment in under Transaction")
 			    public void user_click_a_mode_of_payment_in_under_transaction() throws Throwable {
 			    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,csmtransaction_612.CSM_cashofpayment_612());
@@ -523,7 +552,22 @@ public class CSM_TransactionsSteps_612 {
 			        seleniumAction.getClickAndActionsHelper().doubleClick(csmtransaction_612.CSM_cashofpayment_Cash_currencyDoubleclk_612());	
 			    	 
 			    }
-
+			    @And("^User_612 Click Ok Button in Warning PopUp Menu for175$")
+			    public void User_612_click_ok_button_in_warning_popup_menu_for175() throws Throwable {
+			    	for (int i = 0; i < 200; i++) {
+			    		try {
+			    	        seleniumAction.getClickAndActionsHelper().moveToElement(csmtransaction_612.CSM_AmountExceed_WarningMsg_612());
+			    	        seleniumAction.getClickAndActionsHelper().clickOnElement(csmtransaction_612.CSM_AmountExceed_WarningMsg_612());
+			    	        break;
+						} catch (Exception e) {
+							if (i==199) {
+								Assert.fail(e.getMessage());
+								
+							}
+							
+						}
+			    	}
+			    }
 
 
 }

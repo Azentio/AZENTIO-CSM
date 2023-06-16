@@ -3,6 +3,7 @@ Feature: Checking the functionalities of transaction
   @TRS_029
   Scenario: Checking Multi Transfer (Main Credit) Transaction - CV/FC
     Given Navigate to CSM application and login with valid credentials
+      And user update test data set id for TRS_029
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -13,8 +14,7 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button Under Information PopUp Menu
     And User Click on Transactions under CSM application
     And User Click on Maintenance under Transactions
-    #And user update test data set id for TRS_029
-    And User Enter TRX Type in Maintenance Screen
+      And User Enter TRX Type in Maintenance Screen
     And User Enter the Branch Code in Credit Ac in Maintenance Screen
     And User Enter Currency Code in Credit Ac in Maintenance Screen
     And User Enter GL Code in Credit Ac in Maintenance Screen
@@ -34,7 +34,7 @@ Feature: Checking the functionalities of transaction
     And User give some Msg Instruction2 in AccountDetails
     And User Click the ok button in AccountDetails
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUp Menu for29
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -51,6 +51,7 @@ Feature: Checking the functionalities of transaction
   @TRS_030
   Scenario: Checking Cash Deposit Transaction - FC/ CV
     Given navigate to CSM application and login with valid credentials
+     And user update test data set id for TRS_30
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -69,10 +70,11 @@ Feature: Checking the functionalities of transaction
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
     And User Click Ok Button in Warning PopUp Menu
-    And User Enter the Currency in Maintenance Screen
+    #And User Enter the Currency in Maintenance Screen
+    And User Enter Currency Code in Credit Ac in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUp Menu for30
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -89,6 +91,7 @@ Feature: Checking the functionalities of transaction
   @TRS_031
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction - FC/CV
     Given navigate to CSM application and login with valid credentials
+     And user update test data set id for TRS_31
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -107,7 +110,8 @@ Feature: Checking the functionalities of transaction
     And User Enter Serial in debit Ac in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
     And User Click Ok Button in Warning PopUp Menu
-    And User Enter the Currency in Maintenance Screen
+    #And User Enter the Currency in Maintenance Screen
+    And User Enter Currency Code in Credit Ac in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Enter the Branch Code in Credit Ac in Maintenance Screen
     #And User Enter Currency Code in Credit Ac in Maintenance Screen
@@ -115,7 +119,7 @@ Feature: Checking the functionalities of transaction
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUp Menu for31
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -132,6 +136,7 @@ Feature: Checking the functionalities of transaction
   @TRS_032
   Scenario: Checking Multi Transfer (Main Credit) Transaction - FC/CV
     Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TRS_32
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
@@ -162,7 +167,7 @@ Feature: Checking the functionalities of transaction
     And User give some Msg Instruction2 in AccountDetails
     And User Click the ok button in AccountDetails
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUp Menu for32
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -206,7 +211,7 @@ Feature: Checking the functionalities of transaction
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for33
+    And User Get the Transaction No in Success PopUp Menu for33
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -250,7 +255,7 @@ Feature: Checking the functionalities of transaction
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for34
+    And User Get the Transaction No in Success PopUp Menu for34
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -320,7 +325,7 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for71
+    And User Get the Transaction No in Success PopUp Menu for71
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -414,6 +419,7 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
+    #And User Click Ok Button in Warning PopUp Menu for117
 
   #postrequest
   @TRS_072_02
@@ -498,7 +504,7 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for73
+    And User Get the Transaction No in Success PopUp Menu for73
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -603,7 +609,7 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for69
+    And User Get the Transaction No in Success PopUp Menu for69
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -669,7 +675,7 @@ Feature: Checking the functionalities of transaction
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for70
+    And User Get the Transaction No in Success PopUp Menu for70
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -737,18 +743,14 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for121
+    And User Get the Transaction No in Success PopUp Menu for121
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    #And User Click on Maintenance under Transactions
-    #And User Click Ok Button in Warning PopUp to go back to Maintenance
-    #And User Click on Search Button in Maintenance Screen
-    #And User Enter the Transaction No in Search Box
-    #And User Double Click on the Searched Transaction No in Search Box
+  
 
   #post-requesties
   @TRS_121_02
@@ -832,7 +834,7 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu
+    And User Get the Transaction No in Success PopUp Menu for116
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
@@ -925,7 +927,10 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
-    And User Click Save Button in Maintenance Screen
+     And  User Vaildate the Cannot proceed Msg for117
+    #And User Click Save Button in Maintenance Screen
+    # And User Click Ok Button in Warning PopUp Menu
+    
 
   #postreq
   @TRS_117_02
@@ -1009,20 +1014,17 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
-    #And User Click Ok Button in Warning PopUp Menu
-    And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for118
+     And User Click Save Button in Maintenance Screen
+      And User Click Ok Button in Warning PopUp Menu for118
+    And User Get the Transaction No in Success PopUp Menu for118
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
+   And user_612 validate the warning pop upfor118
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    #And User Click on Maintenance under Transactions
-   #And User Click Ok Button in Warning PopUp to go back to Maintenance
-    #And User Click on Search Button in Maintenance Screen
-    #And User Enter the Transaction No in Search Box
-    #And User Double Click on the Searched Transaction No in Search Box
+   
 
   #post req
   @TRS_118_02
@@ -1106,18 +1108,14 @@ Feature: Checking the functionalities of transaction
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUo Menu for119
+    And User Get the Transaction No in Success PopUp Menu for119
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    #And User Click on Maintenance under Transactions
-    #And User Click Ok Button in Warning PopUp to go back to Maintenance
-    #And User Click on Search Button in Maintenance Screen
-    #And User Enter the Transaction No in Search Box
-    #And User Double Click on the Searched Transaction No in Search Box
+    
 
   #post req
   @TRS_119_02

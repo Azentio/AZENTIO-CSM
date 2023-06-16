@@ -50,17 +50,17 @@ public class MultipleTagsRun {
 	public void test() {
 		List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
 		
-	 //testCaseTagsfromExcel1.add("TRS_170");
-    testCaseTagsfromExcel1.add("TRS_033");
-    testCaseTagsfromExcel1.add("TRS_034");
+//	 testCaseTagsfromExcel1.add("TRS_118_01");
+//   testCaseTagsfromExcel1.add("TRS_118");
+//    testCaseTagsfromExcel1.add("TRS_118_02");
      
-//     testCaseTagsfromExcel1.add("TRS_116_01");
-//		testCaseTagsfromExcel1.add("TRS_116");
-//		testCaseTagsfromExcel1.add("TRS_116_02");
-//		
-  //testCaseTagsfromExcel1.add("TRS_117_01");
-		//testCaseTagsfromExcel1.add("TRS_117");
-		//testCaseTagsfromExcel1.add("TRS_117_02");
+     testCaseTagsfromExcel1.add("TRS_116_01");
+		testCaseTagsfromExcel1.add("TRS_116");
+	testCaseTagsfromExcel1.add("TRS_116_02");
+		
+//  testCaseTagsfromExcel1.add("TRS_117_01");
+//		testCaseTagsfromExcel1.add("TRS_117");
+//		testCaseTagsfromExcel1.add("TRS_117_02");
 	
 	//testCaseTagsfromExcel1.add("TRS_118_01");
 		//testCaseTagsfromExcel1.add("TRS_118");

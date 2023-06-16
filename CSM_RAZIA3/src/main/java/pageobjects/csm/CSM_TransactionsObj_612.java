@@ -139,6 +139,15 @@ private WebElement CSM_OkButtonInWarningPopUpMenu;
 public WebElement CSMOkButtonInWarningPopUpMenu_612() {
 	return CSM_OkButtonInWarningPopUpMenu;
 }
+
+@FindBy(xpath="//div[text()='WARNING']//parent::div//following-sibling::div//div[contains(text(),'Amount Exceeds Available Balance in Account')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+private WebElement CSM_AmountExceed_WarningMsg;
+
+public WebElement CSM_AmountExceed_WarningMsg_612 () {
+	return CSM_AmountExceed_WarningMsg;
+}
+
+
 //id="lookuptxt_trs_cy_D001MT"
 @FindBy(id="lookuptxt_trs_cy_D001MT")
 private WebElement CSM_CurrencyInMaintenanceScreen;

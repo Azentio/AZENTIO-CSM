@@ -304,75 +304,6 @@ public class CSM_TransactionObj {
 		return CSM_OkButtonInSuccessPopUpMenu;
 	}
 	
-	@FindBy(xpath = "//div[@id='_selenuimQUER']/child::h3")
-	private WebElement CSM_QueriesMainMenu;
-
-	public WebElement CSMQueriesMainMenu() {
-		return CSM_QueriesMainMenu;
-	}
-	
-	@FindBy(xpath = "//td[text()='Statement Of Accounts']")
-	private WebElement CSM_StatementOfAccountsInQueries;
-
-	public WebElement CSMStatementOfAccountsInQueries() {
-		return CSM_StatementOfAccountsInQueries;
-	}
-	
-	@FindBy(id="QUER001T")
-	private WebElement CSM_ByTradeDateUnderStatementOfAccountsSubMenu;
-
-	public WebElement CSMByTradeDateUnderStatementOfAccountsSubMenu() {
-		return CSM_ByTradeDateUnderStatementOfAccountsSubMenu;
-	}
-	
-	@FindBy(id="accCy_QUER001T")
-	private WebElement CSM_CurrencyValueIinAccountUnderByTradeDateScreen;
-
-	public WebElement CSMCurrencyValueIinAccountUnderByTradeDateScreen() {
-		return CSM_CurrencyValueIinAccountUnderByTradeDateScreen;
-	}
-	
-	@FindBy(id="accGl_QUER001T")
-	private WebElement CSM_GLCodeInAccountUnderByTradeDateScreen;
-
-	public WebElement CSMGLCodeInAccountUnderByTradeDateScreen() {
-		return CSM_GLCodeInAccountUnderByTradeDateScreen;
-	}
-	
-	@FindBy(id="accCif_QUER001T")
-	private WebElement CSM_CIFCodeInAccountUnderByTradeDateScreen;
-
-	public WebElement CSMCIFCodeInAccountUnderByTradeDateScreen() {
-		return CSM_CIFCodeInAccountUnderByTradeDateScreen;
-	}
-	
-	@FindBy(id="lookuptxt_accSl_QUER001T")
-	private WebElement CSM_SerialInAccountUnderByTradeDateScreen;
-
-	public WebElement CSMSerialInAccountUnderByTradeDateScreen() {
-		return CSM_SerialInAccountUnderByTradeDateScreen;
-	}
-	
-	@FindBy(id="dtOpened_QUER001T")
-	private WebElement CSM_FromDateInPeriodicityOfStatement;
-
-	public WebElement CSMFromDateInPeriodicityOfStatement() {
-		return CSM_FromDateInPeriodicityOfStatement;
-	}
-	
-	@FindBy(id="dtClosed_QUER001T")
-	private WebElement CSM_ToDateInPeriodicityOfStatement;
-
-	public WebElement CSMToDateInPeriodicityOfStatement() {
-		return CSM_ToDateInPeriodicityOfStatement;
-	}
-	
-	@FindBy(id="sfsdfsdf")
-	private WebElement CSM_RetrieveButtonUnderByTradeDateScreen;
-
-	public WebElement CSMRetrieveButtonUnderByTradeDateScreen() {
-		return CSM_RetrieveButtonUnderByTradeDateScreen;
-	}
 	
 	@FindBy(id="_popup_path_sol_ok")
 	private WebElement CSM_OkButtonInAccessDeniedPopUpMenu;
@@ -380,22 +311,32 @@ public class CSM_TransactionObj {
 	public WebElement CSMOkButtonInAccessDeniedPopUpMenu() {
 		return CSM_OkButtonInAccessDeniedPopUpMenu;
 	}
-//	
-//	@FindBy(xpath = "//div[text()='[293] No access']")
-//	private WebElement CSM_ValidateIfTheStatementOfAccountDisplayedAsAccessDenied;
-//
-//	public WebElement CSMValidateIfTheStatementOfAccountDisplayedAsAccessDenied() {
-//		return CSM_ValidateIfTheStatementOfAccountDisplayedAsAccessDenied;
-//	}
-	
-//	@FindBy(id="td_statementOfAccountsDetGridTbl_Id_QUER001T_1_hstvo.OP_NO")
-//	private WebElement CSM_ValidateIfTheStatementOfAccountIsDisplayed;
-//
-//	public WebElement CSMValidateIfTheStatementOfAccountIsDisplayed() {
-//		return CSM_ValidateIfTheStatementOfAccountIsDisplayed;
-//	}
 
-        @FindBy(id="_popup_path_sol_confirm_ok")
+
+
+ @FindBy(xpath="//div[text()='WARNING']//parent::div//following-sibling::div//div[contains(text(),'Economic Sector: Limit Amount should be between 0.0  and 300')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+private WebElement csm_transaction_warningpop_Economicsector_limitAmount;
+
+public WebElement csm_transaction_warningpop_Economicsector_limitAmount_118() {
+	return csm_transaction_warningpop_Economicsector_limitAmount;
+}
+
+//@FindBy(xpath="//div[text()='Cannot Proceed']//parent::div//following-sibling::div//div[contains(text(),'Economic Sector: Limit Amount should be between 0.0  and 300')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+//private WebElement Csm_maintenance_cannotproceedpop ;
+//
+//public WebElement Csm_maintenance_cannotproceedpop_117() {
+//	return CSM_OkButtonInWarningPopUpToGoBackToMaintenance;
+//}
+
+
+
+@FindBy(xpath="//div[text()='Cannot Proceed']")
+private WebElement CSM_cannotproceed_msg;
+
+public WebElement CSM_cannotproceed_msg117() {
+	return CSM_cannotproceed_msg;
+}
+@FindBy(id="_popup_path_sol_confirm_ok")
 	private WebElement CSM_OkButtonInWarningPopUpToGoBackToMaintenance;
 
 	public WebElement CSMOkButtonInWarningPopUpToGoBackToMaintenance() {
