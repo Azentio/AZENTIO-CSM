@@ -902,3 +902,434 @@ And user retrieve the created record in approve submenu
 And user click approve button in approve submenu
 Then user verify the successfully approved message popup in approve submenu
 
+#pre-requesties
+@TRS_109_01
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_109_01 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click priority button
+And user click add icon in priority 
+And user enter priority value
+And user enter transaction value under Eco sector
+And user enter withdrawal limit value 
+Then user verify the proceed if limits exceeds flag checked under priority
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button  
+
+@TRS_109
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm core application
+And user update test data set id for TRS_109
+And User Click on Date to Change the Current Date
+And User Enter the Date in User Running Date
+And User Click on Use Button in Change Running Date Popup
+And User Click Ok Button for confirmation PopUp for Company Holiday
+And User Click Ok Button in Information PopUp menu
+And User Click on Close Button in Change Running Date Popup
+And user click the transactions in menu options
+And user click the maintenance in transactions 
+And user click and enter the value in trx type under transactions 
+And user click the transaction maintenance type icon
+And user enter the currency value in credit account details
+And user click the transaction maintenance type icon
+And user enter the GL code in credit account details
+And user click the transaction maintenance type icon
+And user enter the CIF code in credit account details
+And user click the transaction maintenance type icon
+And user enter the serial number in credit account details
+And user click the transaction maintenance type icon
+And User Click Ok Button in Information PopUp menu
+And user click currency field and enter the value
+And user click the transaction maintenance type icon
+And user click amount field and enter the value
+And user check if the  value is entered or not
+And user click save button in transactions menu
+#And user click ok button in warning popup menu under transactions
+And User Click Ok Button in Information PopUp menu
+Then user navigate to approve submenu
+And user click refresh icon in approve submenu
+And user retrieve the created record in approve submenu
+And user click approve button in approve submenu
+Then user verify the successfully approved message popup in approve submenu
+
+#post-requesties
+@TRS_109_02
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
+Given user login as csm params application
+And user update test data set id for TRS_109_02 
+And user click parameters menu
+And user click system parameters submenu
+And user click user submenu
+And user click update after approve 
+And user enter the value in user id
+And user retrieve the selected user id
+Then user click Eco sector button
+And user select the row for delete the record
+And user delete the inserted record under Eco sector
+And user click confirm ok button 
+And user click ok button under limits
+And user click update after approve button
+And user click confirm ok button
+Then user click success message ok button
+And user click approve screen
+And user enter the value in user id under approve screen
+And user retrieve the selected user id under approve screen
+Then user click approve button 
+And user click confirm ok button
+Then user click success message ok button
+
+@TRS_141_01
+Scenario: Checking Cash Withdrawal Transaction - Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit - User Limit Excceed Alert flag
+Given user login as csm core application
+And user_615 update test data set id for TRS_141_01 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+
+@TRS_141
+Scenario: Checking Cash Withdrawal Transaction - Currency Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit - User Limit Excceed Alert flag
+Given user login as csm core application 
+And user_615 update test data set id for TRS_141 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+And user_615 click the transactions in menu options
+And user_615 click the maintenance in transactions 
+And user_615 click and enter the value in trx type under transactions 
+And user_615 click the transaction maintenance type icon
+And user_615 enter the currency value in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the GL code in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the CIF code in credit account details
+And user_615 close the view memo
+#And user_615 click the transaction maintenance type icon
+And user_615 enter the serial number in credit account details
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click currency field and enter the value
+And user_615 click the transaction maintenance type icon
+And user_615 enter GL code
+And user_615 click the transaction maintenance type icon
+And user_615 enter CIF code
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 enter serial no
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click the transaction maintenance type icon
+And user_615 click amount field and enter the value
+And user_615 check if the  value is entered or not
+And user_615 click save button in transactions menu
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 verify the alert popup
+And user_615 select the BM user
+Then user_615 send the alert to branch manager
+And user_615 approve the transaction
+
+@TRS_142_01
+Scenario: Checking Cash Deposit Transaction - CIF is below Minimum Age Alert flag
+Given user login as csm core application
+And user_615 update test data set id for TRS_142_01 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+
+@TRS_142
+Scenario: Checking Cash Deposit Transaction - CIF is below Minimum Age Alert flag
+Given user login as csm core application 
+And user_615 update test data set id for TRS_142 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+And user_615 click the transactions in menu options
+And user_615 click the maintenance in transactions 
+And user_615 click and enter the value in trx type under transactions 
+And user_615 click the transaction maintenance type icon
+And user_615 enter the currency value in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the GL code in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the CIF code in credit account details
+And user_615 close the view memo
+#And user_615 click the transaction maintenance type icon
+And user_615 enter the serial number in credit account details
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click currency field and enter the value
+And user_615 click the transaction maintenance type icon
+And user_615 enter GL code
+And user_615 click the transaction maintenance type icon
+And user_615 enter CIF code
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 enter serial no
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click the transaction maintenance type icon
+And user_615 click amount field and enter the value
+And user_615 check if the  value is entered or not
+And user_615 click save button in transactions menu
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 verify the alert popup
+And user_615 select the BM user
+Then user_615 send the alert to branch manager
+And user_615 approve the transaction
+
+@TRS_143_01
+Scenario: Checking Cash Deposit Transaction - Account with Link Management Alert flag
+Given user login as csm core application
+And user_615 update test data set id for TRS_143 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+
+@TRS_143
+Scenario: Checking Cash Deposit Transaction - Account with Link Management Alert flag
+Given user login as csm core application 
+And user_615 update test data set id for TRS_143 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+And user_615 click the transactions in menu options
+And user_615 click the maintenance in transactions 
+And user_615 click and enter the value in trx type under transactions 
+And user_615 click the transaction maintenance type icon
+And user_615 enter the currency value in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the GL code in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the CIF code in credit account details
+And user_615 close the view memo
+#And user_615 click the transaction maintenance type icon
+And user_615 enter the serial number in credit account details
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click currency field and enter the value
+And user_615 click the transaction maintenance type icon
+And user_615 enter GL code
+And user_615 click the transaction maintenance type icon
+And user_615 enter CIF code
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 enter serial no
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click the transaction maintenance type icon
+And user_615 click amount field and enter the value
+And user_615 check if the  value is entered or not
+And user_615 click save button in transactions menu
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 verify the alert popup
+And user_615 select the BM user
+Then user_615 send the alert to branch manager
+And user_615 approve the transaction
+
+@TRS_144_01
+Scenario: Checking Cash Deposit Transaction - CV/FC - Exchange Rate Changed Alert flag
+Given user login as csm core application
+And user_615 update test data set id for TRS_144 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+
+@TRS_144
+Scenario: Checking Cash Deposit Transaction - CV/FC - Exchange Rate Changed Alert flag
+Given user login as csm core application 
+And user_615 update test data set id for TRS_144 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+And user_615 click the transactions in menu options
+And user_615 click the maintenance in transactions 
+And user_615 click and enter the value in trx type under transactions 
+And user_615 click the transaction maintenance type icon
+And user_615 enter the currency value in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the GL code in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the CIF code in credit account details
+And user_615 close the view memo
+#And user_615 click the transaction maintenance type icon
+And user_615 enter the serial number in credit account details
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click currency field and enter the value
+And user_615 click the transaction maintenance type icon
+And user_615 enter GL code
+And user_615 click the transaction maintenance type icon
+And user_615 enter CIF code
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 enter serial no
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click the transaction maintenance type icon
+And user_615 click amount field and enter the value
+And user_615 check if the  value is entered or not
+And user_615 click save button in transactions menu
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 verify the alert popup
+And user_615 select the BM user
+Then user_615 send the alert to branch manager
+And user_615 approve the transaction
+
+@TRS_145_01
+Scenario: Checking Cash Deposit Transaction - Cancel Transaction Alert flag
+Given user login as csm core application
+And user_615 update test data set id for TRS_145_01
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+
+@TRS_145
+Scenario: Checking Cash Deposit Transaction - Cancel Transaction Alert flag
+Given user login as csm core application 
+And user_615 update test data set id for TRS_145 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+And user_615 click the transactions in menu options
+And user_615 click the maintenance in transactions 
+And user_615 click and enter the value in trx type under transactions 
+And user_615 click the transaction maintenance type icon
+And user_615 enter the currency value in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the GL code in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the CIF code in credit account details
+And user_615 close the view memo
+#And user_615 click the transaction maintenance type icon
+And user_615 enter the serial number in credit account details
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click currency field and enter the value
+And user_615 click the transaction maintenance type icon
+And user_615 enter GL code
+And user_615 click the transaction maintenance type icon
+And user_615 enter CIF code
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 enter serial no
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click the transaction maintenance type icon
+And user_615 click amount field and enter the value 
+And user_615 check if the  value is entered or not
+And user_615 click save button in transactions menu
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 verify the alert popup
+And user_615 select the BM user
+Then user_615 send the alert to branch manager
+And user_615 approve the transaction
+
+@TRS_146_01
+Scenario: Checking Cash Deposit Transaction - Reverse Transaction Alert flag
+Given user login as csm core application
+And user_615 update test data set id for TRS_146_01
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+
+@TRS_146
+Scenario: Checking Cash Deposit Transaction - Reverse Transaction Alert flag
+Given user login as csm core application 
+And user_615 update test data set id for TRS_146 
+And User_615 Click on Date to Change the Current Date
+And User_615 Enter the Date in User Running Date
+And User_615 Click on Use Button in Change Running Date Popup
+And User_615 Click Ok Button in Information PopUp menu
+And User_615 Click on Close Button in Change Running Date Popup
+And user_615 click the transactions in menu options
+And user_615 click the maintenance in transactions 
+And user_615 click and enter the value in trx type under transactions 
+And user_615 click the transaction maintenance type icon
+And user_615 enter the currency value in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the GL code in credit account details
+And user_615 click the transaction maintenance type icon
+And user_615 enter the CIF code in credit account details
+And user_615 close the view memo
+#And user_615 click the transaction maintenance type icon
+And user_615 enter the serial number in credit account details
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click currency field and enter the value
+And user_615 click the transaction maintenance type icon
+And user_615 enter GL code
+And user_615 click the transaction maintenance type icon
+And user_615 enter CIF code
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 enter serial no
+And user_615 click the transaction maintenance type icon
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 close the view memo
+And user_615 click the transaction maintenance type icon
+And user_615 click amount field and enter the value
+And user_615 check if the  value is entered or not
+And user_615 click save button in transactions menu
+And User_615 Click Ok Button in Information PopUp menu
+And user_615 verify the alert popup
+And user_615 select the BM user
+Then user_615 send the alert to branch manager
+And user_615 approve the transaction
+
+
+
+
+
+

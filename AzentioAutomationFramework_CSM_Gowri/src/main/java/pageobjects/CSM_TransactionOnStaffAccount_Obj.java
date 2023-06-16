@@ -765,6 +765,111 @@ public WebElement serialNoInTransactions()
 {
 	return serialNoInTransactions;
 }
+//prerequesties
+//TRS_109
+@FindBy(xpath="//span[text()=' Priority ']")
+private WebElement priorityButton;
+public WebElement priorityButton() 
+{
+    return priorityButton;	
+}
+@FindBy(id="add_tab5_P_GridTbl_Id_E000MA")
+private WebElement addIconInPriority;
+public WebElement addIconInPriority()
+{
+	return addIconInPriority;
+}
+//ecoSectorLimit
+//transactionInEcoSectorLimit
+//withdrawalLimitInUpdateAfterApprove
+//proceedIfLimitExceedFlagInUpdateAfterApprove
+//okButtonInUpdateAfterApprove
+@FindBy(xpath="//span[text()='close']")
+private WebElement closeButtonInTransactions;
+public WebElement closeButtonInTransactions()
+{
+	return addIconInPriority;
+}
+@FindBy(xpath="//td[@id='td_alertsGrid_Id_D001MT_1_alertsParamCO.userId']")
+private WebElement selectTheUserInAlertScreen;
+public WebElement selectTheUserInAlertScreen()
+{
+	return selectTheUserInAlertScreen;
+}
+@FindBy(xpath="//span[text()=' Send ']")
+private WebElement sendButtonInAlertScreen;
+public WebElement sendButtonInAlertScreen()
+{
+	return sendButtonInAlertScreen;
+}
+@FindBy(xpath="//td[text()='Transactions']")
+private WebElement Transactions;
+public WebElement Transactions()
+{
+ 	return Transactions;
+}
+@FindBy(id="D001MT")
+private WebElement Maintenance;
+public WebElement Maintenance()
+{
+	return Maintenance;
+}
+@FindBy(xpath="//a[text()='Transactions / Maintenance']")
+private WebElement TrxMaintance;
+public WebElement TrxMaintance()
+{
+	return TrxMaintance;
+}
+@FindBy(xpath="//span[text()='Send Alert']")
+private WebElement sendAlertPopup;
+public WebElement sendAlertPopup()
+{
+	return sendAlertPopup;
+}
+//TRS_142
+@FindBy(xpath="//td[text()='Control Record']")
+private WebElement controlRecordInSystemParameters;
+public WebElement controlRecordInSystemParameters()
+{
+	return controlRecordInSystemParameters;
+}
+@FindBy(xpath="//span[text()='Update After Approve']")
+private WebElement updateAfterApproveButtonInControlRecord;
+public WebElement updateAfterApproveButtonInControlRecord()
+{
+	return updateAfterApproveButtonInControlRecord;
+}
+@FindBy(xpath="//a[text()=' Alert Activation ']")
+private WebElement alertActivationButton;
+public WebElement alertActivationButton()
+{
+	return alertActivationButton;
+}
+@FindBy(xpath="(//span[text()='Account Balance Overdrawn'])[1]//ancestor::td/div/div")
+private WebElement maximizeFlagInAlertActivation;
+public WebElement maximizeFlagInAlertActivation()
+{
+	return maximizeFlagInAlertActivation;
+}
+@FindBy(xpath="(//td[@id='td_tab4_GridTbl_Id_O001UP_14_CUSTOM_FIELD'])[1]")
+private WebElement selectFlagToCheck;
+public WebElement selectFlagToCheck()
+{
+	return selectFlagToCheck;
+}
+@FindBy(xpath="(//span[text()='0023-CIF Below Minimum Age']//following::td[@id='td_tab4_GridTbl_Id_O001UP_14_ctscontrolAlertVO.ACTIVATE']//input)[1]")
+private WebElement checkTheBelowMinimumAgeFlag;
+public WebElement checkTheBelowMinimumAgeFlag()
+{
+    return checkTheBelowMinimumAgeFlag;
+}
+
+
+
+
+
+
+
 
 
 }

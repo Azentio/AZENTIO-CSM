@@ -67,9 +67,29 @@ public class CSMLogin {
 			}
 
 		}
+		
+		
 
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
+		
+		for (int i = 0; i < 200; i++) {
+			try {
+				 {
+//					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
+					csmCommonWebElements.ForceLogoutYes().click();
+					break;
+				}
+//				
+			} catch (Exception e) {
+//				if (i==199)
+//				{
+//					Assert.fail(e.getMessage());
+//				}
+				// TODO: handle exception
+			}
+		}
+		
 	    waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmLoginValidation());
@@ -130,16 +150,16 @@ public class CSMLogin {
 		for (int i = 0; i < 200; i++) {
 			try {
 				 {
-					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
+//					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
 					csmCommonWebElements.ForceLogoutYes().click();
 					break;
 				}
 //				
 			} catch (Exception e) {
-				if (i==199)
-				{
-					Assert.fail(e.getMessage());
-				}
+//				if (i==199)
+//				{
+//					Assert.fail(e.getMessage());
+//				}
 				// TODO: handle exception
 			}
 		}

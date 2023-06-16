@@ -1234,6 +1234,342 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         
     }
     
+    //TRS_109
+    @Given("user update test data set id for TRS_109_01$")
+    public void user_update_test_data_set_id_for_trs_109_01() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_109_01");
+    }
+    
+    @Then("user click priority button")
+    public void user_click_priority_button() {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.priorityButton());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.priorityButton());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.priorityButton());
+    }
+    
+    @Then("user enter priority value")
+    public void user_enter_priority_value() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.ecoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.ecoSectorLimit());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.ecoSectorLimit());
+        csmTransactionOnStaffAccount.ecoSectorLimit().sendKeys(testData.get("Priority Value"));
+    }
+    
+    @Then("user enter withdrawal limit value")
+    public void user_enter_withdrawal_limit_value() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove());
+        csmTransactionOnStaffAccount.withdrawalLimitInUpdateAfterApprove().sendKeys("Withdrawal Limit");
+    }
+    
+    @Then("user verify the proceed if limits exceeds flag checked under priority")
+    public void user_verify_the_proceed_if_limits_exceeds_flag_checked_under_priority() {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    	        seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    	        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+			
+		}
+//    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+//        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+//        seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+//        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.proceedIfLimitExceedFlagInUpdateAfterApprove());
+    }
+    
+    @And("user click add icon in priority")
+    public void user_click_add_icon_in_priority() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.addIconInPriority());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.addIconInPriority());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.addIconInPriority());
+    }
+    
+    @Given("user update test data set id for TRS_109$")
+    public void user_update_test_data_set_id_for_trs_109() throws Throwable {
+        testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_109_D1");
+    }
+    
+    @Given("user update test data set id for TRS_109_02")
+    public void user_update_test_data_set_id_for_trs_109_02() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_109_02");
+    }
+    
+    //TRS_141
+    @Given("user_615 update test data set id for TRS_141")
+    public void user_update_test_data_set_id_for_trs_141() throws Throwable {
+    	//testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_141");
+    }
+    @Given("User_615 Click on Date to Change the Current Date")
+    public void user_615_click_on_date_to_change_the_current_date() {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMDateToChangeTheCurrentDate());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMDateToChangeTheCurrentDate());
+    	        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+			
+		}
+
+    }
+    @Given("User_615 Enter the Date in User Running Date")
+    public void user_615_enter_the_date_in_user_running_date() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.CSMDateInUserRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMDateInUserRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMDateInUserRunningDate());
+        csmTransactionOnStaffAccount.CSMDateInUserRunningDate().clear();
+        //transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(testData.get("Date in URD"));
+        DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate date =LocalDate.now();
+        String format = date.format(dtFormatter);
+        csmTransactionOnStaffAccount.CSMDateInUserRunningDate().sendKeys(format);
+    }
+    @Given("User_615 Click on Use Button in Change Running Date Popup")
+    public void user_615_click_on_use_button_in_change_running_date_popup() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.CSMUseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMUseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMUseButtonInChangeRunningDate());
+    }
+    @Given("User_615 Click Ok Button in Information PopUp menu")
+    public void user_615_click_ok_button_in_information_pop_up_menu() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMOkButtonInAccessDeniedPopUpMenu());
+    }
+    @Given("User_615 Click on Close Button in Change Running Date Popup")
+    public void user_615_click_on_close_button_in_change_running_date_popup() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionOnStaffAccount.CSMCloseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.CSMCloseButtonInChangeRunningDate());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.CSMCloseButtonInChangeRunningDate());
+    }
+    @Given("user_615 click the transactions in menu options")
+    public void user_615_click_the_transactions_in_menu_options() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.Transactions());
+		seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.Transactions());
+		seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.Transactions());
+		seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.Transactions());
+    }
+    @Given("user_615 click the maintenance in transactions")
+    public void user_click_the_maintenance_in_transactions(Integer int1) {
+    	for(int i=0;i<200;i++) {
+			try {
+				seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.Maintenance());
+				csmTransactionOnStaffAccount.Maintenance().click();
+				break;
+			} catch (Exception e) {
+		     if(i==199) {
+		    	Assert.fail(e.getMessage());
+		     }
+			}
+		}
+    }
+    @Given("user_615 click and enter the value in trx type under transactions")
+    public void user_615_click_and_enter_the_value_in_trx_type_under_transactions() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.TransactionsTrxType());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.TransactionsTrxType());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.TransactionsTrxType());
+        csmTransactionOnStaffAccount.TransactionsTrxType().sendKeys(testData.get("Trx Type"));
+    }
+    @Given("user_615 click the transaction maintenance type icon")
+    public void user_615_click_the_transaction_maintenance_type_icon() {
+    	for (int i = 0; i < 200; i++) {
+			try {
+				seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.TrxMaintance());
+				seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.TrxMaintance());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+			
+		}
+    }
+    @Given("user_615 enter the currency value in credit account details")
+    public void user_615_enter_the_currency_value_in_credit_account_details() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.debitAccountCurrency());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.debitAccountCurrency());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.debitAccountCurrency());
+        csmTransactionOnStaffAccount.debitAccountCurrency().sendKeys(testData.get("Debit Currecncy Code"));
+    }
+    @Given("user_615 enter the GL code in credit account details")
+    public void user_enter_the_gl_code_in_credit_account_details(Integer int1) {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.debitAccountGlCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.debitAccountGlCode());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.debitAccountGlCode());
+        csmTransactionOnStaffAccount.debitAccountGlCode().sendKeys(testData.get("Debit GL Code"));
+    }
+    @Given("user_615 enter the CIF code in credit account details")
+    public void user_615_enter_the_cif_code_in_credit_account_details() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.debitAccountCifCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.debitAccountCifCode());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.debitAccountCifCode());
+        csmTransactionOnStaffAccount.debitAccountCifCode().sendKeys(testData.get("Debit CIF Code "));
+    }
+    @Given("user_615 close the view memo")
+    public void user_615_close_the_view_memo() {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.closeButtonInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.closeButtonInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.closeButtonInTransactions());
+    }
+    @Given("user_615 enter the serial number in credit account details")
+    public void user_615_enter_the_serial_number_in_credit_account_details() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.debitAccountSerialNo());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.debitAccountSerialNo());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.debitAccountSerialNo());
+        csmTransactionOnStaffAccount.debitAccountSerialNo().sendKeys(testData.get("Debit Serial No"));
+    }
+    @Given("user_615 click currency field and enter the value")
+    public void user_615_click_currency_field_and_enter_the_value() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionsCurrencyField());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionsCurrencyField());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionsCurrencyField());
+        csmTransactionOnStaffAccount.csmTransactionsCurrencyField().sendKeys(testData.get("Currency"));
+        csmTransactionOnStaffAccount.csmTransactionsCurrencyField().sendKeys(Keys.TAB);
+    }
+    @Given("user_615 enter GL code")
+    public void user_615_enter_gl_code() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.glCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.glCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.glCodeInTransactions());
+        csmTransactionOnStaffAccount.glCodeInTransactions().clear();
+        csmTransactionOnStaffAccount.glCodeInTransactions().sendKeys(testData.get("Debit GL Code1"));
+    }
+    @Given("user_615 enter CIF code")
+    public void user_615_enter_cif_code() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.cifCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.cifCodeInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.cifCodeInTransactions());
+        csmTransactionOnStaffAccount.cifCodeInTransactions().sendKeys(testData.get("Debit CIF Code1"));
+    }
+    @Given("user_615 enter serial no")
+    public void user_615_enter_serial_no() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.serialNoInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.serialNoInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.serialNoInTransactions());
+        csmTransactionOnStaffAccount.serialNoInTransactions().sendKeys(testData.get("Debit Serial No1"));
+    }
+    @Given("user_615 click amount field and enter the value")
+    public void user_615_click_amount_field_and_enter_the_value() {
+    	for (int i = 0; i < 200; i++) {
+    		try {
+    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionsAmountField());
+    			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionsAmountField());
+    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionsAmountField());
+    	        csmTransactionOnStaffAccount.csmTransactionsAmountField().sendKeys(testData.get("Amount"));
+    	        csmTransactionOnStaffAccount.csmTransactionsAmountField().sendKeys(Keys.TAB);
+    	        break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				// TODO: handle exception
+			}
+    	}
+    }
+    @Given("user_615 check if the  value is entered or not")
+    public void user_615_check_if_the_value_is_entered_or_not() {
+    	try {
+
+            seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.checkIfValueIsEntered());
+            if ((csmTransactionOnStaffAccount.checkIfValueIsEntered().getAttribute("prevvalue")) != null){
+            	csmTransactionOnStaffAccount.checkIfValueIsEntered().isDisplayed();
+            }
+            else
+            {       
+             
+            }
+          } catch (Exception e){
+        	  
+          }
+    }
+    @Given("user_615 click save button in transactions menu")
+    public void user_615_click_save_button_in_transactions_menu() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.saveButtonInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.saveButtonInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.saveButtonInTransactions());
+    }
+    @Given("user_615 verify the alert popup")
+    public void user_615_verify_the_alert_popup() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.sendAlertPopup());
+        Assert.assertTrue(csmTransactionOnStaffAccount.sendAlertPopup().isDisplayed());
+    }
+    @Given("user_615 select the BM user")
+    public void user_615_retrieve_the_bm_user() {
+       seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.selectTheUserInAlertScreen());
+       seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.selectTheUserInAlertScreen());
+       seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.selectTheUserInAlertScreen());
+    }
+    @Then("user_615 send the alert to branch manager")
+    public void user_615_send_the_alert_to_branch_manager() {
+       seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.sendButtonInAlertScreen());
+       seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.sendButtonInAlertScreen());
+       seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.sendButtonInAlertScreen());
+    }
+    @Then("user_615 approve the transaction")
+    public void user_615_approve_the_transaction() {
+        
+    }
+    @Given("user_615 update test data set id for TRS_141_01")
+    public void user_615_update_test_data_set_id_for_trs_141_01() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_142_01")
+    public void user_615_update_test_data_set_id_for_trs_142_01() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_142")
+    public void user_615_update_test_data_set_id_for_trs_142() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_143_01")
+    public void user_615_update_test_data_set_id_for_trs_143_01() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_143")
+    public void user_615_update_test_data_set_id_for_trs_143() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_144_01")
+    public void user_615_update_test_data_set_id_for_trs_144_01() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_144")
+    public void user_615_update_test_data_set_id_for_trs_144() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_145_01")
+    public void user_615_update_test_data_set_id_for_trs_145_01() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_145")
+    public void user_615_update_test_data_set_id_for_trs_145() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_146_01")
+    public void user_615_update_test_data_set_id_for_trs_146_01() throws Throwable {
+        
+    }
+    @Given("user_615 update test data set id for TRS_146")
+    public void user_615_update_test_data_set_id_for_trs_146() throws Throwable {
+        
+    }
+    
+    
+    
     
     
     
