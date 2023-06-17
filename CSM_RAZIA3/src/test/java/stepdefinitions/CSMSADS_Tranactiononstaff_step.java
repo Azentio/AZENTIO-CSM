@@ -1,10 +1,13 @@
 package stepdefinitions;
 
+import java.util.Map;
+
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import dataProvider.ConfigFileReader;
+import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
@@ -21,18 +24,18 @@ public class CSMSADS_Tranactiononstaff_step {
 	CSMSADS_transactiononstaffaccObj transactiononstaffaccObj = new CSMSADS_transactiononstaffaccObj(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSMLogin login = new CSMLogin(driver);
-	String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
-	//ExcelData excelData = new ExcelData(path,"ChequebookRequest","DataSet ID");
-	//ExcelData testExecution = new ExcelData(path,"TestExecution","TestCaseID");
-	//Map<String, String> testExecutionData;
-	//Map<String, String> testData;
+
 	ConfigFileReader configFileReader = new ConfigFileReader();
+	String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
+    ExcelData CSM_TransactionsStepsExcelData = new ExcelData(path,"CSM_TRANSACTIONONSTAFFACC","DataSet ID");
+    Map<String, String> testData;
+
 	@Given("^User Navigate to SADS application and login with valid credentials$")
     public void user_navigate_to_sads_application_and_login_with_valid_credentials() throws Throwable {
 		driver.get(configFileReader.getSADSApplicationUrl());
 		login.loginIntoSadsApplication();
     }
-	
+
 	
 	@And("^User Click on Parameters under SADS application$")
     public void user_click_on_parameters_under_sads_application() throws Throwable {
@@ -60,7 +63,8 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance()); 
-        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys("3554");
+        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys(testData.get("Code_D1"));
+        transactiononstaffaccObj.CSMSADSEnterTheValueInCodeUnderMaintenance().sendKeys(Keys.TAB);
     }
 
     @And("^User Enter the value in Description  under Maintenance Screen$")
@@ -68,7 +72,8 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance()); 
-        transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys("test");
+        transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys(testData.get("Description_D1"));
+        transactiononstaffaccObj.CSMSADSEnterTheValueInDescriptionUnderMaintenance().sendKeys(Keys.TAB);
     }
     
     @And("^User Click the CheckBox in Grant Access to Personal Accounts under Maintenance Screen$")
@@ -142,7 +147,8 @@ public class CSMSADS_Tranactiononstaff_step {
 				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
 		        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
 		        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab());
-		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys("RAZIA",Keys.ENTER); 
+		        //transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys("RAZIA",Keys.ENTER); 
+		        transactiononstaffaccObj.CSMSADSEnterTheUserIDInUserIDTab().sendKeys(testData.get("User_Id"),Keys.ENTER); 
 		        break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -194,7 +200,10 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp());
-        transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys("95916");
+        //transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys("95916");
+        transactiononstaffaccObj.CSMSADSEnterTheGLCodeInSearchPopUp().sendKeys(testData.get("GL_D1"),Keys.TAB);
+        
+        
     }
 
     @And("^User Click on Searched GL code in search popup$")
@@ -238,7 +247,8 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
-        transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys("993558");
+        //transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys("993558");
+        transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox().sendKeys(testData.get("CIF_D1"),Keys.TAB);
     }
 
 
@@ -275,8 +285,9 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys("3554");
+        transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(testData.get("Code_D1"));
         transactiononstaffaccObj.CSMSADSEnterCodeInApproveScreen().sendKeys(Keys.ENTER);
+        
     }
 
     @And("^User Click the Selected code in Approve Screen$")
@@ -312,7 +323,7 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen());
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys("Razia",Keys.ENTER);
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderMaintenanceScreen().sendKeys(testData.get("User_Id"),Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Maintenance Screen$")

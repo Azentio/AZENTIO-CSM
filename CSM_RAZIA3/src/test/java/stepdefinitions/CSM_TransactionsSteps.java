@@ -201,6 +201,25 @@ public class CSM_TransactionsSteps {
 //			}   
 //	    }
 	    	
+	    @And("^User Enter the ForeignCurrency in Maintenance Screen$")
+	    public void user_enter_the_ForeignCurrency_in_maintenance_screen() throws Throwable {
+//	    	
+//	    	for (int i = 0; i < 200; i++) {
+	    		try {
+	    			seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
+	    			seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
+	    	        //seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
+	    	        seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMCurrencyInMaintenanceScreen());
+	    	        CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys(testData.get("Foreign_Currency_D1"));
+	    	        CSMTransactionObj.CSMCurrencyInMaintenanceScreen().sendKeys(Keys.TAB);
+	    	        
+	    	       
+				} catch (Exception e) {
+				Assert.fail(e.getMessage());
+//					if (i==199) {
+//						Assert.fail(e.getMessage());
+					}
+				}
 
 	    @And("^User Enter the Amount in Maintenance Screen$")
 	    public void user_enter_the_amount_in_maintenance_screen() throws Throwable {
@@ -234,7 +253,10 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Branch());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Branch());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Branch());	
-	        CSMTransactionObj.CSM_addbtn_Branch().sendKeys("1",Keys.TAB);
+	        //CSMTransactionObj.CSM_addbtn_Branch().sendKeys("1",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_Branch().sendKeys(testData.get("Acc_Branch_D1"));
+	        CSMTransactionObj.CSM_addbtn_Branch().sendKeys(Keys.TAB);
+	
 	    }
 
 	    @And("^User Enter the Gl in AccountDetails$")
@@ -242,7 +264,9 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Gl());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Gl());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Gl());
-	        CSMTransactionObj.CSM_addbtn_Gl().sendKeys("999",Keys.TAB);
+	        //CSMTransactionObj.CSM_addbtn_Gl().sendKeys("999",Keys.TAB);
+	      CSMTransactionObj.CSM_addbtn_Gl().sendKeys(testData.get("Acc_Gl_D1"));
+	    CSMTransactionObj.CSM_addbtn_Gl().sendKeys(Keys.TAB);
 	  	    }
 
 	    @And("^user Enetr the cif in AccountDetails$")
@@ -250,7 +274,9 @@ public class CSM_TransactionsSteps {
 	     	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Cif());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Cif());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Cif());	
-	        CSMTransactionObj.CSM_addbtn_Cif().sendKeys("993567",Keys.TAB);
+	        //CSMTransactionObj.CSM_addbtn_Cif().sendKeys("993567",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_Cif().sendKeys(testData.get("Acc_Cif_D1"));
+	        CSMTransactionObj.CSM_addbtn_Cif().sendKeys(Keys.TAB);
 	    }
 
 	    @And("^User Enter the Serial in AccountDetails$")
@@ -258,14 +284,59 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Sl());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Sl());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Sl());	 
-	        CSMTransactionObj.CSM_addbtn_Sl().sendKeys("0",Keys.TAB);
+	        //CSMTransactionObj.CSM_addbtn_Sl().sendKeys("0",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_Sl().sendKeys(testData.get("Acc_sl_D1"));
+	        CSMTransactionObj.CSM_addbtn_Sl().sendKeys(Keys.TAB);
+	    }
+
+	    @And("^User Enter the Branch2 in AccountDetails$")
+	    public void user_enter_the_branch2_in_accountdetails() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Branch());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Branch());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Branch());	
+	        //CSMTransactionObj.CSM_addbtn_Branch().sendKeys("1",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_Branch().sendKeys(testData.get("Acc_Branch_D2"));
+	        CSMTransactionObj.CSM_addbtn_Branch().sendKeys(Keys.TAB);
+
+	    }
+
+	    @And("^User Enter the Gl2 in AccountDetails$")
+	    public void user_enter_the_gl2_in_accountdetails() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Gl());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Gl());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Gl());
+	        //CSMTransactionObj.CSM_addbtn_Gl().sendKeys("999",Keys.TAB);
+	      CSMTransactionObj.CSM_addbtn_Gl().sendKeys(testData.get("Acc_Gl_D2"));
+	    CSMTransactionObj.CSM_addbtn_Gl().sendKeys(Keys.TAB);
+	  	    }
+
+	    @And("^user Enetr the cif2 in AccountDetails$")
+	    public void user_enetr_the_cif2_in_accountdetails() throws Throwable {
+	     	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Cif());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Cif());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Cif());	
+	        //CSMTransactionObj.CSM_addbtn_Cif().sendKeys("993567",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_Cif().sendKeys(testData.get("Acc_Cif_D2"));
+	        CSMTransactionObj.CSM_addbtn_Cif().sendKeys(Keys.TAB);
+	    }
+
+	    @And("^User Enter the Serial2 in AccountDetails$")
+	    public void user_enter_the_serial2_in_accountdetails() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Sl());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Sl());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Sl());	 
+	        //CSMTransactionObj.CSM_addbtn_Sl().sendKeys("0",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_Sl().sendKeys(testData.get("Acc_sl_D2"));
+	        CSMTransactionObj.CSM_addbtn_Sl().sendKeys(Keys.TAB);
 	    }
 
 	    @And("^User Enter the Amount in AccountDetails$")
 	    public void user_enter_the_amount_in_accountdetails() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_Amount());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_Amount());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Amount());	
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_Amount());
+	        CSMTransactionObj.CSM_addbtn_Amount().sendKeys(testData.get("Acc_Amount_D1"));
+	        CSMTransactionObj.CSM_addbtn_Amount().sendKeys(Keys.TAB);
 	    }
 
 	    @And("^User give some Msg Instruction1 in AccountDetails$")
@@ -273,7 +344,9 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_instr1());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_instr1());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_instr1());
-	        CSMTransactionObj.CSM_addbtn_instr1().sendKeys("ok",Keys.TAB);
+	        //CSMTransactionObj.CSM_addbtn_instr1().sendKeys("ok",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_instr1().sendKeys(testData.get("Acc_Msg1_D1"));
+	        CSMTransactionObj.CSM_addbtn_instr1().sendKeys(Keys.TAB);
 	    }
 
 	    @And("^User give some Msg Instruction2 in AccountDetails$")
@@ -281,7 +354,9 @@ public class CSM_TransactionsSteps {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_addbtn_instr2());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_addbtn_instr2());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_addbtn_instr2());	
-	        CSMTransactionObj.CSM_addbtn_instr2().sendKeys("ok",Keys.TAB);
+	       // CSMTransactionObj.CSM_addbtn_instr2().sendKeys("ok",Keys.TAB);
+	        CSMTransactionObj.CSM_addbtn_instr2().sendKeys(testData.get("Acc_Msg2_D1"));
+	        CSMTransactionObj.CSM_addbtn_instr2().sendKeys(Keys.TAB);
 	    }
 
 	    @And("^User Click the ok button in AccountDetails$")

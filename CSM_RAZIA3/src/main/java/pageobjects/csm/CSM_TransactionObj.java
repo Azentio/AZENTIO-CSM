@@ -185,6 +185,7 @@ public class CSM_TransactionObj {
 	}
 	@FindBy(id="new_1685338396215_ctstrsACCDETVO.AC_CIF")
 	private WebElement CSM_addbtn_Cif;
+	
 
 	public WebElement CSM_addbtn_Cif() {
 		return CSM_addbtn_Cif;
