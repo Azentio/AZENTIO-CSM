@@ -405,4 +405,17 @@ public class CSMCommonWebElements {
 		return csmCore_CommonOkButton;
 	}
 
+	@FindBy(xpath = "//div[contains(text(),'Amount Exceeds Available Balance in Account ')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement csm_AmouundExceedAvailableBalanceWarningMessage;
+
+	public WebElement csmAmouundExceedAvailableBalanceWarningMessage() {
+		return csm_AmouundExceedAvailableBalanceWarningMessage;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Changes made, are you sure you want to quit')]//parent::div//following-sibling::center//input[1]")
+	private WebElement csmCommon_UpdateScreenQuitOkButton;
+
+	public WebElement csmCommonUpdateScreenQuitOkButtton() {
+		return csmCommon_UpdateScreenQuitOkButton;
+	}
 }

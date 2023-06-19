@@ -330,6 +330,11 @@ public class CSM_UserAccessSteps extends BaseClass {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_095_03");
 		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
+	@And("^get the test data for test case ID TRS_155_01$")
+	public void get_the_test_data_for_test_case_id_TRS_155_01() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_155_01");
+		userAccessTestData = exelDataForUserAccess.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
 
 	@And("^get the test data for test case ID TRS_002_01$")
 	public void get_the_test_data_for_test_case_id_trs00201() throws Throwable {

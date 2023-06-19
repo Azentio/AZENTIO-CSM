@@ -1006,7 +1006,7 @@ And click on ok button after approval screen under user screen
 And store the transaction number and withdraw amount in transaction excel database for limit and overdrawn
 And logout from the application
 @TRS_095_03
-Scenario: To check the show today TRX falg under user in CSM Param
+Scenario: To check the force overdrawn flag under transaction type update after approve
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter
@@ -1311,6 +1311,124 @@ And click on sent button in alert section
 @TRS_153_02
 Scenario: Login the Branch manager for sending the alert
 And get the test data for test case ID TRS_153_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+Then verify branch manager ANANDH got the alert which is sent from teller ANANDHTA
+And select the transaction record from alert
+And click on open item buttton in alert
+And click on approve button in alert screen
+And click on Transaction module
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+@TRS_154
+Scenario: Checking Cash Withdrawal Transaction - Value Date changed Alert flag
+Given user 076 navigate to CSM Aplication and login with teller account
+And get the test data for test case ID TRS_154
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+Then verify system should show the non resident warning message
+And enter the currency code
+And enter the amount for debit from the account
+And click on save button in transaction
+And store the transaction number in transaction excel database
+Then verify alert screen is open in transactio maintenannce
+And enter the branch manager user ID in alert section
+And click on the branch manager ID in alert suggestion grid
+And click on sent button in alert section
+@TRS_154_02
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_154_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+Then verify branch manager ANANDH got the alert which is sent from teller ANANDHTA
+And select the transaction record from alert
+And click on open item buttton in alert
+And click on approve button in alert screen
+And click on Transaction module
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+@TRS_155_01
+Scenario: under csm Param need to set the limit for withdraw transaction
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And click on user module under system parameter
+And click on update after approve screen under user module
+And get the test data for test case ID TRS_155_01
+And search the user ID in user module
+And select the user from suggestion
+And click on account type access option
+And search for the account type which user created
+And delete the account type details
+And click on add button in account type access
+And enter the account type for access
+And enter the transaction type for withdraw in account type access
+And enter the overdrawn for withdraw accout type access
+And click on ok button in access screen
+And click on update after approve button
+And click on ok button in update confirmation
+And click on ok button in saved successfully in user screen
+And close the update after approve screen of user
+And click on ok button
+And click on approval module under user module
+And get the test data for test case ID TRS_155_01
+And search the user ID in user module
+And select the user from suggestion
+And click on approve button in user module
+And click on approval confirmation ok button under user screen
+And click on ok button after approval screen under user screen
+And logout from the application
+
+@TRS_155
+Scenario: Checking Cash Withdrawal Transaction - Value Date changed Alert flag
+Given user 076 navigate to CSM Aplication and login with teller account
+And get the test data for test case ID TRS_155
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for debit from the account
+Then verify system shoudl show the validation for amound exceeed available balance in transaction maintenance
+And click on save button in transaction
+Then verify system shoudl show the validation for amound exceeed available balance in transaction maintenance
+And store the transaction number in transaction excel database
+Then verify alert screen is open in transactio maintenannce
+And enter the branch manager user ID in alert section
+And click on the branch manager ID in alert suggestion grid
+And click on sent button in alert section
+@TRS_155_02
+Scenario: Login the Branch manager for sending the alert
+And get the test data for test case ID TRS_155_02
 Given navigate to CSM application and login with valid credentials
 And change the system date to given date
 And click on tech option

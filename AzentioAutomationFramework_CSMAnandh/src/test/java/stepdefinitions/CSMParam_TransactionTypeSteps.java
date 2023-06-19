@@ -31,7 +31,9 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	String ParamDataPath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+	ExcelData excelDataFOrChangeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
 	Map<String, String> transactionExecutionData = new HashMap<>();
+	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
 	Map<String, String> transactionTypeTestData = new HashMap<>();
 	Robot robot;
 	ExcelData excelDataForTransactionTestData = new ExcelData(ParamDataPath, "CSMParam_TransactionTypeTestDat",
@@ -51,6 +53,41 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_045_01");
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	// get the test data for test case ID TRS_040_02
+	@And("^get the test data for test case ID CW_041_02$")
+	public void get_the_test_data_for_test_case_id_TRS_041_02() throws Throwable {
+
+		chargeWaiverExecutionData = excelDataFOrChangeWaiverExecution.getTestdata("CW_041_02");
+		System.out.println("data Set ID " + chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+	
+	@And("^get the test data for test case ID CW_040_02$")
+	public void get_the_test_data_for_test_case_id_TRS_040_02() throws Throwable {
+
+		chargeWaiverExecutionData = excelDataFOrChangeWaiverExecution.getTestdata("CW_040_02");
+		System.out.println("data Set ID " + chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+	@And("^get the test data for test case ID CW_039_02$")
+	public void get_the_test_data_for_test_case_id_TRS_039_02() throws Throwable {
+
+		chargeWaiverExecutionData = excelDataFOrChangeWaiverExecution.getTestdata("CW_039_02");
+		System.out.println("data Set ID " + chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+	@And("^get the test data for test case ID CW_038_02$")
+	public void get_the_test_data_for_test_case_id_TRS_038_02() throws Throwable {
+
+		chargeWaiverExecutionData = excelDataFOrChangeWaiverExecution.getTestdata("CW_038_02");
+		System.out.println("data Set ID " + chargeWaiverExecutionData.get("Data Set ID"));
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
 	@And("^get the test data for test case ID TRS_044_01$")
@@ -256,6 +293,66 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
+		}
+	}
+	
+
+	@And("uncheck the flag allow user to modify and clear charge flag under transaction Type")
+	public void uncheck_the_flag_allow_user_to_modify_and_clear_charge_flag_under_transaction_type()
+			throws IOException {
+		for (int i = 0; i <= 500; i++)
+
+		{
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String flagStatus = transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag()
+				.getAttribute("initialvalue");
+		if (flagStatus.equals("checked")) {
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+
+		} else {
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+		}
+	}
+	@And("check the flag allow user to modify and clear charge flag under transaction Type")
+	public void check_the_flag_allow_user_to_modify_and_clear_charge_flag_under_transaction_type()
+			throws IOException {
+		for (int i = 0; i <= 100000; i++)
+
+		{
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 100000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String flagStatus = transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag()
+				.getAttribute("initialvalue");
+		
+		if (flagStatus.equals("checked")) {
+		
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+		
+		} else {
+			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
+			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
 		}
 	}
 
@@ -624,14 +721,14 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 
 	@And("^click on approve button in transaction type approval$")
 	public void click_on_approve_button_in_transaction_type_approval() throws Throwable {
-		for (int i = 0; i <= 500; i++) {
+		for (int i = 0; i <= 15000; i++) {
 			try {
 				javascriptHelper.scrollIntoView(csmCOmmonWebElements.csmApproveBtnWithLabel());
 				clicksAndActionsHelper.clickUsingActionClass(csmCOmmonWebElements.csmApproveBtnWithLabel(),
 						csmCOmmonWebElements.csmApproveBtnWithLabel());
 				break;
 			} catch (Exception e) {
-				if (i == 500) {
+				if (i == 15000) {
 					Assert.fail(e.getMessage());
 				}
 			}

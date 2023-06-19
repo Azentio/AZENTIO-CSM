@@ -62,6 +62,13 @@ public class CSMParam_TransactionTypeObj {
 		return transactionType_EnableMultiBranchFalg;
 	}
 
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.ALLOW_CLEARING_CHRG")
+	private WebElement transactionType_AllowUserToModifyClearChargeFlag;
+
+	public WebElement transactionTypeAllowUSerToModifyClearChargeFlag() {
+		return transactionType_AllowUserToModifyClearChargeFlag;
+	}
+
 	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.BACK_DATED_VDATE")
 	private WebElement transactionType_AllowBackDateVAluDateFalg;
 
@@ -203,5 +210,5 @@ public class CSMParam_TransactionTypeObj {
 	public WebElement transactionTypeRequestCurrencyDenominationFlag() {
 		return transactionType_RequestCurrencyDenominationFlag;
 	}
-	
+
 }

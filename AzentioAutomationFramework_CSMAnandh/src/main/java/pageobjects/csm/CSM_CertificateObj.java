@@ -7,108 +7,136 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CSM_CertificateObj {
 	WebDriver driver;
-	public CSM_CertificateObj(WebDriver driver)
-	{
-		this.driver= driver;
+
+	public CSM_CertificateObj(WebDriver driver) {
+		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	@FindBy(xpath="//td[contains(text(),'Certificates')]")
+
+	@FindBy(xpath = "//td[contains(text(),'Certificates')]")
 	private WebElement csm_CertificateFeature;
-	public WebElement csmCertificateFeature()
-	{
+
+	public WebElement csmCertificateFeature() {
 		return csm_CertificateFeature;
 	}
-	@FindBy(xpath="(//td[contains(text(),'Active')]//preceding-sibling::td[8]//input)[2]")
+
+	@FindBy(xpath = "(//td[contains(text(),'Active')]//preceding-sibling::td[8]//input)[2]")
 	private WebElement certificate_DeductFromAccount;
-	public WebElement certificateDeductFromAccount()
-	{
+
+	public WebElement certificateDeductFromAccount() {
 		return certificate_DeductFromAccount;
 	}
-	@FindBy(xpath="(//td[contains(text(),'Active')]//preceding-sibling::td[9]//input)[1]")
+
+	@FindBy(xpath = "(//td[contains(text(),'Active')]//preceding-sibling::td[9]//input)[1]")
 	private WebElement certificate_CreditAccount;
-	public WebElement certificateCreditAccount()
-	{
+
+	public WebElement certificateCreditAccount() {
 		return certificate_CreditAccount;
 	}
-	@FindBy(xpath="//td[contains(text(),'Certificates')]//ancestor::h3//following-sibling::ul//span[contains(text(),'Maintenance')]")
+
+	@FindBy(xpath = "//td[contains(text(),'Certificates')]//ancestor::h3//following-sibling::ul//span[contains(text(),'Maintenance')]")
 	private WebElement certificate_Maintenance;
-	public WebElement certificateMaintenance()
-	{
+
+	public WebElement certificateMaintenance() {
 		return certificate_Maintenance;
 	}
-	@FindBy(xpath="//td[contains(text(),'Certificates')]//ancestor::h3//following-sibling::ul//span[text()='Approve']")
+
+	@FindBy(xpath = "//td[contains(text(),'Certificates')]//ancestor::h3//following-sibling::ul//span[text()='Approve']")
 	private WebElement certificate_ApproveFeature;
-	public WebElement certificateApproveFeature()
-	{
+
+	public WebElement certificateApproveFeature() {
 		return certificate_ApproveFeature;
 	}
-	@FindBy(xpath="//input[@name='CIF_NO']")
+
+	@FindBy(xpath = "//input[@name='CIF_NO']")
 	private WebElement certificateApprove_CIFNumberInput;
-	public WebElement certificateApproveCIFNumberInput()
-	{
+
+	public WebElement certificateApproveCIFNumberInput() {
 		return certificateApprove_CIFNumberInput;
 	}
-	@FindBy(xpath="//input[@name='certificateCO.ctscertificateVO.CERTIFICATE_TYPE']")
+
+	@FindBy(xpath = "//input[@name='certificateCO.ctscertificateVO.CERTIFICATE_TYPE']")
 	private WebElement certificateMaintenance_CertificateTypeInput;
-	public WebElement certificateMaintenanceCertificateTypeInput()
-	{
+
+	public WebElement certificateMaintenanceCertificateTypeInput() {
 		return certificateMaintenance_CertificateTypeInput;
 	}
-	@FindBy(xpath="//a[contains(text(),'Certificates / Maintenance')]")
+
+	@FindBy(xpath = "//a[contains(text(),'Certificates / Maintenance')]")
 	private WebElement certificateMaintenance_Label;
-	public WebElement certificateMaintenanceLabel()
-	{
+
+	public WebElement certificateMaintenanceLabel() {
 		return certificateMaintenance_Label;
 	}
-	@FindBy(xpath="//a[contains(text(),'Certificates / Maintenance')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//a[contains(text(),'Certificates / Maintenance')]//parent::td//following-sibling::td//span")
 	private WebElement certificateMaintenance_LabelClose;
-	public WebElement certificateMaintenanceLabelClose()
-	{
+
+	public WebElement certificateMaintenanceLabelClose() {
 		return certificateMaintenance_LabelClose;
 	}
-	@FindBy(xpath="//input[@name='certificateCO.ctscertificate_typeVO.BRIEF_DESC_ENG']")
+
+	@FindBy(xpath = "//input[@name='certificateCO.ctscertificate_typeVO.BRIEF_DESC_ENG']")
 	private WebElement certificateMaintenance_CertificateTypeDescription;
-	public WebElement certificateMaintenanceCertificateTypeDescription()
-	{
+
+	public WebElement certificateMaintenanceCertificateTypeDescription() {
 		return certificateMaintenance_CertificateTypeDescription;
 	}
-	@FindBy(xpath="//input[@name='certificateCO.ctscertificateVO.CIF_NO']")
+
+	@FindBy(xpath = "//input[@name='certificateCO.ctscertificateVO.CIF_NO']")
 	private WebElement certificateMaintenance_CIFNumberInput;
-	public WebElement certificateMaintenanceCIFNumberInput()
-	{
+
+	public WebElement certificateMaintenanceCIFNumberInput() {
 		return certificateMaintenance_CIFNumberInput;
 	}
-	@FindBy(xpath="//input[@name='certificateCO.ctscertificateVO.CIF_NAME']")
+
+	@FindBy(xpath = "//input[@name='certificateCO.ctscertificateVO.CIF_NAME']")
 	private WebElement certificateMaintenance_CIFNumberDescription;
-	public WebElement certificateMaintenanceCIFNumberDescription()
-	{
+
+	public WebElement certificateMaintenanceCIFNumberDescription() {
 		return certificateMaintenance_CIFNumberDescription;
 	}
-	@FindBy(xpath="//input[@name='certificateCO.ctscertificateVO.NUMBER_OF_BILLS']")
+
+	@FindBy(xpath = "//input[@name='certificateCO.ctscertificateVO.NUMBER_OF_BILLS']")
 	private WebElement certificateMaintenance_NumberOfBillsInput;
-	public WebElement certificateMaintenanceNumberOfBillsInput()
-	{
+
+	public WebElement certificateMaintenanceNumberOfBillsInput() {
 		return certificateMaintenance_NumberOfBillsInput;
 	}
-	@FindBy(xpath="//input[@name='certificateCO.ctscertificateVO.TOTAL_AMOUNT_OF_BILLS']")
+
+	@FindBy(xpath = "//input[@name='certificateCO.ctscertificateVO.TOTAL_AMOUNT_OF_BILLS']")
 	private WebElement certificateMaintenance_TotalAmountOfBillsInput;
-	public WebElement certificateMaintenanceTotalAmountOfBillsInput()
-	{
+
+	public WebElement certificateMaintenanceTotalAmountOfBillsInput() {
 		return certificateMaintenance_TotalAmountOfBillsInput;
 	}
-	@FindBy(xpath="//span[contains(text(),'Charges')]//parent::div")
+
+	@FindBy(xpath = "//span[contains(text(),'Charges')]//parent::div")
 	private WebElement certificateMaintenance_ChargesSection;
-	public WebElement certificateMaintenanceChargesSection()
-	{
+
+	public WebElement certificateMaintenanceChargesSection() {
 		return certificateMaintenance_ChargesSection;
 	}
-	@FindBy(xpath="//span[contains(text(),' Waive Charges ')]//ancestor::button")
+
+	@FindBy(xpath = "//span[contains(text(),' Waive Charges ')]//ancestor::button")
 	private WebElement certificateMaintenance_WaiveChargesButton;
-	public WebElement certificateMaintenanceWaiveChargesButton()
-	{
+
+	public WebElement certificateMaintenanceWaiveChargesButton() {
 		return certificateMaintenance_WaiveChargesButton;
 	}
-	
-	
+
+	@FindBy(xpath = "//div[contains(text(),'Cannot clear charges')]//parent::div//following-sibling::center//input[1]")
+	private WebElement certificateMaintenance_canNotClearChargesOkButton;
+
+	public WebElement certificateMaintenancecanNotClearChargesOkButton() {
+		return certificateMaintenance_canNotClearChargesOkButton;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='CV Amount']")
+	private WebElement certificateApprove_ZeroChargeValidation;
+
+	public WebElement certificateApproveZeroChargeValidation() {
+		return certificateApprove_ZeroChargeValidation;
+	}
 
 }

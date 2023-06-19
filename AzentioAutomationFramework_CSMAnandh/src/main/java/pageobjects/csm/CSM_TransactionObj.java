@@ -237,7 +237,7 @@ public class CSM_TransactionObj {
 		return transactionTypeSO_EndingDateInput;
 	}
 
-	@FindBy(xpath = "//div[contains(text(),'Charges amount is waived by the system')]//parent::div//following-sibling::center//input[@value='Ok']")
+	@FindBy(xpath = "(//div[contains(text(),'Charges amount is waived by the system')]//parent::div//following-sibling::center//input[@value='Ok'])[1]")
 	private WebElement transaction_WaivedAlertPopup_WithOk;
 
 	public WebElement transaction_WaivedAlertPopupWithOkBtn() {
@@ -263,6 +263,13 @@ public class CSM_TransactionObj {
 
 	public WebElement transactionApproveFeature() {
 		return transaction_ApproveFeature;
+	}
+
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Approve Cancel']")
+	private WebElement transaction_ApproveCancelFeature;
+
+	public WebElement transactionApproveCancelFeature() {
+		return transaction_ApproveCancelFeature;
 	}
 
 	@FindBy(xpath = "//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
@@ -307,11 +314,25 @@ public class CSM_TransactionObj {
 		return transaction_closeTransactionTab;
 	}
 
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Approve')]//parent::td//following-sibling::td//span")
+	private WebElement transaction_ApproveTransactionTab;
+
+	public WebElement transactionApproveTransactionTabClose() {
+		return transaction_ApproveTransactionTab;
+	}
+
 	@FindBy(xpath = "(//table[@class='ui-jqgrid-ftable']//td[@tdlabel='in Charged CY'])[1]")
 	private WebElement transaction_ChargeValidation;
 
 	public WebElement transactionChargeValidation() {
 		return transaction_ChargeValidation;
+	}
+
+	@FindBy(xpath = "//span[contains(text(),' Approve Cancel ')]//parent::button")
+	private WebElement transaction_ApproveCancelButton;
+
+	public WebElement transactionApproveCancelButton() {
+		return transaction_ApproveCancelButton;
 	}
 
 	@FindBy(xpath = "//div[contains(text(),'Approved')]//parent::div//following-sibling::center//input")
@@ -747,6 +768,20 @@ public class CSM_TransactionObj {
 
 	public WebElement transactionManagementAccountTypeLimitCanNotProceedValidation() {
 		return transactionManagement_AccountTypeLimitCanNotProceedValidation;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Approve Reactivate Standing Order')]//parent::td//following-sibling::td//span")
+	private WebElement transactionManagement_ApproveReactivateStandingOrderClose;
+
+	public WebElement transactionManagementApproveReactivateStandingOrderClose() {
+		return transactionManagement_ApproveReactivateStandingOrderClose;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Cancel')]//parent::td//following-sibling::td//span")
+	private WebElement transactionManagement_CancelTabClose;
+
+	public WebElement transactionManagementCancelTabClose() {
+		return transactionManagement_CancelTabClose;
 	}
 
 }

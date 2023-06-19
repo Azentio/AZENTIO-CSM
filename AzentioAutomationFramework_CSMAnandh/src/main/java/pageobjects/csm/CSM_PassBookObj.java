@@ -40,7 +40,15 @@ public class CSM_PassBookObj {
 	public WebElement passbookMaintenanceLabelClose() {
 		return passbookMaintenance_LabelClose;
 	}
-	@FindBy(xpath="//a[contains(text(),'PassBooks / Issue Passbooks')]//parent::td//following-sibling::td//span")
+
+	@FindBy(xpath = "//span[contains(text(),'Charges')]")
+	private WebElement passbokkIssue_ChargesSection;
+
+	public WebElement passbookIssueChargesSection() {
+		return passbokkIssue_ChargesSection;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'PassBooks / Issue Passbooks')]//parent::td//following-sibling::td//span")
 	private WebElement passbookIssuePassbook_LabelClose;
 
 	public WebElement passbookIssuePassbookLabelClose() {
@@ -126,7 +134,6 @@ public class CSM_PassBookObj {
 		return passbook_IssuePassbook;
 	}
 
-	
 	@FindBy(xpath = "//input[@name='CODE']")
 	private WebElement passbook_SearchPassbookCode;
 
@@ -153,6 +160,41 @@ public class CSM_PassBookObj {
 
 	public WebElement closePassbookCloseButton() {
 		return closePassbook_CloseButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Cannot clear charges')]//parent::div//following-sibling::center//input[1]")
+	private WebElement passbook_canNotClearChargesOkButton;
+
+	public WebElement passbookCanNotClearChargesOkButton() {
+		return passbook_canNotClearChargesOkButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Confirm Closing Process')]//parent::div//following-sibling::center//input[1]")
+	private WebElement passbook_CloseConfirmationOkButton;
+
+	public WebElement passbookCloseConfirmationOkButton() {
+		return passbook_CloseConfirmationOkButton;
+	}
+
+	@FindBy(xpath = "(//td[@tdlabel='CV Amount'])[2]")
+	private WebElement passbook_ChargeAmountTotal;
+
+	public WebElement passbookChargeAmountTotal() {
+		return passbook_ChargeAmountTotal;
+	}
+
+	@FindBy(xpath = "//span[contains(text(),' Waive Charges ')]//ancestor::button")
+	private WebElement passBook_WaiveChargesButton;
+
+	public WebElement passBookWaiveChargesButton() {
+		return passBook_WaiveChargesButton;
+	}
+
+	@FindBy(xpath = "//td[@tdlabel='CV Amount']")
+	private WebElement passbookIssue_ZeroChargeValidation;
+
+	public WebElement passbookIssueZeroChargeValidation() {
+		return passbookIssue_ZeroChargeValidation;
 	}
 
 }

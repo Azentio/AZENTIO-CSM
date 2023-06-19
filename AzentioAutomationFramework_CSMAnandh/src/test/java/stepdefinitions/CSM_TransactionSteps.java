@@ -701,7 +701,7 @@ public class CSM_TransactionSteps extends BaseClass {
 	@And("^close the memo alert in transaction screen$")
 	public void close_the_memo_alert_in_transaction_screen() throws Throwable {
 
-		for (int i = 0; i <= 300; i++) {
+		for (int i = 0; i <= 100; i++) {
 			try {
 				clicksAndActionsHelper.moveToElement(csmCommonWebElements.memoAlertCloseButton());
 				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.memoAlertCloseButton());
@@ -1413,6 +1413,15 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	}
 
+	@Then("verify system shoudl show the validation for amound exceeed available balance in transaction maintenance")
+	public void verify_system_shoudl_show_the_validation_for_amound_exceeed_available_balance_in_transaction_maintenance()
+			throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver,
+				csmCommonWebElements.csmAmouundExceedAvailableBalanceWarningMessage());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAmouundExceedAvailableBalanceWarningMessage());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmAmouundExceedAvailableBalanceWarningMessage());
+	}
+
 	@And("^click on ok button in transaction warning$")
 	public void click_on_ok_button_in_transaction_warning() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver,
@@ -1436,20 +1445,34 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@Then("^verify system should show the validation for charge waiver in transaction screen$")
 	public void verify_system_should_show_the_validation_for_charge_waiver_in_transaction_screen() throws Throwable {
-		for (int i = 0; i <= 100; i++) {
+		boolean status = false;
+		for (int i = 0; i <= 500; i++) {
 			try {
-				transactionObj.transaction_WaivedAlertPopupWithOkBtn().isDisplayed();
+				status = transactionObj.transaction_WaivedAlertPopupWithOkBtn().isDisplayed();
+				System.out.println("Status of the charge waive button " + status);
 				break;
 			} catch (Exception e) {
-				if (i == 100) {
+				if (i == 500) {
 					Assert.fail(e.getMessage());
 				}
 			}
 		}
 
-		Assert.assertTrue(transactionObj.transaction_WaivedAlertPopupWithOkBtn().isDisplayed());
-		clicksAndActionsHelper.moveToElement(transactionObj.transaction_WaivedAlertPopupWithOkBtn());
-		clicksAndActionsHelper.clickOnElement(transactionObj.transaction_WaivedAlertPopupWithOkBtn());
+		Assert.assertTrue(status);
+		for (int i = 0; i <= 500; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transaction_WaivedAlertPopupWithOkBtn());
+				// clicksAndActionsHelper.clickOnElement(transactionObj.transaction_WaivedAlertPopupWithOkBtn());
+				javascriptHelper.JSEClick(transactionObj.transaction_WaivedAlertPopupWithOkBtn());
+				break;
+			} catch (Exception e) {
+				if (i == 500) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+
 	}
 
 	@Then("^verify system should not show the validation for charge waiver$")
@@ -1504,6 +1527,13 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transaction_TransactionNumberOkButton());
 		clicksAndActionsHelper.moveToElement(transactionObj.transaction_TransactionNumberOkButton());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transaction_TransactionNumberOkButton());
+	}
+
+	@And("close the transaction approve screen")
+	public void close_the_transaction_approve_screen() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transationApproveTabCloseButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.transationApproveTabCloseButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transationApproveTabCloseButton());
 	}
 
 	@And("^store the transaction number in transaction excel database$")
@@ -1571,6 +1601,23 @@ public class CSM_TransactionSteps extends BaseClass {
 			}
 		}
 
+	}
+
+	@And("^click on approve button in charge code feature$")
+	public void click_on_approve_button_in_charge_code_feature() throws Throwable {
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				javascriptHelper.scrollIntoView(csmCommonWebElements.csmApproveBtnWithLabel());
+				clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmApproveBtnWithLabel());
+				clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmApproveBtnWithLabel());
+				break;
+
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("^click on approve button$")
@@ -1731,6 +1778,14 @@ public class CSM_TransactionSteps extends BaseClass {
 			System.out.println(str);
 		}
 		Assert.assertEquals(spliChargeAmt[0], transactionTestData.get("Waived Charge Amount"));
+	}
+
+	@And("^close the reactivate SO screen under transactions$")
+	public void close_the_reactivate_SO_screen_under_transactions() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				transactionObj.transactionApproveReactiveStandingOrderlabelCloseButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveReactiveStandingOrderlabelCloseButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveReactiveStandingOrderlabelCloseButton());
 	}
 
 	@And("^click on to be stopped screen under transaction module$")
@@ -2050,8 +2105,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		}
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionTypeInputDescription());
 		for (int i = 0; i <= 100; i++) {
-			if (transactionObj.transactionTransactionTypeInputDescription().getAttribute("prevvalue").isBlank()) {
-				break;
+			try {
+				if (transactionObj.transactionTransactionTypeInputDescription().getAttribute("prevvalue").isBlank()) {
+					break;
+				}
+			} catch (Exception e) {
+
 			}
 
 		}
@@ -2374,10 +2433,17 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.cancelCancelReasonDropdown());
 		dropdownHelper.SelectUsingVisibleText(transactionObj.cancelCancelReasonDropdown(),
 				transactionTestData.get("Cancel Reason"));
+		// prevvalue
+		for (int i = 0; i <= 500; i++) {
+			if (!(transactionObj.cancelCancelReasonDropdown().getAttribute("prevvalue").isBlank())) {
+
+			}
+		}
 	}
 
 	@And("^click on cancel button under cancel feature$")
 	public void click_on_cancel_button_under_cancel_feature() throws Throwable {
+
 		for (int i = 0; i <= 300; i++) {
 			try {
 				javascriptHelper.scrollIntoView(transactionObj.cancelCancelButton());
@@ -2392,6 +2458,58 @@ public class CSM_TransactionSteps extends BaseClass {
 			}
 		}
 
+	}
+
+	@And("close the cancell feature under transactions")
+	public void close_the_cancell_feature_under_transactions() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionManagementCancelTabClose());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionManagementCancelTabClose());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionManagementCancelTabClose());
+	}
+
+	@And("click the approve cancel feature in transactions")
+	public void click_the_approve_cancel_feature_in_transactions() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionApproveCancelFeature());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveCancelFeature());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveCancelFeature());
+	}
+
+	@And("search the transaction number in approve cancel feature")
+	public void search_the_transaction_number_in_approve_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionSearchTransactionNo());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionSearchTransactionNo());
+		transactionObj.transactionSearchTransactionNo().sendKeys(transactionTestData.get("Transaction Number"));
+		transactionObj.transactionSearchTransactionNo().sendKeys(Keys.ENTER);
+		robot = new Robot();
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
+	@And("select the transaction record in approve cancel feature")
+	public void select_the_transaction_record_in_approve_cancel_feature() {
+		String xpath = "//td[contains(text(),'" + transactionTestData.get("Transaction Number") + "')]";
+		for (int i = 0; i <= 1000; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				break;
+			} catch (Exception e) {
+				if (i == 1000) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@And("click on approve cancel button in approve cancel feature")
+	public void click_on_approve_cancel_button_in_approve_cancel_feature() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionApproveCancelButton());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionApproveCancelButton());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionApproveCancelButton());
 	}
 
 	@Then("^verify system should show the validation for charge waiver in transaction cance$")
@@ -2502,6 +2620,20 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("get the test data for test case ID TRS_154")
+	public void get_the_test_data_for_test_case_id_TRS_154() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_154");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_155")
+	public void get_the_test_data_for_test_case_id_TRS_155() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_155");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("get the test data for test case ID TRS_150_02")
 	public void get_the_test_data_for_test_case_id_trs() {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_150_02");
@@ -2537,6 +2669,22 @@ public class CSM_TransactionSteps extends BaseClass {
 	@And("get the test data for test case ID TRS_153_02")
 	public void get_the_test_data_for_test_case_id_TRS_153_02() {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_153_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
+	@And("get the test data for test case ID TRS_154_02")
+	public void get_the_test_data_for_test_case_id_TRS_154_02() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_154_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+
+	}
+
+	@And("get the test data for test case ID TRS_155_02")
+	public void get_the_test_data_for_test_case_id_TRS_155_02() {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_155_02");
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 
