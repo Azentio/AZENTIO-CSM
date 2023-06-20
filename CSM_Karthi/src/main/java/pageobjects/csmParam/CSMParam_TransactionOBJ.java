@@ -96,7 +96,7 @@ public WebElement csmSystemParametersTransactionTypeUAChargesSchemaInput()
 {
 	return csm_SystemParameters_TransactionTypeUA_ChargesSchema_Input;
 }
-@FindBy(xpath = "//td[@id='td_tab27_GridTbl_Id_P024MA_1_ctstrxtypeChargesVO.CHARGES_CY_POLICY']")
+@FindBy(xpath = "//td[@id='td_tab27_GridTbl_Id_P024MA_1_ctstrxtypeChargesVO.CHARGES_CY_POLICY']//select")
 private WebElement csm_SystemParameters_TransactionTypeUA_GlCharges_Select_Input;
 public WebElement csmSystemParametersTransactionTypeUAGlChargesSelectInput()
 {
@@ -132,7 +132,7 @@ public WebElement csmSystemParametersTransactionTypeUAOk_Buton()
 {
 	return csm_SystemParameters_TransactionTypeUA_Ok_Buton;
 }
-@FindBy(xpath="//label[@id='tellerParamMaint_FormId_E000MA_Update_After_Approve_key']")
+@FindBy(xpath="//label[text()='Update After Approve ']")
 private WebElement csm_TransactionType_UpdateAfterApprove_Button;
 public WebElement csmTransactionTypeUpdateAfterApproveButton()
 {
@@ -150,7 +150,7 @@ public WebElement csmTransactionTypeSuccessOkButton()
 {
 	return csm_TransactionType_SuccessOkButton;
 }
-@FindBy(xpath="//a[@id='E000P']")
+@FindBy(xpath="//span[text()='Approve']")
 private WebElement csm_TransactionType_ApproveScreen;
 public WebElement csmTransactionTypeApproveScreen()
 {
@@ -186,6 +186,57 @@ public WebElement csmTransactionTypeDeductFromRadioButtonFlag()
 {
 	return csm_TransactionType_DeductFrom_RadioButton_Flag;
 }
+@FindBy(xpath = "//span[text()='GlCharges']")
+private WebElement csm_TransactionType_GlCharges_RandomClick;
+public WebElement csmTransactionTypeGlChargesRandomClick()
+{
+    return csm_TransactionType_GlCharges_RandomClick;
+}
+@FindBy(xpath = "//div[text()='CIF Type']")
+private WebElement csm_TransactionType_CifTypeCharges_RandomClick;
+public WebElement csmTransactionTypeCifTypeChargesRandomClick()
+{
+    return csm_TransactionType_CifTypeCharges_RandomClick;
+}
+@FindBy(id= "td_tab26_GridTbl_Id_P024MA_0_rn")
+private WebElement csm_TransactionType_CifTypeCharges_SelectRow_Delete;
+public WebElement csmTransactionTypeCifTypeChargesSelectRowDelete()
+{
+    return csm_TransactionType_CifTypeCharges_SelectRow_Delete;
+}
+@FindBy(id= "del_tab26_GridTbl_Id_P024MA")
+private WebElement csm_TransactionType_CifTypeCharges_DeleteButton;
+public WebElement csmTransactionTypeCifTypeChargesDeleteButton()
+{
+    return csm_TransactionType_CifTypeCharges_DeleteButton;
+}
+@FindBy(id= "td_tab27_GridTbl_Id_P024MA_0_rn")
+private WebElement csm_TransactionType_GlCharges_SelectRow_Delete;
+public WebElement csmTransactionTypeGlChargesSelectRowDelete()
+{
+    return csm_TransactionType_GlCharges_SelectRow_Delete;
+}
+@FindBy(id= "del_tab27_GridTbl_Id_P024MA")
+private WebElement csm_TransactionType_GlCharges_DeleteButton;
+public WebElement csmTransactionTypeGlChargesDeleteButton()
+{
+    return csm_TransactionType_GlCharges_DeleteButton;
+}
+@FindBy(id= "td_tab28_GridTbl_Id_P024MA_1_rn")
+private WebElement csm_TransactionType_CifTypePriorityCharges_SelectRow_Delete;
+public WebElement csmTransactionTypeCifTypePriorityChargesSelectRowDelete()
+{
+    return csm_TransactionType_CifTypePriorityCharges_SelectRow_Delete;
+}
+@FindBy(id= "del_tab28_GridTbl_Id_P024MA")
+private WebElement csm_TransactionType_CifPriorityCharges_DeleteButton;
+public WebElement csmTransactionTypeCifPriorityChargesDeleteButton()
+{
+    return csm_TransactionType_CifPriorityCharges_DeleteButton;
+}
+
+
+
 
 
 
