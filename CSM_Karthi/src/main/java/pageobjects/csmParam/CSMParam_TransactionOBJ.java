@@ -235,6 +235,20 @@ public WebElement csmTransactionTypeCifPriorityChargesDeleteButton()
     return csm_TransactionType_CifPriorityCharges_DeleteButton;
 }
 
+@FindBy(xpath= "//input[@name='transactiontypesCO.ctstrxtypeVO.POST_DATED_VDATE']")
+private WebElement csm_TransactionType_AllowPostdatedValueDate;
+public WebElement csmTransactionTypeAllowPostdatedValueDate()
+{
+    return csm_TransactionType_AllowPostdatedValueDate;
+}
+
+@FindBy(xpath= "//input[@name='transactiontypesCO.ctstrxtypeVO.BACK_DATED_VDATE']")//(NoFutureValueDate)
+private WebElement csm_TransactionType_AllowBackdatedValueDate;
+public WebElement csmTransactionTypeAllowBackdatedValueDate()
+{
+    return csm_TransactionType_AllowBackdatedValueDate;
+}
+
 
 
 

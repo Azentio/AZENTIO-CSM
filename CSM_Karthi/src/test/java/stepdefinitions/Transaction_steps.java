@@ -894,6 +894,59 @@ public class Transaction_steps {
 						public void UserGetTheDataFromTheExcelSheetForTheTestCaseIdTrs_199() {
 							testData = excelDataForTransactionfeature.getTestdata("TRS_199_D1");
 						}
+						//TRS_245
+						@And("User click the allow back dated value flag under update after approve")
+						public void user_click_the_allow_back_dated_value_flag_under_update_after_approve() {
+							if (CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate().getAttribute("initialvalue")
+									.isBlank()) {
+								clicksAndActionsHelper
+										.moveToElement(CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate());
+								clicksAndActionsHelper.clickUsingActionClass(
+										CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate(),
+										CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate());
+
+							} else {
+								clicksAndActionsHelper
+										.moveToElement(CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate());
+								clicksAndActionsHelper.clickUsingActionClass(
+										CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate(),
+										CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate());
+								clicksAndActionsHelper
+										.moveToElement(CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate());
+								clicksAndActionsHelper.clickUsingActionClass(
+										CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate(),
+										CSMParamTransactionOBJ.csmTransactionTypeAllowBackdatedValueDate());
+
+							}
+						}
+						    
+						
+
+						@And("User click the allow post dated value flag under update after approve")
+						public void user_click_the_allow_post_dated_value_flag_under_update_after_approve() {
+							if (CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate().getAttribute("initialvalue")
+									.isBlank()) {
+								clicksAndActionsHelper
+										.moveToElement(CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
+								clicksAndActionsHelper.clickUsingActionClass(
+										CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate(),
+										CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
+
+							} else {
+								clicksAndActionsHelper
+										.moveToElement(CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
+								clicksAndActionsHelper.clickUsingActionClass(
+										CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate(),
+										CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
+								clicksAndActionsHelper
+										.moveToElement(CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
+								clicksAndActionsHelper.clickUsingActionClass(
+										CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate(),
+										CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
+
+							}
+						}
+						}
 			
 			
 			
@@ -909,6 +962,6 @@ public class Transaction_steps {
 
 
 		
-	}
+	
 
 
