@@ -212,4 +212,10 @@ public class CSMCommonWebElements {
 	{
 		return csm_ApproveBtn;
 	}
+	@FindBy(xpath = "//label[contains(text(),'Update After Approve ')]//ancestor::button")
+	private WebElement csmParam_UpdateAfterApproveBtn;
+
+	public WebElement csmParamUpdateAfterApproveBtn() {
+		return csmParam_UpdateAfterApproveBtn;
+	}
 }

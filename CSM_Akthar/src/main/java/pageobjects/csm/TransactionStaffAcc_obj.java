@@ -78,7 +78,7 @@ public class TransactionStaffAcc_obj {
 	{
 		return TransactionStaffAcc_Ciftype;
 	}
-	@FindBy(xpath="//a[@id='P010MA']/span[text()='Update After Approve']")
+	@FindBy(xpath="//span[text()='Update After Approve']")
 	private WebElement TransactionStaffAcc_UPA;
 	public WebElement TransactionStaffAcc_UPA()
 	{
@@ -122,10 +122,52 @@ public class TransactionStaffAcc_obj {
 	}
 	
 	@FindBy(xpath="//td[@id='td_transactionTypesList_GridTbl_Id_P024MA_1_ctstrxtypeVO.CODE']")
-	private WebElement Transaction_existingdata;
-	public WebElement Transaction_existingdata()
+	private WebElement transaction_existingdata;
+	public WebElement transaction_existingdata()
 	{
-		return Transaction_existingdata;
+		return transaction_existingdata;
+	}
+	
+	@FindBy(xpath="//label[text()='Update After Approve ']")
+	private WebElement transactionUPA_UPAbtn;
+	public WebElement transactionUPAUPAbtn()
+	{
+		return transactionUPA_UPAbtn;
+	}
+	
+	@FindBy(id="hdr_runn_date")
+	private WebElement CSM_DateToChangeTheCurrentDate;
+	public WebElement CSMDateToChangeTheCurrentDate()
+	{
+	    return CSM_DateToChangeTheCurrentDate;
+	}	
+
+	@FindBy(id="global_user_run_date")
+	private WebElement CSM_DateInUserRunningDate;
+	public WebElement CSMDateInUserRunningDate()
+	{
+	    return CSM_DateInUserRunningDate;
+	}
+	
+	@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
+	private WebElement CSM_UseButtonInChangeRunningDate;
+	public WebElement CSMUseButtonInChangeRunningDate() 
+	{
+	    return CSM_UseButtonInChangeRunningDate;
+	}	
+
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+	private WebElement CSMOkButtonInAccessDeniedPopUpMenu;
+	public WebElement CSMOkButtonInAccessDeniedPopUpMenu()
+	{
+	    return CSMOkButtonInAccessDeniedPopUpMenu;
+	}	
+
+	@FindBy(id="_header_rundate_dialog_close")
+	private WebElement CSM_CloseButtonInChangeRunningDate;
+	public WebElement CSMCloseButtonInChangeRunningDate() 
+	{
+	    return CSM_CloseButtonInChangeRunningDate;
 	}
 	
 	//TRS_018//
@@ -136,7 +178,7 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_TranscationType;
 	}
-	@FindBy(xpath="//span[text()='Update After Approve']")
+	@FindBy(xpath="//a[@id='P024MA']/span[text()='Update After Approve']")
 	private WebElement Transactions_UPA;
 	public WebElement Transactions_UPA()
 	{
@@ -167,7 +209,7 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_UaAbtn;
 	}
-	@FindBy(xpath="//input[@id='credit_card_payment_yn_P024MA']")
+	@FindBy(xpath="//input[@name='transactiontypesCO.ctstrxtypeExtendedVO.CREDIT_CARD_PAYMENT_YN']")
 	private WebElement Transactions_Checkuncheck;
 	public WebElement Transactions_Checkuncheck()
 	{
@@ -274,10 +316,10 @@ public class TransactionStaffAcc_obj {
 		return Transactions_debitAcc_serialcode;
 	}
 	@FindBy(xpath="//span[text()='close']")
-	private WebElement Transactions_viewmemo_closebtn;
-	public WebElement Transactions_viewmemo_closebtn()
+	private WebElement transactions_viewmemo_closebtn;
+	public WebElement transactionsviewmemoclosebtn()
 	{
-		return Transactions_viewmemo_closebtn;
+		return transactions_viewmemo_closebtn;
 	}
 	
 	
@@ -337,6 +379,7 @@ public class TransactionStaffAcc_obj {
 	{
 		return getTransactionNumber;
 	}
+	
 	@FindBy(xpath="//a[@id='infoBarSearchButton_D001MT']")
 	private WebElement Transactions_searchbtn;
 	public WebElement Transactions_searchbtn()
@@ -654,7 +697,7 @@ public class TransactionStaffAcc_obj {
 		return Transactions_User_appbtn;
 	}
 	
-	@FindBy(xpath="//span[text()='Update after Approve']")
+	@FindBy(xpath="//a[@id='E000MA']/span[text()='Update after Approve']")
 	private WebElement Transactions_User_UPA;
 	public WebElement Transactions_User_UPA()
 	{
@@ -714,12 +757,124 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_core_appscrn;
 	}
+	 
+	  //TRS_161//
+	
+	@FindBy(xpath="//td[text()='Charges']")
+	private WebElement Transactions_Charges;
+	public WebElement Transactions_Charges()
+	{
+		return Transactions_Charges;
+	}	
+	
+	@FindBy(xpath="//td[text()='Maintenance of Charges']")
+	private WebElement Transactions_MaintanceofCharges;
+	public WebElement Transactions_MaintanceofCharges()
+	{
+		return Transactions_MaintanceofCharges;
+	}	
+	
+	@FindBy(xpath="//a[@id='C0011MA']")
+	private WebElement Transactions_Charges_UPA;
+	public WebElement Transactions_Charges_UPA()
+	{
+		return Transactions_Charges_UPA;
+	}
+	
+	@FindBy(xpath="//input[@id= 'chargesParamList_GridTbl_Id_C0011MA_gs_ctschargesVO.BRIEF_NAME_ENG']")
+	private WebElement Transactions_Charges_Briefname;
+	public WebElement Transactions_Charges_Briefname()
+	{
+		return Transactions_Charges_Briefname;
+	}
+	
+	@FindBy(xpath="//td[@id='td_chargesParamList_GridTbl_Id_C0011MA_2_ctschargesVO.CODE']")
+	private WebElement Transactions_Charges_existingdata;
+	public WebElement Transactions_Charges_existingdata()
+	{
+		return Transactions_Charges_existingdata;
+	}
 	
 	
+	@FindBy(xpath="//input[@id='allow_clearing_C0011MA']")
+	private WebElement Transactions_Charges_allowclrflag;
+	public WebElement Transactions_Charges_allowclrflag()
+	{
+		return Transactions_Charges_allowclrflag;
+	}
 	
+	@FindBy(xpath="//input[@id='allow_modify_C0011MA']")
+	private WebElement Transactions_Charges_allowflag;
+	public WebElement Transactions_Charges_allowflag()
+	{
+		return Transactions_Charges_allowflag;
+	}
 	
+	@FindBy(xpath="//label[@id='chargesParamMaint_FormId_C0011MA_Update_After_Approve_key']")
+	private WebElement Transactions_Charges_UPAbtn;
+	public WebElement Transactions_Charges_UPAbtn()
+	{
+		return Transactions_Charges_UPAbtn;
+	}
 	
+	@FindBy(xpath="//span[text()='Approve']")
+	private WebElement Transactions_Charges_Appscrn;
+	public WebElement Transactions_Charges_Appscrn()
+	{
+		return Transactions_Charges_Appscrn;
+	}
 	
+	@FindBy(xpath="//input[@id='chargesParamList_GridTbl_Id_C0011P_gs_ctschargesVO.CODE']")
+	private WebElement Transactions_Charges_code;
+	public WebElement Transactions_Charges_code()
+	{
+		return Transactions_Charges_code;
+	}
 	
+	@FindBy(xpath="//td[@id='td_chargesParamList_GridTbl_Id_C0011P_1_ctschargesVO.CODE']")
+	private WebElement Transactions_Charges_Existingdata;
+	public WebElement Transactions_Charges_Existingdata()
+	{
+		return Transactions_Charges_Existingdata;
+	}
 	
+	@FindBy(xpath="//label[@id='chargesParamMaint_FormId_C0011P_Approve_key']")
+	private WebElement Transactions_Charges_Appbtn;
+	public WebElement Transactions_Charges_Appbtn()
+	{
+		return Transactions_Charges_Appbtn;
+	}	
+	
+	@FindBy(xpath="//input[@id='to_trs_ac_gl_D001MT']")
+	private WebElement transactions_creditAcc_glcode;
+	public WebElement transactionscreditAccglcode()
+	{
+		return transactions_creditAcc_glcode;
+	}
+	
+	@FindBy(xpath="//input[@id='to_trs_ac_cif_D001MT']")
+	private WebElement transactions_CreditAcc_Cifcode;
+	public WebElement transactionsCreditAccCifcode()
+	{
+		return transactions_CreditAcc_Cifcode;
+	}
+	
+	@FindBy(xpath="//input[@id='lookuptxt_to_trs_ac_sl_D001MT']")
+	private WebElement transactions_CreditAcc_Serialcode;
+	public WebElement transactionsCreditAccSerialcode()
+	{
+		return transactions_CreditAcc_Serialcode;
+	}
+	
+	@FindBy(xpath="//input[@id='charge_D001MT']")
+	private WebElement Transactions_cv_charges;
+	public WebElement Transactions_cv_charges()
+	{
+		return Transactions_cv_charges;
+	}
+	
+
 }
+
+	
+

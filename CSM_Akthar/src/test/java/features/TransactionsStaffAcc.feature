@@ -82,7 +82,7 @@ Then Click the Update after approve
 And  Enter the Code value 
 Then User double click the Existing data 
 And  just check the flag UPA
-Then Click the Update After approve button
+Then Click the Update after approve under Transction type
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -115,10 +115,10 @@ And  double click the Value
 Then click the Approve button
 And  system show the popup success user click the ok button   
 And  User click the Maintenance screen
-#Then click the search button
-#And enter the trx number
-#And double click the data
-#Then click the Booked Entries
+Then click the search button
+And enter the trx number
+And double click the data
+Then click the Booked Entries
 #And  User Click the Queries 
 #And  Click the Statement of Account 
 #And  Click the By trade Date 
@@ -135,11 +135,11 @@ And   user update test data set id for TRS_018
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
-Then Click the Update after approve
+Then Click the Update after approve under Transction type
 And  Enter the Code value 
 Then User double click the Existing data 
 And  just check the flag UPA
-Then Click the Update After approve button
+Then Click the Update after approve under Transction type
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -168,10 +168,10 @@ And  double click the Value
 Then click the Approve button
 And  system show the popup success user click the ok button   
 And  User click the Maintenance screen
-#Then click the search button
-#And enter the trx number
-#And double click the data
-#Then click the Booked Entries
+Then click the search button
+And enter the trx number
+And double click the data
+Then click the Booked Entries
 #And  User Click the Queries 
 #And  Click the Statement of Account 
 #And  Click the By trade Date 
@@ -192,7 +192,7 @@ And  Enter the Code value
 Then User double click the Existing data 
 And  Allow internal GL Account flag should be checked
 And  just check the flag UPA
-Then Click the Update After approve button
+Then Click the Update after approve under Transction type
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -201,14 +201,17 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_019_01
+Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
 Then enter values of Branch code
 And  enter values of Currency code
-And  enter values of Gl code 
-And  enter values of Cif code
+And  enter values of gl code 
+And  enter values of cif number
 Then enter values of serial 
 And  user enter the currency
 And  Enter the Amount in this Checkbox
@@ -220,6 +223,7 @@ And  system show the popup success user click the ok button
 Scenario: Checking Single Transfer (Main Debit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
 #single transfer value change
 Given User login to Csm Param application
+And  user update test data set id for TRS_062 
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
@@ -227,8 +231,8 @@ Then Click the Update after approve
 And  Enter the single transfer Code value 
 Then User double click the Existing data 
 And  Allow internal GL Account flag should be checked
-#And  just check the flag UPA
-Then Click the Update After approve button
+And  just check the flag UPA
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -237,15 +241,23 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_020_01
+Scenario: Checking Single Transfer (Main Debit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the single transfer in trx type
 Then enter values of Branch code
 And  enter values of Currency code
-And  enter values of Gl code 
-And  enter values of Cif code
-Then enter values of serial 
+And  enter values of gl code 
+And  enter values of cif number
+Then enter values of serial
 And  system gives the view memo popup user close the popup
 And  user enter the currency
 And  Enter the Amount in this Checkbox
@@ -261,6 +273,7 @@ Then click the Booked Entries
 @TRS_021
 Scenario: Checking Single Transfer (Main Debit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
 Given User login to Csm Param application
+And  user update test data set id for TRS_062 
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
@@ -269,7 +282,7 @@ And  Enter the single transfer Code value
 Then User double click the Existing data 
 #And  Allow internal GL Account flag should be checked
 And  just check the flag UPA
-Then Click the Update After approve button
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -278,25 +291,31 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_021_01
+Scenario: Checking Single Transfer (Main Debit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the single transfer in trx type
 Then enter values of Branch code
 And  enter values of Currency code
-And  enter values of Gl code 
-And  enter values of Cif code
+And  enter values of gl code 
+And  enter values of cif number
 Then enter values of serial 
-And  user enter the currency
-And  Enter the Amount in this Checkbox
-And  click the save button
-And  system show the popup success user click the ok button
+#Then system show the stopper message
 
 
 @TRS_022
 Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
 #multi transfer value change
 Given User login to Csm Param application
+And  user update test data set id for TRS_017 
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
@@ -313,14 +332,22 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_022_01
+Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
 Then enter values of Branch code
 And  enter values of Currency code
-And  enter values of Gl code 
-And  enter values of Cif code
+And  enter values of gl code 
+And  enter values of cif number
 Then enter values of serial 
 And  user enter the currency
 And  Enter the Amount in this Checkbox
@@ -359,7 +386,7 @@ Then Click the Update after approve
 And  Enter the single transfer Code value 
 Then User double click the Existing data 
 And  Check the falg of set default Trx currency is equal to account currency
-Then Click the Update After approve button
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 And  system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -368,17 +395,45 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_057_01
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the single transfer in trx type
 Then enter values of Branch code
 And  enter values of Currency code
-Then  enter values of gl code for single transfer
-And  enter values of cif number for single transfer
-And  enter values of serial for single transfer
-#Then click the Booked Entries
-#And  click the save button
+Then  enter values of gl code for single transfer in debit account
+And  enter values of cif number for single transfer in debit account
+Then system gives the view memo popup user close the popup
+And  enter values of serial for single transfer in debit account
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then user_613 enter the gl code in credit account 
+And  user_613 enter the cif code in credit account 
+Then user_613 enter the Serial number in credit account 
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value    
+Then system gives the view memo popup user close the popup           
+Then click the Approve button
+And  system show the popup success user click the ok button   
+And  User click the Maintenance screen
+Then click the search button
+And enter the trx number
+And double click the data
+Then system gives the view memo popup user close the popup
+Then click the Booked Entries
 #And  User Click the Queries 
 #And  Click the Statement of Account 
 #And  Click the By trade Date 
@@ -433,6 +488,9 @@ And  User Double Click the Approved typecode Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_060_01
+Scenario: Checking Cash Withdrawal Transaction - Booked Entries + Balance Updates
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -504,6 +562,9 @@ And  double click the Data
 Then user click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_061_01
+Scenario: Checking Cash Withdrawal Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked.
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -518,7 +579,7 @@ Then enter values of serial
 @TRS_062
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked
 Given User login to Csm Param application
-And  user update test data set id for TRS_062 
+And   user update test data set id for TRS_062 
 Then Click the Parameters 
 And  Click the System Parameters
 And  User click the Transaction type 
@@ -551,6 +612,9 @@ And  double click the Data
 Then user click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_062_01
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Proceed on Insufficient Fund unchecked/ Allow Overdraw unchecked
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -565,8 +629,7 @@ And  enter values of serial for single transfer
 
                                  # **********   Sprint -11   ********** #
 
-@TRS_104 
-               
+@TRS_104               
 Scenario: Checking Cash Deposit Transaction - CIF Type Deposit Limit Defined - Warn User if Limit Exceeds UnChecked - Proceed if Limit Exceeds Checked - Amount > Limit
 Given User login to Csm Param application
 And  user update test data set id for TRS_105 
@@ -589,6 +652,9 @@ And  user double click the Data
 Then Click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_104_01               
+Scenario: Checking Cash Deposit Transaction -CIF Type Deposit Limit Defined -Warn User if Limit Exceeds UnChecked -Proceed if Limit Exceeds Checked -Amount > Limit
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -612,8 +678,7 @@ Then click the Approve button
 And  system show the popup success user click the ok button
 
 
-@TRS_105 
-                              
+@TRS_105                              
 Scenario: Checking Cash Depsoit Transaction -CIF Type Deposit Limit Defined -Warn User if Limit Exceeds Checked -Amount > Limit -Specifc vs. General
 Given User login to Csm Param application
 And  user update test data set id for TRS_105 
@@ -638,6 +703,9 @@ And  user double click the Data
 Then Click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_105_01                            
+Scenario: Checking Cash Depsoit Transaction -CIF Type Deposit Limit Defined -Warn User if Limit Exceeds Checked -Amount > Limit -Specifc vs. General
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -681,6 +749,9 @@ And  user double click the Data
 Then Click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_106_01
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Amount < Limit
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -730,6 +801,9 @@ And  user double click the Data
 Then Click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_107_01
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Amount > Limit
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -772,6 +846,9 @@ And  user double click the Data
 Then Click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
+
+@TRS_108_01
+Scenario: Checking Cash Withdrawal Transaction - Priority Withdrawal Limit Defined - Warn User if Limit Exceeds Checked - Proceed if Limit Exceeds Checked - Amount > Limit
 Then User navigate to CSM application and login with valid credentials
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
@@ -787,7 +864,6 @@ Then system gives the view memo popup user close the popup
 And  user enter the currency
 And  Enter the Amount in this Checkbox
 Then System show the warning popup click ok button
-Then System show the warning popup click ok button
 And  click the save button
 And  User get Transaction number from sucess pop up
 And  User click the Approve screen     
@@ -797,17 +873,260 @@ Then click the Approve button
 And  system show the popup success user click the ok button
 
 
+                                  # ********* Sprint -12 ************* #
+                                   
 
 
+@TRS_157
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Debit Account
+Given User login to Csm Param application
+And  user update test data set id for TRS_157
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+And  check the flag of debtor Account
+Then Click the Update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  User Click the Approve Below the Transaction type
+Then Enter the Approved record in the type code 
+And  User Double Click the Data
+And  User click the approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
 
+@TRS_157_01
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Debit Account
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then enter the below account in glcode value
+And  enter the Ciftype value 
+Then enter the serial value 
+Then System show the warning popup click ok button
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+Then click the Booked Entries
 
+@TRS_158
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Credit Account
+Given User login to Csm Param application
+And  user update test data set id for TRS_157
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+And  check the flag of Creditor Account
+Then Click the Update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  User Click the Approve Below the Transaction type
+Then Enter the Approved record in the type code 
+And  User Double Click the Data
+And  User click the approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
 
+@TRS_158_01
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Credit Account
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then enter the below account in glcode value
+And  enter the Ciftype value 
+Then enter the serial value 
+Then System show the warning popup click ok button
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+Then click the Booked Entries
 
+@TRS_159
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Teller Account
+Given User login to Csm Param application
+And  user update test data set id for TRS_157
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+And  check the flag of Teller Account
+Then Click the Update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  User Click the Approve Below the Transaction type
+Then Enter the Approved record in the type code 
+And  User Double Click the Data
+And  User click the approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
 
+@TRS_159_01
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Teller Account
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then enter the below account in glcode value
+And  enter the Ciftype value 
+Then enter the serial value 
+Then System show the warning popup click ok button
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+Then click the Booked Entries
 
+@TRS_160
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Other Account
+Given User login to Csm Param application
+And  user update test data set id for TRS_157
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Transaction type 
+Then Click the Update after approve
+And  Enter the single transfer Code value 
+Then  User double click the Existing data 
+And  check the flag of other Account
+Then Click the Update After approve button
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And  User Click the Approve Below the Transaction type
+Then Enter the Approved record in the type code 
+And  User Double Click the Data
+And  User click the approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully 
 
+@TRS_160_01
+Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Other Account
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then enter the below account in glcode value
+And  enter the Ciftype value 
+Then enter the serial value 
+Then System show the warning popup click ok button
+Then System show the warning popup click ok button
+And  click the save button
+And  User get Transaction number from sucess pop up
+And  User click the Approve screen     
+Then user Enter the Transaction number   
+And  double click the Value               
+Then click the Approve button
+And  system show the popup success user click the ok button
+Then click the Booked Entries
 
+@TRS_161
+Scenario: Checking Single Transfer(Main Debit)Intra Transaction-Deduct Charges from Debit Account-Modify flags not checked on Trx Type or Charge Code                                  
+#single transfer value change 
+Given User login to Csm Param application
+And  user update test data set id for TRS_161
+Then Click the Parameters 
+And  Click the System Parameters
+And  User click the Charges
+And  User Click the Maintance of charges
+Then user Click the Update after approve
+And  Enter the Value of T in Brief Name 
+Then User double click the Existing data of charges
+And user Uncheck the flag of Allow modify and clear
+And uncheck the flag of Allow modify 
+Then user click the update after approve button 
+And  System giving information message click ok button
+And  system show the success popup click ok button 
+And User click the Approve screen in Charges
+Then enter the code value
+And User double click the data in the code
+Then User click the Approve button
+And  System show the  confirm popup user click the ok button
+And  System show the record was successfully
 
+@TRS_161_01
+Scenario: Checking Single Transfer(Main Debit)Intra Transaction-Deduct Charges from Debit Account-Modify flags not checked on Trx Type or Charge Code                                  
+Then User navigate to CSM application and login with valid credentials
+And  User click the Transactions
+Then Click the Maintenance Below the Transactions
+And  enter the value in Trx type
+Then enter values of Branch code
+And  enter values of currency code
+And  enter values of gl code 
+And  enter values of cif number  
+And  system gives the view memo popup user close the popup
+Then enter values of serial
+And System show the warning popup click ok button
+Then system gives the view memo popup user close the popup
+And  user enter the currency
+And  Enter the Amount in this Checkbox
+Then enter the below account in glcode value
+And  enter the Ciftype value 
+Then enter the serial value 
+And the Cv Charges is Enabeled
+                                        
+                              
 
 
   

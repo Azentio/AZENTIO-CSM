@@ -1,6 +1,9 @@
 package stepdefinitions;
 
+import java.awt.Robot;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,21 +34,23 @@ public class TransactionStaffAccs_Steps {
 	TransactionStaffAcc_obj transactionStaffAcc = new TransactionStaffAcc_obj(driver);
 	JavascriptHelper javascripthelper = new JavascriptHelper(driver);
 	String transactionNo;
-	 String path = System.getProperty("user.dir") +
-	 "\\TestData\\CSMTestData.xlsx";
-	ExcelData excelDataForTransaction= new ExcelData(path, "CSM_Transaction", "DataSet ID");
+	 String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
+	
+	//String path = System.getProperty("user.dir") +"\\TestData\\CSMExcel.xlsx";
+	
+	 ExcelData excelDataForTransaction= new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
 	Map<String, String> chequeBookRequestTestData = new HashMap<>();
     Map<String, String> chargeWaiverExecutionData = new HashMap<>();
     Map<String, String> testData;
-	
+    Robot robot;
 	
 
 	@Given("User login to Csm Param application")
-	public void User_login_to_Csm_Param_application ()throws Throwable {
-		String paramsApplicationUrl = configFileRead.getCSMparamsUrl();
-		 driver.get(paramsApplicationUrl);
-		 csmLogin.loginIntoCSMParamApplication();
+	public void User_login_to_Csm_Param_application() throws Throwable {
+      driver.get(configFileRead.getCSMparamsUrl());
+      csmLogin.loginIntoCSMParamApplication();
+      
 	}
 	
 	//TSA_148//
@@ -147,57 +152,7 @@ public class TransactionStaffAccs_Steps {
 	    	clicksAndActionsHelper.clickOnElement(transactionStaffAcc.TransactionStaffAcc_MI());
 	    	Thread.sleep(3000);
 	    }	    
-//         @Then("^Click the Transaction Type$")
-//         public void click_the_transaction_type() throws Throwable {
-//         waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_MI());
-//         
-//         }
-//
-//         @Then("^Click the Search button$")
-//         public void click_the_search_button() throws Throwable {
-//         waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_MI());
-//         }
-//
-//         @And("^ Enter the code value$")
-//         public void enter_the_code_value() throws Throwable {
-//         waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_MI());
-//         }
-//      
-//         @And("^ select the Transaction Status$")
-//         public void select_the_transaction_status() throws Throwable {
-//        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_MI());
-//         }
-//
-//         @Then("^click ok button$")
-//         public void click_ok_button() throws Throwable {
-//        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_MI());
-//         }
-//
-//         @And("^ Click the Update After Approve$")
-//         public void click_the_update_after_Approve() throws Throwable {
-//        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_MI());
-//         }
-//         
-//         @Then("^enter the transaction No in below Checkbox$")
-//         public void enter_the_transaction_no_in_below_checkbox() throws Throwable {
-//           
-//         }        
-//
-//         @And("^click the Approve below the Transactions$")
-//         public void click_the_approve_below_the_transactions() throws Throwable {
-//           
-//         }
-//
-//         @And("^User double click the data$")
-//         public void user_double_click_the_data() throws Throwable {
-//           
-//         }
-//
-//         @And("^click the Approve button$")
-//         public void click_the_approve_button() throws Throwable {
-//           
-//         }
-         
+
          
        //TRS_017//
          
@@ -213,7 +168,63 @@ public class TransactionStaffAccs_Steps {
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Mainacc_credit_flag());
         	 
          }
-         
+         @Given("User_613 Click on Date to Change the Current Date")
+         public void user_613_click_on_date_to_change_the_current_date() {
+             for (int i = 0; i < 200; i++) {
+                 try {
+                     clicksAndActionsHelper.moveToElement(transactionStaffAcc.CSMDateToChangeTheCurrentDate());
+                     clicksAndActionsHelper.clickOnElement(transactionStaffAcc.CSMDateToChangeTheCurrentDate());
+                     break;
+                 } catch (Exception e) {
+                     if (i==199) {
+                         Assert.fail(e.getMessage());
+                     }
+                     // TODO: handle exception
+                 }
+
+             }
+
+      
+
+         }
+
+    
+
+     @Given("User_613 Enter the Date in User Running Date")
+         public void user_613_enter_the_date_in_user_running_date() throws Throwable {
+             waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.CSMDateInUserRunningDate());
+             clicksAndActionsHelper.moveToElement(transactionStaffAcc.CSMDateInUserRunningDate());
+             clicksAndActionsHelper.clickOnElement(transactionStaffAcc.CSMDateInUserRunningDate());
+             transactionStaffAcc.CSMDateInUserRunningDate().clear();
+             //transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(testData.get("Date in URD"));
+             DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+             LocalDate date =LocalDate.now();
+             String format = date.format(dtFormatter);
+             transactionStaffAcc.CSMDateInUserRunningDate().sendKeys(format);
+         }
+
+    
+
+     @Given("User_613 Click on Use Button in Change Running Date Popup")
+         public void user_613_click_on_use_button_in_change_running_date_popup() throws Throwable {
+             waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.CSMUseButtonInChangeRunningDate());
+             clicksAndActionsHelper.moveToElement(transactionStaffAcc.CSMUseButtonInChangeRunningDate());
+             clicksAndActionsHelper.clickOnElement(transactionStaffAcc.CSMUseButtonInChangeRunningDate());
+         }
+         @Given("User_613 Click Ok Button in Information PopUp menu")
+         public void user_613_click_ok_button_in_information_pop_up_menu() throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.CSMOkButtonInAccessDeniedPopUpMenu());
+             clicksAndActionsHelper.moveToElement(transactionStaffAcc.CSMOkButtonInAccessDeniedPopUpMenu());
+             clicksAndActionsHelper.clickOnElement(transactionStaffAcc.CSMOkButtonInAccessDeniedPopUpMenu());
+         }
+         @Given("User_613 Click on Close Button in Change Running Date Popup")
+         public void user_613_click_on_close_button_in_change_running_date_popup() throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.CSMCloseButtonInChangeRunningDate());
+             clicksAndActionsHelper.moveToElement(transactionStaffAcc.CSMCloseButtonInChangeRunningDate());
+             clicksAndActionsHelper.clickOnElement(transactionStaffAcc.CSMCloseButtonInChangeRunningDate());
+         }
+
+     
     //TRS_018//
          
          @And("^user update test data set id for TRS_018$")
@@ -226,14 +237,13 @@ public class TransactionStaffAccs_Steps {
          public void user_click_the_transaction_type() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_TranscationType());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_TranscationType());
+        	 Thread.sleep(2000);
          }
          
-         @Then("^Click the Update after approve$")
-         public void Click_the_update_after_approve() throws Throwable {
-        	waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_User_UPA());
-        	clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_User_UPA());
-        	Thread.sleep(2000);
-        	
+         @Then("Click the Update after approve under Transction type")
+         public void click_the_update_after_approve_under_transction_type() throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_UPA());
+ 	    	clicksAndActionsHelper.clickOnElement(transactionStaffAcc.TransactionStaffAcc_UPA());
          }
 
          @And("^Enter the Code value$")
@@ -257,15 +267,16 @@ public class TransactionStaffAccs_Steps {
 
          @Then("^User double click the Existing data$")
          public void user_double_click_the_Existing_data() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transaction_existingdata());
-         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transaction_existingdata());
-         	clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transaction_existingdata());
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transaction_existingdata());
+         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transaction_existingdata());
+         	clicksAndActionsHelper.doubleClick(transactionStaffAcc.transaction_existingdata());
          }
 
           @And("^Allow internal GL Account flag should be checked$")
           public void allow_internal_GL_account_flag_should_be_checked() throws Throwable {
        	  waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_GLflagChecked());
-          clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_GLflagChecked());            
+          clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_GLflagChecked());
+         
        }
          
          
@@ -273,7 +284,7 @@ public class TransactionStaffAccs_Steps {
          public void just_check_the_flag_upa() throws Throwable {	
 			for (int i = 0; i < 200; i++) {
 				try {
-					clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Checkuncheck());
+					clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Checkuncheck());
 					break;
 				} catch (Exception e) {
 					if (i==199) {
@@ -284,13 +295,14 @@ public class TransactionStaffAccs_Steps {
         	 //waitHelper.waitForElementwithFluentwait(driver, transactionStaffAcc.Transactions_Checkuncheck());     	 
         	 		}
          
-         @Then("^Click the Update After approve button$")
-         public void Click_the_Update_After_approve_button() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_User_UPAbtn());
-         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_User_UPAbtn());
-         	 
-            
+         
+         @Then("Click the Update After approve button in transaction type")
+         public void click_the_update_after_approve_button_in_transaction_type() throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionUPAUPAbtn());
+         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionUPAUPAbtn()); 
          }
+            
+         
 
          @And("^System giving information message click ok button$")
          public void system_giving_information_message_click_ok_button() throws Throwable {
@@ -448,13 +460,16 @@ public class TransactionStaffAccs_Steps {
          
          @And("^system gives the view memo popup user close the popup$")
          public void system_gives_the_view_memo_popup_user_close_the_popup() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_viewmemo_closebtn());
-        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_viewmemo_closebtn()); 
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionsviewmemoclosebtn());
+        	 
+        	 clicksAndActionsHelper.moveToElement(transactionStaffAcc.transactionsviewmemoclosebtn());
+        	 if (transactionStaffAcc.transactionsviewmemoclosebtn().isDisplayed()) {
+            	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionsviewmemoclosebtn()); 
+			}
          }
          
          @Then("^System show the warning popup click ok button$")
-         public void system_show_the_warning_popup_click_ok_button() throws Throwable {
-        	 //waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Warning_okbtn());
+         public void system_show_the_warning_popup_click_ok_button() throws Throwable {        	 
         	 for (int i = 0; i <300; i++) {
         		 try {
  					clicksAndActionsHelper.moveToElement(transactionStaffAcc.Transactions_Warning_okbtn());
@@ -468,8 +483,7 @@ public class TransactionStaffAccs_Steps {
  			}
 			}
         	 
-        	// transactionStaffAcc.Transactions_Warning_okbtn().click();
-        	 //Thread.sleep(2000);
+        	
          }
          
          @And("^user enter the currency$")
@@ -492,11 +506,32 @@ public class TransactionStaffAccs_Steps {
         	 
          }        
        
+         @Then("user_613 enter the gl code in credit account")
+         public void user_enter_the_gl_code_in_credit_account(Integer int1) throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionscreditAccglcode());
+      	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionscreditAccglcode());
+      	   transactionStaffAcc.transactionscreditAccglcode().sendKeys(testData.get("Debit Gl Code"));
+         }
+
+         @Then("user_613 enter the cif code in credit account")
+         public void user_enter_the_cif_code_in_credit_account(Integer int1) throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionsCreditAccCifcode());
+      	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionsCreditAccCifcode());
+      	   transactionStaffAcc.transactionsCreditAccCifcode().sendKeys(testData.get("Debit CIF Code"));
+         }
+
+         @Then("user_613 enter the Serial number in credit account")
+         public void user_enter_the_serial_number_in_credit_account(Integer int1) throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionsCreditAccSerialcode());
+      	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionsCreditAccSerialcode());
+      	   transactionStaffAcc.transactionsCreditAccSerialcode().sendKeys(testData.get("Debit Serial Number"));
+         }
          
          @And("^click the save button$")
          public void click_the_save_button() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_savebtn());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_savebtn());  
+        	 Thread.sleep(2000);
          }
          
          @And("^system show the popup success user click the ok button$")
@@ -515,14 +550,30 @@ public class TransactionStaffAccs_Steps {
          @And("^User get Transaction number from sucess pop up$")
          public void user_get_transaction_number_from_sucess_pop_up() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.getTransactionNumber());
-        	 transactionNo = transactionStaffAcc.getTransactionNumber().getText().substring(15, 18);
+        	 transactionNo = transactionStaffAcc.getTransactionNumber().getText().substring(15, 19);
         	 System.out.println(transactionNo);
+        	 excelDataForTransaction.updateTestData("TRS_106_D1", "Transaction Number", transactionNo);
+             testData = excelDataForTransaction.getTestdata("TRS_106_D1");
+        	 Thread.sleep(2000);
          }
 
          @And("^User click the Approve screen$")
          public void user_click_the_approve_screen() throws Throwable {
-        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Approvescrn());
-        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Approvescrn());  
+        	 for (int i = 0; i < 200; i++) {
+        		 try {
+            		 clicksAndActionsHelper.moveToElement(transactionStaffAcc.Transactions_Approvescrn());
+                	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Approvescrn());
+                	 break;
+    			} 
+            	 catch (Exception e) {
+    				if (i==199) {
+    					
+    					Assert.fail(e.getMessage());
+					}
+    			}
+            	
+			}
+        	   
          }         
 
          @And("^double click the Value$")
@@ -647,8 +698,9 @@ public class TransactionStaffAccs_Steps {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Trxtypevalue());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Trxtypevalue());
         	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys(testData.get("Transaction Type code"));
-        	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys(Keys.TAB); 
         	 Thread.sleep(2000);
+        	 transactionStaffAcc.Transactions_Trxtypevalue().sendKeys(Keys.TAB); 
+        	 
          }
 
          @And("^enter values of currency code$")
@@ -664,6 +716,7 @@ public class TransactionStaffAccs_Steps {
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Glcode()); 
         	 Thread.sleep(2000);
         	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys(testData.get("Credit Gl Code"));
+        	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys(Keys.TAB);
          }
 
          @And("^enter values of cif number$")
@@ -781,29 +834,28 @@ public class TransactionStaffAccs_Steps {
         	 testData = excelDataForTransaction.getTestdata("TRS_062_D1");
          }
          
-         @Then("^enter values of serial for single transfer$")
-         public void enter_values_of_serial_for_single_transfer() throws Throwable {
+         @Then("enter values of serial for single transfer in debit account")
+         public void enter_values_of_serial_for_single_transfer_in_debit_account() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_serialcode());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_serialcode()); 
-        	 transactionStaffAcc.Transactions_debitAcc_serialcode().sendKeys(testData.get("Credit Serial Number"));
+        	 transactionStaffAcc.Transactions_debitAcc_serialcode().sendKeys(testData.get("Debit Serial Number"));
         	 Thread.sleep(2000);
          }
 
-         @And("^enter values of gl code for single transfer$")
-         public void enter_values_of_gl_code_for_single_transfer() throws Throwable {
+         @Then("enter values of gl code for single transfer in debit account")
+         public void enter_values_of_gl_code_for_single_transfer_in_debit_account() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_Glcode());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Glcode()); 
         	 Thread.sleep(2000);
-        	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys(testData.get("Credit Gl Code"));
+        	 transactionStaffAcc.Transactions_debitAcc_Glcode().sendKeys(testData.get("Debit Gl Code"));
          }
 
-         @And("^enter values of cif number for single transfer$")
-         public void enter_values_of_cif_number_for_single_transfer() throws Throwable {
+         @And("enter values of cif number for single transfer in debit account")
+         public void enter_values_of_cif_number_for_single_transfer_in_debit_account() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_debitAcc_Cifcode());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_debitAcc_Cifcode());
+        	 transactionStaffAcc.Transactions_debitAcc_Cifcode().sendKeys(testData.get("Debit CIF Code"));
         	 Thread.sleep(2000);
-        	 transactionStaffAcc.Transactions_debitAcc_Cifcode().sendKeys(testData.get("Credit CIF Code"));
-        	 Thread.sleep(3000);
          }
          
          @And("^enter the type code$")
@@ -832,6 +884,12 @@ public class TransactionStaffAccs_Steps {
          public void click_the_user() throws Throwable {
         	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_User());
         	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_User());
+         }
+         
+         @Then("Click the Update after approve")
+         public void Click_the_update_after_approve() throws Throwable {
+        	 waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.TransactionStaffAcc_UPA());
+        	 clicksAndActionsHelper.clickOnElement(transactionStaffAcc.TransactionStaffAcc_UPA());
          }
 
          @Then("^User Enter the Name in the UserId$")
@@ -965,10 +1023,159 @@ public class TransactionStaffAccs_Steps {
           	 testData = excelDataForTransaction.getTestdata("TRS_107_D1"); 
            }
            
+         //TRS_161//
+           
+           @And("^user update test data set id for TRS_161$")
+           public void user_update_test_data_set_id_for_trs161() throws Throwable {
+          	 testData = excelDataForTransaction.getTestdata("TRS_161_D1"); 
+           }
+           
+           @Then("User click the Charges")
+           public void user_click_the_charges() throws Throwable  {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges());
+           }
+           
+           @Then("User Click the Maintance of charges")
+           public void user_click_the_maintance_of_charges() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_MaintanceofCharges());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_MaintanceofCharges());
+           
+           }
          
-}
+           @Then("Enter the Value of T in Brief Name")
+           public void enter_the_value_of_t_in_brief_name() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_Briefname());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges_Briefname());
+        	   transactionStaffAcc.Transactions_Charges_Briefname().sendKeys(testData.get("UserId"));
+           }
+           
+           @Then("User double click the Existing data of charges")
+           public void user_double_click_the_existing_data_of_charges() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_existingdata());
+        	   clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Charges_existingdata()); 
+           }
+           
+           @Then("user Uncheck the flag of Allow modify and clear")
+           public void user_uncheck_the_flag_of_allow_modify_and_clear() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_allowclrflag());
+        	   clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Charges_allowclrflag()); 
+               
+           }
+       
+           @Then("uncheck the flag of Allow modify")
+           public void uncheck_the_flag_of_allow_modify() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_allowflag());
+        	   clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Charges_allowflag()); 
+           }
+           
+           @Then("user click the update after approve button")
+           public void user_click_the_update_after_approve_button() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_UPAbtn());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges_UPAbtn()); 
+           }
+           
+           @Then("user Click the Update after approve")
+           public void user_click_the_update_after_approve() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_UPA());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges_UPA());
+           }
+           
+           @Then("User click the Approve screen in Charges")
+           public void user_click_the_approve_screen_in_charges() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_Appscrn());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges_Appscrn());
+        	   Thread.sleep(2000);
+           }
+           
+           @Then("enter the code value")
+           public void enter_the_code_value() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_code());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges_code());
+        	   transactionStaffAcc.Transactions_Charges_code().sendKeys(testData.get("Type Code_D2"));
+        	   transactionStaffAcc.Transactions_Charges_code().sendKeys(Keys.ENTER);
+           }
+           
+           @Then("User double click the data in the code")
+           public void user_double_click_the_data_in_the_code() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_Existingdata());
+        	   clicksAndActionsHelper.doubleClick(transactionStaffAcc.Transactions_Charges_Existingdata());
+        	   Thread.sleep(2000);
+           }
+           
+           @Then("User click the Approve button")
+           public void User_click_the_approve_button() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_Charges_Appbtn());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_Charges_Appbtn());
+           }
+           
+           @Then("enter the below account in glcode value")
+           public void enter_the_below_account_in_glcode_value() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionscreditAccglcode());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionscreditAccglcode());
+        	   transactionStaffAcc.transactionscreditAccglcode().sendKeys(testData.get("Debit Gl Code"));
+           }
+           
+           @Then("enter the Ciftype value")
+           public void enter_the_ciftype_value() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionsCreditAccCifcode());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionsCreditAccCifcode());
+        	   transactionStaffAcc.transactionsCreditAccCifcode().sendKeys(testData.get("Debit CIF Code"));
+           }
+           
+           @Then("enter the serial value")
+           public void enter_the_serial_value() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.transactionsCreditAccSerialcode());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionsCreditAccSerialcode());
+        	   transactionStaffAcc.transactionsCreditAccSerialcode().sendKeys(testData.get("Debit Serial Number"));
+           }
+           
+           
+           @Then("the Cv Charges is Enabeled")
+           public void the_cv_charges_is_enabeled() throws Throwable {
+        	   waitHelper.waitForElementwithFluentwait(driver,transactionStaffAcc.Transactions_cv_charges());
+        	   clicksAndActionsHelper.clickOnElement(transactionStaffAcc.Transactions_cv_charges()); 
+        	   transactionStaffAcc.Transactions_cv_charges().isDisplayed();          
+           
+           }
+           
+           //TRS_157//
+           
+           @And("^user update test data set id for TRS_157$")
+           public void user_update_test_data_set_id_for_trs157() throws Throwable {
+          	 testData = excelDataForTransaction.getTestdata("TRS_157_D1"); 
+           }
+                 }	
+		
+		
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 
-  
+
+ 
 
 
 

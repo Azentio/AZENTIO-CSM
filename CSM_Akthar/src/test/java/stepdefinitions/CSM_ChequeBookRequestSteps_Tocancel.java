@@ -1,12 +1,16 @@
 package stepdefinitions;
 
-import org.openqa.selenium.By;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 import dataProvider.ConfigFileReader;
+import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
@@ -14,8 +18,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.CommonElements.CSMCommonWebElements;
 import pageobjects.csm.ChequeBookRequestObj_Tocancel;
-import resources.BaseClass;abstract
-       
+import resources.BaseClass;
+
+abstract
 
 public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 
@@ -26,18 +31,30 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 	WaitHelper waitHelper = new WaitHelper(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	ChequeBookRequestObj_Tocancel chequeBookRequestObj = new ChequeBookRequestObj_Tocancel(driver);
-	// String path = System.getProperty("user.dir") +
-	// "\\TestData\\CSMTestData.xlsx";
-//	ExcelData excelDataForChequeBookRequest = new ExcelData(path, "CSM_ChequeBookrequest", "DataSet ID");
+	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+	ExcelData excelDataForChequeBookRequest = new ExcelData(path, "CSM_Transaction", "DataSet ID");
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
+	Map<String, String> chequeBookRequestTestData = new HashMap<>();
+	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
+	Map<String, String> testData;
+	/*
+	 * @Given("navigate to CSM application and login with valid credentials") public
+	 * void navigate_to_csm_application_and_login_with_valid_credentials() throws
+	 * Throwable { driver.get(configFileRead.getCSMApplicationUrl());
+	 * csmLogin.loginIntoCSMApplication(); }
+	 */
 
-	@Given("navigate to CSM application and login with valid credentials")
-	public void navigate_to_csm_application_and_login_with_valid_credentials() throws Throwable {
+	@Given("^User navigate to CSM application and login with valid credentials$")
+	public void user_navigate_to_csm_application_and_login_with_valid_credentials() throws Throwable {
 		driver.get(configFileRead.getCSMApplicationUrl());
 		csmLogin.loginIntoCSMApplication();
 	}
-
 	/// CHB-117/// & ///CHB-118///
+	@And("user update test data set id for CHB_117")
+	public void user_update_test_data_set_id_for_chb_117() {
+		testData = excelDataForChequeBookRequest.getTestdata("CHB_117_D1");
+	}
+	
 
 	@Then("^Click the chequebook request$")
 	public void click_the_chequebook_request() throws Throwable {
@@ -58,76 +75,74 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch());
 		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch());
 		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch());
-		chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch().sendKeys("1054");
+		chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch().sendKeys(testData.get("Transactions"));
 		Thread.sleep(3000);
 		clicksAndActionsHelper.doubleClick(chequeBookRequestObj.csm_chequeBookRequestCodeSearchDoubleClick());
-		// chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch().sendKeys(Keys.ENTER);
-		//clicksAndActionsHelper.doubleClick(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch());
 		Thread.sleep(2000);
-	}   
-        @And("^click the cancel reason to fill the reason$")
-        public void click_the_cancel_reason_to_fill_the_reason() throws Throwable {
-       waitHelper.waitForElementwithFluentwait(driver, null);
-       clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_chequeBookRequestCancelReason());
-       clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequestCancelReason());
-       chequeBookRequestObj.csm_chequeBookRequestCancelReason().sendKeys("50"); 
-       
-    }
-    
+	}
 
-         @And("^Cancel that record by clicking the to cancel button$")
-         public void cancel_that_record_by_clicking_the_to_cancel_button() throws Throwable {
-    	 waitHelper.waitForElementwithFluentwait(driver, null);
-    	 clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch_CancelKeyFinal());
-         clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch_CancelKeyFinal());
-         chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch_CancelKeyFinal().click();
-         
-    }
+	@And("^click the cancel reason to fill the reason$")
+	public void click_the_cancel_reason_to_fill_the_reason() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, null);
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_chequeBookRequestCancelReason());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequestCancelReason());
+		chequeBookRequestObj.csm_chequeBookRequestCancelReason().sendKeys(testData.get("Deposit"));
 
-       @Then("^Select the record in the alert box$")
-       public void select_the_record_in_the_alert_box() throws Throwable {
-       waitHelper.waitForElementwithFluentwait(driver, null);
-       clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_AlertClickChrisag());
-       clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_AlertClickChrisag());
-       clicksAndActionsHelper.doubleClick(chequeBookRequestObj.csm_ChequeBookRequest_AlertClickChrisag());
-     
-       
-    }
-    
-         @And("^Approve the record by clicking approve button in the alert screen$")
-         public void approve_the_record_by_clicking_approve_button_in_the_alert_screen() throws Throwable {
-         waitHelper.waitForElementwithFluentwait(driver, null);
-         clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_Alert_Approve());
-         clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_Alert_Approve());
-         chequeBookRequestObj.csm_ChequeBookRequest_Alert_Approve().click();
-    }
-    
-         @Then("^Enter the teller User information$")
-         public void enter_the_teller_user_information() throws Throwable {
-    	 waitHelper.waitForElementwithFluentwait(driver, null);
-    	 clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_UserName());
-         clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_UserName());
-         chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_UserName().sendKeys("CHRISAG");
-         clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Password());
-         clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Password());
-         chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Password().sendKeys("321");
-         clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Submit());
-         clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Submit());
-         chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Submit().click();
-         
-       }
-        @Then("^Enter the reason under the teller account$")
-        public void enter_the_reason_under_the_teller_account() throws Throwable {
-    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_ChequeBookRequest_ToCancel());
+	}
 
-	 }
+	@And("^Cancel that record by clicking the to cancel button$")
+	public void cancel_that_record_by_clicking_the_to_cancel_button() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, null);
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch_CancelKeyFinal());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch_CancelKeyFinal());
+		chequeBookRequestObj.csm_ChequeBookRequest_CodeSearch_CancelKeyFinal().click();
 
-      @And("^Reject and validate the record$")
-      public void reject_and_validate_the_record() throws Throwable {
-        
-      }
-      
-      //CHB_149//         
+	}
+
+	@Then("^Select the record in the alert box$")
+	public void select_the_record_in_the_alert_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, null);
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_AlertClickChrisag());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_AlertClickChrisag());
+		clicksAndActionsHelper.doubleClick(chequeBookRequestObj.csm_ChequeBookRequest_AlertClickChrisag());
+
+	}
+
+	@And("^Approve the record by clicking approve button in the alert screen$")
+	public void approve_the_record_by_clicking_approve_button_in_the_alert_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, null);
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_Alert_Approve());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_Alert_Approve());
+		chequeBookRequestObj.csm_ChequeBookRequest_Alert_Approve().click();
+	}
+
+	@Then("^Enter the teller User information$")
+	public void enter_the_teller_user_information() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, null);
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_UserName());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_UserName());
+		chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_UserName().sendKeys(testData.get("UserId"));
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Password());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Password());
+		chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Password().sendKeys(testData.get("Code Value CifType"));
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Submit());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Submit());
+		chequeBookRequestObj.csm_ChequeBookRequest_UserInfo_Submit().click();
+
+	}
+
+	@Then("^Enter the reason under the teller account$")
+	public void enter_the_reason_under_the_teller_account() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_ChequeBookRequest_ToCancel());
+
+	}
+
+	@And("^Reject and validate the record$")
+	public void reject_and_validate_the_record() throws Throwable {
+
+	}
+
+	// CHB_149//
 
 //      @And("^user click the maintenance screen under chequebook request$")
 //       public void user_click_the_maintenance_screen_under_chequebook_request() throws Throwable {
@@ -422,7 +437,6 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 //          }
 //
 //     
-      
 
 //CHB_150//	   
 
@@ -452,7 +466,8 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 
 	@And("^Select the Approve Reject Bulk Destroy$")
 	public void select_the_approve_reject_bulk_destroy() throws Throwable {
-		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_ApproveRejectBulkDestroy());
+		waitHelper.waitForElementwithFluentwait(driver,
+				chequeBookRequestObj.csm_chequeBookRequest_ApproveRejectBulkDestroy());
 		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_ApproveRejectBulkDestroy());
 	}
 
@@ -469,82 +484,80 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 	}
 
 	// CHB_151//
-	
-	  @And("^Enter the value in search box$")
-	    public void Enter_the_value_in_search_box() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Searchbox());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Searchbox()); 
-			chequeBookRequestObj.csm_chequeBookRequest_Searchbox().sendKeys("432");
-			Thread.sleep(3000);
-	    }
-	  
-	  @And("^enter the value in the code box$")
-	    public void enter_the_value_in_the_code_box() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
-			chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys("432");
-			chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys(Keys.ENTER);
-	    }
-	  
-	  @Then("^check the same Data will Appear in To be Destroy$")
-	    public void check_the_same_data_will_Appear_in_to_be_Destroy() throws Throwable {
-	    	    	String xpath="//input[@id='jqg2']='"+432+"']";
-	    	    	Thread.sleep(3000);
-	    	    	for (int i = 0; i <200; i++) {
-						try {
-							Assert.assertTrue(driver.findElement(By.xpath(xpath)).isDisplayed());
-							break;
-						} catch (Exception e) {
-							if (i==199) {
-								Assert.fail(e.getMessage());
-							}
-						}
-					}
-	    	 }
+
+	@And("^Enter the value in search box$")
+	public void Enter_the_value_in_search_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Searchbox());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Searchbox());
+		chequeBookRequestObj.csm_chequeBookRequest_Searchbox().sendKeys("432");
+		Thread.sleep(3000);
+	}
+
+	@And("^enter the value in the code box$")
+	public void enter_the_value_in_the_code_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
+		chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys("432");
+		chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys(Keys.ENTER);
+	}
+
+	@Then("^check the same Data will Appear in To be Destroy$")
+	public void check_the_same_data_will_Appear_in_to_be_Destroy() throws Throwable {
+		String xpath = "//input[@id='jqg2']='" + 432 + "']";
+		Thread.sleep(3000);
+		for (int i = 0; i < 200; i++) {
+			try {
+				Assert.assertTrue(driver.findElement(By.xpath(xpath)).isDisplayed());
+				break;
+			} catch (Exception e) {
+				if (i == 199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
 
 //CHB_152
-	
 
-	    @And("^click the Retrive buton$")
-	    public void click_the_Retrive_buton() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Retrive_Btn());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Retrive_Btn());
-	    }   
+	@And("^click the Retrive buton$")
+	public void click_the_Retrive_buton() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Retrive_Btn());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Retrive_Btn());
+	}
 
-	  
-	   @Then("^click the Search button$")
-	    public void click_the_search_button() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Searchbtn());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Searchbtn());
-	    }
+	@Then("^click the Search button$")
+	public void click_the_search_button() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Searchbtn());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Searchbtn());
+	}
 
-	  
-	    @And("^enter the value in search box$")
-	    public void enter_the_value_in_search_box() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Searchbox());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Searchbox()); 
-			chequeBookRequestObj.csm_chequeBookRequest_Searchbox().sendKeys("32");
-	    }
+	@And("^enter the value in search box$")
+	public void enter_the_value_in_search_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Searchbox());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Searchbox());
+		chequeBookRequestObj.csm_chequeBookRequest_Searchbox().sendKeys("32");
+	}
 
-	    @And("^click the Find button$")
-	    public void click_the_find_button() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Findbtn());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Findbtn()); 
-	    }  
+	@And("^click the Find button$")
+	public void click_the_find_button() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Findbtn());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Findbtn());
+	}
 
-	    @And("^click the To be Destroy$")
-	    public void click_the_to_be_destroy()  throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Tobedestroy());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Tobedestroy()); 
-	    	
-	    }
-	    @And("^Enter the value in the code box$")
-	    public void Enter_the_value_in_the_code_box() throws Throwable {
-	    	waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
-			clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
-			chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys("32");
-			chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys(Keys.ENTER);
-	    }
+	@And("^click the To be Destroy$")
+	public void click_the_to_be_destroy() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Tobedestroy());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Tobedestroy());
+
+	}
+
+	@And("^Enter the value in the code box$")
+	public void Enter_the_value_in_the_code_box() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.csm_chequeBookRequest_Codevalue());
+		chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys("32");
+		chequeBookRequestObj.csm_chequeBookRequest_Codevalue().sendKeys(Keys.ENTER);
+	}
 }
 //
 //	    @Then("^check the same Data will Appear in To be Destroy$")
@@ -564,5 +577,3 @@ public class CSM_ChequeBookRequestSteps_Tocancel extends BaseClass {
 //	    	 }
 // 
 // }
-
-

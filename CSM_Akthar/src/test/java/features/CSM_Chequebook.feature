@@ -4,7 +4,8 @@ Feature: To check the functionalitites of chequebook request
                                        
 @CHB_117
 Scenario: Unchecking the flags Reason on Rejecting and Records rejection reason and  rejecting a chequebook under Approve Cancel screen
-Given navigate to CSM application and login with valid credentials
+Given User navigate to CSM application and login with valid credentials
+And user update test data set id for CHB_117
 Then Click the chequebook request
 And Click the To Cancel under chequebook request
 Then search and choose the existing data
@@ -13,7 +14,7 @@ And Cancel that record by clicking the to cancel button
 Then Select the record in the alert box 
 And Approve the record by clicking approve button in the alert screen
 Then Enter the teller User information 
-And Click the submit button under the user information
+#And Click the submit button under the user information
 Then Enter the reason under the teller account
 And Reject and validate the record
 
@@ -21,7 +22,7 @@ And Reject and validate the record
 
 @CHB_118
 Scenario: Checking "Reason on Rejecting" flag upon rejecting a chequebook underr Approve Cancel screen for alert
-Given navigate to CSM application and login with valid credentials
+Given User navigate to CSM application and login with valid credentials
 Then Click the chequebook request
 And Click the To Cancel under chequebook request
 Then search and choose the existing data
@@ -39,7 +40,7 @@ And Reject and validate the record
 
 @CHB_149
 Scenario: UnCheck the "Reason on Rejecting"and "Records rejection reason is mandatory" flag reject chequebook Destroy screen
-Given navigate to CSM application and login with valid credentials
+Given  User navigate to CSM application and login with valid credentials
 Then Click the chequebook request
 And Click the Approve 
 Then search and choose the existing data
@@ -54,7 +55,7 @@ And Reject and validate the record
 
 @CHB_150
 Scenario: Checking if "Approve/Reject Destroy" screen the same as "Approve Destroy"or"Reject Destroy" screens
-Given navigate to CSM application and login with valid credentials
+Given  User navigate to CSM application and login with valid credentials
 Then Click the chequebook request
 And   Click the Bulk Destroy 
 Then Choose the Existing data from Bulk Destroy
@@ -67,7 +68,7 @@ Then Same data will Appear in Approve Reject Bulk Destroy
 
 @CHB_151
 Scenario: Checking if "Bulk Destroy" screen same as "To be Destroyed" screen with the "Approved" chequebooks
-Given navigate to CSM application and login with valid credentials
+Given  User navigate to CSM application and login with valid credentials
 Then  Click the chequebook request
 And   Click the Bulk Destroy 
 And   click the Retrive buton
@@ -82,18 +83,18 @@ Then  check the same Data will Appear in To be Destroy
    
                                          #     ********* Sprint -8 (1)  **********  #
 
-#@CHB_152
-#Scenario: Checking if "Bulk Destroy" screen is the same as "To be Destroyed" screen with the "In branch" chequebooks
-#Given navigate to CSM application and login with valid credentials
-#Then  Click the chequebook request
-#And   Click the Bulk Destroy 
-#And   click the Retrive buton
-#Then  click the Search button
-#And   enter the value in search box
-#And   click the Find button
-#And   click the To be Destroy
-#And   Enter the value in the code box  
-#Then  check the same Data will Appear in To be Destroy 
+@CHB_152
+Scenario: Checking if "Bulk Destroy" screen is the same as "To be Destroyed" screen with the "In branch" chequebooks
+Given  User navigate to CSM application and login with valid credentials
+Then  Click the chequebook request
+And   Click the Bulk Destroy 
+And   click the Retrive buton
+Then  click the Search button
+And   enter the value in search box
+And   click the Find button
+And   click the To be Destroy
+And   Enter the value in the code box  
+Then  check the same Data will Appear in To be Destroy 
 
 
    
