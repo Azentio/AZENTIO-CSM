@@ -45,12 +45,12 @@ public class EcoSectorwithdrawlimit {
         ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.SystemParameters());
     }
 
-    @And("^user click user submenu$")
+   /* @And("^user click user submenu$")
     public void user_click_user_submenu() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver, EcoSectorTransactionobj.userSubMenu());
         ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.userSubMenu());
         ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.userSubMenu());
-    }
+    }*/
 @And("^user click update after approve$")
     public void user_click_update_after_approve() throws Throwable {
         waitHelper.waitForElementwithFluentwait(driver, EcoSectorTransactionobj.updateAfterApproveInUser());
@@ -165,13 +165,13 @@ public class EcoSectorwithdrawlimit {
         EcoSectorTransactionobj.depositLimitInUpdateAfterApprove().sendKeys(testData.get("Deposit Limit"));
     }
 
-@And("^user check if the  value is entered or not$")
+/*@And("^user check if the  value is entered or not$")
 
     public void user_check_if_the_value_is_entered_or_not() throws Throwable {
     	try {
 
         seleniumActions.getJavascriptHelper().scrollIntoView(EcoSectorTransactionobj.checkIfValueIsEntered());
-        if ((EcoSectorTransactionobj.checkIfValueIsEntered().getAttribute("prevvalue")) != null){
+        if ((EcoSectorTransactionobj.checkIfValueIsEntered().getAttribute("prevalue")) != null){
         	EcoSectorTransactionobj.checkIfValueIsEntered().isDisplayed();
         }
         else
@@ -181,7 +181,7 @@ public class EcoSectorwithdrawlimit {
       } catch (Exception e){
     	  
       }
-    }
+    }*/
 @Then("^user verify the stopper message popup$")
     public void user_verify_the_stopper_message_popup() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver, EcoSectorTransactionobj.validatePopupInEcoSector());
@@ -253,14 +253,14 @@ public void user_click_on_transactions_under_csm_application() throws Throwable 
     ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSMTransactionsMainMenu());
 }
 
- @And("^User Click on Maintenance under Transactionss$")
+ @And("^User Click on Maintenance under Transactions$")
     public void user_click_on_maintenance_under_transactions() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSMMaintenanceUnderTransactions());
         ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSMMaintenanceUnderTransactions());
         ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSMMaintenanceUnderTransactions());
     }
 
-    @And("^User Enter TRX Type in Maintenance Screens$")
+    @And("^User Enter TRX Type in Maintenance Screen$")
     public void user_enter_trx_type_in_maintenance_screen() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSMTRXTypeInMaintenanceScreen());
         ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSMTRXTypeInMaintenanceScreen());
@@ -376,7 +376,7 @@ public void user_click_on_transactions_under_csm_application() throws Throwable 
         EcoSectorTransactionobj.CSM_addbtn_Branch().sendKeys("1",Keys.TAB);
     }
 
-    @And("^User Enter the Gl in AccountDetails$")
+    @And("^User Enter the Gl in AccountDetails1111$")
     public void user_enter_the_gl_in_accountdetails() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSM_addbtn_Gl());
         ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSM_addbtn_Gl());
@@ -430,5 +430,65 @@ public void user_click_on_transactions_under_csm_application() throws Throwable 
         ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSM_addbtn_ok());	
     }
 
+    @And("^User Enter the Branch Code in debit Ac in Maintenance Screen$")
+    public void user_enter_the_branch_code_in_debit_ac_in_maintenance_screen_72() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSM_BranchCodeINdebitAc());
+        ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSM_BranchCodeINdebitAc());
+        ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSM_BranchCodeINdebitAc());
+        EcoSectorTransactionobj.CSM_BranchCodeINdebitAc().sendKeys("1",Keys.TAB);
+        
+       }
 
+    @And("^User Enter Currency Code in debit Ac in Maintenance Screen$")
+    public void user_enter_currency_code_in_debit_ac_in_maintenance_screen_72() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSM_CurrencyCodedebitAc());
+        ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSM_CurrencyCodedebitAc());
+        ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSM_CurrencyCodedebitAc());
+        EcoSectorTransactionobj.CSM_CurrencyCodedebitAc().sendKeys("586",Keys.TAB);
+          
+    }
+
+    @And("^User Enter GL Code in debit Ac in Maintenance Screen$")
+    public void user_enter_gl_code_in_debit_ac_in_maintenance_screen_72() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSM_GLCodedebitAc());
+        ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSM_GLCodedebitAc());
+        ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSM_GLCodedebitAc());
+        EcoSectorTransactionobj.CSM_GLCodedebitAc().sendKeys("8456",Keys.TAB);
+        
+    }
+
+    @And("^User Enter CIF Code in debit Ac in Maintenance Screen$")
+    public void user_enter_cif_code_in_debit_ac_in_maintenance_screen_72() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSMCIFCodeInCreditAc());
+        ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSMCIFCodeInCreditAc());
+        ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSMCIFCodeInCreditAc());
+        EcoSectorTransactionobj.CSMBranchCodeInCreditAc().sendKeys("993602",Keys.TAB);
+        
+    }
+    @And("^User Enter Serial in debit Ac in Maintenance Screen$")
+    public void user_enter_serial_in_debit_ac_in_maintenance_screen_72() throws Throwable {
+    	waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSM_SerialIndebitAc());
+        ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSM_SerialIndebitAc());
+        ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSM_SerialIndebitAc());
+        EcoSectorTransactionobj.CSM_SerialIndebitAc().sendKeys("0",Keys.TAB);
+        
+    }
+    @And("^User Click Save Button in Maintenance Screen$")
+    public void user_click_save_button_in_maintenance_screen_72() throws Throwable {
+    	for (int i = 0; i <200; i++) {
+			try {
+				waitHelper.waitForElementwithFluentwait(driver,EcoSectorTransactionobj.CSMSaveButtonInMaintenanceScreen());
+	    	    ClicksAndActionsHelperobj.moveToElement(EcoSectorTransactionobj.CSMSaveButtonInMaintenanceScreen());
+	    	    ClicksAndActionsHelperobj.clickOnElement(EcoSectorTransactionobj.CSMSaveButtonInMaintenanceScreen());
+	    	    break;
+			} catch (Exception e) {
+				if (i==199) {
+					org.testng.Assert.fail(e.getMessage());
+				}
+			}
+		}
+    		
+    	        
+    }
+  
 }

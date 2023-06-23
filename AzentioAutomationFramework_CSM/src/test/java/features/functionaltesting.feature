@@ -9,6 +9,7 @@ And user click on the Code in functional testing
 And user click on the GLcode in functional testing
 And user click on the Charges in functional testing
 And user click on the Save in functional testing
+
 Given User login to CSM Param in Charge Waiver
 And user click on the Parameters in functional testing
 And user click on the System Parameters in functional testing

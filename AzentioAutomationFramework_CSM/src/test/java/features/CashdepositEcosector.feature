@@ -4,7 +4,7 @@ Given user login as csm params application
 And user update test data set id for TRS_122_01 
 And user click parameters menu
 And user click system parameters submenu
-And user click user submenu
+#And user click user submenu
 And user click update after approve 
 And user enter the value in user id
 And user retrieve the selected user id
@@ -47,8 +47,7 @@ And user retrieve the selected user id under approve screen
 Then user click approve button 
 And user click confirm ok button
 Then user click success message ok button 
-
-Given user login as csm core application
+Given navigate to CSM application and login with valid credentialsss
 And User Click on Date to Change the Current Date
 And User Enter the Date in User Running Date
 And User Click on Use Button in Change Running Date Popupss1

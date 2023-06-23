@@ -53,8 +53,8 @@ public class SMSProduct_charge {
 
     }
 
-    @And("^user click on the MobileNo in charge$")
-    public void user_click_on_the_mobileno_in_charge() throws Throwable {
+    @And("^user Enter on the MobileNo in charge$")
+    public void user_Enter_on_the_mobileno_in_charge() throws Throwable {
     	waitHelper.waitForElementToVisibleWithFluentWait(driver, SMS_productCWobj.MobileNo(), 60, 2);
         ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.MobileNo());
         SMS_productCWobj.MobileNo().click();  
@@ -81,12 +81,12 @@ public class SMSProduct_charge {
         ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.SmsSubscriptionTemplate());
         SMS_productCWobj.SmsSubscriptionTemplate().click();    }
 
-    /*@And("^user click on the pLUSButton in charge$")
+    @And("^user click on the pLUSButton in charge$")
     public void user_click_on_the_plusbutton_in_charge() throws Throwable {
-    	waitHelper.waitForElementToVisibleWithFluentWait(driver, SMS_productCWobj.pLUSButton(), 60, 2);
-        ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.pLUSButton());
-        SMS_productCWobj.pLUSButton().click();
-    }*/
+    	waitHelper.waitForElementToVisibleWithFluentWait(driver, SMS_productCWobj.SMSSubscription_puls(), 60, 2);
+        ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.SMSSubscription_puls());
+        SMS_productCWobj.SMSSubscription_puls().click();
+    }
 
     @And("^user click on the searchbutton in Charge$")
     public void user_click_on_the_searchbutton_in_charge() throws Throwable {
@@ -95,12 +95,12 @@ public class SMSProduct_charge {
         SMS_productCWobj.Exceedlimit().click();   
         }
 
-    /*@And("^user click on the servicecode in charge$")
+    @And("^user click on the servicecode in charge$")
     public void user_click_on_the_servicecode_in_charge() throws Throwable {
-    	waitHelper.waitForElementToVisibleWithFluentWait(driver, SMS_productCWobj.servicecode(), 60, 2);
-        ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.servicecode());
-        SMS_productCWobj.servicecode().click();
-    }*/
+    	waitHelper.waitForElementToVisibleWithFluentWait(driver, SMS_productCWobj.Servicecode_SMS(), 60, 2);
+        ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.Servicecode_SMS());
+        SMS_productCWobj.Servicecode_SMS().click();
+    }
 
     @And("^User click on the SMSsubscriptiondetails Template in Charge$")
     public void user_click_on_the_smssubscriptiondetails_template_in_charge() throws Throwable {

@@ -66,4 +66,19 @@ public class SMS_productCW {
      public WebElement UpdateAftersubmit() {
     	 return UpdateAftersubmit;
      }
+     @FindBy(xpath="//td[@id='add_smsSubscriptionDetailsGrid_Id_SMS00MT']")
+     private WebElement SMSSubscription_puls;
+     public WebElement SMSSubscription_puls() {
+    	 return SMSSubscription_puls;
+     }
+     @FindBy(xpath="//input[@name='lookupTxt_smsSubscriptionVO.SERVICE_CODE']")
+     private WebElement Servicecode_SMS;
+     public WebElement Servicecode_SMS() {
+    	 return Servicecode_SMS;
+     }
+     @FindBy(xpath="//label[@id='smsSubscriptionMaintFormId_SMS00MT_Save_key']") 
+     private WebElement Savebutton_SMS;
+     public WebElement Savebutton_SMS() {
+    	 return Savebutton_SMS;
+     }
 }

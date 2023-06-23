@@ -12,6 +12,7 @@ import helper.ClicksAndActionsHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import pageobjects.CashDepositTransaction;
 import resources.BaseClass;
 
@@ -26,7 +27,12 @@ public class TransModifyCashDP {
 	Map<String, String> loginTestData = new HashMap<>();
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
 	
-	
+	@Given("^navigate to CSM application and login with valid credentialsss$")
+	public void navigate_to_csm_application_and_login_with_valid_credentials() throws Throwable {
+		
+		driver.get(configFileReader.getCSMApplicationUrl());
+		login.loginIntoCSMApplication();
+	}
 	
 	
 	@And("^User Click on Date to Change the Current Date$")
@@ -74,7 +80,7 @@ public class TransModifyCashDP {
         ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMTechnicalDetailsIcon()); 
     }
     
-    @And("^User Click Clear Cache in Technical Details Icons$")
+    @And("^User Click Clear Cache in Technical Details Icon$")
     public void user_click_clear_cache_in_technical_details_icon() throws Throwable {
     	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_ClearCacheInTechnicalDetailsIcon());
         ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSM_ClearCacheInTechnicalDetailsIcon());
@@ -186,7 +192,23 @@ public class TransModifyCashDP {
 			}
 	    
 	    }
-	 
+	    @And("^User Click Save Button in Maintenance Screen$")
+	    public void user_click_save_button_in_maintenance_screen_72() throws Throwable {
+	    	for (int i = 0; i <200; i++) {
+				try {
+					waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSMSaveButtonInMaintenanceScreen());
+		    	    ClicksAndActionsHelperobj.moveToElement(CashDepositTransactionobj.CSMSaveButtonInMaintenanceScreen());
+		    	    ClicksAndActionsHelperobj.clickOnElement(CashDepositTransactionobj.CSMSaveButtonInMaintenanceScreen());
+		    	    break;
+				} catch (Exception e) {
+					if (i==199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+	    		
+	    	        
+	    }
 //	    @And("^User Click Transactions Maintenance for loading Amount$")
 //	    public void user_click_transactions_maintenance_for_loading_amount() throws Throwable {
 //	    	waitHelper.waitForElementwithFluentwait(driver,CashDepositTransactionobj.CSM_TransactionsMaintenanceForLoading());

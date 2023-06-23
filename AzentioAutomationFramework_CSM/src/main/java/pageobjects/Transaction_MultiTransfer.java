@@ -133,4 +133,9 @@ public class Transaction_MultiTransfer {
          	{
          		return Transactions_BookedEntries;
          	}
+         	@FindBy(xpath="//td[text()='User']")
+         	private WebElement submenu;
+         	public WebElement submenu() {
+         		return submenu;
+         	}
 }
