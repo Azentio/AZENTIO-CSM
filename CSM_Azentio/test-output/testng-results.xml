@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2023-06-23T11:08:41 IST" name="Default suite" finished-at="2023-06-23T11:11:08 IST" duration-ms="146869">
+    <groups>
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
+    </groups>
+    <test started-at="2023-06-23T11:08:41 IST" name="Default test" finished-at="2023-06-23T11:11:08 IST" duration-ms="146869">
+      <class name="Runner.TestApplication">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-06-23T11:08:41 IST" name="setUpClass" finished-at="2023-06-23T11:08:42 IST" duration-ms="1575" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-06-23T11:08:42 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-23T11:10:31 IST" duration-ms="108999" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Checking the transaction - GL type field - Don’t notify and proceed - Proceed on insufficient funds flag unchecked"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["Optional[Checking functionality of transaction]"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[element not interactable: [object HTMLLabelElement] has no size and location
+  (Session info: chrome=114.0.5735.134)
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [30e7fa45c19abc5beaca64636b33cf03, actions {actions=[org.openqa.selenium.interactions.Sequence@734cf1bf]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59882}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59882/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 30e7fa45c19abc5beaca64636b33cf03]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: element not interactable: [object HTMLLabelElement] has no size and location
+  (Session info: chrome=114.0.5735.134)
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '19.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [30e7fa45c19abc5beaca64636b33cf03, actions {actions=[org.openqa.selenium.interactions.Sequence@734cf1bf]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59882}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59882/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 30e7fa45c19abc5beaca64636b33cf03
+at org.testng.Assert.fail(Assert.java:99)
+at stepdefinitions.CSM_Transactions_Steps.UserClickClearCacheInTechnicalDetailsIconInTheCsmcoreApplication(CSM_Transactions_Steps.java:368)
+at ✽.user click Clear Cache in Technical Details Icon in the CSM core application(file:///C:/Users/ININDC00071/eclipse-workspace1/CSM_Azentio/src/test/java/features/CSM_TranactionFEATURE.feature:45)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5d0bf09b]" started-at="2023-06-23T11:10:31 IST" name="tearDownClass" finished-at="2023-06-23T11:11:08 IST" duration-ms="36219" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- Runner.TestApplication -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
