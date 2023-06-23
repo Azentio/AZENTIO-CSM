@@ -36,8 +36,7 @@ public class Passbook_Account {
     public void user_click_on_the_passbook_in_csm_module() throws Throwable {
     	selenium_Actions.getWaitHelper().waitForElementToVisibleWithFluentWait(driver, Passbook_CSMobject.Passbook(), 60, 2);
     	Passbook_CSMobject.Passbook().click();
-    	
-    }
+    	 }
 
     @And("^User click on the Maintenance in CSM Module$")
     public void user_click_on_the_maintenance_in_csm_module() throws Throwable {

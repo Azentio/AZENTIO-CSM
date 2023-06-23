@@ -98,5 +98,19 @@ public class Passbook_CSM {
 	public WebElement Reclickelement() {
 		return Reclickelement;
 	}
-	
+	@FindBy(xpath="//input[@id='passbkCode_S000MT']")
+	private WebElement passcode_ChargeWai;
+	public WebElement passcode_ChargeWai() {
+		return passcode_ChargeWai;
+	}
+	@FindBy(xpath="//input[@name='passBookCO.passBookVO.DATE_CREATED']")
+	private WebElement PassbookData_created;
+	public WebElement PassbookData_created() {
+		return PassbookData_created;
+	}
+	@FindBy(xpath="//select[@name='passBookCO.passBookVO.CHARGES_DEDUCT']")
+	private WebElement DeductCharge_passbook;
+	public WebElement DeductCharge_passbook() {
+		return DeductCharge_passbook;
+	}
 }

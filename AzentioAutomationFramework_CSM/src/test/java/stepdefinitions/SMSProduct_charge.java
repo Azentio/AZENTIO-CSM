@@ -130,7 +130,15 @@ public class SMSProduct_charge {
         ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.UpdateAftersubmit());
         SMS_productCWobj.UpdateAftersubmit().click();
     }
+    @Given("user click on the Save Button in Charge")
+    public void user_click_on_the_save_button_in_charge() {
+     waitHelper.waitForElementToVisibleWithFluentWait(driver, SMS_productCWobj.Savebutton_SMS(), 60, 2);
+     ClicksAndActionsHelperobj.moveToElement(SMS_productCWobj.Savebutton_SMS());
+     SMS_productCWobj.Savebutton_SMS().click();
+     
+        
 
+    }
 	
 	
 }
