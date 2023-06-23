@@ -50,26 +50,30 @@ public class MultipleTagsRun {
 	public void test() {
 		List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
 		
-//	 testCaseTagsfromExcel1.add("TRS_118_01");
-//   testCaseTagsfromExcel1.add("TRS_118");
-//    testCaseTagsfromExcel1.add("TRS_118_02");
+	 testCaseTagsfromExcel1.add("TRS_034");	
+//   testCaseTagsfromExcel1.add("TRS_071");
+//    testCaseTagsfromExcel1.add("TRS_071_02");
      
-     testCaseTagsfromExcel1.add("TRS_116_01");
-		testCaseTagsfromExcel1.add("TRS_116");
-	testCaseTagsfromExcel1.add("TRS_116_02");
-		
-//  testCaseTagsfromExcel1.add("TRS_117_01");
+    // testCaseTagsfromExcel1.add("TSA_149");
+   //testCaseTagsfromExcel1.add("TSA_149_1");
+   
+	//testCaseTagsfromExcel1.add("TSA_150");
+	//testCaseTagsfromExcel1.add("TSA_150_1");
+	//testCaseTagsfromExcel1.add("TSA_150_2");
+//    testCaseTagsfromExcel1.add("");
+//	 
+//		  testCaseTagsfromExcel1.add("TRS_117_01");
 //		testCaseTagsfromExcel1.add("TRS_117");
 //		testCaseTagsfromExcel1.add("TRS_117_02");
 	
 	//testCaseTagsfromExcel1.add("TRS_118_01");
 		//testCaseTagsfromExcel1.add("TRS_118");
 	//testCaseTagsfromExcel1.add("TRS_118_02");
-		
-//		testCaseTagsfromExcel1.add("TRS_119_01");
-//	testCaseTagsfromExcel1.add("TRS_119");
-// 	testCaseTagsfromExcel1.add("TRS_119_02");
-// 	
+//   
+//				testCaseTagsfromExcel1.add("TRS_116_01");
+//				testCaseTagsfromExcel1.add("TRS_116");
+// 	testCaseTagsfromExcel1.add("TRS_116_02");
+ 	
  	
 
 		MultipleTagsRun newExcelTestRunner= new MultipleTagsRun();

@@ -35,7 +35,21 @@ public class CSMSADS_Tranactiononstaff_step {
 		driver.get(configFileReader.getSADSApplicationUrl());
 		login.loginIntoSadsApplication();
     }
-
+	@And("^User_612 update test data set id for TSA_149$")
+    public void User_update_test_data_set_id_for_tsa149() throws Throwable {
+    	testData = CSM_TransactionsStepsExcelData.getTestdata("TSA_149_D1");
+	 
+    }
+	@And("^User_612 update test data set id for TSA_150$")
+    public void User_update_test_data_set_id_for_tsa150() throws Throwable {
+    	testData = CSM_TransactionsStepsExcelData.getTestdata("TSA_150_D1");
+	 
+    }
+	@And("^User_612 update test data set id for TSA_151$")
+    public void User_update_test_data_set_id_for_tSA151() throws Throwable {
+    	testData = CSM_TransactionsStepsExcelData.getTestdata("TSA_151_D1");
+	 
+    }
 	
 	@And("^User Click on Parameters under SADS application$")
     public void user_click_on_parameters_under_sads_application() throws Throwable {
@@ -242,7 +256,7 @@ public class CSMSADS_Tranactiononstaff_step {
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSSearchIconInCIFNOUnderTheRestrictionLevel());
     }
     
-    @And("^User Enter the CIF No in the Search box$")
+    @And("User Enter the CIF No in the Search box$")
     public void user_enter_the_cif_no_in_the_search_box() throws Throwable {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterTheCIFNoInTheSearchBox());
@@ -436,7 +450,8 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen());
-        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("Razia",Keys.ENTER);
+        //transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys("Razia",Keys.ENTER);
+        transactiononstaffaccObj.CSMSADSEnterUserIDInSearchUnderApproveScreen().sendKeys(testData.get("User_Id"),Keys.ENTER);
     }
 
     @And("^User Click on Searched ID under Approve Screen$")
@@ -492,12 +507,32 @@ public class CSMSADS_Tranactiononstaff_step {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM360Degree_viewflagCifno());
         seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSM360Degree_viewflagCifno());
         seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSM360Degree_viewflagCifno());
-        transactiononstaffaccObj.CSM360Degree_viewflagCifno().sendKeys("1167");
-        transactiononstaffaccObj.CSM360Degree_viewflagCifno().sendKeys(Keys.ENTER);
-       
-        
+        //transactiononstaffaccObj.CSM360Degree_viewflagCifno().sendKeys("1167");
+        transactiononstaffaccObj.CSM360Degree_viewflagCifno().sendKeys(testData.get("CIF_D1"));
+        transactiononstaffaccObj.CSM360Degree_viewflagCifno().sendKeys(Keys.TAB);
+        Thread.sleep(6000);
+          
     } 
+    @And("Random Click in 360degreeview screen")
+    public void random_click_in_360degreeview_screen() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSM_360_Degree_Randomclk());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSM_360_Degree_Randomclk());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSM_360_Degree_Randomclk());
+  	
+       
+    }
+    
+    @And("^User Validate the warning pop upfor149$")
+    public void User_validate_the_warning_pop_upfor149() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, transactiononstaffaccObj.CSM_360_Degree_viewflag_AccessDeniedpop());
+        Assert.assertTrue(transactiononstaffaccObj.CSM_360_Degree_viewflag_AccessDeniedpop().isDisplayed());
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, transactiononstaffaccObj.CSM_360_Degree_viewflag_AccessDeniedpop());
+        seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSM_360_Degree_viewflag_AccessDeniedpop());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSM_360_Degree_viewflag_AccessDeniedpop());
 
+    }
+    
+   
 
 
 }

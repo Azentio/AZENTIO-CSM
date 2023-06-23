@@ -290,8 +290,7 @@ public class CSMSADS_transactiononstaffaccObj {
 	public WebElement CSMSADSSearchedIDUnderMaintenanceScreen() {
 		return CSMSADS_SearchedIDUnderMaintenanceScreen;
 	}
-	
-	@FindBy(id="spanLookup_CIF_NO_P005M")
+		@FindBy(xpath="//td[text()='RAZIA']")//spanLookup_CIF_NO_P005M
 	private WebElement CSMSADS_SearchButtonInEmployeeDetails;
 
 	public WebElement CSMSADSSearchButtonInEmployeeDetails() {
@@ -397,6 +396,15 @@ public class CSMSADS_transactiononstaffaccObj {
 		public WebElement CSM360Degree_viewflagCifno() {
 			return CSM_360_Degree_viewflag_Cifno ;
 		}				
-
 		
+		@FindBy(xpath="//div[text()='[902863] You Have No Access To View Accounts Details Related To This CIF']")
+		private WebElement CSM_360_Degree_viewflag_AccessDeniedpop;
+		public WebElement CSM_360_Degree_viewflag_AccessDeniedpop() {
+			return CSM_360_Degree_viewflag_AccessDeniedpop ;
+		}
+		@FindBy(xpath="//a[text()='360 Degrees view']")
+		private WebElement CSM_360_Degree_Randomclk;
+		public WebElement CSM_360_Degree_Randomclk() {
+			return CSM_360_Degree_Randomclk ;
+		}
 }

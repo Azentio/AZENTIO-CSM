@@ -3,6 +3,7 @@ Feature: Checking the functionalities of transaction on staff account
   @TSA_149
   Scenario: Check if the user is able to see his account the flag is unchecked grant access personal account
     Given User Navigate to SADS application and login with valid credentials
+      And User_612 update test data set id for TSA_149
     And User Click on Parameters under SADS application
     And User Click on Account Restrictions in Parameters under SADS application
     And User Click on Maintenance in Account Restrictions under Parameters
@@ -36,15 +37,18 @@ Feature: Checking the functionalities of transaction on staff account
   @TSA_149_1
   Scenario: Check if the user is able to see his account the flag is unchecked grant access personal account
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for TSA_149
     And User click 360degree view flag under CSM
-    And User click ok button in warning msg
+    #And User click ok button in warning msg
     And User give Cifno in 360degreeview screen
+     #And Random Click in 360degreeview screen 
+    #And User Validate the warning pop upfor149
 
   @TSA_150
   Scenario: Check if the user is able to see his account the flag is checked and the account is not related to the user and under the restiction
     			is not related to the user and under the restiction
-
     Given User Navigate to SADS application and login with valid credentials
+     And User_612 update test data set id for TSA_150
     And User Click on Parameters under SADS application
     And User Click on Account Restrictions in Parameters under SADS application
     And User Click on Maintenance in Account Restrictions under Parameters
@@ -95,8 +99,8 @@ Feature: Checking the functionalities of transaction on staff account
   @TSA_150_1
   Scenario: Check if the user is able to see his account the flag is checked and the account is not related to the user and under the restiction
     			is not related to the user and under the restiction
-
     Given User Navigate to SADS1 application and login with valid credentials
+     And User_612 update test data set id for TSA_150
     And User Click on Parameter in SADS Application
     And User Click on User in Parameters under SADS application
     And User Click on Approve in User under Parameters
@@ -108,17 +112,19 @@ Feature: Checking the functionalities of transaction on staff account
   @TSA_150_2
   Scenario: Check if the user is able to see his account the flag is checked and the account is not related to the user and under the restiction
     			is not related to the user and under the restiction
-
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for TSA_150
     And User click 360degree view flag under CSM
-    And User click ok button in warning msg
+    #And User click ok button in warning msg
     And User give Cifno in 360degreeview screen
+   
 
   @TSA_151
   Scenario: Check if the user is able to see his account the flag is checked and the account is not related to the user and  not under the restiction
     Given User Navigate to SADS application and login with valid credentials
+     And User_612 update test data set id for TSA_151
     And User Click on Parameters under SADS application
-    #And User Click on Account Restrictions in Parameters under SADS application
+    And User Click on Account Restrictions in Parameters under SADS application
     And User Click on Maintenance in Account Restrictions under Parameters
     And User Enter the value in Code under Maintenance Screen
     And User Enter the value in Description  under Maintenance Screen
@@ -167,6 +173,7 @@ Feature: Checking the functionalities of transaction on staff account
   @TSA_151_1
   Scenario: Check if the user is able to see his account the flag is checked and the account is not related to the user and  not under the restiction
     Given User Navigate to SADS1 application and login with valid credentials
+     And User_612 update test data set id for TSA_151
     And User Click on Parameter in SADS Application
     And User Click on User in Parameters under SADS application
     And User Click on Approve in User under Parameters
@@ -178,6 +185,7 @@ Feature: Checking the functionalities of transaction on staff account
   @TSA_151_2
   Scenario: Check if the user is able to see his account the flag is checked and the account is not related to the user and  not under the restiction
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for TSA_151
     And User click 360degree view flag under CSM
     And User click ok button in warning msg
     And User give Cifno in 360degreeview screen

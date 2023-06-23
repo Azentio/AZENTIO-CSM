@@ -3,6 +3,7 @@
   @CHB_115
   Scenario: Unchecking the flag Records rejection reason is mandatory and  rejecting a chequebook under Approve Cancel screen
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for CHB_115
     And Click the chequebook request flag under CSM
     Then Click the approve cancel button under chequebook request
     And Search the Code and select the existing record under approve cancel
@@ -15,6 +16,7 @@
   @CHB_116
   Scenario: check the flag Records rejection reason is mandatory and  rejecting a chequebook under Approve Cancel screen
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for CHB_116
     And Click the chequebook request flag under CSM
     Then Click the approve cancel button under chequebookrequest
     And Search the Code and select the existingrecord under approve cancel
@@ -25,7 +27,7 @@
   @CHB_164
   Scenario: checking if the system is showing the correct description for charges entries(chequebook)and bill flag unchecked
     Given Navigate to CSM application and login with valid credentials
-    # And get the test data for test case ID CHB_164
+   And User_612 update test data set id for CHB_164
     And Click the chequebook request flag under CSM
     Then click the Maintenance screen under chequebookrequest
     And enter the no of chequebooks under Maintenance screen
@@ -41,6 +43,7 @@
   @CHB_165
   Scenario: checking if the system is showing the correct description for charges entries(chequebook)and bill flagchecked
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for CHB_165
      And Click the chequebook request flag under CSM
     Then click the Maintenance screen under chequebookrequest
     And enter the no of chequebooks under Maintenance screen
@@ -57,6 +60,7 @@
   @CHB_166
   Scenario: To check whether user is able to create a Chequebook If the DDL value is Warn and Proceed and show a pop (ID has Expired)
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for CHB_166
     And Click a date avaible in csm application
     And Clear the date and update today date under CSM
     And Click the use button in date menu under CSM
@@ -85,6 +89,7 @@
     @CHB_167
     Scenario: To check whether user is able to create a Chequebook If the DDL value is Warn and Stop
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for CHB_167
     And Click a date avaible in csm application
     And Clear the date and update today date under CSM
     And Click the use button in date menu under CSM
@@ -113,6 +118,7 @@
     @CHB_168
      Scenario: To check whether user is able to create a Chequebook If the DDL value is N/a
     Given Navigate to CSM application and login with valid credentials
+     And User_612 update test data set id for CHB_168
     And Click a date avaible in csm application
     And Clear the date and update today date under CSM
     And Click the use button in date menu under CSM

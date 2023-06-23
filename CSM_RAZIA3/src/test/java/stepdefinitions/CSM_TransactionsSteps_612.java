@@ -1,5 +1,7 @@
 package stepdefinitions;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -10,7 +12,6 @@ import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.Selenium_Actions;
 import io.cucumber.java.en.And;
-
 import pageobjects.csm.CSM_TransactionsObj_612;
 import resources.BaseClass;
 
@@ -46,7 +47,11 @@ public class CSM_TransactionsSteps_612 {
 	        seleniumAction.getClickAndActionsHelper().moveToElement(csmtransaction_612.CSMDateInUserRunningDate_612());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(csmtransaction_612.CSMDateInUserRunningDate_612());
 	        csmtransaction_612.CSMDateInUserRunningDate_612().clear();
-	        csmtransaction_612.CSMDateInUserRunningDate_612().sendKeys(testData.get("Dates"));
+	       // csmtransaction_612.CSMDateInUserRunningDate_612().sendKeys(testData.get("Dates"));
+	        DateTimeFormatter dtFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	        LocalDate date =LocalDate.now();
+	        String format = date.format(dtFormatter);
+	        csmtransaction_612.CSMDateInUserRunningDate_612().sendKeys(format);
 	       
 	    }
 	 

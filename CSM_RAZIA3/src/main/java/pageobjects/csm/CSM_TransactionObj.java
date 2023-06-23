@@ -32,7 +32,17 @@ public class CSM_TransactionObj {
 	public WebElement CSMDateInUserRunningDate() {
 		return CSM_DateInUserRunningDate;
 	}
-	
+	@FindBy(xpath = "//input[@id='_popup_path_sol_confirm_ok']")
+
+	private WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday;
+
+	public WebElement csmOkButtonForConfirmationPopUpForCompanyHoliday()
+
+	{
+
+	    return csmOkButtonForConfirmationPopUpForCompanyHoliday;
+
+	}
 	@FindBy(xpath = "//label[@id='Application_Running_Date_key']//preceding::button")
 	private WebElement CSM_UseButtonInChangeRunningDate;
 
@@ -196,7 +206,7 @@ public class CSM_TransactionObj {
 	public WebElement CSM_addbtn_Sl() {
 		return CSM_addbtn_Sl;
 	}
-//pop staffcif ok
+//
 	@FindBy(id="new_1685338823692_ctstrsACCDETVO.FC_AMOUNT")
 	private WebElement CSM_addbtn_Amount;
 	public WebElement CSM_addbtn_Amount() {
@@ -330,6 +340,12 @@ public WebElement csm_transaction_warningpop_Economicsector_limitAmount_118() {
 //}
 
 
+		@FindBy(xpath="//div[text()='WARNING']//parent::div//following-sibling::div//div[contains(text(),'Currency: Limit Amount should be between 0.0  and 300.00')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+		private WebElement CSM_CurrencyLimit_pop_ok;
+
+		public WebElement CSM_CurrencyLimit_pop_ok() {
+			return CSM_CurrencyLimit_pop_ok;
+		}	
 
 @FindBy(xpath="//div[text()='Cannot Proceed']")
 private WebElement CSM_cannotproceed_msg;
@@ -495,11 +511,17 @@ public WebElement CSM_cannotproceed_msg117() {
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove() {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove;
 	}
-	@FindBy(id = "_popup_path_sol_confirm_ok")
+	@FindBy(id = "_popup_path_sol_confirm_ok")//input[@id='_popup_path_sol_confirm_ok']
 	private WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
 
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok() {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok;
+	}
+	@FindBy(xpath="//input[@id='_popup_path_sol_confirm_ok']")
+	private WebElement csmparam_Transactiontype_UPA_Confirm_success69;
+
+	public WebElement csmparam_Transactiontype_UPA_Confirm_success69() {
+		return csmparam_Transactiontype_UPA_Confirm_success69;
 	}
 	
 	
@@ -510,6 +532,7 @@ public WebElement CSM_cannotproceed_msg117() {
 	public WebElement csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok() {
 		return csmParam_User_Userid_doubleclick_logintobranch_Updateafterapprove_Ok_Ok;
 	}
+	
 	
 	@FindBy(xpath="//span[text()='Approve']")
 	private WebElement csmParam_User_Approve;
@@ -1154,7 +1177,18 @@ public WebElement CSM_cannotproceed_msg117() {
 
 				}
 				
-				 
+			
+				@FindBy(xpath="	//div[contains(text(),'Saved Successfully')]//following::input")
+
+				private WebElement getTransactionOkPop ;
+
+				public WebElement getTransactionOkPop ()
+
+				{
+
+				    return getTransactionOkPop;
+
+				}
 
 				@FindBy(xpath="//span[text()='Delete All']")
 
@@ -1166,6 +1200,33 @@ public WebElement CSM_cannotproceed_msg117() {
 
 				    return ecoSectorInUpdateAfterApprove_DeleteAll;
 
-				}	 
-
+				}	
+				
+				@FindBy(xpath="(//input[@name='trxMgntCO.ctstrsVO.BRANCH_CODE'])[2]")
+				private WebElement CSM_Transaction_TellerAC_Branchinput;
+				public WebElement CSM_Transaction_TellerAC_Branchinput() {
+					return CSM_Transaction_TellerAC_Branchinput;
+				}
+				
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_CY']")
+				private WebElement CSM_Transaction_TellerAc_Currencyinput;
+				public WebElement CSM_Transaction_TellerAc_Currencyinput() {
+					return CSM_Transaction_TellerAc_Currencyinput;
+				}
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_GL']")
+				private WebElement CSM_Transaction_TellerAc_Glinput;
+				public WebElement CSM_Transaction_TellerAc_Glinput() {
+					return CSM_Transaction_TellerAc_Glinput;
+				}
+				
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_CIF']")
+				private WebElement CSM_Transaction_TellerAc_Cifinput;
+				public WebElement CSM_Transaction_TellerAc_Cifinput() {
+					return CSM_Transaction_TellerAc_Cifinput;
+				}
+				@FindBy(xpath="//input[@id='lookuptxt_ctrl_sl_D001MT']")
+				private WebElement CSM_Transaction_TellerAc_Serialinput;
+				public WebElement CSM_Transaction_TellerAc_Serialinput() {
+					return CSM_Transaction_TellerAc_Serialinput;
+				}
 }

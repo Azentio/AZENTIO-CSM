@@ -6,6 +6,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_029
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -65,6 +66,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_32
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -124,6 +126,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_30
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -140,8 +143,13 @@ Feature: Checking the functionalities of transaction
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
     And User Click Ok Button in Warning PopUp Menu
-      And User Enter the ForeignCurrency in Maintenance Screen
-     And User Enter the Amount in Maintenance Screen
+    And User Enter the ForeignCurrency in Maintenance Screen
+    #And User Enter the Branch code in TellerAc Under Maintenance Screen
+    #And User Enter the Currency  in TellerAc Under Maintenance Screen
+    #And User Enter the Gl  in TellerAc Under Maintenance Screen
+    #And User Enter the Cif in TellerAc Under Maintenance Screen
+    #And User Enter the serial in TellerAc Under Maintenance Screen
+      And User Enter the Amount in Maintenance Screen
     And User Click Save Button in Maintenance Screen
     And User Get the Transaction No in Success PopUp Menu for30
     And User Click Ok Button in Success PopUp Menu
@@ -163,6 +171,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_31
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -210,6 +219,7 @@ Feature: Checking the functionalities of transaction
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
     And User Click on Use Button in Change Running Date Popup
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
     And User Click on Technical Details Icon
@@ -253,6 +263,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_34
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+   And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -327,6 +338,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_71
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -378,7 +390,7 @@ Feature: Checking the functionalities of transaction
     And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
-    And user click the approve box
+   # And user click the approve box
     And user click the Approvebttn
     And user click the confirm ok
     And user click the sucesss ok
@@ -418,6 +430,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_72
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -436,7 +449,7 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
- 
+    And User Vaildate the Cannot proceed Msg for117
   
   #postrequest
   @TRS_072_02
@@ -502,6 +515,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_73
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -520,14 +534,20 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the Currency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
-    And User Click Save Button in Maintenance Screen
-    And User Get the Transaction No in Success PopUp Menu for73
+    And User Click Ok Button in Warning PopUp Menu for73_1
+      And User Click Save Button in Maintenance Screen
+      And User Click Ok Button in Warning PopUp Menu for73_1
+     And User Get the Transaction No in Success PopUp Menu for73
+      #And User click the ok pop in get Transaction no for73
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
     And User Enter the Transaction No in Approve Screen
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
-    And User Click on Ok Button in Success PopUp Menu for Approve Transcation
+   And User Click Ok Button in Warning PopUp Menu for73_1
+     And User Click on Ok Button in Success PopUp Menu for Approve Transcation
+      
+     
 
  
   #postrequest
@@ -571,14 +591,16 @@ Feature: Checking the functionalities of transaction
     And User unCheck the ProceedOnInsufficientFund chequebox
     And user check the Force overdrawn
     And User click UpdateAfterApprove button on updateafterapprove field
-    And user click the save ok button
-    And user click the confirm ok
+    And user click the save ok button 
+    And user click the confirm ok for69 
+    And user click the sucesss ok 
     And user click the approve in user screen
     And user click and send the values in user id under Approve screen
     And user double click the user id in approve screen
-    And user click the approve box
+    #And user click the approve box
+    And user click the Approvebttn
     And user click the save ok button
-    #And user click the confirm ok
+    And user click the confirm ok
     And user click the AccountParameter submenu under Parameters
     And user click the AccountType under AccountParameters
     And user click the UPA field under AccountTypes
@@ -602,6 +624,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_69
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -659,6 +682,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_70
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -727,6 +751,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_121
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -817,6 +842,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_116
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -907,6 +933,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_117
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -991,6 +1018,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_118
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
@@ -1084,6 +1112,7 @@ Feature: Checking the functionalities of transaction
     And user update test data set id for TRS_119
     And User Click on Date to Change the Current Date
     And User Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
     And User Click on Close Button in Change Running Date Popup
