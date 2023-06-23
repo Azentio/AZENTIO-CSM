@@ -2,23 +2,23 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-22T11:50:06 IST" name="Default suite" finished-at="2023-06-22T11:54:59 IST" duration-ms="292881">
+  <suite started-at="2023-06-23T17:31:25 IST" name="Default suite" finished-at="2023-06-23T17:36:44 IST" duration-ms="318456">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@6bd61f98]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-22T11:50:06 IST" name="Default test" finished-at="2023-06-22T11:54:59 IST" duration-ms="292881">
+    <test started-at="2023-06-23T17:31:25 IST" name="Default test" finished-at="2023-06-23T17:36:44 IST" duration-ms="318456">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@6bd61f98]" started-at="2023-06-22T11:50:06 IST" name="setUpClass" finished-at="2023-06-22T11:50:09 IST" duration-ms="3242" status="PASS">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-23T17:31:25 IST" name="setUpClass" finished-at="2023-06-23T17:31:28 IST" duration-ms="2915" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@6bd61f98]" started-at="2023-06-22T11:50:10 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-22T11:54:21 IST" duration-ms="251366" status="FAIL">
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper, io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-23T17:31:28 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-23T17:35:12 IST" duration-ms="224072" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA["Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates"]]>
+                <![CDATA["Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates"]]>
               </value>
             </param>
             <param index="1">
@@ -29,24 +29,24 @@
           </params>
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='close']' (tried for 120 second(s) with 1 milliseconds interval)]]>
+              <![CDATA[Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='new_1687502806947_ctstrsACCDETVO.AC_GL']' (tried for 120 second(s) with 1 milliseconds interval)]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //span[text()='close']' (tried for 120 second(s) with 1 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.xpath: //input[@id='new_1687502806947_ctstrsACCDETVO.AC_GL']' (tried for 120 second(s) with 1 milliseconds interval)
 at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:263)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 at helper.WaitHelper.waitForElementwithFluentwait(WaitHelper.java:103)
-at stepdefinitions.TransactionStaffAccs_Steps.system_gives_the_view_memo_popup_user_close_the_popup(TransactionStaffAccs_Steps.java:463)
-at ✽.system gives the view memo popup user close the popup(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:399)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//span[text()='close']"}
+at stepdefinitions.TransactionStaffAccs_Steps.user_613_enter_values_of_gl_code_under_account_details(TransactionStaffAccs_Steps.java:245)
+at ✽.user_613 enter values of gl code under account details(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:120)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='new_1687502806947_ctstrsACCDETVO.AC_GL']"}
   (Session info: chrome=114.0.5735.134)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: '4.8.1', revision: '8ebccac989'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.7'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6e4c7c9e7097ab1c6454be02e374999f, findElement {using=xpath, value=//span[text()='close']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57641}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57641/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6e4c7c9e7097ab1c6454be02e374999f
+Command: [6c5c9bc79729739d6bd08c21e8a002a8, findElement {using=xpath, value=//input[@id='new_1687502806947_ctstrsACCDETVO.AC_GL']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64110}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64110/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c5c9bc79729739d6bd08c21e8a002a8
 at jdk.internal.reflect.GeneratedConstructorAccessor38.newInstance(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -71,7 +71,7 @@ at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions
 at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
 at helper.WaitHelper.waitForElementwithFluentwait(WaitHelper.java:103)
-at stepdefinitions.TransactionStaffAccs_Steps.system_gives_the_view_memo_popup_user_close_the_popup(TransactionStaffAccs_Steps.java:463)
+at stepdefinitions.TransactionStaffAccs_Steps.user_613_enter_values_of_gl_code_under_account_details(TransactionStaffAccs_Steps.java:245)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -126,7 +126,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@6bd61f98]" started-at="2023-06-22T11:54:21 IST" name="tearDownClass" finished-at="2023-06-22T11:54:59 IST" duration-ms="38208" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@48aca48b]" started-at="2023-06-23T17:35:12 IST" name="tearDownClass" finished-at="2023-06-23T17:36:44 IST" duration-ms="91264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

@@ -80,9 +80,9 @@ And  Click the System Parameters
 And  User click the Transaction type 
 Then Click the Update after approve
 And  Enter the Code value 
-Then User double click the Existing data 
+#Then User double click the Existing data 
 And  just check the flag UPA
-Then Click the Update after approve under Transction type
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -91,7 +91,16 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_017_01
+Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
+And  user update test data set id for TRS_017 
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
@@ -99,14 +108,26 @@ Then enter values of Branch code
 And  enter values of Currency code
 And  enter values of gl code 
 And  enter values of cif number
-Then enter values of serial 
 And  system gives the view memo popup user close the popup
+Then enter values of serial 
 Then System show the warning popup click ok button
 And  system gives the view memo popup user close the popup
-Then enter values of serial 
-And  user enter the currency
+#And  user enter the currency
 And  Enter the Amount in this Checkbox
-Then System show the warning popup click ok button
+Then user_613 click the Account details button
+And user_613 click the Add button under account details
+Then user_613 enter values of Branch code under account details
+And user_613 enter values of gl code under account details
+Then user_613 enter values of cif number under account details
+And user_613 enter values of serial under account details
+Then user_613 Enter the Amount in this Checkbox under account details
+And user_613 click the Add button under account details
+Then user_613 enter values of Branch code under account details_2
+And user_613 enter values of gl code under account details_2
+Then user_613 enter values of cif number under account details_2
+And user_613 enter values of serial under account details_2
+Then user_613 Enter the Amount in this Checkbox under account details_2
+And user_613 click the ok button in account details
 And  click the save button
 And  User get Transaction number from sucess pop up
 And  User click the Approve screen     
@@ -139,7 +160,7 @@ Then Click the Update after approve under Transction type
 And  Enter the Code value 
 Then User double click the Existing data 
 And  just check the flag UPA
-Then Click the Update after approve under Transction type
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -148,7 +169,15 @@ And  User Double Click the Data
 And  User click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
+
+@TRS_018_01
+Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag checked
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
@@ -192,7 +221,7 @@ And  Enter the Code value
 Then User double click the Existing data 
 And  Allow internal GL Account flag should be checked
 And  just check the flag UPA
-Then Click the Update after approve under Transction type
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 Then system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -205,6 +234,11 @@ And  System show the record was successfully
 @TRS_019_01
 Scenario: Checking Cash Deposit Transaction - Booked Entries + Balance Updates - Allow Internal GL flag unchecked
 Then User navigate to CSM application and login with valid credentials
+And User_613 Click on Date to Change the Current Date
+And User_613 Enter the Date in User Running Date
+And User_613 Click on Use Button in Change Running Date Popup
+And User_613 Click Ok Button in Information PopUp menu
+And User_613 Click on Close Button in Change Running Date Popup
 And  User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
@@ -398,6 +432,7 @@ And  System show the record was successfully
 
 @TRS_057_01
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates
+And  user update test data set id for TRS_062 
 Then User navigate to CSM application and login with valid credentials
 And User_613 Click on Date to Change the Current Date
 And User_613 Enter the Date in User Running Date
@@ -420,6 +455,7 @@ And  Enter the Amount in this Checkbox
 Then user_613 enter the gl code in credit account 
 And  user_613 enter the cif code in credit account 
 Then user_613 enter the Serial number in credit account 
+#And System show the warning popup click ok button
 And  click the save button
 And  User get Transaction number from sucess pop up
 And  User click the Approve screen     

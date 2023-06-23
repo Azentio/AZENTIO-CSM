@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--1459684532\testng-customsuite.xml</span>
+                    <span>C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--1429086547\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content failed suite-Default_suite">
                       <span>
                         <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates&quot;, &quot;Optio...)">runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...)</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="Runner.TestApplication" class="method navigator-link" hash-for-method="runScenario(&quot;Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates&quot;, &quot;Optional[To...)">runScenario("Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates", "Optional[To...)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content failed suite-Default_suite -->
@@ -127,25 +127,25 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="runScenario(&quot;Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates&quot;, &quot;Optio...)">
-                  </a> <!-- runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...) -->
+                  <a name="runScenario(&quot;Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates&quot;, &quot;Optional[To...)">
+                  </a> <!-- runScenario("Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates", "Optional[To...) -->
                   <span class="method-name">runScenario</span>
-                  <span class="parameters">("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optional[To check the functionalitites of TransactionStaffAccounts request]")</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //span[text()=&apos;close&apos;]&apos; (tried for 120 second(s) with 1 milliseconds interval)
+                  <span class="parameters">("Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates", "Optional[To check the functionalitites of TransactionStaffAccounts request]")</span>
+                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator &apos;By.xpath: //input[@id=&apos;new_1687502806947_ctstrsACCDETVO.AC_GL&apos;]&apos; (tried for 120 second(s) with 1 milliseconds interval)
 	at org.openqa.selenium.support.ui.FluentWait.timeoutException(FluentWait.java:263)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:231)
 	at helper.WaitHelper.waitForElementwithFluentwait(WaitHelper.java:103)
-	at stepdefinitions.TransactionStaffAccs_Steps.system_gives_the_view_memo_popup_user_close_the_popup(TransactionStaffAccs_Steps.java:463)
-	at ✽.system gives the view memo popup user close the popup(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:399)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//span[text()=&apos;close&apos;]&quot;}
+	at stepdefinitions.TransactionStaffAccs_Steps.user_613_enter_values_of_gl_code_under_account_details(TransactionStaffAccs_Steps.java:245)
+	at ✽.user_613 enter values of gl code under account details(file:///C:/Users/inindc00613/git/repository/CSM_AK/CSM_Akthar/src/test/java/features/TransactionsStaffAcc.feature:120)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@id=&apos;new_1687502806947_ctstrsACCDETVO.AC_GL&apos;]&quot;}
   (Session info: chrome=114.0.5735.134)
 For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
 Build info: version: &apos;4.8.1&apos;, revision: &apos;8ebccac989&apos;
 System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.7&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6e4c7c9e7097ab1c6454be02e374999f, findElement {using=xpath, value=//span[text()=&apos;close&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:57641}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:57641/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6e4c7c9e7097ab1c6454be02e374999f
+Command: [6c5c9bc79729739d6bd08c21e8a002a8, findElement {using=xpath, value=//input[@id=&apos;new_1687502806947_ctstrsACCDETVO.AC_GL&apos;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.134, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\ININDC~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:64110}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64110/devtoo..., se:cdpVersion: 114.0.5735.134, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6c5c9bc79729739d6bd08c21e8a002a8
 	at jdk.internal.reflect.GeneratedConstructorAccessor38.newInstance(Unknown Source)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
@@ -170,7 +170,7 @@ Session ID: 6e4c7c9e7097ab1c6454be02e374999f
 	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
 	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:208)
 	at helper.WaitHelper.waitForElementwithFluentwait(WaitHelper.java:103)
-	at stepdefinitions.TransactionStaffAccs_Steps.system_gives_the_view_memo_popup_user_close_the_popup(TransactionStaffAccs_Steps.java:463)
+	at stepdefinitions.TransactionStaffAccs_Steps.user_613_enter_values_of_gl_code_under_account_details(TransactionStaffAccs_Steps.java:245)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -230,7 +230,7 @@ Session ID: 6e4c7c9e7097ab1c6454be02e374999f
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--1459684532\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\inindc00613\AppData\Local\Temp\testng-eclipse--1429086547\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -291,12 +291,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'runScenario')
 data.setCell(0, 2, 'Runner.TestApplication')
-data.setCell(0, 3, 251366);
+data.setCell(0, 3, 224072);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 4 minutes</span>
+              <span class="suite-total-time">Total running time: 3 minutes</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -330,12 +330,12 @@ return data;
               <div class="test-method">
                 <img src="failed.png">
                 </img>
-                <span class="method-name">runScenario("Checking Single Transfer (Main Debit) Intra Transaction - Booked Entries + Balance Updates", "Optio...)</span>
-                <span class="method-start">3267 ms</span>
+                <span class="method-name">runScenario("Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates", "Optional[To...)</span>
+                <span class="method-start">2953 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">254641 ms</span>
+                <span class="method-start">227113 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

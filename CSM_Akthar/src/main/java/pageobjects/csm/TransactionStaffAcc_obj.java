@@ -170,6 +170,96 @@ public class TransactionStaffAcc_obj {
 	    return CSM_CloseButtonInChangeRunningDate;
 	}
 	
+	@FindBy(xpath ="//label[@id='trxMgntDefFormId_D001MT_Account_details_key']")
+	private WebElement transactions_accdetailsbtn;
+	public WebElement transactionsaccdetailsbtn() 
+	{
+	    return transactions_accdetailsbtn;
+	}
+	@FindBy(xpath="//td[@id='add_trxMgntAccountDtlGridTbl_Id_D001MT']")
+	private WebElement transactions_accdetails_addbtn;
+	public WebElement transactionsaccdetailsaddbtn() 
+	{
+	    return transactions_accdetails_addbtn;
+	}
+	
+	@FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_rn']")
+	private WebElement transactions_accdetails_no1clk;
+	public WebElement transactions_accdetailsno1clk() 
+	{
+	    return transactions_accdetails_no1clk;
+	}
+	@FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_BR']/div/input[@gridid='trxMgntAccountDtlGridTbl_Id_D001MT']")
+	private WebElement transactions_accdetails_branchcode;
+	public WebElement transactionsaccdetailsbranchcode() 
+	{
+	    return transactions_accdetails_branchcode;
+	}
+	@FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_GL']/div/input[@gridid='trxMgntAccountDtlGridTbl_Id_D001MT']")
+	private WebElement transactions_accdetails_glcode;
+	public WebElement transactionsaccdetailsglcode() 
+	{
+	    return transactions_accdetails_glcode;
+	}
+	@FindBy(xpath="//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_ctstrsACCDETVO.AC_CIF']/div/input[@gridid='trxMgntAccountDtlGridTbl_Id_D001MT']")
+	private WebElement transactions_accdetails_cifcode;
+	public WebElement transactionsaccdetailscifcode() 
+	{
+	    return transactions_accdetails_cifcode;
+	}
+	@FindBy(xpath="//input[@name='lookupTxt_ctstrsACCDETVO.AC_SL']")
+	private WebElement transactions_accdetails_serialcode;
+	public WebElement transactionsaccdetailsserialcode() 
+	{
+	    return transactions_accdetails_serialcode;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1687502806947_ctstrsACCDETVO.FC_AMOUNT']")
+	private WebElement transactions_accdetails_amountcode;
+	public WebElement transactionsaccdetailsamountcode() 
+	{
+	    return transactions_accdetails_amountcode;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1687504981435_ctstrsACCDETVO.FC_AMOUNT']")
+	private WebElement transactions_accdetails_amountcode2;
+	public WebElement transactionsaccdetailsamountcode2() 
+	{
+	    return transactions_accdetails_amountcode2;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1687504981435_ctstrsACCDETVO.AC_BR']")
+	private WebElement transactions_accdetails_branchcode2;
+	public WebElement transactionsaccdetailsbranchcode2() 
+	{
+	    return transactions_accdetails_branchcode2;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1687504981435_ctstrsACCDETVO.AC_GL']")
+	private WebElement transactions_accdetails_glcode2;
+	public WebElement transactionsaccdetailsglcode2() 
+	{
+	    return transactions_accdetails_glcode2;
+	}
+	
+	@FindBy(xpath="//input[@id='new_1687504981435_ctstrsACCDETVO.AC_CIF']")
+	private WebElement transactions_accdetails_cifcode2;
+	public WebElement transactionsaccdetailscifcode2() 
+	{
+	    return transactions_accdetails_cifcode2;
+	}
+	@FindBy(xpath="//input[@id='new_1687504981435_ctstrsACCDETVO.AC_SL_lookuptxt_trxMgntAccountDtlGridTbl_Id_D001MT']")
+	private WebElement transactions_accdetails_serialcode2;
+	public WebElement transactionsaccdetailsserialcode2() 
+	{
+	    return transactions_accdetails_serialcode2;
+	}
+	@FindBy(xpath="//span[text()='ok']")
+	private WebElement transactions_accdetails_okbtn;
+	public WebElement transactionsaccdetailsokbtn() 
+	{
+	    return transactions_accdetails_okbtn;
+	}
 	//TRS_018//
 	
 	@FindBy(xpath="//td[text()='Transaction Type']")
@@ -195,6 +285,12 @@ public class TransactionStaffAcc_obj {
 	public WebElement Transactions_Existingdata()
 	{
 		return Transactions_Existingdata;
+	}
+	@FindBy(xpath="//span[@class='ui-icon ui-icon-seek-next']")
+	private WebElement Transactions_GridNextButton;
+	public WebElement TransactionsGridNextButton()
+	{
+		return Transactions_GridNextButton;
 	}
 	
 	@FindBy(xpath="//label[@id='lbl_nostro_mvt_P024MA']")
@@ -303,12 +399,20 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_debitAcc_Glcode;
 	}
-	@FindBy(xpath="//input[@id='trs_ac_cif_D001MT']")
+	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_AC_CIF']")
 	private WebElement Transactions_debitAcc_Cifcode;
 	public WebElement Transactions_debitAcc_Cifcode()
 	{
 		return Transactions_debitAcc_Cifcode;
 	}
+	
+	@FindBy(xpath="//input[@id='trs_ac_cif_D001MT']")
+	private WebElement Transactions_creditAcc_Cifcode;
+	public WebElement Transactions_creditAcc_Cifcode()
+	{
+		return Transactions_creditAcc_Cifcode;
+	}
+	
 	@FindBy(xpath="//input[@id='lookuptxt_trs_ac_sl_D001MT']")
 	private WebElement Transactions_debitAcc_serialcode;
 	public WebElement Transactions_debitAcc_serialcode()
@@ -354,11 +458,11 @@ public class TransactionStaffAcc_obj {
 	{
 		return Transactions_successokbtn;
 	}
-	@FindBy(xpath="//a[@id='D001AU']")
-	private WebElement Transactions_Approvescrn;
-	public WebElement Transactions_Approvescrn()
+	@FindBy(xpath="//span[text()='Approve']")
+	private WebElement transactions_Approvescrn;
+	public WebElement transactionsApprovescrn()
 	{
-		return Transactions_Approvescrn;
+		return transactions_Approvescrn;
 	}
 	@FindBy(xpath="//input[@id='trxMgntGridTbl_Id_D001AU_gs_ctstrsVO.TRS_NO']")
 	private WebElement Transactions_transactionNo_codeValue;
