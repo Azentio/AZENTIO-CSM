@@ -15,5 +15,4 @@ And Uesr click on the Serial code in CSM Module
 And User click on the AccountNo in CSM Module
 And User click on the DeductCharges in CSM Module
 And User click on the Save button in CSM Module
-And User Click the Approve Button in CSM Passbook Module
-And User Click the 
+

@@ -10,7 +10,7 @@ And user click on the SMSsubscriptiondetails in charge
 And user click on the pLUSButton in charge
 And user click on the searchbutton in Charge
 And user click on the servicecode in charge
-And user click on the 
+And user click on the Save Button in Charge 
 Scenario: User login to SMS product for Charge Waiver in CSM Param
  Given User login to SMS product
  And User click on the SMSsubscriptiondetails Template in Charge
