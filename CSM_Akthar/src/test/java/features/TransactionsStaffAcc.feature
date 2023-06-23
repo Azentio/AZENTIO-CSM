@@ -119,6 +119,7 @@ And user_613 click the Add button under account details
 Then user_613 enter values of Branch code under account details
 And user_613 enter values of gl code under account details
 Then user_613 enter values of cif number under account details
+And  system gives the view memo popup user close the popup
 And user_613 enter values of serial under account details
 Then user_613 Enter the Amount in this Checkbox under account details
 And user_613 click the Add button under account details

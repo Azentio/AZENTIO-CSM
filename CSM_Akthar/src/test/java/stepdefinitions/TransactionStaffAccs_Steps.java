@@ -269,8 +269,8 @@ public class TransactionStaffAccs_Steps {
 	public void user_613_enter_the_amount_in_this_checkbox_under_account_details() throws Throwable {
 		waitHelper.waitForElementwithFluentwait(driver, transactionStaffAcc.transactionsaccdetailsamountcode());
 		clicksAndActionsHelper.clickOnElement(transactionStaffAcc.transactionsaccdetailsamountcode());
-		transactionStaffAcc.transactionsaccdetailsserialcode().sendKeys(testData.get("AD Amount"));
-		transactionStaffAcc.transactionsaccdetailsserialcode().sendKeys(Keys.TAB);
+		transactionStaffAcc.transactionsaccdetailsamountcode().sendKeys(testData.get("AD Amount"));
+		transactionStaffAcc.transactionsaccdetailsamountcode().sendKeys(Keys.TAB);
 	}
 
 	@Then("user_613 enter values of Branch code under account details_2")
