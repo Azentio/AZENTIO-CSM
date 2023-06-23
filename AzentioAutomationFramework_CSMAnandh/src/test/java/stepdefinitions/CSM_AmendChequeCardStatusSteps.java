@@ -1,7 +1,9 @@
 package stepdefinitions;
 
+import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -769,6 +771,12 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.ChequeBookApprovedStatus());
 		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.ChequeBookApprovedStatus());
 	}
+	@And("close the cheuqebook approve cancel screeen in chequebook request")
+	public void close_the_cheuqebook_approve_cancel_screeen_in_chequebook_request() throws Throwable{
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestApproveCancelTabClose());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestApproveCancelTabClose());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestApproveCancelTabClose());
+	}
 
 	@And("^click on cheque book request maintenance screen$")
 	public void click_on_cheque_book_request_maintenance_screen() throws Throwable {
@@ -899,5 +907,9 @@ public class CSM_AmendChequeCardStatusSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionReversedStatus());
 		Assert.assertTrue(transactionObj.transactionTransactionReversedStatus().isDisplayed());
 	}
+
+	
+
+
 
 }

@@ -174,6 +174,55 @@ public class ChequeBookRequestObj {
 		return chequeBook_MaintenenaceScreen;
 	}
 
+	@FindBy(xpath = "//td[text()='Chequebook Request']//ancestor::h3//following-sibling::ul//span[text()='To Be Reversed Chequebook']")
+	private WebElement chequeBookRequest_ToBeReverseFeature;
+
+	public WebElement chequeBookRequestToBeReverseFeature() {
+		return chequeBookRequest_ToBeReverseFeature;
+	}
+
+	@FindBy(xpath = "//td[text()='Chequebook Request']//ancestor::h3//following-sibling::ul//span[text()='Reverse Chequebook']")
+	private WebElement chequeBookRequest_ApproveReverseFeature;
+
+	public WebElement chequeBookRequestApproveReverseFeature() {
+		return chequeBookRequest_ApproveReverseFeature;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Chequebook Request / To Be Reversed Chequebook')]//parent::td//following-sibling::td//span")
+	private WebElement chequeBookRequest_ToBeReversedTabClose;
+
+	public WebElement chequeBookRequestToBeReversedTabClose() {
+		return chequeBookRequest_ToBeReversedTabClose;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Chequebook Request / Reverse Chequebook')]//parent::td//following-sibling::td//span")
+	private WebElement chequeBookRequest_ReverseChequebookTabClose;
+
+	public WebElement chequeBookRequestReverseChequebookTabClose() {
+		return chequeBookRequest_ReverseChequebookTabClose;
+	}
+
+	@FindBy(id = "chequeBook_toBeReversed_Q000AR")
+	private WebElement toRereversed_toBeReverseButton;
+
+	public WebElement toRereversedtoBeReverseButton() {
+		return toRereversed_toBeReverseButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'You Are Reversing')]//parent::div//following-sibling::center//input[1]")
+	private WebElement toBeReversed_confirmationOkButton;
+
+	public WebElement toBeReversedConfirmationOkButton() {
+		return toBeReversed_confirmationOkButton;
+	}
+
+	@FindBy(id = "chequeBook_reverse_Q000RV")
+	private WebElement reverse_ReverseButton;
+
+	public WebElement reverseReverseButton() {
+		return reverse_ReverseButton;
+	}
+
 	@FindBy(xpath = "//td[text()='Chequebook Request']//ancestor::h3//following-sibling::ul//span[text()='Approve']")
 	private WebElement chequeBook_ApproveFeature;
 
@@ -188,11 +237,18 @@ public class ChequeBookRequestObj {
 		return chequeBookMaintenance_Search;
 	}
 
-	@FindBy(xpath = "//input[@id='chequeBookGridTbl_Id_Q000MT_gs_ctschqbookVO.CODE']")
+	@FindBy(xpath = "//input[@name='CODE']")
 	private WebElement chequeBookMaintenance_SearchChequeCode;
 
 	public WebElement chequeBookMaintenanceSearchChequeCode() {
 		return chequeBookMaintenance_SearchChequeCode;
+	}
+
+	@FindBy(xpath = "//input[@name='CHEQUE_CODE']")
+	private WebElement chequeBookMaintenance_SearchChequeBookType;
+
+	public WebElement chequeBookMaintenanceSearchChequeBookType() {
+		return chequeBookMaintenance_SearchChequeBookType;
 	}
 
 	@FindBy(xpath = "//table[@id='chequeBookGridTbl_Id_Q000MT']//td[text()='Approved']")
@@ -398,6 +454,20 @@ public class ChequeBookRequestObj {
 		return chequebookRequest_SearchSerialNumber;
 	}
 
+	@FindBy(xpath = "(//td[@tdlabel='Status'])[1]")
+	private WebElement chequebook_MaintenanceFirstRecordStatus;
+
+	public WebElement chequebookMaintenanceFirstRecordStatus() {
+		return chequebook_MaintenanceFirstRecordStatus;
+	}
+
+	@FindBy(xpath = "(//td[@tdlabel='Code'])[1]")
+	private WebElement chequebook_MaintenanceFirstChequeCode;
+
+	public WebElement chequebookMaintenanceFirstChequeCode() {
+		return chequebook_MaintenanceFirstChequeCode;
+	}
+
 	@FindBy(xpath = "//input[@name='chequeBookCO.ctschqbookVO.CANCEL_REASON']")
 	private WebElement chequebookRequestCancel_CancelReason;
 
@@ -417,6 +487,13 @@ public class ChequeBookRequestObj {
 
 	public WebElement chequebookRequestCancelChequeCodeDescription() {
 		return chequebookRequestCancel_ChequeCodeDescription;
+	}
+
+	@FindBy(name = "chequeBookCO.ctschqbookVO.NUMBER_OF_CHEQUES")
+	private WebElement chequebookRequest_NumberOfPaperInputBox;
+
+	public WebElement chequebookRequestNumberOfPaperInputBox() {
+		return chequebookRequest_NumberOfPaperInputBox;
 	}
 
 	@FindBy(xpath = "//table[@id='chequeBookGridTbl_Id_Q000TC']//tbody//tr[2]//td[2]")
@@ -466,6 +543,27 @@ public class ChequeBookRequestObj {
 
 	public WebElement chequebookRequestApproveCancelTabClose() {
 		return chequebookRequestApproveCancel_TabClose;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Chequebook Request / Approve')]//parent::td//following-sibling::td//span")
+	private WebElement chequebookRequestApprove_TabClose;
+
+	public WebElement chequebookRequestApproveTabClose() {
+		return chequebookRequestApprove_TabClose;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Chequebook Request / Apply to Submit')]//parent::td//following-sibling::td//span")
+	private WebElement chequebookRequestApplyToSubmit_TabClose;
+
+	public WebElement chequebookRequestApplyToSubmitTabClose() {
+		return chequebookRequestApplyToSubmit_TabClose;
+	}
+
+	@FindBy(xpath = "//a[contains(text(),'Chequebook Request / Submit')]//parent::td//following-sibling::td//span")
+	private WebElement chequebookRequestSubmit_TabClose;
+
+	public WebElement chequebookRequestSubmitTabClose() {
+		return chequebookRequestSubmit_TabClose;
 	}
 
 	@FindBy(xpath = "//a[contains(text(),'Chequebook Request / Maintenance')]//parent::td//following-sibling::td//span")
@@ -557,6 +655,34 @@ public class ChequeBookRequestObj {
 
 	public WebElement SubmitFeatureSubmitButton() {
 		return SubmitFeature_SubmitButton;
+	}
+
+	@FindBy(name = "chequeBookCO.ctschqbookVO.FROM_NUMBER")
+	private WebElement chequebookRequest_FromNumberInputBox;
+
+	public WebElement chequebookRequestFromNumberInputBox() {
+		return chequebookRequest_FromNumberInputBox;
+	}
+
+	@FindBy(name = "chequeBookCO.ctschqbookVO.NUMBER_TO")
+	private WebElement chequebookRequest_ToNumberInputBox;
+
+	public WebElement chequebookRequestToNumberInputBox() {
+		return chequebookRequest_ToNumberInputBox;
+	}
+
+	@FindBy(id = "chequeBook_delete_Q000MT")
+	private WebElement chequebookRequestMaintenance_DeleteButton;
+
+	public WebElement chequebookRequestMaintenanceDeleteButton() {
+		return chequebookRequestMaintenance_DeleteButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Are you Sure?')]//parent::div//following-sibling::center//input[1]")
+	private WebElement chequebookRequestMaintenance_DeleteConfirmationOkButton;
+
+	public WebElement chequebookRequestMaintenanceDeleteConfirmationOkButton() {
+		return chequebookRequestMaintenance_DeleteConfirmationOkButton;
 	}
 
 }

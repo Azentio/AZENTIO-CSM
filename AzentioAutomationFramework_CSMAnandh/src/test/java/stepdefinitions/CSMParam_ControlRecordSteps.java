@@ -1,9 +1,15 @@
 package stepdefinitions;
 
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
+import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
+import helper.DropDownHelper;
 import helper.JavascriptHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
@@ -19,6 +25,29 @@ public class CSMParam_ControlRecordSteps extends BaseClass {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
+	String csmParampath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
+	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+	ExcelData excelDataForCheuqeBookRequestExecution = new ExcelData(path, "CheuqeBookRequestExecutionTrack",
+			"TestCaseID");
+	ExcelData excelDataforControlRecords = new ExcelData(csmParampath, "CSMParam_ControlRecordsTestData", "DataSet ID");
+	Map<String, String> chequbookRequestExecutionData = new HashMap<>();
+	Map<String, String> controlRecordsTestData = new HashMap<>();
+	DropDownHelper dropdownHelper = new DropDownHelper(driver);
+
+	@And("get the test data for test case ID CHB_081_02")
+	public void get_the_test_data_for_test_case_id_CHB_081_02() throws Throwable {
+		chequbookRequestExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_081_02");
+
+		controlRecordsTestData = excelDataforControlRecords
+				.getTestdata(chequbookRequestExecutionData.get("Data Set ID"));
+	}
+	@And("get the test data for test case ID CHB_075_01")
+	public void get_the_test_data_for_test_case_id_CHB_075_01() throws Throwable {
+		chequbookRequestExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_075_01");
+
+		controlRecordsTestData = excelDataforControlRecords
+				.getTestdata(chequbookRequestExecutionData.get("Data Set ID"));
+	}
 
 	@And("^click on parametters feature in csm Param$")
 	public void click_on_parametters_feature_in_csm_param() throws Throwable {
@@ -46,6 +75,23 @@ public class CSMParam_ControlRecordSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, controlRecordsObj.controlRecordUpdateAfterApproveFeature());
 		clicksAndActionsHelper.moveToElement(controlRecordsObj.controlRecordUpdateAfterApproveFeature());
 		clicksAndActionsHelper.clickOnElement(controlRecordsObj.controlRecordUpdateAfterApproveFeature());
+	}
+
+	@And("un check the chequebook advance process in control record")
+	public void un_check_the_chequebook_advance_process_in_control_record() throws IOException {
+		waitHelper.waitForElementwithFluentwait(driver,
+				controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+		String reasonOnRejecting = controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag()
+				.getAttribute("initialvalue");
+		if (reasonOnRejecting.equals("checked")) {
+			clicksAndActionsHelper.moveToElement(controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+			clicksAndActionsHelper.clickOnElement(controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+		} else {
+			clicksAndActionsHelper.moveToElement(controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+			clicksAndActionsHelper.clickOnElement(controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+			clicksAndActionsHelper.moveToElement(controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+			clicksAndActionsHelper.clickOnElement(controlRecordsObj.controlRecordsAdvancedChequebookProcessFlag());
+		}
 	}
 
 	@And("^check the reason on rejecting label in control records$")
@@ -117,6 +163,25 @@ public class CSMParam_ControlRecordSteps extends BaseClass {
 			clicksAndActionsHelper.moveToElement(controlRecordsObj.controlRecordsRejectReasonMandatoryFlag());
 			clicksAndActionsHelper.clickOnElement(controlRecordsObj.controlRecordsRejectReasonMandatoryFlag());
 		}
+	}
+
+	@And("select the cheque based on dropdown to account")
+	public void select_the_cheque_based_on_dropdown_to_account() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown());
+		dropdownHelper.SelectUsingIndex(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(), 1);
+		dropdownHelper.SelectUsingIndex(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(), 2);
+		dropdownHelper.SelectUsingIndex(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(), 1);
+		dropdownHelper.SelectUsingVisibleText(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(),
+				controlRecordsTestData.get("Cheque Unique Based On"));
+	}
+	@And("select the cheque based on dropdown to branch")
+	public void select_the_cheque_based_on_dropdown_to_branch() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown());
+		dropdownHelper.SelectUsingIndex(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(), 1);
+		dropdownHelper.SelectUsingIndex(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(), 2);
+		dropdownHelper.SelectUsingIndex(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(), 1);
+		dropdownHelper.SelectUsingVisibleText(controlRecordsObj.controlRecordsChequeUniqueBasedOnDropdown(),
+				controlRecordsTestData.get("Cheque Unique Based On"));
 	}
 
 	@And("^click on update after approve screen under control records$")

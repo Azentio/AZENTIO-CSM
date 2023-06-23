@@ -167,11 +167,18 @@ public class CSMCommonWebElements {
 		return csm_SaveSuccessOkButton;
 	}
 
-	@FindBy(xpath = "//center//input[@value='Ok']")
+	@FindBy(xpath = "(//center//input[@value='Ok'])[1]")
 	private WebElement csm_OkButton;
 
 	public WebElement csmOkButton() {
 		return csm_OkButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Suspense Account')]//parent::div//following-sibling::center//input")
+	private WebElement csm_SuspenseOkButton;
+
+	public WebElement csmSuspenseOkButton() {
+		return csm_SuspenseOkButton;
 	}
 
 	@FindBy(id = "_popup_path_sol_confirm_ok")
@@ -417,5 +424,17 @@ public class CSMCommonWebElements {
 
 	public WebElement csmCommonUpdateScreenQuitOkButtton() {
 		return csmCommon_UpdateScreenQuitOkButton;
+	}
+	@FindBy(xpath="//td[@title='Add new row']//span[@class='ui-icon ui-icon-plus']")
+	private WebElement csmCommon_GridAddButton;
+
+	public WebElement csmCommonGridAddButton() {
+		return csmCommon_GridAddButton;
+	}
+	@FindBy(xpath="//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
+	private WebElement csmCommon_GridDeleteButton;
+
+	public WebElement csmCommonGridDeleteButton() {
+		return csmCommon_GridDeleteButton;
 	}
 }

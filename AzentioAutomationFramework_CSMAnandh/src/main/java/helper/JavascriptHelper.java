@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class JavascriptHelper {
 	private WebDriver driver;
-	Logger Log = LogManager.getLogger(JavascriptHelper.class.getName());
+	//Logger Log = LogManager.getLogger(JavascriptHelper.class.getName());
 
 public JavascriptHelper(WebDriver driver)
 {
@@ -18,13 +18,13 @@ public JavascriptHelper(WebDriver driver)
 
 	public Object executeScript(String script) {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
-		Log.info(script);
+		//Log.info(script);
 		return exe.executeScript(script);
 	}
 
 	public Object executeScript(String script, Object... args) {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
-		Log.info(script);
+		//Log.info(script);
 		return exe.executeScript(script, args);
 	}
 	

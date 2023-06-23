@@ -55,6 +55,13 @@ public class CSMParam_ControlRecordsObj {
 		return controlRecords_ReasonOnRejectingFlag;
 	}
 
+	@FindBy(name = "controlrecordCO.ctscontrolVO.CHQBOOK_PROCESS")
+	private WebElement controlRecords_AdvancedChequebookProcessFlag;
+
+	public WebElement controlRecordsAdvancedChequebookProcessFlag() {
+		return controlRecords_AdvancedChequebookProcessFlag;
+	}
+
 	@FindBy(xpath = "//a[contains(text(), 'Other Information ')]")
 	private WebElement controlRecords_OtherInformationTab;
 
@@ -74,6 +81,13 @@ public class CSMParam_ControlRecordsObj {
 
 	public WebElement controRecordUpdatAfterApproveTabClose() {
 		return controlRecords_ControlRecordUpdateAfterApprove;
+	}
+
+	@FindBy(name = "controlrecordCO.ctscontrolVO.CHQ_UNIQUE")
+	private WebElement controlRecords_ChequeUniqueBasedOnDropdown;
+
+	public WebElement controlRecordsChequeUniqueBasedOnDropdown() {
+		return controlRecords_ChequeUniqueBasedOnDropdown;
 	}
 
 	@FindBy(xpath = "//a[contains(text(),' Alert Activation ')]")
@@ -145,6 +159,7 @@ public class CSMParam_ControlRecordsObj {
 	public WebElement alertActivationCIFisNonResidentLabel() {
 		return alertActivation_CIFisNonResidentLabel;
 	}
+
 	@FindBy(xpath = "(//span[contains(text(),'No Signature Found')]//parent::td//following-sibling::td//input)[1]")
 	private WebElement alertActivation_NoSignatureFoundFlagStatus;
 
@@ -186,13 +201,15 @@ public class CSMParam_ControlRecordsObj {
 	public WebElement alertActivationOverdrawLimitExceededFlagStatus() {
 		return alertActivation_OverdrawLimitExceededFlagStatus;
 	}
-	@FindBy(xpath="(//td[@title='KYC Outstanding']/div/div[1])[1]")
+
+	@FindBy(xpath = "(//td[@title='KYC Outstanding']/div/div[1])[1]")
 	private WebElement alertActivation_KYCOutStandingLabel;
 
 	public WebElement alertActivationKYCOutStandingLabel() {
 		return alertActivation_KYCOutStandingLabel;
 	}
-	@FindBy(xpath="//td[@title='KYC Outstanding']//following-sibling::td//input")
+
+	@FindBy(xpath = "//td[@title='KYC Outstanding']//following-sibling::td//input")
 	private WebElement alertActivation_KYCOutStandingFlagStatus;
 
 	public WebElement alertActivationKYCOutStandingFlagStatus() {

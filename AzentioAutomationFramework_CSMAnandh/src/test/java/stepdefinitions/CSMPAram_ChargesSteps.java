@@ -29,6 +29,7 @@ public class CSMPAram_ChargesSteps extends BaseClass {
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
 	String csmParampath = System.getProperty("user.dir") + "\\TestData\\CSMparamTestData.xlsx";
+	
 	Map<String, String> chargeWaiverExecutionData = new HashMap<>();
 	Map<String, String> chargeCodeTestData = new HashMap<>();
 	ExcelData excelDataFOrChangeWaiverExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
