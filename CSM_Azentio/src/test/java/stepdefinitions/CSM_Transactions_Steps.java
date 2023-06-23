@@ -163,9 +163,20 @@ public class CSM_Transactions_Steps {
       @And("^user click the system parameters submenu$")
       public void user_click_the_system_parameters_submenu() throws Throwable {
     	  seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionObject.csmParametersSystemParameters());
-    	  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmParametersSystemParameters());                    
-    	  seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmParametersSystemParameters());
-    	  seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmParametersSystemParameters());
+    	  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmParametersSystemParameters());
+    	  for (int i = 0; i < 200; i++) {
+    		  try {
+    			  seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmParametersSystemParameters());
+    	    	  seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmParametersSystemParameters());
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+			
+		}
+    	                      
+    	 
       }
       @And("^user click on the transaction type under the system parameters$")
       public void UserClickOnTheTransactionTypeUnderTheSystemParameters() {
@@ -579,7 +590,7 @@ public class CSM_Transactions_Steps {
      }
       
       
-      @Given("User Click Ok Button for confirmation PopUp for Company Holiday")
+      @And("User Click Ok Button for confirmation PopUp for Company Holiday")
       public void user_click_ok_button_for_confirmation_pop_up_for_company_holiday() {
       	for (int i = 0; i < 50; i++) {
 
