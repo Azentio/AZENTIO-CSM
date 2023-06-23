@@ -184,6 +184,12 @@ public class CSMcore_TransactionObj {
 		{
 			return Transactions_transactionNo_codeValues;
 		}
+		@FindBy(xpath="//a[text()='Transactions / Maintenance']")
+		private WebElement csm_Transactions_Maintenance_RandomClick;
+		public WebElement csmTransactionsMaintenanceRandomClick()
+		{
+		    return csm_Transactions_Maintenance_RandomClick;
+		}
 
 
 		@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")

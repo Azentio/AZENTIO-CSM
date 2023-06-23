@@ -924,6 +924,7 @@ public class Transaction_steps {
 
 						@And("User click the allow post dated value flag under update after approve")
 						public void user_click_the_allow_post_dated_value_flag_under_update_after_approve() {
+							javascriptHelper.scrollIntoView(CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate());
 							if (CSMParamTransactionOBJ.csmTransactionTypeAllowPostdatedValueDate().getAttribute("initialvalue")
 									.isBlank()) {
 								clicksAndActionsHelper
@@ -946,8 +947,130 @@ public class Transaction_steps {
 
 							}
 						}
+						
+						@And("^user update test data set id for TRS_119$")
+						public void user_update_test_data_set_id_for_trs119() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_119_D1");
 						}
-			
+						@And("^user update test data set id for TRS_220$")
+						public void user_update_test_data_set_id_for_trs220() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_220_D1");
+						}
+						@And("^user update test data set id for TRS_221$")
+						public void user_update_test_data_set_id_for_trs221() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_221_D1");
+						}
+						@And("^user update test data set id for TRS_222$")
+						public void user_update_test_data_set_id_for_trs222() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_222_D1");
+						}
+						@And("^user update test data set id for TRS_223$")
+						public void user_update_test_data_set_id_for_trs223() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_223_D1");
+						}
+						@And("^user update test data set id for TRS_224$")
+						public void user_update_test_data_set_id_for_trs224() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_224_D1");
+						}
+						@And("^user update test data set id for TRS_225$")
+						public void user_update_test_data_set_id_for_trs225() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_225_D1");
+						}
+						@And("^user update test data set id for TRS_226$")
+						public void user_update_test_data_set_id_for_trs226() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_226_D1");
+						}
+						@And("^user update test data set id for TRS_227$")
+						public void user_update_test_data_set_id_for_trs227() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_227_D1");
+						}
+						@And("^user update test data set id for TRS_228$")
+						public void user_update_test_data_set_id_for_trs228() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_228_D1");
+						}
+						@And("^user update test data set id for TRS_229$")
+						public void user_update_test_data_set_id_for_trs229() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_229_D1");
+						}
+						
+						@And("^user update test data set id for TRS_245$")
+						public void user_update_test_data_set_id_for_trs245() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_245_D1");
+						}
+						@And("^user update test data set id for TRS_246$")
+						public void user_update_test_data_set_id_for_trs246() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_246_D1");
+						}
+						@And("^user update test data set id for TRS_247$")
+						public void user_update_test_data_set_id_for_trs247() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_247_D1");
+						}
+						@And("^user update test data set id for TRS_248$")
+						public void user_update_test_data_set_id_for_trs248() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_248_D1");
+						}
+						@And("^user update test data set id for TRS_249$")
+						public void user_update_test_data_set_id_for_trs249() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_249_D1");
+						}
+						@And("^user update test data set id for TRS_250$")
+						public void user_update_test_data_set_id_for_trs250() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_250_D1");
+						}
+						@And("^user update test data set id for TRS_251$")
+						public void user_update_test_data_set_id_for_trs251() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_251_D1");
+						}
+						@And("^user update test data set id for TRS_252$")
+						public void user_update_test_data_set_id_for_trs252() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_252_D1");
+						}
+						@And("^user update test data set id for TRS_253$")
+						public void user_update_test_data_set_id_for_trs253() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_253_D1");
+						}
+						@And("^user update test data set id for TRS_254$")
+						public void user_update_test_data_set_id_for_trs254() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_254_D1");
+						}
+						@And("^user update test data set id for TRS_255$")
+						public void user_update_test_data_set_id_for_trs255() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_255_D1");
+						}
+						@And("^user update test data set id for TRS_256$")
+						public void user_update_test_data_set_id_for_trs256() throws Throwable {
+							testData = excelDataForTransactionfeature.getTestdata("TRS_256_D1");
+						}
+						
+						//TRS_245
+						@And("^user Enter the code in inputfield on updateafterapprove screen under transactiontype$")
+						public void user_enter_the_code_in_inputfield_on_updateafterapprove_screen_under_transactiontype()
+								throws Throwable {
+					for (int i = 0; i < 200; i++) {
+						try {
+							waitHelper.waitForElementwithFluentwait(driver, CSMParamTransactionOBJ.csmParam_Transactiontype_inputfield());
+							clicksAndActionsHelper.moveToElement(CSMParamTransactionOBJ.csmParam_Transactiontype_inputfield());
+							clicksAndActionsHelper.clickOnElement(CSMParamTransactionOBJ.csmParam_Transactiontype_inputfield());
+							CSMParamTransactionOBJ.csmParam_Transactiontype_inputfield().sendKeys(testData.get("TRXType_D1"));
+							CSMParamTransactionOBJ.csmParam_Transactiontype_inputfield().sendKeys(Keys.ENTER);
+							break;
+						} catch (Exception e) {
+					if (i==199) {
+						Assert.fail(e.getMessage());
+					}
+						}
+
+					}
+							
+						}
+						  @And("user click random click")
+					        public void user_click_random_click() {
+					            seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, CSMcoreTransactionObj.csmTransactionsMaintenanceRandomClick());
+					            seleniumActions.getClickAndActionsHelper().moveToElement(CSMcoreTransactionObj.csmTransactionsMaintenanceRandomClick());
+					            seleniumActions.getClickAndActionsHelper().clickOnElement(CSMcoreTransactionObj.csmTransactionsMaintenanceRandomClick());
+					        }
+						
+}
 			
 			
 			

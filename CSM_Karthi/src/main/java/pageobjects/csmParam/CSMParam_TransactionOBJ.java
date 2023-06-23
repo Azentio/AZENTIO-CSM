@@ -248,7 +248,18 @@ public WebElement csmTransactionTypeAllowBackdatedValueDate()
 {
     return csm_TransactionType_AllowBackdatedValueDate;
 }
+@FindBy(xpath = "//*[@id='transactionTypesList_GridTbl_Id_P024MA_gs_ctstrxtypeVO.CODE']")
+private WebElement csmParam_Transactiontype_inputfield;
 
+public WebElement csmParam_Transactiontype_inputfield() {
+	return csmParam_Transactiontype_inputfield;
+}
+@FindBy(xpath = "//input[@id='allow_overdrawn_P017MA']")
+private WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
+
+public WebElement csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag() {
+	return csmParam_AccountParameters_AccountTypes_Instructions_AllowOverdrawnFlag;
+}
 
 
 
