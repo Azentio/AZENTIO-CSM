@@ -876,7 +876,24 @@ public class CSM_TransactionObj {
 	}
 	
 	
-	
+	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='Approve Cancel']")
+	private WebElement transaction_ApproveCancelFeature;
+
+	public WebElement transactionApproveCancelFeature() {
+		return transaction_ApproveCancelFeature;
+	}
+	@FindBy(xpath = "//span[contains(text(),' Approve Cancel ')]//parent::button")
+	private WebElement transaction_ApproveCancelButton;
+
+	public WebElement transactionApproveCancelButton() {
+		return transaction_ApproveCancelButton;
+	}
+	@FindBy(xpath = "//a[contains(text(),'Transactions / Cancel')]//parent::td//following-sibling::td//span")
+	private WebElement transactionManagement_CancelTabClose;
+
+	public WebElement transactionManagementCancelTabClose() {
+		return transactionManagement_CancelTabClose;
+	}
 	
 
 }

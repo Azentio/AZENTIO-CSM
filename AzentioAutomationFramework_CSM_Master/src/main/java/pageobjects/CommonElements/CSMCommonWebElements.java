@@ -167,11 +167,18 @@ public class CSMCommonWebElements {
 		return csm_SaveSuccessOkButton;
 	}
 
-	@FindBy(xpath = "//center//input[@value='Ok']")
+	@FindBy(xpath = "(//center//input[@value='Ok'])[1]")
 	private WebElement csm_OkButton;
 
 	public WebElement csmOkButton() {
 		return csm_OkButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Suspense Account')]//parent::div//following-sibling::center//input")
+	private WebElement csm_SuspenseOkButton;
+
+	public WebElement csmSuspenseOkButton() {
+		return csm_SuspenseOkButton;
 	}
 
 	@FindBy(id = "_popup_path_sol_confirm_ok")
@@ -180,7 +187,8 @@ public class CSMCommonWebElements {
 	public WebElement csmQuitOkButton() {
 		return csm_QuitOkButton;
 	}
-	@FindBy(xpath="//input[@id='_popup_path_sol_ok']")
+
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
 	private WebElement csm_WarningOkButton;
 
 	public WebElement csmWarningOkButton() {
@@ -312,36 +320,131 @@ public class CSMCommonWebElements {
 	public WebElement csmGridClearButton() {
 		return csm_GridClearButton;
 	}
-	@FindBy(xpath="//div[contains(text(),'Please wait while server request completes')]//parent::div//following-sibling::center//input[@value='Ok']")
+
+	@FindBy(xpath = "//div[contains(text(),'Please wait while server request completes')]//parent::div//following-sibling::center//input[@value='Ok']")
 	private WebElement csm_PleaseWaitServerOkbuton;
-	public WebElement csmPleaseWaitServerOkbuton()
-	{
+
+	public WebElement csmPleaseWaitServerOkbuton() {
 		return csm_PleaseWaitServerOkbuton;
 	}
-	@FindBy(xpath="//div[contains(text(),'Is a Company holiday')]//parent::div//following-sibling::center//input[@value='Ok ']")
+
+	@FindBy(xpath = "//div[contains(text(),'Is a Company holiday')]//parent::div//following-sibling::center//input[@value='Ok ']")
 	private WebElement csm_CompanyHolidayOkButton;
-	public WebElement csmCompanyHolidayOkButton()
-	{
+
+	public WebElement csmCompanyHolidayOkButton() {
 		return csm_CompanyHolidayOkButton;
 	}
-	@FindBy(xpath="//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
+
+	@FindBy(xpath = "//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
 	private WebElement csm_DeleteRowButton;
-	public WebElement csmDeleteRowButton()
-	{
+
+	public WebElement csmDeleteRowButton() {
 		return csm_DeleteRowButton;
 	}
-	@FindBy(xpath="(//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash'])[2]")
+
+	@FindBy(xpath = "(//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash'])[2]")
 	private WebElement csm_DeleteRowButtonTwo;
-	public WebElement csmDeleteRowButtonTwo()
-	{
+
+	public WebElement csmDeleteRowButtonTwo() {
 		return csm_DeleteRowButtonTwo;
 	}
-	
-	@FindBy(xpath="//div[contains(text(),'Confirm Delete Process')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_confirm_ok']")
+
+	@FindBy(xpath = "//div[contains(text(),'Confirm Delete Process')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_confirm_ok']")
 	private WebElement csm_Delete_ConfirmationOkButton;
-	public WebElement csmDeleteConfirmationOkButton()
-	{
+
+	public WebElement csmDeleteConfirmationOkButton() {
 		return csm_Delete_ConfirmationOkButton;
+	}
+
+	@FindBy(xpath = "//span[contains(text(),'Send Alert')]")
+	private WebElement csm_SentAlertLabel;
+
+	public WebElement csmSentAlertLabel() {
+		return csm_SentAlertLabel;
+	}
+
+	@FindBy(xpath = "//input[@name='USER_ID']")
+	private WebElement csm_AlertUserName;
+
+	public WebElement csmAlertUserName() {
+		return csm_AlertUserName;
+	}
+
+	@FindBy(xpath = "//a[@id='sendBut_D001MT']")
+	private WebElement csm_AlertSendButton;
+
+	public WebElement csmAlertSendButton() {
+		return csm_AlertSendButton;
+	}
+
+	@FindBy(xpath = "//span[text()='Open Item(s)']")
+	private WebElement csm_AlertOpenItemButton;
+
+	public WebElement csmAlertOpenItemButton() {
+		return csm_AlertOpenItemButton;
+	}
+
+	@FindBy(xpath = "//label[contains(text(),'Approve ')]//ancestor::button")
+	private WebElement csm_alertApproveButton;
+
+	public WebElement csmAlertApproveButton() {
+		return csm_alertApproveButton;
+	}
+
+	@FindBy(xpath = "//span[contains(text(),'Alerts')]")
+	private WebElement csmCore_AlertValidation;
+
+	public WebElement csmCoreAlertValidation() {
+		return csmCore_AlertValidation;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'no_signatures_and_no_fingerprint_found_key')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement csmCore_SignatureNotFoundMessageOkButton;
+
+	public WebElement csmCoreSignatureNotFoundMessageOkButton() {
+		return csmCore_SignatureNotFoundMessageOkButton;
+	}
+
+	@FindBy(xpath = "//center//input[@value='Ok']")
+	private WebElement csmCore_CommonOkButton;
+
+	public WebElement csmCoreCommonOkButton() {
+		return csmCore_CommonOkButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Amount Exceeds Available Balance in Account ')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement csm_AmouundExceedAvailableBalanceWarningMessage;
+
+	public WebElement csmAmouundExceedAvailableBalanceWarningMessage() {
+		return csm_AmouundExceedAvailableBalanceWarningMessage;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Changes made, are you sure you want to quit')]//parent::div//following-sibling::center//input[1]")
+	private WebElement csmCommon_UpdateScreenQuitOkButton;
+
+	public WebElement csmCommonUpdateScreenQuitOkButtton() {
+		return csmCommon_UpdateScreenQuitOkButton;
+	}
+
+	@FindBy(xpath = "//td[@title='Add new row']//span[@class='ui-icon ui-icon-plus']")
+	private WebElement csmCommon_GridAddButton;
+
+	public WebElement csmCommonGridAddButton() {
+		return csmCommon_GridAddButton;
+	}
+
+	@FindBy(xpath = "//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
+	private WebElement csmCommon_GridDeleteButton;
+
+	public WebElement csmCommonGridDeleteButton() {
+		return csmCommon_GridDeleteButton;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Charges amount is waived by the system')]//parent::div//following-sibling::center//input[@value='Ok']")
+	private WebElement commonChargewaiverValidation_OkButton;
+
+	public WebElement commonChargewaiverValidationOkButton() {
+		return commonChargewaiverValidation_OkButton;
 	}
 
 }

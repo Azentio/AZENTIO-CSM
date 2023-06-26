@@ -18,7 +18,6 @@ And User_482 click search icon in MaintenanceScreen under chequebook request
 And User_482 Search chequebook code in MaintenanceScreen under chequebook request
 And User_482 Validate the chequebook status changed from submitted to apply to submit
 
-
 @ACSD_001_PostReq
 Scenario: checking if the user is able to submit a chequebook - short process
 Given navigate to CSM application and login with valid credentials of AJITH user ID

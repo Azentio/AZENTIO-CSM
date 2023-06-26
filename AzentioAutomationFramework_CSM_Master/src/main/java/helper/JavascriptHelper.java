@@ -8,7 +8,7 @@ import org.openqa.selenium.WebElement;
 
 public class JavascriptHelper {
 	private WebDriver driver;
-	Logger Log = LogManager.getLogger(JavascriptHelper.class.getName());
+	//Logger Log = LogManager.getLogger(JavascriptHelper.class.getName());
 
 
 	public  JavascriptHelper(WebDriver driver) {
@@ -17,13 +17,13 @@ public class JavascriptHelper {
 
 	public Object executeScript(String script) {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
-		Log.info(script);
+	
 		return exe.executeScript(script);
 	}
 
 	public Object executeScript(String script, Object... args) {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
-		Log.info(script);
+		
 		return exe.executeScript(script, args);
 	}
 	
@@ -47,14 +47,14 @@ public class JavascriptHelper {
 //scrollIntoView
 	public void scrollIntoView(WebElement element) {
 		executeScript("arguments[0].scrollIntoView()", element);
-		Log.info(element);
+		
 		//ExtentTestManager.getTest().info("Scrolled to that view");
 	}
 //scrollIntoViewAndClick
 	public void scrollIntoViewAndClick(WebElement element) {
 		scrollIntoView(element);
 		element.click();
-		Log.info(element);
+		
 		//ExtentTestManager.getTest().info("Scrooll to the view and clicked");
 	}
 //scrollDownVertically

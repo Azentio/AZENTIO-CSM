@@ -378,8 +378,9 @@ public class CSM_AmendChequeCardStatus {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.closeOkButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
-		Thread.sleep(1000);
+	
 	}
+	
 
 	@And("^click on cheque request module$")
 	public void click_on_cheque_request_module() throws Throwable {
@@ -1367,9 +1368,10 @@ public class CSM_AmendChequeCardStatus {
 
 	@And("User_482 Validate the chequebook status changed from cancelled to send to provider")
 	public void user_482_validate_the_chequebook_status_changed_from_cancelled_to_send_to_provider() {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-				chequeBookRequestObj.sentToProviderRecordValidationInCBMaintenance());
-		Assert.assertTrue(chequeBookRequestObj.sentToProviderRecordValidationInCBMaintenance().isDisplayed());
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				chequeBookRequestObj.sentToProviderRecordValidationInCBMaintenance());
+//		Assert.assertTrue(chequeBookRequestObj.sentToProviderRecordValidationInCBMaintenance().isDisplayed());
+		Assert.fail("Steps needs to complete");
 	}
 
 }
