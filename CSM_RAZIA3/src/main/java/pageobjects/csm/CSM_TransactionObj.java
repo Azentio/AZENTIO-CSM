@@ -92,27 +92,22 @@ public class CSM_TransactionObj {
 	public WebElement CSMTransactionsMainMenu() {
 		return CSM_TransactionsMainMenu;
 	}
-	
-	@FindBy(id="D001MT")
+	//id="D001MT"
+	@FindBy(xpath="//span[text()='Maintenance']")
 	private WebElement CSM_MaintenanceUnderTransactions;
 
 	public WebElement CSMMaintenanceUnderTransactions() {
 		return CSM_MaintenanceUnderTransactions;
 	}
-	
-	@FindBy(id="lookuptxt_trx_type_D001MT")
+	//id="lookuptxt_trx_type_D001MT"
+	//input[@id='lookuptxt_trx_type_D001MT']
+	@FindBy(xpath="//div[@id='lookupid_trx_type_D001MT']//input")
 	private WebElement CSM_TRXTypeInMaintenanceScreen;
 
 	public WebElement CSMTRXTypeInMaintenanceScreen() {
 		return CSM_TRXTypeInMaintenanceScreen;
 	}
 	
-//	@FindBy(id="Transactions / Maintenance")
-//	private WebElement CSM_TransactionsMaintenanceForLoading;
-//
-//	public WebElement CSM_TransactionsMaintenanceForLoading() {
-//		return CSM_TransactionsMaintenanceForLoading;
-//	}
 	//id="trs_ac_br_D001MT"
 	@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_BR']")
 	private WebElement CSM_BranchCodeInCreditAc;
@@ -340,12 +335,12 @@ public WebElement csm_transaction_warningpop_Economicsector_limitAmount_118() {
 //}
 
 
-		@FindBy(xpath="//div[text()='WARNING']//parent::div//following-sibling::div//div[contains(text(),'Currency: Limit Amount should be between 0.0  and 300.00')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
-		private WebElement CSM_CurrencyLimit_pop_ok;
+@FindBy(xpath="//div[text()='WARNING']//parent::div//following-sibling::div//div[contains(text(),'Currency: Limit Amount should be between 0.0  and 300.00')]//parent::div//following-sibling::center//input[@id='_popup_path_sol_ok']")
+private WebElement CSM_CurrencyLimit_pop_ok;
 
-		public WebElement CSM_CurrencyLimit_pop_ok() {
-			return CSM_CurrencyLimit_pop_ok;
-		}	
+public WebElement CSM_CurrencyLimit_pop_ok() {
+	return CSM_CurrencyLimit_pop_ok;
+}	
 
 @FindBy(xpath="//div[text()='Cannot Proceed']")
 private WebElement CSM_cannotproceed_msg;
@@ -419,35 +414,7 @@ public WebElement CSM_cannotproceed_msg117() {
 	public WebElement CSM_SerialIndebitAc() {
 		return CSM_SerialIndebitAc;
 	}
-///t ac @31
-//
-//	@FindBy(id="to_trs_ac_br_D001MT")
-//	private WebElement CSM_BranchCodeInDebitAc;
-//
-//	public WebElement CSM_BranchCodeInDebitAc() {
-//		return CSM_BranchCodeInDebitAc;
-//	}
-//	
-//
-//	@FindBy(id="to_trs_ac_gl_D001MT")
-//	private WebElement CSM_GlcodeInDebitAc;
-//
-//	public WebElement CSM_GlcodeInDebitAc() {
-//		return CSM_GlcodeInDebitAc;
-//	}
-//	
-//	@FindBy(id="to_trs_ac_cif_D001MT")
-//	private WebElement CSM_CifcodeInDebitAc;
-//
-//	public WebElement CSM_CifcodeInDebitAc() {
-//		return CSM_CifcodeInDebitAc;
-//	}
-//	@FindBy(id="lookuptxt_to_trs_ac_sl_D001MT")
-//	private WebElement CSM_SerialcodeInDebitAc;
-//
-//	public WebElement CSM_SerialcodeInDebitAc() {
-//		return CSM_SerialcodeInDebitAc;
-//	}
+
 
 		////param prerequites
 	@FindBy(xpath ="//td[text()='Parameters']")
@@ -1079,12 +1046,7 @@ public WebElement CSM_cannotproceed_msg117() {
 				    return approveButtonInUser;
 
 				}
-
-				//confirmOkButton
-
-				//successOkButton
-
-				 
+		 
 
 				//TRS_122
 
@@ -1202,31 +1164,72 @@ public WebElement CSM_cannotproceed_msg117() {
 
 				}	
 				
-				@FindBy(xpath="(//input[@name='trxMgntCO.ctstrsVO.BRANCH_CODE'])[2]")
-				private WebElement CSM_Transaction_TellerAC_Branchinput;
-				public WebElement CSM_Transaction_TellerAC_Branchinput() {
-					return CSM_Transaction_TellerAC_Branchinput;
+//				@FindBy(xpath="(//input[@name='trxMgntCO.ctstrsVO.BRANCH_CODE'])[2]")
+//				private WebElement CSM_Transaction_TellerAC_Branchinput;
+//				public WebElement CSM_Transaction_TellerAC_Branchinput() {
+//					return CSM_Transaction_TellerAC_Branchinput;
+//				}
+//				
+//				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_CY']")
+//				private WebElement CSM_Transaction_TellerAc_Currencyinput;
+//				public WebElement CSM_Transaction_TellerAc_Currencyinput() {
+//					return CSM_Transaction_TellerAc_Currencyinput;
+//				}
+//				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_GL']")
+//				private WebElement CSM_Transaction_TellerAc_Glinput;
+//				public WebElement CSM_Transaction_TellerAc_Glinput() {
+//					return CSM_Transaction_TellerAc_Glinput;
+//				}
+//				
+//				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_CIF']")
+//				private WebElement CSM_Transaction_TellerAc_Cifinput;
+//				public WebElement CSM_Transaction_TellerAc_Cifinput() {
+//					return CSM_Transaction_TellerAc_Cifinput;
+//				}
+//				@FindBy(xpath="//input[@id='lookuptxt_ctrl_sl_D001MT']")
+//				private WebElement CSM_Transaction_TellerAc_Serialinput;
+//				public WebElement CSM_Transaction_TellerAc_Serialinput() {
+//					return CSM_Transaction_TellerAc_Serialinput;
+//				}
+			
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_AC_BR']")
+				private WebElement CSM_BranchCodeInCreditAcMInput_612;
+
+				public WebElement CSM_BranchCodeInCreditAcMInput_612() {
+					return CSM_BranchCodeInCreditAcMInput_612;
+							
+			}
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_AC_CY']")
+				private WebElement CSM_CurrencyCodeCreditAcInput_612;
+
+				public WebElement CSM_CurrencyCodeCreditAcInput_612() {
+					return CSM_CurrencyCodeCreditAcInput_612;
 				}
 				
-				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_CY']")
-				private WebElement CSM_Transaction_TellerAc_Currencyinput;
-				public WebElement CSM_Transaction_TellerAc_Currencyinput() {
-					return CSM_Transaction_TellerAc_Currencyinput;
-				}
-				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_GL']")
-				private WebElement CSM_Transaction_TellerAc_Glinput;
-				public WebElement CSM_Transaction_TellerAc_Glinput() {
-					return CSM_Transaction_TellerAc_Glinput;
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_AC_GL']")
+				private WebElement CSM_GLCodeCreditAcInput_612;
+
+				public WebElement CSM_GLCodeCreditAcInput_612() {
+					return CSM_GLCodeCreditAcInput_612;
 				}
 				
-				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.CTRL_CIF']")
-				private WebElement CSM_Transaction_TellerAc_Cifinput;
-				public WebElement CSM_Transaction_TellerAc_Cifinput() {
-					return CSM_Transaction_TellerAc_Cifinput;
+				@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TRS_AC_CIF']")
+				private WebElement CSM_CIFCodeInCreditAcInput_612;
+
+				public WebElement CSM_CIFCodeInCreditAcInput_612() {
+					return CSM_CIFCodeInCreditAcInput_612;
 				}
-				@FindBy(xpath="//input[@id='lookuptxt_ctrl_sl_D001MT']")
-				private WebElement CSM_Transaction_TellerAc_Serialinput;
-				public WebElement CSM_Transaction_TellerAc_Serialinput() {
-					return CSM_Transaction_TellerAc_Serialinput;
+				
+				@FindBy(xpath="//input[@id='lookuptxt_trs_ac_sl_D001MT']")
+				private WebElement CSM_SerialInCreditAcInput_612;
+				public WebElement CSM_SerialInCreditAcInput_612() {
+					return CSM_SerialInCreditAcInput_612;
+				}	
+				
+				
+				
+				
+				
+				
+				
 				}
-}

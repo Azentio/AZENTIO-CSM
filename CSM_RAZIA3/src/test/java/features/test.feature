@@ -3,7 +3,7 @@ Feature: Title of your feature
   I want to use this template for my feature file
 
   Scenario: Title of your scenario
-   And user click on the Save Button in Charge
+ 
 #@30
   #And User Enter the Branch Code in Credit Ac in Maintenance Screen
     #And User Enter Currency Code in Credit Ac in Maintenance Screen

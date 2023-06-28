@@ -16,11 +16,10 @@ Feature: Checking the functionalities of transaction
     And User Click on Transactions under CSM application
     And User Click on Maintenance under Transactions
     And User Enter TRX Type in Maintenance Screen
-    And User Enter the Branch Code in Credit Ac in Maintenance Screen
-    And User Enter Currency Code in Credit Ac in Maintenance Screen
-    And User Enter GL Code in Credit Ac in Maintenance Screen
-    And User Enter CIF Code in Credit Ac in Maintenance Screen
-    And User Enter Serial in Credit Ac in Maintenance Screen
+    And User_612 Enter the Branch Code in CreditAc in Maintenance Screen
+    And User_612 Enter GL Code in CreditAc in Maintenance Screen
+    And User_612 Enter CIF Code in CreditAc in Maintenance Screen
+    And User_612 Enter Serial in CreditAc in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the ForeignCurrency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
@@ -76,11 +75,15 @@ Feature: Checking the functionalities of transaction
     And User Click on Transactions under CSM application
     And User Click on Maintenance under Transactions
     And User Enter TRX Type in Maintenance Screen
-    And User Enter the Branch Code in Credit Ac in Maintenance Screen
-    And User Enter Currency Code in Credit Ac in Maintenance Screen
-    And User Enter GL Code in Credit Ac in Maintenance Screen
-    And User Enter CIF Code in Credit Ac in Maintenance Screen
-    And User Enter Serial in Credit Ac in Maintenance Screen
+    And User_612 Enter the Branch Code in CreditAc in Maintenance Screen
+    And User_612 Enter GL Code in CreditAc in Maintenance Screen
+    And User_612 Enter CIF Code in CreditAc in Maintenance Screen
+    And User_612 Enter Serial in CreditAc in Maintenance Screen
+    #And User Enter the Branch Code in Credit Ac in Maintenance Screen
+    #And User Enter Currency Code in Credit Ac in Maintenance Screen
+    #And User Enter GL Code in Credit Ac in Maintenance Screen
+    #And User Enter CIF Code in Credit Ac in Maintenance Screen
+    #And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
     And User Enter the ForeignCurrency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
@@ -170,7 +173,7 @@ Feature: Checking the functionalities of transaction
     Given navigate to CSM application and login with valid credentials
     And user update test data set id for TRS_31
     And User Click on Date to Change the Current Date
-    And User Enter the Date in User Running Date
+    And User Enter the Date in User Running Date 
      And User Click Ok Button for confirmation PopUp for Company Holiday
     And User Click on Use Button in Change Running Date Popup
     And User Click Ok Button in Information PopUp menu
@@ -185,6 +188,7 @@ Feature: Checking the functionalities of transaction
     And User Enter Currency Code in debit Ac in Maintenance Screen
     And User Enter GL Code in debit Ac in Maintenance Screen
     And User Enter CIF Code in debit Ac in Maintenance Screen
+     And User Click Ok Button in Warning PopUp Menu
     And User Enter Serial in debit Ac in Maintenance Screen
     And User Click Ok Button in Warning PopUp Menu
     And User Click Ok Button in Warning PopUp Menu
@@ -194,8 +198,10 @@ Feature: Checking the functionalities of transaction
     #And User Enter Currency Code in Credit Ac in Maintenance Screen
     And User Enter GL Code in Credit Ac in Maintenance Screen
     And User Enter CIF Code in Credit Ac in Maintenance Screen
+      And User Click Ok Button in Success PopUp Menu
     And User Enter Serial in Credit Ac in Maintenance Screen
     And User Click Save Button in Maintenance Screen
+    And User Click Ok Button in Success PopUp Menu
     And User Get the Transaction No in Success PopUp Menu for31
     And User Click Ok Button in Success PopUp Menu
     And User Click on Approve Screen under Transactions
@@ -272,7 +278,7 @@ Feature: Checking the functionalities of transaction
     And User Click Ok Button Under Information PopUp Menu
     And User Click on Transactions under CSM application
     And User Click on Maintenance under Transactions
-    And User Enter TRX Type in Maintenance Screen
+      And User Enter TRX Type in Maintenance Screen
     And User Enter the Branch Code in debit Ac in Maintenance Screen
     And User Enter Currency Code in debit Ac in Maintenance Screen
     And User Enter GL Code in debit Ac in Maintenance Screen
@@ -283,10 +289,11 @@ Feature: Checking the functionalities of transaction
     And User Enter the ForeignCurrency in Maintenance Screen
     And User Enter the Amount in Maintenance Screen
     And User Enter the Branch Code in Credit Ac in Maintenance Screen
-    #And User Enter Currency Code in Credit Ac in Maintenance Screen
+    And User Enter Currency Code in Credit Ac in Maintenance Screen
     And User Enter GL Code in Credit Ac in Maintenance Screen
     And User Enter CIF Code in Credit Ac in Maintenance Screen
     And User Enter Serial in Credit Ac in Maintenance Screen
+     And User Click Ok Button in Warning PopUp Menu
     And User Click Save Button in Maintenance Screen
     And User Get the Transaction No in Success PopUp Menu for34
     And User Click Ok Button in Success PopUp Menu
@@ -294,8 +301,7 @@ Feature: Checking the functionalities of transaction
     And User Enter the Transaction No in Approve Screen
     And User Double Click on the Transaction No
     And User Click on Approve Button for approve the Transaction
-    And User Click on Ok Button in Success PopUp Menu for Approve Transcation
-    And User Click on Maintenance under Transactions
+     And User Click on Maintenance under Transactions
     And User Click Ok Button in Warning PopUp to go back to Maintenance
     And User Click on Search Button in Maintenance Screen
     And User Enter the Transaction No in Search Box

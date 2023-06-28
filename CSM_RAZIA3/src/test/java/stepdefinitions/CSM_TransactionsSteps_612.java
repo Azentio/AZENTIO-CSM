@@ -41,8 +41,10 @@ public class CSM_TransactionsSteps_612 {
         seleniumAction.getClickAndActionsHelper().clickOnElement(csmtransaction_612.CSMDateToChangeTheCurrentDate_612());
     }
 	
-	 @And("^User_612 Enter the Date in User Running Date$")
-	    public void User_enter_the_date_in_User_612_running_date() throws Throwable {
+
+
+	@And("^User_612 Enter the Date in User Running Date$")
+	    public void User_enter_the_date_in_User_running_date() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,csmtransaction_612.CSMDateInUserRunningDate_612());
 	        seleniumAction.getClickAndActionsHelper().moveToElement(csmtransaction_612.CSMDateInUserRunningDate_612());
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(csmtransaction_612.CSMDateInUserRunningDate_612());

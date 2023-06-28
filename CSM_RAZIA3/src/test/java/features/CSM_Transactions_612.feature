@@ -6,6 +6,7 @@ Feature: Checking the functionalities of transaction
     And User_612 update test data set id for TRS_170
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
@@ -53,6 +54,7 @@ Feature: Checking the functionalities of transaction
     And user_612 update test data set id for TRS_171_01
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
@@ -100,6 +102,7 @@ Feature: Checking the functionalities of transaction
     And user_612 update test data set id for TRS_171_02
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
@@ -147,6 +150,7 @@ Feature: Checking the functionalities of transaction
     And user_612 update test data set id for TRS_172
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
@@ -202,6 +206,7 @@ Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charg
     And user_612 update test data set id for TRS_173
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
@@ -256,6 +261,7 @@ Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charg
     And user_612 update test data set id for TRS_174
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
@@ -310,6 +316,7 @@ Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charg
     And user_612 update test data set id for TRS_175
    And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
+     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup

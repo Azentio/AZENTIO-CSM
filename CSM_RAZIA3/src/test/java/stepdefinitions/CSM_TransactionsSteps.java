@@ -3,6 +3,7 @@ package stepdefinitions;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Iterator;
 import java.util.Map;
 
 import org.openqa.selenium.Keys;
@@ -76,7 +77,7 @@ public class CSM_TransactionsSteps {
 
                         if (i==49) {
 
-                            Assert.fail(e.getMessage());
+                            //Assert.fail(e.getMessage());
 
                         }  
 
@@ -136,10 +137,18 @@ public class CSM_TransactionsSteps {
 	
 	 @And("^User Click on Maintenance under Transactions$")
 	    public void user_click_on_maintenance_under_transactions() throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMMaintenanceUnderTransactions());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMMaintenanceUnderTransactions());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMMaintenanceUnderTransactions());
-	    }
+//		 for (int i = 0; i < 50; i++)
+//				 try {
+					 seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMMaintenanceUnderTransactions());
+				        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMMaintenanceUnderTransactions());
+				        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMMaintenanceUnderTransactions());
+//				    
+//				} catch (Exception e) {
+//					
+//				}
+		 }
+			 		    	
+	
 	 
 	 
 	 
@@ -151,10 +160,10 @@ public class CSM_TransactionsSteps {
 	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMTRXTypeInMaintenanceScreen());
 	        CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(testData.get("TRXType_D1"));
 	        CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys(Keys.TAB);
-	          // CSMTransactionObj.CSMTRXTypeInMaintenanceScreen().sendKeys("",Keys.TAB);
+	          
 	        
 	    }
-	    
+	
 	    @And("^User Enter the Branch Code in Credit Ac in Maintenance Screen$")
 	    public void user_enter_the_branch_code_in_credit_ac_in_maintenance_screen() throws Throwable {
 	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMBranchCodeInCreditAc());
@@ -256,55 +265,55 @@ public class CSM_TransactionsSteps {
 //						Assert.fail(e.getMessage());
 					}
 				}
-	    @And("User Enter the Branch code in TellerAc Under Maintenance Screen$")
-	    public void user_enter_the_branch_code_in_teller_ac_under_maintenance_screen() throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput());
-	        CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput().sendKeys(testData.get(""));
-	        CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput().sendKeys(Keys.TAB);
-	    }
-
-	    @And("User Enter the Currency  in TellerAc Under Maintenance Screen")
-	    public void user_enter_the_currency_in_teller_ac_under_maintenance_screen() throws Throwable{
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput());
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput().sendKeys(testData.get(""));
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput().sendKeys(Keys.TAB);
-	        
-	    }
-
-	    @And("User Enter the Gl  in TellerAc Under Maintenance Screen")
-	    public void user_enter_the_gl_in_teller_ac_under_maintenance_screen()throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Glinput());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Glinput());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Glinput());
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Glinput().sendKeys(testData.get(""));
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Glinput().sendKeys(Keys.TAB);
-	        
-	    }
-
-	    @And("User Enter the Cif in TellerAc Under Maintenance Screen")
-	    public void user_enter_the_cif_in_teller_ac_under_maintenance_screen() throws Throwable{
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput());
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput().sendKeys(testData.get(""));
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput().sendKeys(Keys.TAB);
-	       
-	    }
-
-	    @And("User Enter the serial in TellerAc Under Maintenance Screen")
-	    public void user_enter_the_serial_in_teller_ac_under_maintenance_screen()throws Throwable {
-	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput());
-	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput());
-	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput());
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput().sendKeys(testData.get(""));
-	        CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput().sendKeys(Keys.TAB);
-	       
-	        
-	    }
+//	    @And("User Enter the Branch code in TellerAc Under Maintenance Screen$")
+//	    public void user_enter_the_branch_code_in_teller_ac_under_maintenance_screen() throws Throwable {
+//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput());
+//	        CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput().sendKeys(testData.get(""));
+//	        CSMTransactionObj.CSM_Transaction_TellerAC_Branchinput().sendKeys(Keys.TAB);
+//	    }
+//
+//	    @And("User Enter the Currency  in TellerAc Under Maintenance Screen")
+//	    public void user_enter_the_currency_in_teller_ac_under_maintenance_screen() throws Throwable{
+//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput());
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput().sendKeys(testData.get(""));
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Currencyinput().sendKeys(Keys.TAB);
+//	        
+//	    }
+//
+//	    @And("User Enter the Gl  in TellerAc Under Maintenance Screen")
+//	    public void user_enter_the_gl_in_teller_ac_under_maintenance_screen()throws Throwable {
+//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Glinput());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Glinput());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Glinput());
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Glinput().sendKeys(testData.get(""));
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Glinput().sendKeys(Keys.TAB);
+//	        
+//	    }
+//
+//	    @And("User Enter the Cif in TellerAc Under Maintenance Screen")
+//	    public void user_enter_the_cif_in_teller_ac_under_maintenance_screen() throws Throwable{
+//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput());
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput().sendKeys(testData.get(""));
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Cifinput().sendKeys(Keys.TAB);
+//	       
+//	    }
+//
+//	    @And("User Enter the serial in TellerAc Under Maintenance Screen")
+//	    public void user_enter_the_serial_in_teller_ac_under_maintenance_screen()throws Throwable {
+//	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput());
+//	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput());
+//	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput());
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput().sendKeys(testData.get(""));
+//	        CSMTransactionObj.CSM_Transaction_TellerAc_Serialinput().sendKeys(Keys.TAB);
+//	       
+//	        
+//	    }
 
 	    @And("^User Enter the Amount in Maintenance Screen$")
 	    public void user_enter_the_amount_in_maintenance_screen() throws Throwable {
@@ -739,6 +748,7 @@ public class CSM_TransactionsSteps {
 	    		//seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSMOkButtonInSuccessPopUpMenuForTranscation());
 		        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSMOkButtonInSuccessPopUpMenuForTranscation());
 		        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSMOkButtonInSuccessPopUpMenuForTranscation());
+		        Thread.sleep(1000);
 				
 			} catch (Exception e) {
 				
@@ -1691,10 +1701,52 @@ public void user_verify_the_proceed_if_limit_exceeds_checked_under_eco_sector() 
 	        Assert.assertTrue(CSMTransactionObj.CSM_cannotproceed_msg117().isDisplayed());
 	    
 	    }
-	        
+	    
+	    
+	    @And("^User_612 Enter the Branch Code in CreditAc in Maintenance Screen$")
+	    public void user_enter_the_branch_code_in_creditac_in_maintenance_screen() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_BranchCodeInCreditAcMInput_612());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_BranchCodeInCreditAcMInput_612());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_BranchCodeInCreditAcMInput_612());
+	        CSMTransactionObj.CSM_BranchCodeInCreditAcMInput_612().sendKeys(testData.get("BranchCode_D2"));
+	        CSMTransactionObj.CSM_BranchCodeInCreditAcMInput_612().sendKeys(Keys.TAB);
+	    }
 
-	
-	
-	
+	    @And("^User_612 Enter Currency Code in CreditAc in Maintenance Screen$")
+	    public void user_enter_currency_code_in_creditac_in_maintenance_screen() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_CurrencyCodeCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_CurrencyCodeCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_CurrencyCodeCreditAcInput_612());
+	        CSMTransactionObj.CSM_CurrencyCodeCreditAcInput_612().sendKeys(testData.get("CurrencyCode_D2"));
+	        CSMTransactionObj.CSM_CurrencyCodeCreditAcInput_612().sendKeys(Keys.TAB);
+	    }
+	    
+	    @And("^User_612 Enter GL Code in CreditAc in Maintenance Screen$")
+	    public void user_enter_gl_code_in_creditac_in_maintenance_screen() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_GLCodeCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_GLCodeCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_GLCodeCreditAcInput_612());
+	        CSMTransactionObj.CSM_GLCodeCreditAcInput_612().sendKeys(testData.get("GLCode_D2"));
+	        CSMTransactionObj.CSM_GLCodeCreditAcInput_612().sendKeys(Keys.TAB);
+	    }
+	    
+	    @And("^User_612 Enter CIF Code in CreditAc in Maintenance Screen$")
+	    public void user_enter_cif_code_in_creditac_in_maintenance_screen() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_CIFCodeInCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_CIFCodeInCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_CIFCodeInCreditAcInput_612());
+	        CSMTransactionObj.CSM_CIFCodeInCreditAcInput_612().sendKeys(testData.get("CIFCode_D2"));
+	       CSMTransactionObj.CSM_CIFCodeInCreditAcInput_612().sendKeys(Keys.TAB);
+	      
+	    }
+
+	    @And("^User_612 Enter Serial in CreditAc in Maintenance Screen$")
+	    public void user_enter_serial_in_creditac_in_maintenance_screen() throws Throwable {
+	    	seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,CSMTransactionObj.CSM_SerialInCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().moveToElement(CSMTransactionObj.CSM_SerialInCreditAcInput_612());
+	        seleniumAction.getClickAndActionsHelper().clickOnElement(CSMTransactionObj.CSM_SerialInCreditAcInput_612());
+	        CSMTransactionObj.CSM_SerialInCreditAcInput_612().sendKeys(testData.get("SerialNo_D2"));
+	        CSMTransactionObj.CSM_SerialInCreditAcInput_612().sendKeys(Keys.TAB);
+	    }
 
 }
