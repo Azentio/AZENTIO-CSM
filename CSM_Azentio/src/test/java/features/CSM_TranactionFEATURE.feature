@@ -835,3 +835,120 @@ Feature: Checking functionality of transaction
     And user update test data set id for TRS_254
     And user update test data set id for TRS_255
     And user update test data set id for TRS_256
+    
+    
+     @TRS_393
+  Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx - Local  - Multi Transfer - Mode of Payment A/C
+  
+    Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_393
+    And user click the parameters menu
+    And user click the system parameters submenu
+    And user click on the transaction type under the system parameters
+    And user click on the update after approve field under the transaction type
+    And user enters the transaction type code in the code column under the update after approve
+    And user double clicks on the entered transaction type code from the list to view the transaction type details
+    And user check the MultipleTransfer check Box
+     And user click on the update after approve button to save the changes
+    And user click on the approve field under the transaction type menu
+    And user enters the transaction type code in the code column under the approve menu
+    And user double clicks on the entered transaction type code from the list to view the transaction type details in approve screen
+    And user click on the approve button to approve the changes
+    
+      Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TRS_393
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enters the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button in Information PopUp menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Transactions under CSM application in the CSM core application
+    And user click on Maintenance under Transactions in the CSM core application
+    And user enters the transaction type
+    And user change the mode of payment to Account
+    And user Enter the Branch Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter Currency Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter GL Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter CIF Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter Serial for AC1 in Maintenance Screen
+    And user click random click
+    And user click Ok Button in Warning PopUp Menu
+    And user Enter the Currency in Maintenance Screen
+     And user click random click
+    And user Enter the Amount in Maintenance Screen
+    And user click random click
+    And user click the AccountDetails button under maintenance screen
+    And user click the Add button on AccountDetails button
+    And user click the record on accountDetails
+   And user Enter the GL on AccountDetails button
+   And user Enter the Cif on AccountDetails button
+   And user Enter the SerialNo on AccountDetails button
+   
+   
+   
+  
+    Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_394
+    And user click the parameters menu
+    And user click the system parameters submenu
+    And user click on the transaction type under the system parameters
+    And user click on the update after approve field under the transaction type
+    And user enters the transaction type code in the code column under the update after approve
+    And user double clicks on the entered transaction type code from the list to view the transaction type details
+    And user check the MultipleTransfer check Box
+     And user click on the update after approve button to save the changes
+    And user click on the approve field under the transaction type menu
+    And user enters the transaction type code in the code column under the approve menu
+    And user double clicks on the entered transaction type code from the list to view the transaction type details in approve screen
+    And user click on the approve button to approve the changes
+     @TRS_394
+  Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx - Local  - Multi Transfer - Mode of Payment Cash
+      Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TRS_394
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enters the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button in Information PopUp menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Transactions under CSM application in the CSM core application
+    And user click on Maintenance under Transactions in the CSM core application
+    And user enters the transaction type
+    And user change the mode of payment to Account
+    And user Enter the currency on cash field
+    And user double click the record on cash field
+    #And user Enter the Branch Code for AC1 in Maintenance Screen
+    #And user click random click
+    #And user Enter Currency Code for AC1 in Maintenance Screen
+    #And user click random click
+    #And user Enter GL Code for AC1 in Maintenance Screen
+    #And user click random click
+    #And user Enter CIF Code for AC1 in Maintenance Screen
+    #And user click random click
+    #And user Enter Serial for AC1 in Maintenance Screen
+    #And user click random click
+    #And user click Ok Button in Warning PopUp Menu
+    And user Enter the Currency in Maintenance Screen
+     And user click random click
+    And user Enter the Amount in Maintenance Screen
+    And user click random click
+    And user click the AccountDetails button under maintenance screen
+    And user click the Add button on AccountDetails button
+    And user click the record on accountDetails
+   And user Enter the GL on AccountDetails button
+   And user Enter the Cif on AccountDetails button
+   And user Enter the SerialNo on AccountDetails button
+   
+    
+    

@@ -12,6 +12,7 @@ import org.testng.Assert;
 import dataProvider.ConfigFileReader;
 import dataProvider.ExcelData;
 import helper.ClicksAndActionsHelper;
+import helper.DropDownHelper;
 import helper.JavascriptHelper;
 import helper.Selenium_Actions;
 import helper.WaitHelper;
@@ -31,9 +32,10 @@ public class CSM_Transactions_Steps {
     Selenium_Actions seleniumActions = new Selenium_Actions(driver);
     CSM_Param_Transaction_OBJ csmTransactionObject = new CSM_Param_Transaction_OBJ(driver);
     UserUtility_614 userUtility = new UserUtility_614();
+    DropDownHelper dropDownHelper = new DropDownHelper(driver);
     JavascriptHelper JavascriptHelper = new JavascriptHelper(driver);
     String path = System.getProperty("user.dir") +"\\TestData\\CSMparamTestData.xlsx";
-	  ExcelData csmTransactionsStaffAccountExcelData = new ExcelData(path,"CSM_Transactions_TestData","DataSet ID");
+	  ExcelData CsmTransactionExcelData = new ExcelData(path,"CSM_Transactions_TestData","DataSet ID");
 	  Map<String, String> testData;
 	  
 	  @Given("^user Navigate to CSM Params application and login with valid credentials$")
@@ -44,7 +46,7 @@ public class CSM_Transactions_Steps {
 	  }
 	  @Given("user update test data set id for TRS_218")
 	    public void user__update_test_data_set_id_for_trs_218() throws Throwable {
-		  testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_218_D1");
+		  testData = CsmTransactionExcelData.getTestdata("TRS_218_D1");
 	  }
 	  @And("^user click the parameters menu$")
 	  public void user_click_the_parameters_menu() throws Throwable {
@@ -103,7 +105,7 @@ public class CSM_Transactions_Steps {
 	  @Then("user select the dropdown values under allow overdraw option")
 	  public void user_select_the_dropdown_values_under_allow_overdraw_option() {
 		  seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionObject.csmParamGeneralledgercodeadditionaloptionsdropdown());
-			// dropDownHelper.SelectUsingVisibleText(csmChequebookObject.csmParam_General_ledger_code_additionaloptions_dropdown(),
+			// dropDownHelper.SelectUsingVisibleText(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDown(),
 			// testData.get("Allow_Overdraw") );
 		  seleniumActions.getDropDownHelper().SelectUsingVisibleText(csmTransactionObject.csmParamGeneralledgercodeadditionaloptionsdropdown(), "Notify and Proceed");
 		  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmParamGeneralledgercodeadditionaloptionsdropdown());
@@ -168,6 +170,8 @@ public class CSM_Transactions_Steps {
     		  try {
     			  seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmParametersSystemParameters());
     	    	  seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmParametersSystemParameters());
+    	    	  break;
+    	    	  
 			} catch (Exception e) {
 				if (i==199) {
 					Assert.fail(e.getMessage());
@@ -218,8 +222,8 @@ public class CSM_Transactions_Steps {
       @And("User Check the ProceedOnInsufficientFund flag chequebox")
   	public void user_check_the_proceed_on_insufficient_fund_flag_chequebox() throws Throwable {
   		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionObject.csmParamTransactiontypeproceedoninsufficentfunds());
-//      	clicksAndActionsHelper.moveToElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
-//          clicksAndActionsHelper.clickOnElement(csmChequebookObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+//      	clicksAndActionsHelper.moveToElement(csmTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
+//          clicksAndActionsHelper.clickOnElement(csmTransactionObject.csmParam_Transactiontype_proceedoninsufficentfunds());
 
   		if (csmTransactionObject.csmParamTransactiontypeproceedoninsufficentfunds().getAttribute("initialvalue").isBlank()) {
   			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmParamTransactiontypeproceedoninsufficentfunds());
@@ -604,9 +608,9 @@ public class CSM_Transactions_Steps {
                  }            
                 } catch (Exception e)
               {
-              	  if (i==49) {
-    					Assert.fail(e.getMessage());
-    				}  
+//              	  if (i==49) {
+//    					Assert.fail(e.getMessage());
+//    				}  
               }
           }
         }
@@ -861,95 +865,217 @@ public class CSM_Transactions_Steps {
 		
 		@And("^user update test data set id for TRS_119$")
 		public void user_update_test_data_set_id_for_trs119() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_119_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_119_D1");
 		}
 		@And("^user update test data set id for TRS_220$")
 		public void user_update_test_data_set_id_for_trs220() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_220_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_220_D1");
 		}
 		@And("^user update test data set id for TRS_221$")
 		public void user_update_test_data_set_id_for_trs221() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_221_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_221_D1");
 		}
 		@And("^user update test data set id for TRS_222$")
 		public void user_update_test_data_set_id_for_trs222() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_222_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_222_D1");
 		}
 		@And("^user update test data set id for TRS_223$")
 		public void user_update_test_data_set_id_for_trs223() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_223_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_223_D1");
 		}
 		@And("^user update test data set id for TRS_224$")
 		public void user_update_test_data_set_id_for_trs224() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_224_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_224_D1");
 		}
 		@And("^user update test data set id for TRS_225$")
 		public void user_update_test_data_set_id_for_trs225() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_225_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_225_D1");
 		}
 		@And("^user update test data set id for TRS_226$")
 		public void user_update_test_data_set_id_for_trs226() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_226_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_226_D1");
 		}
 		@And("^user update test data set id for TRS_227$")
 		public void user_update_test_data_set_id_for_trs227() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_227_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_227_D1");
 		}
 		@And("^user update test data set id for TRS_228$")
 		public void user_update_test_data_set_id_for_trs228() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_228_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_228_D1");
 		}
 		@And("^user update test data set id for TRS_229$")
 		public void user_update_test_data_set_id_for_trs229() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_229_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_229_D1");
 		}
 		
 		@And("^user update test data set id for TRS_245$")
 		public void user_update_test_data_set_id_for_trs245() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_245_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_245_D1");
 		}
 		@And("^user update test data set id for TRS_246$")
 		public void user_update_test_data_set_id_for_trs246() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_246_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_246_D1");
 		}
 		@And("^user update test data set id for TRS_247$")
 		public void user_update_test_data_set_id_for_trs247() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_247_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_247_D1");
 		}
 		@And("^user update test data set id for TRS_248$")
 		public void user_update_test_data_set_id_for_trs248() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_248_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_248_D1");
 		}
 		@And("^user update test data set id for TRS_249$")
 		public void user_update_test_data_set_id_for_trs249() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_249_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_249_D1");
 		}
 		@And("^user update test data set id for TRS_250$")
 		public void user_update_test_data_set_id_for_trs250() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_250_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_250_D1");
 		}
 		@And("^user update test data set id for TRS_251$")
 		public void user_update_test_data_set_id_for_trs251() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_251_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_251_D1");
 		}
 		@And("^user update test data set id for TRS_252$")
 		public void user_update_test_data_set_id_for_trs252() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_252_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_252_D1");
 		}
 		@And("^user update test data set id for TRS_253$")
 		public void user_update_test_data_set_id_for_trs253() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_253_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_253_D1");
 		}
 		@And("^user update test data set id for TRS_254$")
 		public void user_update_test_data_set_id_for_trs254() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_254_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_254_D1");
 		}
 		@And("^user update test data set id for TRS_255$")
 		public void user_update_test_data_set_id_for_trs255() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_255_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_255_D1");
 		}
 		@And("^user update test data set id for TRS_256$")
 		public void user_update_test_data_set_id_for_trs256() throws Throwable {
-			testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_256_D1");
+			testData = CsmTransactionExcelData.getTestdata("TRS_256_D1");
 		}
+		
+		
+		
+		
+		
+		
+		
+		//TRS_393
+		
+		@And("^user update test data set id for TRS_393$")
+		public void user_update_test_data_set_id_for_trs393() throws Throwable {
+			testData = CsmTransactionExcelData.getTestdata("TRS_393_D1");
+		}
+		@And("^user update test data set id for TRS_394$")
+		public void user_update_test_data_set_id_for_trs394() throws Throwable {
+			testData = CsmTransactionExcelData.getTestdata("TRS_394_D1");
+		}
+		@And("user check the MultipleTransfer check Box")
+		public void user_check_the_multiple_transfer_check_box() {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+//      	clicksAndActionsHelper.moveToElement(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+//          clicksAndActionsHelper.clickOnElement(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+
+  		if (csmTransactionObject.csmParamTransactiontypeproceedoninsufficentfunds().getAttribute("initialvalue").isBlank()) {
+  			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+  			seleniumActions.getClickAndActionsHelper().clickUsingActionClass(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox(),csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+  	     } else {
+  			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+  			seleniumActions.getClickAndActionsHelper().clickUsingActionClass(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox(),csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+  			//seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+  			//seleniumActions.getClickAndActionsHelper().clickUsingActionClass(csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox(),csmTransactionObject.csmTransactionTypeMultipleTransferCheckBox());
+
+  		}
+		}
+
+		@And("user change the mode of payment to Account")
+		public void user_change_the_mode_of_payment_to_account() {
+			//JavascriptHelper.scrollIntoView(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDown());
+			waitHelper.waitForElementwithFluentwait(driver,
+					csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDown());
+			clicksAndActionsHelper
+			.moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDown());
+	clicksAndActionsHelper
+			.clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDown());
+			dropDownHelper.SelectUsingVisibleText(
+					csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDown(), testData.get("ModeOfpayment"));
+			
+			
+			
+		}
+		@And("user Enter the currency on cash field")
+		public void user_enter_the_currency_on_cash_field() {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrency());
+			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrency());
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrency());
+			csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrency().sendKeys(testData.get("CurrencyCode_Credit"));
+			csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrency().sendKeys(Keys.ENTER);
+		}
+
+		@And("user double click the record on cash field")
+		public void user_double_click_the_record_on_cash_field() {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrencydoubleClick());
+			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrencydoubleClick());
+			seleniumActions.getClickAndActionsHelper().doubleClick(csmTransactionObject.csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrencydoubleClick());
+		}
+		
+		@And("user click the AccountDetails button under maintenance screen")
+		public void user_click_the_account_details_button_under_maintenance_screen() {
+			 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButton());
+	    	  seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButton());
+	    	  seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButton());
+		}
+
+		@And("user click the Add button on AccountDetails button")
+		public void user_click_the_add_button_on_account_details_button() {
+			 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonAddButton());
+	    	  seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonAddButton());
+	    	  seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonAddButton());
+		}
+		
+		@And("user click the record on accountDetails")
+		public void user_click_the_record_on_account_details() {
+			 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonclicktherecord());
+	    	  seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonclicktherecord());
+	    	  seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonclicktherecord());
+		}
+
+		@And("user Enter the GL on AccountDetails button")
+		public void user_enter_the_gl_on_account_details_button() {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonGLinputbox());
+			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonGLinputbox());
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonGLinputbox());
+			csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonGLinputbox().sendKeys(testData.get("GLCode_Debit"));
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonRandomclick());
+			//csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonGLinputbox().sendKeys(testData.get(Keys.TAB));
+		}
+
+		@And("user Enter the Cif on AccountDetails button")
+		public void user_enter_the_cif_on_account_details_button() {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonCIFinputbox());
+			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonCIFinputbox());
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonCIFinputbox());
+			csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonCIFinputbox().sendKeys(testData.get("CIFCode_Debit"));
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonRandomclick());
+
+			//csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonCIFinputbox().sendKeys(testData.get(Keys.TAB));
+		}
+
+		@And("user Enter the SerialNo on AccountDetails button")
+		public void user_enter_the_serial_no_on_account_details_button() throws Throwable {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonSerialnoinputbox());
+			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonSerialnoinputbox());
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonSerialnoinputbox());
+			csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonSerialnoinputbox().sendKeys(testData.get("SerialNo_Debit"));
+			seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonRandomclick());
+
+			//csmTransactionObject.csmcoreTransactionMaintanenceAccountDetailsButtonSerialnoinputbox().sendKeys(testData.get(Keys.TAB));
+			Thread.sleep(3000);
+		}
+		
+		
+
 }

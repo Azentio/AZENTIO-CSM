@@ -18,7 +18,7 @@ public class MultipleTagsRun {
 		for (String tags : listOfTags) {
 			String[] parameter = {
 
-					"src/test/java/features/CSM_Transaction_On_Staff_Account.feature",
+					"src/test/java/features/CSM_Transaction.feature",
 					"--glue", "stepdefinitions",
 					"--plugin", "pretty", 
 					"--plugin","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", 
@@ -44,8 +44,8 @@ public class MultipleTagsRun {
 	@Test()
 	public void test() {
 		List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
-		testCaseTagsfromExcel1.add("TRS_109_01");
-		testCaseTagsfromExcel1.add("TRS_109");
+		testCaseTagsfromExcel1.add("TRS_133_01");
+		testCaseTagsfromExcel1.add("TRS_133");
 //		testCaseTagsfromExcel1.add("TRS_109_02");
 //		testCaseTagsfromExcel1.add("");
 //		testCaseTagsfromExcel1.add("KUBS_TAX_UAT_009_001_TC_001");

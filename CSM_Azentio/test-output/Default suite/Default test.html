@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>0/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jun 23 16:28:46 IST 2023</td>
+<td>Started on:</td><td>Thu Jun 29 14:37:32 IST 2023</td>
 </tr>
-<tr><td>Total time:</td><td>2 seconds (2243 ms)</td>
+<tr><td>Total time:</td><td>3 seconds (3134 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,26 +76,8 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='Runner.TestApplication.setUpClass()'><b>setUpClass</b><br>Test class: Runner.TestApplication</td>
-<td><div><pre>io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///C:/Users/inindc00606/git/AZENTIO-CSM/CSM_Azentio/src/test/java/features/CSM_TranactionFEATURE.feature
-(6:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Given user Navigate to CSM Params application and login with valid credentials&apos;
-(7:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user update test data set id for TRS_218&apos;
-(8:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the parameters menu&apos;
-(9:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user navigate to account parameters&apos;
-(10:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user navigate to general ledger under account parameters&apos;
-(11:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the Update after approve in general ledger flag&apos;
-(12:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user enter the code in the code column under update after approve&apos;
-(13:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user double click the entered code to view the details in update after approve screen&apos;
-(14:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the additional details button in the update after approve&apos;
-(15:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user select the dropdown values under allow overdraw option&apos;
-(16:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the update button to save the record in update after approve screen&apos;
-	at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:52)
-	at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:43)
-	at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
-	at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
-	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:70)
-	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:55)
-	at java.base/java.nio.file.Files.walkFileTree(Files.java:2811)
-	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:48)
+<td><div><pre>java.lang.IllegalArgumentException: path must exist: C:\Users\inindc00606\git\AZENTIO-CSM\CSM_Azentio\src\test\java\features\ChequeBookRequestFeature.feature
+	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:44)
 	at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:28)
 	at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
 	at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
@@ -130,26 +112,8 @@ function toggleAllBoxes() {
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div><a href='#' onClick='toggleBox("stack-trace159290353", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace159290353'><pre>io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///C:/Users/inindc00606/git/AZENTIO-CSM/CSM_Azentio/src/test/java/features/CSM_TranactionFEATURE.feature
-(6:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Given user Navigate to CSM Params application and login with valid credentials&apos;
-(7:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user update test data set id for TRS_218&apos;
-(8:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the parameters menu&apos;
-(9:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user navigate to account parameters&apos;
-(10:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user navigate to general ledger under account parameters&apos;
-(11:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the Update after approve in general ledger flag&apos;
-(12:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user enter the code in the code column under update after approve&apos;
-(13:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user double click the entered code to view the details in update after approve screen&apos;
-(14:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the additional details button in the update after approve&apos;
-(15:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;Then user select the dropdown values under allow overdraw option&apos;
-(16:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got &apos;And user click the update button to save the record in update after approve screen&apos;
-	at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:52)
-	at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:43)
-	at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
-	at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
-	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:70)
-	at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:55)
-	at java.base/java.nio.file.Files.walkFileTree(Files.java:2811)
-	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:48)
+<div class='stack-trace' id='stack-trace159290353'><pre>java.lang.IllegalArgumentException: path must exist: C:\Users\inindc00606\git\AZENTIO-CSM\CSM_Azentio\src\test\java\features\ChequeBookRequestFeature.feature
+	at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:44)
 	at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:28)
 	at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
 	at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)

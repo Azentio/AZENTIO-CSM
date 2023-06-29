@@ -2,51 +2,22 @@
 <testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-23T16:28:46 IST" name="Default suite" finished-at="2023-06-23T16:28:48 IST" duration-ms="2243">
+  <suite started-at="2023-06-29T14:37:32 IST" name="Default suite" finished-at="2023-06-29T14:37:35 IST" duration-ms="3134">
     <groups>
       <group name="cucumber">
         <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@795509d9]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-23T16:28:46 IST" name="Default test" finished-at="2023-06-23T16:28:48 IST" duration-ms="2243">
+    <test started-at="2023-06-29T14:37:32 IST" name="Default test" finished-at="2023-06-29T14:37:35 IST" duration-ms="3134">
       <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-23T16:28:46 IST" name="setUpClass" finished-at="2023-06-23T16:28:48 IST" duration-ms="2090" status="FAIL">
-          <exception class="io.cucumber.core.gherkin.FeatureParserException">
+        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-29T14:37:32 IST" name="setUpClass" finished-at="2023-06-29T14:37:35 IST" duration-ms="2887" status="FAIL">
+          <exception class="java.lang.IllegalArgumentException">
             <message>
-              <![CDATA[Failed to parse resource at: file:///C:/Users/inindc00606/git/AZENTIO-CSM/CSM_Azentio/src/test/java/features/CSM_TranactionFEATURE.feature
-(6:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Given user Navigate to CSM Params application and login with valid credentials'
-(7:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user update test data set id for TRS_218'
-(8:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the parameters menu'
-(9:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user navigate to account parameters'
-(10:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user navigate to general ledger under account parameters'
-(11:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the Update after approve in general ledger flag'
-(12:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user enter the code in the code column under update after approve'
-(13:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user double click the entered code to view the details in update after approve screen'
-(14:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the additional details button in the update after approve'
-(15:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user select the dropdown values under allow overdraw option'
-(16:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the update button to save the record in update after approve screen']]>
+              <![CDATA[path must exist: C:\Users\inindc00606\git\AZENTIO-CSM\CSM_Azentio\src\test\java\features\ChequeBookRequestFeature.feature]]>
             </message>
             <full-stacktrace>
-              <![CDATA[io.cucumber.core.gherkin.FeatureParserException: Failed to parse resource at: file:///C:/Users/inindc00606/git/AZENTIO-CSM/CSM_Azentio/src/test/java/features/CSM_TranactionFEATURE.feature
-(6:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Given user Navigate to CSM Params application and login with valid credentials'
-(7:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user update test data set id for TRS_218'
-(8:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the parameters menu'
-(9:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user navigate to account parameters'
-(10:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user navigate to general ledger under account parameters'
-(11:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the Update after approve in general ledger flag'
-(12:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user enter the code in the code column under update after approve'
-(13:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user double click the entered code to view the details in update after approve screen'
-(14:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the additional details button in the update after approve'
-(15:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'Then user select the dropdown values under allow overdraw option'
-(16:5): expected: #EOF, #Comment, #BackgroundLine, #TagLine, #ScenarioLine, #RuleLine, #Empty, got 'And user click the update button to save the record in update after approve screen'
-at io.cucumber.core.gherkin.messages.GherkinMessagesFeatureParser.parse(GherkinMessagesFeatureParser.java:52)
-at io.cucumber.core.feature.FeatureParser.parseResource(FeatureParser.java:43)
-at java.base/java.util.function.BiFunction.lambda$andThen$0(BiFunction.java:70)
-at io.cucumber.core.resource.ResourceScanner.lambda$processResource$1(ResourceScanner.java:79)
-at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:70)
-at io.cucumber.core.resource.PathScanner$ResourceFileVisitor.visitFile(PathScanner.java:55)
-at java.base/java.nio.file.Files.walkFileTree(Files.java:2811)
-at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:48)
+              <![CDATA[java.lang.IllegalArgumentException: path must exist: C:\Users\inindc00606\git\AZENTIO-CSM\CSM_Azentio\src\test\java\features\ChequeBookRequestFeature.feature
+at io.cucumber.core.resource.PathScanner.findResourcesForPath(PathScanner.java:44)
 at io.cucumber.core.resource.PathScanner.findResourcesForUri(PathScanner.java:28)
 at io.cucumber.core.resource.ResourceScanner.findResourcesForUri(ResourceScanner.java:61)
 at io.cucumber.core.resource.ResourceScanner.scanForResourcesUri(ResourceScanner.java:134)
@@ -82,11 +53,11 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- io.cucumber.core.gherkin.FeatureParserException -->
+          </exception> <!-- java.lang.IllegalArgumentException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-23T16:28:48 IST" name="tearDownClass" finished-at="2023-06-23T16:28:48 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@795509d9]" started-at="2023-06-29T14:37:35 IST" name="tearDownClass" finished-at="2023-06-29T14:37:35 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

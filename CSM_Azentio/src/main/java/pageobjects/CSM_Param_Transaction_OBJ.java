@@ -795,4 +795,85 @@ public WebElement csmTransactionTypeAllowBackdatedValueDate()
 {
     return csm_TransactionType_AllowBackdatedValueDate;
 }
+
+
+@FindBy(xpath= "//label[text()='Multiple Transfer ']")
+private WebElement csm_TransactionType_MultipleTransferCheckBox;
+public WebElement csmTransactionTypeMultipleTransferCheckBox()
+{
+    return csm_TransactionType_MultipleTransferCheckBox;
+}
+
+
+@FindBy(xpath= "//select[@id='trsfr_method_D001MT']")
+private WebElement csmcore_Transaction_Maintanence_ModeOfPaymentDropDown;
+public WebElement csmcoreTransactionMaintanenceModeOfPaymentDropDown()
+{
+    return csmcore_Transaction_Maintanence_ModeOfPaymentDropDown;
+}
+
+@FindBy(xpath= "//input[@id='currencyGridTbl_Id_gs_CURRENCY_CODE']")
+private WebElement csmcore_Transaction_Maintanence_ModeOfPaymentDropDown_CashCurrency;
+public WebElement csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrency()
+{
+    return csmcore_Transaction_Maintanence_ModeOfPaymentDropDown_CashCurrency;
+}
+
+@FindBy(xpath= "//td[@id='td_currencyGridTbl_Id_1_CURRENCY_CODE']")
+private WebElement csmcore_Transaction_Maintanence_ModeOfPaymentDropDown_CashCurrency_doubleClick;
+public WebElement csmcoreTransactionMaintanenceModeOfPaymentDropDownCashCurrencydoubleClick()
+{
+    return csmcore_Transaction_Maintanence_ModeOfPaymentDropDown_CashCurrency_doubleClick;
+}
+
+@FindBy(xpath= "//td[@id='td_trxMgntAccountDtlGridTbl_Id_D001MT_1_rn']")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton_clicktherecord;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButtonclicktherecord()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton_clicktherecord;
+}
+
+@FindBy(xpath= "//label[text()='Account Details ']")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButton()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton;
+}
+
+@FindBy(xpath= "//span[text()='Account Details']")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton_Randomclick;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButtonRandomclick()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton_Randomclick;
+}
+
+@FindBy(xpath= "//td[@id='add_trxMgntAccountDtlGridTbl_Id_D001MT']")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton_AddButton;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButtonAddButton()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton_AddButton;
+}
+
+
+@FindBy(xpath= "(//div[text()='GL']//following::input)[1]")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton_GLinputbox;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButtonGLinputbox()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton_GLinputbox;
+}
+
+
+@FindBy(xpath= "(//div[text()='CIF']//following::input)[2]")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton_CIFinputbox;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButtonCIFinputbox()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton_CIFinputbox;
+}
+
+@FindBy(xpath= "(//div[text()='SL']//following::input)[3]")
+private WebElement csmcore_Transaction_Maintanence_AccountDetailsButton_Serialnoinputbox;
+public WebElement csmcoreTransactionMaintanenceAccountDetailsButtonSerialnoinputbox()
+{
+    return csmcore_Transaction_Maintanence_AccountDetailsButton_Serialnoinputbox;
+}
 }
