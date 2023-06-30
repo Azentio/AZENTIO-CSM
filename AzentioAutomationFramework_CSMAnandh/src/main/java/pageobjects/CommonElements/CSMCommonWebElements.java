@@ -425,16 +425,25 @@ public class CSMCommonWebElements {
 	public WebElement csmCommonUpdateScreenQuitOkButtton() {
 		return csmCommon_UpdateScreenQuitOkButton;
 	}
-	@FindBy(xpath="//td[@title='Add new row']//span[@class='ui-icon ui-icon-plus']")
+
+	@FindBy(xpath = "//td[@title='Add new row']//span[@class='ui-icon ui-icon-plus']")
 	private WebElement csmCommon_GridAddButton;
 
 	public WebElement csmCommonGridAddButton() {
 		return csmCommon_GridAddButton;
 	}
-	@FindBy(xpath="//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
+
+	@FindBy(xpath = "//td[@title='Delete selected row']//span[@class='ui-icon ui-icon-trash']")
 	private WebElement csmCommon_GridDeleteButton;
 
 	public WebElement csmCommonGridDeleteButton() {
 		return csmCommon_GridDeleteButton;
+	}
+
+	@FindBy(xpath = "//span[contains(text(),'close')]")
+	private WebElement csmPopup_CloseButton;
+
+	public WebElement csmPopupCloseButton() {
+		return csmPopup_CloseButton;
 	}
 }

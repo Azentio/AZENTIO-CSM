@@ -26,13 +26,13 @@ And click on cheque request module
 And click on cheque book request maintenance screen
 And get the test data for CW_002
 And enter the number of cheque book in cheque book request
-And enter the chque code in cheque book request
+And enter the cheque code in cheque book request
 And enter the account branch code in cheque book request
 And enter the acount currency code in cheque book request
 And enter the gl code in cheque book request
 And enter the CIF code in cheque book request
 And enter the serial number in cheque book request
-And click on charges in chque book request
+And click on charges in cheque book request
 And click on save button in cheque book request
 Then validate system should show the validation for charges have waiveds
 @CW_003

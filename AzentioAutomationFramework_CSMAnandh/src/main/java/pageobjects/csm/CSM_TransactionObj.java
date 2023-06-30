@@ -83,6 +83,7 @@ public class CSM_TransactionObj {
 		return transaction_TransactionTypeInputDescription;
 	}
 
+	// input[@id='to_trs_ac_br_D001MT']
 	@FindBy(xpath = "//input[@id='trs_ac_br_D001MT']")
 	private WebElement transactionType_DebitBranchCode;
 
@@ -340,6 +341,13 @@ public class CSM_TransactionObj {
 
 	public WebElement transactionApproveOkButton() {
 		return transaction_ApproveOkButton;
+	}
+
+	@FindBy(xpath = "//center//input[@value='Cancel']")
+	private WebElement transaction_PrintCreditAndDebitAdviceCancelButton;
+
+	public WebElement transactionPrintCreditAndDebitAdviceCancelButton() {
+		return transaction_PrintCreditAndDebitAdviceCancelButton;
 	}
 
 	@FindBy(xpath = "//td[contains(text(),'Transactions')]//ancestor::h3//following-sibling::ul//span[text()='To Be Stopped  Standing Order']")
@@ -784,4 +792,24 @@ public class CSM_TransactionObj {
 		return transactionManagement_CancelTabClose;
 	}
 
+	@FindBy(xpath = "//select[@name='trxMgntCO.ctstrsVO.TRSFR_METHOD']")
+	private WebElement transactionManagement_ModeOfPaymentDrodown;
+
+	public WebElement transactionManagementModeOfPaymentDrodown() {
+		return transactionManagement_ModeOfPaymentDrodown;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'Invalid/Missing trx type')]//parent::div//following-sibling::center//input[1]")
+	private WebElement csm_InvalidMissingTransactionTypeValidation;
+
+	public WebElement csmInvalidMissingTransactionTypeValidation() {
+		return csm_InvalidMissingTransactionTypeValidation;
+	}
+
+	@FindBy(xpath = "//div[contains(text(),'No access')]//parent::div//following-sibling::center//input[1]")
+	private WebElement csm_NoAccessTransactionTypeValidation;
+
+	public WebElement csmNoAccessTransactionTypeValidation() {
+		return csm_NoAccessTransactionTypeValidation;
+	}
 }

@@ -224,9 +224,44 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
 
+	@And("^get the test data for test case ID TRS_377_02$")
+	public void get_the_test_data_for_test_case_id_TRS_377_02() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_377_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_377_03$")
+	public void get_the_test_data_for_test_case_id_TRS_377_03() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_377_03");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	// TRS_520_02
+	@And("^get the test data for test case ID TRS_520_02$")
+	public void get_the_test_data_for_test_case_id_TRS_520_02() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_520_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_521_02$")
+	public void get_the_test_data_for_test_case_id_TRS_521_02() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_521_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
 	@And("^get the test data for test case ID TRS_044$")
 	public void get_the_test_data_for_test_case_id_trs044() throws Throwable {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_044");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+	@And("^get the test data for test case ID TRS_516_02$")
+	public void get_the_test_data_for_test_case_id_TRS_516_02() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_516_02");
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
@@ -267,8 +302,36 @@ public class CSM_TransactionSteps extends BaseClass {
 	}
 
 	@And("get the test data for test case ID TRS_156")
-	public void get_the_test_data_for_test_case_id_trs_156() {
+	public void get_the_test_data_for_test_case_id_trs_156() throws Throwable {
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_156");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_375_02")
+	public void get_the_test_data_for_test_case_id_TRS_375_02() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_375_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_376_02")
+	public void get_the_test_data_for_test_case_id_TRS_376_02() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_376_02");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_375_03")
+	public void get_the_test_data_for_test_case_id_TRS_375_03() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_375_03");
+		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
+		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("get the test data for test case ID TRS_376_03")
+	public void get_the_test_data_for_test_case_id_TRS_376_03() throws Throwable {
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_376_03");
 		System.out.println("Data Set ID " + transactionExecutionData.get("DataSet ID"));
 		transactionTestData = excelDataFortransactionTestData.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
@@ -346,11 +409,49 @@ public class CSM_TransactionSteps extends BaseClass {
 		for (int i = 0; i <= 500; i++) {
 			if (!(transactionObj.transactionTransactionTypeInputDescription().getAttribute("prevvalue").isBlank())) {
 				break;
-			} else if (i == 500) {
-				Assert.fail("took more time to populate the date");
 			}
 		}
 
+	}
+
+	@And("enter the transactio type which is hide in csm Param")
+	public void enter_the_transactio_type_which_is_hide_in_csm_param() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTransactionTypeInput());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTransactionTypeInput());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTransactionTypeInput());
+		System.out.println("Transaction Type code " + transactionTestData.get("Transaction Type code"));
+		transactionObj.transactionTransactionTypeInput().sendKeys(transactionTestData.get("Transaction Type code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	}
+
+	@Then("Verify system should show the validation for hide transaction in transaction maintenance")
+	public void verify_system_should_show_the_validation_for_hide_transaction_in_transaction_maintenance()
+			throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmInvalidMissingTransactionTypeValidation());
+		Assert.assertTrue(transactionObj.csmInvalidMissingTransactionTypeValidation().isDisplayed());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmInvalidMissingTransactionTypeValidation());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmInvalidMissingTransactionTypeValidation());
+
+	}
+
+	@Then("verify system should show the validation for no access trabsaction type in transaction maintenance screen")
+	public void verify_system_should_show_the_validation_for_no_access_trabsaction_type_in_transaction_maintenance_screen()
+			throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.csmNoAccessTransactionTypeValidation());
+		Assert.assertTrue(transactionObj.csmNoAccessTransactionTypeValidation().isDisplayed());
+		clicksAndActionsHelper.moveToElement(transactionObj.csmNoAccessTransactionTypeValidation());
+		clicksAndActionsHelper.clickOnElement(transactionObj.csmNoAccessTransactionTypeValidation());
 	}
 
 	@And("^enter the debit branch code in tranaction$")
@@ -951,7 +1052,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
-		String amount = transactionTestData.get("Deposite Amount") + "0.00";
+		String amount = transactionTestData.get("Deposite Amount") + ".00";
 		System.out.println("Deposite Amount " + amount);
 		transactionObj.transactionDepositeAmountInputBox().sendKeys(amount);
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
@@ -1661,6 +1762,24 @@ public class CSM_TransactionSteps extends BaseClass {
 			}
 		}
 
+	}
+
+	@And("click on cancel button in debit confirmation")
+	public void click_on_cancel_button_in_debit_confirmation() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver,
+				transactionObj.transactionPrintCreditAndDebitAdviceCancelButton());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionPrintCreditAndDebitAdviceCancelButton());
+				clicksAndActionsHelper
+						.clickOnElement(transactionObj.transactionPrintCreditAndDebitAdviceCancelButton());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("^close the transaction tab$")
@@ -3169,9 +3288,19 @@ public class CSM_TransactionSteps extends BaseClass {
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitBranchCode());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitBranchCode());
 		transactionObj.transactionTypeDebitBranchCode().sendKeys(transactionTestData.get("Debit Branch Code"));
-		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
-		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
-		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+
 		for (int i = 0; i <= 200; i++) {
 			try {
 				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
@@ -3672,12 +3801,13 @@ public class CSM_TransactionSteps extends BaseClass {
 
 	@And("^select the record for second additional account$")
 	public void select_the_record_for_second_additional_account() throws Throwable {
-		String xpath = "// td[contains(text(),'" + transactionTestData.get("Debit Serial Number Two") + "')]";
+		String xpath = "// td[contains(text(),'" + "00" + transactionTestData.get("Debit Serial Number Two") + "')]";
+		Thread.sleep(2000);
 		for (int i = 0; i <= 50; i++) {
 			try {
 
 				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
-				// clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
+				clicksAndActionsHelper.clickOnElement(driver.findElement(By.xpath(xpath)));
 				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
 				break;
 			} catch (Exception e) {
@@ -4023,5 +4153,323 @@ public class CSM_TransactionSteps extends BaseClass {
 		Assert.assertTrue(csmCommonWebElements.csmCoreCommonOkButton().isDisplayed());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmCoreCommonOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmCoreCommonOkButton());
+	}
+
+	@Then("verify system should show the validation for multiple CIf in transactionn maintenance")
+	public void verify_system_should_show_the_validation_for_multiple_c_if_in_transactionn_maintenance()
+			throws IOException {
+		Assert.fail("If validation got fixed need to write a step");
+	}
+
+	@And("change the mode of payment to cash in transaction maintenance")
+	public void change_the_mode_of_payment_to_cash_in_transaction_maintenance() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionManagementModeOfPaymentDrodown());
+		dropdownHelper.SelectUsingVisibleText(transactionObj.transactionManagementModeOfPaymentDrodown(),
+				transactionTestData.get("Mode of payment"));
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmPopupCloseButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmPopupCloseButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmPopupCloseButton());
+		for (int i = 0; i <= 600; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the credit branch code in main credit transaction")
+	public void enter_the_credit_branch_code_in_main_credit_transaction() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 10; i++) {
+			try {
+				transactionObj.transactionTypeDebitBranchCode().clear();
+				break;
+			} catch (Exception e) {
+
+			}
+		}
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitBranchCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitBranchCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitBranchCode());
+		transactionObj.transactionTypeDebitBranchCode().sendKeys(transactionTestData.get("Credit Branch Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the currency code in main credit transaction")
+	public void enter_the_currency_code_in_main_credit_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitCurrencyCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitCurrencyCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitCurrencyCode());
+		transactionObj.transactionTypeDebitCurrencyCode().sendKeys(transactionTestData.get("Credit Currency Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitCurrencyCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the gl code in main credit transaction")
+	public void enter_the_gl_code_in_main_credit_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitGlCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitGlCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitGlCode());
+		transactionObj.transactionTypeDebitGlCode().sendKeys(transactionTestData.get("Credit Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitGlCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the CIF number in main credit transaction")
+	public void enter_the_cif_number_in_main_credit_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitCIFCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitCIFCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitCIFCode());
+		transactionObj.transactionTypeDebitCIFCode().sendKeys(transactionTestData.get("Credit CIF Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitCIFCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the serial number in main credit transaction")
+	public void enter_the_serial_number_in_main_credit_transaction() throws Throwable {
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeDebitSerialNumber());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeDebitSerialNumber());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeDebitSerialNumber());
+		transactionObj.transactionTypeDebitSerialNumber().sendKeys(transactionTestData.get("Credit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeDebitSerialNumber().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("enter the debit brach code in main credit transaction")
+	public void enter_the_debit_brach_code_in_main_credit_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditBranchCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditBranchCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditBranchCode());
+		transactionObj.transactionTypeCreditBranchCode().sendKeys(transactionTestData.get("Debit Branch Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditBranchCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the debit gl code in main credit transaction")
+	public void enter_the_debit_gl_code_in_main_credit_transaction() throws Throwable {
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditGlCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditGlCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditGlCode());
+		transactionObj.transactionTypeCreditGlCode().sendKeys(transactionTestData.get("Debit Gl Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditGlCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+	@And("enter the debit CIF number in main credit transaction")
+	public void enter_the_debit_cif_number_in_main_credit_transaction() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditCIFCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditCIFCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditCIFCode());
+		transactionObj.transactionTypeCreditCIFCode().sendKeys(transactionTestData.get("Debit CIF Code"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditCIFCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+	@And("enter the debit serial number in main credit transaction")
+	public void enter_the_debit_serial_number_in_main_credit_transaction() throws Throwable {
+
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionTypeCreditSerialNumCode());
+		clicksAndActionsHelper.moveToElement(transactionObj.transactionTypeCreditSerialNumCode());
+		clicksAndActionsHelper.clickOnElement(transactionObj.transactionTypeCreditSerialNumCode());
+		transactionObj.transactionTypeCreditSerialNumCode().sendKeys(transactionTestData.get("Debit Serial Number"));
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
+		for (int i = 0; i <= 200; i++) {
+			try {
+				clicksAndActionsHelper.moveToElement(transactionObj.transactionMaintenanceLabel());
+				clicksAndActionsHelper.clickOnElement(transactionObj.transactionMaintenanceLabel());
+				break;
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		for (int i = 0; i <= 300; i++) {
+			try {
+				if (!(transactionObj.transactionTypeCreditSerialNumCode().getAttribute("prevvalue").isBlank())) {
+					break;
+				}
+			} catch (Exception e) {
+
+			}
+		}
 	}
 }

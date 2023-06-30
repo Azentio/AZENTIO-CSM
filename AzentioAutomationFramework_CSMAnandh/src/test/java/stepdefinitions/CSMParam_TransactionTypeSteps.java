@@ -64,7 +64,7 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
-	
+
 	@And("^get the test data for test case ID CW_040_02$")
 	public void get_the_test_data_for_test_case_id_TRS_040_02() throws Throwable {
 
@@ -73,6 +73,7 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
+
 	@And("^get the test data for test case ID CW_039_02$")
 	public void get_the_test_data_for_test_case_id_TRS_039_02() throws Throwable {
 
@@ -81,6 +82,7 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
+
 	@And("^get the test data for test case ID CW_038_02$")
 	public void get_the_test_data_for_test_case_id_TRS_038_02() throws Throwable {
 
@@ -115,6 +117,54 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 	public void get_the_test_data_for_test_case_id_trs15601() throws Throwable {
 		// excelDataForTransactionTestData
 		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_156_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_375_01$")
+	public void get_the_test_data_for_test_case_id_TRS_373_01() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_375_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_376_01$")
+	public void get_the_test_data_for_test_case_id_TRS_376_01() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_376_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_377_01$")
+	public void get_the_test_data_for_test_case_id_TRS_377_01() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_377_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_520_01$")
+	public void get_the_test_data_for_test_case_id_TRS_520_01() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_520_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_521_01$")
+	public void get_the_test_data_for_test_case_id_TRS_521_01() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_521_01");
+		transactionTypeTestData = excelDataForTransactionTestData
+				.getTestdata(transactionExecutionData.get("DataSet ID"));
+	}
+
+	@And("^get the test data for test case ID TRS_516_01$")
+	public void get_the_test_data_for_test_case_id_TRS_516_01() throws Throwable {
+		// excelDataForTransactionTestData
+		transactionExecutionData = excelDataForTransactionExecution.getTestdata("TRS_516_01");
 		transactionTypeTestData = excelDataForTransactionTestData
 				.getTestdata(transactionExecutionData.get("DataSet ID"));
 	}
@@ -174,15 +224,36 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		}
 	}
 
+	@And("search the type of transaction in transaction type search grid")
+	public void search_the_type_of_transaction_in_transaction_type_search_grid() throws Throwable {
+		robot = new Robot();
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeSearchTypeCode());
+		clicksAndActionsHelper.clickUsingActionClass(transactionTypeObj.transactionTypeSearchTypeCode(),
+				transactionTypeObj.transactionTypeSearchTypeCode());
+		transactionTypeObj.transactionTypeSearchTypeCode().sendKeys(transactionTypeTestData.get("Type"));
+		transactionTypeObj.transactionTypeSearchTypeCode().sendKeys(Keys.ENTER);
+		for (int i = 0; i <= 10; i++) {
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		}
+	}
+
 	@And("^select the transaction record in update after approve screen$")
 	public void select_the_transaction_record_in_update_after_approve_screen() throws Throwable {
-		String xpath = "//td[contains(text(),'" + transactionTypeTestData.get("TransactionType") + "')]";
+		String xpath = "//td[text()='" + transactionTypeTestData.get("TransactionType") + "']";
+		System.out.println("Xpath " + xpath);
 		for (int i = 0; i <= 300; i++) {
 			try {
 				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
 				clicksAndActionsHelper.doubleClick(driver.findElement(By.xpath(xpath)));
+				System.out.println("Element clicked");
 				break;
 			} catch (Exception e) {
+				if (i % 11 == 0) {
+					System.out.println("Next Button");
+					clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeGridNextButton());
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeGridNextButton());
+				}
 				if (i == 300) {
 					Assert.fail(e.getMessage());
 				}
@@ -295,7 +366,6 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeEnableMultiBranchFalg());
 		}
 	}
-	
 
 	@And("uncheck the flag allow user to modify and clear charge flag under transaction Type")
 	public void uncheck_the_flag_allow_user_to_modify_and_clear_charge_flag_under_transaction_type()
@@ -325,9 +395,9 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
 		}
 	}
+
 	@And("check the flag allow user to modify and clear charge flag under transaction Type")
-	public void check_the_flag_allow_user_to_modify_and_clear_charge_flag_under_transaction_type()
-			throws IOException {
+	public void check_the_flag_allow_user_to_modify_and_clear_charge_flag_under_transaction_type() throws IOException {
 		for (int i = 0; i <= 100000; i++)
 
 		{
@@ -342,14 +412,14 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		}
 		String flagStatus = transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag()
 				.getAttribute("initialvalue");
-		
+
 		if (flagStatus.equals("checked")) {
-		
+
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
-		
+
 		} else {
 			clicksAndActionsHelper.moveToElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
 			clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeAllowUSerToModifyClearChargeFlag());
@@ -536,6 +606,202 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		}
 	}
 
+	@And("check the main account is debit flag in account type screen")
+	public void check_the_main_account_is_debit_flag_in_account_type_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeMainAccountDebitFlag());
+		String flagStatus = transactionTypeObj.transactionTypeMainAccountDebitFlag().getAttribute("initialvalue");
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equals("checked")) {
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeMainAccountDebitFlag());
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeMainAccountDebitFlag());
+					break;
+				} else {
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeMainAccountDebitFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("check the forbit multiple CIF flag in transaction type")
+	public void check_the_forbit_multiple_cif_flag_in_transaction_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeForbitMultipleCIFFlag());
+		String flagStatus = transactionTypeObj.transactionTypeForbitMultipleCIFFlag().getAttribute("initialvalue");
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equals("checked")) {
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeForbitMultipleCIFFlag());
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeForbitMultipleCIFFlag());
+					break;
+				} else {
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeForbitMultipleCIFFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("select the mode of payment as normal behaviour in transaction type")
+	public void select_the_mode_of_payment_as_normal_behaviour_in_transaction_type() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeModeOfPaymentDropdown());
+		dropdownHelper.SelectUsingIndex(transactionTypeObj.transactionTypeModeOfPaymentDropdown(), 0);
+		dropdownHelper.SelectUsingIndex(transactionTypeObj.transactionTypeModeOfPaymentDropdown(), 1);
+		dropdownHelper.SelectUsingIndex(transactionTypeObj.transactionTypeModeOfPaymentDropdown(), 2);
+		dropdownHelper.SelectUsingVisibleText(transactionTypeObj.transactionTypeModeOfPaymentDropdown(),
+				transactionTypeTestData.get("Mode of payment"));
+	}
+
+	@And("check the hide in transcation flag in transaction type screen")
+	public void check_the_hide_in_transcation_flag_in_transaction_type_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeHideTransactionFlag());
+		String flagStatus = transactionTypeObj.transactionTypeHideTransactionFlag().getAttribute("initialvalue");
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equals("checked")) {
+
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeHideTransactionFlag());
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeHideTransactionFlag());
+					break;
+				} else {
+
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeHideTransactionFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("uncheck the hide in transcation flag in transaction type screen")
+	public void uncheck_the_hide_in_transcation_flag_in_transaction_type_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeHideTransactionFlag());
+		String flagStatus = transactionTypeObj.transactionTypeHideTransactionFlag().getAttribute("initialvalue");
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equals("checked")) {
+
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeHideTransactionFlag());
+					break;
+				} else {
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeHideTransactionFlag());
+					clicksAndActionsHelper.clickOnElement(transactionTypeObj.transactionTypeHideTransactionFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("uncheck the not to be used transaction flag in trasaction type screen")
+	public void uncheck_the_not_to_be_used_transaction_flag_in_trasaction_type_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+		String flagStatus = transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag().getAttribute("initialvalue");
+		System.out.println("Flag status "+flagStatus);
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equalsIgnoreCase("checked")) {
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					break;
+				} else {
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("check the not to be used transaction flag in trasaction type screen")
+	public void check_the_not_to_be_used_transaction_flag_in_trasaction_type_screen() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+		String flagStatus = transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag().getAttribute("initialvalue");
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equals("checked")) {
+
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					break;
+				} else {
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
+	@And("check the automatic approve if user is with in limit flag")
+	public void check_the_automatic_approve_if_user_is_with_in_limit_flag() throws Throwable {
+		for (int i = 0; i <= 300; i++) {
+			try {
+				javascriptHelper.scrollIntoView(transactionTypeObj.transactionTypeFAutoApproveWithinLimitFlag());
+				break;
+			} catch (Exception e) {
+				if (i == 300) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		String flagStatus = transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag().getAttribute("initialvalue");
+		System.out.println("Flag status "+flagStatus);
+		for (int i = 0; i <= 200; i++) {
+			try {
+				if (flagStatus.equals("checked")) {
+
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					break;
+				} else {
+					clicksAndActionsHelper
+							.clickOnElement(transactionTypeObj.transactionTypeNotBeUsedInTransactionFlag());
+					break;
+				}
+			} catch (Exception e) {
+				if (i == 200) {
+					Assert.fail(e.getMessage());
+				}
+			}
+
+		}
+	}
+
 	@And("^click on update after approve button in transaction type$")
 	public void click_on_update_after_approve_button_in_transaction_type() throws Throwable {
 		for (int i = 0; i <= 100; i++) {
@@ -705,7 +971,7 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 
 	@And("^select the updated transaction type in approval screen$")
 	public void select_the_updated_transaction_type_in_approval_screen() throws Throwable {
-		String xpath = "//td[contains(text(),'" + transactionTypeTestData.get("TransactionType") + "')]";
+		String xpath = "//td[text()='" + transactionTypeTestData.get("TransactionType") + "']";
 		for (int i = 0; i <= 300; i++) {
 			try {
 				clicksAndActionsHelper.moveToElement(driver.findElement(By.xpath(xpath)));
@@ -774,6 +1040,17 @@ public class CSMParam_TransactionTypeSteps extends BaseClass {
 		System.out.println("Transaction Type " + transactionTypeTestData.get("TransactionType"));
 
 		System.out.println("Data Set ID " + transactionTypeTestData.get("Update_data_set_id_1"));
+	}
+
+	@And("store the transaction type in transactions excelData base")
+	public void store_the_transaction_type_in_transactions_excel_data_base() throws Throwable {
+
+		System.out.println("data Set ID " + transactionTypeTestData.get("Update_data_set_id_1"));
+		System.out.println("data Set ID " + transactionTypeTestData.get("Update_data_set_id_2"));
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_1"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
+		excelDataForTransactionData.updateTestData(transactionTypeTestData.get("Update_data_set_id_2"),
+				"Transaction Type code", transactionTypeTestData.get("TransactionType"));
 	}
 
 }

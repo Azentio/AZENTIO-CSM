@@ -1506,3 +1506,517 @@ And search the approved trsnaction number in transaction maintenenace screen
 Then verify transaction status should show as approved
 And open the approved transaction record
 And click on booked entries button in approved transactions
+
+
+@TRS_373_01
+Scenario: Un check the Proceed on Modified account flag in account control records in CSM Param
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on accounts parameter
+And user_076 click on account control records
+And user_076 click on update after approve of account control records
+And user_076 click on JV accounts details tab
+And user_076 click onn account sectionn in account control record
+And user_076 un check the proceed on modified account flag
+And user_076 click on update after approve button in account control record
+And user_076 click on ok button in update confirmation on account control records
+And user_076 click on ok button in update successfull ok button
+And user_076 click on approve feature in account control records
+And user_076 click on approve buttoon in account control record
+And user_076 click on ok button in approve confirmation ok button in account control record
+And user_076 click on ok button in approve Successfull ok button in account control record
+@TRS_375_01
+Scenario: In transaction type setting the parameters check the forbit multiple CIF and set the mode of payment normal behaviour
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_375_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And select the transaction record in update after approve screen
+And check the main account is debit flag in account type screen
+And check the forbit multiple CIF flag in transaction type
+And select the mode of payment as normal behaviour in transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+
+@TRS_375_02
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx Intrabank Single Transfer Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_375_02
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code  
+And enter the amount for debit from the account
+And enter the credit branch code
+And enter the credit gl code
+And enter the credit cif number
+And enter the credit serial number
+And click on ok buton in staff member ok button
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_375_02
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+@TRS_375_03
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx Intrabank Single Transfer Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_375_03
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code  
+And enter the amount for debit from the account
+And enter the credit branch code
+And enter the credit gl code
+And enter the credit cif number
+Then verify system should show the validation for multiple CIf in transactionn maintenance
+
+@TRS_375_01
+Scenario: In transaction type setting the parameters check the forbit multiple CIF and set the mode of payment normal behaviour
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_375_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And select the transaction record in update after approve screen
+And check the main account is debit flag in account type screen
+And check the forbit multiple CIF flag in transaction type
+And select the mode of payment as normal behaviour in transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+
+@TRS_375_02
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx Intrabank Single Transfer Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_375_02
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code  
+And enter the amount for debit from the account
+And enter the credit branch code
+And enter the credit gl code
+And enter the credit cif number
+And enter the credit serial number
+And click on ok buton in staff member ok button
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_375_02
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+@TRS_375_03
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx Intrabank Single Transfer Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_375_03
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the debit branch code
+And enter the debit currency code
+And enter the debit gl code
+And enter the debit cif number
+And enter the debit debit serial number
+And click on ok buton in staff member ok button
+And enter the currency code  
+And enter the amount for debit from the account
+And enter the credit branch code
+And enter the credit gl code
+And enter the credit cif number
+Then verify system should show the validation for multiple CIf in transactionn maintenance
+
+@TRS_376_01
+Scenario: In transaction type setting the parameters check the forbit multiple CIF and set the mode of payment normal behaviour
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_376_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And select the transaction record in update after approve screen
+And check the main account is debit flag in account type screen
+And check the forbit multiple CIF flag in transaction type
+And select the mode of payment as normal behaviour in transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+
+@TRS_376_02
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx Intrabank Single Transfer Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_376_02
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And change the mode of payment to cash in transaction maintenance
+#And enter the credit branch code in main credit transaction
+#And enter the currency code in main credit transaction
+#And enter the gl code in main credit transaction
+#And enter the CIF number in main credit transaction
+#And enter the serial number in main credit transaction
+#And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for debit from the account
+And enter the debit brach code in main credit transaction
+And enter the debit gl code in main credit transaction 
+And enter the debit CIF number in main credit transaction
+And enter the debit serial number in main credit transaction
+And click on ok buton in staff member ok button
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_376_02
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_376_03
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx Intrabank Single Transfer Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_376_03
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And change the mode of payment to cash in transaction maintenance
+#And enter the credit branch code in main credit transaction
+#And enter the currency code in main credit transaction
+#And enter the gl code in main credit transaction
+#And enter the CIF number in main credit transaction
+#And enter the serial number in main credit transaction
+#And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for debit from the account
+And enter the debit brach code in main credit transaction
+And enter the debit gl code in main credit transaction 
+And enter the debit CIF number in main credit transaction
+And enter the debit serial number in main credit transaction
+And click on ok buton in staff member ok button
+Then verify system should show the validation for multiple CIf in transactionn maintenance
+
+
+@TRS_377_01
+Scenario: In transaction type setting the parameters check the forbit multiple CIF and set the mode of payment normal behaviour
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_377_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And search the type of transaction in transaction type search grid
+And select the transaction record in update after approve screen
+And check the main account is debit flag in account type screen
+And check the forbit multiple CIF flag in transaction type
+And select the mode of payment as normal behaviour in transaction type
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+
+@TRS_377_02
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx - Intrabank - Multi Transfer - Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_377_02
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the amount for deposite in transaction
+And click on account details button in transaction maintenance
+And click on add button in acccount details of transaction maintenance
+And enter the branch code in first grid of account details
+And enter the gl code in frist grid of account details
+And enter the cif number in first grid of account details
+And enter the serial number in frist grid of account details
+And click on ok buton in staff member ok button
+And enter the amount in first grid of account details
+And click on add button in acccount details of transaction maintenance
+And click on live search in second row of account details
+And enter the second account branch code in account details
+And search the second gl code in additional account details
+And search the second cif number in additional account details
+And search the second serial number in additional account details
+And select the record for second additional account
+And click on ok buton in staff member ok button
+And enter the amount in second grid of account details
+And click on ok button in additional account details
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_377_02
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And click on cancel button in debit confirmation
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+
+@TRS_377_03
+Scenario: Check if the system accept multiple CIF whenever creating Transfer Trx - Intrabank - Multi Transfer - Mode of Payment A/C
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_377_03
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the amount for deposite in transaction
+And click on account details button in transaction maintenance
+And click on add button in acccount details of transaction maintenance
+And enter the branch code in first grid of account details
+And enter the gl code in frist grid of account details
+And enter the cif number in first grid of account details
+Then verify system should show the validation for multiple CIf in transactionn maintenance
+
+
+@TRS_520_01
+Scenario: In transaction type setting the parameters check the hide transaction flag and un check the not be used transaction flag
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_520_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And search the type of transaction in transaction type search grid
+And select the transaction record in update after approve screen
+And check the hide in transcation flag in transaction type screen
+And uncheck the not to be used transaction flag in trasaction type screen
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+@TRS_520_02
+Scenario: checking if the system is hiding the transaction type under transaction screen 
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_520_02
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transactio type which is hide in csm Param
+Then Verify system should show the validation for hide transaction in transaction maintenance
+@TRS_521_01
+Scenario: In transaction type setting the parameters check the hide transaction flag and un check the not be used transaction flag
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_521_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And search the type of transaction in transaction type search grid
+And select the transaction record in update after approve screen
+And uncheck the hide in transcation flag in transaction type screen
+And check the not to be used transaction flag in trasaction type screen
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+@TRS_521_02
+Scenario: checking if the system is hiding the transaction type under transaction screen 
+Given navigate to CSM application and login with valid credentials
+And get the test data for test case ID TRS_521_02
+And change the system date to given date
+And click on tech option
+And click on clear cache option
+Then verify system shows success pop up for clearing the cache
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transactio type which is hide in csm Param
+Then verify system should show the validation for no access trabsaction type in transaction maintenance screen
+
+@TRS_516_01
+Scenario: In transaction type setting the parameters check the hide transaction flag and un check the not be used transaction flag
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on system parameter
+And get the test data for test case ID TRS_516_01
+And click on transaction type feature
+And click on update after approve in transcation type
+And search the transaction type in update after approve transaction type
+And search the type of transaction in transaction type search grid
+And select the transaction record in update after approve screen
+And check the automatic approve if user is with in limit flag
+And uncheck the not to be used transaction flag in trasaction type screen
+And click on update after approve button in transaction type
+And click on ok button in update confirmation of transaction type
+And click on ok button of successfull update in transaction type
+And close the transaction type update after approve screen
+And click on ok button
+And click on approve feature under transaction type
+And search for the transaction type which is updated
+And select the updated transaction type in approval screen
+And click on approve button in transaction type approval
+And click on ok button in update confirmation in transaction type
+And click on ok button in successful approval of transaction type
+And store the transaction type in transactions excelData base
+
+
+@TRS_516_02
+Scenario: Checking Cash Deposit Transaction - Interbranch
+And get the test data for test case ID TRS_516_02
+Given navigate to CSM application and login with valid credentials
+And change the system date to given date
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And enter the serial number for cash deposite
+And click on ok buton in staff member ok button
+And enter the currency code
+And enter the amount for deposite in transaction
+And click on save button in transaction 
+And store the transaction number in transaction excel database
+And get the test data for test case ID TRS_516_02
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved

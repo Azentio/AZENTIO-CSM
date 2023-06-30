@@ -34,6 +34,20 @@ public class CSMParam_TransactionTypeObj {
 		return transactionType_TransactionCode;
 	}
 
+	@FindBy(xpath = "//input[@name='TYPE']")
+	private WebElement transactionType_SearchTypeCode;
+
+	public WebElement transactionTypeSearchTypeCode() {
+		return transactionType_SearchTypeCode;
+	}
+
+	@FindBy(xpath = "//span[@class='ui-icon ui-icon-seek-next']")
+	private WebElement transactionTypeGrid_NextButton;
+
+	public WebElement transactionTypeGridNextButton() {
+		return transactionTypeGrid_NextButton;
+	}
+
 	@FindBy(xpath = "//a[contains(text(),'Parameters / System Parameters / Transaction Type / Update After Approve')]//parent::td//following-sibling::td//span")
 	private WebElement transactionType_UpdateAfterApproveLabelClose;
 
@@ -209,6 +223,54 @@ public class CSMParam_TransactionTypeObj {
 
 	public WebElement transactionTypeRequestCurrencyDenominationFlag() {
 		return transactionType_RequestCurrencyDenominationFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.CR_DR_FOREX")
+	private WebElement transactionType_MainAccountDebitFlag;
+
+	public WebElement transactionTypeMainAccountDebitFlag() {
+		return transactionType_MainAccountDebitFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.FORBID_MULTI_CIF_TRX")
+	private WebElement transactionType_ForbitMultipleCIFFlag;
+
+	public WebElement transactionTypeForbitMultipleCIFFlag() {
+		return transactionType_ForbitMultipleCIFFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.TRSFR_METHOD")
+	private WebElement transactionType_ModeOfPaymentDropdown;
+
+	public WebElement transactionTypeModeOfPaymentDropdown() {
+		return transactionType_ModeOfPaymentDropdown;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.CR_DR_FOREX")
+	private WebElement transactionType_MainCreditFlag;
+
+	public WebElement transactionTypeMainCreditFlag() {
+		return transactionType_MainCreditFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.NOT_USE_IN_TRX")
+	private WebElement transactionType_NotBeUsedInTransactionFlag;
+
+	public WebElement transactionTypeNotBeUsedInTransactionFlag() {
+		return transactionType_NotBeUsedInTransactionFlag;
+	}
+
+	@FindBy(name = "transactiontypesCO.ctstrxtypeVO.HIDE_IN_TRS")
+	private WebElement transactionType_HideTransactionFlag;
+
+	public WebElement transactionTypeHideTransactionFlag() {
+		return transactionType_HideTransactionFlag;
+	}
+	@FindBy(name="transactiontypesCO.ctstrxtypeVO.AUTO_APPROVE_WITHIN_LIMIT")
+	private WebElement transactionType_AutoApproveWithinLimitFlag;
+
+	public WebElement transactionTypeFAutoApproveWithinLimitFlag() {
+		return transactionType_AutoApproveWithinLimitFlag;
 	}
 
 }
