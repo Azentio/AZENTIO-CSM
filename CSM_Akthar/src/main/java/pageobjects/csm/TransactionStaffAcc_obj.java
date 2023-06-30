@@ -427,6 +427,13 @@ public class TransactionStaffAcc_obj {
 	}
 	
 	
+	@FindBy(xpath="(//span[text()='close'])[2]")
+	private WebElement transactions_AD_viewmemo_closebtn;
+	public WebElement transactionsADviewmemoclosebtn()
+	{
+		return transactions_AD_viewmemo_closebtn;
+	}
+	
 	@FindBy(xpath="//input[@id='lookuptxt_trs_cy_D001MT']")
 	private WebElement Transactions_debitAcc_currency;
 	public WebElement Transactions_debitAcc_currency()
@@ -892,11 +899,11 @@ public class TransactionStaffAcc_obj {
 		return Transactions_Charges_Briefname;
 	}
 	
-	@FindBy(xpath="//td[@id='td_chargesParamList_GridTbl_Id_C0011MA_2_ctschargesVO.CODE']")
-	private WebElement Transactions_Charges_existingdata;
-	public WebElement Transactions_Charges_existingdata()
+	@FindBy(xpath="//td[@id='td_chargesParamList_GridTbl_Id_C0011MA_1_ctschargesVO.CODE']")
+	private WebElement transactions_Charges_existingdata;
+	public WebElement transactionsChargesexistingdata()
 	{
-		return Transactions_Charges_existingdata;
+		return transactions_Charges_existingdata;
 	}
 	
 	
@@ -936,10 +943,10 @@ public class TransactionStaffAcc_obj {
 	}
 	
 	@FindBy(xpath="//td[@id='td_chargesParamList_GridTbl_Id_C0011P_1_ctschargesVO.CODE']")
-	private WebElement Transactions_Charges_Existingdata;
-	public WebElement Transactions_Charges_Existingdata()
+	private WebElement transactions_Charges_Appscrn_Existingdata;
+	public WebElement transactionsChargesAppscrnExistingdata()
 	{
-		return Transactions_Charges_Existingdata;
+		return transactions_Charges_Appscrn_Existingdata;
 	}
 	
 	@FindBy(xpath="//label[@id='chargesParamMaint_FormId_C0011P_Approve_key']")
@@ -975,9 +982,89 @@ public class TransactionStaffAcc_obj {
 	public WebElement Transactions_cv_charges()
 	{
 		return Transactions_cv_charges;
+	}	
+	
+	@FindBy(xpath="//td[text()='Acc Control Record']")
+	private WebElement accparameter_AccControlRecord;
+	public WebElement accparameterAccControlRecord()
+	{
+		return accparameter_AccControlRecord;
 	}
 	
-
+	@FindBy(xpath="//span[text()='Update After Approve']")
+	private WebElement accparameter_AccControlRecord_UPA;
+	public WebElement accparameterAccControlRecordUPA()
+	{
+		return accparameter_AccControlRecord_UPA;
+	}
+	
+	@FindBy(xpath="//span[text()='JV & Accounts']")
+	private WebElement accparameter_AccControlRecord_JvAccountsTab;
+	public WebElement accparameterAccControlRecordJvAccountsTab()
+	{
+		return accparameter_AccControlRecord_JvAccountsTab;
+	}
+	
+	@FindBy(xpath="//span[text()='Accounts']")
+	private WebElement accparameter_AccControlRecord_Accounts;
+	public WebElement accparameterAccControlRecordAccounts()
+	{
+		return accparameter_AccControlRecord_Accounts;
+	}
+	
+	@FindBy(xpath="//input[@name='accControlRecordCO.acc_NV_CONTROLVO.PROCEED_ON_MODIFIED_ACC_YN']")
+	private WebElement accparameter_AccControlRecord_ProceedFflag;
+	public WebElement accparameterAccControlRecordProceedFflag()
+	{
+		return accparameter_AccControlRecord_ProceedFflag;
+	}
+	
+	@FindBy(xpath="//label[@id='accControlRecordMaintFormId_ANC001MA_update_key']")
+	private WebElement accparameter_AccControlRecord_Updatebtn;
+	public WebElement accparameterAccControlRecordUpdatebtn()
+	{
+		return accparameter_AccControlRecord_Updatebtn;
+	}
+	
+	@FindBy(xpath="//td[text()='Accounts']")
+	private WebElement transaction_Accounts;
+	public WebElement transactionAccounts()
+	{
+		return transaction_Accounts;
+	}
+	
+	@FindBy(xpath="//td[text()='General Accounts']")
+	private WebElement transaction_Generalaccounts;
+	public WebElement transactionGeneralaccounts()
+	{
+		return transaction_Generalaccounts;
+	}
+	
+	@FindBy(xpath="//a[@id='A002MA']//span[text()='Maintenance']")
+	private WebElement transaction_Generalaccounts_maintenance;
+	public WebElement transactionGeneralaccountsmaintenance()
+	{
+		return transaction_Generalaccounts_maintenance;
+	}
+	
+	@FindBy(xpath="//input[@name='STATUS']")
+	private WebElement transaction_Generalaccounts_maintenance_status;
+	public WebElement transactionGeneralaccountsmaintenancestatus()
+	{
+		return transaction_Generalaccounts_maintenance_status;
+	}
+//	@FindBy(xpath="")
+//	private WebElement transaction_Generalaccounts_maintenance_status;
+//	public WebElement transactionGeneralaccountsmaintenancestatus()
+//	{
+//		return transaction_Generalaccounts_maintenance_status;
+//	}
+	
+	
+	
+	
+	
+	
 }
 
 	

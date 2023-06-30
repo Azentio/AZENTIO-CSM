@@ -19,7 +19,7 @@ Then Doubleclick of the existing record
 And  Click the Main Information 
 #Then Check the flag  Cif Staff(checking)
 And  Click the System Parameters
-Then Click the Transaction Type 
+Then User_613 Click the Transaction Type 
 And  Click the Update After Approve 
 Then Click the Search button
 And  Enter the code value 
@@ -74,10 +74,10 @@ Given Navigate to SADS application and login with valid credentials
 @TRS_017
 Scenario: Checking Multi Transfer (Main Credit) Transaction - Booked Entries + Balance Updates
 Given User login to Csm Param application
-And  user update test data set id for TRS_017 
+And user_613 update test data set id for TRS_017 
 Then Click the Parameters 
 And  Click the System Parameters
-And  User click the Transaction type 
+And  User_613 click the Transaction type 
 Then Click the Update after approve
 And  Enter the Code value 
 #Then User double click the Existing data 
@@ -85,10 +85,10 @@ And  just check the flag UPA
 Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 Then system show the success popup click ok button 
-And  User Click the Approve Below the Transaction type
+And  user_613 Click the Approve Below the Transaction type
 Then Enter the Approved record in the code 
-And  User Double Click the Data
-And  User click the approve button
+And  user_613 Double Click the Data
+And  user_613 click the approve button in transaction type
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
 
@@ -100,8 +100,8 @@ And User_613 Enter the Date in User Running Date
 And User_613 Click on Use Button in Change Running Date Popup
 And User_613 Click Ok Button in Information PopUp menu
 And User_613 Click on Close Button in Change Running Date Popup
-And  user update test data set id for TRS_017 
-And  User click the Transactions
+And user_613 update test data set id for TRS_017 
+And User click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in trx type
 Then enter values of Branch code
@@ -574,7 +574,7 @@ Then Click the Update after approve
 And  Enter the type Code value 
 Then User double click the typecode data 
 And  uncheck the flag of proceed on insufficient fund
-Then Click the Update After approve button
+Then Click the Update After approve button in transaction type 
 And  System giving information message click ok button
 And  system show the success popup click ok button 
 And  User Click the Approve Below the Transaction type
@@ -590,7 +590,7 @@ And  Enter the type code
 Then Double click the data
 And  click the Instructions
 Then uncheck the flag Allow Overdrawn
-Then Click the Update After approve button
+Then Click the Update After approve button in transaction type
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
 And  user click the Approve screen
@@ -989,7 +989,7 @@ And  System show the record was successfully
 @TRS_158_01
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Credit Account
 Then User navigate to CSM application and login with valid credentials
-And  User click the Transactions
+And  User_613 click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in Trx type
 Then enter values of Branch code
@@ -1000,7 +1000,7 @@ And  system gives the view memo popup user close the popup
 Then enter values of serial
 And System show the warning popup click ok button
 Then system gives the view memo popup user close the popup
-And  user enter the currency
+And  User_613 enter the currency
 And  Enter the Amount in this Checkbox
 Then enter the below account in glcode value
 And  enter the Ciftype value 
@@ -1008,24 +1008,24 @@ Then enter the serial value
 Then System show the warning popup click ok button
 Then System show the warning popup click ok button
 And  click the save button
-And  User get Transaction number from sucess pop up
-And  User click the Approve screen     
-Then user Enter the Transaction number   
+And  user_613 get Transaction number from sucess pop up
+And  user_613 click the Approve screen     
+Then user_613 Enter the Transaction number   
 And  double click the Value               
-Then click the Approve button
+Then User_613 click the Approve button
 And  system show the popup success user click the ok button
 Then click the Booked Entries
 
 @TRS_159
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Teller Account
 Given User login to Csm Param application
-And  user update test data set id for TRS_157
+And  User_163 update test data set id for TRS_157
 Then Click the Parameters 
 And  Click the System Parameters
-And  User click the Transaction type 
+And  User_163 click the Transaction type 
 Then Click the Update after approve
 And  Enter the single transfer Code value 
-Then  User double click the Existing data 
+Then  User_163 double click the Existing data 
 And  check the flag of Teller Account
 Then Click the Update After approve button
 And  System giving information message click ok button
@@ -1033,14 +1033,14 @@ And  system show the success popup click ok button
 And  User Click the Approve Below the Transaction type
 Then Enter the Approved record in the type code 
 And  User Double Click the Data
-And  User click the approve button
+And  User_613 click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
 
 @TRS_159_01
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Teller Account
 Then User navigate to CSM application and login with valid credentials
-And  User click the Transactions
+And  User_613 click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in Trx type
 Then enter values of Branch code
@@ -1051,7 +1051,7 @@ And  system gives the view memo popup user close the popup
 Then enter values of serial
 And System show the warning popup click ok button
 Then system gives the view memo popup user close the popup
-And  user enter the currency
+And  User_613 enter the currency
 And  Enter the Amount in this Checkbox
 Then enter the below account in glcode value
 And  enter the Ciftype value 
@@ -1059,39 +1059,39 @@ Then enter the serial value
 Then System show the warning popup click ok button
 Then System show the warning popup click ok button
 And  click the save button
-And  User get Transaction number from sucess pop up
-And  User click the Approve screen     
-Then user Enter the Transaction number   
+And  User_613 get Transaction number from sucess pop up
+And  User_613 click the Approve screen     
+Then User_613 Enter the Transaction number   
 And  double click the Value               
-Then click the Approve button
+Then User_613 click the Approve button
 And  system show the popup success user click the ok button
 Then click the Booked Entries
 
 @TRS_160
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Other Account
 Given User login to Csm Param application
-And  user update test data set id for TRS_157
+And  User_613 update test data set id for TRS_157
 Then Click the Parameters 
 And  Click the System Parameters
-And  User click the Transaction type 
+And  User_613 click the Transaction type 
 Then Click the Update after approve
 And  Enter the single transfer Code value 
-Then  User double click the Existing data 
+Then User_613 double click the Existing data 
 And  check the flag of other Account
-Then Click the Update After approve button
+Then User_613 click the update after approve button
 And  System giving information message click ok button
 And  system show the success popup click ok button 
-And  User Click the Approve Below the Transaction type
+And  User_613 Click the Approve Below the Transaction type
 Then Enter the Approved record in the type code 
-And  User Double Click the Data
-And  User click the approve button
+And  User_613 Double Click the Data
+And  User_613 click the approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully 
 
 @TRS_160_01
 Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Other Account
 Then User navigate to CSM application and login with valid credentials
-And  User click the Transactions
+And  User_613 click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in Trx type
 Then enter values of Branch code
@@ -1102,7 +1102,7 @@ And  system gives the view memo popup user close the popup
 Then enter values of serial
 And System show the warning popup click ok button
 Then system gives the view memo popup user close the popup
-And  user enter the currency
+And  User_613 enter the currency
 And  Enter the Amount in this Checkbox
 Then enter the below account in glcode value
 And  enter the Ciftype value 
@@ -1110,11 +1110,11 @@ Then enter the serial value
 Then System show the warning popup click ok button
 Then System show the warning popup click ok button
 And  click the save button
-And  User get Transaction number from sucess pop up
-And  User click the Approve screen     
-Then user Enter the Transaction number   
+And  User_613 get Transaction number from sucess pop up
+And  User_613 click the Approve screen     
+Then User_613 Enter the Transaction number   
 And  double click the Value               
-Then click the Approve button
+Then  User_613 click the Approve button
 And  system show the popup success user click the ok button
 Then click the Booked Entries
 
@@ -1122,30 +1122,30 @@ Then click the Booked Entries
 Scenario: Checking Single Transfer(Main Debit)Intra Transaction-Deduct Charges from Debit Account-Modify flags not checked on Trx Type or Charge Code                                  
 #single transfer value change 
 Given User login to Csm Param application
-And  user update test data set id for TRS_161
+And  User_613 update test data set id for TRS_161
 Then Click the Parameters 
 And  Click the System Parameters
-And  User click the Charges
-And  User Click the Maintance of charges
-Then user Click the Update after approve
+And  User_613 click the Charges
+And  User_613 Click the Maintance of charges
+Then User_613 Click the Update after approve
 And  Enter the Value of T in Brief Name 
-Then User double click the Existing data of charges
-And user Uncheck the flag of Allow modify and clear
+Then User_613 double click the Existing data of charges
+And User_613 Uncheck the flag of Allow modify and clear
 And uncheck the flag of Allow modify 
-Then user click the update after approve button 
+Then User_613 click the update after approve button 
 And  System giving information message click ok button
 And  system show the success popup click ok button 
-And User click the Approve screen in Charges
+And User_613 click the Approve screen in Charges
 Then enter the code value
-And User double click the data in the code
-Then User click the Approve button
+And User_613 double click the data in the code
+Then User_613 click the Approve button
 And  System show the  confirm popup user click the ok button
 And  System show the record was successfully
 
 @TRS_161_01
 Scenario: Checking Single Transfer(Main Debit)Intra Transaction-Deduct Charges from Debit Account-Modify flags not checked on Trx Type or Charge Code                                  
 Then User navigate to CSM application and login with valid credentials
-And  User click the Transactions
+And  User_613 click the Transactions
 Then Click the Maintenance Below the Transactions
 And  enter the value in Trx type
 Then enter values of Branch code
@@ -1156,14 +1156,121 @@ And  system gives the view memo popup user close the popup
 Then enter values of serial
 And System show the warning popup click ok button
 Then system gives the view memo popup user close the popup
-And  user enter the currency
+And  User_613 enter the currency
 And  Enter the Amount in this Checkbox
 Then enter the below account in glcode value
 And  enter the Ciftype value 
 Then enter the serial value 
 And the Cv Charges is Enabeled
                                         
-                              
+                              # *********** Sprint -14 *********** #
+@TRS_369
+Scenario: Functional Testing -Checking if a single transfer transaction could be done for a non approved modified account when"Proceed on Modified account” flag is checked
+Given User login to Csm Param application
+#And User_613 update test data set id for TRS_161
+Then Click the Parameters   
+Then User_613 click the Account parameters
+And User_613 click the acc control record
+Then User_613 click the Update after approve screen under account parameters
+And User_613 click the JvAccounts tab in maintance
+Then User_613 click the Accounts under JvAccounts tab
+#And User_613 Check the flag of proceed on modified account 
+Then User_613 click the update button in account parameters
+
+@TRS_369_01
+Scenario: Functional Testing -Checking if a single transfer transaction could be done for a non approved modified account when"Proceed on Modified account” flag is checked
+Then User navigate to CSM application and login with valid credentials
+And User_613 click the Accounts 
+Then User_613 click the General Accounts 
+And User_613 Click the maintenance under General accounts 
+Then User_613 Enter the value in Status Tab
+And User_613 Double click the value under Status
+Then User_613 rename the Brief name
+And User_613 click the update button
+And  User_613 click the Transactions
+Then User_613 Click the Maintenance Below the Transactions
+And User_613 enter the value in Trx type
+Then User_613 enter values of Branch code
+And User_613 enter values of currency code
+And User_613 enter values of gl code 
+And User_613 enter values of cif number  
+And User_613 system gives the view memo popup user close the popup
+Then User_613 enter values of serial
+
+@TRS_370
+Scenario: Functional Testing-Checking if a multi transfer transaction could be done for a non approved modified account when “Proceed on Modified account” flag is checked
+Given User login to Csm Param application
+#And User_613 update test data set id for TRS_161
+Then Click the Parameters   
+Then User_613 click the Account parameters
+And User_613 click the acc control record
+Then User_613 click the Update after approve screen under account parameters
+And User_613 click the JvAccounts tab in maintance
+Then User_613 click the Accounts under JvAccounts tab
+#And User_613 Check the flag of proceed on modified account 
+Then User_613 click the update button in account parameters
+
+@TRS_370_01
+Scenario: Functional Testing-Checking if a multi transfer transaction could be done for a non approved modified account when “Proceed on Modified account” flag is checked                        
+Then User navigate to CSM application and login with valid credentials
+And User_613 click the Accounts 
+Then User_613 click the General Accounts 
+And User_613 Click the maintenance under General accounts 
+Then User_613 Enter the value in Status Tab
+And User_613 Double click the value under Status
+Then User_613 rename the Brief name
+And User_613 click the update button
+And  User_613 click the Transactions
+Then User_613 Click the Maintenance Below the Transactions
+And User_613 enter the value in Trx type
+Then User_613 enter values of Branch code
+And User_613 enter values of currency code
+And User_613 enter values of gl code 
+And User_613 enter values of cif number  
+And User_613 system gives the view memo popup user close the popup
+Then User_613 enter values of serial
+
+@TRS_371
+Scenario: Functional Testing-Checking if a deposit transaction could be done for a non approved modified account  when “Proceed on Modified account” flag is checked
+Given User login to Csm Param application
+#And User_613 update test data set id for TRS_161
+Then Click the Parameters   
+Then User_613 click the Account parameters
+And User_613 click the acc control record
+Then User_613 click the Update after approve screen under account parameters
+And User_613 click the JvAccounts tab in maintance
+Then User_613 click the Accounts under JvAccounts tab
+#And User_613 Check the flag of proceed on modified account 
+Then User_613 click the update button in account parameters
+
+@TRS_371_01
+Scenario: Functional Testing-Checking if a deposit transaction could be done for a non approved modified account  when “Proceed on Modified account” flag is checked
+Scenario: Functional Testing-Checking if a multi transfer transaction could be done for a non approved modified account when “Proceed on Modified account” flag is checked                        
+Then User navigate to CSM application and login with valid credentials
+And User_613 click the Accounts 
+Then User_613 click the General Accounts 
+And User_613 Click the maintenance under General accounts 
+Then User_613 Enter the value in Status Tab
+And User_613 Double click the value under Status
+Then User_613 rename the Brief name
+And User_613 click the update button
+And  User_613 click the Transactions
+Then User_613 Click the Maintenance Below the Transactions
+And User_613 enter the value in Trx type
+Then User_613 enter values of Branch code
+And User_613 enter values of currency code
+And User_613 enter values of gl code 
+And User_613 enter values of cif number  
+And User_613 system gives the view memo popup user close the popup
+Then User_613 enter values of serial
 
 
-  
+
+
+
+
+
+
+
+
+
