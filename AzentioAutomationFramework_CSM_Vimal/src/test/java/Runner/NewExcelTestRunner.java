@@ -24,7 +24,9 @@ public class NewExcelTestRunner {
 
 		String[] parameter = {
 
-				"src/test/test\\java\\features\\CSM_TransactionSA.feature",
+				"src/test/java/features/CSM_Transaction.feature",
+				"src/test/java/features/CSM_TransactionSA.feature",
+				"src/test/java/features/TransactionFeature.feature",
 				"--glue", "stepdefinitions", "--plugin",
 				"pretty", "--plugin", "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 				"--plugin", "rerun:ReRunScenarios/FailedReRun.txt", "--tags", "@" + tags };

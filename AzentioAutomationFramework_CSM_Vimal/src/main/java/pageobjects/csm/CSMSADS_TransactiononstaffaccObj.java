@@ -796,7 +796,7 @@ public class CSMSADS_TransactiononstaffaccObj {
 		return CSM_OkButtonInCannotProceedPopUpMenu;
 	}
 	
-	@FindBy(xpath = "//div[text()='[7078] User Does Not have Access On this TRX type 377 For the Economic Sector 4 Of This CIF']")
+	@FindBy(xpath = "//div[contains(text(),'User Does Not have Access')]")
 	private WebElement CSM_ValidateUserDoesNotHaveAcces;
 
 	public WebElement CSMValidateUserDoesNotHaveAcces() {

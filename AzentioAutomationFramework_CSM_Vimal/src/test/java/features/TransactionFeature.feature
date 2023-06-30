@@ -2333,7 +2333,8 @@ And user_614 click on the approve field under the transaction type menu
 And user_614 enters the transaction type code in the code column under the approve menu
 And user_614 double clicks on the entered transaction type code from the list to view the transaction type details
 And user_614 click on the approve button to approve the changes
-
-
+@EndExecution
+Scenario: End the Test in Excel runner
+Given End the Test
 
 

@@ -2,39 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-06-16T12:42:36 IST" name="Default suite" finished-at="2023-06-16T12:45:37 IST" duration-ms="180810">
+  <suite started-at="2023-06-30T13:02:32 IST" name="Default suite" finished-at="2023-06-30T15:46:34 IST" duration-ms="9842229">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5149d738]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2023-06-16T12:42:36 IST" name="Default test" finished-at="2023-06-16T12:45:37 IST" duration-ms="180810">
-      <class name="Runner.TestApplication">
-        <test-method is-config="true" signature="setUpClass()[pri:0, instance:Runner.TestApplication@5149d738]" started-at="2023-06-16T12:42:36 IST" name="setUpClass" finished-at="2023-06-16T12:42:39 IST" duration-ms="2509" status="PASS">
+    <test started-at="2023-06-30T13:02:32 IST" name="Default test" finished-at="2023-06-30T15:46:34 IST" duration-ms="9842229">
+      <class name="Runner.NewExcelTestRunner">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Runner.NewExcelTestRunner@a776e]" started-at="2023-06-30T13:02:32 IST" name="beforeTest" finished-at="2023-06-30T13:02:35 IST" duration-ms="3427" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:Runner.TestApplication@5149d738]" started-at="2023-06-16T12:42:39 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2023-06-16T12:44:56 IST" duration-ms="137009" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA["Transactions -> Checking Single Transfer (Main Credit) Intra Transaction - Booked Entries + Balance Updates"]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA["Optional[Checking the functionality of transactions]"]]>
-              </value>
-            </param>
-          </params>
+        </test-method> <!-- beforeTest -->
+        <test-method signature="test()[pri:0, instance:Runner.NewExcelTestRunner@a776e]" started-at="2023-06-30T13:02:35 IST" name="test" finished-at="2023-06-30T15:46:33 IST" duration-ms="9837771" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- runScenario -->
-        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:Runner.TestApplication@5149d738]" started-at="2023-06-16T12:44:56 IST" name="tearDownClass" finished-at="2023-06-16T12:45:37 IST" duration-ms="41169" status="PASS">
+        </test-method> <!-- test -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:Runner.NewExcelTestRunner@a776e]" started-at="2023-06-30T15:46:33 IST" name="afterTest" finished-at="2023-06-30T15:46:34 IST" duration-ms="874" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- Runner.TestApplication -->
+        </test-method> <!-- afterTest -->
+      </class> <!-- Runner.NewExcelTestRunner -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

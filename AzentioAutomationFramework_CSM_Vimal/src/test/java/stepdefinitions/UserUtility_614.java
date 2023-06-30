@@ -1,10 +1,19 @@
 package stepdefinitions;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.HashMap;
 import java.util.List;
 
+import org.apache.commons.compress.archivers.dump.InvalidFormatException;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -189,79 +198,86 @@ public class UserUtility_614 {
 	}
 	
 	/***
+	 * @return 
 	 * @see The constructor will load the excel data into a hashMap for the given URL path of the excel file
 	 */
 
-//	public UserUtility_614() {
-//
-//		String path = System.getProperty("user.dir") + "/TestData/CSMTestData.xlsx";
-//
-//		File file = null;
-//		
-//		try
-//		{
-//			file = new File(path);
-//		}
-//		catch(Exception e)
-//		{
-//			e.printStackTrace();
-//		}
-//
-//		XSSFWorkbook dataBook = null;
-//		try {
-//			dataBook = new XSSFWorkbook(file);
-//		} 
-//		catch (InvalidFormatException e) {
-//			e.printStackTrace();
-//		} 
-//		catch (IOException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		XSSFSheet dataSheet = dataBook.getSheet("Transaction_614");
-//
-//		int noOfRows = dataSheet.getPhysicalNumberOfRows();
-//		int noOfCols = dataSheet.getRow(0).getLastCellNum();
-//		for(int i = 1;i<noOfRows;i++){
-//
-//			Row row = dataSheet.getRow(i);
-//			
-//			Cell titleCell = row.getCell(0);
-//			DataFormatter formatter = new DataFormatter();
-//			String titleHeader = formatter.formatCellValue(titleCell);
-//			HashMap<String, String> map1 = new HashMap<>();
-//
-//			for (int j = 1; j < noOfCols; j++) {
-//
-//				Row headerRow = dataSheet.getRow(0);
-//				Cell headerCell = headerRow.getCell(j);
-//				String headerValue = formatter.formatCellValue(headerCell);
-//
-//				Cell cell = row.getCell(j);
-//				String value = formatter.formatCellValue(cell);
-//
-//				map1.put(headerValue, value);
-//			}
-//
-//			map.put(titleHeader, map1);
-//			
-////			System.out.println(map);
-//			
-//			try {
-//				try {
-//					dataBook.close();
-//				} catch (IOException e) {
-//					// TODO Auto-generated catch block
-//					e.printStackTrace();
-//				}
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-//
-//	}
-//	
+	public HashMap<String,HashMap<String,String>> getExcelDataUserUtility_614() {
+
+		String path = System.getProperty("user.dir") + "/TestData/CSMTestData.xlsx";
+
+		File file = null;
+		
+		try
+		{
+			file = new File(path);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
+		XSSFWorkbook dataBook = null;
+		try {
+			try {
+				dataBook = new XSSFWorkbook(file);
+			} catch (org.apache.poi.openxml4j.exceptions.InvalidFormatException e) {
+				e.printStackTrace();
+			}
+		} 
+		catch (InvalidFormatException e) {
+			e.printStackTrace();
+		} 
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		XSSFSheet dataSheet = dataBook.getSheet("Transaction_614");
+
+		int noOfRows = dataSheet.getPhysicalNumberOfRows();
+		int noOfCols = dataSheet.getRow(0).getLastCellNum();
+		for(int i = 1;i<noOfRows;i++){
+
+			XSSFRow row = dataSheet.getRow(i);
+			
+			Cell titleCell = row.getCell(0);
+			DataFormatter formatter = new DataFormatter();
+			String titleHeader = formatter.formatCellValue(titleCell);
+			HashMap<String, String> map1 = new HashMap<>();
+
+			for (int j = 1; j < noOfCols; j++) {
+
+				XSSFRow headerRow = dataSheet.getRow(0);
+				XSSFCell headerCell = headerRow.getCell(j);
+				String headerValue = formatter.formatCellValue(headerCell);
+
+				Cell cell = row.getCell(j);
+				String value = formatter.formatCellValue(cell);
+
+				map1.put(headerValue, value);
+			}
+
+			map.put(titleHeader, map1);
+			
+//			System.out.println(map);
+			
+			try {
+				try {
+					dataBook.close();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return map;
+
+	}
+	
 //	/***
 //	 * 
 //	 * @param testCaseID
@@ -271,7 +287,7 @@ public class UserUtility_614 {
 	
 	public String getExcelData(String testCaseID, String requiredColumnName) {
 		
-		String value = map.get(testCaseID).get(requiredColumnName);
+		String value = getExcelDataUserUtility_614().get(testCaseID).get(requiredColumnName);
 		System.out.println(value);
 		return value;
 		

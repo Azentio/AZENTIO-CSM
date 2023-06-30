@@ -15,12 +15,14 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.csm.CSMSADS_TransactiononstaffaccObj;
+import pageobjects.csmParam.CSMcore_TransactionObj;
 import resources.BaseClass;
 
 public class CSM_TransactionSA_614 extends BaseClass {
 	
 	WebDriver driver = BaseClass.driver;
 	CSMSADS_TransactiononstaffaccObj transactiononstaffaccObj = new CSMSADS_TransactiononstaffaccObj(driver);
+	CSMcore_TransactionObj CSMcoreTransactionObj = new CSMcore_TransactionObj(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSMLogin_614 login = new CSMLogin_614(driver);
 	String path = System.getProperty("user.dir") +"\\TestData\\CSMTestData.xlsx";
@@ -642,7 +644,18 @@ transactiononstaffaccObj.CSMDateInUserRunningDate().sendKeys(userUtility.current
 public void User_614_click_on_use_button_in_change_running_date_popup() throws Throwable {					
 	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());				
 seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());					
-seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());					
+seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());	
+try {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+			CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+	seleniumActions.getClickAndActionsHelper()
+			.moveToElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+	seleniumActions.getClickAndActionsHelper()
+			.clickOnElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+}
+
+catch (Exception e) {
+}
 }					
 					
 @And("^User_614 Click Ok Button in Information PopUp menu$")					

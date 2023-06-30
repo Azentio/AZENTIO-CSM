@@ -43,12 +43,14 @@ public class Transaction_steps_614 {
 	JavascriptHelper javaScriptHelper = new JavascriptHelper(driver);
 	CSMLogin login = new CSMLogin(driver);
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
+	ExcelData testexecution = new ExcelData(path, "TestExecution", "TestCaseID");
 	ExcelData excelDataForTransactionfeature = new ExcelData(path, "CSM_Transactions_TestData", "DataSet ID");
 	CSMCommonWebElements csmCommonWebElements = new CSMCommonWebElements(driver);
 	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	UserUtility_614 userUtility = new UserUtility_614(driver);
 
 	Map<String, String> testData;
+	Map<String, String> executionTestData;
 
 //		---------------------------------------------------------       TRS_188  ------------------------------------------------------------------------------//
 
@@ -68,7 +70,8 @@ public class Transaction_steps_614 {
 
 	@And("^user_614 get the data from the excel sheet for the test case id TRS_188$")
 	public void UserGetTheDataFromTheExcelSheetForTheTestcaseIdTRS_188() {
-		testData = excelDataForTransactionfeature.getTestdata("TRS_188_D1");
+		executionTestData = testexecution.getTestdata("TRS_188");
+		testData = excelDataForTransactionfeature.getTestdata(executionTestData.get("DataSet ID"));
 
 	}
 
@@ -104,17 +107,17 @@ public class Transaction_steps_614 {
 				.moveToElement(CSMcoreTransactionObj.CSMUseButtonInChangeRunningDate());
 		seleniumActions.getClickAndActionsHelper()
 				.clickOnElement(CSMcoreTransactionObj.CSMUseButtonInChangeRunningDate());
-//		try {
-//			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-//					CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
-//			seleniumActions.getClickAndActionsHelper()
-//					.moveToElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
-//			seleniumActions.getClickAndActionsHelper()
-//					.clickOnElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
-//		}
-//
-//		catch (Exception e) {
-//		}
+		try {
+			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+					CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+			seleniumActions.getClickAndActionsHelper()
+					.moveToElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+			seleniumActions.getClickAndActionsHelper()
+					.clickOnElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+		}
+
+		catch (Exception e) {
+		}
 	}
 
 	@And("^user_614 click Ok Button in Information PopUp menu in the CSM core application$")
@@ -1543,6 +1546,10 @@ public class Transaction_steps_614 {
 		if (elementIsSelected) {
 			userUtility.clickOnElement(seleniumActions, driver, CSMParamTransactionOBJ.csmSystemParameters_TransactionTypeUA_ForbidMultipleCIFCheckBox());
 		}
+	}
+	@Given("End the Test")
+	public void end_the_test() {
+	    System.out.println("Test Execution Ended");
 	}
 	
 
