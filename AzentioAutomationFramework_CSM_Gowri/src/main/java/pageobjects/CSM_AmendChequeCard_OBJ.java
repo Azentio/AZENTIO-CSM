@@ -150,7 +150,12 @@ public WebElement verifyPopupInPaidCheque()
 {
 	return verifyPopupInPaidCheque;
 }
-
+@FindBy(xpath="//span[text()='Approve']")
+private WebElement amendChequeCardApproveScreen;
+public WebElement amendChequeCardApproveScreen()
+{
+	return amendChequeCardApproveScreen;
+}
 
 
 }

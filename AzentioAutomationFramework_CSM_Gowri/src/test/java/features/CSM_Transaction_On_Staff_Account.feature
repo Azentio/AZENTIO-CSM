@@ -977,9 +977,9 @@ And user click user submenu
 And user click update after approve 
 And user enter the value in user id
 And user retrieve the selected user id
-Then user click Eco sector button
+Then user click priority button
 And user select the row for delete the record
-And user delete the inserted record under Eco sector
+And user delete the inserted record under priority
 And user click confirm ok button 
 And user click ok button under limits
 And user click update after approve button

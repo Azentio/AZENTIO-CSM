@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Map;
@@ -19,7 +20,7 @@ import resources.BaseClass;
 
 public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
       WebDriver driver = BaseClass.driver;
-      ConfigFileReader configFileRead = new ConfigFileReader();
+      ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
       CSMLogin login = new CSMLogin(driver);
       Selenium_Actions seleniumActions = new Selenium_Actions(driver);
       CSM_TransactionOnStaffAccount_Obj csmTransactionOnStaffAccount = new CSM_TransactionOnStaffAccount_Obj(driver);
@@ -29,9 +30,8 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
   	  
   	@Given("^user login as csm params application$")
     public void user_login_as_csm_params_application() throws Throwable {
-  		String paramsApplicationUrl = configFileRead.getCSMparamsUrl();
-		driver.get(paramsApplicationUrl);
-		login.loginIntoCSMParamApplication();
+  		driver.get(ConfigFileReaderobj.getCSMparamsUrl());
+	      login.loginIntoCSMParamApplication("CSMParamUser1");
     }
 
     @Then("^user click confirm message ok button$")
@@ -1362,7 +1362,7 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
 		seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.Transactions());
     }
     @Given("user_615 click the maintenance in transactions")
-    public void user_click_the_maintenance_in_transactions(Integer int1) {
+    public void user_615_click_the_maintenance_in_transactions() {
     	for(int i=0;i<200;i++) {
 			try {
 				seleniumActions.getJavascriptHelper().scrollIntoView(csmTransactionOnStaffAccount.Maintenance());
@@ -1406,7 +1406,7 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         csmTransactionOnStaffAccount.debitAccountCurrency().sendKeys(testData.get("Debit Currecncy Code"));
     }
     @Given("user_615 enter the GL code in credit account details")
-    public void user_enter_the_gl_code_in_credit_account_details(Integer int1) {
+    public void user_615_enter_the_gl_code_in_credit_account_details() {
     	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.debitAccountGlCode());
         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.debitAccountGlCode());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.debitAccountGlCode());
@@ -1568,11 +1568,104 @@ public class CSM_TransactionOnStaffAccount_Steps extends BaseClass{
         
     }
     
+    @And("^user delete the inserted record under Priority$")
+    public void user_delete_the_inserted_record_under_priority() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.deleteButtonInPriority());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.deleteButtonInPriority());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.deleteButtonInPriority());
+    }
     
+    @Given("user_615 login as csm core application")
+    public void user_615_login_as_csm_core_application() throws IOException {
+    	driver.get(ConfigFileReaderobj.getCSMApplicationUrl());
+        login.loginIntoCSMApplication("CSMUser1");
+    }
+
     
+    @And("user_615 update test data set id for TRS_387")
+    public void user_615_update_test_data_set_id_for_trs_387() throws Throwable {
+    	testData = csmTransactionsStaffAccountExcelData.getTestdata("TRS_387_D1");
+    }
+
+    @And("user_615 enter the branch code value in debit account details")
+    public void user_615_enter_the_branch_code_value_in_debit_account_details() throws Throwable{
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.debitAccountBranchCode());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.debitAccountBranchCode());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.debitAccountBranchCode());
+        csmTransactionOnStaffAccount.debitAccountBranchCode().sendKeys(testData.get("Debit Branch Code"));
+    }
+
+    @And("user_615 enter the branch code value in credit account details")
+    public void user_615_enter_the_branch_code_value_in_credit_account_details() throws Throwable{
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionCreditAccountBranchCodeInput());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountBranchCodeInput());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountBranchCodeInput());
+        csmTransactionOnStaffAccount.csmTransactionCreditAccountBranchCodeInput().sendKeys(testData.get("Credit Branch Code"));
+    }
+
+    @And("user_615 navigate to approve submenu")
+    public void user_615_navigate_to_approve_submenu() throws Throwable{
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.approveScreenInTransactions());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.approveScreenInTransactions());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.approveScreenInTransactions());
+    }
+
+    @And("user_615 click refresh icon in approve submenu")
+    public void user_615_click_refresh_icon_in_approve_submenu() throws Throwable{
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.refreshButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.refreshButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.refreshButtonInApproveScreen());
+    }
+
+    @And("user_615 retrieve the created record in approve submenu")
+    public void user_615_retrieve_the_created_record_in_approve_submenu() throws Throwable{
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.doubleClickTransactionNo());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.doubleClickTransactionNo());
+        seleniumActions.getClickAndActionsHelper().doubleClick(csmTransactionOnStaffAccount.doubleClickTransactionNo());
+    }
+
+    @And("user_615 click approve button in approve submenu")
+    public void user_615_click_approve_button_in_approve_submenu() throws Throwable{
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.approveButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.approveButtonInApproveScreen());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.approveButtonInApproveScreen());
+    }
+
+    @And("user_615 verify the successfully approved message popup in approve submenu")
+    public void user_615_verify_the_successfully_approved_message_popup_in_approve_submenu() throws Throwable{
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.successMessagePopupInApproveScreen());
+        Assert.assertTrue(csmTransactionOnStaffAccount.successMessagePopupInApproveScreen().isDisplayed());
+    }
     
+    @Then("user_615 select the mode of payment under transactions")
+    public void user_615_select_the_mode_of_payment_under_transactions() {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionModeOfPayment());
+        seleniumActions.getDropDownHelper().SelectUsingVisibleText(csmTransactionOnStaffAccount.csmTransactionModeOfPayment(), "Account");
+    }
     
-    
+    @And("user_615 enter the GL code value in credit account details")
+    public void user_615_enter_the_gl_code_value_in_credit_account_details() {
+        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionCreditAccountGlCodeInput());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountGlCodeInput());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountGlCodeInput());
+        csmTransactionOnStaffAccount.csmTransactionCreditAccountGlCodeInput().sendKeys(testData.get("Debit GL Code1"));
+    }
+
+    @And("user_615 enter the CIF code value in credit account details")
+    public void user_615_enter_the_cif_code_value_in_credit_account_details() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionCreditAccountCifCodeInput());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountCifCodeInput());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountCifCodeInput());
+        csmTransactionOnStaffAccount.csmTransactionCreditAccountCifCodeInput().sendKeys(testData.get("Debit CIF Code1"));
+    }
+
+    @And("user_615 enter the serial no value in credit account details")
+    public void user_615_enter_the_serial_no_value_in_credit_account_details() {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransactionOnStaffAccount.csmTransactionCreditAccountSerialNoInput());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountSerialNoInput());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransactionOnStaffAccount.csmTransactionCreditAccountSerialNoInput());
+        csmTransactionOnStaffAccount.csmTransactionCreditAccountSerialNoInput().sendKeys(testData.get("Debit Serial No1"));
+    }
     
     
     

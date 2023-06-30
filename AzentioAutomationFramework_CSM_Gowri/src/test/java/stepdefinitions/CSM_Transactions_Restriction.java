@@ -23,7 +23,7 @@ import resources.BaseClass;
 public class CSM_Transactions_Restriction extends BaseClass{
 	
 	WebDriver driver = BaseClass.driver;
-	ConfigFileReader configFileRead = new ConfigFileReader();
+	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	CSMLogin login = new CSMLogin(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSM_Transactions_OBJ csmTransactions = new CSM_Transactions_OBJ(driver);
@@ -33,9 +33,8 @@ public class CSM_Transactions_Restriction extends BaseClass{
 
 	@Given("^user login as csm core application$")
     public void user_login_as_csm_core_application() throws Throwable {
-		String csmApplicationUrl = configFileRead.getCSMApplicationUrl();
-		driver.get(csmApplicationUrl);
-		login.loginIntoCSMApplication();
+		driver.get(ConfigFileReaderobj.getCSMApplicationUrl());
+        login.loginIntoCSMApplication("CSMUser1");
     }
 	
 	@And("^user click yes if we get force logout popup$")

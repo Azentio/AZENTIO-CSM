@@ -21,7 +21,7 @@ import resources.BaseClass;
 
 public class CSM_ChequeBookRequest_Screen extends BaseClass{
 	WebDriver driver = BaseClass.driver;
-	ConfigFileReader configFileReader = new ConfigFileReader();
+	ConfigFileReader ConfigFileReaderobj = new ConfigFileReader();
 	CSMLogin login = new CSMLogin(driver);
 	Selenium_Actions seleniumActions = new Selenium_Actions(driver);
 	CSM_ChequeBook_Request_All_OBJ ChequeBookRequestObject = new CSM_ChequeBook_Request_All_OBJ(driver);
@@ -32,9 +32,8 @@ public class CSM_ChequeBookRequest_Screen extends BaseClass{
 	
    @Given("^user login as csm application$")
     public void user_login_as_csm_application() throws Throwable {
-		String csmApplicationUrl = configFileReader.getCSMApplicationUrl();
-	    driver.get(csmApplicationUrl);
-	    login.loginIntoCSMApplication();
+	   driver.get(ConfigFileReaderobj.getCSMApplicationUrl());
+       login.loginIntoCSMApplication("CSMUser1");
 	}
     
     @Then("^user click the proceed button under receive from provider$")

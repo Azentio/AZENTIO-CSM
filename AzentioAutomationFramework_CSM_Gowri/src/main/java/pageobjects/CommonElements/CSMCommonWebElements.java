@@ -94,5 +94,12 @@ public class CSMCommonWebElements {
 	{
 		return csm_logoutButton;
 	}
+	@FindBy(xpath = "//span[contains(text(),' Yes')]//parent::a")
+	private WebElement csm_ForceLogoutYesButton;
+	public WebElement csmForceLogoutYesButton()
+	{
+		return csm_ForceLogoutYesButton;
+		
+	}
 
 }

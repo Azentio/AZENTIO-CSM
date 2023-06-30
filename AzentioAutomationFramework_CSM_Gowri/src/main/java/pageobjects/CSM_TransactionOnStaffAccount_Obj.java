@@ -863,12 +863,42 @@ public WebElement checkTheBelowMinimumAgeFlag()
 {
     return checkTheBelowMinimumAgeFlag;
 }
-
-
-
-
-
-
+@FindBy(xpath="//td[@id='td_tab5_P_GridTbl_Id_E000MA_0_rn']")
+private WebElement deleteButtonInPriority;
+public WebElement deleteButtonInPriority()
+{
+	return deleteButtonInPriority;
+}
+@FindBy(xpath="//select[@id='trsfr_method_D001MT']")
+private WebElement csm_Transaction_ModeOfPayment;
+public WebElement csmTransactionModeOfPayment()
+{
+	return csm_Transaction_ModeOfPayment;
+}
+@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_BR']")
+private WebElement csm_Transaction_CreditAccount_BranchCode_Input;
+public WebElement csmTransactionCreditAccountBranchCodeInput()
+{
+	return csm_Transaction_CreditAccount_BranchCode_Input;
+}
+@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_GL']")
+private WebElement csm_Transaction_CreditAccount_GlCode_Input;
+public WebElement csmTransactionCreditAccountGlCodeInput()
+{
+	return csm_Transaction_CreditAccount_GlCode_Input;
+}
+@FindBy(xpath="//input[@name='trxMgntCO.ctstrsVO.TO_TRS_AC_CIF']")
+private WebElement csm_Transaction_CreditAccount_CifCode_Input;
+public WebElement csmTransactionCreditAccountCifCodeInput()
+{
+	return csm_Transaction_CreditAccount_CifCode_Input;
+}
+@FindBy(xpath="//input[@id='lookuptxt_to_trs_ac_sl_D001MT']")
+private WebElement csm_Transaction_CreditAccount_SerialNo_Input;
+public WebElement csmTransactionCreditAccountSerialNoInput()
+{
+	return csm_Transaction_CreditAccount_SerialNo_Input;
+}
 
 
 

@@ -1,7 +1,7 @@
 package stepdefinitions;
 
+import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 import org.junit.Assert;
@@ -29,8 +29,8 @@ public class CSMLogin {
 		this.driver = driver;
 	}
 
-	public void loginIntoCSMParamApplication() {
-		csmLoginTestData = csmParamLoginTestData.getTestdata("CSMParamUser1");
+	public void loginIntoCSMParamApplication(String userType) throws IOException {
+		csmLoginTestData = csmParamLoginTestData.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
@@ -67,47 +67,30 @@ public class CSMLogin {
 			}
 
 		}
-		
-		
-
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
 		
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i <= 70; i++) {
 			try {
-				 {
-//					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
-					csmCommonWebElements.ForceLogoutYes().click();
-					break;
-				}
-//				
+				clicksAndActionHelper.moveToElement(csmCommonWebElements.csmForceLogoutYesButton());
+				clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmForceLogoutYesButton());
+				break;
 			} catch (Exception e) {
-//				if (i==199)
-//				{
-//					Assert.fail(e.getMessage());
-//				}
-				// TODO: handle exception
+				if (i == 70) {
+					System.out.print("No Force Log out");
+				}
 			}
 		}
-		
-	    waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmLoginValidation());
 		Assert.assertTrue(csmCommonWebElements.csmLoginValidation().isDisplayed());
-		/*
-		 * waitHelper.waitForElementwithFluentwait(driver,
-		 * csmCommonWebElements.csmLogoutButton());
-		 * clicksAndActionHelper.moveToElement(csmCommonWebElements.csmLogoutButton());
-		 * clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmLogoutButton());
-		 * waitHelper.waitForElementwithFluentwait(driver,
-		 * csmCommonWebElements.csmUserName());
-		 * Assert.assertTrue(csmCommonWebElements.csmUserName().isDisplayed());
-		 * driver.quit();
-		 */
+		System.out.println("Login validated");
+	
 	}
 
-	public void loginIntoCSMApplication() {
-		csmLoginTestData = csmLoginExceldata.getTestdata("CSMUser1");
+	public void loginIntoCSMApplication(String userType) throws IOException {
+		csmLoginTestData = csmLoginExceldata.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
@@ -147,36 +130,19 @@ public class CSMLogin {
 
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i <= 500; i++) {
 			try {
-				 {
-//					waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
-					csmCommonWebElements.ForceLogoutYes().click();
-					break;
-				}
-//				
+				clicksAndActionHelper.moveToElement(csmCommonWebElements.csmForceLogoutYesButton());
+				clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmForceLogoutYesButton());
+				break;
 			} catch (Exception e) {
-//				if (i==199)
-//				{
-//					Assert.fail(e.getMessage());
-//				}
-				// TODO: handle exception
+				if (i == 500) {
+					System.out.print("No Force Log");
+				}
 			}
 		}
-//		try {
-//			waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutPopup());
-//            
-//             
-//			waitHelper.waitForElementwithFluentwait(driver,csmCommonWebElements.ForceLogoutYes());
-//			csmCommonWebElements.ForceLogoutYes().click();
-//            
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmContinueButton());
 		csmCommonWebElements.csmContinueButton().click();
-		
-
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmLoginValidation());
 		Assert.assertTrue(csmCommonWebElements.csmLoginValidation().isDisplayed());
 		/*
@@ -191,8 +157,9 @@ public class CSMLogin {
 		 */
 	}
 
-	public void loginIntoSadsApplication() {
-		csmLoginTestData = sadsLoginExceldata.getTestdata("Sadsuser1");
+	public void loginIntoSadsApplication(String userType) throws IOException {
+		
+		csmLoginTestData = sadsLoginExceldata.getTestdata(userType);
 		csmCommonWebElements = new CSMCommonWebElements(driver);
 		clicksAndActionHelper = new ClicksAndActionsHelper(driver);
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
