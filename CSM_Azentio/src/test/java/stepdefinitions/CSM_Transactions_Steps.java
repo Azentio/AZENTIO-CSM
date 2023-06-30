@@ -44,7 +44,7 @@ public class CSM_Transactions_Steps {
 		  driver.get(ConfigFileReaderobj.getCSMparamsUrl());
 	      login.loginIntoCSMParamApplication("CSMParamUser1");
 	  }
-	  @Given("user update test data set id for TRS_218")
+	  @And("user update test data set id for TRS_218")
 	    public void user__update_test_data_set_id_for_trs_218() throws Throwable {
 		  testData = CsmTransactionExcelData.getTestdata("TRS_218_D1");
 	  }

@@ -1,9 +1,18 @@
 package pageobjects;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class CSM_TransferAccounts_OBJ {
+WebDriver driver;
+	
+	public CSM_TransferAccounts_OBJ(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
 	
 	@FindBy(xpath = "//td[text()='Transfer Accounts']")
 	private WebElement CSMCore_TransferAccounts;
@@ -112,6 +121,14 @@ public class CSM_TransferAccounts_OBJ {
 		return CSMCore_TransferAccounts_Maintanance_TOAcc_SLcode;
 	}
 	
+	@FindBy(xpath = "//label[text()='Retrieve ']//parent::span//parent::button")
+	private WebElement CSMCore_TransferAccounts_Maintanance_RetriveButton;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRetriveButton() {
+		return CSMCore_TransferAccounts_Maintanance_RetriveButton;
+	}
+	
+	
 	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_0_rn']")
 	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting;
 
@@ -133,6 +150,52 @@ public class CSM_TransferAccounts_OBJ {
 		return CSMCore_TransferAccounts_Approve;
 	}
 	
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
+	private WebElement CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord;
+
+	public WebElement CSMCoreTransferAccountsApproveEnterGlforRetriveRecord() {
+		return CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord;
+	}
+	
+	
+	@FindBy(xpath = "//td[@id='td_transferAccountsListGridTbl_Id_TA001P_1_cts_TRSFR_ACCVO.DESTINATION_GL']")
+	private WebElement CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord_doubleclick;
+
+	public WebElement CSMCoreTransferAccountsApproveEnterGlforRetriveRecorddoubleclick() {
+		return CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord_doubleclick;
+	}
+	@FindBy(xpath = "//label[@id='transferAccountsMaintFormId_TA001P_approve_key']")
+	private WebElement CSMCore_TransferAccounts_Approve_ApproveButton;
+
+	public WebElement CSMCoreTransferAccountsApproveApproveButton() {
+		return CSMCore_TransferAccounts_Approve_ApproveButton;
+	}
+	
+	@FindBy(xpath = "//span[text()='Transfer']//parent::span//parent::a")
+	private WebElement CSMCore_TransferAccounts_Transfer;
+
+	public WebElement CSMCoreTransferAccountsTransfer() {
+		return CSMCore_TransferAccounts_Transfer;
+	}
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecord;
+
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecord() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecord;
+	}
+	
+	@FindBy(xpath = "//label[@id='transferAccountsMaintFormId_TA001T_Transfer_key']")
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecord_TransferButton;
+
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecordTransferButton() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecord_TransferButton;
+	}
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+	private WebElement CSMCore_OK_Button;
+
+	public WebElement CSMCoreOKButton() {
+		return CSMCore_OK_Button;
+	}
 	
 	
 
