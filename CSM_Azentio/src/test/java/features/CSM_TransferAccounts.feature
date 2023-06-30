@@ -31,12 +31,12 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     #And user click the retrive button under maintenance screen
     #And user select the Record under TransferManagement screen
     #And user click the Save button under maintanance screen
-    #And user click the Approve field under TransferAccount field
-    #And user enter the Record in Approve field
-    #And user double click the record
+    And user click the Approve field under TransferAccount field
+    And user enter the Record in Approve field
+    And user double click the record in approve field
     #And user click the Approve button under Approve field
     And user click the Transfer field under TransferAccount field
     And user enter the Record in Transfer field
-    And user double click the record
+    And user double click the record in Transfer field
     And user click the Transfer button under Transfer field
     And user click Ok Button Under Information PopUp Menu in the CSM core application

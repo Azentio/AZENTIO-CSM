@@ -284,8 +284,8 @@ System.out.println("dropdown "+testData.get("DropDown"));
 
 	@And("user enter the Record in Approve field")
 	public void user_enter_the_record_in_approve_field() {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
 		for (int i = 0; i < 200; i++) {
 			try {
 				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
@@ -310,16 +310,24 @@ System.out.println("dropdown "+testData.get("DropDown"));
 
 	}
 
-	@And("user double click the record")
-	public void user_double_click_the_record() {
+	
+	@And("user double click the record in approve field")
+	public void user_double_click_the_record_in_approve_field() {
+	    
+	}
+
+	@And("user double click the record in Transfer field")
+	public void user_double_click_the_record_in_transfer_field() {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecorddoubleclick());
+				csmTransferAccountsobj.CSMCoreTransferAccountsTransferEnterGlforRetriveRecorddoubleclick());
 		seleniumActions.getClickAndActionsHelper()
-				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecorddoubleclick());
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferEnterGlforRetriveRecorddoubleclick());
 		seleniumActions.getClickAndActionsHelper()
-				.doubleClick(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecorddoubleclick());
+				.doubleClick(csmTransferAccountsobj.CSMCoreTransferAccountsTransferEnterGlforRetriveRecorddoubleclick());
 
 	}
+
+
 
 	@And("user click the Approve button under Approve field")
 	public void user_click_the_approve_button_under_approve_field() {

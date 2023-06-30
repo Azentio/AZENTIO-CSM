@@ -157,12 +157,12 @@ WebDriver driver;
 		return CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord;
 	}
 	
-	
-	@FindBy(xpath = "//td[@id='td_transferAccountsListGridTbl_Id_TA001P_1_cts_TRSFR_ACCVO.DESTINATION_GL']")
-	private WebElement CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord_doubleclick;
+	// -------------------- Need to add Approve field double click xpath in the missing part----------------------
+	@FindBy(xpath = "//td[@id='td_transferAccountsListGridTbl_Id_TA001T_1_cts_TRSFR_ACCVO.FROM_ACC_GL']")
+	private WebElement CSMCore_TransferAccounts_Transfer_EnterGlforRetriveRecord_doubleclick;
 
-	public WebElement CSMCoreTransferAccountsApproveEnterGlforRetriveRecorddoubleclick() {
-		return CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord_doubleclick;
+	public WebElement CSMCoreTransferAccountsTransferEnterGlforRetriveRecorddoubleclick() {
+		return CSMCore_TransferAccounts_Transfer_EnterGlforRetriveRecord_doubleclick;
 	}
 	@FindBy(xpath = "//label[@id='transferAccountsMaintFormId_TA001P_approve_key']")
 	private WebElement CSMCore_TransferAccounts_Approve_ApproveButton;
@@ -177,7 +177,7 @@ WebDriver driver;
 	public WebElement CSMCoreTransferAccountsTransfer() {
 		return CSMCore_TransferAccounts_Transfer;
 	}
-	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
 	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecord;
 
 	public WebElement CSMCoreTransferAccountsTransferRetriveRecord() {
