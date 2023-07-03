@@ -22,9 +22,9 @@ import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pageobjects.CommonElements.CSMCommonWebElements;
-import pageobjects.csmParam.CSMParam_TransactionOBJ;
-import pageobjects.csmParam.CSMSADS_TransactiononstaffaccObj;
-import pageobjects.csmParam.CSMcore_TransactionObj;
+import pageobjects.csmParamAndCore.CSMParam_TransactionOBJ;
+import pageobjects.csmParamAndCore.CSMSADS_TransactiononstaffaccObj;
+import pageobjects.csmParamAndCore.CSMcore_TransactionObj;
 import resources.BaseClass;
 import stepdefinitions.CSMLogin;
 

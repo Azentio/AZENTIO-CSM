@@ -14,7 +14,7 @@ import helper.Selenium_Actions;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import pageobjects.csm.CSMSADS_TransactiononstaffaccObj;
-import pageobjects.csm.CSM_Transaction_Object_614;
+import pageobjects.csmParamAndCore.CSM_Transaction_Object_614;
 import resources.BaseClass;
 
 public class CSM_TransactionIntra_614 extends BaseClass {

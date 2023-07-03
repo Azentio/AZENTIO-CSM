@@ -15,7 +15,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import pageobjects.csm.CSMSADS_TransactiononstaffaccObj;
-import pageobjects.csmParam.CSMcore_TransactionObj;
+import pageobjects.csmParamAndCore.CSMcore_TransactionObj;
 import resources.BaseClass;
 
 public class CSM_TransactionSA_614 extends BaseClass {

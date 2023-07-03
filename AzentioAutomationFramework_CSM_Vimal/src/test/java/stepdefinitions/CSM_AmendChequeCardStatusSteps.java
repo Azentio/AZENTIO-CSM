@@ -17,8 +17,8 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import pageobjects.CommonElements.CSMCommonWebElements;
 import pageobjects.csm.CSM_AmendChequeStatusObj;
-import pageobjects.csm.CSM_TransactionObj_614;
 import pageobjects.csm.ChequeBookRequestObj;
+import pageobjects.csmParamAndCore.CSM_TransactionObj_614;
 import resources.BaseClass;
 
 public class CSM_AmendChequeCardStatusSteps extends BaseClass {

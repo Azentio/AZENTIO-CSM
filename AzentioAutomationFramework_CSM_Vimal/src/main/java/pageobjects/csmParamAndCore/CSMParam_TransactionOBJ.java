@@ -1,4 +1,4 @@
-package pageobjects.csmParam;
+package pageobjects.csmParamAndCore;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
