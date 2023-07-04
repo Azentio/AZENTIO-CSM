@@ -34,12 +34,21 @@ public class CSM_TransferAccounts_Steps {
 	                                                           //CSM_TransferAccount
 	ExcelData CsmTransferAccountExcelData = new ExcelData(path, "CSM_TransferAccount", "DataSet ID");
 	Map<String, String> testData;
-
+	
+	
+//TA_001,TA_002
 	@And("user update test data set id for TA_001")
-	public void user__update_test_data_set_id_for_trs_218() throws Throwable {
+	public void user__update_test_data_set_id_for_ta_001() throws Throwable {
 		testData = CsmTransferAccountExcelData.getTestdata("TA_001_D1");
 		
-		System.out.println("Data Set ID "+testData.get("DataSet ID"));
+		
+	}
+	
+	@And("user update test data set id for TA_002")
+	public void user__update_test_data_set_id_for_t1_001() throws Throwable {
+		testData = CsmTransferAccountExcelData.getTestdata("TA_002_D1");
+		
+		
 	}
 
 	@And("user click TransferAccount field on CSMCore")
