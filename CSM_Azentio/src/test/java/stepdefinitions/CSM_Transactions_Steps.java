@@ -956,6 +956,10 @@ public class CSM_Transactions_Steps {
 		public void user_update_test_data_set_id_for_trs256() throws Throwable {
 			testData = CsmTransactionExcelData.getTestdata("TRS_256_D1");
 		}
+		@And("^user update test data set id for TRS_257$")
+		public void user_update_test_data_set_id_for_trs257() throws Throwable {
+			testData = CsmTransactionExcelData.getTestdata("TRS_257_D1");
+		}
 		
 		
 		

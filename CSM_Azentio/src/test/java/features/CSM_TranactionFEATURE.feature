@@ -803,7 +803,67 @@ Feature: Checking functionality of transaction
     And user click Ok Button in Warning PopUp Menu
     Then user Enter the Currency in Maintenance Screen
     Then user Enter the Amount in Maintenance Screen
-
+    
+ @TRS_257
+  Scenario: Functional Testing - Main Account Debited - No Future Value Date -  Charges - Account Sign Credit -  Overdrawn/ Withdrawal - Base/ Base
+    Given navigate to CSM param application and login with valid credentials
+    And user update test data set id for TRS_257
+    And user click the parameters menu
+    And user click the system parameters submenu
+    And user click on the transaction type under the system parameters
+    And user click on the update after approve field under the transaction type
+    And user enters the transaction type code in the code column under the update after approve
+    And user double clicks on the entered transaction type code from the list to view the transaction type details
+    And User Check the ProceedOnInsufficientFund flag chequebox
+    And User click the allow post dated value flag under update after approve
+    And user click on the update after approve button to save the changes
+    And user click on the approve field under the transaction type menu
+    And user enters the transaction type code in the code column under the approve menu
+    And user double clicks on the entered transaction type code from the list to view the transaction type details in approve screen
+    And user click on the approve button to approve the changes
+    #Given navigate to CSM param application and login with valid credentials
+    #And user click the parameters menu
+    And user click the AccountParameter submenu under Parameters
+    And user click the AccountType under AccountParameters
+    And user click the UPA field under AccountTypes
+    And user Enter the TypeCode in UPA field
+    And user double click the TypeCode in UPA field
+    And user click the Instructions in AccountTypes
+    And user Check AllowAccess checkBox under Instructions
+    And user click UPA Button
+    And user click confirm ok Button
+    And user click the Approve field under AccountTypes
+    And user Enter the TypeCode in Approve Field
+    And user double click the Typecode in Approve field
+    And user click the Approve button
+    And user click confirm ok Button
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TRS_257
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enters the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button in Information PopUp menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Transactions under CSM application in the CSM core application
+    And user click on Maintenance under Transactions in the CSM core application
+    And user enters the transaction type
+    And user Enter the Branch Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter Currency Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter GL Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter CIF Code for AC1 in Maintenance Screen
+    And user click random click
+    And user Enter Serial for AC1 in Maintenance Screen
+    And user click random click
+    And user click Ok Button in Warning PopUp Menu
+    Then user Enter the Currency in Maintenance Screen
+    Then user Enter the Amount in Maintenance Screen
   @TRS_119toTRS_129
   Scenario: test data
     #TRS_119 to TRS_129
@@ -835,6 +895,8 @@ Feature: Checking functionality of transaction
     And user update test data set id for TRS_254
     And user update test data set id for TRS_255
     And user update test data set id for TRS_256
+     And user update test data set id for TRS_257
+    
     
     
      @TRS_393
