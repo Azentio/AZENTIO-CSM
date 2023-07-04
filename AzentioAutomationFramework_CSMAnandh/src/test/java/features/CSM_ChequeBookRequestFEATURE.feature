@@ -102,7 +102,7 @@ And click on ok button in approve confirmation
 And click on ok button in approval success
 And update the test data for the test case ID CHB_055
 @CHB_055
-Scenario: checking if the user is able to create a chequebook - short process (Un chekcing the flag Chequebook Advanced Process)
+Scenario: Checking for Currenct System Behavior Allow Auto Approve Checked Allow Auto Submit unchecked Auto Submit upon Approval unchecked
 Given navigate to CSM application and login with valid credentials
 And get the test data for test case ID CHB_055
 And click on cheque request module
@@ -149,7 +149,7 @@ And click onn search button in cheque book request maintenance
 And search the cheque book request number in maintenance screen
 Then verify chequebook record status should be n submitted status
 @CHB_057_01
-Scenario: To check the allow auto approve flag and uncheck Allow Auto Submit and Auto submit upon Approval in chequebook maintenance
+Scenario: Checking for Currenct System Behavior Allow Auto Approve uchecked Allow Auto Submit unchecked Auto Submit upon Approval Checked
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter
@@ -176,7 +176,7 @@ And click on ok button in approve confirmation
 And click on ok button in approval success
 And update the test data for the test case ID CHB_057
 @CHB_057
-Scenario: checking if the user is able to create a chequebook - short process (Un chekcing the flag Chequebook Advanced Process)
+Scenario: Checking for Currenct System Behavior Allow Auto Approve uchecked Allow Auto Submit unchecked Auto Submit upon Approval Checked
 Given navigate to CSM application and login with valid credentials
 And get the test data for test case ID CHB_057
 And click on cheque request module
@@ -214,7 +214,7 @@ And click onn search button in cheque book request maintenance
 And search the cheque book request number in maintenance screen
 Then verify chequebook record status should be n submitted status
 @CHB_058_01
-Scenario: To check the allow auto approve flag and uncheck Allow Auto Submit and Auto submit upon Approval in chequebook maintenance
+Scenario: Checking for Currenct System Behavior Allow Auto Approve UnChecked Allow Auto Submit Checked Auto Submit upon Approval Checked
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter
@@ -241,7 +241,7 @@ And click on ok button in approve confirmation
 And click on ok button in approval success
 And update the test data for the test case ID CHB_058
 @CHB_058
-Scenario: checking if the user is able to create a chequebook - short process (Un chekcing the flag Chequebook Advanced Process)
+Scenario: Checking for Currenct System Behavior Allow Auto Approve UnChecked Allow Auto Submit Checked Auto Submit upon Approval Checked
 Given navigate to CSM application and login with valid credentials
 And get the test data for test case ID CHB_058
 And click on cheque request module
@@ -642,7 +642,7 @@ And search the CIF Number in cheque maintenance search grid
 And search the serial number in cheque maintenace search grid
 Then verify record got saved in chequebook maintenance search grid
 @CHB_066_01
-Scenario: To un check the allow to amend from numbe flag in chequebook
+Scenario: checking if the system is generating the from/to cheque numbers automatically 
 Given navigate to CSM param application and login with valid credentials
 And click on parameter module
 And click on system parameter
@@ -667,7 +667,7 @@ And click on ok button in approve confirmation
 And click on ok button in approval success
 And update the test data for the test case ID CHB_066
 @CHB_066
-Scenario: Checking for Currenct System Behavior/ Allow Auto Approve unchecked/ Allow Auto Submit unchecked/ Auto Submit upon Approval unchecked
+Scenario: checking if the system is generating the from/to cheque numbers automatically 
 Given navigate to CSM application and login with valid credentials
 And get the test data for test case ID CHB_066
 And click on cheque request module
