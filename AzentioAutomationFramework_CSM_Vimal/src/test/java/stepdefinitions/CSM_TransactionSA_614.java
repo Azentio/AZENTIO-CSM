@@ -645,6 +645,9 @@ public void User_614_click_on_use_button_in_change_running_date_popup() throws T
 	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());				
 seleniumActions.getClickAndActionsHelper().moveToElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());					
 seleniumActions.getClickAndActionsHelper().clickOnElement(transactiononstaffaccObj.CSMUseButtonInChangeRunningDate());	
+
+
+
 try {
 	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 			CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());

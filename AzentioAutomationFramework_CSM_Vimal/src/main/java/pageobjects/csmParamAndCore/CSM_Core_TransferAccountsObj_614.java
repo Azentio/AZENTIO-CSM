@@ -15,6 +15,12 @@ public class CSM_Core_TransferAccountsObj_614 {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
+	
+	@FindBy(xpath = "//label[@id='logout']")
+	private WebElement CSMCore_LogoutButton;
+	public WebElement CSMCoreLogoutButton() {
+		return CSMCore_LogoutButton;
+	}
 
 	@FindBy(xpath = "//td[text()='Transfer Accounts']")
 	private WebElement CSMCore_TransferAccountsButton;
@@ -82,10 +88,17 @@ public class CSM_Core_TransferAccountsObj_614 {
 		return CSMCore_ChooseFileButton_Maintenance_TA;
 	}
 	
-	//div[@id='div__popup_path_sol_ok']//*[text()='ERROR'] - Error popup
+	@FindBy(xpath = "//div[@id='div__popup_path_sol_ok']//*[text()='ERROR']")
+	private WebElement CSMCore_ErrorPopupMSG_Maintenance_TA;
+	public WebElement CSMCoreErrorPopupMSG_Maintenance_TA() {
+		return CSMCore_ErrorPopupMSG_Maintenance_TA;
+	}
 	
-	//input[@id='_popup_path_sol_ok'] - Error popup ok button
-	
+	@FindBy(xpath = "//input[@id='_popup_path_sol_ok']")
+	private WebElement CSMCore_ErrorPopupOKButton_Maintenance_TA;
+	public WebElement CSMCoreErrorPopupOKButton_Maintenance_TA() {
+		return CSMCore_ErrorPopupOKButton_Maintenance_TA;
+	}
 	
 	
 	

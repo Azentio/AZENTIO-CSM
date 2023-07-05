@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -335,6 +336,34 @@ public class UserUtility_614 {
 		seleniumActions.getClickAndActionsHelper().moveToElement(webElement);
 		boolean enabled = webElement.isSelected();
 		return enabled;
+	}
+	
+	public boolean elementIsVisible(Selenium_Actions seleniumActions, WebDriver driver, WebElement webElement) {
+
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, webElement);
+		seleniumActions.getClickAndActionsHelper().moveToElement(webElement);
+		boolean enabled = webElement.isDisplayed();
+		return enabled;
+	}
+	
+	public void sendKeys(Selenium_Actions seleniumActions, WebDriver driver, WebElement webElement, String data) {
+
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, webElement);
+		seleniumActions.getClickAndActionsHelper().moveToElement(webElement);
+		webElement.sendKeys(data);
+	}
+	
+	public boolean checkHolidays() {
+		
+		String[] holidays = {"FRIDAY","SATURDAY","SUNDAY"};
+		List<String> holidayList = Arrays.asList(holidays);
+		String currentDay = LocalDate.now().getDayOfWeek().toString();
+		boolean holiday = false;
+		if (holidayList.contains(currentDay)) {
+			holiday = true;
+		}
+		
+		return holiday;
 	}
 
 }
