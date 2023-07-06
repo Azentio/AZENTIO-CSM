@@ -7,13 +7,13 @@ import helper.ClicksAndActionsHelper;
 import helper.WaitHelper;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import pageobjects.csm.ChequebookReqBulkDestroy;
+import pageobjects.csm.ChequebookReqBulkDestroyObj;
 import resources.BaseClass;
 
 public class CSM_ChequebookReqBulDes extends BaseClass {
 	WebDriver driver = BaseClass.driver;
 	ConfigFileReader configFileRead = new ConfigFileReader();
-	ChequebookReqBulkDestroy chequebookRequestObj = new ChequebookReqBulkDestroy(driver);
+	ChequebookReqBulkDestroyObj chequebookRequestObj = new ChequebookReqBulkDestroyObj(driver);
 	ClicksAndActionsHelper clicksAndActionsHelper = new ClicksAndActionsHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
 

@@ -33,5 +33,19 @@ public class SingleTransferModeaPaymentAccObj {
 	public WebElement CodeGridBox_Click() {
 		return CodeGridBoxClick;
 	}
-
+	@FindBy(xpath="//select[@id='trsfr_type_P024MA']")
+	private WebElement Transfertype;
+	public WebElement Transfer_Type() {
+		return Transfertype;
+	}
+	@FindBy(xpath="//input[@id='forbid_multi_cif_trx_P024MA']")
+	private WebElement ForbidMultipleCIF;
+	public WebElement Forbid_MultipleCIF_Flag() {
+		return ForbidMultipleCIF;
+	}
+	@FindBy(xpath="//label[text()='Update After Approve ']")
+	private WebElement UpdateafterapproveKey;
+	public WebElement UpdateAfter_ApproveKey() {
+		return UpdateafterapproveKey;
+	}
 }

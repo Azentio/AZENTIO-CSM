@@ -3,7 +3,7 @@ Feature: Checking Cash Withdrawal Transaction Amount Lower than Limit
 @TRS_097
 Scenario: To check whether transfer is possible with particular amount lower than limit
 Given navigate to CSM param application and login with valid credentials
-And User update test data for test case number Param_097
+#And User update test data for test case number Param_097
 And Click the Parameters Flag
 Then Click the System Parameters Flag
 And User_604 Click the User Flag
