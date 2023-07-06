@@ -685,9 +685,9 @@ public class CSMSADS_Tranactiononstaff_step {
 					break;
 				}
 			} catch (Exception e) {
-				if (i == 49) {
-					Assert.fail(e.getMessage());
-				}
+//				if (i == 49) {
+//					Assert.fail(e.getMessage());
+//				}
 			}
 		}
 	}

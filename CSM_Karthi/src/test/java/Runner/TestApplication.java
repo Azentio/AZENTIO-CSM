@@ -8,15 +8,15 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/TRS_245.feature"},
+@CucumberOptions(features = {"src/test/java/features/CSM_Transaction.feature"},
                 glue = "stepdefinitions",
                 //monochrome=false, //to make steps in color
                 plugin = { "pretty",
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                           "rerun:ReRunScenarios/FailedReRun.txt"},
-               //dryRun = true,
+                           "rerun:ReRunScenarios/FailedReRun.txt"}
+               //,dryRun = true
             		                                  
-               tags="@TRS_245"
+              // ,tags="@TRS_245"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {

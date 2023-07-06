@@ -59,11 +59,11 @@ import utilities.ExtentTestManager;
 			List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
 			//testCaseTagsfromExcel1.add("TRS_127_01");
 			//testCaseTagsfromExcel1.add("TRS_127");
-			//testCaseTagsfromExcel1.add("TRS_128_01");
-			//testCaseTagsfromExcel1.add("TRS_128");
-			testCaseTagsfromExcel1.add("TRS_115_Prereq");
-		testCaseTagsfromExcel1.add("TRS_115");
-			testCaseTagsfromExcel1.add("TRS_115_PostReq");
+			testCaseTagsfromExcel1.add("TA_029_01");
+			testCaseTagsfromExcel1.add("TA_029");
+//			testCaseTagsfromExcel1.add("TRS_115_Prereq");
+//		testCaseTagsfromExcel1.add("TRS_115");
+//			testCaseTagsfromExcel1.add("TRS_115_PostReq");
 			//testCaseTagsfromExcel1.add("TRS_140");
 
 			MultipleRunner newExcelTestRunner= new MultipleRunner();
