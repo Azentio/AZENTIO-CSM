@@ -3,8 +3,15 @@ Feature: Title of your feature
   I want to use this template for my feature file
 
   Scenario: Title of your scenario
-   And User_612 update test data set id for TA_059
-   
+    And User_612 Click  on Apply to Void House Cheque under Transactions
+    And User_612 Enter the Transaction no in Apply to Void House Cheque 
+     And User_612 Double Click on the TransactionNo in Apply to Void House Cheque 
+     And User_612 Select the void Reason in Apply to Void House Cheque 
+     And User_612 Click on Apply to Void House Cheque Button
+      And User_612 Click on Void House Cheque under Transactions
+    And User_612 Enter the Transaction no in Void House Cheque 
+      And User_612 Double Click on the TransactionNo in  Void House Cheque 
+     And User_612 Click on Void House Cheque Button
    
    
    

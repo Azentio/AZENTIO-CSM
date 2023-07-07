@@ -219,20 +219,7 @@ public class CSM_TransferAccounts_Steps {
 		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccCIFCode().sendKeys(Keys.TAB);
 
 	}
-	@And("user close the popup Tab")
-	public void user_close_the_popup_tab()  throws Throwable{
-		try {
-			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-					csmTransferAccountsobj.CSMCorecloseSymbol());
-			seleniumActions.getClickAndActionsHelper()
-					.moveToElement(csmTransferAccountsobj.CSMCorecloseSymbol());
-			seleniumActions.getClickAndActionsHelper()
-					.clickOnElement(csmTransferAccountsobj.CSMCorecloseSymbol());
-		} catch (Exception e) {
-			
-		}
-		
-	}
+	
 
 	@And("user enter the SerialNumber under TOAccount")
 	public void user_enter_the_serial_number_under_to_account()  throws Throwable{
@@ -257,8 +244,8 @@ public class CSM_TransferAccounts_Steps {
 				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRetriveButton());
 	}
 
-	@And("user select the Record no1 under TransferManagement screen")
-	public void user_select_the_record_no1_under_transfer_management_screen() throws Throwable {
+	@And("user select the Record no1 under TransferMaintanence screen")
+	public void user_select_the_record_no1_under_transferMaintance_screen() throws Throwable {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno1());
 		seleniumActions.getClickAndActionsHelper()
@@ -268,16 +255,16 @@ public class CSM_TransferAccounts_Steps {
 
 	}
 	
-	@And("user select the Record no2 under TransferManagement screen")
-	public void user_select_the_record_no2_under_transfer_management_screen() throws Throwable {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
-		seleniumActions.getClickAndActionsHelper()
-				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
-		seleniumActions.getClickAndActionsHelper()
-				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
-
-	}
+//	@And("user select the Record no2 under TransferManagement screen")
+//	public void user_select_the_record_no2_under_transfer_management_screen() throws Throwable {
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+//		seleniumActions.getClickAndActionsHelper()
+//				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+//		seleniumActions.getClickAndActionsHelper()
+//				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+//
+//	}
 
 	@And("user click the Save button under maintanance screen")
 	public void CSMCoreTransferAccountsMaintananceSaveButton() throws Throwable {
@@ -432,10 +419,346 @@ public class CSM_TransferAccounts_Steps {
 				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordTransferButton());
 
 	}
-	
+//Transaction 
 
+    @And("^User_612 Click onTransactions under CSM application$")
+    public void User_612_click_on_transactions_under_csm_application() throws Throwable {
+    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMTransactionsMainMenu_612());
+        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMTransactionsMainMenu_612());
+        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMTransactionsMainMenu_612());
+    }
 	
+	 @And("^User_612 Click onMaintenance under Transactions$")
+	    public void User_612_click_on_maintenance_under_transactions() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMMaintenanceUnderTransactions_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMMaintenanceUnderTransactions_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMMaintenanceUnderTransactions_612());
+	    }
+	 
+	 
+	 
+	 
+	    @And("^User_612 Enter TRXType in Maintenance Screen$")
+	    public void User_612_enter_trx_type_in_maintenance_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMTRXTypeInMaintenanceScreen_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMTRXTypeInMaintenanceScreen_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMTRXTypeInMaintenanceScreen_612());
+	        csmTransferAccountsobj.CSMTRXTypeInMaintenanceScreen_612().sendKeys(testData.get("TRXType_D1"));
+	        csmTransferAccountsobj.CSMTRXTypeInMaintenanceScreen_612().sendKeys(Keys.TAB);
+	          // csmTransferAccountsobj.CSMTRXTypeInMaintenanceScreen().sendKeys("",Keys.TAB);
+	        
+	    }
+	    @And("^User_612 Enter the BranchCode in debit Ac in Maintenance Screen$")
+	    public void user_enter_the_branch_code_in_debit_ac_in_maintenance_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_BranchCodeINdebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_BranchCodeINdebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_BranchCodeINdebitAc_612());
+	        csmTransferAccountsobj.CSM_BranchCodeINdebitAc_612().sendKeys(testData.get("BranchCode_D1"),Keys.TAB);
+	        
+	       }
 
+	    @And("^User_612 Enter CurrencyCode in debit Ac in Maintenance Screen$")
+	    public void user_enter_currency_code_in_debit_ac_in_maintenance_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_CurrencyCodedebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_CurrencyCodedebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_CurrencyCodedebitAc_612());
+	        csmTransferAccountsobj.CSM_CurrencyCodedebitAc_612().sendKeys(testData.get("CurrencyCode_D1"),Keys.TAB);
+	        
+	          
+	    }
+
+	    @And("^User_612 Enter GLCode in debit Ac in Maintenance Screen$")
+	    public void user_enter_gl_code_in_debit_ac_in_maintenance_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_GLCodedebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_GLCodedebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_GLCodedebitAc_612());
+	        csmTransferAccountsobj.CSM_GLCodedebitAc_612().sendKeys(testData.get("GLCode_D1"));
+	        csmTransferAccountsobj.CSM_GLCodedebitAc_612().sendKeys(Keys.TAB);
+	        
+	    }
+
+	    @And("^User_612 Enter CIFCode in debit Ac in Maintenance Screen$")
+	    public void user_enter_cif_code_in_debit_ac_in_maintenance_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_CIFCodeIndebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_CIFCodeIndebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_CIFCodeIndebitAc_612());
+	        csmTransferAccountsobj.CSM_CIFCodeIndebitAc_612().sendKeys(testData.get("CIFCode_D1"));
+	        csmTransferAccountsobj.CSM_CIFCodeIndebitAc_612().sendKeys(Keys.TAB);
+	        
+	    }
+
+	    @And("^User_612 Enter Serialin debit Ac in Maintenance Screen$")
+	    public void user_enter_serial_in_debit_ac_in_maintenance_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_SerialIndebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_SerialIndebitAc_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_SerialIndebitAc_612());
+	        csmTransferAccountsobj.CSM_SerialIndebitAc_612().sendKeys(testData.get("SerialNo_D1"));
+	        csmTransferAccountsobj.CSM_SerialIndebitAc_612().sendKeys(Keys.TAB);
+	        
+	    }
+	    @And("^User_612 Click OkButton in Warning PopUp Menu$")
+	    public void User_612_click_ok_button_in_warning_popup_menu() throws Throwable {
+	    	for (int i = 0; i < 200; i++) {
+	    		try {
+	    	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMOkButtonInWarningPopUpMenu_612());
+	    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMOkButtonInWarningPopUpMenu_612());
+	    	        break;
+				} catch (Exception e) {
+					
+				}
+	    	}
+	    }
+
+	    @And("^User_612 Enter theCurrency in Maintenance Screen$")
+	    public void User_enter_thecurrency_in_maintenance_screen() throws Throwable {
+//	    	
+//	    	for (int i = 0; i < 200; i++) {
+	    		try {
+	    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612());
+	    			seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612());
+	    	        //seleniumAction.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612());
+	    	        seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612());
+	    	        csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612().sendKeys(testData.get("CurrencyCode_D1"));
+	    	        csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612().sendKeys(Keys.TAB);
+	    	        
+	    	        //csmTransferAccountsobj.CSMCurrencyInMaintenanceScreen_612().sendKeys("840",Keys.TAB);
+                  //break;
+				} catch (Exception e) {
+				Assert.fail(e.getMessage());
+//					if (i==199) {
+//						Assert.fail(e.getMessage());
+					}
+				}			
+//			}   
+//	    }
+	    @And("^User_612 Enter the Amountin Maintenance Screen$")
+	    public void user_enter_the_amount_in_maintenance_screen() throws Throwable {
+	    		    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMAmountInMaintenanceScreen_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMAmountInMaintenanceScreen_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMAmountInMaintenanceScreen_612());
+	        csmTransferAccountsobj.CSMAmountInMaintenanceScreen_612().sendKeys(testData.get("Amount"));
+	        csmTransferAccountsobj.CSMAmountInMaintenanceScreen_612().sendKeys(Keys.TAB);
+	      
+	    		}
+	    @And("^User_612 Click SaveButton in Maintenance Screen$")
+	    public void user_click_save_button_in_maintenance_screen() throws Throwable {
+	    	for (int i = 0; i <200; i++) {
+				try {
+					seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMSaveButtonInMaintenanceScreen_612());
+		    	    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMSaveButtonInMaintenanceScreen_612());
+		    	    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMSaveButtonInMaintenanceScreen_612());
+		    	    break;
+				} catch (Exception e) {
+					if (i==199) {
+						Assert.fail(e.getMessage());
+					}
+				}
+			}
+	    		
+	    	        
+	    }
+	    @And("^User_612 Get the Transaction No in Success PopUp Menu for059$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for059() throws Throwable {
+	    	
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.getTransactionNumber_612());
+	    	String  transactionNo = csmTransferAccountsobj.getTransactionNumber_612().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+	       CsmTransferAccountExcelData.updateTestData("TA_059_D1", "TRXNo", transactionNo); 
+		     testData = CsmTransferAccountExcelData.getTestdata("TA_059_D1");
+	    	
+	    }
+	    @And("^User_612 Click OkButton in Success PopUp Menu$")
+	    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
+	    	for (int i = 0; i < 200; i++) {
+	    		try {
+	    			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMOkButtonInSuccessPopUpMenu_612());
+	    	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMOkButtonInSuccessPopUpMenu_612());
+	    	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMOkButtonInSuccessPopUpMenu_612());
+	    	        break;
+				} catch (Exception e) {
+					if (i==199) {
+						Assert.fail(e.getMessage());
+					}
+				}			
+			}
+	    }
+	    
+	    @And("^User_612 Click on ApproveScreen under Transactions$")
+	    public void user_click_on_approve_screen_under_transactions() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMApproveScreenUnderTransactions_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMApproveScreenUnderTransactions_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMApproveScreenUnderTransactions_612());
+	    }
+
+	    @And("^User_612 Enter the TransactionNo in Approve Screen$")
+	    public void user_enter_the_transaction_no_in_approve_screen() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMTransactionNoInApproveScreen_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMTransactionNoInApproveScreen_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMTransactionNoInApproveScreen_612());
+	        csmTransferAccountsobj.CSMTransactionNoInApproveScreen_612().sendKeys(testData.get("TRXNo"));
+	        csmTransferAccountsobj.CSMTransactionNoInApproveScreen_612().sendKeys(Keys.ENTER);
+	    }
+
+	    @And("^User_612 Double Click on the TransactionNo$")
+	    public void user_double_click_on_the_transaction_no() throws Throwable {
+	    	try {
+	    		if (csmTransferAccountsobj.Transactions_transactionNo_Doubleclk_612().isDisplayed());
+		        {
+		        	//seleniumAction.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.Transactions_transactionNo_Doubleclk_612());
+		        	seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.Transactions_transactionNo_Doubleclk_612());
+		        	seleniumActions.getClickAndActionsHelper().doubleClick(csmTransferAccountsobj.Transactions_transactionNo_Doubleclk_612());
+		        }  
+		        }
+	         
+			catch (Exception e) {
+			
+			}
+	    	
+
+}
+	    @And("^User_612 Click on Ok Button in Success PopUp Menu for ApproveTranscation$")
+	    public void user_click_on_ok_button_in_success_popup_menu_for_transcation() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMOkButtonInSuccessPopUpMenuForTranscation_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMOkButtonInSuccessPopUpMenuForTranscation_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMOkButtonInSuccessPopUpMenuForTranscation_612());
+	    }
+	    
+	    @And("^User_612 Click on ApproveButton for approve the Transaction$")
+	    public void user_click_on_approve_button_for_approve_the_transaction() throws Throwable {
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMApproveButtonInApproveScreen_612());
+	        seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMApproveButtonInApproveScreen_612());
+	        seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMApproveButtonInApproveScreen_612());
+	    }
+
+
+@And("User_612 Click  on Apply to Void House Cheque under Transactions")
+public void user_click_on_apply_to_void_house_cheque_under_transactions()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMApplytoVoidHouseChequemenu612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMApplytoVoidHouseChequemenu612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMApplytoVoidHouseChequemenu612());
+    
+   
+}
+
+@And("User_612 Enter the Transaction no in Apply to Void House Cheque")
+public void user_enter_the_transaction_no_in_apply_to_void_house_cheque() throws Throwable{
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMApplytoVoidHouseChequemenuTransactionNo_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMApplytoVoidHouseChequemenuTransactionNo_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMApplytoVoidHouseChequemenuTransactionNo_612());
+    csmTransferAccountsobj.CSMApplytoVoidHouseChequemenuTransactionNo_612().sendKeys(testData.get("TRXNo"));
+    csmTransferAccountsobj.CSMApplytoVoidHouseChequemenuTransactionNo_612().sendKeys(Keys.ENTER);
+}
+
+@And("User_612 Double Click on the TransactionNo in Apply to Void House Cheque")
+public void user_double_click_on_the_transaction_no_in_apply_to_void_house_cheque()throws Throwable {
+	
+		try {
+		if (csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_612().isDisplayed());
+        {
+        	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_612());
+            seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_612());
+            seleniumActions.getClickAndActionsHelper().doubleClick(csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_612());
+        }  
+        }
+     
+	catch (Exception e) {
+	
+	}
+	
+   
+}
+
+@And("User_612 Select the void Reason in Apply to Void House Cheque")
+public void user_select_the_void_reason_in_apply_to_void_house_cheque()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_selectReason_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_selectReason_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_selectReason_612());
+   seleniumActions.getDropDownHelper().SelectUsingVisibleText(csmTransferAccountsobj.CSM_ApplytoVoidHouseChequemenu_TransactionNoDoubleTab_selectReason_612(),"TEST");
+}
+
+@And("User_612 Click on Apply to Void House Cheque Button")
+public void user_click_on_apply_to_void_house_cheque_button()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_ApplytoVoidHouseCheque_Button_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_ApplytoVoidHouseCheque_Button_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_ApplytoVoidHouseCheque_Button_612());
+   
+   
+}
+
+@And("User_612 Click on Void House Cheque under Transactions")
+public void user_click_on_void_house_cheque_under_transactions() throws Throwable{
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_trsVoidHouseChequeMenu_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_trsVoidHouseChequeMenu_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_trsVoidHouseChequeMenu_612());
+   
+}
+
+@And("User_612 Enter the Transaction no in Void House Cheque")
+public void user_enter_the_transaction_no_in_void_house_cheque()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNo_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNo_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNo_612());
+    csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNo_612().sendKeys(testData.get("TRXNo"));
+    csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNo_612().sendKeys(Keys.ENTER);
+}
+
+@And("User_612 Double Click on the TransactionNo in  Void House Cheque")
+public void user_double_click_on_the_transaction_no_in_void_house_cheque()throws Throwable {
+   try {
+	   if (csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNoDoubleTab_612().isDisplayed()) {
+		 //seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNoDoubleTab_612());
+		    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNoDoubleTab_612());
+		    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_TransactionNoDoubleTab_612()); 
+			}
+	   
+} catch (Exception e) {
+	
+}
+	
+}
+
+@And("User_612 Click on Void House Cheque Button")
+public void user_click_on_void_house_cheque_button()throws Throwable {
+    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_VoidBtn_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_VoidBtn_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_TRS_VoidHouseChequeMenu_VoidBtn_612());  
+}
+@And("user close the popup Tab")
+
+public void user_close_the_popup_tab() throws Throwable {
+
+//    seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+
+//            csmTransferAccountsobj.CSMCorecloseSymbol());
+
+    for (int i = 0; i < 200; i++) {
+
+        try {
+
+            
+
+            seleniumActions.getClickAndActionsHelper()
+
+                    .moveToElement(csmTransferAccountsobj.CSMCorecloseSymbol());
+
+            seleniumActions.getClickAndActionsHelper()
+
+                    .clickOnElement(csmTransferAccountsobj.CSMCorecloseSymbol());
+
+            break;
+
+        } catch (Exception e) {
+
+            
+
+        }
+
+        
+
+    }
+
+    }	    
+	   
 
 
 }
