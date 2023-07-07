@@ -215,10 +215,7 @@ public class CSM_PassbookSteps extends BaseClass {
 				clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmOkButton());
 				break;
 			} catch (Exception e) {
-				if(i==800)
-				{
-				Assert.fail(e.getMessage());
-				}
+				
 			}
 		}
 

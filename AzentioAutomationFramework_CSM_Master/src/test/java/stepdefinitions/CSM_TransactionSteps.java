@@ -66,6 +66,12 @@ public class CSM_TransactionSteps extends BaseClass {
 		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
 	}
 
+	@And("^get the test data for test case WP_CW_003_02$")
+	public void get_the_test_data_for_test_case_WP_CW_003_02() throws Throwable {
+		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("WP_CW_003_02");
+		transactionTestData = excelDataForChargeWaiver.getTestdata(chargeWaiverExecutionData.get("Data Set ID"));
+	}
+
 	@And("^get the test data for test case CW_04$")
 	public void get_the_test_data_for_test_case_cw04() throws Throwable {
 		chargeWaiverExecutionData = excelDataForChargeWaiverExecution.getTestdata("CW_004");
@@ -147,6 +153,10 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmSystemDate());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmSystemDate());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmSystemDate());
+		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmAlertPopUpCloseButton());
+		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAlertPopUpCloseButton());
+		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmAlertPopUpCloseButton());
+		
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmInputSystemDate());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmInputSystemDate());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmInputSystemDate());
@@ -166,7 +176,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.closeOkButton());
 		clicksAndActionsHelper.moveToElement(csmCommonWebElements.closeOkButton());
 		clicksAndActionsHelper.clickOnElement(csmCommonWebElements.closeOkButton());
-		
+
 	}
 
 	@And("^change the system date to high waiver date which is configured$")
@@ -951,7 +961,7 @@ public class CSM_TransactionSteps extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.moveToElement(transactionObj.transactionDepositeAmountInputBox());
 		clicksAndActionsHelper.clickOnElement(transactionObj.transactionDepositeAmountInputBox());
-		String amount = transactionTestData.get("Deposite Amount") + "0.00";
+		String amount = transactionTestData.get("Deposite Amount");
 		System.out.println("Deposite Amount " + amount);
 		transactionObj.transactionDepositeAmountInputBox().sendKeys(amount);
 		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionMaintenanceLabel());
@@ -1778,6 +1788,13 @@ public class CSM_TransactionSteps extends BaseClass {
 			System.out.println(str);
 		}
 		Assert.assertEquals(spliChargeAmt[0], transactionTestData.get("Waived Charge Amount"));
+	}
+
+	@Then("verify system should waive the charges as per the waive percentage")
+	public void verify_system_should_waive_the_charges_as_per_the_waive_percentage() throws Throwable {
+		waitHelper.waitForElementwithFluentwait(driver, transactionObj.transactionChargeValidation());
+		System.out.println("Waived amount "+transactionObj.transactionChargeValidation().getText());
+		
 	}
 
 	@And("^close the reactivate SO screen under transactions$")

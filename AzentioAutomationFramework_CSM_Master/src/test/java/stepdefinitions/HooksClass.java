@@ -27,9 +27,9 @@ import utilities.ExtentTestManager;
 public class HooksClass extends BaseClass {
 	WebDriver driver;
 	String path = System.getProperty("user.dir") + "\\TestData\\CSMTestData.xlsx";
-	ExcelData testExecution = new ExcelData(path, "ChargeWaiverExecutionTracker", "TestCaseID");
+	ExcelData testExecution = new ExcelData(path, "AmendChequeCard_ExeTrack", "TestCaseID");
 	Map<String, String> testExecutionData;
-	ExcelTest excelTest = new ExcelTest(path, "ChargeWaiverExecutionTracker", "TestCaseID");
+	ExcelTest excelTest = new ExcelTest(path, "AmendChequeCard_ExeTrack", "TestCaseID");
 	List<String> testCaseTagsFromExcel = excelTest.getTestCaseTagsfromExcel();
 	boolean status;
 	ScreenshotHelper screenshotHelper = new ScreenshotHelper(driver);
@@ -38,8 +38,9 @@ public class HooksClass extends BaseClass {
 	public void browserSetup(Scenario scenario) throws IOException {
 		status = true;
 		// get flag status from excel and skip the test cases
-		if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")
-				.equalsIgnoreCase("No")) {
+		if (testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No")	
+				.equals("No")) {
+			System.out.println("Execution status "+testExecution.getTestdata(NewExcelTestRunner.getCurrentExecutionTag()).get("ExecuteYes/No"));
 			String currentExecutionTag = NewExcelTestRunner.getCurrentExecutionTag();
 			System.out.println(currentExecutionTag);
 			status = false;

@@ -94,15 +94,15 @@ public class WaitHelper {
 		return element1;
 	}
 
-	public  WebElement waitForElementToVisibleWithFluentWait(WebDriver driver, WebElement element,int timeOut,int pollingTime) 
-	 { 
-	 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
-	 .withTimeout(Duration.ofSeconds(timeOut)) 
-	 .pollingEvery(Duration.ofMillis(pollingTime))
-	 .ignoring(Exception.class);
-	 WebElement element1 = wait.until(ExpectedConditions.visibilityOf(element));
-	 return element1;
-	 }
+//	public  WebElement waitForElementToVisibleWithFluentWait(WebDriver driver, WebElement element,int timeOut,int pollingTime) 
+//	 { 
+//	 Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+//	 .withTimeout(Duration.ofSeconds(timeOut)) 
+//	 .pollingEvery(Duration.ofMillis(pollingTime))
+//	 .ignoring(Exception.class);
+//	 WebElement element1 = wait.until(ExpectedConditions.visibilityOf(element));
+//	 return element1;
+//	 }
 
 
 

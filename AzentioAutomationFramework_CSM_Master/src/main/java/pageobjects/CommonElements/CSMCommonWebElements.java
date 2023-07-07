@@ -446,5 +446,11 @@ public class CSMCommonWebElements {
 	public WebElement commonChargewaiverValidationOkButton() {
 		return commonChargewaiverValidation_OkButton;
 	}
+	@FindBy(xpath="//span[contains(text(),'Alerts')]//parent::div//span[contains(text(),'close')]")
+	private WebElement csm_AlertPopUpCloseButton;
+
+	public WebElement csmAlertPopUpCloseButton() {
+		return csm_AlertPopUpCloseButton;
+	}
 
 }

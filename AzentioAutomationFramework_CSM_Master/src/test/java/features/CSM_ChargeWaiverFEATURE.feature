@@ -33,6 +33,65 @@ And enter the CIF code in cheque book request
 And enter the serial number in cheque book request
 And click on charges in cheque book request
 Then validate system should show the validation for charges have waiveds
+@WP_CW_003_01
+Scenario: To verify user can able to define the charge waive percentage for pririty records 
+Given navigate to CSM param application and login with valid credentials
+And click on parameter module
+And click on CIF Parameters
+And get the test adat for test case WP_CW_003_01
+And click on priority screen
+And click on update after approve screen of priority feature
+And search for the priority record
+And select the priority record in update after approve screen
+And define the charge waive percentage in prority uupdate after approve
+And click o update after button in priority record
+And click on ok button inn save successfull pop up
+And click on ok button in update auucessfull pop up
+And close the update after approve screen of priority feature
+And click on approve screen ok priority feature
+And search for the priority record in approve section
+And select the priority record in approve section
+And click on approve button in priority record
+And click on ok button in approve confirmation in priority screen
+And click on ok button in approve successfull in priority screen
+And update the waive percentage in transaction excel database
+
+@WP_CW_003_02
+Scenario: Checking on the waiver when using a transaction type within the defined transaction types
+And get the test data for test case WP_CW_003_02
+Given navigate to CSM application and login with valid credentials
+And change the system date within excemption date
+And click on Transaction module
+And click on maintenance scree under transaction module
+And enter the transaction type code in transaction
+And enter the branch code for cash deposite
+And enter the currency code for cash deposite
+And enter the gl code for cash deposite
+And enter the CIF code for cash deposite
+And click on ok button of dormant account error in transaction screen
+And enter the serial number for cash deposite
+And click on ok button of dormant account error in transaction screen
+And enter the currency code
+And click on charge button
+Then verify original charge amount field should get shows with disable status
+And enter the amount for deposite in transaction
+Then verify system should show the validation for charge waiver in transaction screen
+And click on save button in transaction 
+And get the transaction number which is created now
+And get the test data for test case WP_CW_003_02
+And click on approve feature under transaction feature
+And search the transaction number under transaction approve feature
+And select the suggested record from the transaction approve
+And click on approve button
+And click on ok button after approve the transaction record
+And close the transaction tab
+And click on maintenance scree under transaction module
+And click on search in transaction screen
+And search the approved trsnaction number in transaction maintenenace screen
+Then verify transaction status should show as approved
+And open the approved transaction record
+And click on charge button
+Then verify system should waive the charges as per the waive percentage 
 @CW_003
 Scenario: Checking on the waiver when using a transaction type within the defined transaction types
 And get the test data for test case CW_003
@@ -46,10 +105,8 @@ And enter the currency code for cash deposite
 And enter the gl code for cash deposite
 And enter the CIF code for cash deposite
 And click on ok button of dormant account error in transaction screen
-
 And enter the serial number for cash deposite
 And click on ok button of dormant account error in transaction screen
-
 And enter the currency code
 And click on charge button
 Then verify original charge amount field should get shows with disable status
@@ -61,7 +118,6 @@ And get the test data for test case CW_003
 And click on approve feature under transaction feature
 And search the transaction number under transaction approve feature
 And select the suggested record from the transaction approve
-
 And click on approve button
 And click on ok button after approve the transaction record
 And close the transaction tab
@@ -70,7 +126,6 @@ And click on search in transaction screen
 And search the approved trsnaction number in transaction maintenenace screen
 Then verify transaction status should show as approved
 And open the approved transaction record
-
 And click on charge button
 Then verify system should not deduct the charges for the transaction
 @CW_004
@@ -127,9 +182,9 @@ And click on ok button of dormant account error in transaction screen
 And enter the serial number for cash deposite
 And click on ok button of dormant account error in transaction screen
 And enter the currency code
+And enter the amount for deposite in transaction
 And click on charge button
 Then verify system should not show the validation for charge waiver
-And enter the amount for deposite in transaction
 Then verify system should not show the validation for charge waiver
 And click on save button in transaction 
 And get the transaction number which is created now
@@ -358,7 +413,6 @@ And get the test data for test case CW_21
 And click on amend standing order feature
 And search for approved standing order in amend standing order
 And select the approved standing order in amend standing order
-
 And amend the amount in standing order record
 Then verify system should show the validation for charge waiver in transaction screen
 Then verify system should show the validation for charge waiver in transaction screen
@@ -369,7 +423,6 @@ And close the amend staning order tab
 And click on approve feature under transaction feature
 And search the transaction number under transaction approve feature
 And select the suggested record from the transaction approve
-
 And click on approve button
 Then verify system should show the validation for charge waiver in transaction screen
 And get the transaction number which is created now
@@ -378,7 +431,6 @@ And get the test data for test case CW_21
 And click on to be stopped screen under transaction module
 And search for the approved record in to be stopped search
 And select the approved record in to be stopped screen
-
 Then verify system should show the validation for charge waiver in transaction screen
 Then verify system should show the validation for charge waiver in transaction screen
 And give the to be stopped reason

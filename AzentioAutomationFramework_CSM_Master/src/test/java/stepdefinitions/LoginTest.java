@@ -53,5 +53,10 @@ public class LoginTest extends BaseClass {
 		waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
 		Assert.assertTrue(csmCommonWebElements.csmUserName().isDisplayed());
 	}
+	@Given("^navigate to CSM application and login with valid teller credentials$")
+	public void navigate_to_csm_application_and_login_with_valid_teller_credentials() throws Throwable {
+		driver.get(configFileReader.getCSMApplicationUrl());
+		csmLogin.loginIntoCSMApplication("CSMUser2");
+	}
 
 }

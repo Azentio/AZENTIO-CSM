@@ -122,7 +122,12 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 		chequeBookRequestTestData = excelDataForChequeBookRequest
 				.getTestdata(chequeBookExecutionData.get("Data Set ID"));
 	}
-
+	@And("close the alert pop up in CSM")
+	public void close_the_alert_pop_up_in_csm() throws Throwable{
+	 waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmAlertPopUpCloseButton());
+	 clicksAndActionsHelper.moveToElement(csmCommonWebElements.csmAlertPopUpCloseButton());
+	 clicksAndActionsHelper.clickOnElement(csmCommonWebElements.csmAlertPopUpCloseButton());
+	 }
 	@And("^get the test data for test case ID CHB_001$")
 	public void get_the_test_data_for_test_case_id_CHB_001() throws Throwable {
 		chequeBookExecutionData = excelDataForCheuqeBookRequestExecution.getTestdata("CHB_001");
@@ -762,6 +767,12 @@ public class CSM_ChequeBookRequestSteps extends BaseClass {
 			}
 		}
 
+	}
+	@And("close the cheuqebook approve cancel screeen in chequebook request")
+	public void close_the_cheuqebook_approve_cancel_screeen_in_chequebook_request() throws Throwable{
+		waitHelper.waitForElementwithFluentwait(driver, chequeBookRequestObj.chequebookRequestApproveCancelTabClose());
+		clicksAndActionsHelper.moveToElement(chequeBookRequestObj.chequebookRequestApproveCancelTabClose());
+		clicksAndActionsHelper.clickOnElement(chequeBookRequestObj.chequebookRequestApproveCancelTabClose());
 	}
 
 	@And("click on ok button in suspense account waring pop up")
