@@ -13,6 +13,7 @@ public class TransactionStaffAcc_obj {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
+	
 	//TSA_148//
 	
 	@FindBy(xpath="//td[text()='Parameters']")
@@ -337,10 +338,10 @@ public class TransactionStaffAcc_obj {
 		return Transactions_codevalue;
 	}
 	@FindBy(xpath="//td[@id='td_transactionTypesList_GridTbl_Id_P024P_1_ctstrxtypeVO.CODE']")
-	private WebElement Transactions_existingdata;
-	public WebElement Transactions_existingdata()
+	private WebElement transactions_Transactiontype_existingdata;
+	public WebElement transactionsTransactiontypeexistingdata()
 	{
-		return Transactions_existingdata;
+		return transactions_Transactiontype_existingdata;
 	}
 	@FindBy(xpath="//label[@id='transactionTypesMaint_FormId_P024P_Approve_key']")
 	private WebElement Transactions_Approvebtn;
@@ -1053,12 +1054,150 @@ public class TransactionStaffAcc_obj {
 	{
 		return transaction_Generalaccounts_maintenance_status;
 	}
-//	@FindBy(xpath="")
-//	private WebElement transaction_Generalaccounts_maintenance_status;
-//	public WebElement transactionGeneralaccountsmaintenancestatus()
-//	{
-//		return transaction_Generalaccounts_maintenance_status;
-//	}
+	@FindBy(xpath="//span[text()='No Access privilege']")
+	private WebElement alertactivation_NAPflag ;
+	public WebElement alertactivationNAPflag()
+	{
+		return alertactivation_NAPflag;
+	}
+	
+	@FindBy(xpath="//input[@id='1x1x1513_ctscontrolAlertVO.ACTIVATE_tab4_GridTbl_Id_O001UP']")
+	private WebElement alertactivation_flag ;
+	public WebElement alertactivationflag()
+	{
+		return alertactivation_flag;
+	}
+	
+	
+	@FindBy(xpath="//td[text()='Transfer Accounts']")
+	private WebElement transfer_Accounts ;
+	public WebElement transferAccounts()
+	{
+		return transfer_Accounts;
+	}
+	
+	@FindBy(xpath="//span[text()='Maintenance']")
+	private WebElement transfer_Accounts_Maintenance ;
+	public WebElement transferAccountsMaintenance()
+	{
+		return transfer_Accounts_Maintenance;
+	}
+	
+	@FindBy(xpath="//select[@id='transferTypeId_TA001MT']")
+	private WebElement transfer_Accounts_Maintenance_Transfertype ;
+	public WebElement transferAccountsMaintenanceTransfertype()
+	{
+		return transfer_Accounts_Maintenance_Transfertype;
+	}
+	
+	@FindBy(xpath="//span[@id='spanLookup_original_CIF_TA001MT']")
+	private WebElement transfer_Accounts_Maintenance_Cif;
+	public WebElement transferAccountsMaintenanceCif()
+	{
+		return transfer_Accounts_Maintenance_Cif;
+	}	
+	
+	@FindBy(xpath="//span[text()='Update After Approve']")
+	private WebElement controlrecord_Upascrn;
+	public WebElement controlrecordUpascrn()
+	{
+		return controlrecord_Upascrn;
+	}
+	
+	@FindBy(xpath="//select[@name='transferAccountsCO.cts_TRSFR_ACCVO.TRANSFER_TYPE']")
+	private WebElement transferacc_maintance_GLtoGL;
+	public WebElement transferaccmaintanceGLtoGL()
+	{
+		return transferacc_maintance_GLtoGL;
+	}
+	@FindBy(xpath="//input[@name='transferAccountsCO.cts_TRSFR_ACCVO.CIF_NO']")
+	private WebElement transferacc_maintance_Cifinput;
+	public WebElement transferaccmaintanceCifinput()
+	{
+		return transferacc_maintance_Cifinput;
+	}
+	@FindBy(xpath="//input[@name='transferAccountsCO.cts_TRSFR_ACCVO.ORIGINAL_GL']")
+	private WebElement transferacc_maintance_GLinput;
+	public WebElement transferaccmaintanceGLinput()
+	{
+		return transferacc_maintance_GLinput;
+	}
+	@FindBy(xpath="//input[@name='transferAccountsCO.cts_TRSFR_ACCVO.DESTINATION_GL']")
+	private WebElement transferacc_maintance_DestinationGLinput;
+	public WebElement transferaccmaintanceDestinationGLinput()
+	{
+		return transferacc_maintance_DestinationGLinput;
+	}
+	@FindBy(xpath="//input[@name='transferAccountsCO.cts_TRSFR_ACCVO.REASON_CODE']")
+	private WebElement transferacc_maintance_Reasoninput;
+	public WebElement transferaccmaintanceReasoninput()
+	{
+		return transferacc_maintance_Reasoninput;
+	}
+	@FindBy(xpath="//label[text()='Set Exceptions ']")
+	private WebElement transferacc_maintance_Setexceptionbtn;
+	public WebElement transferaccmaintanceSetexceptionbtn()
+	{
+		return transferacc_maintance_Setexceptionbtn;
+	}
+	@FindBy(xpath="//td[@id='add_transferAccountsCriteriaTbl_Id_TA001MT']")
+	private WebElement transferacc_maintance_Setexceptionbtn_Addsymbol;
+	public WebElement transferaccmaintanceSetexceptionbtnAddsymbol()
+	{
+		return transferacc_maintance_Setexceptionbtn_Addsymbol;
+	}
+	@FindBy(xpath="//td[@id='td_transferAccountsCriteriaTbl_Id_TA001MT_1_transferAccountsCriteriaVO.EXCEPTION_FACTOR']")
+	private WebElement transferacc_maintance_Setexceptionbtn_ExceptionfactorTab;
+	public WebElement transferaccmaintanceSetexceptionbtnExceptionfactorTab()
+	{
+		return transferacc_maintance_Setexceptionbtn_ExceptionfactorTab;
+	}
+	@FindBy(xpath="//select[@gridid='transferAccountsCriteriaTbl_Id_TA001MT']")
+	private WebElement transferacc_maintance_Setexceptionbtn_Exceptionfactor_dropdown;
+	public WebElement transferaccmaintanceSetexceptionbtnExceptionfactordropdown()
+	{
+		return transferacc_maintance_Setexceptionbtn_Exceptionfactor_dropdown;
+	}	
+	
+	@FindBy(xpath="//span[@class='ui-search ui-state-default liveSearchSpanCorner liveSearchSpanSize liveSearchSpanDisplay']")
+	private WebElement transferacc_maintance_Setexceptionbtn_Searchbtn;
+	public WebElement transferaccmaintanceSetexceptionbtnSearchbtn()
+	{
+		return transferacc_maintance_Setexceptionbtn_Searchbtn;
+	}	
+	
+	@FindBy(xpath="//td[text()='NORMAL']")
+	private WebElement transferacc_maintance_Setexceptionbtn_Searchbtn_Inputvalue;
+	public WebElement transferaccmaintanceSetexceptionbtnSearchbtnInputvalue()
+	{
+		return transferacc_maintance_Setexceptionbtn_Searchbtn_Inputvalue;
+	}
+	
+	@FindBy(xpath="//span[text()='Ok']")
+	private WebElement transferacc_maintance_Setexceptionbtn_Searchbtn_Okbtn;
+	public WebElement transferaccmaintanceSetexceptionbtnSearchbtn_Okbtn()
+	{
+		return transferacc_maintance_Setexceptionbtn_Searchbtn_Okbtn;
+	}
+	
+	@FindBy(xpath="//label[text()='Retrieve ']")
+	private WebElement transferacc_maintance_Retrivebtn;
+	public WebElement transferaccmaintanceRetrivebtn()
+	{
+		return transferacc_maintance_Retrivebtn;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	
