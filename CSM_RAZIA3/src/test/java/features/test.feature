@@ -3,7 +3,18 @@ Feature: Title of your feature
   I want to use this template for my feature file
 
   Scenario: Title of your scenario
- 
+   And User_612 update test data set id for TA_059
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
 #@30
   #And User Enter the Branch Code in Credit Ac in Maintenance Screen
     #And User Enter Currency Code in Credit Ac in Maintenance Screen

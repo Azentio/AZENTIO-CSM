@@ -6,11 +6,11 @@ Feature: Checking the functionalities of transaction
     And User_612 update test data set id for TRS_170
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
     And User_612 Click on Transactions under CSM application
@@ -52,16 +52,16 @@ Feature: Checking the functionalities of transaction
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Debit Account - CIF Charges - Specific VsGeneral - Account
     Given navigate to CSM application and login with valid credentials
     And user_612 update test data set id for TRS_171_01
-    And User_612 Click on Date to Change the Current Date
+And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
-    And User_612 Click on Transactions under CSM application
+     And User_612 Click on Transactions under CSM application
     And User_612 Click on Maintenance under Transactions
     And User_612 Enter TRX Type in Maintenance Screen
     And User_612 Enter the Branch Code in debit Ac in Maintenance Screen
@@ -100,13 +100,13 @@ Feature: Checking the functionalities of transaction
   Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charges from Debit Account - CIF Charges - Specific VsGeneral - Account
     Given navigate to CSM application and login with valid credentials
     And user_612 update test data set id for TRS_171_02
-    And User_612 Click on Date to Change the Current Date
+   And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
     And User_612 Click on Transactions under CSM application
@@ -150,11 +150,11 @@ Feature: Checking the functionalities of transaction
     And user_612 update test data set id for TRS_172
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
     And User_612 Click on Transactions under CSM application
@@ -206,11 +206,11 @@ Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charg
     And user_612 update test data set id for TRS_173
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
     And User_612 Click on Transactions under CSM application
@@ -261,11 +261,11 @@ Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charg
     And user_612 update test data set id for TRS_174
     And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
     And User_612 Click on Transactions under CSM application
@@ -316,11 +316,11 @@ Scenario: Checking Single Transfer (Main Debit) Intra Transaction - Deduct Charg
     And user_612 update test data set id for TRS_175
    And User_612 Click on Date to Change the Current Date
     And User_612 Enter the Date in User Running Date
-     And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click on Use Button in Change Running Date Popup
+    And User Click Ok Button for confirmation PopUp for Company Holiday
     And User_612 Click Ok Button in Information PopUp menu
     And User_612 Click on Close Button in Change Running Date Popup
-    And User_612 Click on Technical Details Icon
+   And User_612 Click on Technical Details Icon
     And User_612 Click Clear Cache in Technical Details Icon
     And User_612 Click Ok Button Under Information PopUp Menu
     And User_612 Click on Transactions under CSM application

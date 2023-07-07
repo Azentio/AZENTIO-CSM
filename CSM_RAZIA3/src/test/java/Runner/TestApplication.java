@@ -8,14 +8,14 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/CSM_transactions.feature"},
+@CucumberOptions(features = {"src/test/java/features/CSM_TransferaccountFEATURE.feature"},
                 glue = "stepdefinitions",
                 //monochrome=false, //to make steps in color
                 plugin = { "pretty",
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"},
              //dryRun = true //to check compilation errors                                      
-              tags="@TRS_73"  
+              tags="@TA_059"  
               		
               		
 )
