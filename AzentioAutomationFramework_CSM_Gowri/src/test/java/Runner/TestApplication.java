@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 import utilities.ExtentManager;
 import utilities.ExtentTestManager;
 
-@CucumberOptions(features = {"src/test/java/features/CSM_Transaction.feature"},
+@CucumberOptions(features = {"src/test/java/features/CSM_TransferAccounts_615.feature"},
                 glue = "stepdefinitions",
                 //dryRun = true,
                 //monochrome=false, //to make steps in color
@@ -16,7 +16,7 @@ import utilities.ExtentTestManager;
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"}
               , dryRun = true //to check compilation errors                                      
-              , tags="@TRS_387"
+              , tags="@TA_039"
 
 )
 public class TestApplication extends AbstractTestNGCucumberTests {
