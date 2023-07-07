@@ -28,7 +28,7 @@ public class EcoSectorwithdrawlimit {
 	Map<String, String> testData = new HashMap<>();
 	Map<String, String> loginTestData = new HashMap<>();
 	Selenium_Actions selenium_Actions = new Selenium_Actions(driver);
-	JavascriptHelper javascriptHelper = new JavascriptHelper();
+	JavascriptHelper javascriptHelper = new JavascriptHelper(driver);
 	
 	@And("^user click parameters menu$")
     public void user_click_parameters_menu() throws Throwable {

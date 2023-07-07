@@ -11,9 +11,10 @@ public class JavascriptHelper {
 	Logger Log = LogManager.getLogger(JavascriptHelper.class.getName());
 
 
-	public  JavascriptHelper() {
+	public JavascriptHelper(WebDriver driver2) {
 		this.driver = driver;
-			}
+	}
+
 
 	public Object executeScript(String script) {
 		JavascriptExecutor exe = (JavascriptExecutor) driver;
