@@ -163,6 +163,19 @@ System.out.println("dropdown "+testData.get("DropDown"));
 		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch().sendKeys(Keys.ENTER);
 
 	}
+	@And("user enter the same Destination Branch under maintanence screen")
+	public void user_enter_the_same_destination_branch_under_maintanence_screen() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch());
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch()
+				.sendKeys(testData.get("BranchCodeFA"));
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch().sendKeys(Keys.TAB);
+
+	}
 
 	@And("user enter the BranchCode under FromAccount")
 	public void user_enter_the_branch_code_under_from_account() {
@@ -283,18 +296,23 @@ System.out.println("dropdown "+testData.get("DropDown"));
 	}
 	@And("user close the popup Tab")
 	public void user_close_the_popup_tab() {
-		try {
-			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-					csmTransferAccountsobj.CSMCorecloseSymbol());
-			seleniumActions.getClickAndActionsHelper()
-					.moveToElement(csmTransferAccountsobj.CSMCorecloseSymbol());
-			seleniumActions.getClickAndActionsHelper()
-					.clickOnElement(csmTransferAccountsobj.CSMCorecloseSymbol());
-		} catch (Exception e) {
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.CSMCorecloseSymbol());
+		for (int i = 0; i < 200; i++) {
+			try {
+				
+				seleniumActions.getClickAndActionsHelper()
+						.moveToElement(csmTransferAccountsobj.CSMCorecloseSymbol());
+				seleniumActions.getClickAndActionsHelper()
+						.clickOnElement(csmTransferAccountsobj.CSMCorecloseSymbol());
+				break;
+			} catch (Exception e) {
+				
+			}
 			
 		}
+		}
 		
-	}
 
 	@And("user enter the SerialNumber under TOAccount")
 	public void user_enter_the_serial_number_under_to_account() {
@@ -310,17 +328,18 @@ System.out.println("dropdown "+testData.get("DropDown"));
 	}
 	
 	@And("user click the retrive button under maintenance screen")
-	public void user_click_the_retrive_button_under_maintenance_screen() {
+	public void user_click_the_retrive_button_under_maintenance_screen() throws Throwable {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRetriveButton());
 		seleniumActions.getClickAndActionsHelper()
 				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRetriveButton());
 		seleniumActions.getClickAndActionsHelper()
 				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRetriveButton());
+		Thread.sleep(2000);
 	}
 
-	@And("user select the Record no1 under TransferManagement screen")
-	public void user_select_the_record_no1_under_transfer_management_screen() {
+	@And("user select the Record no1 under TransferMaintanence screen")
+	public void user_select_the_record_no1_under_transfer_Maintanence_screen() {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno1());
 		seleniumActions.getClickAndActionsHelper()
@@ -330,8 +349,8 @@ System.out.println("dropdown "+testData.get("DropDown"));
 
 	}
 	
-	@And("user select the Record no2 under TransferManagement screen")
-	public void user_select_the_record_no2_under_transfer_management_screen() {
+	@And("user select the Record no2 under TransferMaintanence screen")
+	public void user_select_the_record_no2_under_transfer_Maintanence_screen() {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
 		seleniumActions.getClickAndActionsHelper()
@@ -341,8 +360,8 @@ System.out.println("dropdown "+testData.get("DropDown"));
 
 	}
 	
-	@And("user select the Record no3 under TransferManagement screen")
-	public void user_select_the_record_no3_under_transfer_management_screen() {
+	@And("user select the Record no3 under TransferMaintanence screen")
+	public void user_select_the_record_no3_under_transfer_Maintanence_screen() {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno3());
 		seleniumActions.getClickAndActionsHelper()
@@ -363,25 +382,25 @@ System.out.println("dropdown "+testData.get("DropDown"));
 				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceSaveButton());
 
 	}
-	@And("user click the BranchManager Account in the Alert popup")
-	public void user_click_the_branch_manager_account_in_the_alert_popup() throws Throwable {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-				csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId());
-		seleniumActions.getClickAndActionsHelper()
-				.moveToElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId());
-		seleniumActions.getClickAndActionsHelper()
-				.clickOnElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId());
-	}
-
-	@Then("user click the send button in Alert popup")
-	public void user_click_the_send_button_in_alert_popup() throws Throwable {
-		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-				csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId_SendBtn());
-		seleniumActions.getClickAndActionsHelper()
-				.moveToElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId_SendBtn());
-		seleniumActions.getClickAndActionsHelper()
-				.clickOnElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId_SendBtn());
-	}
+//	@And("user click the BranchManager Account in the Alert popup")
+//	public void user_click_the_branch_manager_account_in_the_alert_popup() throws Throwable {
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId());
+//		seleniumActions.getClickAndActionsHelper()
+//				.moveToElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId());
+//		seleniumActions.getClickAndActionsHelper()
+//				.clickOnElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId());
+//	}
+//
+//	@Then("user click the send button in Alert popup")
+//	public void user_click_the_send_button_in_alert_popup() throws Throwable {
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId_SendBtn());
+//		seleniumActions.getClickAndActionsHelper()
+//				.moveToElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId_SendBtn());
+//		seleniumActions.getClickAndActionsHelper()
+//				.clickOnElement(csmTransferAccountsobj.Transaction_maintanance_alertclickingUserId_SendBtn());
+//	}
 
 	@And("user click the Approve field under TransferAccount field")
 	public void user_click_the_approve_field_under_transfer_account_field() {
@@ -398,7 +417,7 @@ System.out.println("dropdown "+testData.get("DropDown"));
 	public void user_enter_the_record_in_approve_field() {
 //		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 //				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
-		for (int i = 0; i < 200; i++) {
+		for (int i = 0; i < 2000; i++) {
 			try {
 				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
 //				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
@@ -413,7 +432,41 @@ System.out.println("dropdown "+testData.get("DropDown"));
 				break;
 				
 			} catch (Exception e) {
-				if (i==199) {
+				if (i==1999) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+		
+
+	}
+	@And("user enter the original gl under search button")
+	public void user_enter_the_original_gl_under_search_button() {
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
+		for (int i = 0; i < 2000; i++) {
+			try {
+				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountssearchbuttonEnteroriginalGlforRetriveRecord());
+//				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//						csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
+				seleniumActions.getClickAndActionsHelper()
+						.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountssearchbuttonEnteroriginalGlforRetriveRecord());
+				seleniumActions.getClickAndActionsHelper()
+						.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountssearchbuttonEnteroriginalGlforRetriveRecord());
+				csmTransferAccountsobj.CSMCoreTransferAccountssearchbuttonEnteroriginalGlforRetriveRecord()
+						.sendKeys(testData.get("GLCodeFA"));
+				csmTransferAccountsobj.CSMCoreTransferAccountssearchbuttonEnteroriginalGlforRetriveRecord().sendKeys(Keys.ENTER);
+				seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordActiveStatus());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordActiveStatus());
+		csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordActiveStatus().sendKeys(testData.get("Status"));
+				csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecord().sendKeys(Keys.ENTER);
+				Thread.sleep(1000);
+				break;
+				
+			} catch (Exception e) {
+				if (i==1999) {
 					Assert.fail(e.getMessage());
 				}
 			}
@@ -422,6 +475,16 @@ System.out.println("dropdown "+testData.get("DropDown"));
 
 	}
 
+	
+	@And("user doubleclick the original gl under search button")
+	public void user_double_click_the_original_gl_under_search_button() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsTransferEnterGlforRetriveRecordunderSearchbuttondoubleclick());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferEnterGlforRetriveRecordunderSearchbuttondoubleclick());
+		seleniumActions.getClickAndActionsHelper()
+				.doubleClick(csmTransferAccountsobj.CSMCoreTransferAccountsTransferEnterGlforRetriveRecordunderSearchbuttondoubleclick());
+	}
 	
 	@And("user double click the record in approve field")
 	public void user_double_click_the_record_in_approve_field() {
@@ -740,6 +803,46 @@ csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordAct
 		seleniumActions.getClickAndActionsHelper()
 				.doubleClick(csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecorddoubleClick());
 
+	}
+	@And("^user click confirm ok Button$")
+	public void UserClickconfirmokSaveButton() {
+		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmTransactionTypeConfirmOkButton());
+          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmTransactionTypeConfirmOkButton());
+          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmTransactionTypeConfirmOkButton());
+          try {
+        	  seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmTransactionTypeSuccessOkButton());
+	          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmTransactionTypeSuccessOkButton());
+	          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmTransactionTypeSuccessOkButton());
+		} catch (Exception e) {
+			
+		}
+          
+	}
+	
+	//post requiesties for TA_026 to TA_031
+	
+	@And("user click the Reject button in Approve field")
+	public void user_click_the_reject_button_in_approve_field() {
+//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//				csmTransferAccountsobj.csmTransactionTypeApprovefieldRejectbutton());
+		for (int i = 0; i < 200; i++) {
+			try {
+				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.csmTransactionTypeApprovefieldRejectbutton());
+				seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.csmTransactionTypeApprovefieldRejectbutton());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.csmTransactionTypeApprovefieldRejectbutton());
+		break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
+	
+		
+		
 	}
 
 

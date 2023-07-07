@@ -84,26 +84,26 @@ public class Transaction_steps {
 			seleniumActions.getClickAndActionsHelper()
 					.clickOnElement(CSMcoreTransactionObj.CSMUseButtonInChangeRunningDate());
 		}
-		@And("^user click Ok Button in Information PopUp menu in the CSM core application$")
-		public void UserClickOkButtonInInformationPopupMenuInTheCsmcoreApplication() {
-			for (int i = 0; i < 50; i++) {
-				try {
-					if (CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday().isDisplayed()) {
-						seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-								CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
-						seleniumActions.getClickAndActionsHelper()
-								.moveToElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
-						seleniumActions.getClickAndActionsHelper().clickOnElement(
-								CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
-						break;
-					}
-				} catch (Exception e) {
-					if (i == 49) {
-						Assert.fail(e.getMessage());
-					}
-				}
-			}
-		}
+//		@And("^user click Ok Button in Information PopUp menu in the CSM core application$")
+//		public void UserClickOkButtonInInformationPopupMenuInTheCsmcoreApplication() {
+//			for (int i = 0; i < 2000; i++) {
+//				try {
+//					if (CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday().isDisplayed()) {
+//						seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//								CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+//						seleniumActions.getClickAndActionsHelper()
+//								.moveToElement(CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+//						seleniumActions.getClickAndActionsHelper().clickOnElement(
+//								CSMcoreTransactionObj.csmOkButtonForConfirmationPopUpForCompanyHoliday());
+//						break;
+//					}
+//				} catch (Exception e) {
+//					if (i == 1999) {
+//						Assert.fail(e.getMessage());
+//					}
+//				}
+//			}
+//		}
 		@And("^user click on Close Button in Change Running Date Popup in the CSM core application$")
 		public void UserClickOnCloseButtonInChangeRunningDatePopupInTheCsmcoreApplication() {
 			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,

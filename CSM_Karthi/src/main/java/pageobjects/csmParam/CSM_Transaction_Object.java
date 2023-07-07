@@ -863,7 +863,7 @@ public class CSM_Transaction_Object {
 		return Transaction_maintanance_alertclickingUserId;
 	}
 
-	@FindBy(xpath = "//a[@id='sendBut_D001MT']")
+	@FindBy(xpath = "//span[text()=' Send ']//parent::a")
 	private WebElement Transaction_maintanance_alertclickingUserId_SendBtn;
 
 	public WebElement Transaction_maintanance_alertclickingUserId_SendBtn() {
