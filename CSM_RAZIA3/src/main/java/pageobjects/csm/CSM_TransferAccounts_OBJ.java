@@ -456,5 +456,154 @@ WebDriver driver;
         return CSMCore_closeSymbol;
 
     }
+  //@ta_60
+    
+    @FindBy(xpath="//td[text()='Accounts']")
+	private WebElement CSM_AccountsMenu_612;
+	public WebElement CSMAccountsMenu612() {
+		return CSM_AccountsMenu_612;
+	}
+	
+	 @FindBy(xpath="//span[text()='General Accounts']")
+		private WebElement CSM_AccountsMenu_GeneralAcc_612;
+		public WebElement CSM_AccountsMenuGeneralAcc612() {
+			return CSM_AccountsMenu_GeneralAcc_612;
+		}
+	
+	 @FindBy(xpath="//span[text()='Suspend']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Suspend_612;
+	public WebElement CSM_AccountsMenuGeneralAccSuspend612() {
+		return CSM_AccountsMenu_GeneralAcc_Suspend_612;
+	}
+	
+	@FindBy(xpath="//input[@id='generalAccountsGridTbl_Id_A002ZP_gs_amfVO.GL_CODE']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612() {
+		return CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612;
+	}
+	
+	@FindBy(xpath="//input[@id='generalAccountsGridTbl_Id_A002ZP_gs_amfVO.GL_CODE']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_612() {
+		return CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_612;
+	}
+	@FindBy(xpath="//input[@id='lookuptxt_statusReasonCode_A002ZP']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612() {
+		return CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612;
+	}
+	@FindBy(xpath="//textarea[@id='reasonChangeStatus_A002ZP']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612() {
+		return CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612;
+	}
+	@FindBy(xpath="//label[text()='Suspend ']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_SuspendButton_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_SuspendButton_612() {
+		return CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_SuspendButton_612;
+	}
+	
+	@FindBy(xpath="//span[text()='Approve Suspend']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_612() {
+		return CSM_AccountsMenu_GeneralAcc_ApproveSuspend_612;
+	}
+	@FindBy(xpath="//input[@id='generalAccountsGridTbl_Id_A002SP_gs_amfVO.GL_CODE']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612() {
+		return CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612;
+	}
+//	(//td[text()='8796'])[2]
+@FindBy(xpath="//td[@id='td_generalAccountsGridTbl_Id_A002SP_1_amfVO.GL_CODE']")
+ private WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_612;
+public WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_612() {
+	return CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_612;
+}
+@FindBy(xpath="//label[text()='Authorize Suspend ']")
+private WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_AuthorizeSuspendBtn612;
+public WebElement CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_AuthorizeSuspendBtn612() {
+	return CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_AuthorizeSuspendBtn612;
+}
+
+
+			
+	
+//ta_061
+	@FindBy(xpath="//span[text()='Close']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_Close_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Close_612() {
+		return CSM_AccountsMenu_GeneralAcc_Close_612;
+}
+	@FindBy(xpath="//input[@id='generalAccountsGridTbl_Id_A002CL_gs_amfVO.GL_CODE']")
+	private WebElement CSM_AccountsMenu_GeneralAcc_Close_Glinput_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_Close_Glinput_612() {
+		return CSM_AccountsMenu_GeneralAcc_Close_Glinput_612;
+}
+	//double tab//closebtn
+	
+	@FindBy(xpath="//span[text()='Authorize Close']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_AuthorizeClose_612;
+	public WebElement CSM_AccountsMenu_GeneralAccAuthorizeClose612() {
+		return CSM_AccountsMenu_GeneralAcc_AuthorizeClose_612;
+	}	
+	@FindBy(xpath="//td[@id='td_generalAccountsGridTbl_Id_A002AC_1_amfVO.CURRENCY_CODE']")
+	 private WebElement CSM_AccountsMenu_GeneralAcc_AuthorizeClose_Doulbletab_612;
+	public WebElement CSM_AccountsMenu_GeneralAcc_AuthorizeClose_Doulbletab_612() {
+		return CSM_AccountsMenu_GeneralAcc_AuthorizeClose_Doulbletab_612;
+	}
+	
+	//after double tab/rea/ authclose btn
+	
+//@TA_58
+	
+	@FindBy(xpath="//span[text()='Reverse']")
+	 private WebElement CSM_Transaction_ReverseMenu_612;
+	public WebElement CSM_Transaction_ReverseMenu_612() {
+		return CSM_Transaction_ReverseMenu_612;
+	}
+	
+	@FindBy(xpath="//input[@id='trxMgntGridTbl_Id_D001WV_gs_ctstrsVO.TRS_NO']")
+	 private WebElement CSM_Transaction_ReverseMenu_TransNo_612;
+	public WebElement CSM_Transaction_ReverseMenu_TransNo_612() {
+		return CSM_Transaction_ReverseMenu_TransNo_612;
+	}
+	@FindBy(xpath="//td[text()='Approved']")
+	 private WebElement CSM_Transaction_ReverseMenu_TransNo_Doubletab_612;
+	public WebElement CSM_Transaction_ReverseMenu_TransNo_Doubletab_612() {
+		return CSM_Transaction_ReverseMenu_TransNo_Doubletab_612;
+	}
+	
+	//reason
+	
+	
+	@FindBy(xpath="//button//span[contains(text(),'To Reverse')]//parent::button")
+	 private WebElement CSM_Transaction_ReverseMenu_ToReverseButton_612;
+	public WebElement CSM_Transaction_ReverseMenu_ToReverseButton_612() {
+		return CSM_Transaction_ReverseMenu_ToReverseButton_612;
+	}
+	
+	@FindBy(xpath="//span[text()='Approve Reverse']")
+	 private WebElement CSM_Transaction_ApproveReverseMenu_612;
+	public WebElement CSM_Transaction_ApproveReverseMenu_612() {
+		return CSM_Transaction_ApproveReverseMenu_612;
+	}
+		
+	
+	@FindBy(xpath="//input[@id='trxMgntGridTbl_Id_D001RV_gs_ctstrsVO.TRS_NO']")
+	 private WebElement CSM_Transaction_ApproveReverseMenu_TransNo_612;
+	public WebElement CSM_Transaction_ApproveReverseMenu_TransNo_612() {
+		return CSM_Transaction_ApproveReverseMenu_TransNo_612;
+	}
+	@FindBy(xpath="(//td[text()='To be Reversed'])[1]")
+	 private WebElement CSM_Transaction_ApproveReverseMenu_DoubleTab_612;
+	public WebElement CSM_Transaction_ApproveReverseMenu_DoubleTab_612() {
+		return CSM_Transaction_ApproveReverseMenu_DoubleTab_612;
+	}	
+	
+	@FindBy(xpath="//button//span[contains(text(),'Reverse')]//parent::button")
+	 private WebElement CSM_Transaction_ApproveReverseMenu_ReverseButton_612;
+	public WebElement CSM_Transaction_ApproveReverseMenu_ReverseButton_612() {
+		return CSM_Transaction_ApproveReverseMenu_ReverseButton_612;
+	}	
 	
 }

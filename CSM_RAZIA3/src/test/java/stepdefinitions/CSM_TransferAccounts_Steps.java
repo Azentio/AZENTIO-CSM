@@ -45,6 +45,21 @@ public class CSM_TransferAccounts_Steps {
 		testData = CsmTransferAccountExcelData.getTestdata("TA_059_D1");
 		 	 
 	}
+	@And("User_612 update test data set id for TA_058")
+	public void user_update_test_data_set_id_for_ta_058() {
+		testData = CsmTransferAccountExcelData.getTestdata("TA_058_D1");
+		 	 
+	}
+	@And("User_612 update test data set id for TA_060")
+	public void user_update_test_data_set_id_for_ta_060() {
+		testData = CsmTransferAccountExcelData.getTestdata("TA_060_D1");
+		 	 
+	}
+	@And("User_612 update test data set id for TA_061")
+	public void user_update_test_data_set_id_for_ta_061() {
+		testData = CsmTransferAccountExcelData.getTestdata("TA_061_D1");
+		 	 
+	}
 	@And("user click TransferAccount field on CSMCore")
 	public void user_click_transfer_account_field_on_csm_core()  throws Throwable{
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMCoreTransferAccounts());
@@ -71,7 +86,7 @@ public class CSM_TransferAccounts_Steps {
 		seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTransferType());
         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTransferType());
    // seleniumActions.getDropDownHelper().SelectUsingVisibleText(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTransferType());
-   seleniumActions.getDropDownHelper().SelectUsingVisibleText(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTransferType(),"");
+  // seleniumActions.getDropDownHelper().SelectUsingVisibleText(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTransferType(),"");
 //System.out.println("dropdown "+testData.get("DropDown"));
 //		dropDownHelper.SelectUsingVisibleText(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTransferType(),
 //				testData.get("DropDown"));
@@ -255,16 +270,16 @@ public class CSM_TransferAccounts_Steps {
 
 	}
 	
-//	@And("user select the Record no2 under TransferManagement screen")
-//	public void user_select_the_record_no2_under_transfer_management_screen() throws Throwable {
-//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-//				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
-//		seleniumActions.getClickAndActionsHelper()
-//				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
-//		seleniumActions.getClickAndActionsHelper()
-//				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
-//
-//	}
+	@And("user select the Record no2 under TransferMaintanence screen")
+	public void user_select_the_record_no2_under_transfer_Maintanence_screen() throws Throwable {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+
+	}
 
 	@And("user click the Save button under maintanance screen")
 	public void CSMCoreTransferAccountsMaintananceSaveButton() throws Throwable {
@@ -567,6 +582,36 @@ public class CSM_TransferAccounts_Steps {
 		     testData = CsmTransferAccountExcelData.getTestdata("TA_059_D1");
 	    	
 	    }
+	    @And("^User_612 Get the Transaction No in Success PopUp Menu for058$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for058() throws Throwable {
+	    	
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.getTransactionNumber_612());
+	    	String  transactionNo = csmTransferAccountsobj.getTransactionNumber_612().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+	       CsmTransferAccountExcelData.updateTestData("TA_058_D1", "TRXNo", transactionNo); 
+		     testData = CsmTransferAccountExcelData.getTestdata("TA_058_D1");
+	    	
+	    }
+	    @And("^User_612 Get the Transaction No in Success PopUp Menu for060$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for060() throws Throwable {
+	    	
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.getTransactionNumber_612());
+	    	String  transactionNo = csmTransferAccountsobj.getTransactionNumber_612().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+	       CsmTransferAccountExcelData.updateTestData("TA_060_D1", "TRXNo", transactionNo); 
+		     testData = CsmTransferAccountExcelData.getTestdata("TA_060_D1");
+	    	
+	    }
+	    @And("^User_612 Get the Transaction No in Success PopUp Menu for061$")
+	    public void user_get_the_transaction_no_in_success_popup_menu_for061() throws Throwable {
+	    	
+	    	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.getTransactionNumber_612());
+	    	String  transactionNo = csmTransferAccountsobj.getTransactionNumber_612().getText().substring(15, 19);
+	       System.out.println(transactionNo);
+	       CsmTransferAccountExcelData.updateTestData("TA_061_D1", "TRXNo", transactionNo); 
+		     testData = CsmTransferAccountExcelData.getTestdata("TA_061_D1");
+	    	
+	    }
 	    @And("^User_612 Click OkButton in Success PopUp Menu$")
 	    public void user_click_ok_button_in_success_popup_menu() throws Throwable {
 	    	for (int i = 0; i < 200; i++) {
@@ -735,30 +780,236 @@ public void user_close_the_popup_tab() throws Throwable {
 
         try {
 
-            
+          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMCorecloseSymbol());
 
-            seleniumActions.getClickAndActionsHelper()
-
-                    .moveToElement(csmTransferAccountsobj.CSMCorecloseSymbol());
-
-            seleniumActions.getClickAndActionsHelper()
-
-                    .clickOnElement(csmTransferAccountsobj.CSMCorecloseSymbol());
+            seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMCorecloseSymbol());
 
             break;
 
         } catch (Exception e) {
-
-            
-
-        }
-
-        
+           
+        }  
 
     }
 
     }	    
 	   
+//reverse
+@And("User_612 Click ReverseMenu Under Transaction Screen")
+public void user_click_reverse_menu_under_transaction_screen() throws Throwable{
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ReverseMenu_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_612());  
 
+   
+}
 
+@And("User_612 Enter the TransactionNo Under ReverseMenu")
+public void user_enter_the_transactionno_under_reverse_menu()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ReverseMenu_TransNo_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_TransNo_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_TransNo_612());
+   
+}
+
+@And("User_612 Double Click on the TransactionNo in ReverseMenu")
+public void user_double_click_on_the_transaction_no_in_reverse_menu()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ReverseMenu_TransNo_Doubletab_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_TransNo_Doubletab_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_TransNo_Doubletab_612());
+   
+}
+
+//
+//@And("User_612 Select a Reason in ReverseMenu")
+//public void user_select_a_reason_in_reverse_menu() throws Throwable{
+//	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.());
+//    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.());
+//    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.())
+//   
+//}
+
+@And("User_612 Click ToReverseButton in ReverseMenu")
+public void user_click_to_reverse_button_in_reverse_menu()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ReverseMenu_ToReverseButton_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_ToReverseButton_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ReverseMenu_ToReverseButton_612());  
+   
+}
+
+@And("User_612 Click  Approve ReverseMenu Under Transaction Screen")
+public void user_click_approve_reverse_menu_under_transaction_screen()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_612());  
+    
+    
+}
+
+@And("User_612 Enter a transaction No in ApproveReverseMenu")
+public void user_enter_a_transaction_no_in_approve_reverse_menu()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_TransNo_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_TransNo_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_TransNo_612());  
+   // csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_TransNo_612().getText()
+    
+}
+
+@And("User_612 Double Click the record in ApproveReverseMenu")
+public void user_double_click_the_record_in_approve_reverse_menu() throws Throwable{
+    
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_DoubleTab_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_DoubleTab_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_DoubleTab_612());  
+}
+
+@And("User_612 Click Reverse Button in ApproveReverseMenu")
+public void user_click_reverse_button_in_approve_reverse_menu()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_ReverseButton_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_ReverseButton_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_Transaction_ApproveReverseMenu_DoubleTab_612());   
+    
+}
+//@ta60
+@And("User_612 Click AccountsMenu under CSMApplication")
+public void user_click_accounts_menu_under_csm_application() throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMAccountsMenu612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSMAccountsMenu612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSMAccountsMenu612());   
+    
+   
+}
+
+@And("User_612 Click General Accounts in AccountsMenu")
+public void user_click_general_accounts_in_accounts_menu()  throws Throwable{
+   	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenuGeneralAcc612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenuGeneralAcc612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenuGeneralAcc612());   
+}
+
+@And("User_612 Click Supsend field in GeneralAccounts")
+public void user_click_supsend_field_in_general_accounts()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenuGeneralAccSuspend612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenuGeneralAccSuspend612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenuGeneralAccSuspend612());   
+   
+}
+
+@And("User_612 Enter the Glcode in Supsend field")
+public void user_enter_the_glcode_in_supsend_field()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612()); 
+    csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord().sendKeys(testData.get("GLCodeFA"));
+   csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord().sendKeys(Keys.ENTER);
+   
+}
+
+@And("User_612 Double click a record in Supsend field")
+public void user_double_click_a_record_in_supsend_field()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinput612());
+   
+}
+
+@And("User_612 Select StatusReason in Supsend field")
+public void user_select_reason_in_supsend_field() throws Throwable{
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612());
+    csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612().sendKeys("1");
+    csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_StatusReason_612().sendKeys(Keys.TAB);
+}
+
+@And("User_612 Enter a describtion in Supsend field")
+public void user_enter_a_describtion_in_supsend_field() throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612());
+    csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_NarrativeReason_612().sendKeys("Ok");
+    
+}
+
+@Then("User_612 Click a Supsend Button under Supsend field")
+public void user_click_a_supsend_button_under_supsend_field() throws Throwable{
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_SuspendButton_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_SuspendButton_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_Suspend_Glinputdoubletab_SuspendButton_612());
+   
+}
+
+@And("User_612 Click Approve Suspend In GeneralAccounts")
+public void user_click_approve_suspend_in_general_accounts() throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_612());
+   
+}
+
+@And("User_612 Enter the Glcode in Approve Suspend")
+public void user_enter_the_glcode_in_approve_suspend()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612());
+    csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612().sendKeys(testData.get("GLCodeFA"));
+    csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Glinputbox_612().sendKeys(Keys.ENTER);
+   
+}
+
+@And("User_612 Double click the record under Approve Suspend")
+public void user_double_click_the_record_under_approve_suspend()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_612());
+   
+}
+
+@And("User_612 Click a Authorize Suspend Button under Approve Suspend")
+public void user_click_a_authorize_suspend_button_under_approve_suspend()throws Throwable {
+	seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_AuthorizeSuspendBtn612());
+    seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_AuthorizeSuspendBtn612());
+    seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.CSM_AccountsMenu_GeneralAcc_ApproveSuspend_Gl_doubletab_AuthorizeSuspendBtn612()); 
+   
+
+}
+@And("User_{int} Click on Close field under General Accounts")
+public void user_click_on_close_field_under_general_accounts() {
+    
+}
+
+@And("User_{int} Enter the Glcode in Close field")
+public void user_enter_the_glcode_in_close_field() {
+   
+}
+
+@And("User_{int} Double click the record in Close field")
+public void user_double_click_the_record_in_close_field() {
+}
+
+@And("User_{int} Click Close Button in Close field")
+public void user_click_close_button_in_close_field() {
+    
+   
+}
+
+@And("User_{int} Click Authorize Close in General Accounts")
+public void user_click_authorize_close_in_general_accounts() {
+    
+}
+
+@And("User_{int} Enter the Glcode under Authorize Close")
+public void user_enter_the_glcode_under_authorize_close() {
+    
+}
+
+@And("User_{int} Double click the record in Authorize Close")
+public void user_double_click_the_record_in_authorize_close() {
+   
+}
+
+@Then("User_{int} Click the Authorize Close Button")
+public void user_click_the_authorize_close_button() {
+    
+}
 }

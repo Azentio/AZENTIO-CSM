@@ -15,7 +15,7 @@ import utilities.ExtentTestManager;
                            "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                            "rerun:ReRunScenarios/FailedReRun.txt"},
              //dryRun = true //to check compilation errors                                      
-              tags="@TA_059"  
+              tags="@TA_058"  
               		
               		
 )
