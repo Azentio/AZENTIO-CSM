@@ -33,7 +33,7 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user enter the SerialNumber under TOAccount
     And user close the popup Tab
     And user click the retrive button under maintenance screen
-    
+
   #And user click the Approve field under TransferAccount field
   #And user enter the Record in Approve field
   #And user double click the record in approve field
@@ -76,7 +76,6 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user enter the SerialNumber under TOAccount
     And user close the popup Tab
     And user click the retrive button under maintenance screen
-  
 
   #And user click the Approve field under TransferAccount field
   #And user enter the Record in Approve field
@@ -87,9 +86,8 @@ Feature: To verify the Funcnality on the Transfer Accounts module
   #And user double click the record in Transfer field
   #And user click the Transfer button under Transfer field
   #And user click Ok Button Under Information PopUp Menu in the CSM core application
-  
   ###############################################################################################################
-  #@TA_003_PreReq it was check if the alert flag is check or not if it is checked the 
+  #@TA_003_PreReq it was check if the alert flag is check or not if it is checked the
   #code will be un check the flag whether the flag is notchecked the code will check the flag
   @TA_003_PreReq
   Scenario: Saving the accounts when all are checked and the alert flag is not checked/ From branch to branch
@@ -133,7 +131,6 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user enter the Destination Branch under maintanence screen
     And user enter the BranchCode under FromAccount
     And user enter the CurrencyCode under FromAccount
-    
     And user enter the GLCode under FromAccount
     And user enter the CIFCode under FromAccount
     And user close the popup Tab
@@ -147,13 +144,12 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user enter the SerialNumber under TOAccount
     And user close the popup Tab
     And user click the retrive button under maintenance screen
-   
     And user click the Save button under maintanance screen
-      #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Approve field
-   And user double click the record in approve field
-   And user click the Reject button in Approve field
+    And user double click the record in approve field
+    And user click the Reject button in Approve field
 
   #And user click the Approve field under TransferAccount field
   #And user enter the Record in Approve field
@@ -208,13 +204,13 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user enter the DestinationGl under maintanence screen
     And user click the retrive button under maintenance screen
     And user select the Record no1 under TransferMaintanence screen
-    And user select the Record no2 under TransferMaintanence screen    
+    And user select the Record no2 under TransferMaintanence screen
     And user click the Save button under maintanance screen
-     #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Transfer field
-  And user double click the record in Transfer field
-   And user click the Reject button in Approve field
+    And user double click the record in Transfer field
+    And user click the Reject button in Approve field
 
   #And user click the BranchManager Account in the Alert popup
   #And user click the send button in Alert popup
@@ -253,11 +249,11 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user click the Save button under maintanance screen
     And user click the BranchManager Account in the Alert popup
     And user click the send button in Alert popup
-     #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Transfer field
-  And user double click the record in Transfer field
-   And user click the Reject button in Approve field
+    And user double click the record in Transfer field
+    And user click the Reject button in Approve field
 
   #And user click the Approve field under TransferAccount field
   #And user enter the Record in Approve field
@@ -272,9 +268,8 @@ Feature: To verify the Funcnality on the Transfer Accounts module
   Scenario: Saving the accounts when all the accounts are checked and the alert flag is checked/ From GL to GL
     Given navigate to CSM application and login with valid credentials TellerUser
     And user update test data set id for TA_028
-     And user close the popup Tab
+    And user close the popup Tab
     And user click on Date to Change the Current Date in the CSM core application
-     
     And user Enter the Date in user Running Date in the CSM core application
     And user click on Use Button in Change Running Date Popup in the CSM core application
     And User Click Ok Button for confirmation PopUp for Company Holiday
@@ -294,11 +289,11 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user click the Save button under maintanance screen
     And user click the BranchManager Account in the Alert popup
     And user click the send button in Alert popup
-     #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Transfer field
-  And user double click the record in Transfer field
-   And user click the Reject button in Approve field
+    And user double click the record in Transfer field
+    And user click the Reject button in Approve field
 
   #And user click the Approve field under TransferAccount field
   #And user enter the Record in Approve field
@@ -309,15 +304,12 @@ Feature: To verify the Funcnality on the Transfer Accounts module
   #And user double click the record in Transfer field
   #And user click the Transfer button under Transfer field
   #And user click Ok Button Under Information PopUp Menu in the CSM core application
- 
-
   @TA_029
   Scenario: Amending an existing created batch record when the alert flag is checked/ From GL to GL
     Given navigate to CSM application and login with valid credentials TellerUser
     And user update test data set id for TA_029
-     And user close the popup Tab
+    And user close the popup Tab
     And user click on Date to Change the Current Date in the CSM core application
-    
     And user Enter the Date in user Running Date in the CSM core application
     And user click on Use Button in Change Running Date Popup in the CSM core application
     And User Click Ok Button for confirmation PopUp for Company Holiday
@@ -348,12 +340,11 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user click the Save button under maintanance screen
     And user click the BranchManager Account in the Alert popup
     And user click the send button in Alert popup
-     #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Transfer field
-  And user double click the record in Transfer field
-   And user click the Reject button in Approve field
-   
+    And user double click the record in Transfer field
+    And user click the Reject button in Approve field
 
   #And user click the Approve field under TransferAccount field
   #And user enter the Record in Approve field
@@ -364,14 +355,12 @@ Feature: To verify the Funcnality on the Transfer Accounts module
   #And user double click the record in Transfer field
   #And user click the Transfer button under Transfer field
   #And user click Ok Button Under Information PopUp Menu in the CSM core application
- 
   @TA_030
   Scenario: Amending an existing created batch record when the alert flag is not checked/ From GL to GL
     Given navigate to CSM application and login with valid credentials TellerUser
     And user update test data set id for TA_030
-     And user close the popup Tab
+    And user close the popup Tab
     And user click on Date to Change the Current Date in the CSM core application
-    
     And user Enter the Date in user Running Date in the CSM core application
     And user click on Use Button in Change Running Date Popup in the CSM core application
     And User Click Ok Button for confirmation PopUp for Company Holiday
@@ -398,15 +387,13 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user select the Record no1 under TransferMaintanence screen
     #And  user select the Record no2 under TransferMaintanence screen
     And user click the Save button under maintanance screen
-       #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Transfer field
-  And user double click the record in Transfer field
-   And user click the Reject button in Approve field
-    
-    
-    
-    @TA_031_PreReq
+    And user double click the record in Transfer field
+    And user click the Reject button in Approve field
+
+  @TA_031_PreReq
   Scenario: Amending an existing created batch record when the alert flag"no access privilege" is checked/ From branch to branch
     Given navigate to CSM param application and login with valid credentials
     And User click the Parameters in Transfer Account
@@ -427,15 +414,13 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And User Click the Approve field in Control Records
     And User Click the Approve button in Control Records
     And user click confirm ok Button
-    
 
   @TA_031
   Scenario: Amending an existing created batch record when the alert flag"no access privilege" is checked/ From branch to branch
     Given navigate to CSM application and login with valid credentials TellerUser
     And user update test data set id for TA_031
-     And user close the popup Tab
+    And user close the popup Tab
     And user click on Date to Change the Current Date in the CSM core application
-    
     And user Enter the Date in user Running Date in the CSM core application
     And user click on Use Button in Change Running Date Popup in the CSM core application
     And User Click Ok Button for confirmation PopUp for Company Holiday
@@ -446,10 +431,9 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user click Ok Button Under Information PopUp Menu in the CSM core application
     And user click TransferAccount field on CSMCore
     And user click maintenance field under TransferAccount
-   
     And user enter the TransferType under maintanence screen
-   And user enter the Reason under maintanence screen
-   And user enter the same Destination Branch under maintanence screen
+    And user enter the Reason under maintanence screen
+    And user enter the same Destination Branch under maintanence screen
     And user click Ok Button Under Information PopUp Menu in the CSM core application
     And user enter the Destination Branch under maintanence screen
     And user enter the BranchCode under FromAccount
@@ -471,22 +455,77 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user select the Record no2 under TransferMaintanence screen
     And user select the Record no3 under TransferMaintanence screen
     And user click the Save button under maintanance screen
-     And user click the BranchManager Account in the Alert popup
+    And user click the BranchManager Account in the Alert popup
     And user click the send button in Alert popup
     And user click the search button in maintenance screen
-   And user enter the original gl under search button
-  And user doubleclick the original gl under search button
+    And user enter the original gl under search button
+    And user doubleclick the original gl under search button
     And user select the Record no1 under TransferMaintanence screen
     #And  user select the Record no2 under TransferMaintanence screen
     And user click the Save button under maintanance screen
-     And user click the BranchManager Account in the Alert popup
+    And user click the BranchManager Account in the Alert popup
     And user click the send button in Alert popup
-    #The bellow steps are reject the record to show in the maintenence screen 
-      And user click the Approve field under TransferAccount field
+    #The bellow steps are reject the record to show in the maintenence screen
+    And user click the Approve field under TransferAccount field
     And user enter the Record in Approve field
-   And user double click the record in approve field
-   And user click the Reject button in Approve field
+    And user double click the record in approve field
+    And user click the Reject button in Approve field
     
     
-   
-    
+     @TA_082
+  Scenario: Checking if the new card has a new application ID and the status Expired is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TA_082
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click TransferAccount field on CSMCore
+    And user click maintenance field under TransferAccount
+    And user enter the TransferType under maintanence screen
+    And user enter the Reason under maintanence screen
+    And user enter the Destination Branch under maintanence screen
+    And user check the CheckBox Transfer On Card Information
+    And user enter the BranchCode under FromAccount
+    And user enter the CurrencyCode under FromAccount
+    And user enter the GLCode under FromAccount
+    And user enter the CIFCode under FromAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under FromAccount
+     And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the BranchCode under TOAccount
+    And user enter the CurrencyCode under TOAccount
+    And user enter the GLCode under TOAccount
+    And user enter the CIFCode under TOAccount
+   And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under TOAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click the retrive button under maintenance screen
+    And user select the Record no1 under TransferMaintanence screen
+    And user click the Save button under maintanance screen
+  And user click the Approve field under TransferAccount field
+  And user enter the Record in Approve field
+  And user double click the record in approve field
+  And user click the Approve button under Approve field
+  And user click the Transfer field under TransferAccount field
+  And user enter the Record in Transfer field
+  And user double click the record in Transfer field
+  And user click the Transfer button under Transfer field
+  And user click Ok Button Under Information PopUp Menu in the CSM core application
+  Given navigate to CSM application and login with valid credentials forBranch2
+  And user click the cardManagement field in CSM core
+  And user click the cardRequest field under cardmanagement field
+  And user click the maintenence under cardRequest field
+  And user click the search button under maintenence field
+  And user Enter to search the GL record in maintenece field
+  And user Enter to search the CIF record in maintenece field
+  And user Enter to search the SL record in maintenece field
+  And user verify the ApplicationNo in maintenece field
+  
+  

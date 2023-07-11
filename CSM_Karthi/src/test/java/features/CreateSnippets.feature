@@ -5,4 +5,4 @@ Feature: Title of your feature
 @tag
  
   Scenario: Title of your scenario
-  And user click the Reject button in Approve field
+   And user check the CheckBox Transfer On Card Information

@@ -120,6 +120,13 @@ WebDriver driver;
 	public WebElement CSMCoreTransferAccountsMaintananceTOAccSLCode() {
 		return CSMCore_TransferAccounts_Maintanance_TOAcc_SLcode;
 	}
+	@FindBy(xpath = "//input[@id='transfer_cards_info_yn_TA001MT']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_TransferOnCardInformationCheckBox;
+
+	public WebElement CSMCoreTransferAccountsMaintananceTransferOnCardInformationCheckBox() {
+		return CSMCore_TransferAccounts_Maintanance_TransferOnCardInformationCheckBox;
+	}
+	
 	
 	@FindBy(xpath = "//label[text()='Retrieve ']//parent::span//parent::button")
 	private WebElement CSMCore_TransferAccounts_Maintanance_RetriveButton;
@@ -182,6 +189,20 @@ WebDriver driver;
 	public WebElement CSMCoreTransferAccountsApproveEnterGlforRetriveRecord() {
 		return CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord;
 	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_CIF']")
+	private WebElement CSMCore_TransferAccounts_Approve_EnterCIFforRetriveRecord;
+
+	public WebElement CSMCoreTransferAccountsApproveEnterCIFforRetriveRecord() {
+		return CSMCore_TransferAccounts_Approve_EnterCIFforRetriveRecord;
+	}
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_SL']")
+	private WebElement CSMCore_TransferAccounts_Approve_EnterSLforRetriveRecord;
+
+	public WebElement CSMCoreTransferAccountsApproveEnterSLforRetriveRecord() {
+		return CSMCore_TransferAccounts_Approve_EnterSLforRetriveRecord;
+	}
 	
 	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001MT_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
 	private WebElement CSMCore_TransferAccounts_searchbutton_EnteroriginalGlforRetriveRecord;
@@ -225,10 +246,23 @@ WebDriver driver;
 		return CSMCore_TransferAccounts_Transfer;
 	}
 	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.ORIGINAL_GL']")
-	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecord;
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordGL;
 
-	public WebElement CSMCoreTransferAccountsTransferRetriveRecord() {
-		return CSMCore_TransferAccounts_Transfer_RetriveRecord;
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecordGL() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecordGL;
+	}
+	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.FROM_ACC_CIF']")
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordCIF;
+
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecordCIF() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecordCIF;
+	}
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.FROM_ACC_SL']")
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordSL;
+
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecordSL() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecordSL;
 	}
 	
 	@FindBy(xpath = "//label[@id='transferAccountsMaintFormId_TA001T_Transfer_key']")
@@ -429,6 +463,56 @@ WebDriver driver;
       	return csm_TransactionType_Approvefield_Rejectbutton;
       }
       
+      //Cards management TA_082
+      
+      @FindBy(xpath = "//td[text()='Cards Management']")
+      private WebElement csmCore_CardsManagement;
+      public WebElement csmCoreCardsManagement()
+      {
+      	return csmCore_CardsManagement;
+      }
+      @FindBy(xpath = "//td[text()='Card Request']")
+      private WebElement csmCore_CardRequest;
+      public WebElement csmCoreCardRequest()
+      {
+      	return csmCore_CardRequest;
+      }
+      @FindBy(xpath = "//span[text()='Maintenance']//parent::a")
+      private WebElement csmCore_CardRequest_Maintenance;
+      public WebElement csmCoreCardRequestMaintenance()
+      {
+      	return csmCore_CardRequest_Maintenance;
+      }
+      @FindBy(xpath = "//a[@id='infoBarSearchButton_G001MT']")
+      private WebElement csmCore_CardRequest_Maintenance_SearchButton;
+      public WebElement csmCoreCardRequestMaintenanceSearchButton()
+      {
+      	return csmCore_CardRequest_Maintenance_SearchButton;
+      }
+      @FindBy(xpath = "//input[@id='cardsMgmtGridTbl_Id_G001MT_gs_cardsAccountCO.accountVO.ACC_GL']")
+      private WebElement csmCore_CardRequest_Maintenance_SearchButton_GL;
+      public WebElement csmCoreCardRequestMaintenanceSearchButtonGL()
+      {
+      	return csmCore_CardRequest_Maintenance_SearchButton_GL;
+      }
+      @FindBy(xpath = "//input[@id='cardsMgmtGridTbl_Id_G001MT_gs_cardsAccountCO.accountVO.ACC_CIF']")
+      private WebElement csmCore_CardRequest_Maintenance_SearchButton_CIF;
+      public WebElement csmCoreCardRequestMaintenanceSearchButtonCIF()
+      {
+      	return csmCore_CardRequest_Maintenance_SearchButton_CIF;
+      }
+      @FindBy(xpath = "//input[@id='cardsMgmtGridTbl_Id_G001MT_gs_cardsAccountCO.accountVO.ACC_SL']")
+      private WebElement csmCore_CardRequest_Maintenance_SearchButton_SL;
+      public WebElement csmCoreCardRequestMaintenanceSearchButtonSL()
+      {
+      	return csmCore_CardRequest_Maintenance_SearchButton_SL;
+      }
+      @FindBy(xpath = "//input[@id='cardsMgmtGridTbl_Id_G001MT_gs_cardsMgtVO.APPLICATION_ID']")
+      private WebElement csmCore_CardRequest_Maintenance_SearchButton_ApplicationNo;
+      public WebElement csmCoreCardRequestMaintenanceSearchButtonApplicationNo()
+      {
+      	return csmCore_CardRequest_Maintenance_SearchButton_ApplicationNo;
+      }
 	
 
 }
