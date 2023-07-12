@@ -187,20 +187,20 @@ public class CSMLogin {
 		 * driver.quit();
 		 */
 	}
-	@And("^logout from the application$")
-    public void logout_from_the_application() throws Throwable {
-
- 
-
-        clicksAndActionHelper.moveToElement(csmCommonWebElements.csmLogoutButton());
-        clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmLogoutButton());
-        waitHelper.waitForElementwithFluentwaitForAlert(driver);
-        alertHelper.AcceptAlertIfPresent();
-        waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
-        Assert.assertTrue(csmCommonWebElements.csmUserName().isDisplayed());
-
- 
-
-    }
+//	@And("^logout from the application$")
+//    public void logout_from_the_application() throws Throwable {
+//
+// 
+//
+//        clicksAndActionHelper.moveToElement(csmCommonWebElements.csmLogoutButton());
+//        clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmLogoutButton());
+//        waitHelper.waitForElementwithFluentwaitForAlert(driver);
+//        alertHelper.AcceptAlertIfPresent();
+//        waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
+//        Assert.assertTrue(csmCommonWebElements.csmUserName().isDisplayed());
+//
+// 
+//
+//    }
 
 }

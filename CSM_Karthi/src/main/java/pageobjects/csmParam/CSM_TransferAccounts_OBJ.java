@@ -155,6 +155,48 @@ WebDriver driver;
 	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno3() {
 		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no3;
 	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_3_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no4;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno4() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no4;
+	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_4_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no5;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno5() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no5;
+	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_5_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no6;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno6() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no6;
+	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_6_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no7;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno7() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no7;
+	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_7_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no8;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno8() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no8;
+	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_8_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no9;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno9() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no9;
+	}
+	@FindBy(xpath = "//td[@id='td_transferAccountsDetailTbl_Id_TA001MT_9_rn']")
+	private WebElement CSMCore_TransferAccounts_Maintanance_Recordselecting_no10;
+
+	public WebElement CSMCoreTransferAccountsMaintananceRecordselectingno10() {
+		return CSMCore_TransferAccounts_Maintanance_Recordselecting_no10;
+	}
 	
 	@FindBy(xpath = "//label[text()='Save ']//parent::span//parent::button")
 	private WebElement CSMCore_TransferAccounts_Maintanance_SaveButton;
@@ -182,7 +224,14 @@ WebDriver driver;
 	public WebElement CSMCoreTransferAccountsApprove() {
 		return CSMCore_TransferAccounts_Approve;
 	}
+	@FindBy(xpath = "//input[@id='batchNo_TA001P']")
+	private WebElement CSMCore_TransferAccounts_Approve_GetBatchNo;
+
+	public WebElement CSMCoreTransferAccountsApproveGetBatchNo() {
+		return CSMCore_TransferAccounts_Approve_GetBatchNo;
+	}
 	
+	//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']
 	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
 	private WebElement CSMCore_TransferAccounts_Approve_EnterGlforRetriveRecord;
 
@@ -219,7 +268,7 @@ WebDriver driver;
 	}
 	
 	
-	@FindBy(xpath = "//td[@id='td_transferAccountsListGridTbl_Id_TA001P_1_cts_TRSFR_ACCVO.ORIGINAL_GL']")
+	@FindBy(xpath = "//td[@id='td_transferAccountsListGridTbl_Id_TA001T_1_cts_TRSFR_ACCVO.FROM_ACC_GL']")
 	private WebElement CSMCore_TransferAccounts_Transfer_EnterGlforRetriveRecord_doubleclick;
 
 	public WebElement CSMCoreTransferAccountsTransferEnterGlforRetriveRecorddoubleclick() {
@@ -245,13 +294,25 @@ WebDriver driver;
 	public WebElement CSMCoreTransferAccountsTransfer() {
 		return CSMCore_TransferAccounts_Transfer;
 	}
-	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001P_gs_cts_TRSFR_ACCVO.ORIGINAL_GL']")
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
 	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordGL;
 
 	public WebElement CSMCoreTransferAccountsTransferRetriveRecordGL() {
 		return CSMCore_TransferAccounts_Transfer_RetriveRecordGL;
 	}
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.FROM_ACC_GL']")
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordApprovedStatus;
+
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecordApprovedStatus() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecordApprovedStatus;
+	}
+	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.BATCH_NO']")
+	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordBatchNo;
+
+	public WebElement CSMCoreTransferAccountsTransferRetriveRecordBatchNo() {
+		return CSMCore_TransferAccounts_Transfer_RetriveRecordBatchNo;
+	}
 	@FindBy(xpath = "//input[@id='transferAccountsListGridTbl_Id_TA001T_gs_cts_TRSFR_ACCVO.FROM_ACC_CIF']")
 	private WebElement CSMCore_TransferAccounts_Transfer_RetriveRecordCIF;
 

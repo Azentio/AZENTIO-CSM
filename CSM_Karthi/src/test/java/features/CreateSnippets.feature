@@ -5,4 +5,4 @@ Feature: Title of your feature
 @tag
  
   Scenario: Title of your scenario
-   And user check the CheckBox Transfer On Card Information
+  And user get the BatchNo in Approve field

@@ -472,10 +472,129 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user click the Reject button in Approve field
     
     
-     @TA_082
+    
+ @TA_082
   Scenario: Checking if the new card has a new application ID and the status Expired is the same as in the original branch
     Given navigate to CSM application and login with valid credentials
     And user update test data set id for TA_082
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click TransferAccount field on CSMCore
+    #And user click maintenance field under TransferAccount
+    #And user enter the TransferType under maintanence screen
+    #And user enter the Reason under maintanence screen
+    #And user enter the Destination Branch under maintanence screen
+    #And user check the CheckBox Transfer On Card Information
+    #And user enter the BranchCode under FromAccount
+    #And user enter the CurrencyCode under FromAccount
+    #And user enter the GLCode under FromAccount
+    #And user enter the CIFCode under FromAccount
+    #And user click Ok Button Under Information PopUp Menu in the CSM core application
+    #And user enter the SerialNumber under FromAccount
+     #And user click Ok Button Under Information PopUp Menu in the CSM core application
+    #And user enter the BranchCode under TOAccount
+    #And user enter the CurrencyCode under TOAccount
+    #And user enter the GLCode under TOAccount
+    #And user enter the CIFCode under TOAccount
+   #And user click Ok Button Under Information PopUp Menu in the CSM core application
+    #And user enter the SerialNumber under TOAccount
+    #And user click Ok Button Under Information PopUp Menu in the CSM core application
+    #And user click the retrive button under maintenance screen
+    #And user select the Record no1 under TransferMaintanence screen
+    #And user click the Save button under maintanance screen
+  #And user click the Approve field under TransferAccount field
+  #And user enter the Record in Approve field
+  #And user double click the record in approve field
+  #And user get the BatchNo in Approve field for TA_082
+  #And user click the Approve button under Approve field
+  And user click the Transfer field under TransferAccount field
+  And user enter the Record in Transfer field
+  And user double click the record in Transfer field
+  And user click the Transfer button under Transfer field
+  And user click Ok Button Under Information PopUp Menu in the CSM core application
+    @TA_082_01
+  Scenario: Checking if the new card has a new application ID and the status Expired is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials forBranch2
+    And user update test data set id for TA_082
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+  And user click the cardManagement field in CSM core
+  And user click the cardRequest field under cardmanagement field
+  And user click the maintenence under cardRequest field
+  And user click the search button under maintenence field
+  And user Enter to search the GL record in maintenece field
+  And user Enter to search the CIF record in maintenece field
+  And user Enter to search the SL record in maintenece field
+  And user verify the ApplicationNo in maintenece field
+  
+  @TA_082_PostReq
+  Scenario: Checking if the new card has a new application ID and the status Expired is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TA_082
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click TransferAccount field on CSMCore
+    And user click maintenance field under TransferAccount
+    And user enter the TransferType under maintanence screen
+    And user enter the Reason under maintanence screen
+    And user enter the Destination Branch one under maintanence screen
+    And user check the CheckBox Transfer On Card Information
+    And user enter the BranchCode two under FromAccount
+    And user enter the CurrencyCode under FromAccount
+    And user enter the GLCode under FromAccount
+    And user enter the CIFCode under FromAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under FromAccount
+     And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the BranchCode two under TOAccount
+    And user enter the CurrencyCode under TOAccount
+    And user enter the GLCode under TOAccount
+    And user enter the CIFCode under TOAccount
+   And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under TOAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click the retrive button under maintenance screen
+    #And user select the Record no1 under TransferMaintanence screen
+    And user click the Save button under maintanance screen
+  And user click the Approve field under TransferAccount field
+  And user enter the Record in Approve field
+  And user double click the record in approve field
+   And user get the BatchNo in Approve field for TA_082
+  And user click the Approve button under Approve field
+  And user click the Transfer field under TransferAccount field
+  And user enter the Record in Transfer field
+  And user double click the record in Transfer field
+  And user click the Transfer button under Transfer field
+  And user click Ok Button Under Information PopUp Menu in the CSM core application
+  
+   @TA_084
+  Scenario: Checking if the new card has a new application ID and the status Created is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TA_084
     And user close the popup Tab
     And user click on Date to Change the Current Date in the CSM core application
     And user Enter the Date in user Running Date in the CSM core application
@@ -507,18 +626,32 @@ Feature: To verify the Funcnality on the Transfer Accounts module
     And user enter the SerialNumber under TOAccount
     And user click Ok Button Under Information PopUp Menu in the CSM core application
     And user click the retrive button under maintenance screen
-    And user select the Record no1 under TransferMaintanence screen
+    #And user select the Record under TransferMaintanence screen
     And user click the Save button under maintanance screen
   And user click the Approve field under TransferAccount field
   And user enter the Record in Approve field
   And user double click the record in approve field
+   And user get the BatchNo in Approve field for TA_084
   And user click the Approve button under Approve field
   And user click the Transfer field under TransferAccount field
   And user enter the Record in Transfer field
   And user double click the record in Transfer field
   And user click the Transfer button under Transfer field
   And user click Ok Button Under Information PopUp Menu in the CSM core application
-  Given navigate to CSM application and login with valid credentials forBranch2
+    @TA_084_01
+  Scenario:Checking if the new card has a new application ID and the status Created is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials forBranch2
+    And user update test data set id for TA_084
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
   And user click the cardManagement field in CSM core
   And user click the cardRequest field under cardmanagement field
   And user click the maintenence under cardRequest field
@@ -527,5 +660,176 @@ Feature: To verify the Funcnality on the Transfer Accounts module
   And user Enter to search the CIF record in maintenece field
   And user Enter to search the SL record in maintenece field
   And user verify the ApplicationNo in maintenece field
+  
+  @TA_084_PostReq
+  Scenario: Checking if the new card has a new application ID and the status Created is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TA_084
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click TransferAccount field on CSMCore
+    And user click maintenance field under TransferAccount
+    And user enter the TransferType under maintanence screen
+    And user enter the Reason under maintanence screen
+    And user enter the Destination Branch one under maintanence screen
+    And user check the CheckBox Transfer On Card Information
+    And user enter the BranchCode two under FromAccount
+    And user enter the CurrencyCode under FromAccount
+    And user enter the GLCode under FromAccount
+    And user enter the CIFCode under FromAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under FromAccount
+     And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the BranchCode two under TOAccount
+    And user enter the CurrencyCode under TOAccount
+    And user enter the GLCode under TOAccount
+    And user enter the CIFCode under TOAccount
+   And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under TOAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click the retrive button under maintenance screen
+    #And user select the Record under TransferMaintanence screen
+    And user click the Save button under maintanance screen
+  And user click the Approve field under TransferAccount field
+  And user enter the Record in Approve field
+  And user double click the record in approve field
+   And user get the BatchNo in Approve field for TA_084
+  And user click the Approve button under Approve field
+  And user click the Transfer field under TransferAccount field
+  And user enter the Record in Transfer field
+  And user double click the record in Transfer field
+  And user click the Transfer button under Transfer field
+  And user click Ok Button Under Information PopUp Menu in the CSM core application
+  
+  
+  @TA_086
+  Scenario: Checking if the new card has a new application ID and the status Hot is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TA_086
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click TransferAccount field on CSMCore
+    And user click maintenance field under TransferAccount
+    And user enter the TransferType under maintanence screen
+    And user enter the Reason under maintanence screen
+    And user enter the Destination Branch under maintanence screen
+    And user check the CheckBox Transfer On Card Information
+    And user enter the BranchCode under FromAccount
+    And user enter the CurrencyCode under FromAccount
+    And user enter the GLCode under FromAccount
+    And user enter the CIFCode under FromAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under FromAccount
+     And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the BranchCode under TOAccount
+    And user enter the CurrencyCode under TOAccount
+    And user enter the GLCode under TOAccount
+    And user enter the CIFCode under TOAccount
+   And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under TOAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click the retrive button under maintenance screen
+    #And user select the Record under TransferMaintanence screen
+    And user click the Save button under maintanance screen
+  And user click the Approve field under TransferAccount field
+  And user enter the Record in Approve field
+  And user double click the record in approve field
+   And user get the BatchNo in Approve field for TA_086
+  And user click the Approve button under Approve field
+  And user click the Transfer field under TransferAccount field
+  And user enter the Record in Transfer field
+  And user double click the record in Transfer field
+  And user click the Transfer button under Transfer field
+  And user click Ok Button Under Information PopUp Menu in the CSM core application
+  
+    @TA_086_01
+  Scenario: Checking if the new card has a new application ID and the status Hot is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials forBranch2
+    And user update test data set id for TA_086
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+  And user click the cardManagement field in CSM core
+  And user click the cardRequest field under cardmanagement field
+  And user click the maintenence under cardRequest field
+  And user click the search button under maintenence field
+  And user Enter to search the GL record in maintenece field
+  And user Enter to search the CIF record in maintenece field
+  And user Enter to search the SL record in maintenece field
+  And user verify the ApplicationNo in maintenece field
+  
+  @TA_086_PostReq
+  Scenario:Checking if the new card has a new application ID and the status Hot is the same as in the original branch
+    Given navigate to CSM application and login with valid credentials
+    And user update test data set id for TA_086
+    And user close the popup Tab
+    And user click on Date to Change the Current Date in the CSM core application
+    And user Enter the Date in user Running Date in the CSM core application
+    And user click on Use Button in Change Running Date Popup in the CSM core application
+    And User Click Ok Button for confirmation PopUp for Company Holiday
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click on Close Button in Change Running Date Popup in the CSM core application
+    And user click on Technical Details Icon in the CSM core application
+    And user click Clear Cache in Technical Details Icon in the CSM core application
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click TransferAccount field on CSMCore
+    And user click maintenance field under TransferAccount
+    And user enter the TransferType under maintanence screen
+    And user enter the Reason under maintanence screen
+    And user enter the Destination Branch one under maintanence screen
+    And user check the CheckBox Transfer On Card Information
+    And user enter the BranchCode two under FromAccount
+    And user enter the CurrencyCode under FromAccount
+    And user enter the GLCode under FromAccount
+    And user enter the CIFCode under FromAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under FromAccount
+     And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the BranchCode two under TOAccount
+    And user enter the CurrencyCode under TOAccount
+    And user enter the GLCode under TOAccount
+    And user enter the CIFCode under TOAccount
+   And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user enter the SerialNumber under TOAccount
+    And user click Ok Button Under Information PopUp Menu in the CSM core application
+    And user click the retrive button under maintenance screen
+    #And user select the Record under TransferMaintanence screen
+    And user click the Save button under maintanance screen
+  And user click the Approve field under TransferAccount field
+  And user enter the Record in Approve field
+  And user double click the record in approve field
+   And user get the BatchNo in Approve field for TA_086
+  And user click the Approve button under Approve field
+  And user click the Transfer field under TransferAccount field
+  And user enter the Record in Transfer field
+  And user double click the record in Transfer field
+  And user click the Transfer button under Transfer field
+  And user click Ok Button Under Information PopUp Menu in the CSM core application
+  
+  
+  
   
   

@@ -31,7 +31,7 @@ import utilities.ExtentTestManager;
 			for (String tags : listOfTags) {
 				String[] parameter = {
 
-						"src/test/java/features/CSM_Transaction.feature",
+						"src/test/java/features/CSM_TransferAccounts.feature",
 						"--glue", "stepdefinitions",
 						"--plugin", "pretty", 
 						"--plugin","com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:", 
@@ -59,9 +59,9 @@ import utilities.ExtentTestManager;
 			List<String> testCaseTagsfromExcel1 = new LinkedList<String>();
 			//testCaseTagsfromExcel1.add("TRS_127_01");
 			//testCaseTagsfromExcel1.add("TRS_127");
-			testCaseTagsfromExcel1.add("TA_029_01");
-			testCaseTagsfromExcel1.add("TA_029");
-//			testCaseTagsfromExcel1.add("TRS_115_Prereq");
+			testCaseTagsfromExcel1.add("TA_082");
+			testCaseTagsfromExcel1.add("TA_082_01");
+		testCaseTagsfromExcel1.add("TA_082_PostReq");
 //		testCaseTagsfromExcel1.add("TRS_115");
 //			testCaseTagsfromExcel1.add("TRS_115_PostReq");
 			//testCaseTagsfromExcel1.add("TRS_140");

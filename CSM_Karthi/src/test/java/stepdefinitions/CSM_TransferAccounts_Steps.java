@@ -163,6 +163,19 @@ System.out.println("dropdown "+testData.get("DropDown"));
 		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch().sendKeys(Keys.ENTER);
 
 	}
+	@And("user enter the Destination Branch one under maintanence screen")
+	public void user_enter_the_destination_branch_one_under_maintanence_screen() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch());
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch()
+				.sendKeys(testData.get("DestinationBranch1"));
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceDestinationBranch().sendKeys(Keys.ENTER);
+
+	}
 	@And("user enter the same Destination Branch under maintanence screen")
 	public void user_enter_the_same_destination_branch_under_maintanence_screen() {
 		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
@@ -190,6 +203,20 @@ System.out.println("dropdown "+testData.get("DropDown"));
 		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceFromAccBranchCode().sendKeys(Keys.TAB);
 
 	}
+	@And("user enter the BranchCode two under FromAccount")
+	public void user_enter_the_branch_code_two_under_from_account() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceFromAccBranchCode());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceFromAccBranchCode());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceFromAccBranchCode());
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceFromAccBranchCode()
+				.sendKeys(testData.get("BranchCode2"));
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceFromAccBranchCode().sendKeys(Keys.TAB);
+
+	}
+
 
 	@And("user enter the CurrencyCode under FromAccount")
 	public void user_enter_the_currency_code_under_from_account() throws Throwable {
@@ -254,6 +281,20 @@ System.out.println("dropdown "+testData.get("DropDown"));
 				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode());
 		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode()
 				.sendKeys(testData.get("BranchCodeTA"));
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode().sendKeys(Keys.TAB);
+	
+
+	}
+	@And("user enter the BranchCode two under TOAccount")
+	public void user_enter_the_branch_code_two_under_to_account() throws Throwable {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode());
+		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode()
+				.sendKeys(testData.get("BranchCode2"));
 		csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceTOAccBranchCode().sendKeys(Keys.TAB);
 	
 
@@ -349,6 +390,36 @@ System.out.println("dropdown "+testData.get("DropDown"));
 				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRetriveButton());
 		Thread.sleep(2000);
 	}
+	@And("user select the Record under TransferMaintanence screen")
+	public void user_select_the_record_under_transfer_Maintanence_screen() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno1());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno1());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno1());
+		seleniumActions.getClickAndActionsHelper()
+		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno2());
+		seleniumActions.getClickAndActionsHelper()
+		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno3());
+		seleniumActions.getClickAndActionsHelper()
+		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno4());
+
+		seleniumActions.getClickAndActionsHelper()
+		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno5());
+		seleniumActions.getClickAndActionsHelper()
+		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno6());
+		seleniumActions.getClickAndActionsHelper()
+		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno7());
+//		seleniumActions.getClickAndActionsHelper()
+//		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno8());
+//		seleniumActions.getClickAndActionsHelper()
+//		.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsMaintananceRecordselectingno9());
+	
+
+
+
+	}
 
 	@And("user select the Record no1 under TransferMaintanence screen")
 	public void user_select_the_record_no1_under_transfer_Maintanence_screen() {
@@ -427,11 +498,21 @@ System.out.println("dropdown "+testData.get("DropDown"));
 
 	@And("user enter the Record in Approve field")
 	public void user_enter_the_record_in_approve_field() {
-//		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-//				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
-		JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
-		for (int i = 0; i < 2000; i++) {
+	//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				//csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
+		for (int i = 0; i < 200; i++) {
 			try {
+				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+				
+			}
+		}
+	
+		
 				
 //				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
 //						csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
@@ -441,23 +522,13 @@ System.out.println("dropdown "+testData.get("DropDown"));
 						.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord());
 				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord()
 						.sendKeys(testData.get("GLCodeFA"));
-				//csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord().sendKeys(Keys.ENTER);
+				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecord().sendKeys(Keys.TAB);
 				csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterCIFforRetriveRecord()
 				.sendKeys(testData.get("CIFCodeFA"));
-		//csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterCIFforRetriveRecord().sendKeys(Keys.ENTER);
+		csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterCIFforRetriveRecord().sendKeys(Keys.TAB);
 		csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterSLforRetriveRecord()
 		.sendKeys(testData.get("SLCodeFA"));
 csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterSLforRetriveRecord().sendKeys(Keys.ENTER);
-				break;
-				
-			} catch (Exception e) {
-				if (i==1999) {
-					Assert.fail(e.getMessage());
-				}
-			}
-		}
-		
-
 	}
 	@And("user enter the original gl under search button")
 	public void user_enter_the_original_gl_under_search_button() {
@@ -514,6 +585,32 @@ csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterSLforRetriveRecord().s
 		seleniumActions.getClickAndActionsHelper()
 				.doubleClick(csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterGlforRetriveRecorddoubleclick());
 	}
+	@And("user get the BatchNo in Approve field for TA_082")
+	public void user_get_the_batch_no_in_approve_field_for_TA_082() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsApproveGetBatchNo());
+		String BatchNo = csmTransferAccountsobj.CSMCoreTransferAccountsApproveGetBatchNo().getAttribute("prevvalue");
+		CsmTransferAccountExcelData.updateTestData("TA_082_D1", "BatchNo", BatchNo);
+		testData = CsmTransferAccountExcelData.getTestdata("TA_082_D1");
+	}
+	@And("user get the BatchNo in Approve field for TA_084")
+	public void user_get_the_batch_no_in_approve_field_for_TA_084() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsApproveGetBatchNo());
+		String BatchNo = csmTransferAccountsobj.CSMCoreTransferAccountsApproveGetBatchNo().getAttribute("prevvalue");
+		CsmTransferAccountExcelData.updateTestData("TA_084_D1", "BatchNo", BatchNo);
+		System.out.println(BatchNo);
+		testData = CsmTransferAccountExcelData.getTestdata("TA_084_D1");
+	}
+	@And("user get the BatchNo in Approve field for TA_086")
+	public void user_get_the_batch_no_in_approve_field_for_TA_086() {
+		seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsApproveGetBatchNo());
+		String BatchNo = csmTransferAccountsobj.CSMCoreTransferAccountsApproveGetBatchNo().getAttribute("prevvalue");
+		CsmTransferAccountExcelData.updateTestData("TA_086_D1", "BatchNo", BatchNo);
+		System.out.println(BatchNo);
+		testData = CsmTransferAccountExcelData.getTestdata("TA_086_D1");
+	}
 
 	@And("user double click the record in Transfer field")
 	public void user_double_click_the_record_in_transfer_field() {
@@ -552,23 +649,10 @@ csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterSLforRetriveRecord().s
 
 	@And("user enter the Record in Transfer field")
 	public void user_enter_the_record_in_transfer_field() {
-		//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecord());
+		//seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL());
 		for (int i = 0; i < 200; i++) {
 			try {
-				
-				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL());
-//				seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-//						csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecord());
-				seleniumActions.getClickAndActionsHelper()
-						.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL());
-				seleniumActions.getClickAndActionsHelper()
-						.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL());
-				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL().sendKeys(testData.get("GLCodeFA"));
-				//csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL().sendKeys(Keys.ENTER);
-				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordCIF().sendKeys(testData.get("CIFCodeFA"));
-				//csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordCIF().sendKeys(Keys.ENTER);
-				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordSL().sendKeys(testData.get("SLCodeFA"));
-				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordSL().sendKeys(Keys.ENTER);
+				JavascriptHelper.scrollIntoView(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo());
 				break;
 			} catch (Exception e) {
 				if (i==199) {
@@ -576,9 +660,29 @@ csmTransferAccountsobj.CSMCoreTransferAccountsApproveEnterSLforRetriveRecord().s
 				}
 			}
 		}
-		
-		
-
+						seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo());
+		seleniumActions.getClickAndActionsHelper()
+				.moveToElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo());
+		seleniumActions.getClickAndActionsHelper()
+				.clickOnElement(csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo());
+		for (int i = 0; i < 200; i++) {
+			try {
+				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo().sendKeys(testData.get("BatchNo"));
+				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo().sendKeys(Keys.TAB);
+//				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL().sendKeys(testData.get("GLCodeFA"));
+//				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordGL().sendKeys(Keys.TAB);
+//				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordCIF().sendKeys(testData.get("CIFCodeFA"));
+//				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordCIF().sendKeys(Keys.TAB);
+//				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordSL().sendKeys(testData.get("SLCodeFA"));
+				csmTransferAccountsobj.CSMCoreTransferAccountsTransferRetriveRecordBatchNo().sendKeys(Keys.ENTER);	
+				break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
 	}
 
 	@And("user click the Transfer button under Transfer field")
@@ -865,10 +969,20 @@ csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordAct
 		}
 	
 	}
-//TA_082
+//TA_082 //TA_086
 	@And("user update test data set id for TA_082")
 	public void user__update_test_data_set_id_for_t1_082() throws Throwable {
 		testData = CsmTransferAccountExcelData.getTestdata("TA_082_D1");		
+		
+	}
+	@And("user update test data set id for TA_084")
+	public void user__update_test_data_set_id_for_t1_084() throws Throwable {
+		testData = CsmTransferAccountExcelData.getTestdata("TA_084_D1");		
+		
+	}
+	@And("user update test data set id for TA_086")
+	public void user__update_test_data_set_id_for_t1_086() throws Throwable {
+		testData = CsmTransferAccountExcelData.getTestdata("TA_086_D1");		
 		
 	}
 	@And("user click the cardManagement field in CSM core")
@@ -892,23 +1006,37 @@ csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordAct
 		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmCoreCardRequestMaintenance());
          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenance());
          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenance()); 
+         
 	    
 	}
 
 	@And("user click the search button under maintenence field")
-	public void user_click_the_search_button_under_maintenence_field() {
-	    
+	public void user_click_the_search_button_under_maintenence_field() throws Throwable {
+		Thread.sleep(1000);
 		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButton());
-         seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButton());
-         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButton()); 
+	        
+		for (int i = 0; i < 200; i++) {
+			try {
+				 seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButton());
+		         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButton());
+		         break;
+			} catch (Exception e) {
+				if (i==199) {
+					Assert.fail(e.getMessage());
+				}
+			}
+		}
+	    
+	
 	}
 
 	@And("user Enter to search the GL record in maintenece field")
 	public void user_enter_to_search_the_gl_record_in_maintenece_field() {
+		JavascriptHelper.scrollIntoView(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL());
 		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL());
          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL());
          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL()); 
-         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL().sendKeys(testData.get(""));
+         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL().sendKeys(testData.get("GLCodeFA"));
  		csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonGL().sendKeys(Keys.TAB);
 	}
 
@@ -917,7 +1045,7 @@ csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordAct
 		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonCIF());
          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonCIF());
          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonCIF()); 
-         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonCIF().sendKeys(testData.get(""));
+         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonCIF().sendKeys(testData.get("CIFCodeFA"));
  		csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonCIF().sendKeys(Keys.TAB);
 	    
 	}
@@ -928,18 +1056,18 @@ csmTransferAccountsobj.CSMCoreTransferAccountsmaintenancesearchbtnenterrecordAct
 		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL());
          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL());
          seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL()); 
-         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL().sendKeys(testData.get(""));
- 		csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL().sendKeys(Keys.TAB);
+         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL().sendKeys(testData.get("SLCodeFA"));
+ 		csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonSL().sendKeys(Keys.ENTER);
 	    
 	}
 
 	@And("user verify the ApplicationNo in maintenece field")
 	public void user_verify_the_application_no_in_maintenece_field() {
+		JavascriptHelper.scrollIntoView(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo());
 		 seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver, csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo());
          seleniumActions.getClickAndActionsHelper().moveToElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo());
-         seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo()); 
-         csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo().sendKeys(testData.get(""));
- 		csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo().sendKeys(Keys.TAB);
+        // seleniumActions.getClickAndActionsHelper().clickOnElement(csmTransferAccountsobj.csmCoreCardRequestMaintenanceSearchButtonApplicationNo()); 
+         
 	    
 	    
 	}

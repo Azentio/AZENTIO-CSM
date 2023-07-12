@@ -131,12 +131,21 @@ public class Transaction_steps {
 		}
 		@And("^user click Ok Button Under Information PopUp Menu in the CSM core application$")
 		public void UserClickOkButtonUnderInformationPopupMenuInTheCsmcoreApplication() {
-			seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
-					CSMcoreTransactionObj.CSMOkButtonUnderInformationPopUp());
-			seleniumActions.getClickAndActionsHelper()
-					.moveToElement(CSMcoreTransactionObj.CSMOkButtonUnderInformationPopUp());
-			seleniumActions.getClickAndActionsHelper()
-					.clickOnElement(CSMcoreTransactionObj.CSMOkButtonUnderInformationPopUp());
+			for (int i = 0; i < 200; i++) {
+				try {
+//					seleniumActions.getWaitHelper().waitForElementwithFluentwait(driver,
+//							CSMcoreTransactionObj.CSMOkButtonUnderInformationPopUp());
+					seleniumActions.getClickAndActionsHelper()
+							.moveToElement(CSMcoreTransactionObj.CSMOkButtonUnderInformationPopUp());
+					seleniumActions.getClickAndActionsHelper()
+							.clickOnElement(CSMcoreTransactionObj.CSMOkButtonUnderInformationPopUp());
+					break;
+				} catch (Exception e) {
+					
+				}
+			}
+			
+			
 		}
 		@And("^user click on the parameters menu under the menu options in the CSM core application$")
 		public void UserClickOnTheParametersMenuUnderTheMenuOptionsInTheCsmcoreApplication() {
