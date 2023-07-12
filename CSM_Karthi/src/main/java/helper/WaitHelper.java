@@ -4,7 +4,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.NoSuchElementException;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.logging.log4j.LogManager;
@@ -113,6 +112,21 @@ public class WaitHelper {
 	 WebElement element1 = wait.until(ExpectedConditions.visibilityOf(element));
 	 return element1;
 	 }
+	
+	public  void waitForElementwithFluentwaitForAlert(WebDriver driver) throws IOException 
+    {     
+        fileInputStream= new FileInputStream(fileLocation);
+        long timeOut = configFileReader.getTimeOut();
+
+        
+        Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+                .withTimeout(Duration.ofSeconds(configFileReader.getTimeOut()))
+                .pollingEvery(Duration.ofMillis(configFileReader.getTimeOut()))
+                .ignoring(Exception.class);
+//        WebElement element1 = wait.until(ExpectedConditions.elementToBeClickable(element));
+        wait.until(ExpectedConditions.alertIsPresent());
+
+    }
 
 
 

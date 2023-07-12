@@ -9,8 +9,10 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 
 import dataProvider.ExcelData;
+import helper.AlertHelper;
 import helper.ClicksAndActionsHelper;
 import helper.WaitHelper;
+import io.cucumber.java.en.And;
 import pageobjects.CommonElements.CSMCommonWebElements;
 
 public class CSMLogin {
@@ -22,6 +24,7 @@ public class CSMLogin {
 	ExcelData csmLoginExceldata = new ExcelData(TestDataPath, "CSM_Login", "Stage");
 	ExcelData sadsLoginExceldata = new ExcelData(TestDataPath, "SadsLogin", "Stage");
 	Map<String, String> csmLoginTestData = new HashMap<>();
+	AlertHelper alertHelper= new AlertHelper(driver);
 	WaitHelper waitHelper = new WaitHelper(driver);
 
 	ClicksAndActionsHelper clicksAndActionHelper;
@@ -184,5 +187,20 @@ public class CSMLogin {
 		 * driver.quit();
 		 */
 	}
+	@And("^logout from the application$")
+    public void logout_from_the_application() throws Throwable {
+
+ 
+
+        clicksAndActionHelper.moveToElement(csmCommonWebElements.csmLogoutButton());
+        clicksAndActionHelper.clickOnElement(csmCommonWebElements.csmLogoutButton());
+        waitHelper.waitForElementwithFluentwaitForAlert(driver);
+        alertHelper.AcceptAlertIfPresent();
+        waitHelper.waitForElementwithFluentwait(driver, csmCommonWebElements.csmUserName());
+        Assert.assertTrue(csmCommonWebElements.csmUserName().isDisplayed());
+
+ 
+
+    }
 
 }
